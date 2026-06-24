@@ -1,0 +1,230 @@
+{
+  "author": {
+    "name": "Richard J. Reyes",
+    "orcid": "0009-0005-5975-8718",
+    "affiliation": "Independent Researcher"
+  },
+  "site": "https://rickyjreyes.github.io/",
+  "publications": [
+    {
+      "n": 1,
+      "slug": "geometry-of-resonance",
+      "title": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "date": "2025-04-22",
+      "display_date": "April 22, 2025",
+      "doi": "10.5281/zenodo.15644222",
+      "category": "Primary WCT foundation",
+      "summary": "Wave Confinement Theory proposes that mass, force, and effective spacetime geometry emerge from confined oscillatory fields. The preprint develops a curvature-feedback field framework in which nonlinear wave dynamics, entropy regulation, phase organization, and resonance stabilize localized structure."
+    },
+    {
+      "n": 2,
+      "slug": "physical-constants-through-wave-confinement",
+      "title": "Structure and Derivation of Physical Constants through Wave Confinement",
+      "date": "2025-04-26",
+      "display_date": "April 26, 2025",
+      "doi": "10.5281/zenodo.15596159",
+      "category": "Primary WCT foundation",
+      "summary": "This preprint examines whether fundamental constants can be represented as structural consequences of resonance geometry and curvature-regulated standing waves. It develops mappings between confinement parameters, harmonic organization, information constraints, and candidate values for physical constants."
+    },
+    {
+      "n": 3,
+      "slug": "p-vs-np-curvature-bounded-wave-computation",
+      "title": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
+      "date": "2025-05-07",
+      "display_date": "May 7, 2025",
+      "doi": "10.5281/zenodo.17743607",
+      "category": "Computation and complexity",
+      "summary": "This work defines a curvature-bounded wave-computation model and studies complexity classes internal to that model. Its separation claim is explicitly model-relative: it concerns P_WCC and NP_WCC under the stated physical and geometric constraints rather than claiming an unrestricted proof of the classical P versus NP problem."
+    },
+    {
+      "n": 4,
+      "slug": "long-lived-photon-resonance-water-cavities",
+      "title": "Observation of Long-Lived Photon Resonance Confinement in Water Cavities",
+      "date": "2025-05-17",
+      "display_date": "May 17, 2025",
+      "doi": "10.5281/zenodo.17206381",
+      "category": "Experiment and physical systems",
+      "summary": "This experimental report describes long-lived optical and harmonic behavior observed in chilled water cavities after excitation. It presents the apparatus, persistence observations, perturbation and relocking behavior, spectral measurements, and the control limitations that must be resolved by independent replication."
+    },
+    {
+      "n": 5,
+      "slug": "resonance-confinement-architecture",
+      "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+      "date": "2025-06-11",
+      "display_date": "June 11, 2025",
+      "doi": "10.5281/zenodo.17732661",
+      "category": "AI architecture",
+      "summary": "This architecture proposal maps resonance, coherence, bounded curvature, contradiction control, and Lyapunov-like stabilization into an artificial-intelligence substrate. It is presented as a physically bounded design framework and research specification, not as a completed artificial general intelligence implementation."
+    },
+    {
+      "n": 6,
+      "slug": "hard-upper-bound-spatial-dimensionality",
+      "title": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+      "date": "2025-08-13",
+      "display_date": "August 13, 2025",
+      "doi": "10.5281/zenodo.17081283",
+      "category": "Mass, geometry, and dimensionality",
+      "summary": "This work argues that stable curvature-locked confinement in the stated WCT framework is restricted to at most three spatial dimensions. It combines Sobolev control, Lyapunov scaling, entropy localization, topology, and curvature-feedback behavior into several routes toward the same dimensional stability bound."
+    },
+    {
+      "n": 7,
+      "slug": "phase-flux-field",
+      "title": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
+      "date": "2025-09-08",
+      "display_date": "September 8, 2025",
+      "doi": "10.5281/zenodo.17578766",
+      "category": "Primary WCT foundation",
+      "summary": "Phase-Flux Field defines a pre-WCT substrate in terms of observable energy density, flux, and phase. The work develops conservation and causal-flow constraints, a finite-wavenumber Lyapunov band-pass, shell quantization, a zero-wave invariant state, and a D4-to-continuum construction."
+    },
+    {
+      "n": 8,
+      "slug": "self-emergent-fourier-cymatics",
+      "title": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
+      "date": "2025-09-16",
+      "display_date": "September 16, 2025",
+      "doi": "10.5281/zenodo.17732648",
+      "category": "Spectral dynamics",
+      "summary": "This work studies the numerical evolution of broadband or random fields toward finite-band spectral support and eigenmode-like organization. It connects spectral entropy reduction, annular Fourier support, mode competition, Lyapunov descent, and Swift–Hohenberg-type dynamics."
+    },
+    {
+      "n": 9,
+      "slug": "effective-mass-solenoidal-topology",
+      "title": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
+      "date": "2025-10-27",
+      "display_date": "October 27, 2025",
+      "doi": "10.5281/zenodo.17459463",
+      "category": "Mass and geometry",
+      "summary": "This preprint develops a geometric model in which effective mass arises from vibrational energy constrained to curved, torsional, or solenoidal paths. It relates loop geometry, phase delay, curvature, torsion, and confinement to inertial behavior and cavity-scale predictions."
+    },
+    {
+      "n": 10,
+      "slug": "rest-energy-density-weighted-loop-curvature",
+      "title": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
+      "date": "2025-11-11",
+      "display_date": "November 11, 2025",
+      "doi": "10.5281/zenodo.20533537",
+      "category": "Mass and geometry",
+      "summary": "This work formulates a covariant locking principle connecting closed-loop curvature and torsion to effective wavenumber and rest energy. It defines density-weighted geometric averages, a locking action, stationarity conditions, and the proposed mass relation E_rest = ℏ c k_eff."
+    },
+    {
+      "n": 11,
+      "slug": "juno-ghost-mode-neutrinos",
+      "title": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
+      "date": "2025-11-20",
+      "display_date": "November 20, 2025",
+      "doi": "10.5281/zenodo.17715872",
+      "category": "Experiment and detectability",
+      "summary": "This study evaluates whether WCT-motivated log-energy or ghost-mode modulations could survive JUNO detector resolution, smearing, and systematic limitations. It derives detectability conditions and amplitude-damping estimates intended to define a falsifiable detector-facing forecast."
+    },
+    {
+      "n": 12,
+      "slug": "discrete-wave-constrained-computation",
+      "title": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
+      "date": "2025-11-26",
+      "display_date": "November 26, 2025",
+      "doi": "10.5281/zenodo.17732642",
+      "category": "Computation and complexity",
+      "summary": "This work defines a discrete wave-constrained computation model and studies its relation to classical Turing computation. It focuses on encoding, simulation, and equivalence conditions for the classical P and NP classes under the stated discrete model."
+    },
+    {
+      "n": 13,
+      "slug": "classical-p-vs-np-ill-posed",
+      "title": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
+      "date": "2025-12-01",
+      "display_date": "December 1, 2025",
+      "doi": "10.5281/zenodo.17783074",
+      "category": "Computation and complexity",
+      "summary": "This technical and philosophical critique argues that classical complexity theory abstracts away physical resource and interface constraints that matter for realizable computation. It proposes reframing complexity claims through explicit computational substrates and resource models."
+    },
+    {
+      "n": 14,
+      "slug": "wct-koide-mass-relation",
+      "title": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
+      "date": "2025-12-10",
+      "display_date": "December 10, 2025",
+      "doi": "10.5281/zenodo.17887562",
+      "category": "Mass-spectrum phenomenology",
+      "summary": "This work develops a curvature-harmonic model for Koide-like fermion mass triplets. It relates loop geometry, harmonic sidebands, effective spin structure, and scale-free ratios to the charged-lepton value Q = 2/3, while treating the result as a WCT phenomenological derivation."
+    },
+    {
+      "n": 15,
+      "slug": "photodiode-prediction-protocol-ledger",
+      "title": "Prediction & Protocol Ledger: Long-Lived Harmonic State Induction in Photodiodes",
+      "date": "2025-12",
+      "display_date": "December 2025",
+      "doi": "10.5281/zenodo.17957713",
+      "category": "Experiment and protocol",
+      "summary": "This release records a dated experimental protocol, predicted observables, pass and fail conditions, and reproducibility requirements for photodiode harmonic-state tests. Its purpose is to distinguish predeclared predictions from later analysis and to define the controls needed for falsification."
+    },
+    {
+      "n": 16,
+      "slug": "logarithmic-curvature-flow-lepton-spectrum",
+      "title": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
+      "date": "2026-03-10",
+      "display_date": "March 10, 2026",
+      "doi": "10.5281/zenodo.18936949",
+      "category": "Mass and geometry",
+      "summary": "This work applies the logarithmic transform u = ln ψ to the WCT curvature operator, connecting it to viscous Hamilton–Jacobi and Cole–Hopf structures. It then develops a filament-localization and loop-geometry model for the charged-lepton mass spectrum."
+    },
+    {
+      "n": 17,
+      "slug": "nuclear-fusion-tokamak-resonance",
+      "title": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
+      "date": "2026-04-14",
+      "display_date": "April 14, 2026",
+      "doi": "10.5281/zenodo.19578185",
+      "category": "Applied control architecture",
+      "summary": "This engineering proposal applies resonance and coherence concepts to diagnostics-driven tokamak control. It develops transport proxies, actuator allocation, safety margins, energy-accounting gates, and simulated handoff logic; the architecture remains distinct from demonstrating physical wall-power independence."
+    },
+    {
+      "n": 18,
+      "slug": "curvature-log-periodic-c9-deformation",
+      "title": "A Curvature-Induced Log-Periodic Deformation of C9(q²): Wave Confinement Theory and the LHCb B⁰ → K*⁰ μ⁺μ⁻ Anomaly",
+      "date": "2026-04-23",
+      "display_date": "April 23, 2026",
+      "doi": "10.5281/zenodo.19705254",
+      "category": "Collider phenomenology",
+      "summary": "This phenomenological study introduces a WCT-motivated log-periodic deformation of C9(q²) and compares it with a constant-shift description of the LHCb anomaly. It examines frequency scans, null behavior, and the covariance and look-elsewhere limitations of the available data."
+    },
+    {
+      "n": 19,
+      "slug": "lhcb-log-spectral-koide-winding",
+      "title": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
+      "date": "2026-05-09",
+      "display_date": "May 9, 2026",
+      "doi": "10.5281/zenodo.20164333",
+      "category": "Collider open-data analysis",
+      "summary": "This open-data analysis searches B⁰ → K*⁰ μ⁺μ⁻ candidate spectra for log-domain residual structure, active-domain winding, and Koide-like comb geometry. It includes KDE baseline repair, sideband and charm-continuum controls, veto-window covariance, and explicit non-discovery caveats."
+    },
+    {
+      "n": 20,
+      "slug": "recursive-ai-drift-audit",
+      "title": "Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note",
+      "date": "2026-05",
+      "display_date": "May 2026",
+      "doi": "10.5281/zenodo.20142976",
+      "category": "AI prediction audit",
+      "summary": "This technical note audits dated 2025 claims about recursive AI drift against later external developments and model behavior. It separates chronology, correspondence, partial support, failures, and unresolved questions rather than treating later events as direct validation of the full architecture."
+    },
+    {
+      "n": 21,
+      "slug": "nist-bin-stable-log-periodic-structure",
+      "title": "Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List",
+      "date": "2026-05-28",
+      "display_date": "May 28, 2026",
+      "doi": "10.5281/zenodo.20435463",
+      "category": "Atomic open-data analysis",
+      "summary": "This work reports a reproducible log-cosine line-density scan over public NIST Atomic Spectra Database exports. The canonical Fe II analysis tests bin stability, active-domain winding, Poisson-bootstrap nulls, neighboring ions, implementation parity, and baseline sensitivity; NIST is the data provider only."
+    },
+    {
+      "n": 22,
+      "slug": "wavelock-curvature-locked-one-way-function",
+      "title": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
+      "date": "2025-12-01",
+      "display_date": "December 1, 2025",
+      "doi": "10.5281/zenodo.19122146",
+      "category": "Cryptographic research",
+      "summary": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work is an experimental cryptographic research artifact with adversarial tests, prototype signatures and ledger components, and explicit unresolved security proof obligations; it is not production cryptography."
+    }
+  ]
+}

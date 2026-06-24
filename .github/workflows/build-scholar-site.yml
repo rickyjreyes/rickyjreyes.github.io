@@ -1,0 +1,42 @@
+name: Build scholarly publication pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/publications.json"
+      - "scripts/build_scholar_site.py"
+      - ".github/workflows/build-scholar-site.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate publication pages and metadata
+        run: python scripts/build_scholar_site.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html publications/ publications.bib publications.ris publications.json sitemap.xml feed.xml llms.txt CITATION.cff codemeta.json
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+            exit 0
+          fi
+          git commit -m "Generate scholarly publication metadata"
+          git push
