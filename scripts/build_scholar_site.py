@@ -31,7 +31,7 @@ def bib_key(pub: dict) -> str:
     return f"Reyes{pub['date'][:4]}{''.join(w.capitalize() for w in words[:3])}"
 
 
-def paper_page(pub: dict) -> str:
+def paper_page(pub: dict, titles: dict[str, str]) -> str:
     url = local_url(pub["slug"])
     doi_url = f"https://doi.org/{pub['doi']}"
     zenodo = record_url(pub["doi"])
@@ -43,6 +43,7 @@ def paper_page(pub: dict) -> str:
         "abstract": pub["summary"],
         "datePublished": pub["date"],
         "inLanguage": "en",
+        "creativeWorkStatus": pub.get("status", "Preprint"),
         "author": {
             "@type": "Person",
             "name": AUTHOR,
@@ -66,6 +67,82 @@ def paper_page(pub: dict) -> str:
         f"Zenodo. {doi_url}"
     )
     citation_date = pub["date"].replace("-", "/")
+
+    status = pub.get("status", "Preprint")
+
+    # Plain-language overview ------------------------------------------------
+    overview_blocks = []
+    if pub.get("question"):
+        overview_blocks.append(
+            f'<div class="overview-block"><h3>Research question</h3>'
+            f'<p>{esc(pub["question"])}</p></div>'
+        )
+    if pub.get("contributions"):
+        items = "".join(f"<li>{esc(c)}</li>" for c in pub["contributions"])
+        overview_blocks.append(
+            f'<div class="overview-block"><h3>Main contribution</h3>'
+            f'<ul class="overview-list">{items}</ul></div>'
+        )
+    if pub.get("evidence"):
+        tags = "".join(f'<span class="evidence-tag">{esc(e)}</span>' for e in pub["evidence"])
+        overview_blocks.append(
+            f'<div class="overview-block"><h3>Evidence type</h3>'
+            f'<div class="evidence-tags">{tags}</div></div>'
+        )
+    if pub.get("limitations"):
+        overview_blocks.append(
+            f'<div class="overview-block"><h3>Current limitations</h3>'
+            f'<p>{esc(pub["limitations"])}</p></div>'
+        )
+    overview_html = ""
+    if overview_blocks:
+        overview_html = (
+            '<section class="paper-section"><h2>Plain-language overview</h2>'
+            '<div class="overview-grid">' + "".join(overview_blocks) + "</div></section>"
+        )
+
+    # Research assets -------------------------------------------------------
+    asset_rows = [
+        '<div><dt>Read &amp; download</dt>'
+        f'<dd><a href="{zenodo}">Zenodo record (manuscript and files)</a></dd></div>',
+        '<div><dt>Research program hub</dt>'
+        '<dd><a href="https://github.com/rickyjreyes/geometry_of_resonance">'
+        'geometry_of_resonance — equations, manuscripts, and simulations</a></dd></div>',
+    ]
+    if pub.get("repo"):
+        repo = pub["repo"]
+        repo_name = repo.rstrip("/").rsplit("/", 1)[-1]
+        asset_rows.insert(
+            1,
+            f'<div><dt>Code &amp; data</dt>'
+            f'<dd><a href="{repo}">{esc(repo_name)} — source code and data</a></dd></div>',
+        )
+    assets_html = (
+        '<section class="paper-section"><h2>Research assets</h2>'
+        '<dl class="asset-list">' + "".join(asset_rows) + "</dl></section>"
+    )
+
+    # Related works ---------------------------------------------------------
+    related_html = ""
+    related = pub.get("related") or []
+    if related:
+        rows = []
+        for rel in related:
+            t = titles.get(rel["slug"])
+            if not t:
+                continue
+            rows.append(
+                f'<li><span class="rel-tag">{esc(rel["relation"])}</span>'
+                f'<a href="{esc(rel["slug"])}.html">{esc(t)}</a></li>'
+            )
+        if rows:
+            related_html = (
+                '<section class="paper-section"><h2>Related works</h2>'
+                '<ul class="related-list">' + "".join(rows) + "</ul>"
+                '<p class="related-note">Relationships reflect the research dependency structure '
+                "of the program, not shared keywords.</p></section>"
+            )
+
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -109,23 +186,66 @@ def paper_page(pub: dict) -> str:
 </div></header>
 <main id="paper" class="paper-shell"><article>
 <header class="paper-header">
-<p class="paper-kicker">Preprint · {esc(pub['category'])} · Release {pub['n']:02d}</p>
+<p class="paper-kicker">Preprint · Release {pub['n']:02d}</p>
 <h1 class="citation_title">{esc(pub['title'])}</h1>
 <p class="citation_author">{AUTHOR}</p>
 <p class="paper-meta">Independent Researcher · {pub['display_date']} · <a href="{doi_url}">{pub['doi']}</a></p>
+<div class="paper-tags">
+<span class="paper-chip chip-category"><span class="chip-label">Category</span>{esc(pub['category'])}</span>
+<span class="paper-chip chip-status"><span class="chip-label">Research status</span>{esc(status)}</span>
+</div>
 </header>
+<section class="paper-section paper-actions-section" aria-label="Primary actions">
+<div class="paper-actions">
+<a class="button primary" href="{zenodo}">Read on Zenodo</a>
+<a class="button secondary" href="{doi_url}">Open DOI</a>
+<button class="button secondary" type="button" data-copy-citation aria-label="Copy the recommended citation to the clipboard">Copy citation</button>
+<a class="button secondary" href="#cite">View citation</a>
+</div>
+</section>
 <section class="paper-section"><h2>Abstract</h2><p>{esc(pub['summary'])}</p></section>
-<section class="paper-section"><h2>Research status</h2><p>This page is a machine-readable discovery and citation landing page for the archival preprint. The DOI record and downloadable files are maintained by Zenodo. Claims should be evaluated according to the derivations, simulations, experiments, data analyses, assumptions, and limitations stated in the paper.</p></section>
-<section class="paper-section"><h2>Recommended citation</h2><p class="formatted-citation">{esc(citation)}</p>
-<div class="paper-actions"><a class="button primary" href="{doi_url}">Open DOI</a><a class="button secondary" href="{zenodo}">Zenodo record</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="../publications.ris">RIS</a></div></section>
+{overview_html}
+{assets_html}
+{related_html}
+<section class="paper-section" id="cite"><h2>Recommended citation</h2>
+<p class="formatted-citation" data-citation-text>{esc(citation)}</p>
+<div class="paper-actions">
+<button class="button primary" type="button" data-copy-citation aria-label="Copy the recommended citation to the clipboard">Copy citation</button>
+<a class="button secondary" href="../publications.bib">BibTeX</a>
+<a class="button secondary" href="../publications.ris">RIS</a>
+<a class="button secondary" href="{doi_url}">DOI resolver</a>
+<a class="button secondary" href="https://orcid.org/{ORCID}">ORCID author</a>
+</div>
+<p class="copy-feedback" role="status" aria-live="polite" data-copy-feedback hidden>Citation copied to clipboard.</p></section>
 <section class="paper-section machine-note"><h2>Machine-readable identifiers</h2><dl>
 <div><dt>DOI</dt><dd><a href="{doi_url}">{pub['doi']}</a></dd></div>
 <div><dt>Zenodo</dt><dd><a href="{zenodo}">{zenodo}</a></dd></div>
 <div><dt>Local metadata</dt><dd><a href="{url}">{url}</a></dd></div>
 <div><dt>Author</dt><dd><a href="https://orcid.org/{ORCID}">ORCID {ORCID}</a></dd></div>
-</dl></section>
+</dl>
+<p class="machine-disclaimer">This landing page provides accessible summaries and citation metadata for an archival preprint. The authoritative manuscript and downloadable files are maintained on the Zenodo DOI record. Wave Confinement Theory is an evolving independent framework; claims should be evaluated according to the derivations, simulations, experiments, data analyses, assumptions, and limitations stated in the paper itself.</p>
+</section>
 </article></main>
 <footer class="paper-footer"><div class="section-shell"><a href="./">← Publication archive</a><span>Wave Confinement Theory research program</span></div></footer>
+<script>
+(function(){{
+  var text = (document.querySelector('[data-citation-text]') || {{}}).textContent || '';
+  var feedback = document.querySelector('[data-copy-feedback]');
+  document.querySelectorAll('[data-copy-citation]').forEach(function(btn){{
+    btn.addEventListener('click', function(){{
+      var done = function(){{
+        if (feedback) {{ feedback.hidden = false; }}
+        var prev = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(function(){{ btn.textContent = prev; if (feedback) feedback.hidden = true; }}, 2400);
+      }};
+      if (navigator.clipboard && navigator.clipboard.writeText) {{
+        navigator.clipboard.writeText(text.trim()).then(done, done);
+      }} else {{ done(); }}
+    }});
+  }});
+}})();
+</script>
 </body></html>
 """
 
@@ -133,44 +253,184 @@ def paper_page(pub: dict) -> str:
 PAPER_CSS = """
 .paper-nav{display:flex;gap:22px}.paper-nav a{color:var(--muted);font-size:.84rem;font-weight:700;text-decoration:none}
 .paper-shell{width:min(calc(100% - 40px),920px);margin:auto;padding:90px 0 120px}
-.paper-header{padding-bottom:46px;border-bottom:1px solid var(--line)}
+.paper-header{padding-bottom:40px;border-bottom:1px solid var(--line)}
 .paper-kicker{margin:0 0 20px;color:var(--accent);font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-.paper-header h1{margin:0;font:500 clamp(2.6rem,6vw,5.35rem)/1.04 Georgia,serif;letter-spacing:-.038em}
+.paper-header h1{margin:0;font:500 clamp(2.4rem,5.4vw,4.6rem)/1.06 Georgia,serif;letter-spacing:-.034em}
 .citation_author{margin:28px 0 4px;font-size:1.25rem;font-weight:750}.paper-meta{margin:0;color:var(--muted)}
+.paper-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.paper-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--line-strong);border-radius:999px;font-size:.82rem;font-weight:650;color:var(--text)}
+.paper-chip .chip-label{color:var(--muted-2);font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.chip-status{border-color:rgba(103,212,255,.5);background:rgba(103,212,255,.07)}
 .paper-section{padding:42px 0;border-bottom:1px solid var(--line)}.paper-section h2{margin:0 0 18px;font:500 1.65rem/1.2 Georgia,serif}
-.paper-section>p{color:var(--muted);font-size:1.03rem}.formatted-citation{padding:20px;border-left:2px solid var(--accent);background:rgba(103,212,255,.045)}
-.paper-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.machine-note dl{margin:0}.machine-note dl div{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:12px 0;border-top:1px solid var(--line)}
+.paper-section>p{color:var(--muted);font-size:1.03rem;max-width:70ch}
+.paper-actions-section{padding-top:30px}
+.paper-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:0}.paper-section .paper-actions{margin-top:24px}
+button.button{cursor:pointer;font-family:inherit}
+.overview-grid{display:grid;gap:26px}
+.overview-block h3{margin:0 0 8px;font-size:.74rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.overview-block p{margin:0;color:var(--muted);font-size:1.02rem;max-width:70ch}
+.overview-list{margin:0;padding-left:1.1em;color:var(--muted);font-size:1.02rem;max-width:70ch}
+.overview-list li{margin:0 0 7px}
+.evidence-tags{display:flex;flex-wrap:wrap;gap:8px}
+.evidence-tag{padding:6px 11px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.02);font-size:.8rem;font-weight:650;color:var(--text)}
+.asset-list{margin:0}.asset-list div{display:grid;grid-template-columns:160px 1fr;gap:20px;padding:14px 0;border-top:1px solid var(--line)}
+.asset-list div:first-child{border-top:0;padding-top:0}
+.asset-list dt{color:var(--muted-2);font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.asset-list dd{margin:0;color:var(--muted)}.asset-list dd a{color:var(--text)}
+.related-list{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:12px}
+.related-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px}
+.rel-tag{flex:none;padding:4px 10px;border:1px solid rgba(139,124,255,.4);border-radius:999px;background:rgba(139,124,255,.08);font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--text)}
+.related-list a{color:var(--text);font-weight:600}.related-note{margin:0;color:var(--muted-2);font-size:.82rem}
+.formatted-citation{padding:20px;border-left:2px solid var(--accent);background:rgba(103,212,255,.045);overflow-wrap:anywhere}
+.copy-feedback{margin:14px 0 0;color:var(--accent-3);font-size:.85rem;font-weight:650}
+.machine-note dl{margin:0}.machine-note dl div{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:12px 0;border-top:1px solid var(--line)}
 .machine-note dt{color:var(--muted-2);font-size:.72rem;font-weight:800;text-transform:uppercase}.machine-note dd{margin:0;color:var(--muted);overflow-wrap:anywhere}
+.machine-disclaimer{margin:24px 0 0;color:var(--muted-2);font-size:.84rem;max-width:75ch}
 .paper-footer{padding:28px 0;border-top:1px solid var(--line);background:var(--bg-deep)}.paper-footer .section-shell{display:flex;justify-content:space-between;gap:20px;color:var(--muted-2);font-size:.78rem}
-.paper-footer a{text-decoration:none}@media(max-width:700px){.paper-nav{gap:12px}.paper-shell{width:min(calc(100% - 28px),920px);padding-top:60px}.paper-header h1{font-size:clamp(2.25rem,12vw,4rem)}
-.machine-note dl div{grid-template-columns:1fr;gap:4px}.paper-footer .section-shell{flex-direction:column}}
+.paper-footer a{text-decoration:none}
+@media(max-width:700px){.paper-nav{gap:12px}.paper-shell{width:min(calc(100% - 28px),920px);padding-top:60px}.paper-header h1{font-size:clamp(2.1rem,9vw,3.4rem)}
+.asset-list div{grid-template-columns:1fr;gap:4px}.machine-note dl div{grid-template-columns:1fr;gap:4px}.paper-footer .section-shell{flex-direction:column}}
 """.strip() + "\n"
 
 
+PUB_INDEX_CSS = """
+.pub-index-head{padding-bottom:42px;border-bottom:1px solid var(--line)}
+.pub-index-head h1{margin:0;font:500 clamp(3rem,7vw,6rem)/1 Georgia,serif;letter-spacing:-.04em}
+.pub-index-head p{max-width:760px;color:var(--muted)}
+.export-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.pub-controls{margin-top:46px;display:grid;gap:18px}
+.pub-search label,.pub-facet legend{display:block;margin:0 0 8px;color:var(--muted-2);font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.pub-search input{width:100%;padding:13px 15px;color:var(--text);border:1px solid var(--line-strong);border-radius:10px;background:rgba(255,255,255,.025)}
+.pub-search input::placeholder{color:var(--muted-2)}
+.pub-facets{display:flex;flex-wrap:wrap;gap:26px}
+.pub-facet{margin:0;padding:0;border:0;min-width:200px;flex:1 1 220px}
+.pub-facet select{width:100%;padding:11px 13px;color:var(--text);border:1px solid var(--line-strong);border-radius:10px;background:rgba(255,255,255,.025);font:inherit}
+.year-buttons{display:flex;flex-wrap:wrap;gap:8px}
+.year-buttons button{padding:9px 14px;color:var(--muted);border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.018);cursor:pointer;font-size:.78rem;font-weight:700}
+.year-buttons button[aria-pressed=true],.year-buttons button:hover{color:var(--text);border-color:rgba(103,212,255,.45);background:rgba(103,212,255,.08)}
+.pub-count{margin:30px 0 0;color:var(--muted-2);font-size:.82rem}
+.pub-index-list{border-top:1px solid var(--line);margin-top:16px}
+.pub-index-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+.pub-index-item[hidden]{display:none}
+.pub-index-item>span{color:var(--muted-2);font-family:Georgia,serif}
+.pub-index-meta{margin:0 0 9px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.pub-index-cat{color:var(--accent);font-size:.69rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.pub-index-date{color:var(--muted-2);font-size:.74rem}
+.pub-status{padding:4px 10px;border:1px solid rgba(103,212,255,.4);border-radius:999px;background:rgba(103,212,255,.07);font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
+.pub-index-item h2{margin:0;font:500 clamp(1.15rem,2.4vw,1.55rem)/1.25 Georgia,serif}
+.pub-index-item h2 a{text-decoration:none}
+.pub-index-item code{display:inline-block;margin-top:10px;color:var(--muted-2);font-size:.72rem}
+.pub-empty{padding:40px 0;color:var(--muted)}
+@media(max-width:600px){.pub-index-item{grid-template-columns:40px 1fr}}
+""".strip()
+
+
 def publications_index(pubs: list[dict]) -> str:
+    categories = sorted({p["category"] for p in pubs})
+    statuses = sorted({p.get("status", "Preprint") for p in pubs})
+    years = sorted({p["date"][:4] for p in pubs})
+
+    def search_blob(p: dict) -> str:
+        return " ".join([p["title"], p["category"], p.get("status", ""), p["doi"]]).lower()
+
     items = "\n".join(
-        f'<article class="pub-index-item"><span>{p["n"]:02d}</span><div>'
-        f'<p>{esc(p["category"])} · {p["display_date"]}</p>'
+        f'<article class="pub-index-item" data-category="{esc(p["category"])}" '
+        f'data-status="{esc(p.get("status", "Preprint"))}" data-year="{p["date"][:4]}" '
+        f'data-search="{esc(search_blob(p))}">'
+        f'<span>{p["n"]:02d}</span><div>'
+        f'<p class="pub-index-meta">'
+        f'<span class="pub-index-cat">{esc(p["category"])}</span>'
+        f'<span class="pub-index-date">{esc(p["display_date"])}</span>'
+        f'<span class="pub-status">{esc(p.get("status", "Preprint"))}</span></p>'
         f'<h2><a href="{p["slug"]}.html">{esc(p["title"])}</a></h2>'
         f'<code>{p["doi"]}</code></div></article>'
         for p in pubs
     )
+
+    cat_options = "".join(
+        f'<option value="{esc(c)}">{esc(c)}</option>' for c in categories
+    )
+    status_options = "".join(
+        f'<option value="{esc(s)}">{esc(s)}</option>' for s in statuses
+    )
+    year_btns = "".join(
+        f'<button type="button" data-year="{esc(y)}" aria-pressed="false">{esc(y)}</button>'
+        for y in years
+    )
+
     return f"""<!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
 <title>Publications | Richard J. Reyes</title>
-<meta name="description" content="Machine-readable publication landing pages for the Wave Confinement Theory research program.">
+<meta name="description" content="Searchable, machine-readable publication archive for the Wave Confinement Theory research program, with research-status labels, DOIs, and citation exports.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="{SITE}publications/">
+<link rel="author" href="https://orcid.org/{ORCID}">
 <link rel="alternate" type="application/atom+xml" href="{SITE}feed.xml">
 <link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="paper.css">
-<style>.pub-index-head{{padding-bottom:42px;border-bottom:1px solid var(--line)}}.pub-index-head h1{{margin:0;font:500 clamp(3rem,7vw,6rem)/1 Georgia,serif;letter-spacing:-.04em}}.pub-index-head p{{max-width:760px;color:var(--muted)}}.export-links{{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}}.pub-index-list{{border-top:1px solid var(--line);margin-top:48px}}.pub-index-item{{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}}.pub-index-item>span{{color:var(--muted-2);font-family:Georgia,serif}}.pub-index-item p{{margin:0 0 7px;color:var(--accent);font-size:.69rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}}.pub-index-item h2{{margin:0;font:500 clamp(1.15rem,2.4vw,1.55rem)/1.25 Georgia,serif}}.pub-index-item h2 a{{text-decoration:none}}.pub-index-item code{{display:inline-block;margin-top:9px;color:var(--muted-2);font-size:.72rem}}@media(max-width:600px){{.pub-index-item{{grid-template-columns:40px 1fr}}}}</style>
+<style>{PUB_INDEX_CSS}</style>
 </head><body>
-<header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark">R</span><span>{AUTHOR}</span></a><nav class="paper-nav"><a href="../#start">Start here</a><a href="../#about">About</a></nav></div></header>
+<a class="skip-link" href="#archive">Skip to publication list</a>
+<header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>{AUTHOR}</span></a><nav class="paper-nav" aria-label="Publication navigation"><a href="../#start">Start here</a><a href="../#about">About</a></nav></div></header>
 <main class="paper-shell"><header class="pub-index-head"><p class="paper-kicker">Scholarly archive</p><h1>Publications</h1>
-<p>Each release has a separate HTML landing page with visible citation data, DOI links, Highwire Press metadata, Dublin Core metadata, and Schema.org ScholarlyArticle markup.</p>
+<p>The complete, chronological archive of {len(pubs)} archival releases. Each release has its own landing page with a plain-language overview, a research-status label, DOI links, and Highwire Press, Dublin Core, and Schema.org ScholarlyArticle metadata.</p>
 <div class="export-links"><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="../publications.ris">RIS</a><a class="button secondary" href="../publications.json">JSON</a><a class="button secondary" href="../feed.xml">Atom feed</a></div></header>
-<section class="pub-index-list">{items}</section></main>
+<form class="pub-controls" role="search" aria-label="Filter publications" onsubmit="return false">
+<div class="pub-search"><label for="pub-q">Search titles, categories, and status</label>
+<input type="search" id="pub-q" data-search-input placeholder="e.g. Koide, open data, foundational proposal, 10.5281…" autocomplete="off"></div>
+<div class="pub-facets">
+<fieldset class="pub-facet"><legend><label for="pub-cat">Category</label></legend>
+<select id="pub-cat" data-filter-category><option value="">All categories</option>{cat_options}</select></fieldset>
+<fieldset class="pub-facet"><legend><label for="pub-status">Research status</label></legend>
+<select id="pub-status" data-filter-status><option value="">All statuses</option>{status_options}</select></fieldset>
+<fieldset class="pub-facet"><legend>Publication year</legend>
+<div class="year-buttons" data-year-buttons><button type="button" data-year="" aria-pressed="true">All</button>{year_btns}</div></fieldset>
+</div></form>
+<p class="pub-count" role="status" aria-live="polite" data-pub-count>Showing all {len(pubs)} releases.</p>
+<section class="pub-index-list" id="archive">{items}
+<p class="pub-empty" data-pub-empty hidden>No publications match the current filters. <button type="button" class="button secondary" data-pub-reset>Clear filters</button></p></section></main>
 <footer class="paper-footer"><div class="section-shell"><a href="../">← Research home</a><span>{len(pubs)} archival releases</span></div></footer>
+<script>
+(function(){{
+  var items=[].slice.call(document.querySelectorAll('.pub-index-item'));
+  var q=document.querySelector('[data-search-input]');
+  var cat=document.querySelector('[data-filter-category]');
+  var status=document.querySelector('[data-filter-status]');
+  var yearWrap=document.querySelector('[data-year-buttons]');
+  var count=document.querySelector('[data-pub-count]');
+  var empty=document.querySelector('[data-pub-empty]');
+  var total=items.length;
+  var year='';
+  function apply(){{
+    var term=(q.value||'').trim().toLowerCase();
+    var c=cat.value, s=status.value, shown=0;
+    items.forEach(function(it){{
+      var ok=(!term||it.dataset.search.indexOf(term)>-1)
+        &&(!c||it.dataset.category===c)
+        &&(!s||it.dataset.status===s)
+        &&(!year||it.dataset.year===year);
+      it.hidden=!ok; if(ok)shown++;
+    }});
+    if(empty)empty.hidden=shown!==0;
+    if(count)count.textContent=shown===total?('Showing all '+total+' releases.'):('Showing '+shown+' of '+total+' releases.');
+  }}
+  q&&q.addEventListener('input',apply);
+  cat&&cat.addEventListener('change',apply);
+  status&&status.addEventListener('change',apply);
+  yearWrap&&yearWrap.addEventListener('click',function(e){{
+    var b=e.target.closest('button[data-year]'); if(!b)return;
+    year=b.dataset.year;
+    yearWrap.querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',String(x===b));}});
+    apply();
+  }});
+  var reset=document.querySelector('[data-pub-reset]');
+  reset&&reset.addEventListener('click',function(){{
+    q.value='';cat.value='';status.value='';year='';
+    yearWrap.querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',String(x.dataset.year===''));}});
+    apply();
+  }});
+}})();
+</script>
 </body></html>"""
 
 
@@ -227,6 +487,7 @@ def build_json(pubs: list[dict]) -> str:
                 "zenodoRecord": record_url(p["doi"]),
                 "landingPage": local_url(p["slug"]),
                 "category": p["category"],
+                "status": p.get("status", "Preprint"),
                 "abstract": p["summary"],
             }
         )
@@ -376,8 +637,9 @@ def main() -> None:
     pubs = data["publications"]
     PUB_DIR.mkdir(parents=True, exist_ok=True)
 
+    titles = {p["slug"]: p["title"] for p in pubs}
     for pub in pubs:
-        (PUB_DIR / f"{pub['slug']}.html").write_text(paper_page(pub), encoding="utf-8")
+        (PUB_DIR / f"{pub['slug']}.html").write_text(paper_page(pub, titles), encoding="utf-8")
     (PUB_DIR / "paper.css").write_text(PAPER_CSS, encoding="utf-8")
     (PUB_DIR / "index.html").write_text(publications_index(pubs), encoding="utf-8")
 

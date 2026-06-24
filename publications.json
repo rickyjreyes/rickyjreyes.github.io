@@ -20,6 +20,7 @@
       "zenodoRecord": "https://zenodo.org/records/15644222",
       "landingPage": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
       "category": "Primary WCT foundation",
+      "status": "Foundational proposal",
       "abstract": "Wave Confinement Theory proposes that mass, force, and effective spacetime geometry emerge from confined oscillatory fields. The preprint develops a curvature-feedback field framework in which nonlinear wave dynamics, entropy regulation, phase organization, and resonance stabilize localized structure."
     },
     {
@@ -39,6 +40,7 @@
       "zenodoRecord": "https://zenodo.org/records/15596159",
       "landingPage": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
       "category": "Primary WCT foundation",
+      "status": "Mathematical derivation",
       "abstract": "This preprint examines whether fundamental constants can be represented as structural consequences of resonance geometry and curvature-regulated standing waves. It develops mappings between confinement parameters, harmonic organization, information constraints, and candidate values for physical constants."
     },
     {
@@ -58,6 +60,7 @@
       "zenodoRecord": "https://zenodo.org/records/17743607",
       "landingPage": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
       "category": "Computation and complexity",
+      "status": "Mathematical derivation",
       "abstract": "This work defines a curvature-bounded wave-computation model and studies complexity classes internal to that model. Its separation claim is explicitly model-relative: it concerns P_WCC and NP_WCC under the stated physical and geometric constraints rather than claiming an unrestricted proof of the classical P versus NP problem."
     },
     {
@@ -77,6 +80,7 @@
       "zenodoRecord": "https://zenodo.org/records/17206381",
       "landingPage": "https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html",
       "category": "Experiment and physical systems",
+      "status": "Preliminary observation",
       "abstract": "This experimental report describes long-lived optical and harmonic behavior observed in chilled water cavities after excitation. It presents the apparatus, persistence observations, perturbation and relocking behavior, spectral measurements, and the control limitations that must be resolved by independent replication."
     },
     {
@@ -96,6 +100,7 @@
       "zenodoRecord": "https://zenodo.org/records/17732661",
       "landingPage": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
       "category": "AI architecture",
+      "status": "Control architecture",
       "abstract": "This architecture proposal maps resonance, coherence, bounded curvature, contradiction control, and Lyapunov-like stabilization into an artificial-intelligence substrate. It is presented as a physically bounded design framework and research specification, not as a completed artificial general intelligence implementation."
     },
     {
@@ -115,6 +120,7 @@
       "zenodoRecord": "https://zenodo.org/records/17081283",
       "landingPage": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
       "category": "Mass, geometry, and dimensionality",
+      "status": "Mathematical derivation",
       "abstract": "This work argues that stable curvature-locked confinement in the stated WCT framework is restricted to at most three spatial dimensions. It combines Sobolev control, Lyapunov scaling, entropy localization, topology, and curvature-feedback behavior into several routes toward the same dimensional stability bound."
     },
     {
@@ -134,6 +140,7 @@
       "zenodoRecord": "https://zenodo.org/records/17578766",
       "landingPage": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
       "category": "Primary WCT foundation",
+      "status": "Foundational proposal",
       "abstract": "Phase-Flux Field defines a pre-WCT substrate in terms of observable energy density, flux, and phase. The work develops conservation and causal-flow constraints, a finite-wavenumber Lyapunov band-pass, shell quantization, a zero-wave invariant state, and a D4-to-continuum construction."
     },
     {
@@ -153,6 +160,7 @@
       "zenodoRecord": "https://zenodo.org/records/17732648",
       "landingPage": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
       "category": "Spectral dynamics",
+      "status": "Numerical study",
       "abstract": "This work studies the numerical evolution of broadband or random fields toward finite-band spectral support and eigenmode-like organization. It connects spectral entropy reduction, annular Fourier support, mode competition, Lyapunov descent, and Swift–Hohenberg-type dynamics."
     },
     {
@@ -172,6 +180,7 @@
       "zenodoRecord": "https://zenodo.org/records/17459463",
       "landingPage": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
       "category": "Mass and geometry",
+      "status": "Mathematical derivation",
       "abstract": "This preprint develops a geometric model in which effective mass arises from vibrational energy constrained to curved, torsional, or solenoidal paths. It relates loop geometry, phase delay, curvature, torsion, and confinement to inertial behavior and cavity-scale predictions."
     },
     {
@@ -191,6 +200,7 @@
       "zenodoRecord": "https://zenodo.org/records/20533537",
       "landingPage": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
       "category": "Mass and geometry",
+      "status": "Mathematical derivation",
       "abstract": "This work formulates a covariant locking principle connecting closed-loop curvature and torsion to effective wavenumber and rest energy. It defines density-weighted geometric averages, a locking action, stationarity conditions, and the proposed mass relation E_rest = ℏ c k_eff."
     },
     {
@@ -210,6 +220,7 @@
       "zenodoRecord": "https://zenodo.org/records/17715872",
       "landingPage": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
       "category": "Experiment and detectability",
+      "status": "Phenomenological study",
       "abstract": "This study evaluates whether WCT-motivated log-energy or ghost-mode modulations could survive JUNO detector resolution, smearing, and systematic limitations. It derives detectability conditions and amplitude-damping estimates intended to define a falsifiable detector-facing forecast."
     },
     {
@@ -229,6 +240,7 @@
       "zenodoRecord": "https://zenodo.org/records/17732642",
       "landingPage": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
       "category": "Computation and complexity",
+      "status": "Mathematical derivation",
       "abstract": "This work defines a discrete wave-constrained computation model and studies its relation to classical Turing computation. It focuses on encoding, simulation, and equivalence conditions for the classical P and NP classes under the stated discrete model."
     },
     {
@@ -248,6 +260,7 @@
       "zenodoRecord": "https://zenodo.org/records/17783074",
       "landingPage": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
       "category": "Computation and complexity",
+      "status": "Audit or technical note",
       "abstract": "This technical and philosophical critique argues that classical complexity theory abstracts away physical resource and interface constraints that matter for realizable computation. It proposes reframing complexity claims through explicit computational substrates and resource models."
     },
     {
@@ -267,6 +280,7 @@
       "zenodoRecord": "https://zenodo.org/records/17887562",
       "landingPage": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
       "category": "Mass-spectrum phenomenology",
+      "status": "Phenomenological study",
       "abstract": "This work develops a curvature-harmonic model for Koide-like fermion mass triplets. It relates loop geometry, harmonic sidebands, effective spin structure, and scale-free ratios to the charged-lepton value Q = 2/3, while treating the result as a WCT phenomenological derivation."
     },
     {
@@ -286,6 +300,7 @@
       "zenodoRecord": "https://zenodo.org/records/17957713",
       "landingPage": "https://rickyjreyes.github.io/publications/photodiode-prediction-protocol-ledger.html",
       "category": "Experiment and protocol",
+      "status": "Experimental protocol",
       "abstract": "This release records a dated experimental protocol, predicted observables, pass and fail conditions, and reproducibility requirements for photodiode harmonic-state tests. Its purpose is to distinguish predeclared predictions from later analysis and to define the controls needed for falsification."
     },
     {
@@ -305,6 +320,7 @@
       "zenodoRecord": "https://zenodo.org/records/18936949",
       "landingPage": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
       "category": "Mass and geometry",
+      "status": "Mathematical derivation",
       "abstract": "This work applies the logarithmic transform u = ln ψ to the WCT curvature operator, connecting it to viscous Hamilton–Jacobi and Cole–Hopf structures. It then develops a filament-localization and loop-geometry model for the charged-lepton mass spectrum."
     },
     {
@@ -324,6 +340,7 @@
       "zenodoRecord": "https://zenodo.org/records/19578185",
       "landingPage": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
       "category": "Applied control architecture",
+      "status": "Control architecture",
       "abstract": "This engineering proposal applies resonance and coherence concepts to diagnostics-driven tokamak control. It develops transport proxies, actuator allocation, safety margins, energy-accounting gates, and simulated handoff logic; the architecture remains distinct from demonstrating physical wall-power independence."
     },
     {
@@ -343,6 +360,7 @@
       "zenodoRecord": "https://zenodo.org/records/19705254",
       "landingPage": "https://rickyjreyes.github.io/publications/curvature-log-periodic-c9-deformation.html",
       "category": "Collider phenomenology",
+      "status": "Phenomenological study",
       "abstract": "This phenomenological study introduces a WCT-motivated log-periodic deformation of C9(q²) and compares it with a constant-shift description of the LHCb anomaly. It examines frequency scans, null behavior, and the covariance and look-elsewhere limitations of the available data."
     },
     {
@@ -362,6 +380,7 @@
       "zenodoRecord": "https://zenodo.org/records/20164333",
       "landingPage": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
       "category": "Collider open-data analysis",
+      "status": "Open-data analysis",
       "abstract": "This open-data analysis searches B⁰ → K*⁰ μ⁺μ⁻ candidate spectra for log-domain residual structure, active-domain winding, and Koide-like comb geometry. It includes KDE baseline repair, sideband and charm-continuum controls, veto-window covariance, and explicit non-discovery caveats."
     },
     {
@@ -381,6 +400,7 @@
       "zenodoRecord": "https://zenodo.org/records/20142976",
       "landingPage": "https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html",
       "category": "AI prediction audit",
+      "status": "Audit or technical note",
       "abstract": "This technical note audits dated 2025 claims about recursive AI drift against later external developments and model behavior. It separates chronology, correspondence, partial support, failures, and unresolved questions rather than treating later events as direct validation of the full architecture."
     },
     {
@@ -400,6 +420,7 @@
       "zenodoRecord": "https://zenodo.org/records/20435463",
       "landingPage": "https://rickyjreyes.github.io/publications/nist-bin-stable-log-periodic-structure.html",
       "category": "Atomic open-data analysis",
+      "status": "Open-data analysis",
       "abstract": "This work reports a reproducible log-cosine line-density scan over public NIST Atomic Spectra Database exports. The canonical Fe II analysis tests bin stability, active-domain winding, Poisson-bootstrap nulls, neighboring ions, implementation parity, and baseline sensitivity; NIST is the data provider only."
     },
     {
@@ -419,6 +440,7 @@
       "zenodoRecord": "https://zenodo.org/records/19122146",
       "landingPage": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
       "category": "Cryptographic research",
+      "status": "Cryptographic prototype",
       "abstract": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work is an experimental cryptographic research artifact with adversarial tests, prototype signatures and ledger components, and explicit unresolved security proof obligations; it is not production cryptography."
     }
   ]
