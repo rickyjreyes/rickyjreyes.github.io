@@ -1,0 +1,22 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Richard J. Reyes Research Site",
+  "description": "Static research discovery site and machine-readable publication archive for Wave Confinement Theory and related work.",
+  "codeRepository": "https://github.com/rickyjreyes/rickyjreyes.github.io",
+  "url": "https://rickyjreyes.github.io/",
+  "author": {
+    "@type": "Person",
+    "givenName": "Richard J.",
+    "familyName": "Reyes",
+    "@id": "https://orcid.org/0009-0005-5975-8718"
+  },
+  "dateCreated": "2026-06-24",
+  "programmingLanguage": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Python"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}

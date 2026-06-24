@@ -1,0 +1,18 @@
+# Richard J. Reyes Research Archive
+
+> Public discovery map for Wave Confinement Theory (WCT), related experiments, open-data analyses, computation, AI architecture, and resonance-control research.
+
+## Canonical entry points
+- Research home: https://rickyjreyes.github.io/
+- Publication archive: https://rickyjreyes.github.io/publications/
+- Main code and paper hub: https://github.com/rickyjreyes/geometry_of_resonance
+- ORCID: https://orcid.org/0009-0005-5975-8718
+- Machine-readable publication metadata: https://rickyjreyes.github.io/publications.json
+- BibTeX: https://rickyjreyes.github.io/publications.bib
+- RIS: https://rickyjreyes.github.io/publications.ris
+
+## Claim discipline
+WCT is an evolving independent research framework, not an established physical theory. Distinguish definitions, ansätze, derivations, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions.
+
+## DOI authority
+Zenodo is the archival publisher and DOI landing-page authority for the listed releases. Use the DOI URLs on each publication page for citation.

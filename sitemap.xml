@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://rickyjreyes.github.io/</loc>
-    <lastmod>2026-06-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://rickyjreyes.github.io/</loc><lastmod>2026-06-24</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/</loc><lastmod>2026-06-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/geometry-of-resonance.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/phase-flux-field.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/photodiode-prediction-protocol-ledger.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/curvature-log-periodic-c9-deformation.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/nist-bin-stable-log-periodic-structure.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
 </urlset>
