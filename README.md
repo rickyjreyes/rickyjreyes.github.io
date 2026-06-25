@@ -11,16 +11,18 @@ The site is optimized for readability, access, and research navigation. A new re
 - What does each paper ask, claim, and rely on for evidence?
 - What is established, preliminary, proposed, or unresolved?
 - How can the work be cited or reproduced?
+- How can the core concepts be explored visually? (interactive glossary, equation explorer, maps, timeline, dependency graph, and toy simulation playground)
 
 Three destinations are kept distinct throughout:
 
-- **This website** — accessible summaries, research-status labels, and publication discovery.
+- **This website** — accessible summaries, research-status labels, publication discovery, and [interactive research tools](https://rickyjreyes.github.io/tools/).
 - **GitHub research hub** ([`geometry_of_resonance`](https://github.com/rickyjreyes/geometry_of_resonance)) — equations, manuscripts, simulations, and the technical archive.
 - **Zenodo** — permanent DOI records and downloadable releases.
 
 ## Structure
 
 - `index.html` — homepage: identity, the WCT idea, the four-paper reading path, research branches, latest releases, and the archive link.
+- `tools/index.html` — standalone interactive WCT tools: glossary hover cards, equation explorer, concept graph, research timeline, paper dependency graph, and educational simulation playground.
 - `publications/` — generated per-publication landing pages plus the searchable archive (`publications/index.html`).
 - `data/publications.json` — the single source of truth for every publication (title, date, DOI, category, research-status label, plain-language overview, evidence type, limitations, assets, and related works).
 - `scripts/build_scholar_site.py` — generates the publication pages, archive index, and all machine-readable exports.
