@@ -1,14 +1,14 @@
-/* Load the canonical public Obsidian vault indexes into the interactive tools page.
-   Existing embedded data remains as an offline fallback. */
+/* Load local Obsidian corpus snapshots copied into rickyjreyes.github.io/tools/data.
+   Existing embedded page data remains as an offline fallback. */
 (function () {
   'use strict';
 
-  const RAW = 'https://raw.githubusercontent.com/rickyjreyes/obsidian/main/';
+  const LOCAL = './data/';
   const SOURCES = {
-    glossary: RAW + 'Research/03%20Glossary/WCT%20Glossary.md',
-    equations: RAW + 'Research/04%20Equations/90%20Source/EQUATIONS.md',
-    master: RAW + 'Research/04%20Equations/90%20Source/MASTER_EQUATIONS.md',
-    chronology: RAW + 'Research/00%20Maps/Chronology.md'
+    glossary: LOCAL + 'wct-glossary.md',
+    equations: LOCAL + 'equations.md',
+    master: LOCAL + 'master-equations.md',
+    chronology: LOCAL + 'chronology.md'
   };
 
   const clean = value => String(value || '')
@@ -45,7 +45,7 @@
       if (!name || !definition || seen.has(name.toLowerCase())) continue;
       seen.add(name.toLowerCase());
       const family = familyForTerm(name, definition);
-      found.push([name, definition, family, '', 'Imported from the Obsidian concept and glossary layer.']);
+      found.push([name, definition, family, '', 'Imported from the local Obsidian snapshot stored in this website repository.']);
     }
     return found.sort((a, b) => a[0].localeCompare(b[0]));
   }
@@ -94,16 +94,16 @@
       if (!mathMatches.length) return;
       const latex = mathMatches.slice(0, 3).map(m => (m[1] || m[2] || '').trim()).filter(Boolean).join('\\qquad ');
       const beforeMath = chunk.slice(0, mathMatches[0].index);
-      const meaning = stripMarkdown(beforeMath) || 'Canonical equation from the Obsidian equation corpus.';
+      const meaning = stripMarkdown(beforeMath) || 'Canonical equation from the local Obsidian snapshot.';
       rows.push({
         id,
         family: equationFamily(id, title),
         title,
         meaning: meaning.slice(0, 420),
         latex,
-        symbols: ['See the linked Obsidian atomic equation note for full symbol and dependency metadata.'],
-        use: ['Imported from ' + sourceLabel + '.', 'Part of the canonical Obsidian equation corpus.'],
-        status: 'Source-preserving import. The vault does not silently repair or validate mathematical claims.'
+        symbols: ['See the Obsidian atomic equation note for full symbol and dependency metadata.'],
+        use: ['Imported from local tools/data/' + sourceLabel + '.', 'Part of the canonical Obsidian equation corpus.'],
+        status: 'Source-preserving import. The website stores a snapshot copied from rickyjreyes/obsidian.'
       });
     });
     return rows;
@@ -115,7 +115,7 @@
     let match;
     while ((match = rx.exec(markdown))) {
       const full = match[0].match(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/);
-      rows.push([match[1], clean((full && (full[2] || full[1])) || match[2]), 'Dated archival release in the Obsidian chronology.']);
+      rows.push([match[1], clean((full && (full[2] || full[1])) || match[2]), 'Dated archival release from the local Obsidian chronology snapshot.']);
     }
     return rows;
   }
@@ -151,7 +151,7 @@
   }
 
   async function sync() {
-    showSyncStatus('Loading the canonical Obsidian glossary, equation corpus, and chronology…');
+    showSyncStatus('Loading local Obsidian snapshots from this website repository…');
     try {
       const [glossaryMd, equationsMd, masterMd, chronologyMd] = await Promise.all([
         getText(SOURCES.glossary), getText(SOURCES.equations), getText(SOURCES.master), getText(SOURCES.chronology)
@@ -165,8 +165,8 @@
       }
 
       const importedEquations = [
-        ...parseEquationDocument(masterMd, 'MASTER_EQUATIONS.md'),
-        ...parseEquationDocument(equationsMd, 'EQUATIONS.md')
+        ...parseEquationDocument(masterMd, 'master-equations.md'),
+        ...parseEquationDocument(equationsMd, 'equations.md')
       ];
       const uniqueEquations = [];
       const seen = new Set();
@@ -190,10 +190,10 @@
         ).join('');
       }
 
-      showSyncStatus(`Loaded ${importedTerms.length} glossary terms, ${uniqueEquations.length} rendered equations, and ${importedChronology.length} chronology entries from rickyjreyes/obsidian.`);
+      showSyncStatus(`Loaded ${importedTerms.length} glossary terms, ${uniqueEquations.length} rendered equations, and ${importedChronology.length} chronology entries from local rickyjreyes.github.io/tools/data snapshots.`);
     } catch (error) {
-      console.error('Obsidian sync failed:', error);
-      showSyncStatus('The live Obsidian import could not be loaded; the embedded fallback glossary, equations, and chronology remain available.', true);
+      console.error('Local Obsidian snapshot load failed:', error);
+      showSyncStatus('The local Obsidian snapshots are not present yet. Run the “Sync Obsidian corpus into tools” GitHub Action; embedded fallback content remains available.', true);
     }
   }
 
