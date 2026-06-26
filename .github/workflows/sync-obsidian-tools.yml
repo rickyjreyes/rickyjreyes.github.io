@@ -1,0 +1,49 @@
+name: Sync Obsidian corpus into tools
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 9 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync-obsidian-tools:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+        with:
+          path: site
+
+      - name: Checkout Obsidian corpus
+        uses: actions/checkout@v4
+        with:
+          repository: rickyjreyes/obsidian
+          path: obsidian
+
+      - name: Copy corpus snapshots
+        run: |
+          set -euo pipefail
+          mkdir -p site/tools/data
+          cp "obsidian/Research/03 Glossary/WCT Glossary.md" "site/tools/data/wct-glossary.md"
+          cp "obsidian/Research/04 Equations/90 Source/EQUATIONS.md" "site/tools/data/equations.md"
+          cp "obsidian/Research/04 Equations/90 Source/MASTER_EQUATIONS.md" "site/tools/data/master-equations.md"
+          cp "obsidian/Research/04 Equations/00 Equations Index.md" "site/tools/data/equations-index.md"
+          cp "obsidian/Research/00 Maps/Chronology.md" "site/tools/data/chronology.md"
+          date -u +"Synced from rickyjreyes/obsidian at %Y-%m-%dT%H:%M:%SZ" > site/tools/data/SYNCED_FROM_OBSIDIAN.txt
+
+      - name: Commit synced corpus files
+        working-directory: site
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/data
+          if git diff --cached --quiet; then
+            echo "No Obsidian corpus changes to commit."
+          else
+            git commit -m "Sync Obsidian corpus snapshots for tools"
+            git push
+          fi
