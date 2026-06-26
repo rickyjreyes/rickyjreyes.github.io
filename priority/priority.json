@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0",
+  "author": {
+    "name": "Richard J. Reyes",
+    "orcid": "0009-0005-5975-8718"
+  },
+  "canonicalArchive": "https://rickyjreyes.github.io/publications/",
+  "claims": [
+    {"id":"WCT-CORE-001","claim":"Wave Confinement Theory as a geometric framework in which mass, force, spectra, and effective spacetime geometry emerge from confined oscillatory fields.","title":"The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime","date":"2025-04-22","doi":"10.5281/zenodo.15644222"},
+    {"id":"WCT-CONST-001","claim":"Derivation program for physical constants from resonance geometry and wave confinement.","title":"Structure and Derivation of Physical Constants through Wave Confinement","date":"2025-04-26","doi":"10.5281/zenodo.15596159"},
+    {"id":"WCT-COMP-001","claim":"Curvature-bounded wave-computation classes and model-relative separation of P_WCC and NP_WCC.","title":"P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation","date":"2025-05-07","doi":"10.5281/zenodo.17743607"},
+    {"id":"WCT-EXP-001","claim":"Report of long-lived optical or harmonic behavior in water cavities after excitation.","title":"Observation of Long-Lived Photon Resonance Confinement in Water Cavities","date":"2025-05-17","doi":"10.5281/zenodo.17206381"},
+    {"id":"WCT-AI-001","claim":"Resonance-Confinement Architecture as a physically bounded substrate for safe superintelligence.","title":"Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence","date":"2025-06-11","doi":"10.5281/zenodo.17732661"},
+    {"id":"WCT-DIM-001","claim":"Proposed hard upper bound of three stable spatial dimensions under WCT confinement assumptions.","title":"Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory","date":"2025-08-13","doi":"10.5281/zenodo.17081283"},
+    {"id":"WCT-PFF-001","claim":"Phase-Flux Field substrate with zero-wave invariance, finite-k Lyapunov band-pass, shell quantization, and D4-to-continuum construction.","title":"Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory","date":"2025-09-08","doi":"10.5281/zenodo.17578766"},
+    {"id":"WCT-SPEC-001","claim":"Entropic eigenmode formation and finite-band Fourier support emerging from broadband or chaotic initial states.","title":"Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos","date":"2025-09-16","doi":"10.5281/zenodo.17732648"},
+    {"id":"WCT-MASS-001","claim":"Effective mass arising from solenoidal or curved topology of confined vibrational energy.","title":"Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy","date":"2025-10-27","doi":"10.5281/zenodo.17459463"},
+    {"id":"WCT-MASS-002","claim":"Density-weighted loop-curvature locking relation for rest energy and inertial mass.","title":"Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle","date":"2025-11-11","doi":"10.5281/zenodo.20533537"},
+    {"id":"WCT-NU-001","claim":"Detector-facing analysis of whether WCT ghost-mode neutrino modulations could survive JUNO resolution and smearing.","title":"JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos","date":"2025-11-20","doi":"10.5281/zenodo.17715872"},
+    {"id":"WCT-COMP-002","claim":"Discrete wave-constrained computation and classical Turing-equivalence analysis.","title":"Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP","date":"2025-11-26","doi":"10.5281/zenodo.17732642"},
+    {"id":"WCT-COMP-003","claim":"Argument that unrestricted classical P versus NP is physically incomplete when real computation is bounded by energy, geometry, and propagation.","title":"The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed","date":"2025-12-01","doi":"10.5281/zenodo.17783074"},
+    {"id":"WCT-CRYPTO-001","claim":"WaveLock one-way function based on bounded nonlinear PDE evolution.","title":"WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution","date":"2025-12-01","doi":"10.5281/zenodo.19122146"},
+    {"id":"WCT-PHOTO-001","claim":"Prediction and protocol ledger for long-lived harmonic state induction in photodiodes.","title":"Prediction & Protocol Ledger: Long-Lived Harmonic State Induction in Photodiodes","date":"2025-12","doi":"10.5281/zenodo.17957713"},
+    {"id":"WCT-KOIDE-001","claim":"Curvature-harmonic explanation of the charged-lepton Koide relation.","title":"Wave Confinement Theory Predicts the Koide Mass Relation","date":"2025-12-10","doi":"10.5281/zenodo.17887562"},
+    {"id":"WCT-LEPTON-001","claim":"Logarithmic curvature flow and filament localization as a proposed origin of the lepton mass spectrum.","title":"Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum","date":"2026-03-10","doi":"10.5281/zenodo.18936949"},
+    {"id":"WCT-FUSION-001","claim":"Self-sustaining resonance-control architecture for tokamak operation.","title":"Nuclear Fusion Tokamak with Self Sustaining Resonance","date":"2026-04-14","doi":"10.5281/zenodo.19578185"},
+    {"id":"WCT-LHCB-001","claim":"Curvature-induced log-periodic deformation of the Wilson coefficient C9(q²).","title":"A Curvature-Induced Log-Periodic Deformation of C9(q²)","date":"2026-04-23","doi":"10.5281/zenodo.19705254"},
+    {"id":"WCT-LHCB-002","claim":"Log-spectral and Koide-like winding analysis of open-data B0 to K*0 mu+mu- candidate spectra.","title":"Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B0 to K*0 mu+mu- Candidate Spectra","date":"2026-05-09","doi":"10.5281/zenodo.20164333"},
+    {"id":"WCT-AI-002","claim":"Timestamped external validation audit of Recursive AI Drift predictions.","title":"Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note","date":"2026-05","doi":"10.5281/zenodo.20142976"},
+    {"id":"WCT-NIST-001","claim":"Bin-stable log-periodic structure test in public NIST atomic line-density lists.","title":"Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List","date":"2026-05-28","doi":"10.5281/zenodo.20435463"}
+  ]
+}
