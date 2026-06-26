@@ -5,7 +5,8 @@
 **Richard J. Reyes**  
 ORCID: [0009-0005-5975-8718](https://orcid.org/0009-0005-5975-8718)  
 Research website: [https://rickyjreyes.github.io/](https://rickyjreyes.github.io/)  
-Publication archive: [https://rickyjreyes.github.io/publications/](https://rickyjreyes.github.io/publications/)
+Publication archive: [https://rickyjreyes.github.io/publications/](https://rickyjreyes.github.io/publications/)  
+Corpus identity metadata: [https://rickyjreyes.github.io/research-corpus.json](https://rickyjreyes.github.io/research-corpus.json)
 
 ## Citation rule
 
@@ -32,6 +33,7 @@ This corpus-level citation is for the publication index only. It does not replac
 ## Machine-readable citation sources
 
 - [Publication JSON](https://rickyjreyes.github.io/publications.json)
+- [Corpus identity metadata](https://rickyjreyes.github.io/research-corpus.json)
 - [BibTeX export](https://rickyjreyes.github.io/publications.bib)
 - [RIS export](https://rickyjreyes.github.io/publications.ris)
 - [Atom feed](https://rickyjreyes.github.io/feed.xml)
