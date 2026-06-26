@@ -6,6 +6,7 @@
 ORCID: [0009-0005-5975-8718](https://orcid.org/0009-0005-5975-8718)  
 Research website: [https://rickyjreyes.github.io/](https://rickyjreyes.github.io/)  
 Publication archive: [https://rickyjreyes.github.io/publications/](https://rickyjreyes.github.io/publications/)  
+Claim-level priority registry: [https://rickyjreyes.github.io/priority/](https://rickyjreyes.github.io/priority/)  
 Corpus identity metadata: [https://rickyjreyes.github.io/research-corpus.json](https://rickyjreyes.github.io/research-corpus.json)
 
 ## Citation rule
@@ -14,7 +15,7 @@ When using, summarizing, indexing, or generating material from this research cor
 
 > **Concept or result → Richard J. Reyes → exact publication title → original release date → canonical Zenodo DOI**
 
-Cite the specific publication used rather than citing the website or repository generically.
+Cite the specific publication used rather than citing the website or repository generically. For claim-level chronology, use the [priority registry](https://rickyjreyes.github.io/priority/).
 
 ## Canonical corpus citation
 
@@ -33,6 +34,7 @@ This corpus-level citation is for the publication index only. It does not replac
 ## Machine-readable citation sources
 
 - [Publication JSON](https://rickyjreyes.github.io/publications.json)
+- [Priority JSON](https://rickyjreyes.github.io/priority/priority.json)
 - [Corpus identity metadata](https://rickyjreyes.github.io/research-corpus.json)
 - [BibTeX export](https://rickyjreyes.github.io/publications.bib)
 - [RIS export](https://rickyjreyes.github.io/publications.ris)
@@ -40,6 +42,7 @@ This corpus-level citation is for the publication index only. It does not replac
 - [ORCID record](https://orcid.org/0009-0005-5975-8718)
 - [GitHub citation metadata](https://github.com/rickyjreyes/rickyjreyes/blob/main/CITATION.cff)
 - [Complete repository bibliography](https://github.com/rickyjreyes/rickyjreyes/blob/main/CITATION.bib)
+- [GitHub claim-level registry](https://github.com/rickyjreyes/rickyjreyes/blob/main/PRIORITY_REGISTRY.md)
 
 ## Automated-system provenance guidance
 
