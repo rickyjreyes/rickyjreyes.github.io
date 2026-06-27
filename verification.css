@@ -1,0 +1,210 @@
+.verification-section {
+  border-block: 1px solid var(--line);
+  background: radial-gradient(circle at 90% 12%, rgba(103, 212, 255, 0.08), transparent 24rem), rgba(4, 10, 18, 0.46);
+}
+
+.verification-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.verification-copy,
+.audit-summary {
+  padding: clamp(26px, 4vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(14, 29, 48, 0.76), rgba(8, 18, 31, 0.82));
+}
+
+.verification-copy h3,
+.equation-card h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.verification-copy h3 { font-size: clamp(1.55rem, 3vw, 2.25rem); }
+.verification-copy > p { color: var(--muted); }
+
+.verification-pipeline {
+  margin: 26px 0 0;
+  padding: 18px 20px;
+  overflow-x: auto;
+  color: var(--accent-3);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(4, 10, 18, 0.58);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.audit-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.audit-heading strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.audit-heading span {
+  color: var(--muted-2);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.audit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.audit-stat {
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(4, 10, 18, 0.46);
+}
+
+.audit-stat strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.audit-stat span {
+  color: var(--muted-2);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.audit-zero {
+  margin: 12px 0 0;
+  padding: 13px 15px;
+  color: var(--muted);
+  border-left: 2px solid var(--accent-3);
+  background: rgba(182, 255, 218, 0.045);
+  font-size: 0.8rem;
+}
+
+.equation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.equation-card {
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(9, 22, 37, 0.58);
+}
+
+.equation-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.equation-id,
+.equation-status {
+  font-size: 0.64rem;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.equation-id { color: var(--accent); }
+
+.equation-status {
+  padding: 4px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.equation-status.pass {
+  border-color: rgba(182, 255, 218, 0.35);
+  background: rgba(182, 255, 218, 0.06);
+}
+
+.equation-status.conditional {
+  border-color: rgba(255, 214, 133, 0.35);
+  background: rgba(255, 214, 133, 0.06);
+}
+
+.equation-card h3 { font-size: 1.3rem; }
+
+.equation-display {
+  margin: 24px 0;
+  padding: 22px 12px;
+  overflow-x: auto;
+  color: var(--text);
+  border-block: 1px solid var(--line);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.5vw, 1.22rem);
+  line-height: 1.8;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.equation-card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.equation-card .text-link {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.verification-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.verification-note {
+  margin: 22px 0 0;
+  color: var(--muted-2);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 980px) {
+  .verification-overview { grid-template-columns: 1fr; }
+  .equation-grid { grid-template-columns: 1fr; }
+  .equation-card { min-height: 0; }
+}
+
+@media (max-width: 560px) {
+  .audit-grid { grid-template-columns: 1fr 1fr; }
+  .verification-actions { flex-direction: column; }
+  .verification-actions .button { width: 100%; }
+}
