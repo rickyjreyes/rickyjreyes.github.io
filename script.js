@@ -28,6 +28,72 @@
   }
   if (year) year.textContent = String(new Date().getFullYear());
 
+  const navigationStyle = document.createElement('style');
+  navigationStyle.textContent = `
+    .clickable-card{position:relative;cursor:pointer;transition:transform 180ms ease,border-color 180ms ease,background 180ms ease}
+    .clickable-card:hover{transform:translateY(-4px);border-color:rgba(103,212,255,.38)!important;background-color:rgba(103,212,255,.035)}
+    .clickable-card:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+    .clickable-card a{position:relative;z-index:2}
+  `;
+  document.head.appendChild(navigationStyle);
+
+  const isExternal = (link) => {
+    try {
+      const url = new URL(link.href, location.href);
+      return /^https?:$/.test(url.protocol) && url.origin !== location.origin;
+    } catch {
+      return false;
+    }
+  };
+
+  document.querySelectorAll('a[href]').forEach((link) => {
+    if (!isExternal(link)) return;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    if (!link.title) link.title = 'Opens in a new tab';
+    const label = link.getAttribute('aria-label') || link.textContent.trim();
+    if (label && !label.includes('opens in a new tab')) {
+      link.setAttribute('aria-label', `${label} (opens in a new tab)`);
+    }
+  });
+
+  const cardSelectors = [
+    '.orientation-grid li',
+    '.branch-card',
+    '.release-card',
+    '.object-card',
+    '.source-card'
+  ];
+
+  document.querySelectorAll(cardSelectors.join(',')).forEach((card) => {
+    const primaryLink = card.querySelector('a[href]');
+    if (!primaryLink) return;
+
+    card.classList.add('clickable-card');
+    card.tabIndex = 0;
+    card.setAttribute('role', 'link');
+    card.setAttribute('aria-label', primaryLink.getAttribute('aria-label') || primaryLink.textContent.trim());
+
+    const openCard = () => {
+      if (primaryLink.target === '_blank') {
+        window.open(primaryLink.href, '_blank', 'noopener,noreferrer');
+      } else {
+        location.href = primaryLink.href;
+      }
+    };
+
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a,button,input,select,textarea,summary')) return;
+      openCard();
+    });
+
+    card.addEventListener('keydown', (event) => {
+      if (event.target !== card || !['Enter', ' '].includes(event.key)) return;
+      event.preventDefault();
+      openCard();
+    });
+  });
+
   const field = document.querySelector('.field-visual');
   if (!field) return;
 
