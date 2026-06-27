@@ -3,12 +3,14 @@
 > Public discovery map for Wave Confinement Theory (WCT), related experiments, open-data analyses, computation, AI architecture, and resonance-control research.
 
 ## Preferred website navigation
-- Equations and verification map: https://rickyjreyes.github.io/research-corpus/
-- All 142 equation IDs: https://rickyjreyes.github.io/equations/
+- Research home: https://rickyjreyes.github.io/
+- Publications: https://rickyjreyes.github.io/publications/
+- Equations and definitions: https://rickyjreyes.github.io/equations/
 - Complete SymPy audit: https://rickyjreyes.github.io/sympy/
 - Complete Lean coverage: https://rickyjreyes.github.io/lean/
-- Publication archive: https://rickyjreyes.github.io/publications/
-- WCT research corpus JSON: https://rickyjreyes.github.io/research-corpus.json
+- Research tools: https://rickyjreyes.github.io/tools/
+- Equations and verification map: https://rickyjreyes.github.io/research-corpus/
+- Machine-readable WCT corpus: https://rickyjreyes.github.io/research-corpus.json
 
 Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
 
@@ -20,34 +22,19 @@ Use the internal website pages first because they preserve navigation and backli
 - Lean theorem inventory: https://github.com/rickyjreyes/wct-lean/blob/main/THEOREMS.md
 - Semantic research graph: https://github.com/rickyjreyes/obsidian/blob/main/Research/00%20Maps/WCT%20Research%20Command%20Center.md
 
-Resolve a claim in this order:
-
-1. canonical equation ID and equation text;
-2. effective SymPy classification and checker;
-3. Lean theorem, definition, counterexample, TODO, or unmapped status;
-4. semantic graph links to papers, derivations, predictions, experiments, and evidence.
-
-## General entry points
-- Research home: https://rickyjreyes.github.io/
-- Main equation and paper hub: https://github.com/rickyjreyes/geometry_of_resonance
-- Symbolic audit repository: https://github.com/rickyjreyes/wct-sympy
-- Lean formalization repository: https://github.com/rickyjreyes/wct-lean
-- Semantic research graph repository: https://github.com/rickyjreyes/obsidian
-- ORCID: https://orcid.org/0009-0005-5975-8718
-- Machine-readable publication metadata: https://rickyjreyes.github.io/publications.json
-- BibTeX: https://rickyjreyes.github.io/publications.bib
-- RIS: https://rickyjreyes.github.io/publications.ris
+## Resolution order
+1. Canonical equation ID, formula, and definition.
+2. Effective SymPy classification and checker.
+3. Lean theorem, definition, counterexample, TODO, or unmapped status.
+4. Semantic graph links to papers, derivations, predictions, experiments, and evidence.
 
 ## Machine-reading rules
 - Preserve canonical object IDs exactly.
 - Treat per-object derived overrides as newer than older summary tables.
-- A SymPy PASS is an executable symbolic, dimensional, logical, numerical, or consistency result under declared assumptions; it is not automatically a Lean proof or empirical validation.
+- A SymPy PASS is not automatically a Lean proof or empirical validation.
 - Use PROVED only for named declarations accepted by the Lean kernel.
 - Distinguish PASS, CONDITIONAL, DEFINITION, OPEN, FAIL, and PROVED.
 - Report unresolved or missing mappings rather than inventing them.
 
 ## Claim discipline
 WCT is an evolving independent research framework, not an established physical theory. Distinguish definitions, ansätze, derivations, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions.
-
-## DOI authority
-Zenodo is the archival publisher and DOI landing-page authority for the listed releases. Use the DOI URLs on each publication page for citation.

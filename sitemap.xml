@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://rickyjreyes.github.io/</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://rickyjreyes.github.io/research-corpus/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://rickyjreyes.github.io/equations/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://rickyjreyes.github.io/sympy/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://rickyjreyes.github.io/lean/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://rickyjreyes.github.io/research-corpus.json</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rickyjreyes.github.io/publications/</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rickyjreyes.github.io/priority/</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://rickyjreyes.github.io/priority/priority.json</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://rickyjreyes.github.io/ATTRIBUTION.md</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/</loc><lastmod>2026-06-24</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://rickyjreyes.github.io/publications/</loc><lastmod>2026-06-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://rickyjreyes.github.io/publications/geometry-of-resonance.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
@@ -32,4 +24,11 @@
   <url><loc>https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://rickyjreyes.github.io/publications/nist-bin-stable-log-periodic-structure.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html</loc><lastmod>2026-06-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rickyjreyes.github.io/research-corpus/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://rickyjreyes.github.io/equations/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://rickyjreyes.github.io/sympy/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://rickyjreyes.github.io/lean/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://rickyjreyes.github.io/tools/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://rickyjreyes.github.io/research-corpus.json</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://rickyjreyes.github.io/priority/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
 </urlset>
