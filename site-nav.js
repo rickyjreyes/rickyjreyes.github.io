@@ -43,7 +43,12 @@
     menu.setAttribute('aria-controls', 'site-nav');
   }
 
-  if (insertedMenu) {
+  const legacyMenuController = [...document.scripts].some((script) => {
+    const src = script.getAttribute('src') || '';
+    return /(^|\/)script\.js$/.test(src);
+  });
+
+  if (insertedMenu || !legacyMenuController) {
     menu.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       menu.setAttribute('aria-expanded', String(open));
