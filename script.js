@@ -30,6 +30,8 @@
 
   const navigationStyle = document.createElement('style');
   navigationStyle.textContent = `
+    .orientation-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important}
+    .orientation-grid li:last-child{grid-column:auto!important}
     .clickable-card{position:relative;cursor:pointer;transition:transform 180ms ease,border-color 180ms ease,background 180ms ease}
     .clickable-card:hover{transform:translateY(-4px);border-color:rgba(103,212,255,.38)!important;background-color:rgba(103,212,255,.035)}
     .clickable-card:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
