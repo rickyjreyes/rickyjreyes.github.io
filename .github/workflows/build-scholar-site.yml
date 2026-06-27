@@ -9,6 +9,7 @@ on:
       - "scripts/build_equation_explorer.py"
       - "scripts/refine_equation_definitions.py"
       - "scripts/build_sympy_page.py"
+      - "scripts/optimize_math_rendering.py"
       - "scripts/patch_site_navigation.py"
       - "site-nav.js"
       - ".github/workflows/build-scholar-site.yml"
@@ -42,6 +43,9 @@ jobs:
 
       - name: Generate SymPy equation cards
         run: python scripts/build_sympy_page.py
+
+      - name: Optimize formula rendering
+        run: python scripts/optimize_math_rendering.py
 
       - name: Apply shared navigation and discovery patches
         run: python scripts/patch_site_navigation.py
