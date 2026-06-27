@@ -61,4 +61,15 @@
       }
     });
   }
+
+  document.querySelectorAll('.id-list span').forEach((span) => {
+    const id = span.textContent.trim();
+    if (!id) return;
+    const link = document.createElement('a');
+    link.id = id;
+    link.href = `/equations/#${encodeURIComponent(id)}`;
+    link.textContent = id;
+    link.title = `Open ${id} in the equation explorer`;
+    span.replaceWith(link);
+  });
 })();
