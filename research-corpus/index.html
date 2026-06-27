@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Machine-readable discovery page for the Wave Confinement Theory corpus by Richard J. Reyes, linking canonical equations, SymPy audits, Lean formalization, semantic graph records, and Zenodo sources.">
+  <meta name="author" content="Richard J. Reyes">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <link rel="canonical" href="https://rickyjreyes.github.io/research-corpus/">
+  <link rel="alternate" type="application/json" title="WCT research corpus JSON" href="https://rickyjreyes.github.io/research-corpus.json">
+  <link rel="author" href="https://orcid.org/0009-0005-5975-8718">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wave Confinement Theory Research Corpus">
+  <meta property="og:description" content="Canonical machine-readable map connecting WCT equations, symbolic audits, Lean declarations, semantic graph records, and DOI sources.">
+  <meta property="og:url" content="https://rickyjreyes.github.io/research-corpus/">
+  <meta name="twitter:card" content="summary">
+  <title>Wave Confinement Theory Research Corpus | Richard J. Reyes</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .corpus-hero { padding-top: clamp(5rem, 10vw, 8rem); }
+    .corpus-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .corpus-meta div, .object-card, .source-card, .rule-card { border: 1px solid rgba(255,255,255,.12); border-radius: 1rem; background: rgba(255,255,255,.035); padding: 1.25rem; }
+    .corpus-meta strong { display: block; font-size: clamp(1.5rem, 3vw, 2.35rem); }
+    .corpus-meta span { opacity: .78; }
+    .corpus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .object-card h3, .source-card h3, .rule-card h3 { margin-top: .2rem; }
+    .object-id { display: inline-flex; align-items: center; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: .25rem .65rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85rem; }
+    .status-row { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+    .status-pill { border-radius: 999px; padding: .3rem .7rem; background: rgba(255,255,255,.08); font-size: .85rem; }
+    .equation { overflow-x: auto; padding: .9rem 1rem; border-radius: .75rem; background: rgba(0,0,0,.28); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; line-height: 1.6; }
+    .compact-list { padding-left: 1.25rem; }
+    .compact-list li { margin: .45rem 0; }
+    .machine-callout { border-left: 4px solid currentColor; padding: 1rem 1.25rem; background: rgba(255,255,255,.045); border-radius: .75rem; }
+    .breadcrumb { margin-bottom: 1.5rem; }
+    .breadcrumb a { text-decoration: none; }
+    code { overflow-wrap: anywhere; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://rickyjreyes.github.io/#person",
+        "name": "Richard J. Reyes",
+        "alternateName": "Ricky Reyes",
+        "url": "https://rickyjreyes.github.io/",
+        "sameAs": [
+          "https://github.com/rickyjreyes",
+          "https://orcid.org/0009-0005-5975-8718",
+          "https://www.linkedin.com/in/rickyjreyes/"
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "@id": "https://rickyjreyes.github.io/research-corpus/#dataset",
+        "name": "Wave Confinement Theory Research Corpus",
+        "alternateName": "WCT Research Corpus",
+        "description": "Cross-repository manifest connecting canonical WCT equation identifiers to symbolic-audit classifications, Lean declarations or open obligations, semantic graph lookup keys, and archival publication sources.",
+        "url": "https://rickyjreyes.github.io/research-corpus/",
+        "creator": { "@id": "https://rickyjreyes.github.io/#person" },
+        "dateModified": "2026-06-27",
+        "version": "1.0.0",
+        "keywords": [
+          "Wave Confinement Theory",
+          "WCT",
+          "nonlinear wave dynamics",
+          "symbolic audit",
+          "Lean 4 formalization",
+          "SymPy",
+          "curvature feedback",
+          "finite-band selection"
+        ],
+        "distribution": {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://rickyjreyes.github.io/research-corpus.json"
+        },
+        "isBasedOn": [
+          "https://github.com/rickyjreyes/geometry_of_resonance",
+          "https://github.com/rickyjreyes/wct-sympy",
+          "https://github.com/rickyjreyes/wct-lean",
+          "https://github.com/rickyjreyes/obsidian"
+        ],
+        "includedInDataCatalog": {
+          "@type": "DataCatalog",
+          "name": "Richard J. Reyes Research Archive",
+          "url": "https://rickyjreyes.github.io/"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://rickyjreyes.github.io/research-corpus/#webpage",
+        "url": "https://rickyjreyes.github.io/research-corpus/",
+        "name": "Wave Confinement Theory Research Corpus",
+        "mainEntity": { "@id": "https://rickyjreyes.github.io/research-corpus/#dataset" },
+        "author": { "@id": "https://rickyjreyes.github.io/#person" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="nav-wrap">
+      <a class="wordmark" href="../" aria-label="Richard J. Reyes home">
+        <span class="mark" aria-hidden="true">R</span>
+        <span>Richard J. Reyes</span>
+      </a>
+      <nav id="site-nav" aria-label="Primary navigation">
+        <a href="../">Home</a>
+        <a href="../publications/">Publications</a>
+        <a href="../research-corpus.json">Raw JSON</a>
+        <a href="https://github.com/rickyjreyes/geometry_of_resonance">Technical hub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section section-shell corpus-hero" aria-labelledby="corpus-title">
+      <p class="breadcrumb"><a href="../">Research home</a> / Machine-readable corpus</p>
+      <div class="section-heading narrow">
+        <p class="eyebrow">Canonical discovery surface</p>
+        <h1 id="corpus-title">Wave Confinement Theory Research Corpus</h1>
+        <p>This page is the searchable HTML entry point for the WCT machine-readable corpus. It connects stable equation identifiers across the canonical equation registry, executable SymPy audit, Lean formalization, Obsidian semantic graph, and Zenodo publication record.</p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="button primary" href="../research-corpus.json">Open raw JSON</a>
+        <a class="button secondary" href="https://github.com/rickyjreyes/geometry_of_resonance">Canonical equations</a>
+        <a class="button secondary" href="https://github.com/rickyjreyes/wct-sympy">SymPy audit</a>
+        <a class="button secondary" href="https://github.com/rickyjreyes/wct-lean">Lean formalization</a>
+      </div>
+
+      <div class="corpus-meta" aria-label="Corpus summary">
+        <div><strong>1.0.0</strong><span>schema version</span></div>
+        <div><strong>142</strong><span>registered equation objects</span></div>
+        <div><strong>59</strong><span>SymPy PASS</span></div>
+        <div><strong>27</strong><span>CONDITIONAL</span></div>
+        <div><strong>26</strong><span>DEFINITION</span></div>
+        <div><strong>30</strong><span>OPEN</span></div>
+        <div><strong>0</strong><span>FAIL</span></div>
+      </div>
+    </section>
+
+    <section class="section section-shell" aria-labelledby="scope-title">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Scope and interpretation</p>
+        <h2 id="scope-title">A bridge across research layers—not a claim of physical validation.</h2>
+      </div>
+      <div class="machine-callout">
+        <p><strong>Status discipline:</strong> a SymPy <code>PASS</code> means an encoded algebraic, dimensional, logical, numerical, limiting, or consistency check passed under declared assumptions. It is not automatically a Lean proof or empirical validation. <code>PROVED</code> is reserved for named declarations accepted by the Lean kernel.</p>
+      </div>
+      <p>The JSON manifest currently exposes four representative cross-layer bridge objects while linking to the complete 142-object registries. Stable IDs must be preserved exactly; master objects, canonical equations, and supporting objects are related but must not be silently collapsed.</p>
+    </section>
+
+    <section class="section section-shell" aria-labelledby="objects-title">
+      <div class="section-heading">
+        <p class="eyebrow">Representative bridge objects</p>
+        <h2 id="objects-title">Canonical IDs connected across equations, SymPy, Lean, graph, and papers.</h2>
+      </div>
+
+      <div class="corpus-grid">
+        <article class="object-card">
+          <span class="object-id">E17 · alias M2</span>
+          <h3>Nonsingular curvature-feedback operator</h3>
+          <div class="status-row">
+            <span class="status-pill">SymPy: PASS</span>
+            <span class="status-pill">Lean: OPEN</span>
+          </div>
+          <p class="equation">Rε(ψ) = ψ̄ / (|ψ|² + ε²e<sup>−2α|ψ|²</sup>)<br>Θε[ψ] = −(Δψ)Rε(ψ)</p>
+          <p>The corrected modulus-squared denominator is positive for ε &gt; 0. Lean presently formalizes a counterexample to the historical scalar denominator and restricted-sector repairs; the complete complex operator remains an open formalization target.</p>
+          <p><a href="https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e17--nonsingular-curvature-feedback-operator">Canonical E17 source</a></p>
+        </article>
+
+        <article class="object-card">
+          <span class="object-id">E12 · alias M3</span>
+          <h3>Finite-band spectral relation</h3>
+          <div class="status-row">
+            <span class="status-pill">SymPy: PASS</span>
+            <span class="status-pill">Lean: PROVED support</span>
+          </div>
+          <p class="equation">λ<sub>grow</sub>(k) = r + a|k|² − b|k|⁴<br>k★ = √(a / 2b)</p>
+          <p>The canonical notation uses λ<sub>grow</sub> rather than σ(k) to avoid collision with curvature σ. Lean proves the one-mode polynomial symbol through <code>bandpass_oneMode_symbol</code>, not the full nonlinear pattern-selection theorem.</p>
+          <p><a href="https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e12--finite-band-dispersion-rail">Canonical E12 source</a></p>
+        </article>
+
+        <article class="object-card">
+          <span class="object-id">E6 · aliases M1, E7</span>
+          <h3>Density-weighted curvature mass relation</h3>
+          <div class="status-row">
+            <span class="status-pill">SymPy: PASS dimensions</span>
+            <span class="status-pill">Lean: PROVED dimensions</span>
+            <span class="status-pill">Physical identification: CONDITIONAL</span>
+          </div>
+          <p class="equation">E<sub>rest</sub> = ℏck<sub>eff</sub><br>m = (ℏ/c)k<sub>eff</sub><br>m = (ℏ/c)⟨σ⟩<sub>w</sub> when E5 assumptions hold</p>
+          <p>SymPy and Lean support dimensional closure. They do not establish that physical mass is generated by curvature. The locked-curvature form also depends on the exact-locking and weighting assumptions in E5.</p>
+          <p><a href="https://zenodo.org/records/20533537">Archival paper DOI record</a></p>
+        </article>
+
+        <article class="object-card">
+          <span class="object-id">E70 · aliases M4, E24, E67</span>
+          <h3>Spatial-dimensionality stability criterion</h3>
+          <div class="status-row">
+            <span class="status-pill">Embedding threshold: PASS</span>
+            <span class="status-pill">E70 stability implication: CONDITIONAL</span>
+            <span class="status-pill">Lean PDE coverage: OPEN</span>
+          </div>
+          <p class="equation">H²(Ω) ↪ L∞(Ω) when 2 &gt; n/2<br>integer n ⇒ n ≤ 3</p>
+          <p>The Sobolev embedding threshold is supported. It is not represented as proof that every WCT equilibrium is stable for n ≤ 3 or unstable for n ≥ 4. Continuum Sobolev and PDE stability results remain outside exact Lean coverage.</p>
+          <p><a href="https://zenodo.org/records/17081283">Archival dimensionality paper</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-shell" aria-labelledby="sources-title">
+      <div class="section-heading">
+        <p class="eyebrow">Source hierarchy</p>
+        <h2 id="sources-title">Where machines should resolve each layer.</h2>
+      </div>
+      <div class="corpus-grid">
+        <article class="source-card">
+          <h3>Canonical equations</h3>
+          <p>Stable master and equation IDs, corrected forms, assumptions, and scientific boundaries.</p>
+          <p><a href="https://github.com/rickyjreyes/geometry_of_resonance">geometry_of_resonance</a></p>
+        </article>
+        <article class="source-card">
+          <h3>Executable symbolic audit</h3>
+          <p>Per-object SymPy classifications, checkers, derived overrides, dimensions, counterexamples, and consistency tests.</p>
+          <p><a href="https://github.com/rickyjreyes/wct-sympy">wct-sympy</a></p>
+        </article>
+        <article class="source-card">
+          <h3>Kernel-checked formal support</h3>
+          <p>Lean definitions, conditional theorems, counterexamples, supporting lemmas, and explicitly open obligations.</p>
+          <p><a href="https://github.com/rickyjreyes/wct-lean">wct-lean</a></p>
+        </article>
+        <article class="source-card">
+          <h3>Semantic research graph</h3>
+          <p>Stable IDs, concepts, equations, papers, derivations, predictions, experiments, evidence, and chronology.</p>
+          <p><a href="https://github.com/rickyjreyes/obsidian">Obsidian research graph</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-shell" aria-labelledby="rules-title">
+      <div class="section-heading">
+        <p class="eyebrow">Machine-reading rules</p>
+        <h2 id="rules-title">Required distinctions for reliable answers.</h2>
+      </div>
+      <div class="corpus-grid">
+        <article class="rule-card">
+          <h3>Preserve identity</h3>
+          <ul class="compact-list">
+            <li>Use <code>canonical_id</code> as the primary key.</li>
+            <li>Keep aliases and supporting objects distinct.</li>
+            <li>Do not infer equivalence from similar names alone.</li>
+          </ul>
+        </article>
+        <article class="rule-card">
+          <h3>Respect status precedence</h3>
+          <ol class="compact-list">
+            <li>Per-object derived override</li>
+            <li>Executable SymPy registry</li>
+            <li>Canonical equation document</li>
+            <li>Narrative paper text</li>
+          </ol>
+        </article>
+        <article class="rule-card">
+          <h3>Separate validation layers</h3>
+          <ul class="compact-list">
+            <li>Symbolic check ≠ Lean proof</li>
+            <li>Lean proof ≠ empirical validation</li>
+            <li>Publication ≠ independent replication</li>
+          </ul>
+        </article>
+        <article class="rule-card">
+          <h3>Do not invent missing data</h3>
+          <p>Use null, empty arrays, <code>OPEN</code>, or an explicit unresolved status when a mapping, date, proof, or evidence record cannot be verified.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-shell" aria-labelledby="access-title">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Direct access</p>
+        <h2 id="access-title">Human-readable discovery plus machine-readable data.</h2>
+        <p>The HTML page is intended for search indexing and ordinary browsing. The JSON endpoint is the canonical structured manifest.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button primary" href="../research-corpus.json">Download or inspect JSON</a>
+        <a class="button secondary" href="../llms.txt">Read AI discovery instructions</a>
+        <a class="button secondary" href="../publications/">Browse publications</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-grid">
+      <div>
+        <a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a>
+        <p>Wave Confinement Theory research archive and machine-readable corpus.</p>
+      </div>
+      <div>
+        <h2>Corpus</h2>
+        <a href="./">HTML landing page</a>
+        <a href="../research-corpus.json">Raw JSON</a>
+        <a href="../llms.txt">llms.txt</a>
+      </div>
+      <div>
+        <h2>Research</h2>
+        <a href="https://github.com/rickyjreyes/geometry_of_resonance">WCT hub</a>
+        <a href="../publications/">Publications</a>
+        <a href="https://orcid.org/0009-0005-5975-8718">ORCID</a>
+      </div>
+    </div>
+    <div class="section-shell footer-bottom">
+      <span>© 2026 Richard J. Reyes</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
