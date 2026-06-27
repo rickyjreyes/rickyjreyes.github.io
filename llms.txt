@@ -2,14 +2,30 @@
 
 > Public discovery map for Wave Confinement Theory (WCT), related experiments, open-data analyses, computation, AI architecture, and resonance-control research.
 
+## Canonical machine-readable entry point
+- WCT research corpus: https://rickyjreyes.github.io/research-corpus.json
+
+The corpus manifest links canonical equation IDs across the Geometry of Resonance equation registry, the wct-sympy symbolic audit, the wct-lean formalization, the Obsidian semantic graph, and Zenodo DOI records.
+
 ## Canonical entry points
 - Research home: https://rickyjreyes.github.io/
 - Publication archive: https://rickyjreyes.github.io/publications/
-- Main code and paper hub: https://github.com/rickyjreyes/geometry_of_resonance
+- Main equation and paper hub: https://github.com/rickyjreyes/geometry_of_resonance
+- Symbolic audit: https://github.com/rickyjreyes/wct-sympy
+- Lean formalization: https://github.com/rickyjreyes/wct-lean
+- Semantic research graph: https://github.com/rickyjreyes/obsidian
 - ORCID: https://orcid.org/0009-0005-5975-8718
 - Machine-readable publication metadata: https://rickyjreyes.github.io/publications.json
 - BibTeX: https://rickyjreyes.github.io/publications.bib
 - RIS: https://rickyjreyes.github.io/publications.ris
+
+## Machine-reading rules
+- Preserve canonical object IDs exactly.
+- Treat per-object derived overrides as newer than older summary tables.
+- A SymPy PASS is an executable symbolic, dimensional, logical, numerical, or consistency result under declared assumptions; it is not automatically a Lean proof or empirical validation.
+- Use PROVED only for named declarations accepted by the Lean kernel.
+- Distinguish PASS, CONDITIONAL, DEFINITION, OPEN, FAIL, and PROVED.
+- Report unresolved or missing mappings rather than inventing them.
 
 ## Claim discipline
 WCT is an evolving independent research framework, not an established physical theory. Distinguish definitions, ansätze, derivations, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions.
