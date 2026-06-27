@@ -1,1 +1,353 @@
-{"author":"Richard J. Reyes","orcid":"0009-0005-5975-8718"}
+{
+  "schema_version": "1.0.0",
+  "corpus_id": "wct",
+  "name": "Wave Confinement Theory",
+  "description": "Machine-readable cross-repository manifest for the Wave Confinement Theory research corpus.",
+  "author": {
+    "name": "Richard J. Reyes",
+    "alternate_name": "Ricky Reyes",
+    "orcid": "0009-0005-5975-8718",
+    "homepage": "https://rickyjreyes.github.io/"
+  },
+  "canonical_root": "https://rickyjreyes.github.io/research-corpus.json",
+  "generated_at": "2026-06-27T12:06:29Z",
+  "license_note": "Repository-specific licenses and publication terms govern linked artifacts.",
+  "status_policy": {
+    "PASS": "The encoded algebraic, dimensional, logical, limiting, numerical, or consistency check succeeds under its declared assumptions.",
+    "CONDITIONAL": "Additional mathematical, domain, regularity, model, or empirical assumptions remain required.",
+    "DEFINITION": "The object is a definition, ansatz, or bookkeeping object rather than a theorem.",
+    "OPEN": "Analysis, formal proof, calibrated simulation, or experiment remains unresolved.",
+    "FAIL": "The encoded statement is contradicted by its assigned checker.",
+    "PROVED": "A named declaration is accepted by the Lean kernel under the hypotheses in its theorem statement."
+  },
+  "repositories": {
+    "canonical_equations": {
+      "name": "geometry_of_resonance",
+      "url": "https://github.com/rickyjreyes/geometry_of_resonance",
+      "master_equations": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_MASTER_EQUATIONS_UPDATED.md",
+      "full_equation_registry": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md"
+    },
+    "symbolic_audit": {
+      "name": "wct-sympy",
+      "url": "https://github.com/rickyjreyes/wct-sympy",
+      "registry": "https://github.com/rickyjreyes/wct-sympy/blob/main/equations/full_registry.yaml",
+      "derived_overrides": "https://github.com/rickyjreyes/wct-sympy/blob/main/equations/derived_overrides.yaml",
+      "lean_map": "https://github.com/rickyjreyes/wct-sympy/blob/main/interoperability/lean_map.yaml"
+    },
+    "formalization": {
+      "name": "wct-lean",
+      "url": "https://github.com/rickyjreyes/wct-lean",
+      "sympy_map": "https://github.com/rickyjreyes/wct-lean/blob/main/SYMPY_MAP.md",
+      "compiled_root": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Main.lean"
+    },
+    "semantic_graph": {
+      "name": "obsidian",
+      "url": "https://github.com/rickyjreyes/obsidian",
+      "entry_point": "https://github.com/rickyjreyes/obsidian/blob/main/Research/00%20Maps/WCT%20Research%20Command%20Center.md"
+    }
+  },
+  "audit_summary": {
+    "registry_size": 142,
+    "source_of_truth": "wct-sympy README and executable registry",
+    "counts": {
+      "PASS": 59,
+      "CONDITIONAL": 27,
+      "DEFINITION": 26,
+      "OPEN": 30,
+      "FAIL": 0
+    },
+    "warning": "Older geometry_of_resonance summary tables may still show the pre-derivation 51/32/23/36 distribution. Per-object registry entries and derived_overrides take precedence."
+  },
+  "objects": [
+    {
+      "canonical_id": "E17",
+      "aliases": [
+        "M2"
+      ],
+      "name": "Nonsingular curvature-feedback operator",
+      "object_type": "definition",
+      "latex": {
+        "regularized_reciprocal": "R_\\varepsilon(\\psi)=\\frac{\\overline{\\psi}}{|\\psi|^2+\\varepsilon^2 e^{-2\\alpha|\\psi|^2}}",
+        "operator": "\\Theta_\\varepsilon[\\psi]=-(\\Delta\\psi)R_\\varepsilon(\\psi)"
+      },
+      "dependencies": [],
+      "canonical_source": {
+        "repository": "geometry_of_resonance",
+        "path": "WCT_FULL_EQUATION_LIST_CORRECTED.md",
+        "fragment": "E17"
+      },
+      "sympy": {
+        "object_ids": [
+          "M2",
+          "E17"
+        ],
+        "status": "PASS",
+        "checkers": [
+          "check_regularized_denominator"
+        ],
+        "meaning": "Denominator positivity and regularized reciprocal consistency."
+      },
+      "lean": {
+        "status": "OPEN",
+        "declaration_type": "formalization_target",
+        "declarations": [],
+        "source": "https://github.com/rickyjreyes/wct-lean/blob/main/README.md",
+        "caveat": "Lean contains a counterexample to the historical scalar denominator and restricted-sector positivity results; the complete modulus-squared complex operator remains unformalized."
+      },
+      "evidence": [],
+      "cross_layer_consistency": {
+        "status": "consistent",
+        "notes": [
+          "The corrected modulus-squared operator supersedes the historical scalar denominator."
+        ]
+      },
+      "semantic_graph": {
+        "repository": "https://github.com/rickyjreyes/obsidian",
+        "lookup_keys": [
+          "E17",
+          "M2"
+        ],
+        "status": "lookup_by_stable_id"
+      }
+    },
+    {
+      "canonical_id": "E12",
+      "aliases": [
+        "M3"
+      ],
+      "name": "Finite-band spectral relation",
+      "object_type": "equation",
+      "latex": {
+        "growth_rate": "\\lambda_{\\mathrm{grow}}(k)=r+a|k|^2-b|k|^4",
+        "selected_wavenumber": "k_\\star=\\sqrt{\\frac{a}{2b}}",
+        "centered_form": "\\lambda_{\\mathrm{grow}}(k)=\\mu-b(|k|^2-k_\\star^2)^2"
+      },
+      "dependencies": [],
+      "canonical_source": {
+        "repository": "geometry_of_resonance",
+        "path": "WCT_FULL_EQUATION_LIST_CORRECTED.md",
+        "fragment": "E12"
+      },
+      "sympy": {
+        "object_ids": [
+          "M3",
+          "E12"
+        ],
+        "status": "PASS",
+        "checkers": [
+          "check_master_sh_sign",
+          "check_dispersion_stationary_point"
+        ],
+        "meaning": "Correct fourth-order damping sign and stationary finite-band maximum."
+      },
+      "lean": {
+        "status": "PROVED",
+        "declaration_type": "supporting_theorem",
+        "declarations": [
+          "bandpass_oneMode_symbol"
+        ],
+        "source": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/DerivedAudit.lean",
+        "caveat": "This proves the one-mode polynomial symbol, not the generalized Euler-Lagrange theorem or nonlinear pattern-selection dynamics."
+      },
+      "related_objects": [
+        {
+          "id": "E13",
+          "relationship": "dynamical_realization",
+          "sympy_status": "PASS",
+          "status_source": "derived_overrides.yaml"
+        },
+        {
+          "id": "E14",
+          "relationship": "lyapunov_functional",
+          "sympy_status": "PASS",
+          "status_source": "derived_overrides.yaml"
+        }
+      ],
+      "evidence": [],
+      "cross_layer_consistency": {
+        "status": "consistent",
+        "notes": [
+          "The canonical registry uses lambda_grow rather than sigma(k) to avoid collision with curvature sigma."
+        ]
+      },
+      "semantic_graph": {
+        "repository": "https://github.com/rickyjreyes/obsidian",
+        "lookup_keys": [
+          "E12",
+          "M3"
+        ],
+        "status": "lookup_by_stable_id"
+      }
+    },
+    {
+      "canonical_id": "E6",
+      "aliases": [
+        "M1",
+        "E7"
+      ],
+      "name": "Density-weighted curvature mass relation",
+      "object_type": "equation",
+      "latex": {
+        "rest_energy": "E_{\\mathrm{rest}}=\\hbar c\\,k_{\\mathrm{eff}}",
+        "effective_mass": "m=\\frac{\\hbar}{c}k_{\\mathrm{eff}}",
+        "locked_curvature_form": "m=\\frac{\\hbar}{c}\\langle\\sigma\\rangle_w"
+      },
+      "dependencies": [
+        "E1B",
+        "E2",
+        "E5"
+      ],
+      "canonical_source": {
+        "repository": "geometry_of_resonance",
+        "path": "WCT_FULL_EQUATION_LIST_CORRECTED.md",
+        "fragment": "E6"
+      },
+      "source_papers": [
+        {
+          "title": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
+          "doi": "10.5281/zenodo.20533537",
+          "url": "https://zenodo.org/records/20533537"
+        }
+      ],
+      "sympy": {
+        "object_ids": [
+          "E6",
+          "E7"
+        ],
+        "status": "PASS",
+        "checkers": [
+          "check_mass_curvature_dimensions"
+        ],
+        "meaning": "The encoded relation has the dimensions of mass.",
+        "caveat": "A dimensional PASS does not establish the physical identification."
+      },
+      "lean": {
+        "status": "PROVED",
+        "declaration_type": "dimensional_support",
+        "declarations": [
+          "hbar_div_c_mul_k_is_mass",
+          "weighted_average_preserves_dimension"
+        ],
+        "source": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Dimension.lean",
+        "caveat": "Lean proves dimensional closure only, not that physical mass is generated by curvature."
+      },
+      "evidence": [
+        {
+          "type": "publication",
+          "status": "reported",
+          "source": "https://zenodo.org/records/20533537"
+        }
+      ],
+      "cross_layer_consistency": {
+        "status": "partial",
+        "notes": [
+          "E5 remains conditional unless exact locking and compatible weighting assumptions are supplied."
+        ]
+      },
+      "semantic_graph": {
+        "repository": "https://github.com/rickyjreyes/obsidian",
+        "lookup_keys": [
+          "E6",
+          "M1",
+          "E7"
+        ],
+        "status": "lookup_by_stable_id"
+      }
+    },
+    {
+      "canonical_id": "E70",
+      "aliases": [
+        "M4",
+        "E24",
+        "E67"
+      ],
+      "name": "Spatial-dimensionality stability criterion",
+      "object_type": "claim",
+      "latex": {
+        "embedding_threshold": "H^2(\\Omega)\\hookrightarrow L^\\infty(\\Omega)\\quad\\text{when}\\quad 2>\\frac{n}{2}",
+        "integer_dimension_bound": "n\\le 3",
+        "stability_hypotheses": "n\\le3,\\quad H^2\\hookrightarrow L^\\infty,\\quad p<p_c(n)"
+      },
+      "dependencies": [
+        "E24",
+        "E65",
+        "E67",
+        "E69"
+      ],
+      "canonical_source": {
+        "repository": "geometry_of_resonance",
+        "path": "WCT_FULL_EQUATION_LIST_CORRECTED.md",
+        "fragment": "E70"
+      },
+      "source_papers": [
+        {
+          "title": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+          "doi": "10.5281/zenodo.17081283",
+          "url": "https://zenodo.org/records/17081283"
+        }
+      ],
+      "sympy": {
+        "object_ids": [
+          "M4",
+          "E24",
+          "E67",
+          "E70"
+        ],
+        "status": "CONDITIONAL",
+        "supporting_statuses": {
+          "M4": "PASS",
+          "E24": "PASS",
+          "E67": "PASS",
+          "E70": "CONDITIONAL"
+        },
+        "checkers": [
+          "check_h2_embedding_threshold",
+          "check_dimensional_stability_implication"
+        ],
+        "meaning": "The Sobolev embedding threshold is supported; the broader WCT stability conclusion remains conditional."
+      },
+      "lean": {
+        "status": "OPEN",
+        "declaration_type": "not_formalized",
+        "declarations": [],
+        "source": "https://github.com/rickyjreyes/wct-lean/blob/main/SYMPY_MAP.md",
+        "caveat": "Continuum Sobolev and PDE stability results remain outside exact Lean coverage."
+      },
+      "evidence": [
+        {
+          "type": "publication",
+          "status": "reported",
+          "source": "https://zenodo.org/records/17081283"
+        }
+      ],
+      "cross_layer_consistency": {
+        "status": "consistent",
+        "notes": [
+          "The n <= 3 embedding threshold is not represented as a proof that all WCT equilibria are stable in three dimensions or unstable in higher dimensions."
+        ]
+      },
+      "semantic_graph": {
+        "repository": "https://github.com/rickyjreyes/obsidian",
+        "lookup_keys": [
+          "E70",
+          "M4",
+          "E24",
+          "E67"
+        ],
+        "status": "lookup_by_stable_id"
+      }
+    }
+  ],
+  "machine_reading_guidance": {
+    "canonical_id_policy": "Use canonical_id as the primary key. aliases identify master or supporting objects and must not be silently collapsed.",
+    "status_precedence": [
+      "Per-object derived override",
+      "Executable SymPy registry",
+      "Canonical equation document",
+      "Narrative paper text"
+    ],
+    "formalization_rule": "Never report a SymPy PASS as a Lean proof. Only named kernel-accepted declarations may be labeled PROVED.",
+    "missing_data_rule": "Use null, empty arrays, or OPEN rather than inventing identifiers, proofs, dates, or evidence."
+  },
+  "content_type": "application/json"
+}
