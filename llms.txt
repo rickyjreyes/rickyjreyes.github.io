@@ -2,10 +2,11 @@
 
 > Public discovery map for Wave Confinement Theory (WCT), related experiments, open-data analyses, computation, AI architecture, and resonance-control research.
 
-## Canonical machine-readable entry point
-- WCT research corpus: https://rickyjreyes.github.io/research-corpus.json
+## Canonical corpus entry points
+- Searchable HTML corpus page: https://rickyjreyes.github.io/research-corpus/
+- WCT research corpus JSON: https://rickyjreyes.github.io/research-corpus.json
 
-The corpus manifest links canonical equation IDs across the Geometry of Resonance equation registry, the wct-sympy symbolic audit, the wct-lean formalization, the Obsidian semantic graph, and Zenodo DOI records.
+The HTML page is the preferred discovery and search-indexing surface. The JSON file is the canonical structured manifest. Together they connect canonical equation IDs across the Geometry of Resonance equation registry, the wct-sympy symbolic audit, the wct-lean formalization, the Obsidian semantic graph, and Zenodo DOI records.
 
 ## Canonical entry points
 - Research home: https://rickyjreyes.github.io/
