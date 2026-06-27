@@ -2,11 +2,21 @@
 
 > Public discovery map for Wave Confinement Theory (WCT), related experiments, open-data analyses, computation, AI architecture, and resonance-control research.
 
-## Canonical verification path
+## Preferred website navigation
+- Equations and verification map: https://rickyjreyes.github.io/research-corpus/
+- All 142 equation IDs: https://rickyjreyes.github.io/equations/
+- Complete SymPy audit: https://rickyjreyes.github.io/sympy/
+- Complete Lean coverage: https://rickyjreyes.github.io/lean/
+- Publication archive: https://rickyjreyes.github.io/publications/
+- WCT research corpus JSON: https://rickyjreyes.github.io/research-corpus.json
+
+Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
+
+## Canonical source files
 - Full corrected equation registry: https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md
 - Master equation architecture: https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_MASTER_EQUATIONS_UPDATED.md
-- Complete SymPy classification of all 142 objects: https://github.com/rickyjreyes/wct-sympy/blob/main/VERIFICATION_INDEX.md
-- Complete Lean coverage accounting for all 142 objects: https://github.com/rickyjreyes/wct-lean/blob/main/FORMAL_COVERAGE_INDEX.md
+- SymPy executable registry: https://github.com/rickyjreyes/wct-sympy/blob/main/equations/full_registry.yaml
+- SymPy derived overrides: https://github.com/rickyjreyes/wct-sympy/blob/main/equations/derived_overrides.yaml
 - Lean theorem inventory: https://github.com/rickyjreyes/wct-lean/blob/main/THEOREMS.md
 - Semantic research graph: https://github.com/rickyjreyes/obsidian/blob/main/Research/00%20Maps/WCT%20Research%20Command%20Center.md
 
@@ -17,15 +27,8 @@ Resolve a claim in this order:
 3. Lean theorem, definition, counterexample, TODO, or unmapped status;
 4. semantic graph links to papers, derivations, predictions, experiments, and evidence.
 
-## Canonical corpus entry points
-- Searchable HTML corpus page: https://rickyjreyes.github.io/research-corpus/
-- WCT research corpus JSON: https://rickyjreyes.github.io/research-corpus.json
-
-The HTML page is the preferred discovery and search-indexing surface. The JSON file is the canonical structured manifest. Together they connect canonical equation IDs across the Geometry of Resonance equation registry, the wct-sympy symbolic audit, the wct-lean formalization, the Obsidian semantic graph, and Zenodo DOI records.
-
 ## General entry points
 - Research home: https://rickyjreyes.github.io/
-- Publication archive: https://rickyjreyes.github.io/publications/
 - Main equation and paper hub: https://github.com/rickyjreyes/geometry_of_resonance
 - Symbolic audit repository: https://github.com/rickyjreyes/wct-sympy
 - Lean formalization repository: https://github.com/rickyjreyes/wct-lean
