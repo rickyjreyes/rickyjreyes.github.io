@@ -8,6 +8,7 @@ on:
       - "scripts/build_scholar_site.py"
       - "scripts/build_equation_explorer.py"
       - "scripts/refine_equation_definitions.py"
+      - "scripts/build_sympy_page.py"
       - "scripts/patch_site_navigation.py"
       - "site-nav.js"
       - ".github/workflows/build-scholar-site.yml"
@@ -39,6 +40,9 @@ jobs:
       - name: Refine equation definitions
         run: python scripts/refine_equation_definitions.py
 
+      - name: Generate SymPy equation cards
+        run: python scripts/build_sympy_page.py
+
       - name: Apply shared navigation and discovery patches
         run: python scripts/patch_site_navigation.py
 
@@ -51,5 +55,5 @@ jobs:
             echo "No generated changes."
             exit 0
           fi
-          git commit -m "Generate site navigation, equations, and scholarly metadata"
+          git commit -m "Generate site navigation, equations, SymPy cards, and scholarly metadata"
           git push
