@@ -10,7 +10,7 @@
       "m=\\frac{\\hbar}{c}\\langle\\sigma\\rangle_w."
     ],
     "anchor": "m1-curvature-locking-functional",
-    "definition": "Let Define",
+    "definition": "Curvature-locking functional is the canonical M1 object in the Master systems family.",
     "formula": "\\sigma(s):=\\sqrt{\\kappa(s)^2+\\tau(s)^2}, \\qquad \\langle f\\rangle_w:= \\frac{\\oint_\\Gamma w f\\,ds}{\\oint_\\Gamma w\\,ds}, \\quad \\oint_\\Gamma w\\,ds>0.\n\nS_{\\rm lock}[\\varphi] = \\oint_\\Gamma w(s)\\bigl(\\partial_s\\varphi-\\sigma\\bigr)^2\\,ds.\n\nm=\\frac{\\hbar}{c}\\langle\\sigma\\rangle_w.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m1-curvature-locking-functional"
   },
@@ -26,7 +26,7 @@
       "\\mathcal E_{\\rm WCT}[\\psi] = \\int_\\Omega \\left( |\\nabla\\psi|^2+|\\Theta_\\varepsilon[\\psi]|^2 \\right)\\,dx."
     ],
     "anchor": "m2-nonsingular-curvature-operator-and-lyapunov-candidate",
-    "definition": "For $\\varepsilon>0$, define The denominator is strictly positive for every complex $\\psi$. For $\\psi\\neq0$,",
+    "definition": "Nonsingular curvature operator and Lyapunov candidate is the canonical M2 object in the Master systems family. The denominator is strictly positive for every complex \\(\\psi\\).",
     "formula": "R_\\varepsilon(\\psi) := \\frac{\\overline{\\psi}} {|\\psi|^2+\\varepsilon^2e^{-2\\alpha|\\psi|^2}},\n\n\\Theta_\\varepsilon[\\psi] := -(\\Delta\\psi)R_\\varepsilon(\\psi).\n\nR_\\varepsilon(\\psi)\\longrightarrow \\frac1\\psi \\qquad(\\varepsilon\\to0).\n\n\\mathcal E_{\\rm WCT}[\\psi] = \\int_\\Omega \\left( |\\nabla\\psi|^2+|\\Theta_\\varepsilon[\\psi]|^2 \\right)\\,dx.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m2-nonsingular-curvature-operator-and-lyapunov-candidate"
   },
@@ -40,7 +40,7 @@
       "-b\\bigl(|k|^2-k_\\star^2\\bigr)^2,"
     ],
     "anchor": "m3-finite-band-spectral-selector",
-    "definition": "Its Fourier growth symbol contains so sufficiently off-shell ultraviolet modes are damped.",
+    "definition": "Finite-band spectral selector is the canonical M3 object in the Master systems family. Its Fourier growth symbol contains so sufficiently off-shell ultraviolet modes are damped.",
     "formula": "\\partial_tA = \\mu A-g|A|^2A-b(\\Delta+k_\\star^2)^2A, \\qquad b>0.\n\n-b\\bigl(|k|^2-k_\\star^2\\bigr)^2,",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m3-finite-band-spectral-selector"
   },
@@ -54,7 +54,7 @@
       "n\\le3."
     ],
     "anchor": "m4-dimensional-stability-threshold",
-    "definition": "For a standard Sobolev domain, For integer spatial dimension,",
+    "definition": "Dimensional stability threshold is the canonical M4 object in the Master systems family. For a standard Sobolev domain, For integer spatial dimension,",
     "formula": "H^2(\\Omega)\\hookrightarrow L^\\infty(\\Omega) \\quad\\text{when}\\quad 2>\\frac n2.\n\nn\\le3.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m4-dimensional-stability-threshold"
   },
@@ -67,7 +67,7 @@
       "\\psi^{(t+1)}(x) = U\\!\\left( \\psi^{(t)}(x), \\{\\psi^{(t)}(y):y\\in N(x)\\} \\right)."
     ],
     "anchor": "m5-curvature-bounded-computation",
-    "definition": "Complexity claims require a specified encoding, precision model, update cost, and finite curvature-resource bound.",
+    "definition": "Curvature-bounded computation is the canonical M5 object in the Master systems family. Complexity claims require a specified encoding, precision model, update cost, and finite curvature-resource bound.",
     "formula": "\\psi^{(t+1)}(x) = U\\!\\left( \\psi^{(t)}(x), \\{\\psi^{(t)}(y):y\\in N(x)\\} \\right).",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m5-curvature-bounded-computation"
   },
@@ -80,7 +80,7 @@
       "\\mathcal L_{\\rm WCT} = c_1(\\Delta+\\sigma^2) -c_2(\\Delta+k_\\star^2)^2 +i\\,c_3m +c_4R^{-(2+n/p)}, \\qquad c_2>0."
     ],
     "anchor": "m6a-unified-linear-operator",
-    "definition": "Unified linear operator.",
+    "definition": "Unified linear operator is the canonical M6A object in the Master systems family.",
     "formula": "\\mathcal L_{\\rm WCT} = c_1(\\Delta+\\sigma^2) -c_2(\\Delta+k_\\star^2)^2 +i\\,c_3m +c_4R^{-(2+n/p)}, \\qquad c_2>0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m6a-unified-linear-operator"
   },
@@ -93,7 +93,7 @@
       "\\mathcal N_{\\rm curv}[\\psi] = -(\\Delta\\psi) \\frac{\\overline{\\psi}} {|\\psi|^2+\\varepsilon^2e^{-2\\alpha|\\psi|^2}}."
     ],
     "anchor": "m6b-nonlinear-curvature-operator",
-    "definition": "The operator is well-defined for $\\varepsilon>0$; uniqueness of this nonlinear closure remains open.",
+    "definition": "Nonlinear curvature operator is the canonical M6B object in the Master systems family. The operator is well-defined for \\(\\varepsilon>0\\); uniqueness of this nonlinear closure remains open.",
     "formula": "\\mathcal N_{\\rm curv}[\\psi] = -(\\Delta\\psi) \\frac{\\overline{\\psi}} {|\\psi|^2+\\varepsilon^2e^{-2\\alpha|\\psi|^2}}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m6b-nonlinear-curvature-operator"
   },
@@ -106,7 +106,7 @@
       "\\partial_t\\psi = \\mathcal N_{\\rm curv}[\\psi] +g|\\psi|^2\\psi +c_1(\\Delta+\\sigma^2)\\psi -c_2(\\Delta+k_\\star^2)^2\\psi +i\\,c_3m\\psi +c_4R^{-(2+n/p)}\\psi +\\eta\\psi\\circ\\xi(t), \\qquad c_2>0."
     ],
     "anchor": "m7-full-curvature-wavefield-equation",
-    "definition": "The explicit negative fourth-order term supplies finite-band ultraviolet damping. Other dynamical claims require separate analysis.",
+    "definition": "Full curvature-wavefield equation is the canonical M7 object in the Master systems family. The explicit negative fourth-order term supplies finite-band ultraviolet damping. Other dynamical claims require separate analysis.",
     "formula": "\\partial_t\\psi = \\mathcal N_{\\rm curv}[\\psi] +g|\\psi|^2\\psi +c_1(\\Delta+\\sigma^2)\\psi -c_2(\\Delta+k_\\star^2)^2\\psi +i\\,c_3m\\psi +c_4R^{-(2+n/p)}\\psi +\\eta\\psi\\circ\\xi(t), \\qquad c_2>0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m7-full-curvature-wavefield-equation"
   },
@@ -120,7 +120,7 @@
       "\\delta_g(E) = A_g\\cos\\!\\left( k_\\ell\\ln\\frac{E}{E_0}+\\phi \\right)."
     ],
     "anchor": "m8-curvature-acoustic-cosmology-system",
-    "definition": "Representative closure relations are The full cosmology sector remains open pending derivation, parameter closure, and calibrated data tests.",
+    "definition": "Curvature-acoustic cosmology system is the canonical M8 object in the Master systems family. Representative closure relations are The full cosmology sector remains open pending derivation, parameter closure, and calibrated data tests.",
     "formula": "\\Phi(k,t)=-C_\\Phi\\frac{\\Theta(k,t)}{k^2},\n\n\\delta_g(E) = A_g\\cos\\!\\left( k_\\ell\\ln\\frac{E}{E_0}+\\phi \\right).",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m8-curvature-acoustic-cosmology-system"
   },
@@ -133,7 +133,7 @@
       "\\sigma_{\\rm dens}(s)=\\kappa(s)^2+\\tau(s)^2, \\qquad [\\sigma_{\\rm dens}]=L^{-2}."
     ],
     "anchor": "e1a-curvature-rate-density",
-    "definition": "Curvature-rate density.",
+    "definition": "Curvature-rate density is the canonical E1A object in the A. Rest energy, curvature, and loop locking family.",
     "formula": "\\sigma_{\\rm dens}(s)=\\kappa(s)^2+\\tau(s)^2, \\qquad [\\sigma_{\\rm dens}]=L^{-2}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e1a-curvature-rate-density"
   },
@@ -146,7 +146,7 @@
       "\\sigma(s)=\\sqrt{\\kappa(s)^2+\\tau(s)^2}, \\qquad [\\sigma]=L^{-1}."
     ],
     "anchor": "e1b-curvature-spectral-rate",
-    "definition": "Curvature spectral rate.",
+    "definition": "Curvature spectral rate is the canonical E1B object in the A. Rest energy, curvature, and loop locking family.",
     "formula": "\\sigma(s)=\\sqrt{\\kappa(s)^2+\\tau(s)^2}, \\qquad [\\sigma]=L^{-1}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e1b-curvature-spectral-rate"
   },
@@ -159,7 +159,7 @@
       "\\langle f\\rangle_w = \\frac{\\oint_\\Gamma w(s)f(s)\\,ds} {\\oint_\\Gamma w(s)\\,ds}."
     ],
     "anchor": "e2-weighted-loop-average",
-    "definition": "For $w(s)\\ge0$ and $\\oint\\Gamma w\\,ds>0$,",
+    "definition": "Weighted loop average is the canonical E2 object in the A. Rest energy, curvature, and loop locking family.",
     "formula": "\\langle f\\rangle_w = \\frac{\\oint_\\Gamma w(s)f(s)\\,ds} {\\oint_\\Gamma w(s)\\,ds}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e2-weighted-loop-average"
   },
@@ -172,7 +172,7 @@
       "S_{\\rm eff}[\\varphi] = \\oint_\\Gamma w(\\partial_s\\varphi-\\sigma)^2\\,ds + \\Lambda \\left( \\oint_\\Gamma\\partial_s\\varphi\\,ds-2\\pi n \\right), \\qquad n\\in\\mathbb Z."
     ],
     "anchor": "e3-loop-locking-action",
-    "definition": "For $w\\ge0$, the mismatch term is nonnegative.",
+    "definition": "Loop-locking action is the canonical E3 object in the A. Rest energy, curvature, and loop locking family. For \\(w\\ge0\\), the mismatch term is nonnegative.",
     "formula": "S_{\\rm eff}[\\varphi] = \\oint_\\Gamma w(\\partial_s\\varphi-\\sigma)^2\\,ds + \\Lambda \\left( \\oint_\\Gamma\\partial_s\\varphi\\,ds-2\\pi n \\right), \\qquad n\\in\\mathbb Z.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e3-loop-locking-action"
   },
@@ -186,7 +186,7 @@
       "\\alpha_{\\rm lock} = \\frac{ 2\\pi n-\\oint_\\Gamma\\sigma\\,ds }{ \\oint_\\Gamma ds/w },"
     ],
     "anchor": "e4-covariant-locking-solution",
-    "definition": "Stationarity gives where",
+    "definition": "Covariant locking solution is the canonical E4 object in the A. Rest energy, curvature, and loop locking family. Stationarity gives where",
     "formula": "\\partial_s\\varphi = \\sigma+\\frac{\\alpha_{\\rm lock}}{w},\n\n\\alpha_{\\rm lock} = \\frac{ 2\\pi n-\\oint_\\Gamma\\sigma\\,ds }{ \\oint_\\Gamma ds/w },",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e4-covariant-locking-solution"
   },
@@ -200,7 +200,7 @@
       "k_{\\rm wind}=k_\\sigma=\\langle\\sigma\\rangle_w"
     ],
     "anchor": "e5-effective-wavenumber-chain",
-    "definition": "Define Then",
+    "definition": "Effective-wavenumber chain is the canonical E5 object in the A. Rest energy, curvature, and loop locking family.",
     "formula": "L_s:=\\oint_\\Gamma ds, \\qquad k_{\\rm wind}:=\\frac{2\\pi|n|}{L_s}, \\qquad k_\\sigma:=\\frac1{L_s}\\oint_\\Gamma\\sigma\\,ds.\n\nk_{\\rm wind}=k_\\sigma=\\langle\\sigma\\rangle_w",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e5-effective-wavenumber-chain"
   },
@@ -214,7 +214,7 @@
       "m=\\frac{\\hbar}{c}\\langle\\sigma\\rangle_w."
     ],
     "anchor": "e6-mass-curvature-law",
-    "definition": "When E5 applies,",
+    "definition": "Mass-curvature law is the canonical E6 object in the A. Rest energy, curvature, and loop locking family.",
     "formula": "E_{\\rm rest}=\\hbar c\\,k_{\\rm eff}, \\qquad m=\\frac{\\hbar}{c}k_{\\rm eff}.\n\nm=\\frac{\\hbar}{c}\\langle\\sigma\\rangle_w.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e6-mass-curvature-law"
   },
@@ -227,7 +227,7 @@
       "m = \\frac{\\hbar}{c} \\left\\langle \\sqrt{\\kappa^2+\\tau^2} \\right\\rangle_\\Gamma."
     ],
     "anchor": "e7-solenoidal-mass-law",
-    "definition": "The averaging measure must be specified; the dimensional relation is valid.",
+    "definition": "Solenoidal mass law is the canonical E7 object in the A. Rest energy, curvature, and loop locking family. The averaging measure must be specified; the dimensional relation is valid.",
     "formula": "m = \\frac{\\hbar}{c} \\left\\langle \\sqrt{\\kappa^2+\\tau^2} \\right\\rangle_\\Gamma.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e7-solenoidal-mass-law"
   },
@@ -241,7 +241,7 @@
       "2\\pi\\oint ds/\\oint ds/w"
     ],
     "anchor": "e8-corrected-weighted-lock-identity",
-    "definition": "Substituting E4 gives The earlier extra factor",
+    "definition": "Corrected weighted-lock identity is the canonical E8 object in the A. Rest energy, curvature, and loop locking family. Substituting E4 gives The earlier extra factor",
     "formula": "\\boxed{ \\oint_\\Gamma w\\,\\partial_s\\varphi\\,ds = \\oint_\\Gamma w\\,\\sigma\\,ds + \\alpha_{\\rm lock}L_s }.\n\n2\\pi\\oint ds/\\oint ds/w",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e8-corrected-weighted-lock-identity"
   },
@@ -255,7 +255,7 @@
       "\\partial_tu+\\nabla\\cdot\\mathbf S=0."
     ],
     "anchor": "e9-phase-flux-constitutive-relation",
-    "definition": "A conservation equation, when imposed, is The constitutive relation itself is a definition.",
+    "definition": "Phase-flux constitutive relation is the canonical E9 object in the B. Phase-flux and finite-band selection family. A conservation equation, when imposed, is The constitutive relation itself is a definition.",
     "formula": "\\mathbf S(x,t)=u(x,t)\\nabla\\theta(x,t).\n\n\\partial_tu+\\nabla\\cdot\\mathbf S=0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e9-phase-flux-constitutive-relation"
   },
@@ -268,7 +268,7 @@
       "\\int_{r_1}^{r_2}k_r(r)\\,dr=2\\pi n, \\qquad n\\in\\mathbb Z."
     ],
     "anchor": "e10-radial-shell-quantization",
-    "definition": "Both sides are dimensionless.",
+    "definition": "Radial shell quantization is the canonical E10 object in the B. Phase-flux and finite-band selection family. Both sides are dimensionless.",
     "formula": "\\int_{r_1}^{r_2}k_r(r)\\,dr=2\\pi n, \\qquad n\\in\\mathbb Z.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e10-radial-shell-quantization"
   },
@@ -281,7 +281,7 @@
       "m(\\gamma) = \\frac1{2\\pi} \\oint_\\gamma\\nabla\\theta\\cdot d\\boldsymbol\\ell \\in\\mathbb Z,"
     ],
     "anchor": "e11-phase-winding",
-    "definition": "provided $\\psi\\neq0$ on the loop and the phase is continuous modulo $2\\pi$.",
+    "definition": "Phase winding is the canonical E11 object in the B. Phase-flux and finite-band selection family. provided \\(\\psi\\neq0\\) on the loop and the phase is continuous modulo \\(2\\pi\\).",
     "formula": "m(\\gamma) = \\frac1{2\\pi} \\oint_\\gamma\\nabla\\theta\\cdot d\\boldsymbol\\ell \\in\\mathbb Z,",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e11-phase-winding"
   },
@@ -296,7 +296,7 @@
       "\\lambda_{\\rm grow}(k) = \\mu-b(|k|^2-k_\\star^2)^2, \\qquad \\mu=r+\\frac{a^2}{4b}."
     ],
     "anchor": "e12-finite-band-dispersion-rail",
-    "definition": "To avoid conflict with curvature $\\sigma$, write the growth rate as Its nonzero stationary maximum is",
+    "definition": "Finite-band dispersion rail is the canonical E12 object in the B. Phase-flux and finite-band selection family. To avoid conflict with curvature \\(\\sigma\\), write the growth rate as Its nonzero stationary maximum is",
     "formula": "\\lambda_{\\rm grow}(k) = r+a|k|^2-b|k|^4, \\qquad a,b>0.\n\nk_\\star=\\sqrt{\\frac{a}{2b}}.\n\n\\lambda_{\\rm grow}(k) = \\mu-b(|k|^2-k_\\star^2)^2, \\qquad \\mu=r+\\frac{a^2}{4b}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e12-finite-band-dispersion-rail"
   },
@@ -310,7 +310,7 @@
       "\\partial_tA = \\mu A-b(\\Delta+k_\\star^2)^2A-\\beta|A|^2A."
     ],
     "anchor": "e13-band-pass-amplitude-evolution",
-    "definition": "A form consistent with E12 is or equivalently",
+    "definition": "Band-pass amplitude evolution is the canonical E13 object in the B. Phase-flux and finite-band selection family. A form consistent with E12 is or equivalently",
     "formula": "\\partial_tA = (r-a\\Delta-b\\Delta^2)A-\\beta|A|^2A,\n\n\\partial_tA = \\mu A-b(\\Delta+k_\\star^2)^2A-\\beta|A|^2A.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e13-band-pass-amplitude-evolution"
   },
@@ -323,7 +323,7 @@
       "\\mathcal E[A] = \\int_\\Omega \\left[ -\\mu|A|^2 +b|(\\Delta+k_\\star^2)A|^2 +\\frac{\\beta}{2}|A|^4 \\right]dx."
     ],
     "anchor": "e14-band-pass-lyapunov-functional",
-    "definition": "For the centered Swift-Hohenberg form, Gradient-flow descent requires compatible boundary conditions and normalization conventions.",
+    "definition": "Band-pass Lyapunov functional is the canonical E14 object in the B. Phase-flux and finite-band selection family. For the centered Swift-Hohenberg form, Gradient-flow descent requires compatible boundary conditions and normalization conventions.",
     "formula": "\\mathcal E[A] = \\int_\\Omega \\left[ -\\mu|A|^2 +b|(\\Delta+k_\\star^2)A|^2 +\\frac{\\beta}{2}|A|^4 \\right]dx.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e14-band-pass-lyapunov-functional"
   },
@@ -336,7 +336,7 @@
       "\\frac{d}{dt}|\\widehat A_k|^2 \\le 2\\lambda_{\\rm grow}(k)|\\widehat A_k|^2 -c|\\widehat A_k|^4, \\qquad c>0."
     ],
     "anchor": "e15-modal-growth-bound",
-    "definition": "The quartic modal estimate requires a model-specific nonlinear projection bound.",
+    "definition": "Modal growth bound is the canonical E15 object in the B. Phase-flux and finite-band selection family. The quartic modal estimate requires a model-specific nonlinear projection bound.",
     "formula": "\\frac{d}{dt}|\\widehat A_k|^2 \\le 2\\lambda_{\\rm grow}(k)|\\widehat A_k|^2 -c|\\widehat A_k|^4, \\qquad c>0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e15-modal-growth-bound"
   },
@@ -350,7 +350,7 @@
       "\\operatorname*{arg\\,max}_kP_k(t)\\to k_\\star."
     ],
     "anchor": "e16-linear-spectral-concentration",
-    "definition": "For the linearized dynamics, If the maximizing shell is isolated and initially populated,",
+    "definition": "Linear spectral concentration is the canonical E16 object in the B. Phase-flux and finite-band selection family. For the linearized dynamics, If the maximizing shell is isolated and initially populated,",
     "formula": "P_k(t)=P_k(0)e^{2\\lambda_{\\rm grow}(k)t}.\n\n\\operatorname*{arg\\,max}_kP_k(t)\\to k_\\star.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e16-linear-spectral-concentration"
   },
@@ -365,7 +365,7 @@
       "-\\Delta\\psi/(\\psi+\\varepsilon e^{-\\alpha|\\psi|^2})"
     ],
     "anchor": "e17-nonsingular-curvature-feedback-operator",
-    "definition": "For $\\varepsilon>0$, the denominator is strictly positive for all complex $\\psi$. This replaces whose denominator can vanish.",
+    "definition": "Nonsingular curvature-feedback operator is the canonical E17 object in the C. Curvature feedback and Lyapunov dynamics family. For \\(\\varepsilon>0\\), the denominator is strictly positive for all complex \\(\\psi\\). This replaces whose denominator can vanish.",
     "formula": "R_\\varepsilon(\\psi) = \\frac{\\overline\\psi} {|\\psi|^2+\\varepsilon^2e^{-2\\alpha|\\psi|^2}},\n\n\\boxed{ \\Theta_\\varepsilon[\\psi] = -(\\Delta\\psi)R_\\varepsilon(\\psi) }.\n\n-\\Delta\\psi/(\\psi+\\varepsilon e^{-\\alpha|\\psi|^2})",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e17-nonsingular-curvature-feedback-operator"
   },
@@ -378,7 +378,7 @@
       "\\mathcal E[\\psi] = \\int_\\Omega \\left( c_1|\\nabla\\psi|^2 +c_2|\\Theta_\\varepsilon[\\psi]|^2 \\right)dx."
     ],
     "anchor": "e18-wct-lyapunov-candidate",
-    "definition": "It is nonnegative when $c1,c2\\ge0$. Lyapunov descent still requires a specified evolution equation satisfying $d\\mathcal E/dt\\le0$.",
+    "definition": "WCT Lyapunov candidate is the canonical E18 object in the C. Curvature feedback and Lyapunov dynamics family. It is nonnegative when \\(c1,c2\\ge0\\). Lyapunov descent still requires a specified evolution equation satisfying \\(d\\mathcal E/dt\\le0\\).",
     "formula": "\\mathcal E[\\psi] = \\int_\\Omega \\left( c_1|\\nabla\\psi|^2 +c_2|\\Theta_\\varepsilon[\\psi]|^2 \\right)dx.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e18-wct-lyapunov-candidate"
   },
@@ -392,7 +392,7 @@
       "\\Delta_\\omega^\\star:=c^2\\Delta_k^\\star, \\qquad [\\Delta_\\omega^\\star]=T^{-2}."
     ],
     "anchor": "e19-gap-curvature-scaling",
-    "definition": "Separate the spatial and frequency gaps: The proportionality constant and spectral derivation remain model-dependent.",
+    "definition": "Gap-curvature scaling is the canonical E19 object in the C. Curvature feedback and Lyapunov dynamics family. Separate the spatial and frequency gaps: The proportionality constant and spectral derivation remain model-dependent.",
     "formula": "\\Delta_k^\\star\\sim\\langle\\sigma\\rangle_w^2, \\qquad [\\Delta_k^\\star]=L^{-2},\n\n\\Delta_\\omega^\\star:=c^2\\Delta_k^\\star, \\qquad [\\Delta_\\omega^\\star]=T^{-2}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e19-gap-curvature-scaling"
   },
@@ -407,7 +407,7 @@
       "\\kappa\\ge0,\\qquad \\theta\\ge0,\\qquad \\gamma^2\\le4\\kappa\\theta."
     ],
     "anchor": "e20-higher-order-cavity-quadratic-sector",
-    "definition": "Let The quadratic sector is",
+    "definition": "Higher-order cavity quadratic sector is the canonical E20 object in the C. Curvature feedback and Lyapunov dynamics family. The quadratic sector is",
     "formula": "S:=\\frac{\\Box\\psi}{g(\\psi)}, \\qquad P:=\\frac{\\Delta\\psi}{g(\\psi)}.\n\nQ(S,P)=\\kappa S^2+\\theta P^2-\\gamma SP.\n\n\\kappa\\ge0,\\qquad \\theta\\ge0,\\qquad \\gamma^2\\le4\\kappa\\theta.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e20-higher-order-cavity-quadratic-sector"
   },
@@ -420,7 +420,7 @@
       "\\frac{\\delta\\mathcal L}{\\delta\\psi} = \\frac{\\partial\\mathcal L}{\\partial\\psi} -\\partial_\\mu \\frac{\\partial\\mathcal L}{\\partial(\\partial_\\mu\\psi)} +\\partial_\\mu\\partial_\\nu \\frac{\\partial\\mathcal L} {\\partial(\\partial_\\mu\\partial_\\nu\\psi)} =0."
     ],
     "anchor": "e21-second-derivative-euler-lagrange-equation",
-    "definition": "For $\\mathcal L(\\psi,\\partial\\psi,\\partial^2\\psi)$,",
+    "definition": "Second-derivative Euler-Lagrange equation is the canonical E21 object in the C. Curvature feedback and Lyapunov dynamics family.",
     "formula": "\\frac{\\delta\\mathcal L}{\\delta\\psi} = \\frac{\\partial\\mathcal L}{\\partial\\psi} -\\partial_\\mu \\frac{\\partial\\mathcal L}{\\partial(\\partial_\\mu\\psi)} +\\partial_\\mu\\partial_\\nu \\frac{\\partial\\mathcal L} {\\partial(\\partial_\\mu\\partial_\\nu\\psi)} =0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e21-second-derivative-euler-lagrange-equation"
   },
@@ -433,7 +433,7 @@
       "g_{\\mu\\nu}^{\\rm eff} = \\eta_{\\mu\\nu} +\\lambda_g \\frac{\\partial_\\mu\\overline\\psi\\,\\partial_\\nu\\psi} {\\rho c^2} +\\delta_g\\,\\eta_{\\mu\\nu}\\frac{W_\\psi}{W_0}."
     ],
     "anchor": "e22-effective-metric-ansatz",
-    "definition": "The coefficients must carry the units needed to make both corrections dimensionless, and signature/nondegeneracy must be checked.",
+    "definition": "Effective metric ansatz is the canonical E22 object in the C. Curvature feedback and Lyapunov dynamics family. The coefficients must carry the units needed to make both corrections dimensionless, and signature/nondegeneracy must be checked.",
     "formula": "g_{\\mu\\nu}^{\\rm eff} = \\eta_{\\mu\\nu} +\\lambda_g \\frac{\\partial_\\mu\\overline\\psi\\,\\partial_\\nu\\psi} {\\rho c^2} +\\delta_g\\,\\eta_{\\mu\\nu}\\frac{W_\\psi}{W_0}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e22-effective-metric-ansatz"
   },
@@ -446,7 +446,7 @@
       "h(\\psi) = C_h\\left( W_\\psi+\\chi|\\nabla\\psi|^2 \\right)."
     ],
     "anchor": "e23-enthalpic-curvature-relation",
-    "definition": "The constants must reconcile dimensions and the relation requires a constitutive derivation.",
+    "definition": "Enthalpic curvature relation is the canonical E23 object in the C. Curvature feedback and Lyapunov dynamics family. The constants must reconcile dimensions and the relation requires a constitutive derivation.",
     "formula": "h(\\psi) = C_h\\left( W_\\psi+\\chi|\\nabla\\psi|^2 \\right).",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e23-enthalpic-curvature-relation"
   },
@@ -460,7 +460,7 @@
       "n\\le3."
     ],
     "anchor": "e24-sobolev-embedding-threshold",
-    "definition": "For integer $n$,",
+    "definition": "Sobolev embedding threshold is the canonical E24 object in the D. Dimensionality and functional bounds family.",
     "formula": "H^2(\\Omega)\\hookrightarrow L^\\infty(\\Omega) \\quad\\Longrightarrow\\quad 2>\\frac n2.\n\nn\\le3.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e24-sobolev-embedding-threshold"
   },
@@ -473,7 +473,7 @@
       "p_c(n)=\\frac{n+2}{n-2}, \\qquad p<p_c(n)"
     ],
     "anchor": "e25-critical-sobolev-exponent",
-    "definition": "For $n>2$, is the stated subcriticality condition.",
+    "definition": "Critical Sobolev exponent is the canonical E25 object in the D. Dimensionality and functional bounds family. For \\(n>2\\), is the stated subcriticality condition.",
     "formula": "p_c(n)=\\frac{n+2}{n-2}, \\qquad p<p_c(n)",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e25-critical-sobolev-exponent"
   },
@@ -487,7 +487,7 @@
       "\\boxed{ \\|\\Theta_\\varepsilon[\\psi]\\|_{L^2} \\le \\delta^{-1}\\|\\Delta\\psi\\|_{L^2} }."
     ],
     "anchor": "e26-corrected-curvature-l2-bound",
-    "definition": "If $\\psi\\in H^2(\\Omega)$ and then",
+    "definition": "Corrected curvature $L^2$ bound is the canonical E26 object in the D. Dimensionality and functional bounds family.",
     "formula": "|R_\\varepsilon(\\psi(x))|\\le\\delta^{-1} \\quad\\text{a.e.},\n\n\\boxed{ \\|\\Theta_\\varepsilon[\\psi]\\|_{L^2} \\le \\delta^{-1}\\|\\Delta\\psi\\|_{L^2} }.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e26-corrected-curvature-l2-bound"
   },
@@ -500,7 +500,7 @@
       "\\int_{\\mathbb R^n} \\left( |\\nabla\\psi|^2 + |\\Theta_\\varepsilon[\\psi]|^2 \\right)dx <\\infty."
     ],
     "anchor": "e27-finite-energy-confinement",
-    "definition": "Finite-energy confinement.",
+    "definition": "Finite-energy confinement is the canonical E27 object in the D. Dimensionality and functional bounds family.",
     "formula": "\\int_{\\mathbb R^n} \\left( |\\nabla\\psi|^2 + |\\Theta_\\varepsilon[\\psi]|^2 \\right)dx <\\infty.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e27-finite-energy-confinement"
   },
@@ -514,7 +514,7 @@
       "\\beta(n) < -\\frac1n\\sum_t\\log_2\\rho_t(n)."
     ],
     "anchor": "e28-corrected-alpha-drop-exponent",
-    "definition": "Let $\\rhot(n)\\in(0,1]$ be retained fractions. Define Then $\\alpha(n)<1$ requires",
+    "definition": "Corrected alpha-drop exponent is the canonical E28 object in the E. Alpha-drop, entropy reduction, and pruning family. \\(\\rhot(n)\\in(0,1]\\) be retained fractions. Define Then \\(\\alpha(n)<1\\) requires",
     "formula": "\\alpha(n) = 1+\\frac1n\\sum_{t=1}^{m(n)}\\log_2\\rho_t(n) +\\beta(n).\n\n\\beta(n) < -\\frac1n\\sum_t\\log_2\\rho_t(n).",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e28-corrected-alpha-drop-exponent"
   },
@@ -528,7 +528,7 @@
       "M_T \\le M_0\\exp\\!\\left(-\\sum_{t=0}^{T-1}\\Delta_t\\right)."
     ],
     "anchor": "e29-entropy-drop-pruning",
-    "definition": "Iteration gives",
+    "definition": "Entropy-drop pruning is the canonical E29 object in the E. Alpha-drop, entropy reduction, and pruning family.",
     "formula": "M_{t+1}\\le e^{-\\Delta_t}M_t, \\qquad \\Delta_t\\ge0.\n\nM_T \\le M_0\\exp\\!\\left(-\\sum_{t=0}^{T-1}\\Delta_t\\right).",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e29-entropy-drop-pruning"
   },
@@ -542,7 +542,7 @@
       "0\\le H_k\\le\\ln K."
     ],
     "anchor": "e30-spectral-entropy",
-    "definition": "For $Pk\\ge0$ and $\\sumkPk=1$, For support size $K$,",
+    "definition": "Spectral entropy is the canonical E30 object in the E. Alpha-drop, entropy reduction, and pruning family. For \\(Pk\\ge0\\) and \\(\\sumkPk=1\\), For support size \\(K\\),",
     "formula": "H_k=-\\sum_kP_k\\ln P_k.\n\n0\\le H_k\\le\\ln K.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e30-spectral-entropy"
   },
@@ -556,7 +556,7 @@
       "\\Delta H_t\\ge c_0\\mathcal D_t, \\qquad \\mathcal D_t\\ge0."
     ],
     "anchor": "e31-conditional-entropy-production-bound",
-    "definition": "Define the entropy drop A noncircular model-specific bound has the form",
+    "definition": "Conditional entropy-production bound is the canonical E31 object in the E. Alpha-drop, entropy reduction, and pruning family. the entropy drop A noncircular model-specific bound has the form",
     "formula": "\\Delta H_t:=H_k(t)-H_k(t+1).\n\n\\Delta H_t\\ge c_0\\mathcal D_t, \\qquad \\mathcal D_t\\ge0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e31-conditional-entropy-production-bound"
   },
@@ -569,7 +569,7 @@
       "\\limsup_{n\\to\\infty}\\alpha(n)<1."
     ],
     "anchor": "e32-subexponential-exploration-condition",
-    "definition": "This follows only if the retained-fraction and $\\beta(n)$ bounds in E28 hold uniformly with sufficient margin.",
+    "definition": "Subexponential exploration condition is the canonical E32 object in the E. Alpha-drop, entropy reduction, and pruning family. This follows only if the retained-fraction and \\(\\beta(n)\\) bounds in E28 hold uniformly with sufficient margin.",
     "formula": "\\limsup_{n\\to\\infty}\\alpha(n)<1.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e32-subexponential-exploration-condition"
   },
@@ -583,7 +583,7 @@
       "\\boxed{ e^{H_k(t)}\\le K_t }."
     ],
     "anchor": "e33-corrected-support-entropy-relation",
-    "definition": "For a distribution supported on $Kt$ modes, hence",
+    "definition": "Corrected support-entropy relation is the canonical E33 object in the E. Alpha-drop, entropy reduction, and pruning family. For a distribution supported on \\(Kt\\) modes, hence",
     "formula": "H_k(t)\\le\\ln K_t,\n\n\\boxed{ e^{H_k(t)}\\le K_t }.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e33-corrected-support-entropy-relation"
   },
@@ -597,7 +597,7 @@
       "\\Delta E_{\\rm cost}\\ge\\lambda\\,\\Delta H_k, \\qquad \\lambda>0."
     ],
     "anchor": "e34-energy-entropy-conversion",
-    "definition": "For entropy reduction the proposed cost relation is",
+    "definition": "Energy-entropy conversion is the canonical E34 object in the E. Alpha-drop, entropy reduction, and pruning family. For entropy reduction the proposed cost relation is",
     "formula": "\\Delta H_k:=H_{\\rm before}-H_{\\rm after}\\ge0,\n\n\\Delta E_{\\rm cost}\\ge\\lambda\\,\\Delta H_k, \\qquad \\lambda>0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e34-energy-entropy-conversion"
   },
@@ -610,7 +610,7 @@
       "\\partial_t\\psi=0, \\qquad \\nabla\\Theta_\\varepsilon[\\psi]=0, \\qquad \\frac{d}{dt}S[\\psi]=0."
     ],
     "anchor": "e35-curvature-locked-fixed-point",
-    "definition": "A stationary locked configuration satisfies",
+    "definition": "Curvature-locked fixed point is the canonical E35 object in the F. WCC, channel capacity, and complexity family. A stationary locked configuration satisfies",
     "formula": "\\partial_t\\psi=0, \\qquad \\nabla\\Theta_\\varepsilon[\\psi]=0, \\qquad \\frac{d}{dt}S[\\psi]=0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e35-curvature-locked-fixed-point"
   },
@@ -623,7 +623,7 @@
       "\\psi^{(t+1)}(x) = U\\!\\left( \\psi^{(t)}(x), \\{\\psi^{(t)}(y)\\}_{y\\in N(x)} \\right)."
     ],
     "anchor": "e36-discrete-wcc-update",
-    "definition": "Discrete WCC update.",
+    "definition": "Discrete WCC update is the canonical E36 object in the F. WCC, channel capacity, and complexity family.",
     "formula": "\\psi^{(t+1)}(x) = U\\!\\left( \\psi^{(t)}(x), \\{\\psi^{(t)}(y)\\}_{y\\in N(x)} \\right).",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e36-discrete-wcc-update"
   },
@@ -636,7 +636,7 @@
       "k_{\\max} = C_1\\frac{E_{\\max}}{\\hbar c},"
     ],
     "anchor": "e37-bandlimit-from-energy",
-    "definition": "with dimensionless $C1$.",
+    "definition": "Bandlimit from energy is the canonical E37 object in the F. WCC, channel capacity, and complexity family. with dimensionless \\(C1\\).",
     "formula": "k_{\\max} = C_1\\frac{E_{\\max}}{\\hbar c},",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e37-bandlimit-from-energy"
   },
@@ -649,7 +649,7 @@
       "N_{\\rm lanes} \\le C_2Vk_{\\max}^3,"
     ],
     "anchor": "e38-spatial-channel-capacity",
-    "definition": "In three spatial dimensions, with dimensionless $C2$.",
+    "definition": "Spatial channel capacity is the canonical E38 object in the F. WCC, channel capacity, and complexity family. In three spatial dimensions, with dimensionless \\(C2\\).",
     "formula": "N_{\\rm lanes} \\le C_2Vk_{\\max}^3,",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e38-spatial-channel-capacity"
   },
@@ -662,7 +662,7 @@
       "T_{\\max}(n)\\le C_3n^d."
     ],
     "anchor": "e39-polynomial-update-bound",
-    "definition": "This defines the assumed computational resource class.",
+    "definition": "Polynomial update bound is the canonical E39 object in the F. WCC, channel capacity, and complexity family. This defines the assumed computational resource class.",
     "formula": "T_{\\max}(n)\\le C_3n^d.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e39-polynomial-update-bound"
   },
@@ -675,7 +675,7 @@
       "P_{\\rm WCC}\\cong P, \\qquad NP_{\\rm WCC}\\cong NP."
     ],
     "anchor": "e40-wcc-complexity-identification",
-    "definition": "The identification requires an explicit encoding and polynomial simulation in both directions.",
+    "definition": "WCC complexity identification is the canonical E40 object in the F. WCC, channel capacity, and complexity family. The identification requires an explicit encoding and polynomial simulation in both directions.",
     "formula": "P_{\\rm WCC}\\cong P, \\qquad NP_{\\rm WCC}\\cong NP.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e40-wcc-complexity-identification"
   },
@@ -688,7 +688,7 @@
       "|C_{\\rm curv}(n)| \\le 2^{\\alpha(n)n}, \\qquad \\alpha(n)<1."
     ],
     "anchor": "e41-curvature-bounded-configuration-count",
-    "definition": "E28 alone does not prove this counting bound; an injective coding or combinatorial argument is required.",
+    "definition": "Curvature-bounded configuration count is the canonical E41 object in the F. WCC, channel capacity, and complexity family. E28 alone does not prove this counting bound; an injective coding or combinatorial argument is required.",
     "formula": "|C_{\\rm curv}(n)| \\le 2^{\\alpha(n)n}, \\qquad \\alpha(n)<1.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e41-curvature-bounded-configuration-count"
   },
@@ -701,7 +701,7 @@
       "\\frac{d}{dt}I_{\\rm coh}[\\psi] = -\\lambda_I \\int_\\Omega|\\Theta_\\varepsilon[\\psi]|^2dx."
     ],
     "anchor": "e42-theta-information-relation",
-    "definition": "The information functional and coupling $\\lambdaI$ require derivation.",
+    "definition": "Theta-information relation is the canonical E42 object in the F. WCC, channel capacity, and complexity family. The information functional and coupling \\(\\lambdaI\\) require derivation.",
     "formula": "\\frac{d}{dt}I_{\\rm coh}[\\psi] = -\\lambda_I \\int_\\Omega|\\Theta_\\varepsilon[\\psi]|^2dx.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e42-theta-information-relation"
   },
@@ -714,7 +714,7 @@
       "\\frac{dH_k}{dt} \\le -\\mu \\int_\\Omega|\\Theta_\\varepsilon[\\psi]|^2dx, \\qquad \\mu>0."
     ],
     "anchor": "e43-curvature-entropy-tradeoff",
-    "definition": "This remains an analytic/empirical claim.",
+    "definition": "Curvature-entropy tradeoff is the canonical E43 object in the F. WCC, channel capacity, and complexity family. This remains an analytic/empirical claim.",
     "formula": "\\frac{dH_k}{dt} \\le -\\mu \\int_\\Omega|\\Theta_\\varepsilon[\\psi]|^2dx, \\qquad \\mu>0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e43-curvature-entropy-tradeoff"
   },
@@ -727,7 +727,7 @@
       "\\Theta_\\varepsilon[\\psi_n] = \\lambda_n\\psi_n."
     ],
     "anchor": "e44-theta-eigenmode-problem",
-    "definition": "Because $\\Theta\\varepsilon$ is nonlinear, the spectral problem and normalization must be specified carefully.",
+    "definition": "Theta eigenmode problem is the canonical E44 object in the G. Cavity, effective mass, and phase structure family. Because \\(\\Theta\\varepsilon\\) is nonlinear, the spectral problem and normalization must be specified carefully.",
     "formula": "\\Theta_\\varepsilon[\\psi_n] = \\lambda_n\\psi_n.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e44-theta-eigenmode-problem"
   },
@@ -741,7 +741,7 @@
       "U=\\int_\\Omega u\\,dV"
     ],
     "anchor": "e45-corrected-quality-factor",
-    "definition": "where is stored energy and $P{\\rm loss}$ is loss power. An integral of energy density over a loss region is not a power unless a loss rate is included.",
+    "definition": "Corrected quality factor is the canonical E45 object in the G. Cavity, effective mass, and phase structure family. where is stored energy and \\(P{\\rm loss}\\) is loss power. An integral of energy density over a loss region is not a power unless a loss rate is included.",
     "formula": "\\boxed{ Q_{\\rm eff} = \\omega\\frac{U}{P_{\\rm loss}} }\n\nU=\\int_\\Omega u\\,dV",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e45-corrected-quality-factor"
   },
@@ -754,7 +754,7 @@
       "\\langle\\sigma\\rangle_{w,\\rm plasma} \\approx \\langle\\sigma\\rangle_{w,\\rm cavity}."
     ],
     "anchor": "e46-plasma-cavity-curvature-match",
-    "definition": "A measurable matching tolerance and transfer mechanism remain open.",
+    "definition": "Plasma-cavity curvature match is the canonical E46 object in the G. Cavity, effective mass, and phase structure family. A measurable matching tolerance and transfer mechanism remain open.",
     "formula": "\\langle\\sigma\\rangle_{w,\\rm plasma} \\approx \\langle\\sigma\\rangle_{w,\\rm cavity}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e46-plasma-cavity-curvature-match"
   },
@@ -768,7 +768,7 @@
       "P_{\\rm in}+P_{\\rm fusion} = P_{\\rm loss}+P_{\\rm out}."
     ],
     "anchor": "e47-corrected-power-balance",
-    "definition": "At stationarity, Fusion is a source, not a loss term.",
+    "definition": "Corrected power balance is the canonical E47 object in the G. Cavity, effective mass, and phase structure family. At stationarity, Fusion is a source, not a loss term.",
     "formula": "\\boxed{ \\frac{dW}{dt} = P_{\\rm in} + P_{\\rm fusion} - P_{\\rm loss} - P_{\\rm out} }.\n\nP_{\\rm in}+P_{\\rm fusion} = P_{\\rm loss}+P_{\\rm out}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e47-corrected-power-balance"
   },
@@ -781,7 +781,7 @@
       "\\Delta\\sigma = \\langle\\sigma\\rangle_{\\rm core} - \\langle\\sigma\\rangle_{\\rm edge} > \\Delta_{\\rm crit}."
     ],
     "anchor": "e48-curvature-gap-stability-criterion",
-    "definition": "The threshold and direction of the inequality must be calibrated to a specified stability observable.",
+    "definition": "Curvature-gap stability criterion is the canonical E48 object in the G. Cavity, effective mass, and phase structure family. The threshold and direction of the inequality must be calibrated to a specified stability observable.",
     "formula": "\\Delta\\sigma = \\langle\\sigma\\rangle_{\\rm core} - \\langle\\sigma\\rangle_{\\rm edge} > \\Delta_{\\rm crit}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e48-curvature-gap-stability-criterion"
   },
@@ -796,7 +796,7 @@
       "\\boxed{ m_{\\rm eff}^2 = \\frac{\\hbar^2}{c^4}\\Delta_\\omega^\\star }."
     ],
     "anchor": "e49-corrected-effective-mass-gap-law",
-    "definition": "If then comparison with",
+    "definition": "Corrected effective-mass gap law is the canonical E49 object in the G. Cavity, effective mass, and phase structure family. If then comparison with",
     "formula": "\\omega_j^2=c^2\\lambda_j+\\Delta_\\omega^\\star, \\qquad [\\Delta_\\omega^\\star]=T^{-2},\n\n\\omega^2=c^2k^2+\\frac{m_{\\rm eff}^2c^4}{\\hbar^2}\n\n\\boxed{ m_{\\rm eff}^2 = \\frac{\\hbar^2}{c^4}\\Delta_\\omega^\\star }.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e49-corrected-effective-mass-gap-law"
   },
@@ -810,7 +810,7 @@
       "|\\nabla\\theta|\\ge\\delta>0"
     ],
     "anchor": "e50-phase-coherence-functional",
-    "definition": "The definition requires a regularization or lower bound on the integration region.",
+    "definition": "Phase-coherence functional is the canonical E50 object in the G. Cavity, effective mass, and phase structure family. The definition requires a regularization or lower bound on the integration region.",
     "formula": "\\mathcal C[\\psi] = \\int_\\Omega \\frac{|\\psi|^2}{|\\nabla\\theta|}\\,dx.\n\n|\\nabla\\theta|\\ge\\delta>0",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e50-phase-coherence-functional"
   },
@@ -824,7 +824,7 @@
       "[\\nabla,\\Theta_D]\\psi := \\nabla(\\Theta_D[\\psi])-\\Theta_D[\\nabla\\psi] = \\frac{\\Delta\\psi}{D^2}\\nabla D."
     ],
     "anchor": "e51-curvature-gradient-commutator",
-    "definition": "For a smooth scalar denominator $D\\neq0$, define Then, where $\\nabla\\Delta=\\Delta\\nabla$,",
+    "definition": "Curvature-gradient commutator is the canonical E51 object in the G. Cavity, effective mass, and phase structure family. For a smooth scalar denominator \\(D\\neq0\\), define Then, where \\(\\nabla\\Delta=\\Delta\\nabla\\),",
     "formula": "\\Theta_D[\\psi]:=-\\frac{\\Delta\\psi}{D}.\n\n[\\nabla,\\Theta_D]\\psi := \\nabla(\\Theta_D[\\psi])-\\Theta_D[\\nabla\\psi] = \\frac{\\Delta\\psi}{D^2}\\nabla D.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e51-curvature-gradient-commutator"
   },
@@ -837,7 +837,7 @@
       "G_\\sigma:=\\int_\\Omega|\\Theta_\\varepsilon[\\psi]|^2dx, \\qquad L_\\sigma:=\\int_\\Omega|\\nabla\\psi|^2dx."
     ],
     "anchor": "e52-curvature-gain-and-gradient-loss",
-    "definition": "Curvature gain and gradient loss.",
+    "definition": "Curvature gain and gradient loss is the canonical E52 object in the G. Cavity, effective mass, and phase structure family.",
     "formula": "G_\\sigma:=\\int_\\Omega|\\Theta_\\varepsilon[\\psi]|^2dx, \\qquad L_\\sigma:=\\int_\\Omega|\\nabla\\psi|^2dx.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e52-curvature-gain-and-gradient-loss"
   },
@@ -850,7 +850,7 @@
       "p_\\Theta(x) := c_2|\\Theta_\\varepsilon[\\psi](x)|^2."
     ],
     "anchor": "e53-curvature-pressure-density",
-    "definition": "It is the local curvature contribution to E18.",
+    "definition": "Curvature pressure density is the canonical E53 object in the G. Cavity, effective mass, and phase structure family. It is the local curvature contribution to E18.",
     "formula": "p_\\Theta(x) := c_2|\\Theta_\\varepsilon[\\psi](x)|^2.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e53-curvature-pressure-density"
   },
@@ -863,7 +863,7 @@
       "\\partial_t\\psi=0, \\qquad \\delta\\mathcal E[\\psi]=0, \\qquad \\nabla\\Theta_\\varepsilon[\\psi]=0."
     ],
     "anchor": "e54-resonance-lock-condition",
-    "definition": "Simultaneous satisfaction requires existence and regularity results.",
+    "definition": "Resonance-lock condition is the canonical E54 object in the G. Cavity, effective mass, and phase structure family. Simultaneous satisfaction requires existence and regularity results.",
     "formula": "\\partial_t\\psi=0, \\qquad \\delta\\mathcal E[\\psi]=0, \\qquad \\nabla\\Theta_\\varepsilon[\\psi]=0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e54-resonance-lock-condition"
   },
@@ -876,7 +876,7 @@
       "V_{\\rm eff}(\\psi) = V(|\\psi|^2) + \\kappa|\\Theta_\\varepsilon[\\psi]|^2."
     ],
     "anchor": "e55-curvature-induced-effective-potential",
-    "definition": "Curvature-induced effective potential.",
+    "definition": "Curvature-induced effective potential is the canonical E55 object in the G. Cavity, effective mass, and phase structure family.",
     "formula": "V_{\\rm eff}(\\psi) = V(|\\psi|^2) + \\kappa|\\Theta_\\varepsilon[\\psi]|^2.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e55-curvature-induced-effective-potential"
   },
@@ -889,7 +889,7 @@
       "|\\nabla\\theta|_{\\rm wall} \\sim \\sigma_{\\rm wall} \\gg \\langle\\sigma\\rangle_w."
     ],
     "anchor": "e56-phase-wall-criterion",
-    "definition": "The comparison scale and wall-detection threshold must be defined.",
+    "definition": "Phase-wall criterion is the canonical E56 object in the G. Cavity, effective mass, and phase structure family. The comparison scale and wall-detection threshold must be defined.",
     "formula": "|\\nabla\\theta|_{\\rm wall} \\sim \\sigma_{\\rm wall} \\gg \\langle\\sigma\\rangle_w.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e56-phase-wall-criterion"
   },
@@ -903,7 +903,7 @@
       "(|k|^2-k_\\star^2)^2."
     ],
     "anchor": "e57-swift-hohenberg-shell-operator",
-    "definition": "Its Fourier symbol is",
+    "definition": "Swift-Hohenberg shell operator is the canonical E57 object in the H. Swift-Hohenberg and spectral projection family. Its Fourier symbol is",
     "formula": "\\mathcal{SH}[A] = (\\Delta+k_\\star^2)^2A.\n\n(|k|^2-k_\\star^2)^2.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e57-swift-hohenberg-shell-operator"
   },
@@ -917,7 +917,7 @@
       "G(k) = \\frac1{r+a(|k|^2-k_\\star^2)^2}."
     ],
     "anchor": "e58-band-selective-green-kernel",
-    "definition": "For the Fourier Green kernel is",
+    "definition": "Band-selective Green kernel is the canonical E58 object in the H. Swift-Hohenberg and spectral projection family. For the Fourier Green kernel is",
     "formula": "\\mathcal L=r+a(\\Delta+k_\\star^2)^2,\n\nG(k) = \\frac1{r+a(|k|^2-k_\\star^2)^2}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e58-band-selective-green-kernel"
   },
@@ -932,7 +932,7 @@
       "P_{k_\\star}^2=P_{k_\\star}."
     ],
     "anchor": "e59-projection-onto-a-dominant-annulus",
-    "definition": "With a fixed annulus,",
+    "definition": "Projection onto a dominant annulus is the canonical E59 object in the H. Swift-Hohenberg and spectral projection family. With a fixed annulus,",
     "formula": "\\mathcal A^\\star := \\left\\{ k\\in\\mathbb Z^d: \\bigl||k|-k_\\star\\bigr|\\le\\Delta k \\right\\},\n\n(P_{k_\\star}A)(x) = \\sum_{k\\in\\mathcal A^\\star} \\widehat A_ke^{ik\\cdot x}.\n\nP_{k_\\star}^2=P_{k_\\star}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e59-projection-onto-a-dominant-annulus"
   },
@@ -945,7 +945,7 @@
       "\\partial_T\\mathcal A = \\mu\\mathcal A-g|\\mathcal A|^2\\mathcal A."
     ],
     "anchor": "e60-center-manifold-amplitude-equation",
-    "definition": "Center-manifold amplitude equation.",
+    "definition": "Center-manifold amplitude equation is the canonical E60 object in the H. Swift-Hohenberg and spectral projection family.",
     "formula": "\\partial_T\\mathcal A = \\mu\\mathcal A-g|\\mathcal A|^2\\mathcal A.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e60-center-manifold-amplitude-equation"
   },
@@ -958,7 +958,7 @@
       "r_c = \\min_k a(|k|^2-k_\\star^2)^2 = 0."
     ],
     "anchor": "e61-pattern-formation-threshold",
-    "definition": "In the continuum, For a discrete domain, equality requires an admissible mode on the selected shell.",
+    "definition": "Pattern-formation threshold is the canonical E61 object in the H. Swift-Hohenberg and spectral projection family. In the continuum, For a discrete domain, equality requires an admissible mode on the selected shell.",
     "formula": "r_c = \\min_k a(|k|^2-k_\\star^2)^2 = 0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e61-pattern-formation-threshold"
   },
@@ -971,7 +971,7 @@
       "\\eta(t) = \\frac{ \\sum_{k\\in\\mathcal A^\\star}|\\widehat A_k|^2 }{ \\sum_k|\\widehat A_k|^2 }, \\qquad 0\\le\\eta(t)\\le1."
     ],
     "anchor": "e62-spectral-energy-concentration",
-    "definition": "For nonzero total spectral energy,",
+    "definition": "Spectral energy concentration is the canonical E62 object in the H. Swift-Hohenberg and spectral projection family. For nonzero total spectral energy,",
     "formula": "\\eta(t) = \\frac{ \\sum_{k\\in\\mathcal A^\\star}|\\widehat A_k|^2 }{ \\sum_k|\\widehat A_k|^2 }, \\qquad 0\\le\\eta(t)\\le1.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e62-spectral-energy-concentration"
   },
@@ -984,7 +984,7 @@
       "k_\\star = \\operatorname*{arg\\,min}_k \\left[ H_k+\\lambda_\\Theta C_\\Theta(k) \\right]."
     ],
     "anchor": "e63-entropic-mode-selection",
-    "definition": "Entropic mode selection.",
+    "definition": "Entropic mode selection is the canonical E63 object in the H. Swift-Hohenberg and spectral projection family.",
     "formula": "k_\\star = \\operatorname*{arg\\,min}_k \\left[ H_k+\\lambda_\\Theta C_\\Theta(k) \\right].",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e63-entropic-mode-selection"
   },
@@ -998,7 +998,7 @@
       "\\boxed{ \\lambda_\\star = \\frac{2\\pi}{k_\\star} = 2\\pi\\sqrt{\\frac{2b}{a}} }."
     ],
     "anchor": "e64-corrected-selected-wavelength",
-    "definition": "From E12, Therefore",
+    "definition": "Corrected selected wavelength is the canonical E64 object in the H. Swift-Hohenberg and spectral projection family. From E12, Therefore",
     "formula": "k_\\star=\\sqrt{\\frac{a}{2b}}.\n\n\\boxed{ \\lambda_\\star = \\frac{2\\pi}{k_\\star} = 2\\pi\\sqrt{\\frac{2b}{a}} }.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e64-corrected-selected-wavelength"
   },
@@ -1011,7 +1011,7 @@
       "p_c(n)=\\frac{n+2}{n-2}."
     ],
     "anchor": "e65-critical-sobolev-exponent",
-    "definition": "For $n>2$,",
+    "definition": "Critical Sobolev exponent is the canonical E65 object in the I. Sobolev structure and dimensional bounds family.",
     "formula": "p_c(n)=\\frac{n+2}{n-2}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e65-critical-sobolev-exponent"
   },
@@ -1024,7 +1024,7 @@
       "\\|u\\|_{L^p} \\le C \\|\\nabla u\\|_{L^2}^{\\theta} \\|u\\|_{L^2}^{1-\\theta}."
     ],
     "anchor": "e66-gagliardo-nirenberg-interpolation",
-    "definition": "The allowed $p,\\theta,n$, domain, and boundary assumptions must be specified.",
+    "definition": "Gagliardo-Nirenberg interpolation is the canonical E66 object in the I. Sobolev structure and dimensional bounds family. The allowed \\(p,\\theta,n\\), domain, and boundary assumptions must be specified.",
     "formula": "\\|u\\|_{L^p} \\le C \\|\\nabla u\\|_{L^2}^{\\theta} \\|u\\|_{L^2}^{1-\\theta}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e66-gagliardo-nirenberg-interpolation"
   },
@@ -1035,7 +1035,7 @@
     "status": "PASS",
     "formulas": [],
     "anchor": "e67-failure-of-h2-o-linfty-above-three-dimensions",
-    "definition": "For $n>3$, the embedding $H^2\\hookrightarrow L^\\infty$ fails in general; equivalently, there exist $H^2$ functions not controlled in $L^\\infty$.",
+    "definition": "Failure of $H^2 o L^\\infty$ above three dimensions is the canonical E67 object in the I. Sobolev structure and dimensional bounds family. For \\(n>3\\), the embedding \\(H^2\\hookrightarrow L^\\infty\\) fails in general; equivalently, there exist \\(H^2\\) functions not controlled in \\(L^\\infty\\).",
     "formula": "",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e67-failure-of-h2-o-linfty-above-three-dimensions"
   },
@@ -1048,7 +1048,7 @@
       "\\int_{B_R}|\\nabla\\psi|^2dx \\le CR^{n-2}\\|\\psi\\|_{H^1}^2."
     ],
     "anchor": "e68-localized-energy-estimate",
-    "definition": "A model-dependent localized estimate is Its exponent and constant require a precise scaling regime and domain hypotheses.",
+    "definition": "Localized energy estimate is the canonical E68 object in the I. Sobolev structure and dimensional bounds family. A model-dependent localized estimate is Its exponent and constant require a precise scaling regime and domain hypotheses.",
     "formula": "\\int_{B_R}|\\nabla\\psi|^2dx \\le CR^{n-2}\\|\\psi\\|_{H^1}^2.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e68-localized-energy-estimate"
   },
@@ -1062,7 +1062,7 @@
       "\\Theta_\\varepsilon[\\psi]\\in L^\\infty(\\Omega)."
     ],
     "anchor": "e69-corrected-high-regularity-curvature-bound",
-    "definition": "If and the regularized reciprocal is uniformly bounded, then Sobolev embedding gives",
+    "definition": "Corrected high-regularity curvature bound is the canonical E69 object in the I. Sobolev structure and dimensional bounds family. If and the regularized reciprocal is uniformly bounded, then Sobolev embedding gives",
     "formula": "\\psi\\in H^s(\\Omega), \\qquad s>\\frac n2+2,\n\n\\Theta_\\varepsilon[\\psi]\\in L^\\infty(\\Omega).",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e69-corrected-high-regularity-curvature-bound"
   },
@@ -1075,7 +1075,7 @@
       "n\\le3, \\qquad H^2\\hookrightarrow L^\\infty, \\qquad p<p_c(n)"
     ],
     "anchor": "e70-dimensional-stability-criterion",
-    "definition": "Use the one-way criterion as separate hypotheses for the proposed stability analysis. They are not a proven biconditional characterization of all stable WCT solutions.",
+    "definition": "Dimensional stability criterion is the canonical E70 object in the I. Sobolev structure and dimensional bounds family. Use the one-way criterion as separate hypotheses for the proposed stability analysis. They are not a proven biconditional characterization of all stable WCT solutions.",
     "formula": "n\\le3, \\qquad H^2\\hookrightarrow L^\\infty, \\qquad p<p_c(n)",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e70-dimensional-stability-criterion"
   },
@@ -1088,7 +1088,7 @@
       "TVk_{\\max}^3 \\le C_{\\rm phys}."
     ],
     "anchor": "e71-physical-computation-resource-bound",
-    "definition": "The constant must have units of time, and the interpretation depends on the update rate, precision, and physical encoding.",
+    "definition": "Physical computation resource bound is the canonical E71 object in the J. Computational resource bounds family. The constant must have units of time, and the interpretation depends on the update rate, precision, and physical encoding.",
     "formula": "TVk_{\\max}^3 \\le C_{\\rm phys}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e71-physical-computation-resource-bound"
   },
@@ -1101,7 +1101,7 @@
       "|S_{\\rm eff}(n)| \\le 2^{\\alpha(n)n}."
     ],
     "anchor": "e72-curvature-pruned-search-space",
-    "definition": "A counting theorem linking the physical pruning process to discrete configurations is required.",
+    "definition": "Curvature-pruned search space is the canonical E72 object in the J. Computational resource bounds family. A counting theorem linking the physical pruning process to discrete configurations is required.",
     "formula": "|S_{\\rm eff}(n)| \\le 2^{\\alpha(n)n}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e72-curvature-pruned-search-space"
   },
@@ -1114,7 +1114,7 @@
       "V(x,w)\\in P, \\qquad |w|=\\operatorname{poly}(|x|)."
     ],
     "anchor": "e73-polynomial-verification",
-    "definition": "Polynomial verification.",
+    "definition": "Polynomial verification is the canonical E73 object in the J. Computational resource bounds family.",
     "formula": "V(x,w)\\in P, \\qquad |w|=\\operatorname{poly}(|x|).",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e73-polynomial-verification"
   },
@@ -1127,7 +1127,7 @@
       "\\inf_n \\frac{\\log|NP_n|}{\\log|P_n|} >1."
     ],
     "anchor": "e74-curvature-separation-conjecture",
-    "definition": "The finite-size families $Pn,NPn$ must first be defined.",
+    "definition": "Curvature separation conjecture is the canonical E74 object in the J. Computational resource bounds family. The finite-size families \\(Pn,NPn\\) must first be defined.",
     "formula": "\\inf_n \\frac{\\log|NP_n|}{\\log|P_n|} >1.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e74-curvature-separation-conjecture"
   },
@@ -1140,7 +1140,7 @@
       "\\nexists\\, O: O(\\psi)=\\operatorname*{arg\\,min}_\\psi\\mathcal E[\\psi] \\quad\\text{in polynomial time}."
     ],
     "anchor": "e75-physical-oracle-impossibility",
-    "definition": "This is a complexity claim requiring a formal computational model and reduction.",
+    "definition": "Physical-oracle impossibility is the canonical E75 object in the J. Computational resource bounds family. This is a complexity claim requiring a formal computational model and reduction.",
     "formula": "\\nexists\\, O: O(\\psi)=\\operatorname*{arg\\,min}_\\psi\\mathcal E[\\psi] \\quad\\text{in polynomial time}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e75-physical-oracle-impossibility"
   },
@@ -1153,7 +1153,7 @@
       "P_{\\rm WCC}=P \\quad\\Longrightarrow\\quad \\text{WCC polynomially simulates the declared physical-computation model}."
     ],
     "anchor": "e76-wcc-complexity-equivalence",
-    "definition": "The implication requires explicit translations and cost bounds.",
+    "definition": "WCC complexity equivalence is the canonical E76 object in the J. Computational resource bounds family. The implication requires explicit translations and cost bounds.",
     "formula": "P_{\\rm WCC}=P \\quad\\Longrightarrow\\quad \\text{WCC polynomially simulates the declared physical-computation model}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e76-wcc-complexity-equivalence"
   },
@@ -1166,7 +1166,7 @@
       "\\frac{d}{dt}I(\\psi_t;\\psi_0) \\le -\\gamma\\mathcal E_\\Theta[\\psi_t]."
     ],
     "anchor": "e77-mutual-information-decay",
-    "definition": "The probability law, channel, and regularity assumptions remain open.",
+    "definition": "Mutual-information decay is the canonical E77 object in the K. Entropy and information dynamics family. The probability law, channel, and regularity assumptions remain open.",
     "formula": "\\frac{d}{dt}I(\\psi_t;\\psi_0) \\le -\\gamma\\mathcal E_\\Theta[\\psi_t].",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e77-mutual-information-decay"
   },
@@ -1179,7 +1179,7 @@
       "\\mathcal I_F[\\psi] \\ge c\\int_\\Omega|\\Theta_\\varepsilon[\\psi]|^2dx."
     ],
     "anchor": "e78-fisher-information-curvature-bound",
-    "definition": "A common probability density and geometric derivation are required.",
+    "definition": "Fisher-information curvature bound is the canonical E78 object in the K. Entropy and information dynamics family. A common probability density and geometric derivation are required.",
     "formula": "\\mathcal I_F[\\psi] \\ge c\\int_\\Omega|\\Theta_\\varepsilon[\\psi]|^2dx.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e78-fisher-information-curvature-bound"
   },
@@ -1192,7 +1192,7 @@
       "\\dot\\Sigma = \\frac{dH_k}{dt} + \\frac{\\mathcal E_\\Theta}{T_{\\rm eff}}."
     ],
     "anchor": "e79-entropy-production-rate",
-    "definition": "The sign convention and units must be fixed when used physically.",
+    "definition": "Entropy-production rate is the canonical E79 object in the K. Entropy and information dynamics family. The sign convention and units must be fixed when used physically.",
     "formula": "\\dot\\Sigma = \\frac{dH_k}{dt} + \\frac{\\mathcal E_\\Theta}{T_{\\rm eff}}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e79-entropy-production-rate"
   },
@@ -1205,7 +1205,7 @@
       "\\Delta E \\ge k_BT_{\\rm eff}\\ln2\\, \\Delta H_{\\rm bits}."
     ],
     "anchor": "e80-landauer-type-bound",
-    "definition": "If $\\Delta H{\\rm bits}$ is measured in bits, For entropy in nats, omit the factor $\\ln2$.",
+    "definition": "Landauer-type bound is the canonical E80 object in the K. Entropy and information dynamics family. If \\(\\Delta H{\\rm bits}\\) is measured in bits, For entropy in nats, omit the factor \\(\\ln2\\).",
     "formula": "\\Delta E \\ge k_BT_{\\rm eff}\\ln2\\, \\Delta H_{\\rm bits}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e80-landauer-type-bound"
   },
@@ -1219,7 +1219,7 @@
       "\\boxed{ \\xi_{\\rm coh} = \\sqrt{ \\frac{\\int_\\Omega|\\psi|^2dx} {\\int_\\Omega|\\nabla\\psi|^2dx} } }."
     ],
     "anchor": "e81-corrected-coherence-length",
-    "definition": "With normalized spectral weights $pk$, Equivalently, when the integrals exist,",
+    "definition": "Corrected coherence length is the canonical E81 object in the K. Entropy and information dynamics family. With normalized spectral weights \\(pk\\), Equivalently, when the integrals exist,",
     "formula": "\\boxed{ \\xi_{\\rm coh} = \\left( \\sum_kp_k|k|^2 \\right)^{-1/2} }.\n\n\\boxed{ \\xi_{\\rm coh} = \\sqrt{ \\frac{\\int_\\Omega|\\psi|^2dx} {\\int_\\Omega|\\nabla\\psi|^2dx} } }.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e81-corrected-coherence-length"
   },
@@ -1232,7 +1232,7 @@
       "g_{ij}^{({\\rm info})} = \\left\\langle \\partial_i\\Theta_\\varepsilon\\, \\partial_j\\Theta_\\varepsilon \\right\\rangle."
     ],
     "anchor": "e82-information-geometry-tensor",
-    "definition": "Positive definiteness and coordinate invariance require additional conditions.",
+    "definition": "Information-geometry tensor is the canonical E82 object in the K. Entropy and information dynamics family. Positive definiteness and coordinate invariance require additional conditions.",
     "formula": "g_{ij}^{({\\rm info})} = \\left\\langle \\partial_i\\Theta_\\varepsilon\\, \\partial_j\\Theta_\\varepsilon \\right\\rangle.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e82-information-geometry-tensor"
   },
@@ -1245,7 +1245,7 @@
       "S[\\psi] = \\int_\\mathcal M \\left[ |\\nabla\\psi|^2 + |W_\\psi-\\sigma_\\star^2|^2 \\right]\\sqrt g\\,d^3x, \\qquad W_\\psi:=-\\frac{\\Delta\\psi}{\\psi}."
     ],
     "anchor": "cle1-curvature-locking-functional",
-    "definition": "Use the inverse-length convention $[\\sigma\\star]=L^{-1}$:",
+    "definition": "Curvature-locking functional is the canonical CLE1 object in the Curvature-locking equations family. Use the inverse-length convention \\([\\sigma\\star]=L^{-1}\\):",
     "formula": "S[\\psi] = \\int_\\mathcal M \\left[ |\\nabla\\psi|^2 + |W_\\psi-\\sigma_\\star^2|^2 \\right]\\sqrt g\\,d^3x, \\qquad W_\\psi:=-\\frac{\\Delta\\psi}{\\psi}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle1-curvature-locking-functional"
   },
@@ -1259,7 +1259,7 @@
       "\\boxed{ q\\frac{\\psi_{xx}}{\\psi^2} -\\psi_{xx} -\\frac{d^2}{dx^2}\\left(\\frac q\\psi\\right) =0 }."
     ],
     "anchor": "cle2-corrected-curvature-lock-euler-lagrange-equation",
-    "definition": "For the real one-dimensional reduction the generalized Euler-Lagrange equation is",
+    "definition": "Corrected curvature-lock Euler-Lagrange equation is the canonical CLE2 object in the Curvature-locking equations family. For the real one-dimensional reduction the generalized Euler-Lagrange equation is",
     "formula": "q:=-\\frac{\\psi_{xx}}{\\psi}-\\sigma_\\star^2,\n\n\\boxed{ q\\frac{\\psi_{xx}}{\\psi^2} -\\psi_{xx} -\\frac{d^2}{dx^2}\\left(\\frac q\\psi\\right) =0 }.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle2-corrected-curvature-lock-euler-lagrange-equation"
   },
@@ -1272,7 +1272,7 @@
       "W_\\psi=\\sigma_\\star^2."
     ],
     "anchor": "cle3-curvature-locking-condition",
-    "definition": "Both sides have units $L^{-2}$.",
+    "definition": "Curvature-locking condition is the canonical CLE3 object in the Curvature-locking equations family. Both sides have units \\(L^{-2}\\).",
     "formula": "W_\\psi=\\sigma_\\star^2.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle3-curvature-locking-condition"
   },
@@ -1285,7 +1285,7 @@
       "-\\Delta\\psi = \\sigma_\\star^2\\psi."
     ],
     "anchor": "cle4-locked-field-equation",
-    "definition": "Locked-field equation.",
+    "definition": "Locked-field equation is the canonical CLE4 object in the Curvature-locking equations family.",
     "formula": "-\\Delta\\psi = \\sigma_\\star^2\\psi.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle4-locked-field-equation"
   },
@@ -1298,7 +1298,7 @@
       "\\Delta\\psi \\approx \\frac1{R^2}\\partial_\\theta^2\\psi + \\frac1{r^2}\\partial_\\phi^2\\psi."
     ],
     "anchor": "cle5-thinproduct-torus-laplacian",
-    "definition": "Under a flat product or thin-torus approximation, The exact embedded-torus Laplace-Beltrami operator contains metric-dependent terms.",
+    "definition": "Thin/product-torus Laplacian is the canonical CLE5 object in the Curvature-locking equations family. Under a flat product or thin-torus approximation, The exact embedded-torus Laplace-Beltrami operator contains metric-dependent terms.",
     "formula": "\\Delta\\psi \\approx \\frac1{R^2}\\partial_\\theta^2\\psi + \\frac1{r^2}\\partial_\\phi^2\\psi.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle5-thinproduct-torus-laplacian"
   },
@@ -1312,7 +1312,7 @@
       "\\frac{f''}{f} + \\frac{R^2}{r^2}\\frac{g''}{g} = -\\sigma_\\star^2R^2."
     ],
     "anchor": "cle6-separation-ansatz",
-    "definition": "For CLE4 and CLE5 give",
+    "definition": "Separation ansatz is the canonical CLE6 object in the Curvature-locking equations family. For CLE4 and CLE5 give",
     "formula": "\\psi(\\theta,\\phi)=f(\\theta)g(\\phi),\n\n\\frac{f''}{f} + \\frac{R^2}{r^2}\\frac{g''}{g} = -\\sigma_\\star^2R^2.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle6-separation-ansatz"
   },
@@ -1326,7 +1326,7 @@
       "\\boxed{ f(\\theta)=A\\cos(m\\theta)+B\\sin(m\\theta), \\qquad m\\in\\mathbb Z_{\\ge0} }."
     ],
     "anchor": "cle7-periodic-angular-mode-family",
-    "definition": "The periodic reduced equation has the full family",
+    "definition": "Periodic angular mode family is the canonical CLE7 object in the Curvature-locking equations family. The periodic reduced equation has the full family",
     "formula": "f''+m^2f=0\n\n\\boxed{ f(\\theta)=A\\cos(m\\theta)+B\\sin(m\\theta), \\qquad m\\in\\mathbb Z_{\\ge0} }.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle7-periodic-angular-mode-family"
   },
@@ -1339,7 +1339,7 @@
       "\\psi(\\theta,\\phi)=Ae^{i\\phi}"
     ],
     "anchor": "cle8-selected-torus-eigenmode",
-    "definition": "is one admissible winding-one mode. Uniqueness requires additional lowest-mode, chirality, normalization, phase, and boundary-selection principles.",
+    "definition": "Selected torus eigenmode is the canonical CLE8 object in the Curvature-locking equations family. is one admissible winding-one mode. Uniqueness requires additional lowest-mode, chirality, normalization, phase, and boundary-selection principles.",
     "formula": "\\psi(\\theta,\\phi)=Ae^{i\\phi}",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle8-selected-torus-eigenmode"
   },
@@ -1353,7 +1353,7 @@
       "R=\\frac{\\hbar}{m_ec}\\approx386.16\\ {\\rm fm}."
     ],
     "anchor": "cle9-electron-radius-from-curvature",
-    "definition": "For $\\sigma\\star=mec/\\hbar$,",
+    "definition": "Electron radius from curvature is the canonical CLE9 object in the Curvature-locking equations family.",
     "formula": "R=\\frac1{\\sigma_\\star}.\n\nR=\\frac{\\hbar}{m_ec}\\approx386.16\\ {\\rm fm}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle9-electron-radius-from-curvature"
   },
@@ -1366,7 +1366,7 @@
       "\\boxed{ W_\\psi = -\\frac{\\Delta\\psi}{\\psi} = \\sigma_\\star^2 }, \\qquad R=\\sigma_\\star^{-1}."
     ],
     "anchor": "cle10-curvature-scalar-chain",
-    "definition": "Curvature scalar chain.",
+    "definition": "Curvature scalar chain is the canonical CLE10 object in the Curvature-locking equations family.",
     "formula": "\\boxed{ W_\\psi = -\\frac{\\Delta\\psi}{\\psi} = \\sigma_\\star^2 }, \\qquad R=\\sigma_\\star^{-1}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle10-curvature-scalar-chain"
   },
@@ -1380,7 +1380,7 @@
       "|\\delta_g(E)|\\le|A_g|."
     ],
     "anchor": "g1-log-periodic-ghost-modulation",
-    "definition": "For $E>0$ and $E0>0$, with",
+    "definition": "Log-periodic ghost modulation is the canonical G1 object in the Logarithmic and ghost equations family.",
     "formula": "\\delta_g(E) = A_g\\cos\\!\\left( k_\\ell\\ln\\frac E{E_0}+\\phi \\right),\n\n|\\delta_g(E)|\\le|A_g|.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#g1-log-periodic-ghost-modulation"
   },
@@ -1396,7 +1396,7 @@
       "\\frac{\\Delta\\psi}{\\psi} = \\Delta u+|\\nabla u|^2."
     ],
     "anchor": "ex-logarithmic-field-representation",
-    "definition": "For a positive real field $\\psi>0$, let Then",
+    "definition": "Logarithmic field representation is the canonical EX object in the Logarithmic and ghost equations family. For a positive real field \\(\\psi>0\\), let Then",
     "formula": "u=\\ln\\psi, \\qquad \\psi=e^u.\n\n\\nabla\\psi=e^u\\nabla u,\n\n\\Delta\\psi=e^u(\\Delta u+|\\nabla u|^2),\n\n\\frac{\\Delta\\psi}{\\psi} = \\Delta u+|\\nabla u|^2.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#ex-logarithmic-field-representation"
   },
@@ -1409,7 +1409,7 @@
       "\\partial_tu = \\Delta u+|\\nabla u|^2,"
     ],
     "anchor": "ey-log-curvature-evolution",
-    "definition": "If then the logarithmic dynamics are equivalent to the diffusion equation in EZ, provided $\\psi=e^u>0$.",
+    "definition": "Log-curvature evolution is the canonical EY object in the Logarithmic and ghost equations family. If then the logarithmic dynamics are equivalent to the diffusion equation in EZ, provided \\(\\psi=e^u>0\\).",
     "formula": "\\partial_tu = \\Delta u+|\\nabla u|^2,",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#ey-log-curvature-evolution"
   },
@@ -1424,7 +1424,7 @@
       "\\boxed{\\partial_t\\psi=\\Delta\\psi}."
     ],
     "anchor": "ez-cole-hopf-reduction",
-    "definition": "With EY gives",
+    "definition": "Cole-Hopf reduction is the canonical EZ object in the Logarithmic and ghost equations family.",
     "formula": "\\psi=e^u,\n\n\\partial_t\\psi = e^u\\partial_tu = e^u(\\Delta u+|\\nabla u|^2) = \\Delta\\psi.\n\n\\boxed{\\partial_t\\psi=\\Delta\\psi}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#ez-cole-hopf-reduction"
   },
@@ -1437,7 +1437,7 @@
       "|\\nabla u| \\sim \\kappa_{\\rm core}."
     ],
     "anchor": "fa-filament-localization-condition",
-    "definition": "A norm, tolerance, scale, and dynamical derivation are required.",
+    "definition": "Filament-localization condition is the canonical FA object in the Logarithmic and ghost equations family. A norm, tolerance, scale, and dynamical derivation are required.",
     "formula": "|\\nabla u| \\sim \\kappa_{\\rm core}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#fa-filament-localization-condition"
   },
@@ -1451,7 +1451,7 @@
       "J[\\psi] = |\\psi|^2\\Delta\\psi\\,\\varepsilon_{\\rm vac}."
     ],
     "anchor": "cm1-fundamental-field-evolution",
-    "definition": "Coefficient dimensions and derivation remain open.",
+    "definition": "Fundamental field evolution is the canonical CM1 object in the Curvature-acoustic cosmology family. Coefficient dimensions and derivation remain open.",
     "formula": "i\\partial_t\\psi = -\\Theta_\\varepsilon[\\psi]\\,J[\\psi],\n\nJ[\\psi] = |\\psi|^2\\Delta\\psi\\,\\varepsilon_{\\rm vac}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm1-fundamental-field-evolution"
   },
@@ -1466,7 +1466,7 @@
       "\\alpha_{\\rm WCT} = -\\frac{d\\ln|\\Theta(k)|}{d\\ln k}."
     ],
     "anchor": "cm2-curvature-spectral-tilt",
-    "definition": "Curvature-spectral tilt.",
+    "definition": "Curvature-spectral tilt is the canonical CM2 object in the Curvature-acoustic cosmology family.",
     "formula": "P_{\\rm prim}(k)\\propto k^{-\\alpha_{\\rm WCT}},\n\nn_s-1=-\\alpha_{\\rm WCT},\n\n\\alpha_{\\rm WCT} = -\\frac{d\\ln|\\Theta(k)|}{d\\ln k}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm2-curvature-spectral-tilt"
   },
@@ -1479,7 +1479,7 @@
       "\\Phi(k,t) = -C_\\Phi\\frac{\\Theta(k,t)}{k^2}."
     ],
     "anchor": "cm3-potential-from-curvature",
-    "definition": "Potential from curvature.",
+    "definition": "Potential from curvature is the canonical CM3 object in the Curvature-acoustic cosmology family.",
     "formula": "\\Phi(k,t) = -C_\\Phi\\frac{\\Theta(k,t)}{k^2}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm3-potential-from-curvature"
   },
@@ -1493,7 +1493,7 @@
       "\\Gamma(k,t) = \\left| \\frac{\\partial_t\\Theta(k,t)}{\\Theta(k,t)} \\right|,"
     ],
     "anchor": "cm4-horizon-entry-potential-decay",
-    "definition": "on the domain $\\Theta\\neq0$.",
+    "definition": "Horizon-entry potential decay is the canonical CM4 object in the Curvature-acoustic cosmology family.",
     "formula": "\\partial_t\\Phi = -\\Gamma\\Phi,\n\n\\Gamma(k,t) = \\left| \\frac{\\partial_t\\Theta(k,t)}{\\Theta(k,t)} \\right|,",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm4-horizon-entry-potential-decay"
   },
@@ -1508,7 +1508,7 @@
       "\\mathcal R = \\frac{E_{\\rm comp}}{E_{\\rm rad}}."
     ],
     "anchor": "cm5-curvature-acoustic-oscillators",
-    "definition": "Curvature-acoustic oscillators.",
+    "definition": "Curvature-acoustic oscillators is the canonical CM5 object in the Curvature-acoustic cosmology family.",
     "formula": "\\ddot\\delta_\\gamma +c_s^2k^2\\delta_\\gamma = -k^2\\Phi,\n\n\\ddot\\delta_b +\\mathcal R\\,c_s^2k^2\\delta_\\gamma = -k^2\\Phi,\n\n\\mathcal R = \\frac{E_{\\rm comp}}{E_{\\rm rad}}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm5-curvature-acoustic-oscillators"
   },
@@ -1521,7 +1521,7 @@
       "c_s^2(t) = \\frac1{3(1+\\mathcal R(t))} \\left[ 1-\\beta_{\\rm curv} \\frac{E_{\\rm curv}(t)}{E_{\\rm tot}} \\right]."
     ],
     "anchor": "cm6-sound-speed-from-curvature-feedback",
-    "definition": "Positivity requires the bracketed factor to be nonnegative.",
+    "definition": "Sound speed from curvature feedback is the canonical CM6 object in the Curvature-acoustic cosmology family. Positivity requires the bracketed factor to be nonnegative.",
     "formula": "c_s^2(t) = \\frac1{3(1+\\mathcal R(t))} \\left[ 1-\\beta_{\\rm curv} \\frac{E_{\\rm curv}(t)}{E_{\\rm tot}} \\right].",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm6-sound-speed-from-curvature-feedback"
   },
@@ -1535,7 +1535,7 @@
       "D_{\\rm curv}(t) = \\frac{\\langle|\\nabla\\psi|^2\\rangle} {\\langle|\\psi|^2\\rangle}."
     ],
     "anchor": "cm7-curvature-diffusion",
-    "definition": "A phenomenological damping replacement is",
+    "definition": "Curvature diffusion is the canonical CM7 object in the Curvature-acoustic cosmology family. A phenomenological damping replacement is",
     "formula": "\\dot\\delta_\\gamma = v_\\gamma - D_{\\rm curv}(t)k^2\\delta_\\gamma,\n\nD_{\\rm curv}(t) = \\frac{\\langle|\\nabla\\psi|^2\\rangle} {\\langle|\\psi|^2\\rangle}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm7-curvature-diffusion"
   },
@@ -1549,7 +1549,7 @@
       "\\Phi(k,0) = -C_\\Phi\\frac{\\Theta(k,0)}{k^2}."
     ],
     "anchor": "cm8-initial-conditions",
-    "definition": "Use CM3 consistently: The earlier extra factor and opposite sign were removed.",
+    "definition": "Initial conditions is the canonical CM8 object in the Curvature-acoustic cosmology family. Use CM3 consistently: The earlier extra factor and opposite sign were removed.",
     "formula": "\\delta_\\gamma(0)=\\delta_b(0)=-2\\Phi(k,0),\n\n\\Phi(k,0) = -C_\\Phi\\frac{\\Theta(k,0)}{k^2}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm8-initial-conditions"
   },
@@ -1563,7 +1563,7 @@
       "\\dot\\delta_b=v_b, \\qquad \\dot v_b=-\\mathcal R c_s^2k^2\\delta_\\gamma-k^2\\Phi."
     ],
     "anchor": "cm9-first-order-mode-system",
-    "definition": "First-order mode system.",
+    "definition": "First-order mode system is the canonical CM9 object in the Curvature-acoustic cosmology family.",
     "formula": "\\dot\\delta_\\gamma=v_\\gamma, \\qquad \\dot v_\\gamma=-c_s^2k^2\\delta_\\gamma-k^2\\Phi,\n\n\\dot\\delta_b=v_b, \\qquad \\dot v_b=-\\mathcal R c_s^2k^2\\delta_\\gamma-k^2\\Phi.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm9-first-order-mode-system"
   },
@@ -1577,7 +1577,7 @@
       "\\varepsilon_{\\rm drag} = \\frac{E_{\\rm exch}}{E_{\\rm comp}}, \\qquad 0\\le\\varepsilon_{\\rm drag}\\le1."
     ],
     "anchor": "cm10-tight-coupling-drag",
-    "definition": "Tight-coupling drag.",
+    "definition": "Tight-coupling drag is the canonical CM10 object in the Curvature-acoustic cosmology family.",
     "formula": "\\delta_b \\leftarrow (1-\\varepsilon_{\\rm drag})\\delta_b + \\varepsilon_{\\rm drag}\\delta_\\gamma,\n\n\\varepsilon_{\\rm drag} = \\frac{E_{\\rm exch}}{E_{\\rm comp}}, \\qquad 0\\le\\varepsilon_{\\rm drag}\\le1.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm10-tight-coupling-drag"
   },
@@ -1591,7 +1591,7 @@
       "k_D^{-2} = \\int_0^{t_\\star}D_{\\rm curv}(t)\\,dt."
     ],
     "anchor": "cm11-curvature-damping-envelope",
-    "definition": "Dimensional consistency requires the time-dependent diffusion coefficient to carry units $L^2/T$.",
+    "definition": "Curvature damping envelope is the canonical CM11 object in the Curvature-acoustic cosmology family. Dimensional consistency requires the time-dependent diffusion coefficient to carry units \\(L^2/T\\).",
     "formula": "D(k) = \\exp\\!\\left(-\\frac{k^2}{k_D^2}\\right),\n\nk_D^{-2} = \\int_0^{t_\\star}D_{\\rm curv}(t)\\,dt.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm11-curvature-damping-envelope"
   },
@@ -1604,7 +1604,7 @@
       "\\Delta^2(k) = \\frac{k^3}{2\\pi^2}P(k)."
     ],
     "anchor": "cm12-dimensionless-power-spectrum",
-    "definition": "Dimensionless power spectrum.",
+    "definition": "Dimensionless power spectrum is the canonical CM12 object in the Curvature-acoustic cosmology family.",
     "formula": "\\Delta^2(k) = \\frac{k^3}{2\\pi^2}P(k).",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm12-dimensionless-power-spectrum"
   },
@@ -1618,7 +1618,7 @@
       "s_{21} = \\frac{k_2}{k_1}, \\qquad s_{31} = \\frac{k_3}{k_1}."
     ],
     "anchor": "cm13-peak-metrics",
-    "definition": "Peak metrics.",
+    "definition": "Peak metrics is the canonical CM13 object in the Curvature-acoustic cosmology family.",
     "formula": "r_{21} = \\frac{P(k_2)}{P(k_1)}, \\qquad r_{31} = \\frac{P(k_3)}{P(k_1)},\n\ns_{21} = \\frac{k_2}{k_1}, \\qquad s_{31} = \\frac{k_3}{k_1}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm13-peak-metrics"
   },
@@ -1633,7 +1633,7 @@
       "\\text{larger radiative fraction}\\Rightarrow r_{21}\\downarrow."
     ],
     "anchor": "cm14-peak-response-interpretation",
-    "definition": "Proposed qualitative relations:",
+    "definition": "Peak-response interpretation is the canonical CM14 object in the Curvature-acoustic cosmology family. Proposed qualitative relations:",
     "formula": "\\text{faster }\\Theta\\text{ decay}\\Rightarrow s_{ij}\\uparrow,\n\n\\text{larger compression}\\Rightarrow r_{31}\\uparrow,\n\n\\text{larger radiative fraction}\\Rightarrow r_{21}\\downarrow.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm14-peak-response-interpretation"
   },
@@ -1647,7 +1647,7 @@
       "a_{\\rm WCT}(t) = \\left[ \\frac{E_{\\rm curv}(0)} {E_{\\rm curv}(t)} \\right]^{1/3}."
     ],
     "anchor": "cm15-wct-angular-scaling",
-    "definition": "WCT angular scaling.",
+    "definition": "WCT angular scaling is the canonical CM15 object in the Curvature-acoustic cosmology family.",
     "formula": "k_{\\rm phys} = \\frac{k}{a_{\\rm WCT}(t)},\n\na_{\\rm WCT}(t) = \\left[ \\frac{E_{\\rm curv}(0)} {E_{\\rm curv}(t)} \\right]^{1/3}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm15-wct-angular-scaling"
   },
@@ -1661,7 +1661,7 @@
       "k_{\\rm hor} = \\frac{2\\pi}{R_{\\rm hor}}."
     ],
     "anchor": "cm16-acoustic-horizon",
-    "definition": "Acoustic horizon.",
+    "definition": "Acoustic horizon is the canonical CM16 object in the Curvature-acoustic cosmology family.",
     "formula": "R_{\\rm hor}(t) = \\int_0^tc_s(t')\\,dt',\n\nk_{\\rm hor} = \\frac{2\\pi}{R_{\\rm hor}}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm16-acoustic-horizon"
   },
@@ -1674,7 +1674,7 @@
       "E_{\\rm curv}(t) + E_{\\rm grad}(t) = E_{\\rm tot},"
     ],
     "anchor": "cm17-curvature-energy-closure",
-    "definition": "for a closed sector with no external source or loss.",
+    "definition": "Curvature-energy closure is the canonical CM17 object in the Curvature-acoustic cosmology family. for a closed sector with no external source or loss.",
     "formula": "E_{\\rm curv}(t) + E_{\\rm grad}(t) = E_{\\rm tot},",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm17-curvature-energy-closure"
   },
@@ -1687,7 +1687,7 @@
       "\\mathfrak C_{\\rm min} = \\{\\mathrm{CM1},\\mathrm{CM2},\\mathrm{CM3}, \\mathrm{CM4},\\mathrm{CM5},\\mathrm{CM7}\\}."
     ],
     "anchor": "cm18-minimal-cosmology-closure-set",
-    "definition": "This is a bookkeeping closure, not a derivation of cosmology.",
+    "definition": "Minimal cosmology closure set is the canonical CM18 object in the Curvature-acoustic cosmology family. This is a bookkeeping closure, not a derivation of cosmology.",
     "formula": "\\mathfrak C_{\\rm min} = \\{\\mathrm{CM1},\\mathrm{CM2},\\mathrm{CM3}, \\mathrm{CM4},\\mathrm{CM5},\\mathrm{CM7}\\}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm18-minimal-cosmology-closure-set"
   },
@@ -1700,7 +1700,7 @@
       "c_s^2 = \\frac{\\partial P_{\\rm curv}} {\\partial\\rho_{\\rm curv}},"
     ],
     "anchor": "cm19-acoustic-speed-from-curvature-equation-of-state",
-    "definition": "where the derivative must be taken along a specified thermodynamic or dynamical path.",
+    "definition": "Acoustic speed from curvature equation of state is the canonical CM19 object in the Curvature-acoustic cosmology family. where the derivative must be taken along a specified thermodynamic or dynamical path.",
     "formula": "c_s^2 = \\frac{\\partial P_{\\rm curv}} {\\partial\\rho_{\\rm curv}},",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm19-acoustic-speed-from-curvature-equation-of-state"
   },
@@ -1713,7 +1713,7 @@
       "H(t) = \\frac{\\dot a_{\\rm WCT}}{a_{\\rm WCT}} = \\sqrt{ \\frac{\\rho_\\Theta(t)}{3|K|} }."
     ],
     "anchor": "cm20-theta-based-expansion-ansatz",
-    "definition": "The constant $K$ must carry the units needed for $H^2$, and the equation requires independent derivation.",
+    "definition": "Theta-based expansion ansatz is the canonical CM20 object in the Curvature-acoustic cosmology family. The constant \\(K\\) must carry the units needed for \\(H^2\\), and the equation requires independent derivation.",
     "formula": "H(t) = \\frac{\\dot a_{\\rm WCT}}{a_{\\rm WCT}} = \\sqrt{ \\frac{\\rho_\\Theta(t)}{3|K|} }.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm20-theta-based-expansion-ansatz"
   },
@@ -1726,7 +1726,7 @@
       "\\gamma(s) = \\sum_{k=1}^{K} \\left[ a_k\\cos(ks)+b_k\\sin(ks) \\right], \\qquad s\\in[0,2\\pi)."
     ],
     "anchor": "top1-closed-spectral-loop-representation",
-    "definition": "This is the chosen configuration representation; emergence of the basis is a separate empirical claim.",
+    "definition": "Closed spectral-loop representation is the canonical TOP1 object in the Topology and spectral emergence family. This is the chosen configuration representation; emergence of the basis is a separate empirical claim.",
     "formula": "\\gamma(s) = \\sum_{k=1}^{K} \\left[ a_k\\cos(ks)+b_k\\sin(ks) \\right], \\qquad s\\in[0,2\\pi).",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top1-closed-spectral-loop-representation"
   },
@@ -1739,7 +1739,7 @@
       "\\mathcal E_{\\rm loop}[\\gamma] = \\int_\\gamma\\kappa^2ds + \\alpha_{\\rm UV} \\sum_kk^p(|a_k|^2+|b_k|^2) + V_{\\rm SA}[\\gamma]."
     ],
     "anchor": "top2-wct-loop-energy-functional",
-    "definition": "WCT loop-energy functional.",
+    "definition": "WCT loop-energy functional is the canonical TOP2 object in the Topology and spectral emergence family.",
     "formula": "\\mathcal E_{\\rm loop}[\\gamma] = \\int_\\gamma\\kappa^2ds + \\alpha_{\\rm UV} \\sum_kk^p(|a_k|^2+|b_k|^2) + V_{\\rm SA}[\\gamma].",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top2-wct-loop-energy-functional"
   },
@@ -1753,7 +1753,7 @@
       "\\frac{d\\mathcal E_{\\rm loop}}{dt} = - \\left\\| \\frac{\\delta\\mathcal E_{\\rm loop}}{\\delta\\gamma} \\right\\|^2 \\le0."
     ],
     "anchor": "top3-irreversible-gradient-flow",
-    "definition": "For a differentiable gradient flow, Well-posedness and treatment of self-avoidance require assumptions.",
+    "definition": "Irreversible gradient flow is the canonical TOP3 object in the Topology and spectral emergence family. For a differentiable gradient flow, Well-posedness and treatment of self-avoidance require assumptions.",
     "formula": "\\partial_t\\gamma = -\\frac{\\delta\\mathcal E_{\\rm loop}}{\\delta\\gamma}.\n\n\\frac{d\\mathcal E_{\\rm loop}}{dt} = - \\left\\| \\frac{\\delta\\mathcal E_{\\rm loop}}{\\delta\\gamma} \\right\\|^2 \\le0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top3-irreversible-gradient-flow"
   },
@@ -1767,7 +1767,7 @@
       "\\frac{d\\mathcal E}{dt}<0"
     ],
     "anchor": "top4-emergent-topology-criterion",
-    "definition": "A proposed physical invariant $I[\\gamma]$ satisfies while",
+    "definition": "Emergent-topology criterion is the canonical TOP4 object in the Topology and spectral emergence family. A proposed physical invariant \\(I[\\gamma]\\) satisfies while",
     "formula": "I[\\gamma_t]\\to I_\\infty\n\n\\frac{d\\mathcal E}{dt}<0",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top4-emergent-topology-criterion"
   },
@@ -1780,7 +1780,7 @@
       "\\operatorname{codim}_{\\rm WCT}(\\gamma) := \\text{minimum number of singular events required to reach the unknot}."
     ],
     "anchor": "top5-wct-dynamical-codimension",
-    "definition": "This is not manifold codimension.",
+    "definition": "WCT dynamical codimension is the canonical TOP5 object in the Topology and spectral emergence family. This is not manifold codimension.",
     "formula": "\\operatorname{codim}_{\\rm WCT}(\\gamma) := \\text{minimum number of singular events required to reach the unknot}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top5-wct-dynamical-codimension"
   },
@@ -1793,7 +1793,7 @@
       "\\epsilon_\\kappa = \\frac1L\\int_\\gamma\\kappa^2ds."
     ],
     "anchor": "top6-spectral-topology-bands",
-    "definition": "Define The claim that distinct knot types occupy disjoint asymptotic $\\epsilon\\kappa$ bands requires broader numerical and experimental validation.",
+    "definition": "Spectral topology bands is the canonical TOP6 object in the Topology and spectral emergence family. The claim that distinct knot types occupy disjoint asymptotic \\(\\epsilon\\kappa\\) bands requires broader numerical and experimental validation.",
     "formula": "\\epsilon_\\kappa = \\frac1L\\int_\\gamma\\kappa^2ds.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top6-spectral-topology-bands"
   },
@@ -1806,7 +1806,7 @@
       "m_{\\rm WCT} \\propto \\epsilon_\\kappa."
     ],
     "anchor": "top7-topological-mass-proxy",
-    "definition": "Within a fixed topological and normalization class, The proportionality constant and absolute scale require calibration.",
+    "definition": "Topological mass proxy is the canonical TOP7 object in the Topology and spectral emergence family. Within a fixed topological and normalization class, The proportionality constant and absolute scale require calibration.",
     "formula": "m_{\\rm WCT} \\propto \\epsilon_\\kappa.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top7-topological-mass-proxy"
   },
@@ -1819,7 +1819,7 @@
       "H_\\tau[\\gamma] = \\int_\\gamma\\tau\\,ds,"
     ],
     "anchor": "top8-holonomy-non-invariance",
-    "definition": "For the proposed non-invariance statement is that smooth admissible deformations can change $H\\tau$ continuously. A general theorem for the declared flow class remains open.",
+    "definition": "Holonomy non-invariance is the canonical TOP8 object in the Topology and spectral emergence family. For the proposed non-invariance statement is that smooth admissible deformations can change \\(H\\tau\\) continuously. A general theorem for the declared flow class remains open.",
     "formula": "H_\\tau[\\gamma] = \\int_\\gamma\\tau\\,ds,",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top8-holonomy-non-invariance"
   },
@@ -1832,7 +1832,7 @@
       "\\text{knotted protein states} \\longleftrightarrow \\text{stable WCT loop excitations}"
     ],
     "anchor": "top9-protein-particle-structural-correspondence",
-    "definition": "is a proposed analogy restricted to irreversible curvature flow with self-avoidance and spectral suppression. It is not an established physical equivalence.",
+    "definition": "Protein-particle structural correspondence is the canonical TOP9 object in the Topology and spectral emergence family. is a proposed analogy restricted to irreversible curvature flow with self-avoidance and spectral suppression. It is not an established physical equivalence.",
     "formula": "\\text{knotted protein states} \\longleftrightarrow \\text{stable WCT loop excitations}",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top9-protein-particle-structural-correspondence"
   },
@@ -1845,7 +1845,7 @@
       "\\mathcal E_{\\rm WCT}[\\psi] = \\int \\left( |\\nabla\\psi|^2 + |\\Theta_\\varepsilon[\\psi]|^2 \\right)dx."
     ],
     "anchor": "corr1-full-lyapunov-candidate",
-    "definition": "The curvature term alone is only one component.",
+    "definition": "Full Lyapunov candidate is the canonical CORR1 object in the Canonical correction layer family. The curvature term alone is only one component.",
     "formula": "\\mathcal E_{\\rm WCT}[\\psi] = \\int \\left( |\\nabla\\psi|^2 + |\\Theta_\\varepsilon[\\psi]|^2 \\right)dx.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr1-full-lyapunov-candidate"
   },
@@ -1859,7 +1859,7 @@
       "C_\\Theta(k) \\approx \\frac{k^4}{D_{\\rm eff}^2}."
     ],
     "anchor": "corr2-mean-amplitude-spectral-closure",
-    "definition": "Under a weak-intermittency mean-amplitude approximation, This is an approximation, not an exact identity.",
+    "definition": "Mean-amplitude spectral closure is the canonical CORR2 object in the Canonical correction layer family. Under a weak-intermittency mean-amplitude approximation, This is an approximation, not an exact identity.",
     "formula": "D_{\\rm eff}^2 := \\langle|\\psi|^2\\rangle+\\varepsilon^2,\n\nC_\\Theta(k) \\approx \\frac{k^4}{D_{\\rm eff}^2}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr2-mean-amplitude-spectral-closure"
   },
@@ -1873,7 +1873,7 @@
       "\\lambda_{\\rm ex}"
     ],
     "anchor": "corr3-spectral-weight-notation",
-    "definition": "Use for curvature cost and",
+    "definition": "Spectral-weight notation is the canonical CORR3 object in the Canonical correction layer family. Use for curvature cost and",
     "formula": "\\lambda_\\Theta\n\n\\lambda_{\\rm ex}",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr3-spectral-weight-notation"
   },
@@ -1886,7 +1886,7 @@
       "\\Xi = \\frac{\\int k^4\\rho(k)\\,dk}{H}, \\qquad H=-\\sum_kP_k\\ln P_k,"
     ],
     "anchor": "corr4-macro-micro-control-parameter",
-    "definition": "on the domain $H>0$.",
+    "definition": "Macro-micro control parameter is the canonical CORR4 object in the Canonical correction layer family.",
     "formula": "\\Xi = \\frac{\\int k^4\\rho(k)\\,dk}{H}, \\qquad H=-\\sum_kP_k\\ln P_k,",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr4-macro-micro-control-parameter"
   },
@@ -1899,7 +1899,7 @@
       "\\frac{dH}{dt} \\le -\\mu \\int|\\Theta_\\varepsilon[\\psi]|^2dx."
     ],
     "anchor": "corr5-entropy-curvature-coupling",
-    "definition": "This remains the same open claim as E43 unless derived for a specified evolution.",
+    "definition": "Entropy-curvature coupling is the canonical CORR5 object in the Canonical correction layer family. This remains the same open claim as E43 unless derived for a specified evolution.",
     "formula": "\\frac{dH}{dt} \\le -\\mu \\int|\\Theta_\\varepsilon[\\psi]|^2dx.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr5-entropy-curvature-coupling"
   },
@@ -1910,7 +1910,7 @@
     "status": "FAIL",
     "formulas": [],
     "anchor": "corr6-isoelectronic-flow-alignment",
-    "definition": "The imaginary-time isoelectronic flow is proposed as a reduced sector of M7 with ultraviolet smoothing and norm enforcement. A derivation of the reduction and its error bounds remains open. M2, M3, M4, M7, E1A, E1B, E2, E3, E4, E6, E7, E8, E10, E11, E12, E16, E17, E20, E21, E24, E26, E28, E29, E30, E33, E37, E38, E45, E47, E49, E51, E53, E57, E59, E61, E62, E64, E65, E67, E69, E81, CLE2, CLE4, CLE6, CLE7, CLE9, CLE10, G1, EX, EY, EZ",
+    "definition": "Isoelectronic-flow alignment is the canonical CORR6 object in the Canonical correction layer family. The imaginary-time isoelectronic flow is proposed as a reduced sector of M7 with ultraviolet smoothing and norm enforcement. A derivation of the reduction and its error bounds remains open.",
     "formula": "",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr6-isoelectronic-flow-alignment"
   }
