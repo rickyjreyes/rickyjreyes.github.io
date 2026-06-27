@@ -7,6 +7,7 @@ on:
       - "data/publications.json"
       - "scripts/build_scholar_site.py"
       - "scripts/build_equation_explorer.py"
+      - "scripts/refine_equation_definitions.py"
       - "scripts/patch_site_navigation.py"
       - "site-nav.js"
       - ".github/workflows/build-scholar-site.yml"
@@ -34,6 +35,9 @@ jobs:
 
       - name: Generate canonical equation explorer
         run: python scripts/build_equation_explorer.py
+
+      - name: Refine equation definitions
+        run: python scripts/refine_equation_definitions.py
 
       - name: Apply shared navigation and discovery patches
         run: python scripts/patch_site_navigation.py
