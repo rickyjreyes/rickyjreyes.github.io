@@ -6,10 +6,33 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://rickyjreyes.github.io/"
+NAV_HTML = (
+    '<button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>'
+    '<nav id="site-nav" aria-label="Primary navigation">'
+    '<a href="/">Home</a>'
+    '<a href="/publications/">Publications</a>'
+    '<a href="/equations/">Equations</a>'
+    '<a href="/sympy/">SymPy</a>'
+    '<a href="/lean/">Lean</a>'
+    '<a href="/tools/">Tools</a>'
+    '</nav>'
+)
 
 
-def inject_nav_script(path: Path) -> None:
+def normalize_navbar(text: str) -> str:
+    pattern = re.compile(
+        r'(<header\s+class="site-header"[^>]*>\s*<div\s+class="nav-wrap">\s*'
+        r'<a\s+class="wordmark".*?</a>)\s*'
+        r'(?:<button\s+class="menu-button".*?</button>\s*)?'
+        r'<nav[^>]*>.*?</nav>',
+        flags=re.S,
+    )
+    return pattern.sub(lambda match: match.group(1) + NAV_HTML, text, count=1)
+
+
+def patch_html(path: Path) -> None:
     text = path.read_text(encoding="utf-8")
+    text = normalize_navbar(text)
     text = re.sub(r'\s*<script\s+src="(?:\.\./)*site-nav\.js"\s+defer></script>', "", text)
     depth = len(path.relative_to(ROOT).parts) - 1
     src = "../" * depth + "site-nav.js"
@@ -94,10 +117,10 @@ WCT is an evolving independent research framework, not an established physical t
 def main() -> None:
     for path in ROOT.rglob("*.html"):
         if ".git" not in path.parts:
-            inject_nav_script(path)
+            patch_html(path)
     patch_sitemap()
     patch_llms()
-    print("Patched shared navigation and discovery files.")
+    print("Normalized shared navbar and discovery files.")
 
 
 if __name__ == "__main__":
