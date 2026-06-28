@@ -43,13 +43,21 @@ jobs:
           sh /tmp/elan-init.sh -y --no-modify-path --default-toolchain leanprover/lean4:v4.23.0
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Reproduce all frozen layers
-        run: make reproduce
-      - name: Upload verified release bundle
+        shell: bash
+        run: |
+          set +e
+          make reproduce 2>&1 | tee frozen-release.log
+          status=${PIPESTATUS[0]}
+          exit "$status"
+      - name: Upload release bundle and diagnostics
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: WCT-2026.1-${{ github.sha }}
           if-no-files-found: error
-          path: release-output/WCT-2026.1/
+          path: |
+            frozen-release.log
+            release-output/WCT-2026.1/
 
   docker:
     runs-on: ubuntu-24.04
