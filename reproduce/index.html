@@ -35,7 +35,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"></nav></div></header>
+  <header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/tools/">Tools</a></nav></div></header>
 
   <main id="main">
     <section class="repro-hero section-shell">
@@ -113,8 +113,6 @@ make reproduce</code></pre></article>
   </main>
 
   <footer class="site-footer"><div class="section-shell footer-grid"><div><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><p>Wave Confinement Theory research archive and reproducibility entry point.</p></div><div><h2>Release</h2><a href="../release/WCT-2026.1/release-manifest.json">Manifest</a><a href="https://github.com/rickyjreyes/rickyjreyes.github.io/actions/workflows/frozen-release.yml">CI</a><a href="https://github.com/rickyjreyes">GitHub</a></div><div><h2>Research</h2><a href="../publications/">Publications</a><a href="../equations/">Equations</a><a href="../research-corpus/">Corpus</a></div></div><div class="section-shell footer-bottom"><span>© 2026 Richard J. Reyes</span><a href="#top">Back to top ↑</a></div></footer>
-
-  <script src="../site-nav.js" defer></script>
   <script>
     document.querySelectorAll('[data-copy]').forEach((button) => {
       button.addEventListener('click', async () => {
@@ -131,5 +129,6 @@ make reproduce</code></pre></article>
       });
     });
   </script>
+<script src="../site-nav.js" defer></script>
 </body>
 </html>

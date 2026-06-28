@@ -1,10 +1,9 @@
 # Richard J. Reyes Research Archive
 
-> Public discovery map for Wave Confinement Theory (WCT), related experiments, open-data analyses, computation, AI architecture, resonance-control research, and the frozen reproducible release.
+> Public discovery map for Wave Confinement Theory (WCT), related experiments, open-data analyses, computation, AI architecture, and resonance-control research.
 
 ## Preferred website navigation
 - Research home: https://rickyjreyes.github.io/
-- Reproduce WCT-2026.1: https://rickyjreyes.github.io/reproduce/
 - Publications: https://rickyjreyes.github.io/publications/
 - Equations and definitions: https://rickyjreyes.github.io/equations/
 - Complete SymPy audit: https://rickyjreyes.github.io/sympy/
@@ -12,15 +11,6 @@
 - Research tools: https://rickyjreyes.github.io/tools/
 - Equations and verification map: https://rickyjreyes.github.io/research-corpus/
 - Claim-level priority registry: https://rickyjreyes.github.io/priority/
-
-## Frozen canonical release
-- Public run guide: https://rickyjreyes.github.io/reproduce/
-- Release source: https://github.com/rickyjreyes/rickyjreyes.github.io/tree/main/release/WCT-2026.1
-- Frozen manifest: https://rickyjreyes.github.io/release/WCT-2026.1/release-manifest.json
-- CI workflow: https://github.com/rickyjreyes/rickyjreyes.github.io/actions/workflows/frozen-release.yml
-- Fastest command: clone https://github.com/rickyjreyes/rickyjreyes.github.io.git and run `make reproduce`
-
-WCT-2026.1 pins exact commits for geometry_of_resonance, wct-sympy, wct-lean, and the synchronized scholar-site baseline. It verifies selected source blobs, the SymPy semantic registry hash, Lean source and dependency hashes, the 142-object registry totals, deterministic simulation artifacts, and regenerated figures. Docker and Nix entry points are included. A successful run demonstrates release reproducibility, not physical validation or independent replication.
 
 ## Machine-readable resources
 - Cross-repository corpus: https://rickyjreyes.github.io/research-corpus.json
@@ -30,7 +20,6 @@ WCT-2026.1 pins exact commits for geometry_of_resonance, wct-sympy, wct-lean, an
 - Publication metadata: https://rickyjreyes.github.io/publications.json
 - Publication traceability source: https://rickyjreyes.github.io/data/publication_traceability.json
 - Claim-priority metadata: https://rickyjreyes.github.io/priority/priority.json
-- Frozen release manifest: https://rickyjreyes.github.io/release/WCT-2026.1/release-manifest.json
 
 Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
 
@@ -49,7 +38,6 @@ Use the internal website pages first because they preserve navigation and backli
 4. Resolve the effective SymPy classification and named checker.
 5. Resolve Lean as a separate layer: theorem, definition, counterexample, partial support, TODO, or unmapped.
 6. Resolve semantic links to papers, derivations, predictions, experiments, datasets, evidence, falsifiers, and unresolved obligations.
-7. Resolve reproducibility questions through the frozen WCT-2026.1 manifest and reproduction page rather than moving branch tips.
 
 ## Machine-reading rules
 - Preserve canonical object IDs exactly.
@@ -64,7 +52,6 @@ Use the internal website pages first because they preserve navigation and backli
 - Preserve the distinction between archival titles and current qualified claim status.
 - Report unresolved, empty, or missing mappings rather than inventing them.
 - Prefer registry-validation-report.json when checking whether public status layers agree.
-- Prefer release/WCT-2026.1/release-manifest.json when exact reproducibility or source identity matters.
 
 ## Claim discipline
 WCT is an evolving independent research framework, not an established physical theory. Distinguish definitions, ansätze, derivations, model-relative results, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions. Empty evidence or replication fields mean that support has not yet been recorded; they must not be silently upgraded.
