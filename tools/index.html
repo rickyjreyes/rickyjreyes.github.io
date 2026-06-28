@@ -9,6 +9,7 @@
 <title>Interactive WCT Tools | Richard J. Reyes</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="tools-v2.css">
+<link rel="stylesheet" href="tools-v3.css">
 <script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["$$","$$"]]},svg:{fontCache:"global"}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
@@ -22,7 +23,7 @@
 
 <section class="tool-section tool-wrap" id="equations"><div class="tool-head"><div><p class="eyebrow">Equations</p><h2>Canonical equation tool.</h2></div><p>All 142 equations with rendered formulas, definitions, status labels, exact entry links, and canonical sources.</p></div><div class="tool-toolbar"><input id="eqSearch" type="search" placeholder="Search equation ID, title, definition, or formula"><select id="eqFamily"><option value="">All equation families</option></select><span class="tool-count" id="eqCount"></span></div><div class="equation-layout"><div class="equation-list" id="eqList"></div><article class="equation-box"><p class="eyebrow" id="eqFamilyOut">Equation</p><h2 id="eqTitle">Select an equation</h2><p class="tool-note" id="eqMeaning"></p><div class="latex" id="eqRendered"></div><details><summary>LaTeX source</summary><pre class="src" id="eqLatex"></pre></details><div class="equation-links"><a id="eqPageLink" href="../equations/">Open full equation card</a><a id="eqSourceLink" href="#" target="_blank" rel="noopener noreferrer">Canonical source ↗</a></div><p class="tool-note" id="eqStatus"></p></article></div></section>
 
-<section class="tool-section tool-wrap" id="chronology"><div class="tool-head"><div><p class="eyebrow">Chronology</p><h2>Calendar of the research program.</h2></div><p>Events are positioned by year, month, and day. Use the year rail for temporal density and the month grid for individual releases.</p></div><div class="tool-toolbar"><input id="calendarSearch" type="search" placeholder="Search chronology by title or branch"></div><div class="calendar-controls" id="calendarControls" aria-label="Chronology year filters"></div><div id="calendarRoot"></div><aside class="calendar-detail" id="calendarDetail" hidden></aside></section>
+<section class="tool-section tool-wrap" id="chronology"><div class="tool-head"><div><p class="eyebrow">Chronology</p><h2>Calendar of the research program.</h2></div><p>Events are positioned by year, month, and day. The continuous timescale preserves the full interval from the first release to the latest dated release.</p></div><div class="tool-toolbar"><input id="calendarSearch" type="search" placeholder="Search chronology by title or branch"></div><div class="calendar-controls" id="calendarControls" aria-label="Chronology year filters"></div><div id="calendarRoot"></div><aside class="calendar-detail" id="calendarDetail" hidden></aside></section>
 
 <section class="tool-section tool-wrap" id="graph"><div class="tool-head"><div><p class="eyebrow">Concept graph</p><h2>Obsidian-style corpus graph.</h2></div><p>Glossary terms connect to family hubs, explicit semantic edges, and the master-equation architecture. Drag nodes, pan, zoom, search, and filter by family.</p></div><div class="tool-toolbar"><input id="graphSearch" type="search" placeholder="Find a concept and its neighbors"><select id="graphFamily"><option value="">All concept families</option></select><button id="graphLabels" type="button" aria-pressed="false">Show all labels</button><button id="graphReset" type="button">Reset view</button></div><div class="graph-shell"><div class="graph-stage"><svg id="conceptGraph" viewBox="0 0 1200 720" role="img" aria-label="Interactive WCT concept graph"><defs><pattern id="graphGrid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(180,205,235,.18)" stroke-width=".6"/></pattern></defs><rect class="graph-grid" width="1200" height="720" fill="url(#graphGrid)"></rect><g id="graphScene"><g id="graphEdges"></g><g id="graphNodes"></g></g></svg><div class="graph-hint">Drag nodes · drag background to pan · scroll to zoom</div></div><aside class="graph-inspector" id="graphInspector"><span class="tool-tag">Graph inspector</span><h3>Select a node</h3><p>Its definition, notation, family, and direct connections will appear here.</p></aside></div><div class="graph-legend" id="graphLegend" aria-label="Concept family colors"></div></section>
 </main>
@@ -30,6 +31,7 @@
 <script src="corpus-data.js"></script>
 <script src="equations-data.js"></script>
 <script src="tools-v2.js"></script>
+<script src="tools-v3.js"></script>
 <script src="../site-nav.js" defer></script>
 </body>
 </html>
