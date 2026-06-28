@@ -7,6 +7,7 @@ on:
       - "data/publications.json"
       - "scripts/build_scholar_site.py"
       - "scripts/build_equation_explorer.py"
+      - "scripts/patch_lean_definitions.py"
       - "scripts/refine_equation_definitions.py"
       - "scripts/build_sympy_page.py"
       - "scripts/build_lean_page.py"
@@ -20,6 +21,7 @@ on:
   pull_request:
     paths:
       - "scripts/build_equation_explorer.py"
+      - "scripts/patch_lean_definitions.py"
       - "scripts/refine_equation_definitions.py"
       - "scripts/build_sympy_page.py"
       - "scripts/build_lean_page.py"
@@ -56,6 +58,9 @@ jobs:
 
       - name: Generate compiled registry and canonical equation explorer
         run: python scripts/build_equation_explorer.py
+
+      - name: Preserve Lean definition coverage
+        run: python scripts/patch_lean_definitions.py
 
       - name: Preserve canonical definitions and curate load-bearing objects
         run: python scripts/refine_equation_definitions.py
