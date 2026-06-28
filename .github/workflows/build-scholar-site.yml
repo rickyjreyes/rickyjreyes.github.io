@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "data/publications.json"
+      - "data/publication_traceability.json"
       - "scripts/build_scholar_site.py"
       - "scripts/build_equation_explorer.py"
       - "scripts/patch_lean_definitions.py"
@@ -20,6 +21,9 @@ on:
       - ".github/workflows/build-scholar-site.yml"
   pull_request:
     paths:
+      - "data/publications.json"
+      - "data/publication_traceability.json"
+      - "scripts/build_scholar_site.py"
       - "scripts/build_equation_explorer.py"
       - "scripts/patch_lean_definitions.py"
       - "scripts/refine_equation_definitions.py"
@@ -27,6 +31,7 @@ on:
       - "scripts/build_lean_page.py"
       - "scripts/build_research_corpus.py"
       - "scripts/validate_registry_sync.py"
+      - "scripts/patch_site_navigation.py"
       - ".github/workflows/build-scholar-site.yml"
   workflow_dispatch:
 
@@ -80,10 +85,10 @@ jobs:
       - name: Optimize formula rendering
         run: python scripts/optimize_math_rendering.py
 
-      - name: Apply shared navigation and discovery patches
+      - name: Apply shared navigation, traceability, and discovery patches
         run: python scripts/patch_site_navigation.py
 
-      - name: Validate cross-layer registry synchronization
+      - name: Validate cross-layer registry and publication traceability
         run: python scripts/validate_registry_sync.py
 
       - name: Upload generated registry preview
@@ -99,6 +104,8 @@ jobs:
             equations/index.html
             sympy/index.html
             lean/index.html
+            data/publication_traceability.json
+            publications/*.html
 
       - name: Commit generated files
         if: github.event_name == 'push'
@@ -110,5 +117,5 @@ jobs:
             echo "No generated changes."
             exit 0
           fi
-          git commit -m "Generate synchronized equation, SymPy, Lean, and corpus registry views"
+          git commit -m "Generate synchronized equation, publication traceability, and corpus views"
           git push
