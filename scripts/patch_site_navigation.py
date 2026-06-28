@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -65,26 +66,37 @@ def clarify_dimensionality_page() -> None:
 def patch_sitemap() -> None:
     path = ROOT / "sitemap.xml"
     text = path.read_text(encoding="utf-8")
-    pages = [
-        ("research-corpus/", "0.95"),
-        ("equations/", "0.95"),
-        ("sympy/", "0.90"),
-        ("lean/", "0.90"),
-        ("tools/", "0.90"),
-        ("research-corpus.json", "0.80"),
-        ("priority/", "0.85"),
+    today = date.today().isoformat()
+    resources = [
+        "research-corpus/",
+        "equations/",
+        "sympy/",
+        "lean/",
+        "tools/",
+        "priority/",
+        "research-corpus.json",
+        "compiled-registry.json",
+        "registry-validation-report.json",
+        "equations/equations.json",
+        "llms.txt",
+        "priority/priority.json",
+        "publications.json",
     ]
     additions = []
-    for suffix, priority in pages:
+    for suffix in resources:
         url = SITE + suffix
         if f"<loc>{url}</loc>" not in text:
-            additions.append(
-                f"  <url><loc>{url}</loc><lastmod>2026-06-27</lastmod>"
-                f"<changefreq>weekly</changefreq><priority>{priority}</priority></url>"
-            )
+            additions.append(f"  <url><loc>{url}</loc><lastmod>{today}</lastmod></url>")
     if additions:
         text = text.replace("</urlset>", "\n".join(additions) + "\n</urlset>")
-        path.write_text(text, encoding="utf-8")
+    for suffix in resources:
+        url = re.escape(SITE + suffix)
+        text = re.sub(
+            rf"(<loc>{url}</loc><lastmod>)[^<]+(</lastmod>)",
+            rf"\g<1>{today}\2",
+            text,
+        )
+    path.write_text(text, encoding="utf-8")
 
 
 def patch_llms() -> None:
@@ -100,34 +112,50 @@ def patch_llms() -> None:
 - Complete Lean coverage: {SITE}lean/
 - Research tools: {SITE}tools/
 - Equations and verification map: {SITE}research-corpus/
-- Machine-readable WCT corpus: {SITE}research-corpus.json
+- Claim-level priority registry: {SITE}priority/
+
+## Machine-readable resources
+- Cross-repository corpus: {SITE}research-corpus.json
+- Effective compiled registry: {SITE}compiled-registry.json
+- Registry validation report: {SITE}registry-validation-report.json
+- Equation feed: {SITE}equations/equations.json
+- Publication metadata: {SITE}publications.json
+- Claim-priority metadata: {SITE}priority/priority.json
 
 Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
 
 ## Canonical source files
 - Full corrected equation registry: https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md
 - Master equation architecture: https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_MASTER_EQUATIONS_UPDATED.md
-- SymPy executable registry: https://github.com/rickyjreyes/wct-sympy/blob/main/equations/full_registry.yaml
+- SymPy executable baseline registry: https://github.com/rickyjreyes/wct-sympy/blob/main/equations/full_registry.yaml
 - SymPy derived overrides: https://github.com/rickyjreyes/wct-sympy/blob/main/equations/derived_overrides.yaml
 - Lean theorem inventory: https://github.com/rickyjreyes/wct-lean/blob/main/THEOREMS.md
 - Semantic research graph: https://github.com/rickyjreyes/obsidian/blob/main/Research/00%20Maps/WCT%20Research%20Command%20Center.md
 
 ## Resolution order
-1. Canonical equation ID, formula, and definition.
-2. Effective SymPy classification and checker.
-3. Lean theorem, definition, counterexample, TODO, or unmapped status.
-4. Semantic graph links to papers, derivations, predictions, experiments, and evidence.
+1. Resolve a publication through its exact DOI, claim IDs, equation IDs, assumptions, code, data, and evidence links when present.
+2. Resolve a canonical equation through compiled-registry.json and its effective status.
+3. Treat full_registry.yaml as the historical baseline when a derived override exists.
+4. Resolve the effective SymPy classification and named checker.
+5. Resolve Lean as a separate layer: theorem, definition, counterexample, partial support, TODO, or unmapped.
+6. Resolve semantic links to papers, derivations, predictions, experiments, datasets, evidence, falsifiers, and unresolved obligations.
 
 ## Machine-reading rules
 - Preserve canonical object IDs exactly.
 - Treat per-object derived overrides as newer than older summary tables.
+- Treat baseline status as historical whenever an effective override exists.
 - A SymPy PASS is not automatically a Lean proof or empirical validation.
+- A Lean theorem proves only the encoded statement under its displayed hypotheses; it is not physical validation.
+- Do not infer empirical support from symbolic checks, formal proofs, simulations, protocols, or author-generated audits.
+- Do not infer independent replication from author-generated code, data, simulations, experiments, or analyses.
 - Use PROVED only for named declarations accepted by the Lean kernel.
 - Distinguish PASS, CONDITIONAL, DEFINITION, OPEN, FAIL, and PROVED.
-- Report unresolved or missing mappings rather than inventing them.
+- Preserve the distinction between archival titles and current qualified claim status.
+- Report unresolved, empty, or missing mappings rather than inventing them.
+- Prefer registry-validation-report.json when checking whether public status layers agree.
 
 ## Claim discipline
-WCT is an evolving independent research framework, not an established physical theory. Distinguish definitions, ansätze, derivations, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions.
+WCT is an evolving independent research framework, not an established physical theory. Distinguish definitions, ansätze, derivations, model-relative results, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions. Empty evidence or replication fields mean that support has not yet been recorded; they must not be silently upgraded.
 """
     (ROOT / "llms.txt").write_text(text, encoding="utf-8")
 
