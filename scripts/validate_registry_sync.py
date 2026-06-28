@@ -30,6 +30,15 @@ EXPECTED_SAMPLES = {
     "CM18": "DEFINITION",
     "E70": "CONDITIONAL",
 }
+EXPECTED_KINDS = {
+    "E2": "ALGEBRAIC_IDENTITY",
+    "M4": "FORMAL_THEOREM",
+    "E24": "FORMAL_THEOREM",
+    "E30": "ALGEBRAIC_IDENTITY",
+    "E67": "FORMAL_THEOREM",
+    "E70": "CONSISTENCY_CHECK",
+    "EZ": "ALGEBRAIC_IDENTITY",
+}
 
 
 def extract_card_statuses(path: Path, card_class: str) -> dict[str, str]:
@@ -119,6 +128,11 @@ def main() -> None:
         if actual != expected:
             errors.append(f"{object_id}: expected {expected}, found {actual}")
 
+    for object_id, expected_kind in EXPECTED_KINDS.items():
+        actual_kind = compiled_by_id.get(object_id, {}).get("verification", {}).get("kind")
+        if actual_kind != expected_kind:
+            errors.append(f"{object_id}: expected verification kind {expected_kind}, found {actual_kind}")
+
     for object_id, obj in compiled_by_id.items():
         verification = obj["verification"]
         if obj["status"]["effective"] == "PASS":
@@ -143,6 +157,7 @@ def main() -> None:
         "counts": compiled["counts"],
         "layers_checked": list(layers),
         "sample_statuses": EXPECTED_SAMPLES,
+        "sample_verification_kinds": EXPECTED_KINDS,
     }
     REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if errors:
