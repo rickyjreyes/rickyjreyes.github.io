@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 JSON_PATH = ROOT / "equations" / "equations.json"
+COMPILED_PATH = ROOT / "compiled-registry.json"
 HTML_PATH = ROOT / "equations" / "index.html"
 TOOLS_PATH = ROOT / "tools" / "equations-data.js"
 
@@ -63,6 +64,14 @@ def main() -> None:
         obj["definition"] = refine(obj)
     JSON_PATH.write_text(json.dumps(objects, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
+    compiled = json.loads(COMPILED_PATH.read_text(encoding="utf-8"))
+    compiled_by_id = {obj["canonical_id"]: obj for obj in compiled["objects"]}
+    for obj in objects:
+        if obj["id"] not in compiled_by_id:
+            raise RuntimeError(f"Compiled registry is missing {obj['id']}")
+        compiled_by_id[obj["id"]]["definition"] = obj["definition"]
+    COMPILED_PATH.write_text(json.dumps(compiled, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
     page = HTML_PATH.read_text(encoding="utf-8")
     for obj in objects:
         pattern = re.compile(
@@ -98,7 +107,7 @@ def main() -> None:
         "window.WCT_EQUATIONS = " + json.dumps(tool_objects, ensure_ascii=False) + ";\n",
         encoding="utf-8",
     )
-    print(f"Preserved canonical definitions and curated {len(CURATED_DEFINITIONS)} load-bearing objects.")
+    print(f"Preserved canonical definitions and curated {len(CURATED_DEFINITIONS)} load-bearing objects across HTML and machine-readable registries.")
 
 
 if __name__ == "__main__":
