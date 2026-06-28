@@ -9,6 +9,8 @@ on:
       - "scripts/build_equation_explorer.py"
       - "scripts/refine_equation_definitions.py"
       - "scripts/build_sympy_page.py"
+      - "scripts/build_lean_page.py"
+      - "scripts/enhance_verification_views.py"
       - "scripts/optimize_math_rendering.py"
       - "scripts/patch_site_navigation.py"
       - "site-nav.js"
@@ -44,6 +46,12 @@ jobs:
       - name: Generate SymPy equation cards
         run: python scripts/build_sympy_page.py
 
+      - name: Generate Lean equation inspector
+        run: python scripts/build_lean_page.py
+
+      - name: Enhance verification views
+        run: python scripts/enhance_verification_views.py
+
       - name: Optimize formula rendering
         run: python scripts/optimize_math_rendering.py
 
@@ -59,5 +67,5 @@ jobs:
             echo "No generated changes."
             exit 0
           fi
-          git commit -m "Generate site navigation, equations, SymPy cards, and scholarly metadata"
+          git commit -m "Generate site navigation, equations, SymPy selector, Lean inspector, and scholarly metadata"
           git push
