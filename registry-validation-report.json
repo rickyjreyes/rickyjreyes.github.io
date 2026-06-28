@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-06-28T06:52:05+00:00",
+  "generated_at": "2026-06-28T06:52:41+00:00",
   "valid": true,
   "errors": [],
   "warnings": [],
@@ -41,5 +41,9 @@
     "E67": "FORMAL_THEOREM",
     "E70": "CONSISTENCY_CHECK",
     "EZ": "ALGEBRAIC_IDENTITY"
-  }
+  },
+  "claim_links_checked": 63,
+  "publication_links_checked": 22,
+  "evidence_links_checked": 101,
+  "source_hashes_checked": 0
 }
