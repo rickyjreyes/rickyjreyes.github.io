@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import html
+import json
 import re
 from datetime import date
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://rickyjreyes.github.io/"
+TRACEABILITY_PATH = ROOT / "data" / "publication_traceability.json"
 NAV_HTML = (
     '<button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>'
     '<nav id="site-nav" aria-label="Primary navigation">'
@@ -18,6 +22,10 @@ NAV_HTML = (
     '<a href="/tools/">Tools</a>'
     '</nav>'
 )
+
+
+def esc(value: Any) -> str:
+    return html.escape(str(value), quote=True)
 
 
 def normalize_navbar(text: str) -> str:
@@ -61,6 +69,102 @@ def clarify_dimensionality_page() -> None:
     if "Current registry boundary:" not in text and marker in text:
         text = text.replace(marker, notice + marker, 1)
     path.write_text(text, encoding="utf-8")
+
+
+def link_list(values: list[str], href_prefix: str, external: bool = False) -> str:
+    if not values:
+        return '<span class="trace-empty">None registered</span>'
+    target = ' target="_blank" rel="noopener noreferrer"' if external else ""
+    return " ".join(
+        f'<a class="evidence-tag" href="{esc(href_prefix + value)}"{target}>{esc(value)}</a>'
+        for value in values
+    )
+
+
+def list_items(values: list[str]) -> str:
+    if not values:
+        return '<li>None registered.</li>'
+    return "".join(f"<li>{esc(value)}</li>" for value in values)
+
+
+def render_traceability(slug: str, item: dict[str, Any]) -> str:
+    claims = item.get("claim_ids", [])
+    equations = item.get("equation_ids", [])
+    assumptions = item.get("assumption_ids", [])
+    repositories = item.get("repositories", [])
+    datasets = item.get("datasets", [])
+    rows = [
+        '<div><dt>Claim IDs</dt><dd><div class="evidence-tags">' +
+        link_list(claims, "../research-corpus/#") + "</div></dd></div>",
+        '<div><dt>Equation IDs</dt><dd><div class="evidence-tags">' +
+        link_list(equations, "../equations/#") + "</div></dd></div>",
+        '<div><dt>SymPy audit</dt><dd><div class="evidence-tags">' +
+        link_list(equations, "../sympy/#") + "</div></dd></div>",
+        '<div><dt>Lean coverage</dt><dd><div class="evidence-tags">' +
+        link_list(equations, "../lean/#") + "</div></dd></div>",
+        '<div><dt>Assumptions</dt><dd><div class="evidence-tags">' +
+        link_list(assumptions, "../research-corpus/#") + "</div></dd></div>",
+        f'<div><dt>Formalization</dt><dd>{esc(item.get("formalization_status", "UNKNOWN"))}</dd></div>',
+        f'<div><dt>Empirical state</dt><dd>{esc(item.get("empirical_status", "UNKNOWN"))}</dd></div>',
+        f'<div><dt>Independent replication</dt><dd>{esc(item.get("independent_replication", "NONE_RECORDED"))}</dd></div>',
+    ]
+    if repositories:
+        repo_links = " ".join(
+            f'<a class="evidence-tag" href="{esc(url)}" target="_blank" rel="noopener noreferrer">{esc(url.rstrip("/").rsplit("/", 1)[-1])}</a>'
+            for url in repositories
+        )
+        rows.append(f'<div><dt>Repositories</dt><dd><div class="evidence-tags">{repo_links}</div></dd></div>')
+    if datasets:
+        data_links = " ".join(
+            f'<a class="evidence-tag" href="{esc(url)}" target="_blank" rel="noopener noreferrer">Data/source</a>'
+            for url in datasets
+        )
+        rows.append(f'<div><dt>Data</dt><dd><div class="evidence-tags">{data_links}</div></dd></div>')
+    notes = []
+    if item.get("qualification"):
+        notes.append(f'<div class="notice"><strong>Current qualification:</strong> {esc(item["qualification"])}</div>')
+    if item.get("availability_note"):
+        notes.append(f'<div class="notice"><strong>Availability:</strong> {esc(item["availability_note"])}</div>')
+    return (
+        f'<section class="paper-section" data-traceability="{esc(slug)}">'
+        '<h2>Verification and traceability</h2>'
+        '<p>This section is generated from the canonical publication traceability registry. Empty fields are reported rather than inferred.</p>'
+        '<dl class="asset-list">' + "".join(rows) + '</dl>'
+        '<h3>Explicit falsifiers</h3><ul class="overview-list">' + list_items(item.get("falsifiers", [])) + '</ul>'
+        '<h3>Open obligations</h3><ul class="overview-list">' + list_items(item.get("open_obligations", [])) + '</ul>'
+        + "".join(notes) + '</section>'
+    )
+
+
+def patch_publication_traceability() -> None:
+    if not TRACEABILITY_PATH.exists():
+        raise RuntimeError(f"Missing traceability source: {TRACEABILITY_PATH}")
+    doc = json.loads(TRACEABILITY_PATH.read_text(encoding="utf-8"))
+    mappings = doc.get("publications", {})
+    publication_pages = [p for p in (ROOT / "publications").glob("*.html") if p.name != "index.html"]
+    missing = []
+    for path in publication_pages:
+        slug = path.stem
+        item = mappings.get(slug)
+        if item is None:
+            missing.append(slug)
+            continue
+        text = path.read_text(encoding="utf-8")
+        text = re.sub(
+            r'<section class="paper-section" data-traceability="[^"]+">.*?</section>',
+            "",
+            text,
+            flags=re.S,
+        )
+        section = render_traceability(slug, item)
+        marker = '<section class="paper-section" id="cite">'
+        if marker not in text:
+            raise RuntimeError(f"Citation marker missing in {path}")
+        text = text.replace(marker, section + marker, 1)
+        path.write_text(text, encoding="utf-8")
+    extra = sorted(set(mappings) - {p.stem for p in publication_pages})
+    if missing or extra:
+        raise RuntimeError(f"Traceability mismatch: missing={missing}; extra={extra}")
 
 
 def patch_sitemap() -> None:
@@ -120,6 +224,7 @@ def patch_llms() -> None:
 - Registry validation report: {SITE}registry-validation-report.json
 - Equation feed: {SITE}equations/equations.json
 - Publication metadata: {SITE}publications.json
+- Publication traceability source: {SITE}data/publication_traceability.json
 - Claim-priority metadata: {SITE}priority/priority.json
 
 Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
@@ -165,9 +270,10 @@ def main() -> None:
         if ".git" not in path.parts:
             patch_html(path)
     clarify_dimensionality_page()
+    patch_publication_traceability()
     patch_sitemap()
     patch_llms()
-    print("Normalized shared navbar, dimensionality boundary, and discovery files.")
+    print("Normalized navigation, publication traceability, dimensionality boundary, and discovery files.")
 
 
 if __name__ == "__main__":
