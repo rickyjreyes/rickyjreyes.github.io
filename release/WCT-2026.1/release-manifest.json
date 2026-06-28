@@ -29,14 +29,14 @@
     },
     "wct_lean": {
       "url": "https://github.com/rickyjreyes/wct-lean.git",
-      "commit": "27dd63138f3a4ceb1c42d3d32f969fe25b277d98",
+      "commit": "ec35223ce31f04ea98d7cd84dc23a92b3138d454",
       "role": "Kernel-checked Lean definitions, lemmas, and conditional theorems",
       "files": {
         "lean-toolchain": "7f254a98f337952450a0ec1a1257f9a54cd38779",
         "lake-manifest.json": "be56015e37471bca80fb06e6cde3ec78b6c521c9",
         "WCTLean.lean": "950a0a67e96aa4c8ac68c885ed0cee6c563dff29",
         "WCTLean/Main.lean": "4ba6e9074a62cd76d99548ab3fab49649de7728c",
-        "Makefile": "548406439a04ff8f0e964f2b7085c564152392c0",
+        "Makefile": "29e268b4a86002a0e221d994b76440b0bb5e767b",
         "scripts/audit_formal_sources.py": "66f8172b74c8b72a5f3c0c44ede2432c370a216d"
       }
     },
