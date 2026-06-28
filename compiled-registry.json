@@ -1,64 +1,19 @@
 {
   "schema_version": "2.0.0",
-  "corpus_id": "wct",
-  "name": "Wave Confinement Theory",
-  "description": "Machine-readable, provenance-preserving cross-repository manifest for the Wave Confinement Theory research corpus.",
-  "author": {
-    "name": "Richard J. Reyes",
-    "alternate_name": "Ricky Reyes",
-    "orcid": "0009-0005-5975-8718",
-    "homepage": "https://rickyjreyes.github.io/"
-  },
-  "canonical_root": "https://rickyjreyes.github.io/research-corpus.json",
-  "compiled_registry": "https://rickyjreyes.github.io/compiled-registry.json",
+  "registry_id": "wct-effective-registry",
   "generated_at": "2026-06-28T02:34:38+00:00",
-  "status_policy": {
-    "PASS": "The assigned executable check succeeds under its declared assumptions.",
-    "CONDITIONAL": "Additional mathematical, domain, regularity, model, or empirical assumptions remain required.",
-    "DEFINITION": "The object is a definition, ansatz, or bookkeeping object rather than a theorem.",
-    "OPEN": "Analysis, formal proof, calibrated simulation, or experiment remains unresolved.",
-    "FAIL": "The encoded statement is contradicted by its assigned checker.",
-    "PROVED": "A named declaration is accepted by the Lean kernel under the hypotheses in its theorem statement."
+  "source_ref": {
+    "wct_sympy": "main",
+    "geometry_of_resonance": "main"
   },
-  "repositories": {
-    "canonical_equations": {
-      "name": "geometry_of_resonance",
-      "url": "https://github.com/rickyjreyes/geometry_of_resonance",
-      "master_equations": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_MASTER_EQUATIONS_UPDATED.md",
-      "full_equation_registry": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md"
-    },
-    "symbolic_audit": {
-      "name": "wct-sympy",
-      "url": "https://github.com/rickyjreyes/wct-sympy",
-      "registry": "https://github.com/rickyjreyes/wct-sympy/blob/main/equations/full_registry.yaml",
-      "derived_overrides": "https://github.com/rickyjreyes/wct-sympy/blob/main/equations/derived_overrides.yaml",
-      "compiled_registry": "https://github.com/rickyjreyes/wct-sympy/blob/main/compiled-registry.json",
-      "lean_map": "https://github.com/rickyjreyes/wct-sympy/blob/main/interoperability/lean_map.yaml"
-    },
-    "formalization": {
-      "name": "wct-lean",
-      "url": "https://github.com/rickyjreyes/wct-lean",
-      "theorem_inventory": "https://github.com/rickyjreyes/wct-lean/blob/main/THEOREMS.md",
-      "compiled_root": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Main.lean"
-    },
-    "semantic_graph": {
-      "name": "obsidian",
-      "url": "https://github.com/rickyjreyes/obsidian",
-      "entry_point": "https://github.com/rickyjreyes/obsidian/blob/main/Research/00%20Maps/WCT%20Research%20Command%20Center.md"
-    }
+  "counts": {
+    "PASS": 59,
+    "CONDITIONAL": 27,
+    "DEFINITION": 26,
+    "OPEN": 30,
+    "FAIL": 0
   },
-  "audit_summary": {
-    "registry_size": 142,
-    "source_of_truth": "compiled-registry.json generated from the baseline registry, effective overrides, verification metadata, assumption registry, canonical equations, and Lean map",
-    "counts": {
-      "PASS": 59,
-      "CONDITIONAL": 27,
-      "DEFINITION": 26,
-      "OPEN": 30,
-      "FAIL": 0
-    },
-    "status_conflict_warning": null
-  },
+  "total": 142,
   "assumptions": [
     {
       "assumption_id": "ASM-COMPATIBLE-ORIENTATION",
@@ -103,126 +58,6 @@
       "introduced_by": "E70"
     }
   ],
-  "claims": [
-    {
-      "claim_id": "CLM-CURVATURE-MASS",
-      "title": "Curvature-derived mass",
-      "status": "CONDITIONAL",
-      "equations": [
-        "E1B",
-        "E2",
-        "E5",
-        "E6",
-        "E7",
-        "E19",
-        "E49"
-      ],
-      "assumptions": [
-        "ASM-COMPATIBLE-ORIENTATION",
-        "ASM-EXACT-INTEGRATED-LOCKING",
-        "ASM-CONSTANT-POSITIVE-WEIGHT"
-      ],
-      "papers": [],
-      "evidence": [],
-      "unresolved_obligations": [
-        "Establish that the dynamically selected curvature scale determines physical mass rather than merely supplying a dimensionally valid mapping.",
-        "Close or calibrate the model-dependent proportionality in E19."
-      ]
-    },
-    {
-      "claim_id": "CLM-FINITE-BAND-SELECTION",
-      "title": "Finite-band pattern selection",
-      "status": "CONDITIONAL",
-      "equations": [
-        "M3",
-        "E12",
-        "E13",
-        "E14",
-        "E15",
-        "E16",
-        "E57",
-        "E58",
-        "E59",
-        "E61",
-        "E62",
-        "E64"
-      ],
-      "assumptions": [
-        "ASM-POSITIVE-SPECTRAL-OFFSET"
-      ],
-      "papers": [],
-      "evidence": [],
-      "unresolved_obligations": [
-        "Distinguish linear spectral selection from nonlinear global pattern selection.",
-        "Connect the selected shell to calibrated experimental observables."
-      ]
-    },
-    {
-      "claim_id": "CLM-DIMENSIONALITY",
-      "title": "Spatial-dimensionality stability criterion",
-      "status": "CONDITIONAL",
-      "equations": [
-        "M4",
-        "E24",
-        "E65",
-        "E67",
-        "E69",
-        "E70"
-      ],
-      "assumptions": [
-        "ASM-STANDARD-SOBOLEV-DOMAIN",
-        "ASM-H2-CONFINEMENT-ROUTE"
-      ],
-      "papers": [],
-      "evidence": [],
-      "unresolved_obligations": [
-        "Prove that the H2 regularity route is necessary for every admissible stable WCT confinement mechanism, or retain explicitly conditional wording."
-      ]
-    },
-    {
-      "claim_id": "CLM-KOIDE",
-      "title": "Koide mass relation from curvature-harmonic structure",
-      "status": "OPEN",
-      "equations": [],
-      "assumptions": [],
-      "papers": [],
-      "evidence": [],
-      "unresolved_obligations": [
-        "Determine whether Q = 2/3 is an output or an imposed constraint.",
-        "Record which model choices are fixed before evaluating the ratio.",
-        "Count available continuous and discrete choices.",
-        "Determine whether the selected harmonic state is unique.",
-        "Count unsuccessful candidate triplets.",
-        "Determine dependence on normalization and state selection.",
-        "Classify the result as a scale-free phenomenological derivation, fitted relation, or dynamical prediction."
-      ]
-    },
-    {
-      "claim_id": "CLM-CURVATURE-COMPUTATION",
-      "title": "Curvature-bounded computation",
-      "status": "CONDITIONAL",
-      "equations": [
-        "M5",
-        "E36",
-        "E37",
-        "E38",
-        "E39",
-        "E40",
-        "E41",
-        "E71",
-        "E72",
-        "E73",
-        "E76"
-      ],
-      "assumptions": [],
-      "papers": [],
-      "evidence": [],
-      "unresolved_obligations": [
-        "Specify the encoding, precision model, update cost, and finite curvature-resource bound.",
-        "Separate physical-resource claims from classical complexity-class equivalence claims."
-      ]
-    }
-  ],
   "objects": [
     {
       "canonical_id": "M1",
@@ -262,27 +97,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m1-curvature-locking-functional"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "M1"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -323,27 +137,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m2-nonsingular-curvature-operator-and-lyapunov-candidate"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "M2"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -384,27 +177,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m3-finite-band-spectral-selector"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "M3"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -449,29 +221,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m4-dimensional-stability-threshold"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [
-          "ASM-STANDARD-SOBOLEV-DOMAIN"
-        ],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "M4"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -512,27 +261,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m5-curvature-bounded-computation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "M5"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -573,27 +301,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m6a-unified-linear-operator"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "M6A"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -634,27 +341,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m6b-nonlinear-curvature-operator"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "M6B"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -695,27 +381,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m7-full-curvature-wavefield-equation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "M7"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -756,27 +421,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#m8-curvature-acoustic-cosmology-system"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "M8"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -820,27 +464,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e1a-curvature-rate-density"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E1A"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -884,27 +507,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e1b-curvature-spectral-rate"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E1B"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -949,27 +551,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e2-weighted-loop-average"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E2"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1015,27 +596,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e3-loop-locking-action"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E3"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1076,27 +636,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e4-covariant-locking-solution"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E4"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1149,31 +688,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e5-effective-wavenumber-chain"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [
-          "ASM-COMPATIBLE-ORIENTATION",
-          "ASM-EXACT-INTEGRATED-LOCKING",
-          "ASM-CONSTANT-POSITIVE-WEIGHT"
-        ],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E5"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1221,40 +735,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e6-mass-curvature-law"
-      },
-      "dependencies": [
-        "E1B",
-        "E2",
-        "E5"
-      ],
-      "source_papers": [
-        {
-          "title": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
-          "doi": "10.5281/zenodo.20533537",
-          "url": "https://zenodo.org/records/20533537"
-        }
-      ],
-      "evidence": [
-        {
-          "type": "publication",
-          "status": "reported",
-          "source": "https://zenodo.org/records/20533537"
-        }
-      ],
-      "cross_layer_consistency": {
-        "status": "partial",
-        "notes": [
-          "E5 remains conditional unless exact locking and compatible weighting assumptions are supplied."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E6",
-          "M1",
-          "E7"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1302,27 +782,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e7-solenoidal-mass-law"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E7"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1363,27 +822,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e8-corrected-weighted-lock-identity"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E8"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1430,27 +868,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e9-phase-flux-constitutive-relation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E9"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1491,27 +908,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e10-radial-shell-quantization"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E10"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1552,27 +948,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e11-phase-winding"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E11"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1613,23 +988,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e12-finite-band-dispersion-rail"
-      },
-      "dependencies": [],
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "consistent",
-        "notes": [
-          "The canonical registry uses lambda_grow rather than sigma(k) to avoid collision with curvature sigma."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E12",
-          "M3"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1674,27 +1032,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e13-band-pass-amplitude-evolution"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E13"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1741,27 +1078,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e14-band-pass-lyapunov-functional"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E14"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1802,27 +1118,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e15-modal-growth-bound"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E15"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1863,27 +1158,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e16-linear-spectral-concentration"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E16"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1928,23 +1202,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e17-nonsingular-curvature-feedback-operator"
-      },
-      "dependencies": [],
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "consistent",
-        "notes": [
-          "The corrected modulus-squared operator supersedes the historical scalar denominator."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E17",
-          "M2"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -1990,27 +1247,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e18-wct-lyapunov-candidate"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E18"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2051,27 +1287,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e19-gap-curvature-scaling"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E19"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2112,27 +1327,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e20-higher-order-cavity-quadratic-sector"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E20"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2173,27 +1367,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e21-second-derivative-euler-lagrange-equation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E21"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2234,27 +1407,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e22-effective-metric-ansatz"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E22"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2295,27 +1447,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e23-enthalpic-curvature-relation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E23"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2360,29 +1491,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e24-sobolev-embedding-threshold"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [
-          "ASM-STANDARD-SOBOLEV-DOMAIN"
-        ],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E24"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2423,27 +1531,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e25-critical-sobolev-exponent"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E25"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2484,27 +1571,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e26-corrected-curvature-l2-bound"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E26"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2545,27 +1611,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e27-finite-energy-confinement"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E27"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2606,27 +1651,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e28-corrected-alpha-drop-exponent"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E28"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2667,27 +1691,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e29-entropy-drop-pruning"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E29"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2728,27 +1731,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e30-spectral-entropy"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E30"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2789,27 +1771,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e31-conditional-entropy-production-bound"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E31"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2850,27 +1811,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e32-subexponential-exploration-condition"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E32"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2911,27 +1851,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e33-corrected-support-entropy-relation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E33"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -2972,27 +1891,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e34-energy-entropy-conversion"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E34"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3033,27 +1931,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e35-curvature-locked-fixed-point"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E35"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3094,27 +1971,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e36-discrete-wcc-update"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E36"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3155,27 +2011,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e37-bandlimit-from-energy"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E37"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3216,27 +2051,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e38-spatial-channel-capacity"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E38"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3277,27 +2091,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e39-polynomial-update-bound"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E39"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3338,27 +2131,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e40-wcc-complexity-identification"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E40"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3399,27 +2171,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e41-curvature-bounded-configuration-count"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E41"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3460,27 +2211,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e42-theta-information-relation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E42"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3521,27 +2251,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e43-curvature-entropy-tradeoff"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E43"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3582,27 +2291,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e44-theta-eigenmode-problem"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E44"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3643,27 +2331,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e45-corrected-quality-factor"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E45"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3704,27 +2371,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e46-plasma-cavity-curvature-match"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E46"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3765,27 +2411,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e47-corrected-power-balance"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E47"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3826,27 +2451,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e48-curvature-gap-stability-criterion"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E48"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3887,27 +2491,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e49-corrected-effective-mass-gap-law"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E49"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -3948,27 +2531,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e50-phase-coherence-functional"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E50"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4009,27 +2571,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e51-curvature-gradient-commutator"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E51"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4070,27 +2611,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e52-curvature-gain-and-gradient-loss"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E52"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4131,27 +2651,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e53-curvature-pressure-density"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E53"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4192,27 +2691,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e54-resonance-lock-condition"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E54"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4253,27 +2731,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e55-curvature-induced-effective-potential"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E55"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4314,27 +2771,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e56-phase-wall-criterion"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E56"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4375,27 +2811,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e57-swift-hohenberg-shell-operator"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E57"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4444,29 +2859,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e58-band-selective-green-kernel"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [
-          "ASM-POSITIVE-SPECTRAL-OFFSET"
-        ],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E58"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4507,27 +2899,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e59-projection-onto-a-dominant-annulus"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E59"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4568,27 +2939,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e60-center-manifold-amplitude-equation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E60"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4629,27 +2979,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e61-pattern-formation-threshold"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E61"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4690,27 +3019,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e62-spectral-energy-concentration"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E62"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4751,27 +3059,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e63-entropic-mode-selection"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E63"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4812,27 +3099,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e64-corrected-selected-wavelength"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E64"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4873,27 +3139,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e65-critical-sobolev-exponent"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E65"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4934,27 +3179,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e66-gagliardo-nirenberg-interpolation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E66"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -4999,29 +3223,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e67-failure-of-h2-o-linfty-above-three-dimensions"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [
-          "ASM-STANDARD-SOBOLEV-DOMAIN"
-        ],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E67"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5062,27 +3263,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e68-localized-energy-estimate"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E68"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5123,27 +3303,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e69-corrected-high-regularity-curvature-bound"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E69"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5190,42 +3349,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e70-dimensional-stability-criterion"
-      },
-      "dependencies": [
-        "E24",
-        "E65",
-        "E67",
-        "E69"
-      ],
-      "source_papers": [
-        {
-          "title": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
-          "doi": "10.5281/zenodo.17081283",
-          "url": "https://zenodo.org/records/17081283"
-        }
-      ],
-      "evidence": [
-        {
-          "type": "publication",
-          "status": "reported",
-          "source": "https://zenodo.org/records/17081283"
-        }
-      ],
-      "cross_layer_consistency": {
-        "status": "consistent",
-        "notes": [
-          "The n <= 3 embedding threshold is not represented as a proof that all WCT equilibria are stable in three dimensions or unstable in higher dimensions."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E70",
-          "M4",
-          "E24",
-          "E67"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5266,27 +3389,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e71-physical-computation-resource-bound"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E71"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5327,27 +3429,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e72-curvature-pruned-search-space"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E72"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5388,27 +3469,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e73-polynomial-verification"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E73"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5449,27 +3509,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e74-curvature-separation-conjecture"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E74"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5510,27 +3549,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e75-physical-oracle-impossibility"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E75"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5571,27 +3589,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e76-wcc-complexity-equivalence"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E76"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5632,27 +3629,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e77-mutual-information-decay"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E77"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5697,27 +3673,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e78-fisher-information-curvature-bound"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E78"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5758,27 +3713,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e79-entropy-production-rate"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E79"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5819,27 +3753,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e80-landauer-type-bound"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E80"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5880,27 +3793,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e81-corrected-coherence-length"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E81"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -5941,27 +3833,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e82-information-geometry-tensor"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "E82"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6002,27 +3873,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle1-curvature-locking-functional"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CLE1"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6063,27 +3913,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle2-corrected-curvature-lock-euler-lagrange-equation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CLE2"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6124,27 +3953,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle3-curvature-locking-condition"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CLE3"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6185,27 +3993,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle4-locked-field-equation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CLE4"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6246,27 +4033,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle5-thinproduct-torus-laplacian"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CLE5"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6307,27 +4073,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle6-separation-ansatz"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CLE6"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6368,27 +4113,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle7-periodic-angular-mode-family"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CLE7"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6429,27 +4153,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle8-selected-torus-eigenmode"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CLE8"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6492,27 +4195,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle9-electron-radius-from-curvature"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CLE9"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6553,27 +4235,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle10-curvature-scalar-chain"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CLE10"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6614,27 +4275,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#g1-log-periodic-ghost-modulation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "G1"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6675,27 +4315,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#ex-logarithmic-field-representation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "EX"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6736,27 +4355,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#ey-log-curvature-evolution"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "EY"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6797,27 +4395,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#ez-cole-hopf-reduction"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "EZ"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6858,27 +4435,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#fa-filament-localization-condition"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "FA"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6919,27 +4475,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm1-fundamental-field-evolution"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM1"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -6980,27 +4515,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm2-curvature-spectral-tilt"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM2"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7041,27 +4555,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm3-potential-from-curvature"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM3"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7102,27 +4595,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm4-horizon-entry-potential-decay"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM4"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7163,27 +4635,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm5-curvature-acoustic-oscillators"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM5"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7224,27 +4675,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm6-sound-speed-from-curvature-feedback"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM6"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7285,27 +4715,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm7-curvature-diffusion"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM7"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7346,27 +4755,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm8-initial-conditions"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM8"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7410,27 +4798,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm9-first-order-mode-system"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM9"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7471,27 +4838,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm10-tight-coupling-drag"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM10"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7532,27 +4878,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm11-curvature-damping-envelope"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM11"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7598,27 +4923,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm12-dimensionless-power-spectrum"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM12"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7667,27 +4971,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm13-peak-metrics"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM13"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7728,27 +5011,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm14-peak-response-interpretation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM14"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7789,27 +5051,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm15-wct-angular-scaling"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM15"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7855,27 +5096,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm16-acoustic-horizon"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM16"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7916,27 +5136,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm17-curvature-energy-closure"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM17"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -7977,27 +5176,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm18-minimal-cosmology-closure-set"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM18"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8038,27 +5216,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm19-acoustic-speed-from-curvature-equation-of-state"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM19"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8099,27 +5256,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cm20-theta-based-expansion-ansatz"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CM20"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8160,27 +5296,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top1-closed-spectral-loop-representation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "TOP1"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8221,27 +5336,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top2-wct-loop-energy-functional"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "TOP2"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8282,27 +5376,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top3-irreversible-gradient-flow"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "TOP3"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8343,27 +5416,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top4-emergent-topology-criterion"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "TOP4"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8404,27 +5456,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top5-wct-dynamical-codimension"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "TOP5"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8465,27 +5496,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top6-spectral-topology-bands"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "TOP6"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8526,27 +5536,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top7-topological-mass-proxy"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "TOP7"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8587,27 +5576,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top8-holonomy-non-invariance"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "TOP8"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8648,27 +5616,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top9-protein-particle-structural-correspondence"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "TOP9"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8709,27 +5656,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr1-full-lyapunov-candidate"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CORR1"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8770,27 +5696,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr2-mean-amplitude-spectral-closure"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CORR2"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8831,27 +5736,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr3-spectral-weight-notation"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CORR3"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8892,27 +5776,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr4-macro-micro-control-parameter"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CORR4"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -8953,27 +5816,6 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr5-entropy-curvature-coupling"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CORR5"
-        ],
-        "status": "lookup_by_stable_id"
       }
     },
     {
@@ -9014,41 +5856,7 @@
       },
       "sources": {
         "canonical_equation": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr6-isoelectronic-flow-alignment"
-      },
-      "dependencies": {
-        "equations": [],
-        "assumptions": [],
-        "claims": [],
-        "papers": []
-      },
-      "source_papers": [],
-      "evidence": [],
-      "cross_layer_consistency": {
-        "status": "compiled",
-        "notes": [
-          "Symbolic status, verification kind, Lean coverage, and empirical state are generated from the compiled registry."
-        ]
-      },
-      "semantic_graph": {
-        "repository": "https://github.com/rickyjreyes/obsidian",
-        "lookup_keys": [
-          "CORR6"
-        ],
-        "status": "lookup_by_stable_id"
       }
     }
-  ],
-  "machine_reading_guidance": {
-    "canonical_id_policy": "Use canonical_id as the primary key. Aliases must not be silently collapsed.",
-    "status_precedence": [
-      "Per-object derived override",
-      "Executable SymPy baseline registry",
-      "Canonical equation narrative"
-    ],
-    "verification_rule": "Read verification.outcome together with verification.kind and verification.scope. PASS alone does not state what kind of check succeeded.",
-    "formalization_rule": "Never report a SymPy PASS as a Lean proof. Only named kernel-accepted declarations may be labeled PROVED.",
-    "empirical_rule": "Empirical validation is independent of symbolic and formal status.",
-    "missing_data_rule": "Use null, empty arrays, UNKNOWN, or OPEN rather than inventing identifiers, proofs, dates, dependencies, or evidence."
-  },
-  "content_type": "application/json"
+  ]
 }

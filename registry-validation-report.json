@@ -1,0 +1,45 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-06-28T02:34:38+00:00",
+  "valid": true,
+  "errors": [],
+  "warnings": [],
+  "counts": {
+    "PASS": 59,
+    "CONDITIONAL": 27,
+    "DEFINITION": 26,
+    "OPEN": 30,
+    "FAIL": 0
+  },
+  "layers_checked": [
+    "equations_json",
+    "equations_page",
+    "sympy_page",
+    "lean_page",
+    "research_corpus"
+  ],
+  "sample_statuses": {
+    "E5": "PASS",
+    "E9": "PASS",
+    "E13": "PASS",
+    "E14": "PASS",
+    "E18": "PASS",
+    "E58": "PASS",
+    "CM9": "PASS",
+    "CM11": "PASS",
+    "CM12": "DEFINITION",
+    "CM13": "DEFINITION",
+    "CM16": "DEFINITION",
+    "CM18": "DEFINITION",
+    "E70": "CONDITIONAL"
+  },
+  "sample_verification_kinds": {
+    "E2": "ALGEBRAIC_IDENTITY",
+    "M4": "FORMAL_THEOREM",
+    "E24": "FORMAL_THEOREM",
+    "E30": "ALGEBRAIC_IDENTITY",
+    "E67": "FORMAL_THEOREM",
+    "E70": "CONSISTENCY_CHECK",
+    "EZ": "ALGEBRAIC_IDENTITY"
+  }
+}
