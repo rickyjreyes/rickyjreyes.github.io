@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "release_id": "WCT-2026.1",
+  "frozen_at": "2026-06-28T00:00:00Z",
+  "source_date_epoch": 1782604800,
+  "description": "Frozen cross-repository release for the WCT equation registry, symbolic audit, Lean formal layer, and deterministic finite-band reference simulation.",
+  "hash_policy": {
+    "source_files": "git-blob-sha1",
+    "generated_artifacts": "sha256",
+    "semantic_json": "sha256 of canonical JSON with sorted keys and volatile generation metadata removed"
+  },
+  "orchestrator": {
+    "repository": "rickyjreyes/rickyjreyes.github.io",
+    "commit_policy": "The executing orchestrator commit is recorded in reproduction-report.json; scientific source repositories are pinned below.",
+    "baseline_site_commit": "3da97077fd921488fbfaa3032bac3be75d218dde"
+  },
+  "repositories": {
+    "geometry_of_resonance": {
+      "url": "https://github.com/rickyjreyes/geometry_of_resonance.git",
+      "commit": "7d78bf652d1aeb0e3d04f82abf142054142d6d36",
+      "role": "Canonical equations plus deterministic simulation and figure regeneration",
+      "files": {
+        "WCT_FULL_EQUATION_LIST_CORRECTED.md": "0e1a59b12c578048e289803c8ae825f7092734df",
+        "Makefile": "f03d474ec6cb2707d617e617c73a76057d7a086e",
+        "reproducibility/finite_band_reference.py": "f79a0775db6c7a4db6644ec6360211be73709f25",
+        "reproducibility/EXPECTED_HASHES.json": "08d609dcf3941cf3d6dee47966b1442b487e8711",
+        "reproducibility/requirements.lock": "d8cc6f4544eb5d09c1fa9734d2fbd545b641d9b3"
+      }
+    },
+    "wct_lean": {
+      "url": "https://github.com/rickyjreyes/wct-lean.git",
+      "commit": "ec35223ce31f04ea98d7cd84dc23a92b3138d454",
+      "role": "Kernel-checked Lean definitions, lemmas, and conditional theorems",
+      "files": {
+        "lean-toolchain": "7f254a98f337952450a0ec1a1257f9a54cd38779",
+        "lake-manifest.json": "be56015e37471bca80fb06e6cde3ec78b6c521c9",
+        "WCTLean.lean": "950a0a67e96aa4c8ac68c885ed0cee6c563dff29",
+        "WCTLean/Main.lean": "4ba6e9074a62cd76d99548ab3fab49649de7728c",
+        "Makefile": "29e268b4a86002a0e221d994b76440b0bb5e767b",
+        "scripts/audit_formal_sources.py": "66f8172b74c8b72a5f3c0c44ede2432c370a216d"
+      }
+    },
+    "wct_sympy": {
+      "url": "https://github.com/rickyjreyes/wct-sympy.git",
+      "commit": "581511d43cb6bd81d5672a506b644ab8e2822918",
+      "role": "Executable symbolic audit and effective registry compiler",
+      "files": {
+        "Makefile": "afb5281196e621609cdb0059d19b31f46d4863a7",
+        "scripts/compile_registry.py": "e4c5f4d023b36fcd378a5e17e9de8e7e6874b4a3",
+        "scripts/verify_reproducibility.py": "11c37844f175009827db610857761ff2f6118d27",
+        "reproducibility/requirements.lock": "9b7a1377ecf01320300e6f1aed4e978bcf571925",
+        "reproducibility/expected-source-hashes.json": "ec83d3cedd0aba94734df9dd90a4f479121b7dfc",
+        "equations/full_registry.yaml": "2dd18da8a10a842ff27fb0176a545da12e64d008",
+        "equations/derived_overrides.yaml": "2acfc5a465d95bc879a468da9d9f7e00cbe4b03e",
+        "equations/verification_metadata.yaml": "a53c1b61fb4e7b4bd59dcb74657ab53de87c9428",
+        "equations/assumptions.yaml": "08f6fbb2202aab12cde57580cd9eee720966712b",
+        "interoperability/lean_map.yaml": "a6eb0dd09cfd2f27d255d9dc8b62c6158454de10",
+        "claims/initial_claims.yaml": "0fa8eb41a389a94d060ce41e86545b8736da6654"
+      }
+    },
+    "scholar_site_baseline": {
+      "url": "https://github.com/rickyjreyes/rickyjreyes.github.io.git",
+      "commit": "3da97077fd921488fbfaa3032bac3be75d218dde",
+      "role": "Published synchronized registry surfaces and cross-layer validator",
+      "files": {
+        "compiled-registry.json": "29b7ff5749079bfe5cee94f75aff844503261f8d",
+        "registry-validation-report.json": "78daadcc282b912e9a81a7da2e9f4644abdbd547",
+        "scripts/validate_registry_sync.py": "bc149c89b735e7475ddf571230911406cd1195a6",
+        "scripts/build_equation_explorer.py": "640c87ea685cf2a7720d00d9ab7dc6fb52341c6b"
+      }
+    }
+  },
+  "environment": {
+    "python": "3.12",
+    "lean_toolchain": "leanprover/lean4:v4.23.0",
+    "mathlib_commit": "37df177aaa770670452312393d4e84aaad56e7b6",
+    "nixpkgs_commit": "ac62194c3917d5f474c1a844b6fd6da2db95077d",
+    "elan_installer_commit": "6737edca3d2ca3dbaa1b47b87769b48b420633ae",
+    "docker_base": "ubuntu:noble-20260509.1"
+  },
+  "expected": {
+    "registry_counts": {
+      "PASS": 59,
+      "CONDITIONAL": 27,
+      "DEFINITION": 26,
+      "OPEN": 30,
+      "FAIL": 0
+    },
+    "sympy_registry_semantic_sha256": "e9126f14e33af2de7ff33953b5fff2c35b237542ca9e397e60617574febcf805",
+    "lean_source_map_sha256": "4dd7954258eb93e1887d68ce8c01b307dbd9ecdd49051027557ed5aef27f6937",
+    "lean_lake_manifest_sha256": "c5298946fef0b8d9641e3f7d18b6ed413fbc5cb42f425e3801b8a11a401733e4",
+    "simulation_sha256": {
+      "finite_band_field_i10.bin": "e5a64f27cdda141a7e8a3d7478cc87661995dfdd3e1f03d9dc7c3f4d75ace416",
+      "finite_band_spectrum.csv": "ce7c5a9ec05eb735df69a65728f636f9b53439ae4d094a4fba918b729ef55525",
+      "finite_band_spectrum.png": "ed559ab3f8d1298d38e46d59e29d29cdb229d3acfb2e5e82bbda07f0492ebc56",
+      "finite_band_summary.json": "37d2dc8ce2d15c69fd80415c1ec8e46b011dd626f5b5def99c151c3a3f46d811"
+    }
+  },
+  "scientific_boundaries": [
+    "A SymPy PASS is an executable result under declared assumptions; it is not automatically a Lean proof or empirical validation.",
+    "The Lean build checks the maintained formal declarations; it does not prove WCT as a complete physical theory.",
+    "The frozen finite-band simulation verifies a deterministic linear spectral-rail fixture; it does not establish nonlinear global pattern selection.",
+    "This release establishes build and artifact reproducibility, not independent scientific replication."
+  ]
+}
