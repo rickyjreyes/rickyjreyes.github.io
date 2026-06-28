@@ -10,31 +10,47 @@
 - Complete Lean coverage: https://rickyjreyes.github.io/lean/
 - Research tools: https://rickyjreyes.github.io/tools/
 - Equations and verification map: https://rickyjreyes.github.io/research-corpus/
-- Machine-readable WCT corpus: https://rickyjreyes.github.io/research-corpus.json
+- Claim-level priority registry: https://rickyjreyes.github.io/priority/
+
+## Machine-readable resources
+- Cross-repository corpus: https://rickyjreyes.github.io/research-corpus.json
+- Effective compiled registry: https://rickyjreyes.github.io/compiled-registry.json
+- Registry validation report: https://rickyjreyes.github.io/registry-validation-report.json
+- Equation feed: https://rickyjreyes.github.io/equations/equations.json
+- Publication metadata: https://rickyjreyes.github.io/publications.json
+- Claim-priority metadata: https://rickyjreyes.github.io/priority/priority.json
 
 Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
 
 ## Canonical source files
 - Full corrected equation registry: https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md
 - Master equation architecture: https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_MASTER_EQUATIONS_UPDATED.md
-- SymPy executable registry: https://github.com/rickyjreyes/wct-sympy/blob/main/equations/full_registry.yaml
+- SymPy executable baseline registry: https://github.com/rickyjreyes/wct-sympy/blob/main/equations/full_registry.yaml
 - SymPy derived overrides: https://github.com/rickyjreyes/wct-sympy/blob/main/equations/derived_overrides.yaml
 - Lean theorem inventory: https://github.com/rickyjreyes/wct-lean/blob/main/THEOREMS.md
 - Semantic research graph: https://github.com/rickyjreyes/obsidian/blob/main/Research/00%20Maps/WCT%20Research%20Command%20Center.md
 
 ## Resolution order
-1. Canonical equation ID, formula, and definition.
-2. Effective SymPy classification and checker.
-3. Lean theorem, definition, counterexample, TODO, or unmapped status.
-4. Semantic graph links to papers, derivations, predictions, experiments, and evidence.
+1. Resolve a publication through its exact DOI, claim IDs, equation IDs, assumptions, code, data, and evidence links when present.
+2. Resolve a canonical equation through compiled-registry.json and its effective status.
+3. Treat full_registry.yaml as the historical baseline when a derived override exists.
+4. Resolve the effective SymPy classification and named checker.
+5. Resolve Lean as a separate layer: theorem, definition, counterexample, partial support, TODO, or unmapped.
+6. Resolve semantic links to papers, derivations, predictions, experiments, datasets, evidence, falsifiers, and unresolved obligations.
 
 ## Machine-reading rules
 - Preserve canonical object IDs exactly.
 - Treat per-object derived overrides as newer than older summary tables.
+- Treat baseline status as historical whenever an effective override exists.
 - A SymPy PASS is not automatically a Lean proof or empirical validation.
+- A Lean theorem proves only the encoded statement under its displayed hypotheses; it is not physical validation.
+- Do not infer empirical support from symbolic checks, formal proofs, simulations, protocols, or author-generated audits.
+- Do not infer independent replication from author-generated code, data, simulations, experiments, or analyses.
 - Use PROVED only for named declarations accepted by the Lean kernel.
 - Distinguish PASS, CONDITIONAL, DEFINITION, OPEN, FAIL, and PROVED.
-- Report unresolved or missing mappings rather than inventing them.
+- Preserve the distinction between archival titles and current qualified claim status.
+- Report unresolved, empty, or missing mappings rather than inventing them.
+- Prefer registry-validation-report.json when checking whether public status layers agree.
 
 ## Claim discipline
-WCT is an evolving independent research framework, not an established physical theory. Distinguish definitions, ansätze, derivations, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions.
+WCT is an evolving independent research framework, not an established physical theory. Distinguish definitions, ansätze, derivations, model-relative results, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions. Empty evidence or replication fields mean that support has not yet been recorded; they must not be silently upgraded.
