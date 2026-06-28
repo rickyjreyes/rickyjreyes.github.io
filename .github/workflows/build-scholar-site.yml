@@ -7,18 +7,34 @@ on:
       - "data/publications.json"
       - "scripts/build_scholar_site.py"
       - "scripts/build_equation_explorer.py"
+      - "scripts/patch_lean_definitions.py"
       - "scripts/refine_equation_definitions.py"
       - "scripts/build_sympy_page.py"
       - "scripts/build_lean_page.py"
+      - "scripts/build_research_corpus.py"
+      - "scripts/validate_registry_sync.py"
       - "scripts/enhance_verification_views.py"
       - "scripts/optimize_math_rendering.py"
       - "scripts/patch_site_navigation.py"
       - "site-nav.js"
       - ".github/workflows/build-scholar-site.yml"
+  pull_request:
+    paths:
+      - "scripts/build_equation_explorer.py"
+      - "scripts/patch_lean_definitions.py"
+      - "scripts/refine_equation_definitions.py"
+      - "scripts/build_sympy_page.py"
+      - "scripts/build_lean_page.py"
+      - "scripts/build_research_corpus.py"
+      - "scripts/validate_registry_sync.py"
+      - ".github/workflows/build-scholar-site.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+env:
+  WCT_SYMPY_REF: ${{ github.event_name == 'pull_request' && 'compiled-registry-v2' || 'main' }}
 
 jobs:
   build:
@@ -34,13 +50,19 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install generator dependencies
+        run: python -m pip install PyYAML
+
       - name: Generate publication pages and metadata
         run: python scripts/build_scholar_site.py
 
-      - name: Generate canonical equation explorer
+      - name: Generate compiled registry and canonical equation explorer
         run: python scripts/build_equation_explorer.py
 
-      - name: Refine equation definitions
+      - name: Preserve Lean definition coverage
+        run: python scripts/patch_lean_definitions.py
+
+      - name: Preserve canonical definitions and curate load-bearing objects
         run: python scripts/refine_equation_definitions.py
 
       - name: Generate SymPy equation cards
@@ -48,6 +70,9 @@ jobs:
 
       - name: Generate Lean equation inspector
         run: python scripts/build_lean_page.py
+
+      - name: Generate full machine-readable research corpus
+        run: python scripts/build_research_corpus.py
 
       - name: Enhance verification views
         run: python scripts/enhance_verification_views.py
@@ -58,7 +83,25 @@ jobs:
       - name: Apply shared navigation and discovery patches
         run: python scripts/patch_site_navigation.py
 
+      - name: Validate cross-layer registry synchronization
+        run: python scripts/validate_registry_sync.py
+
+      - name: Upload generated registry preview
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: synchronized-wct-registry-preview
+          path: |
+            compiled-registry.json
+            research-corpus.json
+            registry-validation-report.json
+            equations/equations.json
+            equations/index.html
+            sympy/index.html
+            lean/index.html
+
       - name: Commit generated files
+        if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
@@ -67,5 +110,5 @@ jobs:
             echo "No generated changes."
             exit 0
           fi
-          git commit -m "Generate site navigation, equations, SymPy selector, Lean inspector, and scholarly metadata"
+          git commit -m "Generate synchronized equation, SymPy, Lean, and corpus registry views"
           git push

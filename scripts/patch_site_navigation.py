@@ -44,6 +44,24 @@ def patch_html(path: Path) -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def clarify_dimensionality_page() -> None:
+    path = ROOT / "publications" / "hard-upper-bound-spatial-dimensionality.html"
+    text = path.read_text(encoding="utf-8")
+    old_summary = "This work argues that stable curvature-locked confinement in the stated WCT framework is restricted to at most three spatial dimensions. It combines Sobolev control, Lyapunov scaling, entropy localization, topology, and curvature-feedback behavior into several routes toward the same dimensional stability bound."
+    new_summary = "This work develops a three-dimensional stability threshold under the stated WCT H²-confinement and regularity hypotheses. The verified Sobolev result establishes the H²-to-L∞ threshold for integer n≤3; the broader claim that every admissible higher-dimensional confinement mechanism is unstable remains conditional."
+    old_limit = "The bound is derived within the stated WCT assumptions; its scope is conditional on that framework and its modeling choices."
+    new_limit = "The registered E70 claim is CONDITIONAL. Failure of the general H²-to-L∞ embedding route above three dimensions does not by itself prove a universal impossibility theorem for every conceivable WCT confinement mechanism. The archival title and DOI citation are preserved unchanged."
+    if old_summary in text:
+        text = text.replace(old_summary, new_summary)
+    if old_limit in text:
+        text = text.replace(old_limit, new_limit)
+    notice = '<div class="notice"><strong>Current registry boundary:</strong> E70 is CONDITIONAL. The n≤3 Sobolev threshold supports the declared H² regularity route; it is not a proved biconditional characterization of all stable WCT solutions. <a href="../equations/#E70">Open E70.</a></div>'
+    marker = '<section class="paper-section"><h2>Abstract</h2>'
+    if "Current registry boundary:" not in text and marker in text:
+        text = text.replace(marker, notice + marker, 1)
+    path.write_text(text, encoding="utf-8")
+
+
 def patch_sitemap() -> None:
     path = ROOT / "sitemap.xml"
     text = path.read_text(encoding="utf-8")
@@ -118,9 +136,10 @@ def main() -> None:
     for path in ROOT.rglob("*.html"):
         if ".git" not in path.parts:
             patch_html(path)
+    clarify_dimensionality_page()
     patch_sitemap()
     patch_llms()
-    print("Normalized shared navbar and discovery files.")
+    print("Normalized shared navbar, dimensionality boundary, and discovery files.")
 
 
 if __name__ == "__main__":
