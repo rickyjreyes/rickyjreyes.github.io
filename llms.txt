@@ -18,6 +18,7 @@
 - Registry validation report: https://rickyjreyes.github.io/registry-validation-report.json
 - Equation feed: https://rickyjreyes.github.io/equations/equations.json
 - Publication metadata: https://rickyjreyes.github.io/publications.json
+- Publication traceability source: https://rickyjreyes.github.io/data/publication_traceability.json
 - Claim-priority metadata: https://rickyjreyes.github.io/priority/priority.json
 
 Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
