@@ -239,7 +239,7 @@
       ],
       "source": "WCTLean/Models/UnifiedOperator.lean",
       "limitations": [
-        "This is a typed operator skeleton"
+        "This is a typed operator skeleton, not a derivation of the full nonlinear UWCT equation."
       ]
     },
     "empirical_validation": {
@@ -314,7 +314,7 @@
       ],
       "source": "WCTLean/Models/UnifiedOperator.lean",
       "limitations": [
-        "Theorems cover the represented shell term"
+        "Theorems cover the represented shell term, not the complete master dynamics."
       ]
     },
     "empirical_validation": {
@@ -1346,7 +1346,7 @@
       ],
       "source": "WCTLean/Contracts/Analytic.lean",
       "limitations": [
-        "Lean proves n less than 4 iff n at most 3; the Sobolev embedding and curvature bound are contract fields"
+        "Lean proves n less than 4 iff n at most 3; the Sobolev embedding and curvature bound are contract fields, not proved analysis."
       ]
     },
     "empirical_validation": {

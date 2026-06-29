@@ -11,7 +11,7 @@
   },
   "canonical_root": "https://rickyjreyes.github.io/research-corpus.json",
   "compiled_registry": "https://rickyjreyes.github.io/compiled-registry.json",
-  "generated_at": "2026-06-29T22:40:17+00:00",
+  "generated_at": "2026-06-29T22:42:32+00:00",
   "status_policy": {
     "PASS": "The assigned executable check succeeds under its declared assumptions.",
     "CONDITIONAL": "Additional mathematical, domain, regularity, model, or empirical assumptions remain required.",
@@ -890,7 +890,7 @@
         ],
         "source": "WCTLean/Models/UnifiedOperator.lean",
         "limitations": [
-          "This is a typed operator skeleton"
+          "This is a typed operator skeleton, not a derivation of the full nonlinear UWCT equation."
         ]
       },
       "empirical_validation": {
@@ -1017,7 +1017,7 @@
         ],
         "source": "WCTLean/Models/UnifiedOperator.lean",
         "limitations": [
-          "Theorems cover the represented shell term"
+          "Theorems cover the represented shell term, not the complete master dynamics."
         ]
       },
       "empirical_validation": {
@@ -2718,7 +2718,7 @@
         ],
         "source": "WCTLean/Contracts/Analytic.lean",
         "limitations": [
-          "Lean proves n less than 4 iff n at most 3; the Sobolev embedding and curvature bound are contract fields"
+          "Lean proves n less than 4 iff n at most 3; the Sobolev embedding and curvature bound are contract fields, not proved analysis."
         ]
       },
       "empirical_validation": {

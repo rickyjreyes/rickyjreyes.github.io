@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0.0",
   "registry_id": "wct-effective-registry",
-  "generated_at": "2026-06-29T22:40:17+00:00",
+  "generated_at": "2026-06-29T22:42:32+00:00",
   "source_ref": {
     "wct_sympy": "main",
     "geometry_of_resonance": "main"
@@ -319,7 +319,7 @@
         ],
         "source": "WCTLean/Models/UnifiedOperator.lean",
         "limitations": [
-          "This is a typed operator skeleton"
+          "This is a typed operator skeleton, not a derivation of the full nonlinear UWCT equation."
         ]
       },
       "empirical_validation": {
@@ -404,7 +404,7 @@
         ],
         "source": "WCTLean/Models/UnifiedOperator.lean",
         "limitations": [
-          "Theorems cover the represented shell term"
+          "Theorems cover the represented shell term, not the complete master dynamics."
         ]
       },
       "empirical_validation": {
@@ -1550,7 +1550,7 @@
         ],
         "source": "WCTLean/Contracts/Analytic.lean",
         "limitations": [
-          "Lean proves n less than 4 iff n at most 3; the Sobolev embedding and curvature bound are contract fields"
+          "Lean proves n less than 4 iff n at most 3; the Sobolev embedding and curvature bound are contract fields, not proved analysis."
         ]
       },
       "empirical_validation": {
