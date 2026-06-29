@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.1.0",
+  "release_id": "WCT-2026.2",
+  "frozen_at": "2026-06-29T23:30:00Z",
+  "source_date_epoch": 1782691200,
+  "description": "Frozen cross-repository release for the 142-object WCT registry, symbolic audit, 62-ID Lean typed-support layer, synchronized public surfaces, and deterministic finite-band reference simulation.",
+  "hash_policy": {
+    "source_files": "git-blob-sha1",
+    "generated_artifacts": "sha256",
+    "repository_state": "exact Git commit"
+  },
+  "repositories": {
+    "geometry_of_resonance": {
+      "url": "https://github.com/rickyjreyes/geometry_of_resonance.git",
+      "commit": "7d78bf652d1aeb0e3d04f82abf142054142d6d36",
+      "role": "Canonical equations plus stabilized deterministic simulation and figure fixture",
+      "files": {
+        "WCT_FULL_EQUATION_LIST_CORRECTED.md": "0e1a59b12c578048e289803c8ae825f7092734df",
+        "Makefile": "f03d474ec6cb2707d617e617c73a76057d7a086e",
+        "reproducibility/finite_band_reference.py": "f79a0775db6c7a4db6644ec6360211be73709f25",
+        "reproducibility/EXPECTED_HASHES.json": "08d609dcf3941cf3d6dee47966b1442b487e8711"
+      }
+    },
+    "wct_sympy": {
+      "url": "https://github.com/rickyjreyes/wct-sympy.git",
+      "commit": "188b6f6782ea6a6be80be5af3e8feb1d22e3384c",
+      "role": "Executable symbolic audit, effective registry compiler, and 62-ID Lean interoperability map",
+      "files": {
+        "Makefile": "afb5281196e621609cdb0059d19b31f46d4863a7",
+        "reproducibility/requirements.lock": "9b7a1377ecf01320300e6f1aed4e978bcf571925",
+        "interoperability/lean_map.yaml": "b1d2f38f0ed1e7f6e9e7493268562e232930b7d8"
+      }
+    },
+    "wct_lean": {
+      "url": "https://github.com/rickyjreyes/wct-lean.git",
+      "commit": "3e077ad2c3bc0f5b4d5fa2b26ee341ff16ca73bc",
+      "role": "Kernel-checked canonical registry and equation-specific typed support for 62 of 142 IDs",
+      "files": {
+        "Makefile": "29e268b4a86002a0e221d994b76440b0bb5e767b",
+        "FORMAL_COVERAGE_INDEX.md": "89a772d86269812ed1be5ddf65ee4fabedbdea9e",
+        "WCTLean/Main.lean": "10ca802f6e799d1cc726107732f2288a944b310f"
+      }
+    },
+    "scholar_site_baseline": {
+      "url": "https://github.com/rickyjreyes/rickyjreyes.github.io.git",
+      "commit": "41b565642069e9673333727b21bf7e180e209e25",
+      "role": "Published synchronized registry and Lean coverage surfaces",
+      "files": {
+        "compiled-registry.json": "0ebca16155f5fb8a12e4f2627d0fd439644cc758",
+        "registry-validation-report.json": "51573006428e43887c30786b4b6300021bdfc5ee",
+        "scripts/validate_registry_sync.py": "bc149c89b735e7475ddf571230911406cd1195a6",
+        "lean/index.html": "58c5233c07179bbf0ae11e37a7de7002a2588005"
+      }
+    }
+  },
+  "environment": {
+    "python": "3.12",
+    "lean_toolchain": "leanprover/lean4:v4.23.0",
+    "docker_base": "ubuntu:noble-20260509.1",
+    "elan_installer_commit": "6737edca3d2ca3dbaa1b47b87769b48b420633ae"
+  },
+  "expected": {
+    "canonical_objects": 142,
+    "lean_typed_ids": 62,
+    "lean_registry_only_ids": 80,
+    "registry_counts": {
+      "PASS": 59,
+      "CONDITIONAL": 27,
+      "DEFINITION": 26,
+      "OPEN": 30,
+      "FAIL": 0
+    },
+    "simulation_sha256": {
+      "finite_band_field_i10.bin": "e5a64f27cdda141a7e8a3d7478cc87661995dfdd3e1f03d9dc7c3f4d75ace416",
+      "finite_band_spectrum.csv": "ce7c5a9ec05eb735df69a65728f636f9b53439ae4d094a4fba918b729ef55525",
+      "finite_band_spectrum.png": "ed559ab3f8d1298d38e46d59e29d29cdb229d3acfb2e5e82bbda07f0492ebc56",
+      "finite_band_summary.json": "37d2dc8ce2d15c69fd80415c1ec8e46b011dd626f5b5def99c151c3a3f46d811"
+    }
+  },
+  "scientific_boundaries": [
+    "A SymPy PASS is an executable result under declared assumptions; it is not automatically a Lean proof or empirical validation.",
+    "Typed Lean support includes definitions, contracts, finite analogues, counterexamples, conditional theorems, and TODO propositions of unequal strength.",
+    "A successful Lean build establishes only that the encoded declarations are accepted by the Lean kernel under their displayed hypotheses.",
+    "The finite-band simulation is a deterministic linear spectral-rail fixture, not a nonlinear confinement theorem or physical experiment.",
+    "This release establishes source and build reproducibility, not independent scientific replication."
+  ]
+}
