@@ -4,30 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#07111f">
-  <meta name="description" content="Reproduce the frozen WCT-2026.1 release from exact Git commits using one command, Docker, or Nix. Includes Lean, SymPy, registry, simulation, figure, and hash verification.">
+  <meta name="description" content="Reproduce the frozen WCT-2026.2 release from exact Git commits. Verifies the 142-object registry, 62-ID Lean typed-support layer, SymPy audit, synchronized website, and deterministic simulation artifacts.">
   <meta name="author" content="Richard J. Reyes">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://rickyjreyes.github.io/reproduce/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Reproduce WCT-2026.1">
-  <meta property="og:description" content="One-command rebuild of the frozen WCT release: exact commits, Lean, SymPy, registry, simulation, figures, Docker, Nix, and expected hashes.">
+  <meta property="og:title" content="Reproduce WCT-2026.2">
+  <meta property="og:description" content="One-command rebuild of the synchronized frozen WCT release: 142 canonical objects, 62 Lean-mapped IDs, SymPy, registry, simulation, Docker, Nix, and source verification.">
   <meta property="og:url" content="https://rickyjreyes.github.io/reproduce/">
-  <title>Reproduce WCT-2026.1 | Richard J. Reyes</title>
+  <title>Reproduce WCT-2026.2 | Richard J. Reyes</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
-    .repro-hero{padding-top:clamp(4rem,8vw,7rem);padding-bottom:2.5rem}.repro-hero h1{max-width:900px}.release-badge{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem .8rem;border:1px solid rgba(103,212,255,.35);border-radius:999px;background:rgba(103,212,255,.08);font-weight:700;letter-spacing:.04em}.release-badge::before{content:"";width:.58rem;height:.58rem;border-radius:50%;background:#64e19d;box-shadow:0 0 16px rgba(100,225,157,.7)}
+    .repro-hero{padding-top:clamp(4rem,8vw,7rem);padding-bottom:2.5rem}.repro-hero h1{max-width:960px}.release-badge{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem .8rem;border:1px solid rgba(103,212,255,.35);border-radius:999px;background:rgba(103,212,255,.08);font-weight:700;letter-spacing:.04em}.release-badge::before{content:"";width:.58rem;height:.58rem;border-radius:50%;background:#64e19d;box-shadow:0 0 16px rgba(100,225,157,.7)}
     .quick-run{margin-top:2rem;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(4,12,24,.78);overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.28)}.quick-run header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 1rem;border-bottom:1px solid rgba(255,255,255,.1)}.quick-run header strong{font-size:.92rem}.copy-button{appearance:none;border:1px solid rgba(103,212,255,.4);border-radius:9px;background:rgba(103,212,255,.1);color:inherit;padding:.45rem .7rem;cursor:pointer;font:inherit;font-size:.82rem}.copy-button:hover{background:rgba(103,212,255,.18)}.quick-run pre{margin:0;padding:1.15rem 1.25rem;overflow:auto;line-height:1.65}.quick-run code{font-size:.94rem}
-    .repro-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.repro-card{border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:1.25rem;background:rgba(255,255,255,.035)}.repro-card h3{margin-top:0}.repro-card pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:.85rem;border-radius:10px;background:#040b16}.verify-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem 1.5rem;padding:0;list-style:none}.verify-list li{padding:.85rem 1rem;border-left:3px solid rgba(103,212,255,.55);background:rgba(255,255,255,.03)}.release-links{display:flex;flex-wrap:wrap;gap:.75rem}.hash-table{width:100%;border-collapse:collapse}.hash-table th,.hash-table td{text-align:left;vertical-align:top;padding:.8rem;border-bottom:1px solid rgba(255,255,255,.1)}.hash-table code{overflow-wrap:anywhere}.boundary{border-color:rgba(255,194,102,.35);background:rgba(255,194,102,.07)}
+    .repro-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.repro-card{border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:1.25rem;background:rgba(255,255,255,.035)}.repro-card h3{margin-top:0}.repro-card pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:.85rem;border-radius:10px;background:#040b16}.verify-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem 1.5rem;padding:0;list-style:none}.verify-list li{padding:.85rem 1rem;border-left:3px solid rgba(103,212,255,.55);background:rgba(255,255,255,.03)}.release-links{display:flex;flex-wrap:wrap;gap:.75rem}.hash-table{width:100%;border-collapse:collapse}.hash-table th,.hash-table td{text-align:left;vertical-align:top;padding:.8rem;border-bottom:1px solid rgba(255,255,255,.1)}.hash-table code{overflow-wrap:anywhere}.boundary{border-color:rgba(255,194,102,.35);background:rgba(255,194,102,.07)}.coverage-note{margin-top:1.25rem;padding:1rem;border-left:4px solid #64e19d;background:rgba(100,225,157,.06)}
     @media(max-width:850px){.repro-grid,.verify-list{grid-template-columns:1fr}.hash-table{display:block;overflow:auto}}
   </style>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"SoftwareSourceCode",
-    "name":"WCT-2026.1 Frozen Canonical Release",
-    "codeRepository":"https://github.com/rickyjreyes/rickyjreyes.github.io/tree/main/release/WCT-2026.1",
+    "name":"WCT-2026.2 Synchronized Frozen Release",
+    "codeRepository":"https://github.com/rickyjreyes/rickyjreyes.github.io/tree/main/release/WCT-2026.2",
     "programmingLanguage":["Python","Lean","Nix","Makefile"],
     "runtimePlatform":["Docker","Nix","Python 3.12","Lean 4.23.0"],
+    "dateModified":"2026-06-29",
     "author":{"@type":"Person","name":"Richard J. Reyes","url":"https://rickyjreyes.github.io/"},
     "license":"https://github.com/rickyjreyes/rickyjreyes.github.io"
   }
@@ -39,10 +40,10 @@
 
   <main id="main">
     <section class="repro-hero section-shell">
-      <p class="release-badge">CI-verified frozen release</p>
-      <p class="eyebrow">WCT-2026.1 · June 28, 2026</p>
-      <h1>Reproduce the maintained WCT research stack from exact source commits.</h1>
-      <p class="hero-lede">One command rebuilds and checks the canonical equations, full SymPy audit, effective 142-object registry, Lean formal layer, deterministic finite-band simulation, regenerated figure, published registry surfaces, and expected hashes.</p>
+      <p class="release-badge">Synchronized frozen release</p>
+      <p class="eyebrow">WCT-2026.2 · June 29, 2026</p>
+      <h1>Reproduce the current 142-object WCT stack from exact source commits.</h1>
+      <p class="hero-lede">One command rebuilds and checks the canonical equation source, complete SymPy audit, effective registry, 62-ID Lean typed-support layer, synchronized public surfaces, deterministic finite-band simulation, and recorded artifact hashes.</p>
       <div class="quick-run" aria-label="Quick reproduction command">
         <header><strong>Fastest path</strong><button class="copy-button" data-copy="quick-command">Copy</button></header>
         <pre id="quick-command"><code>git clone https://github.com/rickyjreyes/rickyjreyes.github.io.git
@@ -50,38 +51,45 @@ cd rickyjreyes.github.io
 make reproduce</code></pre>
       </div>
       <div class="hero-actions" style="margin-top:1.25rem">
-        <a class="button primary" href="https://github.com/rickyjreyes/rickyjreyes.github.io/tree/main/release/WCT-2026.1">Open canonical release</a>
-        <a class="button secondary" href="../release/WCT-2026.1/release-manifest.json">View manifest</a>
+        <a class="button primary" href="https://github.com/rickyjreyes/rickyjreyes.github.io/tree/main/release/WCT-2026.2">Open WCT-2026.2</a>
+        <a class="button secondary" href="../release/WCT-2026.2/release-manifest.json">View manifest</a>
         <a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes.github.io/actions/workflows/frozen-release.yml">View CI runs</a>
+        <a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes.github.io/tree/main/release/WCT-2026.1">Archive: WCT-2026.1</a>
       </div>
     </section>
 
-    <section class="status-strip" aria-label="Frozen release status"><div class="section-shell status-grid"><div><strong>4</strong><span>pinned repositories</span></div><div><strong>142</strong><span>registry objects checked</span></div><div><strong>3</strong><span>passing release gates</span></div><div><strong>1</strong><span>command to reproduce</span></div></div></section>
+    <section class="status-strip" aria-label="Frozen release status"><div class="section-shell status-grid"><div><strong>142</strong><span>canonical objects</span></div><div><strong>62</strong><span>typed Lean IDs</span></div><div><strong>80</strong><span>registry-only IDs</span></div><div><strong>4</strong><span>pinned repositories</span></div></div></section>
+
+    <section class="section section-shell" aria-labelledby="delta-title">
+      <div class="section-heading narrow"><p class="eyebrow">Release delta</p><h2 id="delta-title">The frozen formal layer now matches the maintained 62-ID state.</h2></div>
+      <div class="coverage-note"><strong>Coverage progression:</strong> 18 → 50 → 62 equation-specific Lean mappings. WCT-2026.2 freezes 62 mapped IDs and 80 registry-only IDs while preserving the complete 142-object registry.</div>
+      <p>Mapped does not mean equal proof strength. The 62 objects include exact algebraic theorems, dimensional lemmas, finite-dimensional analogues, conditional theorems, analytic contracts, definitions, counterexamples, and an unresolved proposition.</p>
+    </section>
 
     <section class="section section-shell" aria-labelledby="methods-title">
-      <div class="section-heading narrow"><p class="eyebrow">Choose an environment</p><h2 id="methods-title">Run directly, through Docker, or inside Nix.</h2><p>All methods use the same frozen manifest and exact scientific source commits.</p></div>
+      <div class="section-heading narrow"><p class="eyebrow">Choose an environment</p><h2 id="methods-title">Run directly, through Docker, or inside Nix.</h2><p>Every method reads the same manifest and exact source commits.</p></div>
       <div class="repro-grid">
-        <article class="repro-card"><h3>Direct</h3><p>Best for an existing Python and Lean workstation.</p><pre><code>make reproduce</code></pre></article>
+        <article class="repro-card"><h3>Direct</h3><p>For a workstation with Python, Git, Make, Lean, and Lake.</p><pre><code>make reproduce</code></pre></article>
         <article class="repro-card"><h3>Docker</h3><p>Build the dated Ubuntu environment and run the release in a container.</p><pre><code>make docker-build
 make docker-reproduce</code></pre></article>
-        <article class="repro-card"><h3>Nix</h3><p>Enter the commit-pinned development shell, then execute the same target.</p><pre><code>nix develop
+        <article class="repro-card"><h3>Nix</h3><p>Enter the pinned development shell and execute the same target.</p><pre><code>nix develop
 make reproduce</code></pre></article>
       </div>
     </section>
 
     <section class="section section-shell" aria-labelledby="checks-title">
-      <div class="section-heading"><p class="eyebrow">What the command verifies</p><h2 id="checks-title">The release fails when sources, builds, registries, or artifacts drift.</h2></div>
+      <div class="section-heading"><p class="eyebrow">What the command verifies</p><h2 id="checks-title">The release fails when commits, sources, builds, counts, or artifacts drift.</h2></div>
       <ul class="verify-list">
         <li><strong>Exact Git state</strong><br>Clones four repositories at manifest-pinned commit SHAs.</li>
         <li><strong>Source identity</strong><br>Checks selected canonical files using Git blob hashes.</li>
-        <li><strong>SymPy audit</strong><br>Runs tests, full coverage, strict-theory checks, and Lean mapping checks.</li>
-        <li><strong>Registry compiler</strong><br>Rebuilds the effective registry and compares its semantic hash.</li>
-        <li><strong>Lean formal layer</strong><br>Audits maintained sources, retrieves the pinned Mathlib cache, and runs <code>lake build</code>.</li>
-        <li><strong>Simulation and figure</strong><br>Regenerates the deterministic finite-band field, spectrum table, plot, and summary.</li>
-        <li><strong>Published surfaces</strong><br>Checks equations, SymPy, Lean, corpus, and traceability synchronization.</li>
-        <li><strong>Final report</strong><br>Writes environment versions, verified commits, hashes, counts, and boundaries.</li>
+        <li><strong>SymPy audit</strong><br>Runs tests, full coverage, strict-theory checks, registry compilation, and reproducibility verification.</li>
+        <li><strong>Lean formal layer</strong><br>Audits sources, retrieves the pinned Mathlib cache, and runs <code>lake build</code>.</li>
+        <li><strong>Formal coverage partition</strong><br>Requires exactly 62 canonical map entries and 80 registry-only IDs.</li>
+        <li><strong>Published synchronization</strong><br>Requires the public Lean surface to display 142, 62, and 80 consistently.</li>
+        <li><strong>Simulation artifacts</strong><br>Regenerates the deterministic field, spectrum, figure, and summary and checks SHA-256 values.</li>
+        <li><strong>Final report</strong><br>Records commits, source blobs, environment versions, counts, boundaries, and output hashes.</li>
       </ul>
-      <div class="quick-run" style="margin-top:1.25rem"><header><strong>Final machine-readable result</strong></header><pre><code>release-output/WCT-2026.1/reproduction-report.json</code></pre></div>
+      <div class="quick-run" style="margin-top:1.25rem"><header><strong>Final machine-readable result</strong></header><pre><code>release-output/WCT-2026.2/reproduction-report.json</code></pre></div>
     </section>
 
     <section class="section section-shell" aria-labelledby="sources-title">
@@ -89,10 +97,10 @@ make reproduce</code></pre></article>
       <table class="hash-table">
         <thead><tr><th>Layer</th><th>Repository</th><th>Pinned commit</th></tr></thead>
         <tbody>
-          <tr><td>Canonical equations and simulation</td><td><a href="https://github.com/rickyjreyes/geometry_of_resonance">geometry_of_resonance</a></td><td><code>7d78bf652d1aeb0e3d04f82abf142054142d6d36</code></td></tr>
-          <tr><td>Symbolic audit and registry compiler</td><td><a href="https://github.com/rickyjreyes/wct-sympy">wct-sympy</a></td><td><code>581511d43cb6bd81d5672a506b644ab8e2822918</code></td></tr>
-          <tr><td>Formal declarations</td><td><a href="https://github.com/rickyjreyes/wct-lean">wct-lean</a></td><td><code>ec35223ce31f04ea98d7cd84dc23a92b3138d454</code></td></tr>
-          <tr><td>Published synchronized surfaces</td><td><a href="https://github.com/rickyjreyes/rickyjreyes.github.io">scholar site</a></td><td><code>3da97077fd921488fbfaa3032bac3be75d218dde</code></td></tr>
+          <tr><td>Canonical equations and stabilized simulation</td><td><a href="https://github.com/rickyjreyes/geometry_of_resonance">geometry_of_resonance</a></td><td><code>7d78bf652d1aeb0e3d04f82abf142054142d6d36</code></td></tr>
+          <tr><td>Symbolic audit and 62-ID interoperability map</td><td><a href="https://github.com/rickyjreyes/wct-sympy">wct-sympy</a></td><td><code>188b6f6782ea6a6be80be5af3e8feb1d22e3384c</code></td></tr>
+          <tr><td>Canonical registry and typed formal declarations</td><td><a href="https://github.com/rickyjreyes/wct-lean">wct-lean</a></td><td><code>3e077ad2c3bc0f5b4d5fa2b26ee341ff16ca73bc</code></td></tr>
+          <tr><td>Synchronized published surfaces</td><td><a href="https://github.com/rickyjreyes/rickyjreyes.github.io">scholar site</a></td><td><code>41b565642069e9673333727b21bf7e180e209e25</code></td></tr>
         </tbody>
       </table>
     </section>
@@ -100,19 +108,20 @@ make reproduce</code></pre></article>
     <section class="section section-shell" aria-labelledby="links-title">
       <div class="section-heading"><p class="eyebrow">Inspect before running</p><h2 id="links-title">Every release component is directly accessible.</h2></div>
       <div class="release-links">
-        <a class="button secondary" href="../release/WCT-2026.1/README.md">Release README</a>
-        <a class="button secondary" href="../release/WCT-2026.1/release-manifest.json">Manifest JSON</a>
-        <a class="button secondary" href="../release/WCT-2026.1/requirements.lock">Python lock</a>
-        <a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes.github.io/blob/main/release/WCT-2026.1/Dockerfile">Dockerfile</a>
+        <a class="button secondary" href="../release/WCT-2026.2/README.md">Release README</a>
+        <a class="button secondary" href="../release/WCT-2026.2/release-manifest.json">Manifest JSON</a>
+        <a class="button secondary" href="../release/WCT-2026.2/requirements.lock">Python lock</a>
+        <a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes.github.io/blob/main/release/WCT-2026.2/reproduce.py">Verifier</a>
+        <a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes.github.io/blob/main/release/WCT-2026.2/Dockerfile">Dockerfile</a>
         <a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes.github.io/blob/main/flake.nix">Nix flake</a>
         <a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes.github.io/blob/main/.github/workflows/frozen-release.yml">Release workflow</a>
       </div>
     </section>
 
-    <section class="section section-shell"><div class="status-note boundary"><strong>Scientific boundary.</strong> A successful run establishes source, build, registry, formal-layer, simulation, figure, and artifact reproducibility for the declared release. It does not by itself establish WCT as a correct physical theory or count as independent experimental replication.</div></section>
+    <section class="section section-shell"><div class="status-note boundary"><strong>Scientific boundary.</strong> A successful run establishes source, build, registry, formal-layer, simulation, website, and artifact reproducibility for the declared release. It does not establish WCT as a correct physical theory, prove the open nonlinear PDE program, or count as independent experimental replication.</div></section>
   </main>
 
-  <footer class="site-footer"><div class="section-shell footer-grid"><div><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><p>Wave Confinement Theory research archive and reproducibility entry point.</p></div><div><h2>Release</h2><a href="../release/WCT-2026.1/release-manifest.json">Manifest</a><a href="https://github.com/rickyjreyes/rickyjreyes.github.io/actions/workflows/frozen-release.yml">CI</a><a href="https://github.com/rickyjreyes">GitHub</a></div><div><h2>Research</h2><a href="../publications/">Publications</a><a href="../equations/">Equations</a><a href="../research-corpus/">Corpus</a></div></div><div class="section-shell footer-bottom"><span>© 2026 Richard J. Reyes</span><a href="#top">Back to top ↑</a></div></footer>
+  <footer class="site-footer"><div class="section-shell footer-grid"><div><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><p>Wave Confinement Theory research archive and reproducibility entry point.</p></div><div><h2>Release</h2><a href="../release/WCT-2026.2/release-manifest.json">Manifest</a><a href="https://github.com/rickyjreyes/rickyjreyes.github.io/actions/workflows/frozen-release.yml">CI</a><a href="https://github.com/rickyjreyes">GitHub</a></div><div><h2>Research</h2><a href="../publications/">Publications</a><a href="../equations/">Equations</a><a href="../research-corpus/">Corpus</a></div></div><div class="section-shell footer-bottom"><span>© 2026 Richard J. Reyes</span><a href="#top">Back to top ↑</a></div></footer>
   <script>
     document.querySelectorAll('[data-copy]').forEach((button) => {
       button.addEventListener('click', async () => {
@@ -129,6 +138,6 @@ make reproduce</code></pre></article>
       });
     });
   </script>
-<script src="../site-nav.js" defer></script>
+  <script src="../site-nav.js" defer></script>
 </body>
 </html>
