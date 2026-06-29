@@ -1,5 +1,5 @@
 PYTHON ?= python3
-RELEASE_ID ?= WCT-2026.1
+RELEASE_ID ?= WCT-2026.2
 REPRO_SCRIPT := release/$(RELEASE_ID)/reproduce.py
 REPRO_FLAGS ?=
 DOCKER_IMAGE ?= wct-release:$(RELEASE_ID)
