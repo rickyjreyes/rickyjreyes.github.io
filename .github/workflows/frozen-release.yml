@@ -1,17 +1,17 @@
-name: WCT-2026.1 frozen release
+name: WCT-2026.2 frozen release
 
 on:
   push:
     branches: [main]
     paths:
-      - "release/WCT-2026.1/**"
+      - "release/WCT-2026.2/**"
       - "Makefile"
       - "flake.nix"
       - ".dockerignore"
       - ".github/workflows/frozen-release.yml"
   pull_request:
     paths:
-      - "release/WCT-2026.1/**"
+      - "release/WCT-2026.2/**"
       - "Makefile"
       - "flake.nix"
       - ".dockerignore"
@@ -33,7 +33,7 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: release/WCT-2026.1/requirements.lock
+          cache-dependency-path: release/WCT-2026.2/requirements.lock
       - name: Install pinned Lean toolchain
         shell: bash
         run: |
@@ -53,11 +53,11 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: WCT-2026.1-${{ github.sha }}
+          name: WCT-2026.2-${{ github.sha }}
           if-no-files-found: error
           path: |
             frozen-release.log
-            release-output/WCT-2026.1/
+            release-output/WCT-2026.2/
 
   docker:
     runs-on: ubuntu-24.04
