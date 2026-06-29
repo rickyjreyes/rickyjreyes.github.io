@@ -8,6 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 EQUATIONS = ROOT / "equations" / "equations.json"
 COMPILED = ROOT / "compiled-registry.json"
 
+# The upstream version-4 Lean interoperability map carries 62 canonical IDs.
+# This patch remains limited to preserving definition-only cosmology entries.
 DEFINITIONS = {
     "CM12": {
         "declarations": ["dimensionlessPowerSpectrum"],
