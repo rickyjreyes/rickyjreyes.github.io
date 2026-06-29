@@ -38,8 +38,8 @@ on:
 permissions:
   contents: write
 
-# The generated Lean page reads the canonical interoperability map from
-# rickyjreyes/wct-sympy, which is synchronized to the maintained wct-lean inventory.
+# The generated Lean page reads the version-3 canonical interoperability map
+# from rickyjreyes/wct-sympy, synchronized to the maintained wct-lean inventory.
 env:
   WCT_SYMPY_REF: ${{ github.event_name == 'pull_request' && 'compiled-registry-v2' || 'main' }}
 
