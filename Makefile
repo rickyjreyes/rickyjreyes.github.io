@@ -1,6 +1,9 @@
 PYTHON ?= python3
 RELEASE_ID ?= WCT-2026.2
 REPRO_SCRIPT := release/$(RELEASE_ID)/reproduce.py
+REQUIREMENTS := release/$(RELEASE_ID)/requirements.lock
+BOOTSTRAP_DIR := .reproduction/$(RELEASE_ID)-bootstrap
+BOOTSTRAP_PYTHON := $(BOOTSTRAP_DIR)/bin/python
 REPRO_FLAGS ?=
 DOCKER_IMAGE ?= wct-release:$(RELEASE_ID)
 
@@ -11,7 +14,10 @@ verify-manifest:
 	$(PYTHON) -m py_compile $(REPRO_SCRIPT)
 
 reproduce: verify-manifest
-	$(PYTHON) $(REPRO_SCRIPT) $(REPRO_FLAGS)
+	rm -rf $(BOOTSTRAP_DIR)
+	$(PYTHON) -m venv $(BOOTSTRAP_DIR)
+	$(BOOTSTRAP_PYTHON) -m pip install --disable-pip-version-check --requirement $(REQUIREMENTS)
+	$(BOOTSTRAP_PYTHON) $(REPRO_SCRIPT) --skip-install $(REPRO_FLAGS)
 
 docker-build:
 	docker build --file release/$(RELEASE_ID)/Dockerfile --tag $(DOCKER_IMAGE) .
