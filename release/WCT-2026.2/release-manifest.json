@@ -23,7 +23,7 @@
     },
     "wct_sympy": {
       "url": "https://github.com/rickyjreyes/wct-sympy.git",
-      "commit": "188b6f6782ea6a6be80be5af3e8feb1d22e3384c",
+      "commit": "b18b327791165393e0695a02894183a3bd012aba",
       "role": "Executable symbolic audit, effective registry compiler, and 62-ID Lean interoperability map",
       "files": {
         "Makefile": "afb5281196e621609cdb0059d19b31f46d4863a7",
