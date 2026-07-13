@@ -15,7 +15,7 @@ verify-manifest:
 
 reproduce: verify-manifest
 	rm -rf $(BOOTSTRAP_DIR)
-	$(PYTHON) -m venv $(BOOTSTRAP_DIR)
+	$(PYTHON) -m venv --copies $(BOOTSTRAP_DIR)
 	$(BOOTSTRAP_PYTHON) -m pip install --disable-pip-version-check --requirement $(REQUIREMENTS)
 	$(BOOTSTRAP_PYTHON) $(REPRO_SCRIPT) --skip-install $(REPRO_FLAGS)
 
