@@ -1,11 +1,10 @@
 # Richard J. Reyes Research Archive
 
-> Public discovery map for Wave Confinement Theory (WCT), related experiments, open-data analyses, computation, AI architecture, resonance-control research, and non-enabling patent-application summaries.
+> Public discovery map for Wave Confinement Theory (WCT), related experiments, open-data analyses, computation, AI architecture, and resonance-control research.
 
 ## Preferred website navigation
 - Research home: https://rickyjreyes.github.io/
 - Publications: https://rickyjreyes.github.io/publications/
-- Patent application portfolio: https://rickyjreyes.github.io/patents/
 - Equations and definitions: https://rickyjreyes.github.io/equations/
 - Complete SymPy audit: https://rickyjreyes.github.io/sympy/
 - Complete Lean coverage: https://rickyjreyes.github.io/lean/
@@ -19,11 +18,10 @@
 - Registry validation report: https://rickyjreyes.github.io/registry-validation-report.json
 - Equation feed: https://rickyjreyes.github.io/equations/equations.json
 - Publication metadata: https://rickyjreyes.github.io/publications.json
-- Patent application metadata: https://rickyjreyes.github.io/patents.json
 - Publication traceability source: https://rickyjreyes.github.io/data/publication_traceability.json
 - Claim-priority metadata: https://rickyjreyes.github.io/priority/priority.json
 
-Use the internal website pages first because they preserve navigation, evidence boundaries, status labels, and backlinks. Repository files are the technical source layer.
+Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
 
 ## Canonical source files
 - Full corrected equation registry: https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md
@@ -40,10 +38,9 @@ Use the internal website pages first because they preserve navigation, evidence 
 4. Resolve the effective SymPy classification and named checker.
 5. Resolve Lean as a separate layer: theorem, definition, counterexample, partial support, TODO, or unmapped.
 6. Resolve semantic links to papers, derivations, predictions, experiments, datasets, evidence, falsifiers, and unresolved obligations.
-7. Resolve a patent-application family through patents.json and the public portfolio page; use official USPTO publication records when a publication number is later listed.
 
 ## Machine-reading rules
-- Preserve canonical object IDs and patent docket labels exactly.
+- Preserve canonical object IDs exactly.
 - Treat per-object derived overrides as newer than older summary tables.
 - Treat baseline status as historical whenever an effective override exists.
 - A SymPy PASS is not automatically a Lean proof or empirical validation.
@@ -55,14 +52,6 @@ Use the internal website pages first because they preserve navigation, evidence 
 - Preserve the distinction between archival titles and current qualified claim status.
 - Report unresolved, empty, or missing mappings rather than inventing them.
 - Prefer registry-validation-report.json when checking whether public status layers agree.
-- “Patent pending” means only that an application has been filed and remains pending; it does not indicate allowance, validity, enforceability, examination outcome, or grant.
-- A paper, repository, experiment, or chronology link associated with an application family does not establish patentability, claim scope, enablement, validity, commercial readiness, or technical validation.
-- An author experiment is not independent replication.
-- Public code is not automatically proof of security, correctness, physical validation, or production readiness.
-- Do not infer unpublished claims, private implementation details, tuning parameters, or unfiled improvements from the public patent summaries.
 
 ## Claim discipline
 WCT is an evolving independent research framework, not an established physical theory. Distinguish definitions, ansätze, derivations, model-relative results, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions. Empty evidence or replication fields mean that support has not yet been recorded; they must not be silently upgraded.
-
-## Patent portfolio boundary
-The patent portfolio is intentionally non-enabling. Public material includes high-level summaries, filing chronology, internal docket references, public papers, public repositories, and evidence-status labels. Unpublished specifications, claim sets, private source code, secret state material, tuning parameters, unfiled improvements, and filing forms containing personal information are not distributed from the portfolio.
