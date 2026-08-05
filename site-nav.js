@@ -90,12 +90,76 @@
         <div class="section-shell frozen-release-inner">
           <span class="frozen-release-dot" aria-hidden="true"></span>
           <div class="frozen-release-copy">
-            <strong>WCT-2026.1 is frozen and reproducible.</strong>
+            <strong>WCT-2026.2 is frozen and reproducible.</strong>
             <span>Exact commits, Lean, SymPy, registry, simulation, figure regeneration, Docker, Nix, and expected hashes.</span>
           </div>
           <a class="frozen-release-link" href="/reproduce/">Run it →</a>
         </div>`;
       hero.insertAdjacentElement('afterend', callout);
+    }
+  }
+
+  if (currentPath === '/') {
+    const heroActions = document.querySelector('.hero-actions');
+    if (heroActions && !heroActions.querySelector('a[href="/patents/"]')) {
+      const patentButton = document.createElement('a');
+      patentButton.className = 'button secondary';
+      patentButton.href = '/patents/';
+      patentButton.textContent = 'View patent applications';
+      heroActions.appendChild(patentButton);
+    }
+
+    const branches = document.querySelector('#branches');
+    if (branches && !document.querySelector('.patent-home-section')) {
+      const style = document.createElement('style');
+      style.textContent = `
+        .patent-home-section{padding-block:88px;border-top:1px solid var(--line,rgba(170,201,225,.16));border-bottom:1px solid var(--line,rgba(170,201,225,.16));background:linear-gradient(180deg,rgba(8,19,33,.32),rgba(14,29,48,.52))}
+        .patent-home-heading{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:40px;align-items:end;margin-bottom:30px}
+        .patent-home-heading h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.25rem,5vw,4.6rem);font-weight:500;letter-spacing:-.04em;line-height:1.04}
+        .patent-home-heading p:last-child{margin:0;color:var(--muted,#9cb0c1)}
+        .patent-home-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+        .patent-home-card{display:flex;flex-direction:column;min-height:220px;padding:22px;border:1px solid var(--line,rgba(170,201,225,.16));border-radius:16px;background:linear-gradient(155deg,rgba(14,29,48,.96),rgba(8,19,33,.93))}
+        .patent-home-card span{color:var(--accent,#67d4ff);font-size:.7rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+        .patent-home-card h3{margin:13px 0 10px;font-family:Georgia,"Times New Roman",serif;font-size:1.28rem;font-weight:500;line-height:1.15}
+        .patent-home-card p{margin:0;color:var(--muted,#9cb0c1);font-size:.9rem}
+        .patent-home-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+        @media(max-width:980px){.patent-home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        @media(max-width:700px){.patent-home-heading{grid-template-columns:1fr;gap:16px}.patent-home-grid{grid-template-columns:1fr}.patent-home-card{min-height:auto}}
+      `;
+      document.head.appendChild(style);
+
+      const section = document.createElement('section');
+      section.className = 'patent-home-section';
+      section.setAttribute('aria-labelledby', 'patent-home-title');
+      section.innerHTML = `
+        <div class="section-shell">
+          <div class="patent-home-heading">
+            <div>
+              <p class="eyebrow">Inventions and intellectual property</p>
+              <h2 id="patent-home-title">Four filed technology families.</h2>
+            </div>
+            <p>Public, non-enabling summaries connect the filing chronology to related papers, repositories, experiments, and evidence-status labels without publishing confidential application material.</p>
+          </div>
+          <div class="patent-home-grid" aria-label="Filed technology families">
+            <article class="patent-home-card"><span>Patent pending</span><h3>WaveLock and drift detection</h3><p>Curvature-regulated commitments, replay verification, protocol binding, attestation, and runtime drift analysis.</p></article>
+            <article class="patent-home-card"><span>Patent pending</span><h3>Persistent wave memory</h3><p>Wave-state storage, spectral confinement, readout, reset control, physical cells, arrays, and software emulation.</p></article>
+            <article class="patent-home-card"><span>Application filed</span><h3>Solid-state frequency reference</h3><p>Optically programmed semiconductor resonance with harmonic readout and oscillator-integration concepts.</p></article>
+            <article class="patent-home-card"><span>Application filed</span><h3>Coherent field generator</h3><p>Structured excitation, controlled confinement geometry, harmonic stabilization, relocking, and detector feedback.</p></article>
+          </div>
+          <div class="patent-home-actions">
+            <a class="button primary" href="/patents/">Open patent portfolio</a>
+            <a class="button secondary" href="/patents.json">View machine-readable metadata</a>
+          </div>
+        </div>`;
+      branches.insertAdjacentElement('afterend', section);
+    }
+
+    const footerResearch = [...document.querySelectorAll('.site-footer h2')].find((heading) => heading.textContent.trim() === 'Research')?.parentElement;
+    if (footerResearch && !footerResearch.querySelector('a[href="/patents/"]')) {
+      const link = document.createElement('a');
+      link.href = '/patents/';
+      link.textContent = 'Patent applications';
+      footerResearch.appendChild(link);
     }
   }
 
