@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "last_reviewed": "2026-08-05",
+  "portfolio_owner": "Richard J. Reyes",
+  "public_page": "https://rickyjreyes.github.io/patents/",
+  "disclosure_boundary": {
+    "public": [
+      "high-level non-enabling summaries",
+      "filing chronology",
+      "internal docket references",
+      "related public papers",
+      "related public repositories",
+      "evidence-status labels"
+    ],
+    "not_distributed": [
+      "unpublished specifications",
+      "claim sets",
+      "private source code",
+      "secret state material",
+      "tuning parameters",
+      "unfiled improvements",
+      "filing forms containing personal information"
+    ]
+  },
+  "status_note": "Patent pending means an application has been filed and remains pending. It does not indicate allowance, validity, enforceability, examination outcome, or grant.",
+  "applications": [
+    {
+      "family_id": "wavelock",
+      "public_name": "WaveLock and Drift Detection",
+      "docket": "REYES-WAVELOCK-2026-NP",
+      "title": "Curvature-Regulated Wavefield Evolution, Protocol-Binding Commitments, and Drift Detection",
+      "application_type": "U.S. nonprovisional application",
+      "earliest_priority_date": "2025-06-18",
+      "filing_date": "2026-06-07",
+      "public_status": "patent pending",
+      "official_publication": null,
+      "public_summary": "A computational architecture that evolves a discretized state under a curvature-regulated nonlinear process, derives reproducible commitments, records replay-verifiable ledger entries, and compares curvature-derived invariants to detect runtime drift.",
+      "public_scope": [
+        "wavefield commitments",
+        "protocol binding",
+        "replay prevention",
+        "public verification",
+        "attestation",
+        "runtime drift detection"
+      ],
+      "related_public_work": [
+        {
+          "title": "WaveLock repository",
+          "url": "https://github.com/rickyjreyes/Wavelock",
+          "category": "public_code",
+          "boundary": "Experimental research prototype; not represented as production cryptography."
+        },
+        {
+          "title": "WaveLock: Curvature-Locked One-Way Function",
+          "url": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
+          "category": "theory_or_architecture_proposal"
+        },
+        {
+          "title": "Recursive AI Drift Audit",
+          "url": "https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html",
+          "category": "author_technical_note"
+        }
+      ]
+    },
+    {
+      "family_id": "persistent-wave-memory",
+      "public_name": "Persistent Wave Memory",
+      "docket": "REYES-MEM-2026-NP",
+      "title": "Curvature-Feedback Persistent Wave Memory Device and Method of Operation",
+      "application_type": "U.S. nonprovisional application",
+      "earliest_priority_date": "2025-05-20",
+      "filing_date": "2026-05-18",
+      "public_status": "patent pending",
+      "official_publication": null,
+      "public_summary": "A memory architecture in which information is written into a bounded medium as a localized wave-interference state, then read, refreshed, or reset through physical or computational interfaces.",
+      "public_scope": [
+        "persistent wave-state storage",
+        "spectral confinement",
+        "optical or acoustic readout",
+        "reset control",
+        "physical cells and arrays",
+        "software emulation"
+      ],
+      "related_public_work": [
+        {
+          "title": "Long-Lived Photon Resonance in Water Cavities",
+          "url": "https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html",
+          "category": "author_experiment",
+          "boundary": "Not independent replication of a memory device."
+        },
+        {
+          "title": "The Geometry of Resonance",
+          "url": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+          "category": "theory_proposal"
+        },
+        {
+          "title": "Geometry of Resonance repository",
+          "url": "https://github.com/rickyjreyes/geometry_of_resonance",
+          "category": "public_research_archive"
+        }
+      ]
+    },
+    {
+      "family_id": "solid-state-frequency-reference",
+      "public_name": "Solid-State Frequency Reference",
+      "docket": "REYES-FREQ-2025",
+      "title": "Solid-State Frequency Reference via Curvature-Locked Resonant Semiconductors",
+      "application_type": "U.S. provisional application",
+      "earliest_priority_date": "2025-12-18",
+      "filing_date": "2025-12-18",
+      "public_status": "application filed",
+      "official_publication": null,
+      "public_summary": "A proposed solid-state frequency reference using optically programmed, persistent resonant states in semiconductor junction devices, with electrical readout and potential use in oscillator disciplining and synchronization.",
+      "public_scope": [
+        "structured optical programming",
+        "persistent semiconductor resonance",
+        "harmonic signatures",
+        "frequency readout",
+        "external oscillator integration"
+      ],
+      "related_public_work": [
+        {
+          "title": "Photodiode repository",
+          "url": "https://github.com/rickyjreyes/photodiode",
+          "category": "author_data_and_analysis",
+          "boundary": "Not independent metrology certification or a commercial frequency standard."
+        },
+        {
+          "title": "Photodiode Prediction Protocol Ledger",
+          "url": "https://rickyjreyes.github.io/publications/photodiode-prediction-protocol-ledger.html",
+          "category": "author_prediction_ledger"
+        }
+      ]
+    },
+    {
+      "family_id": "coherent-field-generator",
+      "public_name": "Coherent Field Generator",
+      "docket": "REYES-CPG-2026",
+      "title": "Coherent Particle Field Generator via Curvature-Locked Wave Confinement",
+      "application_type": "Updated U.S. provisional application",
+      "earliest_priority_date": "2025-05-21",
+      "filing_date": "2026-05-13",
+      "public_status": "application filed",
+      "official_publication": null,
+      "public_summary": "A physical wave-engineering architecture combining a nonlinear medium, structured multi-channel excitation, curvature-controlled confinement geometry, detector feedback, and harmonic stabilization to form geometry-pinned standing-wave configurations.",
+      "public_scope": [
+        "nonlinear wave media",
+        "structured excitation",
+        "curvature and torsion control",
+        "harmonic stabilization",
+        "closed-loop relocking",
+        "spectral or spatial readout"
+      ],
+      "related_public_work": [
+        {
+          "title": "Long-Lived Photon Resonance in Water Cavities",
+          "url": "https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html",
+          "category": "author_experiment"
+        },
+        {
+          "title": "The Geometry of Resonance",
+          "url": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+          "category": "theory_proposal"
+        },
+        {
+          "title": "Geometry of Resonance repository",
+          "url": "https://github.com/rickyjreyes/geometry_of_resonance",
+          "category": "public_research_archive",
+          "boundary": "Public architecture concepts are not labeled as independently validated hardware."
+        }
+      ]
+    }
+  ],
+  "interpretation_rules": [
+    "A related paper or repository documents public chronology and technical context; it does not establish patentability, claim scope, enablement, validity, or grant.",
+    "Author experiments are not independent replication.",
+    "Public code is not automatically proof of security, correctness, commercial readiness, or physical validation.",
+    "A theory proposal is not empirical validation.",
+    "An architecture concept may remain unbuilt or partially implemented."
+  ]
+}
