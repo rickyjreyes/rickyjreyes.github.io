@@ -15,6 +15,7 @@
   const links = [
     ['/', 'Home'],
     ['/publications/', 'Publications'],
+    ['/patents/', 'Patents'],
     ['/equations/', 'Equations'],
     ['/sympy/', 'SymPy'],
     ['/lean/', 'Lean'],
