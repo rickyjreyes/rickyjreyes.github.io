@@ -56,6 +56,27 @@
     document.head.appendChild(activeStyle);
   }
 
+  if (!document.getElementById('identity-art-style')) {
+    const identityStyle = document.createElement('style');
+    identityStyle.id = 'identity-art-style';
+    identityStyle.textContent = `
+      .about-section.has-portrait{grid-template-columns:minmax(220px,.62fr) minmax(0,1.15fr) minmax(220px,.83fr);gap:clamp(30px,5vw,72px);align-items:start}
+      .about-portrait{position:sticky;top:108px;margin:0}
+      .about-portrait-frame{position:relative;overflow:hidden;border:1px solid var(--line-strong,rgba(170,201,225,.3));border-radius:22px;background:linear-gradient(145deg,rgba(103,212,255,.08),rgba(139,124,255,.05));box-shadow:var(--shadow,0 24px 80px rgba(0,0,0,.26))}
+      .about-portrait-frame::after{position:absolute;inset:0;content:"";pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.035)}
+      .about-portrait img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+      .about-portrait figcaption{margin-top:13px;color:var(--muted-2,#71869a);font-size:.75rem;line-height:1.55}
+      .about-portrait figcaption strong{display:block;color:var(--text,#e9f0f6);font-size:.86rem}
+      .wavelock-card-logo{display:block;width:78px;height:78px;margin:-7px -5px 10px auto;border:1px solid rgba(103,212,255,.16);border-radius:18px;object-fit:cover;box-shadow:0 12px 32px rgba(0,0,0,.22)}
+      .patent-home-brand{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;min-height:74px}
+      .patent-home-brand .wavelock-card-logo{margin:-8px -8px 0 0}
+      .patent-wavelock-logo{display:block;width:min(100%,190px);aspect-ratio:1;margin:4px 0 18px;border:1px solid rgba(103,212,255,.16);border-radius:22px;background:#080d14;object-fit:cover;box-shadow:0 18px 48px rgba(0,0,0,.24)}
+      @media(max-width:1050px){.about-section.has-portrait{grid-template-columns:minmax(210px,.72fr) minmax(0,1.28fr)}.about-section.has-portrait .about-facts{grid-column:1/-1}.about-portrait{top:94px}}
+      @media(max-width:760px){.about-section.has-portrait{grid-template-columns:1fr}.about-section.has-portrait .about-facts{grid-column:auto}.about-portrait{position:static;width:min(100%,340px)}.wavelock-card-logo{width:68px;height:68px}}
+    `;
+    document.head.appendChild(identityStyle);
+  }
+
   let menu = wrap.querySelector('.menu-button');
   const insertedMenu = !menu;
   if (!menu) {
@@ -152,7 +173,7 @@
         .patent-home-heading p:last-child{margin:0;color:var(--muted,#9cb0c1)}
         .patent-home-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
         .patent-home-card{display:flex;flex-direction:column;min-height:220px;padding:22px;border:1px solid var(--line,rgba(170,201,225,.16));border-radius:16px;background:linear-gradient(155deg,rgba(14,29,48,.96),rgba(8,19,33,.93))}
-        .patent-home-card span{color:var(--accent,#67d4ff);font-size:.7rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+        .patent-home-card>span,.patent-home-brand>span{color:var(--accent,#67d4ff);font-size:.7rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
         .patent-home-card h3{margin:13px 0 10px;font-family:Georgia,"Times New Roman",serif;font-size:1.28rem;font-weight:500;line-height:1.15}
         .patent-home-card p{margin:0;color:var(--muted,#9cb0c1);font-size:.9rem}
         .patent-home-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
@@ -174,7 +195,7 @@
             <p>Public, non-enabling summaries connect the filing chronology to related papers, repositories, experiments, and evidence-status labels without publishing confidential application material.</p>
           </div>
           <div class="patent-home-grid" aria-label="Filed technology families">
-            <article class="patent-home-card"><span>Patent pending</span><h3>WaveLock and drift detection</h3><p>Curvature-regulated commitments, replay verification, protocol binding, attestation, and runtime drift analysis.</p></article>
+            <article class="patent-home-card"><div class="patent-home-brand"><span>Patent pending</span><img class="wavelock-card-logo" src="/assets/wavelock-logo.svg" alt="WaveLock wave-shaped logo" width="78" height="78" loading="lazy"></div><h3>WaveLock and drift detection</h3><p>Curvature-regulated commitments, replay verification, protocol binding, attestation, and runtime drift analysis.</p></article>
             <article class="patent-home-card"><span>Patent pending</span><h3>Persistent wave memory</h3><p>Wave-state storage, spectral confinement, readout, reset control, physical cells, arrays, and software emulation.</p></article>
             <article class="patent-home-card"><span>Application filed</span><h3>Solid-state frequency reference</h3><p>Optically programmed semiconductor resonance with harmonic readout and oscillator-integration concepts.</p></article>
             <article class="patent-home-card"><span>Application filed</span><h3>Coherent field generator</h3><p>Structured excitation, controlled confinement geometry, harmonic stabilization, relocking, and detector feedback.</p></article>
@@ -187,12 +208,40 @@
       branches.insertAdjacentElement('afterend', section);
     }
 
+    const about = document.querySelector('.about-section');
+    if (about && !about.querySelector('.about-portrait')) {
+      about.classList.add('has-portrait');
+      const portrait = document.createElement('figure');
+      portrait.className = 'about-portrait';
+      portrait.innerHTML = `
+        <div class="about-portrait-frame">
+          <img src="/assets/richard-reyes-portrait.svg" alt="Richard J. Reyes, controls engineer and independent researcher" width="360" height="480" loading="lazy">
+        </div>
+        <figcaption><strong>Richard J. Reyes</strong>Controls engineer, software developer, independent researcher, and founder of WaveLock.</figcaption>`;
+      about.insertAdjacentElement('afterbegin', portrait);
+    }
+
     const footerResearch = [...document.querySelectorAll('.site-footer h2')].find((heading) => heading.textContent.trim() === 'Research')?.parentElement;
     if (footerResearch && !footerResearch.querySelector('a[href="/patents/"]')) {
       const link = document.createElement('a');
       link.href = '/patents/';
       link.textContent = 'Patent applications';
       footerResearch.appendChild(link);
+    }
+  }
+
+  if (currentPath === '/patents/') {
+    const firstPatentCard = document.querySelector('.patent-card');
+    if (firstPatentCard && !firstPatentCard.querySelector('.patent-wavelock-logo')) {
+      const logo = document.createElement('img');
+      logo.className = 'patent-wavelock-logo';
+      logo.src = '/assets/wavelock-logo.svg';
+      logo.alt = 'WaveLock wave-shaped logo';
+      logo.width = 190;
+      logo.height = 190;
+      logo.loading = 'lazy';
+      const heading = firstPatentCard.querySelector('h2');
+      if (heading) heading.insertAdjacentElement('beforebegin', logo);
     }
   }
 
