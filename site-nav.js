@@ -51,7 +51,7 @@
       .about-portrait{position:sticky;top:108px;margin:0}
       .about-portrait-frame{position:relative;overflow:hidden;border:1px solid var(--line-strong,rgba(170,201,225,.3));border-radius:22px;background:linear-gradient(145deg,rgba(103,212,255,.08),rgba(139,124,255,.05));box-shadow:var(--shadow,0 24px 80px rgba(0,0,0,.26))}
       .about-portrait-frame::after{position:absolute;inset:0;content:"";pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.035)}
-      .about-portrait img{display:block;width:100%;height:auto;aspect-ratio:900/1167;object-fit:cover;object-position:center 34%}
+      .about-portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top}
       .about-portrait figcaption{margin-top:13px;color:var(--muted-2,#71869a);font-size:.75rem;line-height:1.55}
       .about-portrait figcaption strong{display:block;color:var(--text,#e9f0f6);font-size:.86rem}
 
@@ -190,7 +190,7 @@
       portrait.className = 'about-portrait';
       portrait.innerHTML = `
         <div class="about-portrait-frame">
-          <img src="/assets/IMG_1913.jpg" alt="Richard J. Reyes, controls engineer and independent researcher" width="900" height="1167" loading="lazy" decoding="async">
+          <img src="/assets/richardjreyes.png" alt="Richard J. Reyes, controls engineer and independent researcher" loading="lazy" decoding="async">
         </div>
         <figcaption><strong>Richard J. Reyes</strong>Controls engineer, software developer, independent researcher, and founder of WaveLock.</figcaption>`;
       about.insertAdjacentElement('afterbegin', portrait);
