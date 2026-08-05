@@ -23,13 +23,38 @@
     ['/tools/', 'Tools']
   ];
 
-  const currentPath = location.pathname.replace(/index\.html$/, '');
-  nav.innerHTML = links.map(([href, label]) => {
-    const active = href === '/'
+  const normalizePath = (value) => {
+    let path = value || '/';
+    path = path.replace(/index\.html$/i, '');
+    if (!path.startsWith('/')) path = `/${path}`;
+    if (path !== '/' && !path.endsWith('/')) path += '/';
+    return path.replace(/\/{2,}/g, '/');
+  };
+
+  const currentPath = normalizePath(window.location.pathname);
+  const isActiveLink = (href) => {
+    const target = normalizePath(href);
+    return target === '/'
       ? currentPath === '/'
-      : currentPath.startsWith(href);
-    return `<a href="${href}"${active ? ' aria-current="page"' : ''}>${label}</a>`;
+      : currentPath === target || currentPath.startsWith(target);
+  };
+
+  nav.innerHTML = links.map(([href, label]) => {
+    const active = isActiveLink(href);
+    return `<a href="${href}"${active ? ' class="is-active" aria-current="page"' : ''}>${label}</a>`;
   }).join('');
+
+  if (!document.getElementById('active-nav-state-style')) {
+    const activeStyle = document.createElement('style');
+    activeStyle.id = 'active-nav-state-style';
+    activeStyle.textContent = `
+      #site-nav a{position:relative;padding-block:8px;transition:color 160ms ease,background 160ms ease,box-shadow 160ms ease}
+      #site-nav a.is-active,#site-nav a[aria-current="page"]{color:var(--text,#e9f0f6)}
+      #site-nav a.is-active::after,#site-nav a[aria-current="page"]::after{position:absolute;right:0;bottom:1px;left:0;height:2px;content:"";border-radius:999px;background:linear-gradient(90deg,var(--accent,#67d4ff),var(--accent-2,#8b7cff));box-shadow:0 0 14px rgba(103,212,255,.45)}
+      @media(max-width:760px){#site-nav a.is-active,#site-nav a[aria-current="page"]{padding-inline:10px;border-radius:8px;background:rgba(103,212,255,.08);box-shadow:inset 0 0 0 1px rgba(103,212,255,.2)}#site-nav a.is-active::after,#site-nav a[aria-current="page"]::after{right:10px;left:10px}}
+    `;
+    document.head.appendChild(activeStyle);
+  }
 
   let menu = wrap.querySelector('.menu-button');
   const insertedMenu = !menu;
@@ -56,10 +81,18 @@
       menu.setAttribute('aria-expanded', String(open));
     });
     nav.addEventListener('click', (event) => {
-      if (event.target.closest('a')) {
-        nav.classList.remove('open');
-        menu.setAttribute('aria-expanded', 'false');
-      }
+      const selected = event.target.closest('a');
+      if (!selected) return;
+
+      nav.querySelectorAll('a').forEach((link) => {
+        link.classList.remove('is-active');
+        link.removeAttribute('aria-current');
+      });
+      selected.classList.add('is-active');
+      selected.setAttribute('aria-current', 'page');
+
+      nav.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
     });
     document.addEventListener('click', (event) => {
       if (!nav.contains(event.target) && !menu.contains(event.target)) {
