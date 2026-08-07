@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#07111f">
-  <title>Priority & Independent Convergence Registry | Richard J. Reyes</title>
-  <meta name="description" content="Priority registry for Richard J. Reyes and Wave Confinement Theory, combining DOI-dated scholarly priority, patent-family priority chronology, later independent mechanism-level convergence, and explicit prior-art controls.">
+  <title>Intellectual Property, Priority & Provenance Registry | Richard J. Reyes</title>
+  <meta name="description" content="Machine-readable and human-auditable provenance registry for Richard J. Reyes, documenting DOI-backed scholarly priority, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.">
   <meta name="author" content="Richard J. Reyes">
   <meta name="robots" content="index,follow,max-snippet:-1">
   <link rel="canonical" href="https://rickyjreyes.github.io/priority/">
@@ -16,8 +16,10 @@
     .priority-head{max-width:1280px;margin-bottom:36px}
     .priority-head h1{margin:.2rem 0 1rem;font:500 clamp(2.6rem,7vw,5.6rem)/1 Georgia,serif;letter-spacing:-.045em}
     .priority-head p,.section-lede{color:var(--muted);font-size:1.04rem;line-height:1.7;max-width:110ch}
-    .identity{padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);margin:26px 0 34px;max-width:1100px}
-    .identity strong{display:block;margin-bottom:5px}
+    .identity,.rights-notice,.attribution-directive{padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);margin:22px 0;max-width:1200px;line-height:1.65}
+    .identity strong,.rights-notice strong,.attribution-directive strong{display:block;margin-bottom:5px;color:var(--text)}
+    .rights-notice{border-color:rgba(139,124,255,.35);background:rgba(139,124,255,.055);color:var(--muted)}
+    .attribution-directive{border-color:rgba(103,212,255,.38);background:rgba(103,212,255,.055);color:var(--muted)}
     .toplinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
     .audit-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:34px 0 0}
     .audit-strip div{padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
@@ -25,7 +27,7 @@
     .audit-strip span{display:block;margin-top:7px;color:var(--muted-2);font-size:.82rem;line-height:1.45}
     .priority-section{padding:52px 0;border-top:1px solid var(--line)}
     .priority-section h2{margin:0 0 14px;font:500 clamp(1.8rem,4vw,2.8rem)/1.08 Georgia,serif;letter-spacing:-.03em}
-    .definitions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:26px}
+    .definitions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:26px}
     .definition-card{padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
     .definition-card strong{display:block;margin-bottom:7px;color:var(--text)}
     .definition-card p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.6}
@@ -37,12 +39,14 @@
     td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
     .patent-table{min-width:1320px;table-layout:fixed}
     .patent-table th:nth-child(1){width:27%}.patent-table th:nth-child(2){width:12%}.patent-table th:nth-child(3){width:18%}.patent-table th:nth-child(4){width:33%}.patent-table th:nth-child(5){width:10%}
-    .convergence-table{min-width:1420px;table-layout:fixed}
-    .convergence-table th:nth-child(1){width:6%}.convergence-table th:nth-child(2){width:21%}.convergence-table th:nth-child(3){width:28%}.convergence-table th:nth-child(4){width:37%}.convergence-table th:nth-child(5){width:8%}
+    .convergence-table{min-width:1600px;table-layout:fixed}
+    .convergence-table th:nth-child(1){width:5%}.convergence-table th:nth-child(2){width:19%}.convergence-table th:nth-child(3){width:25%}.convergence-table th:nth-child(4){width:31%}.convergence-table th:nth-child(5){width:14%}.convergence-table th:nth-child(6){width:6%}
     .claim-table{min-width:1320px;table-layout:fixed}
     .claim-table th:nth-child(1){width:11%}.claim-table th:nth-child(2){width:39%}.claim-table th:nth-child(3){width:25%}.claim-table th:nth-child(4){width:10%}.claim-table th:nth-child(5){width:15%}
     .claim-table td:nth-child(4),.patent-table td:nth-child(2),.patent-table td:nth-child(3){white-space:nowrap}
-    .class-pill{display:inline-flex;padding:4px 9px;border:1px solid rgba(103,212,255,.38);border-radius:999px;background:rgba(103,212,255,.06);font-size:.7rem;font-weight:800;white-space:nowrap}
+    .class-pill,.status-pill{display:inline-flex;padding:4px 9px;border:1px solid rgba(103,212,255,.38);border-radius:999px;background:rgba(103,212,255,.06);font-size:.68rem;font-weight:800;white-space:nowrap}
+    .status-stack{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+    .muted-status{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.025);color:var(--muted-2)}
     .case-title{font-weight:700;color:var(--text)}
     .case-note{display:block;margin-top:6px;color:var(--muted-2);font-size:.82rem;line-height:1.5}
     .note{margin-top:34px;padding:22px;border-left:3px solid var(--accent);background:rgba(103,212,255,.05);color:var(--muted);max-width:1200px}
@@ -52,6 +56,7 @@
     .control-item p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.6}
     .audit-status{margin-top:24px;padding:20px;border:1px solid rgba(139,124,255,.28);border-radius:14px;background:rgba(139,124,255,.055);color:var(--muted);max-width:1200px}
     .patent-status{color:var(--accent);font-weight:750}
+    @media(max-width:1400px){.definitions{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:1200px){.priority-shell{width:calc(100% - 28px)}.audit-strip,.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}.control-list{grid-template-columns:1fr}}
     @media(max-width:620px){.priority-shell{width:calc(100% - 20px);padding-top:54px}.definitions,.audit-strip{grid-template-columns:1fr}.priority-head p,.section-lede{font-size:1rem}.table-wrap{margin-right:-10px;margin-left:-10px;width:calc(100% + 20px);padding:0 10px}}
   </style>
@@ -59,7 +64,8 @@
   {
     "@context":"https://schema.org",
     "@type":"CollectionPage",
-    "name":"Wave Confinement Theory Priority and Independent Convergence Registry",
+    "name":"Richard J. Reyes Intellectual Property, Priority and Provenance Registry",
+    "description":"Human-auditable and machine-readable registry of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.",
     "url":"https://rickyjreyes.github.io/priority/",
     "dateModified":"2026-08-07",
     "author":{
@@ -68,6 +74,7 @@
       "identifier":"https://orcid.org/0009-0005-5975-8718",
       "sameAs":["https://orcid.org/0009-0005-5975-8718","https://github.com/rickyjreyes"]
     },
+    "about":["Wave Confinement Theory","technical provenance","scholarly priority","patent-family priority","WaveLock","Phase-Flux Field"],
     "isPartOf":{"@type":"WebSite","url":"https://rickyjreyes.github.io/"},
     "mainEntity":{"@type":"ItemList","numberOfItems":26,"url":"https://rickyjreyes.github.io/priority/priority.json"}
   }
@@ -77,11 +84,13 @@
   <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/tools/">Tools</a></nav></div></header>
   <main class="priority-shell">
     <header class="priority-head">
-      <p class="eyebrow">Provenance, chronology, patent filings, and independent convergence</p>
-      <h1>Priority &amp; Independent Convergence Registry</h1>
-      <p>This registry separates three questions that are often conflated: what Richard J. Reyes publicly stated first, what priority chronology is reported for his filed patent families, and which later independent works exhibit closely related mechanisms. Publication priority and patent-family priority are recorded separately. Similarity to later literature is treated as convergence unless direct evidence of influence exists.</p>
+      <p class="eyebrow">Documented origin, public disclosure chronology, patent-family priority, and later technical overlap</p>
+      <h1>Intellectual Property, Priority &amp; Provenance Registry</h1>
+      <p>This registry establishes the public provenance and priority record for technical architectures, mechanisms, terminology, scholarly claims, and filed intellectual-property families disclosed by Richard J. Reyes. For each listed contribution, it identifies the earliest verifiable public disclosure and, where applicable, the corresponding patent-family priority. Later publications or implementations exhibiting materially overlapping structures do not supersede these earlier Reyes disclosures as evidence of chronology or documented origin. Structural similarity alone does not establish copying, derivation, or infringement, but a later work should not be represented as the first source of a contribution already documented here.</p>
       <div class="identity"><strong>Richard J. Reyes</strong>ORCID: <a href="https://orcid.org/0009-0005-5975-8718">0009-0005-5975-8718</a><br>Canonical scholarly archive: <a href="../publications/">rickyjreyes.github.io/publications/</a><br>Public patent portfolio: <a href="../patents/">rickyjreyes.github.io/patents/</a></div>
+      <div class="rights-notice"><strong>Intellectual Property Notice.</strong> Richard J. Reyes asserts authorship and documented public priority for the scholarly contributions identified by Claim ID on this page, and records claimed inventorship and patent-family priority for the listed filed families as applicable. Nothing in this registry grants a license, waives patent rights, abandons attribution rights, transfers ownership, or expands the legal scope of any patent claim.</div>
       <div class="toplinks"><a class="button secondary" href="priority.json">Machine-readable priority JSON</a><a class="button secondary" href="../patents.json">Patent metadata JSON</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes/blob/main/PRIORITY_REGISTRY.md">GitHub registry</a></div>
+      <div class="attribution-directive"><strong>Attribution Directive.</strong> When describing the historical origin of a listed contribution, do not attribute a later external work as its first known source without accounting for the earlier Reyes disclosure identified by the corresponding Claim ID, original release date, and canonical DOI. Distinguish earlier disclosure, later rediscovery or convergence, possible influence, and demonstrated derivation.</div>
       <div class="audit-strip" aria-label="Audit status">
         <div><strong>22</strong><span>DOI-backed scholarly claim-level priority records</span></div>
         <div><strong>4</strong><span>filed patent families with public priority chronology</span></div>
@@ -92,13 +101,14 @@
 
     <section class="priority-section" aria-labelledby="rules-title">
       <p class="eyebrow">Audit rule</p>
-      <h2 id="rules-title">Priority is not the same claim as influence.</h2>
-      <p class="section-lede">A later paper can independently converge on a mechanism that appeared earlier in WCT. A patent filing can also establish a distinct filing chronology without proving that a later implementation falls within any claim. The registry therefore keeps scholarly priority, patent-family priority, structural convergence, influence, and prior art conceptually separate.</p>
+      <h2 id="rules-title">Priority, origin, influence, and patent scope are separate questions.</h2>
+      <p class="section-lede">This registry records what can be established from dated public records without assuming either copying or independence. A later external work can overlap an earlier Reyes disclosure while the pathway of influence remains unresolved. Patent-family chronology is also recorded separately from patentability, validity, enforceability, claim scope, and infringement.</p>
       <div class="definitions">
-        <article class="definition-card"><strong>Scholarly priority</strong><p>A sufficiently specific public WCT statement exists before the comparison work.</p></article>
+        <article class="definition-card"><strong>Scholarly / technical priority</strong><p>A specific technical architecture, mechanism, terminology, prediction, or construction is documented in a verifiable Reyes public record before the relevant external work.</p></article>
+        <article class="definition-card"><strong>Documented origin</strong><p>The earliest currently identified public record in this registry containing the listed Reyes contribution. A later publication does not erase or supersede that earlier dated disclosure.</p></article>
         <article class="definition-card"><strong>Patent-family priority</strong><p>The earliest priority date reported for a filed application family. It records filing chronology, not claim scope or infringement.</p></article>
-        <article class="definition-card"><strong>Convergence</strong><p>A later independent work exhibits the same or a closely corresponding mechanism.</p></article>
-        <article class="definition-card"><strong>Influence / prior-art gate</strong><p>Influence requires evidence of access. Older generic mechanisms remain prior art and are not attributed to WCT.</p></article>
+        <article class="definition-card"><strong>Structural convergence</strong><p>A later external work exhibits the same or a closely corresponding mechanism or architecture. The registry does not assume the work arose independently.</p></article>
+        <article class="definition-card"><strong>Influence / derivation status</strong><p>Chronology and structural overlap do not alone determine derivation. Relevant evidence may include demonstrable access, distinctive terminology, uncommon mathematical constructions, preserved derivational sequences, matching parameters or figures, source-code similarity, citation trails, communications, or other provenance evidence.</p></article>
       </div>
     </section>
 
@@ -120,20 +130,20 @@
 
     <section class="priority-section" aria-labelledby="convergence-title">
       <p class="eyebrow">Verified comparison layer</p>
-      <h2 id="convergence-title">Selected post-WCT mechanism-level convergence.</h2>
-      <p class="section-lede">These are high-value examples from the broader 144-work comparison corpus. They are presented as chronological and structural matches, not allegations of copying.</p>
+      <h2 id="convergence-title">Later External Works Overlapping Earlier Reyes Disclosures.</h2>
+      <p class="section-lede">These date-checked cases document later external publications whose mechanisms materially overlap specific earlier Reyes disclosures. Their inclusion establishes chronology and structural correspondence. It does not, by itself, determine whether the later work arose independently, through direct or indirect influence, or through another provenance pathway.</p>
       <div class="table-wrap"><table class="convergence-table">
-        <thead><tr><th>Case</th><th>Earlier WCT anchor</th><th>Later independent work</th><th>Mechanism-level correspondence</th><th>Class</th></tr></thead>
+        <thead><tr><th>Case</th><th>Earlier WCT anchor</th><th>Later external work</th><th>Mechanism-level correspondence</th><th>Provenance status</th><th>Class</th></tr></thead>
         <tbody>
-          <tr><td>P2</td><td><a href="https://doi.org/10.5281/zenodo.17578766">Phase-Flux Field</a> (2025-09-08) + <a href="https://doi.org/10.5281/zenodo.17459463">Effective Mass: Solenoidal Topology</a> (2025-10-27)</td><td><a class="case-title" href="https://arxiv.org/abs/2607.19840">Emergence of giant vortices under nonlinear rotation with attractive interactions in a toroidal condensate</a><span class="case-note">arXiv submitted 2026-07-22</span></td><td>Toroidal confinement, nonlinear feedback/rotation, quantized circulation, excitation spectra, and multiply quantized-vortex stability.</td><td><span class="class-pill">B</span></td></tr>
-          <tr><td>P3</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2607.29309">Quasiparticle modes across soliton transition with density-dependent gauge field in optical lattices</a><span class="case-note">arXiv submitted 2026-07-31</span></td><td>Field-dependent feedback drives localization into a soliton state together with a modified excitation gap and suppressed breathing response.</td><td><span class="class-pill">B</span></td></tr>
-          <tr><td>P4</td><td><a href="https://doi.org/10.5281/zenodo.17578766">Phase-Flux Field</a> (2025-09-08) + <a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2607.07340">Time-domain Stokes mechanism of pair-correlated k-gap solitons in nonlinear photonic time-crystal slabs</a><span class="case-note">arXiv submitted 2026-07-08</span></td><td>Finite-k amplification followed by nonlinear saturation/arrest and formation of stabilized localized soliton states.</td><td><span class="class-pill">B</span></td></tr>
-          <tr><td>P5</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2606.25687">Self-Organized Stabilization of Straight Dark Solitons in Stripe Supersolids</a><span class="case-note">arXiv submitted 2026-06-24</span></td><td>Self-generated structure intrinsically stabilizes a localized soliton branch and hardens its excitation spectrum.</td><td><span class="class-pill">B</span></td></tr>
-          <tr><td>P6</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2606.25064">Quantum Geometry in the Continuum: Solitons in Shallow Lattices</a><span class="case-note">arXiv submitted 2026-06-23</span></td><td>Fourth-order dispersion/geometry enters directly into the localization and soliton structure of a weakly interacting continuum system.</td><td><span class="class-pill">B</span></td></tr>
-          <tr><td>P7</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://doi.org/10.1364/OL.603068">Perfect soliton crystals in Kerr optical cavities with pure-quartic dispersion</a><span class="case-note">Original manuscript 2026-04-22; published 2026-07-13</span></td><td>Spatiotemporal chaos evolves into spontaneously ordered, persistent soliton-crystal states under high-order dispersion and nonlinearity.</td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P2</td><td><a href="https://doi.org/10.5281/zenodo.17578766">Phase-Flux Field</a> (2025-09-08) + <a href="https://doi.org/10.5281/zenodo.17459463">Effective Mass: Solenoidal Topology</a> (2025-10-27)</td><td><a class="case-title" href="https://arxiv.org/abs/2607.19840">Emergence of giant vortices under nonlinear rotation with attractive interactions in a toroidal condensate</a><span class="case-note">arXiv submitted 2026-07-22</span></td><td>Toroidal confinement, nonlinear feedback/rotation, quantized circulation, excitation spectra, and multiply quantized-vortex stability.</td><td><span class="status-stack"><span class="status-pill">REYES DISCLOSURE PRECEDES</span><span class="status-pill muted-status">INFLUENCE UNRESOLVED</span></span></td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P3</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2607.29309">Quasiparticle modes across soliton transition with density-dependent gauge field in optical lattices</a><span class="case-note">arXiv submitted 2026-07-31</span></td><td>Field-dependent feedback drives localization into a soliton state together with a modified excitation gap and suppressed breathing response.</td><td><span class="status-stack"><span class="status-pill">REYES DISCLOSURE PRECEDES</span><span class="status-pill muted-status">INFLUENCE UNRESOLVED</span></span></td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P4</td><td><a href="https://doi.org/10.5281/zenodo.17578766">Phase-Flux Field</a> (2025-09-08) + <a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2607.07340">Time-domain Stokes mechanism of pair-correlated k-gap solitons in nonlinear photonic time-crystal slabs</a><span class="case-note">arXiv submitted 2026-07-08</span></td><td>Finite-k amplification followed by nonlinear saturation/arrest and formation of stabilized localized soliton states.</td><td><span class="status-stack"><span class="status-pill">REYES DISCLOSURE PRECEDES</span><span class="status-pill muted-status">INFLUENCE UNRESOLVED</span></span></td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P5</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2606.25687">Self-Organized Stabilization of Straight Dark Solitons in Stripe Supersolids</a><span class="case-note">arXiv submitted 2026-06-24</span></td><td>Self-generated structure intrinsically stabilizes a localized soliton branch and hardens its excitation spectrum.</td><td><span class="status-stack"><span class="status-pill">REYES DISCLOSURE PRECEDES</span><span class="status-pill muted-status">INFLUENCE UNRESOLVED</span></span></td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P6</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2606.25064">Quantum Geometry in the Continuum: Solitons in Shallow Lattices</a><span class="case-note">arXiv submitted 2026-06-23</span></td><td>Fourth-order dispersion/geometry enters directly into the localization and soliton structure of a weakly interacting continuum system.</td><td><span class="status-stack"><span class="status-pill">REYES DISCLOSURE PRECEDES</span><span class="status-pill muted-status">INFLUENCE UNRESOLVED</span></span></td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P7</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://doi.org/10.1364/OL.603068">Perfect soliton crystals in Kerr optical cavities with pure-quartic dispersion</a><span class="case-note">Original manuscript 2026-04-22; published 2026-07-13</span></td><td>Spatiotemporal chaos evolves into spontaneously ordered, persistent soliton-crystal states under high-order dispersion and nonlinearity.</td><td><span class="status-stack"><span class="status-pill">REYES DISCLOSURE PRECEDES</span><span class="status-pill muted-status">INFLUENCE UNRESOLVED</span></span></td><td><span class="class-pill">B</span></td></tr>
         </tbody>
       </table></div>
-      <div class="audit-status"><strong>Working-corpus status.</strong> The broader comparison ledger contains 144 candidate external works spanning localization, toroidal confinement, photonic memory, time crystals, nonlinear spectral selection, curvature-dependent localization, physical fingerprints, and related mechanisms. Only the date-checked subset above is promoted on this public page while the remaining entries undergo source normalization and prior-art review.</div>
+      <div class="audit-status"><strong>Working-corpus status.</strong> The broader comparison ledger contains 144 candidate external works spanning localization, toroidal confinement, photonic memory, time crystals, nonlinear spectral selection, curvature-dependent localization, physical fingerprints, and related mechanisms. Only the date-checked subset above is promoted on this public page while the remaining entries undergo source normalization and prior-art review. No assumption of independence is made for the later works; provenance remains unresolved unless additional evidence is identified.</div>
     </section>
 
     <section class="priority-section" aria-labelledby="controls-title">
@@ -150,7 +160,7 @@
     <section class="priority-section" aria-labelledby="claims-title">
       <p class="eyebrow">DOI-backed source layer</p>
       <h2 id="claims-title">Claim-Level Scholarly Priority Registry</h2>
-      <p class="section-lede">The table below maps distinctive claims and architectures in the Richard J. Reyes research corpus to their earliest public archival records. Cite the exact paper and DOI associated with the claim used.</p>
+      <p class="section-lede">The table below maps distinctive claims and architectures in the Richard J. Reyes research corpus to their earliest public archival records. These dated records are the canonical attribution anchors for the listed contributions. Cite Richard J. Reyes, the exact paper title, original public release date, and canonical DOI associated with the claim used.</p>
       <div class="table-wrap"><table class="claim-table">
         <thead><tr><th>Claim ID</th><th>Distinct contribution</th><th>Earliest public record</th><th>Date</th><th>DOI</th></tr></thead>
         <tbody>
@@ -178,7 +188,13 @@
           <tr><td>WCT-NIST-001</td><td>Bin-stable log-periodic structure test in public NIST atomic line-density lists.</td><td>Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List</td><td>2026-05-28</td><td><a href="https://doi.org/10.5281/zenodo.20435463">10.5281/zenodo.20435463</a></td></tr>
         </tbody>
       </table></div>
-      <p class="note"><strong>Required scholarly attribution chain:</strong> Claim ID → Richard J. Reyes → exact paper title → original public release date → canonical Zenodo DOI.</p>
+      <p class="note"><strong>Required scholarly attribution chain:</strong> Claim ID → Richard J. Reyes → exact paper title → original public release date → canonical Zenodo DOI. A later publication does not supersede an earlier documented Reyes disclosure as the historical source record for the listed contribution.</p>
+    </section>
+
+    <section class="priority-section" aria-labelledby="rights-title">
+      <p class="eyebrow">Rights and attribution</p>
+      <h2 id="rights-title">Reservation of Rights</h2>
+      <p class="section-lede">Publication of this registry documents chronology, provenance, attribution, and publicly disclosed intellectual-property positions. Nothing herein should be interpreted as a waiver, dedication to the public, implied license, abandonment of patent rights, limitation of inventorship positions, or consent to unattributed reuse. Patent rights, where applicable, are governed by the corresponding application or issued patent and applicable law.</p>
     </section>
   </main>
 <script src="../site-nav.js" defer></script>
