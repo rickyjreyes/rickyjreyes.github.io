@@ -1,10 +1,120 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
+  "updated": "2026-08-07",
   "author": {
     "name": "Richard J. Reyes",
     "orcid": "0009-0005-5975-8718"
   },
   "canonicalArchive": "https://rickyjreyes.github.io/publications/",
+  "auditDefinitions": {
+    "priority": "A sufficiently specific public WCT statement exists before the comparison work.",
+    "convergence": "A later independent work exhibits the same or a closely corresponding mechanism.",
+    "influence": "Evidence that later authors encountered the earlier work; similarity alone does not establish influence.",
+    "priorArtGate": "Older literature on generic ingredients is retained explicitly so established pre-WCT mechanisms are not attributed to WCT."
+  },
+  "comparisonCorpus": {
+    "workingExternalWorks": 144,
+    "publicDateCheckedCases": 6,
+    "status": "The broader comparison corpus is undergoing source normalization and prior-art review; only the date-checked subset is promoted in this public registry."
+  },
+  "convergenceCases": [
+    {
+      "id": "P2",
+      "class": "B",
+      "wctAnchors": [
+        {"claimId":"WCT-PFF-001","date":"2025-09-08","doi":"10.5281/zenodo.17578766"},
+        {"claimId":"WCT-MASS-001","date":"2025-10-27","doi":"10.5281/zenodo.17459463"}
+      ],
+      "laterWork": {
+        "title": "Emergence of giant vortices under nonlinear rotation with attractive interactions in a toroidal condensate",
+        "date": "2026-07-22",
+        "url": "https://arxiv.org/abs/2607.19840"
+      },
+      "correspondence": "Toroidal confinement, nonlinear feedback or rotation, quantized circulation, excitation spectra, and multiply quantized-vortex stability."
+    },
+    {
+      "id": "P3",
+      "class": "B",
+      "wctAnchors": [
+        {"claimId":"WCT-SPEC-001","date":"2025-09-16","doi":"10.5281/zenodo.17732648"}
+      ],
+      "laterWork": {
+        "title": "Quasiparticle modes across soliton transition with density-dependent gauge field in optical lattices",
+        "date": "2026-07-31",
+        "url": "https://arxiv.org/abs/2607.29309"
+      },
+      "correspondence": "Field-dependent feedback drives localization into a soliton state together with a modified excitation gap and suppressed breathing response."
+    },
+    {
+      "id": "P4",
+      "class": "B",
+      "wctAnchors": [
+        {"claimId":"WCT-PFF-001","date":"2025-09-08","doi":"10.5281/zenodo.17578766"},
+        {"claimId":"WCT-SPEC-001","date":"2025-09-16","doi":"10.5281/zenodo.17732648"}
+      ],
+      "laterWork": {
+        "title": "Time-domain Stokes mechanism of pair-correlated k-gap solitons in nonlinear photonic time-crystal slabs",
+        "date": "2026-07-08",
+        "url": "https://arxiv.org/abs/2607.07340"
+      },
+      "correspondence": "Finite-k amplification followed by nonlinear saturation or arrest and formation of stabilized localized soliton states."
+    },
+    {
+      "id": "P5",
+      "class": "B",
+      "wctAnchors": [
+        {"claimId":"WCT-SPEC-001","date":"2025-09-16","doi":"10.5281/zenodo.17732648"}
+      ],
+      "laterWork": {
+        "title": "Self-Organized Stabilization of Straight Dark Solitons in Stripe Supersolids",
+        "date": "2026-06-24",
+        "url": "https://arxiv.org/abs/2606.25687"
+      },
+      "correspondence": "Self-generated structure intrinsically stabilizes a localized soliton branch and hardens its excitation spectrum."
+    },
+    {
+      "id": "P6",
+      "class": "B",
+      "wctAnchors": [
+        {"claimId":"WCT-SPEC-001","date":"2025-09-16","doi":"10.5281/zenodo.17732648"}
+      ],
+      "laterWork": {
+        "title": "Quantum Geometry in the Continuum: Solitons in Shallow Lattices",
+        "date": "2026-06-23",
+        "url": "https://arxiv.org/abs/2606.25064"
+      },
+      "correspondence": "Fourth-order dispersion or geometry enters directly into localization and soliton structure."
+    },
+    {
+      "id": "P7",
+      "class": "B",
+      "wctAnchors": [
+        {"claimId":"WCT-SPEC-001","date":"2025-09-16","doi":"10.5281/zenodo.17732648"}
+      ],
+      "laterWork": {
+        "title": "Perfect soliton crystals in Kerr optical cavities with pure-quartic dispersion",
+        "manuscriptDate": "2026-04-22",
+        "publicationDate": "2026-07-13",
+        "doi": "10.1364/OL.603068",
+        "url": "https://doi.org/10.1364/OL.603068"
+      },
+      "correspondence": "Spatiotemporal chaos evolves into spontaneously ordered, persistent soliton-crystal states under high-order dispersion and nonlinearity."
+    }
+  ],
+  "priorArtControls": [
+    {
+      "topic": "Localized Swift-Hohenberg states and homoclinic snaking",
+      "role": "Finite-wavenumber localization substantially predates WCT; WCT priority claims must concern narrower combinations."
+    },
+    {
+      "topic": "Toroidal Bose-Einstein-condensate persistent currents",
+      "role": "Toroidal confinement, winding, and persistent circulation substantially predate WCT."
+    },
+    {
+      "topic": "Pure-quartic solitons",
+      "role": "Fourth-order-dispersion solitons were demonstrated before WCT, so later high-order-dispersion soliton work is convergence or context unless additional distinctive structure is present."
+    }
+  ],
   "claims": [
     {"id":"WCT-CORE-001","claim":"Wave Confinement Theory as a geometric framework in which mass, force, spectra, and effective spacetime geometry emerge from confined oscillatory fields.","title":"The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime","date":"2025-04-22","doi":"10.5281/zenodo.15644222"},
     {"id":"WCT-CONST-001","claim":"Derivation program for physical constants from resonance geometry and wave confinement.","title":"Structure and Derivation of Physical Constants through Wave Confinement","date":"2025-04-26","doi":"10.5281/zenodo.15596159"},
