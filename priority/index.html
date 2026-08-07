@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#07111f">
   <title>Priority & Independent Convergence Registry | Richard J. Reyes</title>
-  <meta name="description" content="Claim-level provenance registry for Richard J. Reyes and Wave Confinement Theory, with DOI-dated priority records, later independent mechanism-level convergence, and explicit prior-art controls.">
+  <meta name="description" content="Priority registry for Richard J. Reyes and Wave Confinement Theory, combining DOI-dated scholarly priority, patent-family priority chronology, later independent mechanism-level convergence, and explicit prior-art controls.">
   <meta name="author" content="Richard J. Reyes">
   <meta name="robots" content="index,follow,max-snippet:-1">
   <link rel="canonical" href="https://rickyjreyes.github.io/priority/">
@@ -13,13 +13,13 @@
   <link rel="stylesheet" href="../styles.css">
   <style>
     .priority-shell{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:72px 0 96px}
-    .priority-head{max-width:900px;margin-bottom:36px}
+    .priority-head{max-width:920px;margin-bottom:36px}
     .priority-head h1{margin:.2rem 0 1rem;font:500 clamp(2.6rem,7vw,5.6rem)/1 Georgia,serif;letter-spacing:-.045em}
     .priority-head p,.section-lede{color:var(--muted);font-size:1.04rem;line-height:1.7;max-width:82ch}
     .identity{padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);margin:26px 0 34px}
     .identity strong{display:block;margin-bottom:5px}
     .toplinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-    .audit-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:34px 0 0}
+    .audit-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:34px 0 0}
     .audit-strip div{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
     .audit-strip strong{display:block;color:var(--accent);font:500 1.8rem/1 Georgia,serif}
     .audit-strip span{display:block;margin-top:7px;color:var(--muted-2);font-size:.78rem;line-height:1.4}
@@ -34,7 +34,7 @@
     th,td{padding:16px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
     th{color:var(--muted-2);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
     td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);white-space:nowrap}
-    .claim-table td:nth-child(4){white-space:nowrap}
+    .claim-table td:nth-child(4),.patent-table td:nth-child(2),.patent-table td:nth-child(3){white-space:nowrap}
     .class-pill{display:inline-flex;padding:4px 9px;border:1px solid rgba(103,212,255,.38);border-radius:999px;background:rgba(103,212,255,.06);font-size:.7rem;font-weight:800;white-space:nowrap}
     .case-title{font-weight:700;color:var(--text)}
     .case-note{display:block;margin-top:5px;color:var(--muted-2);font-size:.8rem;line-height:1.45}
@@ -44,8 +44,10 @@
     .control-item strong{display:block;margin-bottom:5px}
     .control-item p{margin:0;color:var(--muted);font-size:.92rem}
     .audit-status{margin-top:24px;padding:20px;border:1px solid rgba(139,124,255,.28);border-radius:14px;background:rgba(139,124,255,.055);color:var(--muted)}
-    @media(max-width:860px){.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}.audit-strip{grid-template-columns:1fr}}
-    @media(max-width:560px){.definitions{grid-template-columns:1fr}.priority-shell{width:min(calc(100% - 24px),1120px);padding-top:54px}}
+    .patent-status{color:var(--accent);font-weight:750}
+    @media(max-width:980px){.audit-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:860px){.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.definitions,.audit-strip{grid-template-columns:1fr}.priority-shell{width:min(calc(100% - 24px),1120px);padding-top:54px}}
   </style>
   <script type="application/ld+json">
   {
@@ -61,7 +63,7 @@
       "sameAs":["https://orcid.org/0009-0005-5975-8718","https://github.com/rickyjreyes"]
     },
     "isPartOf":{"@type":"WebSite","url":"https://rickyjreyes.github.io/"},
-    "mainEntity":{"@type":"ItemList","numberOfItems":22,"url":"https://rickyjreyes.github.io/priority/priority.json"}
+    "mainEntity":{"@type":"ItemList","numberOfItems":26,"url":"https://rickyjreyes.github.io/priority/priority.json"}
   }
   </script>
 </head>
@@ -69,13 +71,14 @@
   <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/tools/">Tools</a></nav></div></header>
   <main class="priority-shell">
     <header class="priority-head">
-      <p class="eyebrow">Provenance, chronology, and independent convergence</p>
+      <p class="eyebrow">Provenance, chronology, patent filings, and independent convergence</p>
       <h1>Priority &amp; Independent Convergence Registry</h1>
-      <p>This registry separates two questions that are often conflated: what Richard J. Reyes publicly stated first, and which later independent works exhibit closely related mechanisms. Priority is established from dated public records. Similarity to later literature is treated as convergence unless direct evidence of influence exists.</p>
-      <div class="identity"><strong>Richard J. Reyes</strong>ORCID: <a href="https://orcid.org/0009-0005-5975-8718">0009-0005-5975-8718</a><br>Canonical archive: <a href="../publications/">rickyjreyes.github.io/publications/</a></div>
-      <div class="toplinks"><a class="button secondary" href="priority.json">Machine-readable JSON</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes/blob/main/PRIORITY_REGISTRY.md">GitHub registry</a></div>
+      <p>This registry separates three questions that are often conflated: what Richard J. Reyes publicly stated first, what priority chronology is reported for his filed patent families, and which later independent works exhibit closely related mechanisms. Publication priority and patent-family priority are recorded separately. Similarity to later literature is treated as convergence unless direct evidence of influence exists.</p>
+      <div class="identity"><strong>Richard J. Reyes</strong>ORCID: <a href="https://orcid.org/0009-0005-5975-8718">0009-0005-5975-8718</a><br>Canonical scholarly archive: <a href="../publications/">rickyjreyes.github.io/publications/</a><br>Public patent portfolio: <a href="../patents/">rickyjreyes.github.io/patents/</a></div>
+      <div class="toplinks"><a class="button secondary" href="priority.json">Machine-readable priority JSON</a><a class="button secondary" href="../patents.json">Patent metadata JSON</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes/blob/main/PRIORITY_REGISTRY.md">GitHub registry</a></div>
       <div class="audit-strip" aria-label="Audit status">
-        <div><strong>22</strong><span>DOI-backed claim-level priority records</span></div>
+        <div><strong>22</strong><span>DOI-backed scholarly claim-level priority records</span></div>
+        <div><strong>4</strong><span>filed patent families with public priority chronology</span></div>
         <div><strong>144</strong><span>external works in the working comparison corpus</span></div>
         <div><strong>6</strong><span>high-value post-WCT cases date-checked for this public registry</span></div>
       </div>
@@ -84,13 +87,29 @@
     <section class="priority-section" aria-labelledby="rules-title">
       <p class="eyebrow">Audit rule</p>
       <h2 id="rules-title">Priority is not the same claim as influence.</h2>
-      <p class="section-lede">A later paper can independently converge on a mechanism that appeared earlier in WCT. The registry therefore records chronology and structural correspondence while separately tracking older prior art.</p>
+      <p class="section-lede">A later paper can independently converge on a mechanism that appeared earlier in WCT. A patent filing can also establish a distinct filing chronology without proving that a later implementation falls within any claim. The registry therefore keeps scholarly priority, patent-family priority, structural convergence, influence, and prior art conceptually separate.</p>
       <div class="definitions">
-        <article class="definition-card"><strong>Priority</strong><p>A sufficiently specific public WCT statement exists before the comparison work.</p></article>
+        <article class="definition-card"><strong>Scholarly priority</strong><p>A sufficiently specific public WCT statement exists before the comparison work.</p></article>
+        <article class="definition-card"><strong>Patent-family priority</strong><p>The earliest priority date reported for a filed application family. It records filing chronology, not claim scope or infringement.</p></article>
         <article class="definition-card"><strong>Convergence</strong><p>A later independent work exhibits the same or a closely corresponding mechanism.</p></article>
-        <article class="definition-card"><strong>Influence</strong><p>Evidence that later authors encountered the earlier WCT work. Similarity alone does not establish this.</p></article>
-        <article class="definition-card"><strong>Prior-art gate</strong><p>Older literature on generic ingredients is retained explicitly so WCT is not credited with established pre-WCT mechanisms.</p></article>
+        <article class="definition-card"><strong>Influence / prior-art gate</strong><p>Influence requires evidence of access. Older generic mechanisms remain prior art and are not attributed to WCT.</p></article>
       </div>
+    </section>
+
+    <section class="priority-section" aria-labelledby="patent-title">
+      <p class="eyebrow">Filed intellectual-property chronology</p>
+      <h2 id="patent-title">Patent-Family Priority Registry</h2>
+      <p class="section-lede">These dates are taken from the public patent-portfolio metadata. They record the earliest priority date reported for each filed family and the later filing stage shown in the portfolio. They do not establish patentability, validity, enforceability, claim scope, or infringement.</p>
+      <div class="table-wrap"><table class="patent-table">
+        <thead><tr><th>Family / docket</th><th>Earliest priority</th><th>Later filing</th><th>Public scope</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><a class="case-title" href="../patents/#portfolio">Persistent Wave Memory</a><span class="case-note">REYES-MEM-2026-NP · Curvature-Feedback Persistent Wave Memory Device and Method of Operation</span></td><td>2025-05-20</td><td>U.S. nonprovisional filed 2026-05-18</td><td>Persistent wave-state storage; spectral confinement; optical or acoustic readout; reset control; physical cells and arrays; software emulation.</td><td><span class="patent-status">Patent pending</span></td></tr>
+          <tr><td><a class="case-title" href="../patents/#portfolio">Coherent Field Generator</a><span class="case-note">REYES-CPG-2026 · Coherent Particle Field Generator via Curvature-Locked Wave Confinement</span></td><td>2025-05-21</td><td>Updated U.S. provisional filed 2026-05-13</td><td>Nonlinear wave media; structured excitation; curvature and torsion control; harmonic stabilization; closed-loop relocking; spectral or spatial readout.</td><td><span class="patent-status">Application filed</span></td></tr>
+          <tr><td><a class="case-title" href="../patents/#portfolio">WaveLock and Drift Detection</a><span class="case-note">REYES-WAVELOCK-2026-NP · Curvature-Regulated Wavefield Evolution, Protocol-Binding Commitments, and Drift Detection</span></td><td>2025-06-18</td><td>U.S. nonprovisional filed 2026-06-07</td><td>Wavefield commitments; protocol binding; replay prevention; public verification; attestation; runtime drift detection.</td><td><span class="patent-status">Patent pending</span></td></tr>
+          <tr><td><a class="case-title" href="../patents/#portfolio">Solid-State Frequency Reference</a><span class="case-note">REYES-FREQ-2025 · Solid-State Frequency Reference via Curvature-Locked Resonant Semiconductors</span></td><td>2025-12-18</td><td>U.S. provisional filed 2025-12-18</td><td>Structured optical programming; persistent semiconductor resonance; harmonic signatures; frequency readout; external oscillator integration.</td><td><span class="patent-status">Application filed</span></td></tr>
+        </tbody>
+      </table></div>
+      <p class="note"><strong>Patent chronology rule:</strong> family → earliest reported priority date → later filing stage → public non-enabling scope. For legal status or claim scope, consult the official application record rather than this research registry.</p>
     </section>
 
     <section class="priority-section" aria-labelledby="convergence-title">
@@ -124,7 +143,7 @@
 
     <section class="priority-section" aria-labelledby="claims-title">
       <p class="eyebrow">DOI-backed source layer</p>
-      <h2 id="claims-title">Claim-Level Priority Registry</h2>
+      <h2 id="claims-title">Claim-Level Scholarly Priority Registry</h2>
       <p class="section-lede">The table below maps distinctive claims and architectures in the Richard J. Reyes research corpus to their earliest public archival records. Cite the exact paper and DOI associated with the claim used.</p>
       <div class="table-wrap"><table class="claim-table">
         <thead><tr><th>Claim ID</th><th>Distinct contribution</th><th>Earliest public record</th><th>Date</th><th>DOI</th></tr></thead>
@@ -153,7 +172,7 @@
           <tr><td>WCT-NIST-001</td><td>Bin-stable log-periodic structure test in public NIST atomic line-density lists.</td><td>Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List</td><td>2026-05-28</td><td><a href="https://doi.org/10.5281/zenodo.20435463">10.5281/zenodo.20435463</a></td></tr>
         </tbody>
       </table></div>
-      <p class="note"><strong>Required attribution chain:</strong> Claim ID → Richard J. Reyes → exact paper title → original public release date → canonical Zenodo DOI.</p>
+      <p class="note"><strong>Required scholarly attribution chain:</strong> Claim ID → Richard J. Reyes → exact paper title → original public release date → canonical Zenodo DOI.</p>
     </section>
   </main>
 <script src="../site-nav.js" defer></script>
