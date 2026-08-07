@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#07111f">
-  <title>Claim-Level Priority Registry | Richard J. Reyes</title>
-  <meta name="description" content="Claim-level provenance registry mapping distinctive Wave Confinement Theory contributions to Richard J. Reyes, their first public release dates, and canonical Zenodo DOIs.">
+  <title>Priority & Independent Convergence Registry | Richard J. Reyes</title>
+  <meta name="description" content="Claim-level provenance registry for Richard J. Reyes and Wave Confinement Theory, with DOI-dated priority records, later independent mechanism-level convergence, and explicit prior-art controls.">
   <meta name="author" content="Richard J. Reyes">
   <meta name="robots" content="index,follow,max-snippet:-1">
   <link rel="canonical" href="https://rickyjreyes.github.io/priority/">
@@ -13,26 +13,47 @@
   <link rel="stylesheet" href="../styles.css">
   <style>
     .priority-shell{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:72px 0 96px}
-    .priority-head{max-width:860px;margin-bottom:36px}
+    .priority-head{max-width:900px;margin-bottom:36px}
     .priority-head h1{margin:.2rem 0 1rem;font:500 clamp(2.6rem,7vw,5.6rem)/1 Georgia,serif;letter-spacing:-.045em}
-    .priority-head p{color:var(--muted);font-size:1.04rem;line-height:1.7}
+    .priority-head p,.section-lede{color:var(--muted);font-size:1.04rem;line-height:1.7;max-width:82ch}
     .identity{padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);margin:26px 0 34px}
     .identity strong{display:block;margin-bottom:5px}
-    .table-wrap{overflow-x:auto;border-top:1px solid var(--line)}
+    .toplinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .audit-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:34px 0 0}
+    .audit-strip div{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
+    .audit-strip strong{display:block;color:var(--accent);font:500 1.8rem/1 Georgia,serif}
+    .audit-strip span{display:block;margin-top:7px;color:var(--muted-2);font-size:.78rem;line-height:1.4}
+    .priority-section{padding:52px 0;border-top:1px solid var(--line)}
+    .priority-section h2{margin:0 0 14px;font:500 clamp(1.8rem,4vw,2.8rem)/1.08 Georgia,serif;letter-spacing:-.03em}
+    .definitions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+    .definition-card{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
+    .definition-card strong{display:block;margin-bottom:7px;color:var(--text)}
+    .definition-card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.55}
+    .table-wrap{overflow-x:auto;border-top:1px solid var(--line);margin-top:28px}
     table{width:100%;border-collapse:collapse;min-width:880px}
     th,td{padding:16px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
     th{color:var(--muted-2);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
     td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);white-space:nowrap}
-    td:nth-child(4){white-space:nowrap}
+    .claim-table td:nth-child(4){white-space:nowrap}
+    .class-pill{display:inline-flex;padding:4px 9px;border:1px solid rgba(103,212,255,.38);border-radius:999px;background:rgba(103,212,255,.06);font-size:.7rem;font-weight:800;white-space:nowrap}
+    .case-title{font-weight:700;color:var(--text)}
+    .case-note{display:block;margin-top:5px;color:var(--muted-2);font-size:.8rem;line-height:1.45}
     .note{margin-top:34px;padding:22px;border-left:3px solid var(--accent);background:rgba(103,212,255,.05);color:var(--muted)}
-    .toplinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .control-list{display:grid;gap:12px;margin-top:24px}
+    .control-item{padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
+    .control-item strong{display:block;margin-bottom:5px}
+    .control-item p{margin:0;color:var(--muted);font-size:.92rem}
+    .audit-status{margin-top:24px;padding:20px;border:1px solid rgba(139,124,255,.28);border-radius:14px;background:rgba(139,124,255,.055);color:var(--muted)}
+    @media(max-width:860px){.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}.audit-strip{grid-template-columns:1fr}}
+    @media(max-width:560px){.definitions{grid-template-columns:1fr}.priority-shell{width:min(calc(100% - 24px),1120px);padding-top:54px}}
   </style>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"CollectionPage",
-    "name":"Wave Confinement Theory Claim-Level Priority Registry",
+    "name":"Wave Confinement Theory Priority and Independent Convergence Registry",
     "url":"https://rickyjreyes.github.io/priority/",
+    "dateModified":"2026-08-07",
     "author":{
       "@type":"Person",
       "name":"Richard J. Reyes",
@@ -45,43 +66,95 @@
   </script>
 </head>
 <body>
-  <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/tools/">Tools</a></nav></div></header>
+  <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/tools/">Tools</a></nav></div></header>
   <main class="priority-shell">
     <header class="priority-head">
-      <p class="eyebrow">Provenance and chronology</p>
-      <h1>Claim-Level Priority Registry</h1>
-      <p>This registry maps distinctive claims and architectures in the Richard J. Reyes research corpus to their earliest public records. It is a provenance index, not a substitute for scientific validation. Cite the exact paper and DOI associated with the claim used.</p>
+      <p class="eyebrow">Provenance, chronology, and independent convergence</p>
+      <h1>Priority &amp; Independent Convergence Registry</h1>
+      <p>This registry separates two questions that are often conflated: what Richard J. Reyes publicly stated first, and which later independent works exhibit closely related mechanisms. Priority is established from dated public records. Similarity to later literature is treated as convergence unless direct evidence of influence exists.</p>
       <div class="identity"><strong>Richard J. Reyes</strong>ORCID: <a href="https://orcid.org/0009-0005-5975-8718">0009-0005-5975-8718</a><br>Canonical archive: <a href="../publications/">rickyjreyes.github.io/publications/</a></div>
       <div class="toplinks"><a class="button secondary" href="priority.json">Machine-readable JSON</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="https://github.com/rickyjreyes/rickyjreyes/blob/main/PRIORITY_REGISTRY.md">GitHub registry</a></div>
+      <div class="audit-strip" aria-label="Audit status">
+        <div><strong>22</strong><span>DOI-backed claim-level priority records</span></div>
+        <div><strong>144</strong><span>external works in the working comparison corpus</span></div>
+        <div><strong>6</strong><span>high-value post-WCT cases date-checked for this public registry</span></div>
+      </div>
     </header>
-    <div class="table-wrap"><table>
-      <thead><tr><th>Claim ID</th><th>Distinct contribution</th><th>Earliest public record</th><th>Date</th><th>DOI</th></tr></thead>
-      <tbody>
-        <tr><td>WCT-CORE-001</td><td>Wave Confinement Theory as a geometric framework in which mass, force, spectra, and effective spacetime geometry emerge from confined oscillatory fields.</td><td>The Geometry of Resonance</td><td>2025-04-22</td><td><a href="https://doi.org/10.5281/zenodo.15644222">10.5281/zenodo.15644222</a></td></tr>
-        <tr><td>WCT-CONST-001</td><td>Derivation program for physical constants from resonance geometry and wave confinement.</td><td>Structure and Derivation of Physical Constants through Wave Confinement</td><td>2025-04-26</td><td><a href="https://doi.org/10.5281/zenodo.15596159">10.5281/zenodo.15596159</a></td></tr>
-        <tr><td>WCT-COMP-001</td><td>Curvature-bounded wave-computation classes and model-relative separation of P_WCC and NP_WCC.</td><td>P vs NP in Curvature-Bounded Wave Computation</td><td>2025-05-07</td><td><a href="https://doi.org/10.5281/zenodo.17743607">10.5281/zenodo.17743607</a></td></tr>
-        <tr><td>WCT-EXP-001</td><td>Report of long-lived optical or harmonic behavior in water cavities after excitation.</td><td>Observation of Long-Lived Photon Resonance Confinement in Water Cavities</td><td>2025-05-17</td><td><a href="https://doi.org/10.5281/zenodo.17206381">10.5281/zenodo.17206381</a></td></tr>
-        <tr><td>WCT-AI-001</td><td>Resonance-Confinement Architecture as a physically bounded substrate for safe superintelligence.</td><td>Resonance-Confinement Architecture</td><td>2025-06-11</td><td><a href="https://doi.org/10.5281/zenodo.17732661">10.5281/zenodo.17732661</a></td></tr>
-        <tr><td>WCT-DIM-001</td><td>Proposed hard upper bound of three stable spatial dimensions under WCT confinement assumptions.</td><td>Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory</td><td>2025-08-13</td><td><a href="https://doi.org/10.5281/zenodo.17081283">10.5281/zenodo.17081283</a></td></tr>
-        <tr><td>WCT-PFF-001</td><td>Phase-Flux Field substrate with zero-wave invariance, finite-k Lyapunov band-pass, shell quantization, and D4-to-continuum construction.</td><td>Phase-Flux Field (PFF)</td><td>2025-09-08</td><td><a href="https://doi.org/10.5281/zenodo.17578766">10.5281/zenodo.17578766</a></td></tr>
-        <tr><td>WCT-SPEC-001</td><td>Entropic eigenmode formation and finite-band Fourier support emerging from broadband or chaotic initial states.</td><td>Self-Emergent Fourier Cymatics</td><td>2025-09-16</td><td><a href="https://doi.org/10.5281/zenodo.17732648">10.5281/zenodo.17732648</a></td></tr>
-        <tr><td>WCT-MASS-001</td><td>Effective mass arising from solenoidal or curved topology of confined vibrational energy.</td><td>Emergence of Effective Mass</td><td>2025-10-27</td><td><a href="https://doi.org/10.5281/zenodo.17459463">10.5281/zenodo.17459463</a></td></tr>
-        <tr><td>WCT-MASS-002</td><td>Density-weighted loop-curvature locking relation for rest energy and inertial mass.</td><td>Rest Energy from Density-Weighted Loop Curvature</td><td>2025-11-11</td><td><a href="https://doi.org/10.5281/zenodo.20533537">10.5281/zenodo.20533537</a></td></tr>
-        <tr><td>WCT-NU-001</td><td>Detector-facing analysis of whether WCT ghost-mode neutrino modulations could survive JUNO resolution and smearing.</td><td>JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos</td><td>2025-11-20</td><td><a href="https://doi.org/10.5281/zenodo.17715872">10.5281/zenodo.17715872</a></td></tr>
-        <tr><td>WCT-COMP-002</td><td>Discrete wave-constrained computation and classical Turing-equivalence analysis.</td><td>Discrete Wave-Constrained Computation and Classical Complexity</td><td>2025-11-26</td><td><a href="https://doi.org/10.5281/zenodo.17732642">10.5281/zenodo.17732642</a></td></tr>
-        <tr><td>WCT-COMP-003</td><td>Argument that unrestricted classical P versus NP is physically incomplete when real computation is bounded by energy, geometry, and propagation.</td><td>The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed</td><td>2025-12-01</td><td><a href="https://doi.org/10.5281/zenodo.17783074">10.5281/zenodo.17783074</a></td></tr>
-        <tr><td>WCT-CRYPTO-001</td><td>WaveLock one-way function based on bounded nonlinear PDE evolution.</td><td>WaveLock</td><td>2025-12-01</td><td><a href="https://doi.org/10.5281/zenodo.19122146">10.5281/zenodo.19122146</a></td></tr>
-        <tr><td>WCT-PHOTO-001</td><td>Prediction and protocol ledger for long-lived harmonic state induction in photodiodes.</td><td>Prediction &amp; Protocol Ledger</td><td>2025-12</td><td><a href="https://doi.org/10.5281/zenodo.17957713">10.5281/zenodo.17957713</a></td></tr>
-        <tr><td>WCT-KOIDE-001</td><td>Curvature-harmonic explanation of the charged-lepton Koide relation.</td><td>Wave Confinement Theory Predicts the Koide Mass Relation</td><td>2025-12-10</td><td><a href="https://doi.org/10.5281/zenodo.17887562">10.5281/zenodo.17887562</a></td></tr>
-        <tr><td>WCT-LEPTON-001</td><td>Logarithmic curvature flow and filament localization as a proposed origin of the lepton mass spectrum.</td><td>Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum</td><td>2026-03-10</td><td><a href="https://doi.org/10.5281/zenodo.18936949">10.5281/zenodo.18936949</a></td></tr>
-        <tr><td>WCT-FUSION-001</td><td>Self-sustaining resonance-control architecture for tokamak operation.</td><td>Nuclear Fusion Tokamak with Self Sustaining Resonance</td><td>2026-04-14</td><td><a href="https://doi.org/10.5281/zenodo.19578185">10.5281/zenodo.19578185</a></td></tr>
-        <tr><td>WCT-LHCB-001</td><td>Curvature-induced log-periodic deformation of the Wilson coefficient C9(q²).</td><td>A Curvature-Induced Log-Periodic Deformation of C9(q²)</td><td>2026-04-23</td><td><a href="https://doi.org/10.5281/zenodo.19705254">10.5281/zenodo.19705254</a></td></tr>
-        <tr><td>WCT-LHCB-002</td><td>Log-spectral and Koide-like winding analysis of open-data B0 to K*0 mu+mu- candidate spectra.</td><td>Log-Spectral Structure and Koide-Like Winding Geometry</td><td>2026-05-09</td><td><a href="https://doi.org/10.5281/zenodo.20164333">10.5281/zenodo.20164333</a></td></tr>
-        <tr><td>WCT-AI-002</td><td>Timestamped external validation audit of Recursive AI Drift predictions.</td><td>Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note</td><td>2026-05</td><td><a href="https://doi.org/10.5281/zenodo.20142976">10.5281/zenodo.20142976</a></td></tr>
-        <tr><td>WCT-NIST-001</td><td>Bin-stable log-periodic structure test in public NIST atomic line-density lists.</td><td>Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List</td><td>2026-05-28</td><td><a href="https://doi.org/10.5281/zenodo.20435463">10.5281/zenodo.20435463</a></td></tr>
-      </tbody>
-    </table></div>
-    <p class="note"><strong>Required attribution chain:</strong> Claim ID → Richard J. Reyes → exact paper title → original release date → canonical Zenodo DOI.</p>
+
+    <section class="priority-section" aria-labelledby="rules-title">
+      <p class="eyebrow">Audit rule</p>
+      <h2 id="rules-title">Priority is not the same claim as influence.</h2>
+      <p class="section-lede">A later paper can independently converge on a mechanism that appeared earlier in WCT. The registry therefore records chronology and structural correspondence while separately tracking older prior art.</p>
+      <div class="definitions">
+        <article class="definition-card"><strong>Priority</strong><p>A sufficiently specific public WCT statement exists before the comparison work.</p></article>
+        <article class="definition-card"><strong>Convergence</strong><p>A later independent work exhibits the same or a closely corresponding mechanism.</p></article>
+        <article class="definition-card"><strong>Influence</strong><p>Evidence that later authors encountered the earlier WCT work. Similarity alone does not establish this.</p></article>
+        <article class="definition-card"><strong>Prior-art gate</strong><p>Older literature on generic ingredients is retained explicitly so WCT is not credited with established pre-WCT mechanisms.</p></article>
+      </div>
+    </section>
+
+    <section class="priority-section" aria-labelledby="convergence-title">
+      <p class="eyebrow">Verified comparison layer</p>
+      <h2 id="convergence-title">Selected post-WCT mechanism-level convergence.</h2>
+      <p class="section-lede">These are high-value examples from the broader 144-work comparison corpus. They are presented as chronological and structural matches, not allegations of copying.</p>
+      <div class="table-wrap"><table class="convergence-table">
+        <thead><tr><th>Case</th><th>Earlier WCT anchor</th><th>Later independent work</th><th>Mechanism-level correspondence</th><th>Class</th></tr></thead>
+        <tbody>
+          <tr><td>P2</td><td><a href="https://doi.org/10.5281/zenodo.17578766">Phase-Flux Field</a> (2025-09-08) + <a href="https://doi.org/10.5281/zenodo.17459463">Effective Mass: Solenoidal Topology</a> (2025-10-27)</td><td><a class="case-title" href="https://arxiv.org/abs/2607.19840">Emergence of giant vortices under nonlinear rotation with attractive interactions in a toroidal condensate</a><span class="case-note">arXiv submitted 2026-07-22</span></td><td>Toroidal confinement, nonlinear feedback/rotation, quantized circulation, excitation spectra, and multiply quantized-vortex stability.</td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P3</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2607.29309">Quasiparticle modes across soliton transition with density-dependent gauge field in optical lattices</a><span class="case-note">arXiv submitted 2026-07-31</span></td><td>Field-dependent feedback drives localization into a soliton state together with a modified excitation gap and suppressed breathing response.</td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P4</td><td><a href="https://doi.org/10.5281/zenodo.17578766">Phase-Flux Field</a> (2025-09-08) + <a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2607.07340">Time-domain Stokes mechanism of pair-correlated k-gap solitons in nonlinear photonic time-crystal slabs</a><span class="case-note">arXiv submitted 2026-07-08</span></td><td>Finite-k amplification followed by nonlinear saturation/arrest and formation of stabilized localized soliton states.</td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P5</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2606.25687">Self-Organized Stabilization of Straight Dark Solitons in Stripe Supersolids</a><span class="case-note">arXiv submitted 2026-06-24</span></td><td>Self-generated structure intrinsically stabilizes a localized soliton branch and hardens its excitation spectrum.</td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P6</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://arxiv.org/abs/2606.25064">Quantum Geometry in the Continuum: Solitons in Shallow Lattices</a><span class="case-note">arXiv submitted 2026-06-23</span></td><td>Fourth-order dispersion/geometry enters directly into the localization and soliton structure of a weakly interacting continuum system.</td><td><span class="class-pill">B</span></td></tr>
+          <tr><td>P7</td><td><a href="https://doi.org/10.5281/zenodo.17732648">Self-Emergent Fourier Cymatics</a> (2025-09-16)</td><td><a class="case-title" href="https://doi.org/10.1364/OL.603068">Perfect soliton crystals in Kerr optical cavities with pure-quartic dispersion</a><span class="case-note">Original manuscript 2026-04-22; published 2026-07-13</span></td><td>Spatiotemporal chaos evolves into spontaneously ordered, persistent soliton-crystal states under high-order dispersion and nonlinearity.</td><td><span class="class-pill">B</span></td></tr>
+        </tbody>
+      </table></div>
+      <div class="audit-status"><strong>Working-corpus status.</strong> The broader comparison ledger contains 144 candidate external works spanning localization, toroidal confinement, photonic memory, time crystals, nonlinear spectral selection, curvature-dependent localization, physical fingerprints, and related mechanisms. Only the date-checked subset above is promoted on this public page while the remaining entries undergo source normalization and prior-art review.</div>
+    </section>
+
+    <section class="priority-section" aria-labelledby="controls-title">
+      <p class="eyebrow">Negative controls</p>
+      <h2 id="controls-title">Older prior art is part of the record.</h2>
+      <p class="section-lede">The historical claim is not that WCT invented every ingredient. Several important primitives substantially predate the WCT corpus; they therefore function as controls on what can legitimately be claimed as original.</p>
+      <div class="control-list">
+        <article class="control-item"><strong>Localized Swift-Hohenberg states / homoclinic snaking</strong><p>Finite-wavenumber localization and related pattern-selection mechanisms predate WCT. WCT priority claims must therefore concern narrower combinations, not Swift-Hohenberg localization itself.</p></article>
+        <article class="control-item"><strong>Toroidal BEC persistent currents</strong><p>Toroidal confinement, winding, and persistent circulation were studied well before 2025. The narrower WCT comparison concerns how topology is combined with curvature feedback, spectral selection, and mass/locking constructions.</p></article>
+        <article class="control-item"><strong>Pure-quartic solitons</strong><p>Fourth-order-dispersion solitons were experimentally demonstrated before WCT. Later high-order-dispersion results are therefore convergence/context unless the compared architecture contains additional distinctive WCT structure.</p></article>
+      </div>
+    </section>
+
+    <section class="priority-section" aria-labelledby="claims-title">
+      <p class="eyebrow">DOI-backed source layer</p>
+      <h2 id="claims-title">Claim-Level Priority Registry</h2>
+      <p class="section-lede">The table below maps distinctive claims and architectures in the Richard J. Reyes research corpus to their earliest public archival records. Cite the exact paper and DOI associated with the claim used.</p>
+      <div class="table-wrap"><table class="claim-table">
+        <thead><tr><th>Claim ID</th><th>Distinct contribution</th><th>Earliest public record</th><th>Date</th><th>DOI</th></tr></thead>
+        <tbody>
+          <tr><td>WCT-CORE-001</td><td>Wave Confinement Theory as a geometric framework in which mass, force, spectra, and effective spacetime geometry emerge from confined oscillatory fields.</td><td>The Geometry of Resonance</td><td>2025-04-22</td><td><a href="https://doi.org/10.5281/zenodo.15644222">10.5281/zenodo.15644222</a></td></tr>
+          <tr><td>WCT-CONST-001</td><td>Derivation program for physical constants from resonance geometry and wave confinement.</td><td>Structure and Derivation of Physical Constants through Wave Confinement</td><td>2025-04-26</td><td><a href="https://doi.org/10.5281/zenodo.15596159">10.5281/zenodo.15596159</a></td></tr>
+          <tr><td>WCT-COMP-001</td><td>Curvature-bounded wave-computation classes and model-relative separation of P_WCC and NP_WCC.</td><td>P vs NP in Curvature-Bounded Wave Computation</td><td>2025-05-07</td><td><a href="https://doi.org/10.5281/zenodo.17743607">10.5281/zenodo.17743607</a></td></tr>
+          <tr><td>WCT-EXP-001</td><td>Report of long-lived optical or harmonic behavior in water cavities after excitation.</td><td>Observation of Long-Lived Photon Resonance Confinement in Water Cavities</td><td>2025-05-17</td><td><a href="https://doi.org/10.5281/zenodo.17206381">10.5281/zenodo.17206381</a></td></tr>
+          <tr><td>WCT-AI-001</td><td>Resonance-Confinement Architecture as a physically bounded substrate for safe superintelligence.</td><td>Resonance-Confinement Architecture</td><td>2025-06-11</td><td><a href="https://doi.org/10.5281/zenodo.17732661">10.5281/zenodo.17732661</a></td></tr>
+          <tr><td>WCT-DIM-001</td><td>Proposed hard upper bound of three stable spatial dimensions under WCT confinement assumptions.</td><td>Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory</td><td>2025-08-13</td><td><a href="https://doi.org/10.5281/zenodo.17081283">10.5281/zenodo.17081283</a></td></tr>
+          <tr><td>WCT-PFF-001</td><td>Phase-Flux Field substrate with zero-wave invariance, finite-k Lyapunov band-pass, shell quantization, and D4-to-continuum construction.</td><td>Phase-Flux Field (PFF)</td><td>2025-09-08</td><td><a href="https://doi.org/10.5281/zenodo.17578766">10.5281/zenodo.17578766</a></td></tr>
+          <tr><td>WCT-SPEC-001</td><td>Entropic eigenmode formation and finite-band Fourier support emerging from broadband or chaotic initial states.</td><td>Self-Emergent Fourier Cymatics</td><td>2025-09-16</td><td><a href="https://doi.org/10.5281/zenodo.17732648">10.5281/zenodo.17732648</a></td></tr>
+          <tr><td>WCT-MASS-001</td><td>Effective mass arising from solenoidal or curved topology of confined vibrational energy.</td><td>Emergence of Effective Mass</td><td>2025-10-27</td><td><a href="https://doi.org/10.5281/zenodo.17459463">10.5281/zenodo.17459463</a></td></tr>
+          <tr><td>WCT-MASS-002</td><td>Density-weighted loop-curvature locking relation for rest energy and inertial mass.</td><td>Rest Energy from Density-Weighted Loop Curvature</td><td>2025-11-11</td><td><a href="https://doi.org/10.5281/zenodo.20533537">10.5281/zenodo.20533537</a></td></tr>
+          <tr><td>WCT-NU-001</td><td>Detector-facing analysis of whether WCT ghost-mode neutrino modulations could survive JUNO resolution and smearing.</td><td>JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos</td><td>2025-11-20</td><td><a href="https://doi.org/10.5281/zenodo.17715872">10.5281/zenodo.17715872</a></td></tr>
+          <tr><td>WCT-COMP-002</td><td>Discrete wave-constrained computation and classical Turing-equivalence analysis.</td><td>Discrete Wave-Constrained Computation and Classical Complexity</td><td>2025-11-26</td><td><a href="https://doi.org/10.5281/zenodo.17732642">10.5281/zenodo.17732642</a></td></tr>
+          <tr><td>WCT-COMP-003</td><td>Argument that unrestricted classical P versus NP is physically incomplete when real computation is bounded by energy, geometry, and propagation.</td><td>The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed</td><td>2025-12-01</td><td><a href="https://doi.org/10.5281/zenodo.17783074">10.5281/zenodo.17783074</a></td></tr>
+          <tr><td>WCT-CRYPTO-001</td><td>WaveLock one-way function based on bounded nonlinear PDE evolution.</td><td>WaveLock</td><td>2025-12-01</td><td><a href="https://doi.org/10.5281/zenodo.19122146">10.5281/zenodo.19122146</a></td></tr>
+          <tr><td>WCT-PHOTO-001</td><td>Prediction and protocol ledger for long-lived harmonic state induction in photodiodes.</td><td>Prediction &amp; Protocol Ledger</td><td>2025-12</td><td><a href="https://doi.org/10.5281/zenodo.17957713">10.5281/zenodo.17957713</a></td></tr>
+          <tr><td>WCT-KOIDE-001</td><td>Curvature-harmonic explanation of the charged-lepton Koide relation.</td><td>Wave Confinement Theory Predicts the Koide Mass Relation</td><td>2025-12-10</td><td><a href="https://doi.org/10.5281/zenodo.17887562">10.5281/zenodo.17887562</a></td></tr>
+          <tr><td>WCT-LEPTON-001</td><td>Logarithmic curvature flow and filament localization as a proposed origin of the lepton mass spectrum.</td><td>Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum</td><td>2026-03-10</td><td><a href="https://doi.org/10.5281/zenodo.18936949">10.5281/zenodo.18936949</a></td></tr>
+          <tr><td>WCT-FUSION-001</td><td>Self-sustaining resonance-control architecture for tokamak operation.</td><td>Nuclear Fusion Tokamak with Self Sustaining Resonance</td><td>2026-04-14</td><td><a href="https://doi.org/10.5281/zenodo.19578185">10.5281/zenodo.19578185</a></td></tr>
+          <tr><td>WCT-LHCB-001</td><td>Curvature-induced log-periodic deformation of the Wilson coefficient C9(q²).</td><td>A Curvature-Induced Log-Periodic Deformation of C9(q²)</td><td>2026-04-23</td><td><a href="https://doi.org/10.5281/zenodo.19705254">10.5281/zenodo.19705254</a></td></tr>
+          <tr><td>WCT-LHCB-002</td><td>Log-spectral and Koide-like winding analysis of open-data B0 to K*0 mu+mu- candidate spectra.</td><td>Log-Spectral Structure and Koide-Like Winding Geometry</td><td>2026-05-09</td><td><a href="https://doi.org/10.5281/zenodo.20164333">10.5281/zenodo.20164333</a></td></tr>
+          <tr><td>WCT-AI-002</td><td>Timestamped external validation audit of Recursive AI Drift predictions.</td><td>Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note</td><td>2026-05</td><td><a href="https://doi.org/10.5281/zenodo.20142976">10.5281/zenodo.20142976</a></td></tr>
+          <tr><td>WCT-NIST-001</td><td>Bin-stable log-periodic structure test in public NIST atomic line-density lists.</td><td>Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List</td><td>2026-05-28</td><td><a href="https://doi.org/10.5281/zenodo.20435463">10.5281/zenodo.20435463</a></td></tr>
+        </tbody>
+      </table></div>
+      <p class="note"><strong>Required attribution chain:</strong> Claim ID → Richard J. Reyes → exact paper title → original public release date → canonical Zenodo DOI.</p>
+    </section>
   </main>
 <script src="../site-nav.js" defer></script>
 </body>
