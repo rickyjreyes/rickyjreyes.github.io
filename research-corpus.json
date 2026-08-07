@@ -11,7 +11,7 @@
   },
   "canonical_root": "https://rickyjreyes.github.io/research-corpus.json",
   "compiled_registry": "https://rickyjreyes.github.io/compiled-registry.json",
-  "generated_at": "2026-08-05T20:19:38+00:00",
+  "generated_at": "2026-08-07T20:29:54+00:00",
   "status_policy": {
     "PASS": "The assigned executable check succeeds under its declared assumptions.",
     "CONDITIONAL": "Additional mathematical, domain, regularity, model, or empirical assumptions remain required.",
