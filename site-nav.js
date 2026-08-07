@@ -14,6 +14,7 @@
   const links = [
     ['/', 'Home'],
     ['/publications/', 'Publications'],
+    ['/priority/', 'Priority'],
     ['/patents/', 'Patents'],
     ['/equations/', 'Equations'],
     ['/sympy/', 'SymPy'],
@@ -147,6 +148,13 @@
     }
 
     const heroActions = document.querySelector('.hero-actions');
+    if (heroActions && !heroActions.querySelector('a[href="/priority/"]')) {
+      const priorityButton = document.createElement('a');
+      priorityButton.className = 'button secondary';
+      priorityButton.href = '/priority/';
+      priorityButton.textContent = 'View priority & convergence';
+      heroActions.appendChild(priorityButton);
+    }
     if (heroActions && !heroActions.querySelector('a[href="/patents/"]')) {
       const patentButton = document.createElement('a');
       patentButton.className = 'button secondary';
@@ -197,6 +205,12 @@
     }
 
     const footerResearch = [...document.querySelectorAll('.site-footer h2')].find((heading) => heading.textContent.trim() === 'Research')?.parentElement;
+    if (footerResearch && !footerResearch.querySelector('a[href="/priority/"]')) {
+      const link = document.createElement('a');
+      link.href = '/priority/';
+      link.textContent = 'Priority & convergence';
+      footerResearch.appendChild(link);
+    }
     if (footerResearch && !footerResearch.querySelector('a[href="/patents/"]')) {
       const link = document.createElement('a');
       link.href = '/patents/';
