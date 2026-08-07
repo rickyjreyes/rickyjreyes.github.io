@@ -1,13 +1,15 @@
 {
-  "schemaVersion": "1.1",
+  "schemaVersion": "1.2",
   "updated": "2026-08-07",
   "author": {
     "name": "Richard J. Reyes",
     "orcid": "0009-0005-5975-8718"
   },
   "canonicalArchive": "https://rickyjreyes.github.io/publications/",
+  "patentPortfolio": "https://rickyjreyes.github.io/patents/",
   "auditDefinitions": {
     "priority": "A sufficiently specific public WCT statement exists before the comparison work.",
+    "patentPriority": "The earliest priority date reported for a filed patent family in the public patent portfolio. This records filing chronology and does not establish claim scope, patentability, validity, enforceability, or infringement.",
     "convergence": "A later independent work exhibits the same or a closely corresponding mechanism.",
     "influence": "Evidence that later authors encountered the earlier work; similarity alone does not establish influence.",
     "priorArtGate": "Older literature on generic ingredients is retained explicitly so established pre-WCT mechanisms are not attributed to WCT."
@@ -15,8 +17,78 @@
   "comparisonCorpus": {
     "workingExternalWorks": 144,
     "publicDateCheckedCases": 6,
+    "publicPatentFamilies": 4,
     "status": "The broader comparison corpus is undergoing source normalization and prior-art review; only the date-checked subset is promoted in this public registry."
   },
+  "patentPriority": [
+    {
+      "familyId": "persistent-wave-memory",
+      "docket": "REYES-MEM-2026-NP",
+      "title": "Curvature-Feedback Persistent Wave Memory Device and Method of Operation",
+      "applicationType": "U.S. nonprovisional application",
+      "earliestPriorityDate": "2025-05-20",
+      "filingDate": "2026-05-18",
+      "publicStatus": "patent pending",
+      "publicScope": [
+        "persistent wave-state storage",
+        "spectral confinement",
+        "optical or acoustic readout",
+        "reset control",
+        "physical cells and arrays",
+        "software emulation"
+      ]
+    },
+    {
+      "familyId": "coherent-field-generator",
+      "docket": "REYES-CPG-2026",
+      "title": "Coherent Particle Field Generator via Curvature-Locked Wave Confinement",
+      "applicationType": "Updated U.S. provisional application",
+      "earliestPriorityDate": "2025-05-21",
+      "filingDate": "2026-05-13",
+      "publicStatus": "application filed",
+      "publicScope": [
+        "nonlinear wave media",
+        "structured excitation",
+        "curvature and torsion control",
+        "harmonic stabilization",
+        "closed-loop relocking",
+        "spectral or spatial readout"
+      ]
+    },
+    {
+      "familyId": "wavelock",
+      "docket": "REYES-WAVELOCK-2026-NP",
+      "title": "Curvature-Regulated Wavefield Evolution, Protocol-Binding Commitments, and Drift Detection",
+      "applicationType": "U.S. nonprovisional application",
+      "earliestPriorityDate": "2025-06-18",
+      "filingDate": "2026-06-07",
+      "publicStatus": "patent pending",
+      "publicScope": [
+        "wavefield commitments",
+        "protocol binding",
+        "replay prevention",
+        "public verification",
+        "attestation",
+        "runtime drift detection"
+      ]
+    },
+    {
+      "familyId": "solid-state-frequency-reference",
+      "docket": "REYES-FREQ-2025",
+      "title": "Solid-State Frequency Reference via Curvature-Locked Resonant Semiconductors",
+      "applicationType": "U.S. provisional application",
+      "earliestPriorityDate": "2025-12-18",
+      "filingDate": "2025-12-18",
+      "publicStatus": "application filed",
+      "publicScope": [
+        "structured optical programming",
+        "persistent semiconductor resonance",
+        "harmonic signatures",
+        "frequency readout",
+        "external oscillator integration"
+      ]
+    }
+  ],
   "convergenceCases": [
     {
       "id": "P2",
