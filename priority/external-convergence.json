@@ -1,26 +1,28 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "updated": "2026-08-10",
   "title": "WCT External Literature Convergence Audit",
-  "canonical": "https://rickyjreyes.github.io/priority/external-convergence.html",
+  "canonical": "https://rickyjreyes.github.io/priority/#convergence-title",
   "registry": "https://rickyjreyes.github.io/priority/",
-  "interpretation": "Scores are comparison priority / WCT architectural relevance, not probabilities of copying, influence, derivation, or infringement.",
-  "promotedRule": "Only cases already date-checked in the main priority registry are marked promoted. Other entries remain audit candidates until chronology, prior art, and provenance are normalized.",
-  "candidates": [
-    {"rank":1,"title":"Giant vortices under nonlinear rotation in a toroidal condensate","url":"https://arxiv.org/abs/2607.19840","score":9.8,"status":"Promoted / date-checked (P2)","mechanisms":"Toroidal confinement; nonlinear rotation/feedback; quantized circulation; vortex stability.","anchor":"WCT-PFF-001 + WCT-MASS-001"},
-    {"rank":2,"title":"Quasiparticle modes across soliton transition with density-dependent gauge field","url":"https://arxiv.org/abs/2607.29309","score":9.7,"status":"Promoted / date-checked (P3)","mechanisms":"Nonlinear localization; soliton transition; density-dependent gauge field; excitation-gap modification.","anchor":"WCT-SPEC-001"},
-    {"rank":3,"title":"k-gap solitons in nonlinear photonic time crystals","url":"https://arxiv.org/abs/2607.07340","score":9.6,"status":"Promoted / date-checked (P4)","mechanisms":"Finite-k selection/amplification; nonlinear saturation; stabilized localized states.","anchor":"WCT-PFF-001 + WCT-SPEC-001"},
-    {"rank":4,"title":"Self-organized stabilization of dark solitons in stripe supersolids","url":"https://arxiv.org/abs/2606.25687","score":9.5,"status":"Promoted / date-checked (P5)","mechanisms":"Self-organized stabilization; localized nonlinear states; hardened excitation spectrum.","anchor":"WCT-SPEC-001"},
-    {"rank":5,"title":"Quantum Geometry in the Continuum: Solitons in Shallow Lattices","url":"https://arxiv.org/abs/2606.25064","score":9.4,"status":"Promoted / date-checked (P6)","mechanisms":"Geometry/dispersion entering localization; nonlinear soliton formation; continuum confinement.","anchor":"WCT-SPEC-001"},
-    {"rank":6,"title":"Perfect soliton crystals with pure-quartic dispersion","url":"https://doi.org/10.1364/OL.603068","score":9.3,"status":"Promoted / date-checked (P7)","mechanisms":"Chaos-to-order transition; persistent soliton crystals; high-order dispersion and nonlinearity.","anchor":"WCT-SPEC-001"},
-    {"rank":7,"title":"Persistent-current superpositions in toroidal BECs","url":"https://arxiv.org/abs/2601.21144","score":9.1,"status":"Candidate — chronology/prior-art review","mechanisms":"Toroidal topology; persistent currents; winding-sector structure; quantized circulation.","anchor":"WCT-PFF-001 + WCT-MASS-001"},
-    {"rank":8,"title":"Synthetic Hall Torus with a spinor BEC","url":"https://arxiv.org/abs/2602.14549","score":9.0,"status":"Candidate — chronology/prior-art review","mechanisms":"Toroidal topology; synthetic gauge structure; Hall-like response; quantized/topological states.","anchor":"WCT-PFF-001 + WCT-MASS-001"},
-    {"rank":9,"title":"Stable vortex clusters bifurcating from ring solitons","url":"https://arxiv.org/abs/2607.18858","score":8.7,"status":"Candidate — chronology/prior-art review","mechanisms":"Ring-localized states; vortex bifurcation; non-radial organization; stability.","anchor":"WCT-SPEC-001 + WCT-MASS-001"},
-    {"rank":10,"title":"Self-bound dipolar molecular condensate droplets","url":"https://arxiv.org/abs/2606.22503","score":8.4,"status":"Candidate — chronology/prior-art review","mechanisms":"Self-binding; finite-energy localization; nonlinear stabilization of compact states.","anchor":"WCT-SPEC-001"},
-    {"rank":11,"title":"Multiple bright/dark/topological two-color solitons","url":"https://arxiv.org/abs/2607.17706","score":8.4,"status":"Candidate — chronology/prior-art review","mechanisms":"Multiple localized branches; bright/dark structure; topological nonlinear states.","anchor":"WCT-SPEC-001 + WCT-PFF-001"},
-    {"rank":12,"title":"Josephson-frequency splitting in a toroidal superfluid","url":"https://arxiv.org/abs/2607.08345","score":8.3,"status":"Candidate — chronology/prior-art review","mechanisms":"Toroidal superfluid; discrete frequency splitting; circulation/topology; spectral structure.","anchor":"WCT-PFF-001 + WCT-MASS-001"},
-    {"rank":13,"title":"Conservative complex Swift-Hohenberg localized states","url":"https://arxiv.org/abs/2504.19947","score":8.3,"status":"Context / prior-art control","mechanisms":"Finite-wavenumber selection and localized states; important control because the generic mechanism predates WCT.","anchor":"Prior-art control; compare only narrower WCT combinations"},
-    {"rank":14,"title":"Nonlinear saturation of toroidal Alfvén eigenmodes","url":"https://arxiv.org/abs/2604.15024","score":8.1,"status":"Candidate — chronology/prior-art review","mechanisms":"Toroidal eigenmodes; nonlinear saturation; spectral stability; mode locking/selection.","anchor":"WCT-PFF-001 + WCT-SPEC-001"},
-    {"rank":15,"title":"Efimovian phonon BEC / log-periodicity","url":"https://arxiv.org/abs/2603.16095","score":7.8,"status":"Candidate — equation-level comparison needed","mechanisms":"Log-periodic scaling in a confined many-body wave system; potentially distinctive if functional structure matches.","anchor":"Compare against WCT log-periodic claims only after chronology normalization"}
+  "interpretation": "This file records verified chronology cases and a small set of high-priority audit candidates. It does not assign probabilities of copying, influence, derivation, misconduct, or infringement.",
+  "promotedRule": "A candidate is promoted only after its WCT anchor and date, external manuscript chronology, and older prior art are normalized. Derivation requires separate provenance evidence.",
+  "verifiedCases": [
+    {"id":"P2","title":"Emergence of giant vortices under nonlinear rotation with attractive interactions in a toroidal condensate","url":"https://arxiv.org/abs/2607.19840","status":"date_checked","mechanisms":"Toroidal confinement; nonlinear feedback/rotation; quantized circulation; excitation spectra; multiply quantized-vortex stability.","anchor":"WCT-PFF-001 + WCT-MASS-001"},
+    {"id":"P3","title":"Quasiparticle modes across soliton transition with density-dependent gauge field in optical lattices","url":"https://arxiv.org/abs/2607.29309","status":"date_checked","mechanisms":"Field-dependent feedback; nonlinear localization; soliton transition; excitation-gap modification.","anchor":"WCT-SPEC-001"},
+    {"id":"P4","title":"Time-domain Stokes mechanism of pair-correlated k-gap solitons in nonlinear photonic time-crystal slabs","url":"https://arxiv.org/abs/2607.07340","status":"date_checked","mechanisms":"Finite-k amplification; nonlinear saturation/arrest; stabilized localized soliton states.","anchor":"WCT-PFF-001 + WCT-SPEC-001"},
+    {"id":"P5","title":"Self-Organized Stabilization of Straight Dark Solitons in Stripe Supersolids","url":"https://arxiv.org/abs/2606.25687","status":"date_checked","mechanisms":"Self-generated structure; stabilized localized soliton branch; hardened excitation spectrum.","anchor":"WCT-SPEC-001"},
+    {"id":"P6","title":"Quantum Geometry in the Continuum: Solitons in Shallow Lattices","url":"https://arxiv.org/abs/2606.25064","status":"date_checked","mechanisms":"Fourth-order dispersion/geometry; localization; soliton structure.","anchor":"WCT-SPEC-001"},
+    {"id":"P7","title":"Perfect soliton crystals in Kerr optical cavities with pure-quartic dispersion","url":"https://doi.org/10.1364/OL.603068","status":"date_checked","mechanisms":"Chaos-to-order transition; persistent soliton crystals; high-order dispersion and nonlinearity.","anchor":"WCT-SPEC-001"}
+  ],
+  "auditCandidates": [
+    {"title":"Persistent-current superpositions in toroidal BECs","url":"https://arxiv.org/abs/2601.21144","status":"chronology_prior_art_review","mechanisms":"Toroidal topology; persistent currents; winding-sector structure; quantized circulation.","anchor":"WCT-PFF-001 + WCT-MASS-001"},
+    {"title":"Synthetic Hall Torus with a spinor BEC","url":"https://arxiv.org/abs/2602.14549","status":"chronology_prior_art_review","mechanisms":"Toroidal topology; synthetic gauge structure; Hall-like response; topological states.","anchor":"WCT-PFF-001 + WCT-MASS-001"},
+    {"title":"Stable vortex clusters bifurcating from ring solitons","url":"https://arxiv.org/abs/2607.18858","status":"chronology_prior_art_review","mechanisms":"Ring-localized states; vortex bifurcation; non-radial organization; stability.","anchor":"WCT-SPEC-001 + WCT-MASS-001"},
+    {"title":"Josephson-frequency splitting in a toroidal superfluid","url":"https://arxiv.org/abs/2607.08345","status":"chronology_prior_art_review","mechanisms":"Toroidal superfluid; discrete frequency splitting; circulation/topology; spectral structure.","anchor":"WCT-PFF-001 + WCT-MASS-001"}
+  ],
+  "priorArtControls": [
+    "Localized Swift-Hohenberg states / homoclinic snaking",
+    "Toroidal BEC persistent currents",
+    "Pure-quartic solitons"
   ]
 }
