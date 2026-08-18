@@ -1,30 +1,389 @@
 {
-  "schemaVersion": "1.2",
+  "schemaVersion": "1.3",
   "updated": "2026-08-18",
   "title": "WCT External Literature Convergence Audit",
   "canonical": "https://rickyjreyes.github.io/priority/#convergence-title",
   "registry": "https://rickyjreyes.github.io/priority/",
+  "sourceOfTruth": "https://rickyjreyes.github.io/priority/priority.json",
   "fullLedger": "https://rickyjreyes.github.io/overlap/",
   "fullLedgerLabel": "WCT Post-Date Overlap Ledger",
   "interpretation": "This file records verified chronology cases and a small set of high-priority audit candidates. It does not assign probabilities of copying, influence, derivation, misconduct, or infringement.",
   "promotedRule": "A candidate is promoted only after its WCT anchor and date, external manuscript chronology, and older prior art are normalized. Derivation requires separate provenance evidence.",
+  "machineSemantics": {
+    "chronologyDoesNotEstablishInfluence": true,
+    "chronologyDoesNotEstablishDerivation": true,
+    "structuralOverlapDoesNotEstablishCopying": true,
+    "structuralOverlapDoesNotEstablishInfringement": true,
+    "authorGeneratedAuditIsNotIndependentValidation": true
+  },
+  "counts": {
+    "verifiedCases": 6,
+    "auditCandidates": 4,
+    "priorArtControls": 3
+  },
+  "statusVocabulary": {
+    "date_checked": "External chronology and WCT anchor dates were checked and the case was promoted to the verified subset.",
+    "chronology_prior_art_review": "Candidate remains under chronology normalization and/or older prior-art review.",
+    "unresolved": "No conclusion is asserted.",
+    "not_assessed": "This audit does not assess the field."
+  },
   "verifiedCases": [
-    {"id":"P2","title":"Emergence of giant vortices under nonlinear rotation with attractive interactions in a toroidal condensate","url":"https://arxiv.org/abs/2607.19840","status":"date_checked","mechanisms":"Toroidal confinement; nonlinear feedback/rotation; quantized circulation; excitation spectra; multiply quantized-vortex stability.","anchor":"WCT-PFF-001 + WCT-MASS-001"},
-    {"id":"P3","title":"Quasiparticle modes across soliton transition with density-dependent gauge field in optical lattices","url":"https://arxiv.org/abs/2607.29309","status":"date_checked","mechanisms":"Field-dependent feedback; nonlinear localization; soliton transition; excitation-gap modification.","anchor":"WCT-SPEC-001"},
-    {"id":"P4","title":"Time-domain Stokes mechanism of pair-correlated k-gap solitons in nonlinear photonic time-crystal slabs","url":"https://arxiv.org/abs/2607.07340","status":"date_checked","mechanisms":"Finite-k amplification; nonlinear saturation/arrest; stabilized localized soliton states.","anchor":"WCT-PFF-001 + WCT-SPEC-001"},
-    {"id":"P5","title":"Self-Organized Stabilization of Straight Dark Solitons in Stripe Supersolids","url":"https://arxiv.org/abs/2606.25687","status":"date_checked","mechanisms":"Self-generated structure; stabilized localized soliton branch; hardened excitation spectrum.","anchor":"WCT-SPEC-001"},
-    {"id":"P6","title":"Quantum Geometry in the Continuum: Solitons in Shallow Lattices","url":"https://arxiv.org/abs/2606.25064","status":"date_checked","mechanisms":"Fourth-order dispersion/geometry; localization; soliton structure.","anchor":"WCT-SPEC-001"},
-    {"id":"P7","title":"Perfect soliton crystals in Kerr optical cavities with pure-quartic dispersion","url":"https://doi.org/10.1364/OL.603068","status":"date_checked","mechanisms":"Chaos-to-order transition; persistent soliton crystals; high-order dispersion and nonlinearity.","anchor":"WCT-SPEC-001"}
+    {
+      "id": "P2",
+      "class": "B",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "reyes_disclosure_precedes",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-PFF-001",
+          "date": "2025-09-08",
+          "doi": "10.5281/zenodo.17578766",
+          "url": "https://doi.org/10.5281/zenodo.17578766"
+        },
+        {
+          "claimId": "WCT-MASS-001",
+          "date": "2025-10-27",
+          "doi": "10.5281/zenodo.17459463",
+          "url": "https://doi.org/10.5281/zenodo.17459463"
+        }
+      ],
+      "laterWork": {
+        "title": "Emergence of giant vortices under nonlinear rotation with attractive interactions in a toroidal condensate",
+        "manuscriptDate": "2026-07-22",
+        "url": "https://arxiv.org/abs/2607.19840"
+      },
+      "correspondence": [
+        "toroidal confinement",
+        "nonlinear feedback or rotation",
+        "quantized circulation",
+        "excitation spectra",
+        "multiply quantized-vortex stability"
+      ],
+      "verificationStatus": "date_checked",
+      "lastVerified": "2026-08-18"
+    },
+    {
+      "id": "P3",
+      "class": "B",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "reyes_disclosure_precedes",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-SPEC-001",
+          "date": "2025-09-16",
+          "doi": "10.5281/zenodo.17732648",
+          "url": "https://doi.org/10.5281/zenodo.17732648"
+        }
+      ],
+      "laterWork": {
+        "title": "Quasiparticle modes across soliton transition with density-dependent gauge field in optical lattices",
+        "manuscriptDate": "2026-07-31",
+        "url": "https://arxiv.org/abs/2607.29309"
+      },
+      "correspondence": [
+        "field-dependent feedback",
+        "nonlinear localization",
+        "soliton transition",
+        "excitation-gap modification",
+        "suppressed breathing response"
+      ],
+      "verificationStatus": "date_checked",
+      "lastVerified": "2026-08-18"
+    },
+    {
+      "id": "P4",
+      "class": "B",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "reyes_disclosure_precedes",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-PFF-001",
+          "date": "2025-09-08",
+          "doi": "10.5281/zenodo.17578766",
+          "url": "https://doi.org/10.5281/zenodo.17578766"
+        },
+        {
+          "claimId": "WCT-SPEC-001",
+          "date": "2025-09-16",
+          "doi": "10.5281/zenodo.17732648",
+          "url": "https://doi.org/10.5281/zenodo.17732648"
+        }
+      ],
+      "laterWork": {
+        "title": "Time-domain Stokes mechanism of pair-correlated k-gap solitons in nonlinear photonic time-crystal slabs",
+        "manuscriptDate": "2026-07-08",
+        "url": "https://arxiv.org/abs/2607.07340"
+      },
+      "correspondence": [
+        "finite-k amplification",
+        "nonlinear saturation or arrest",
+        "stabilized localized soliton states"
+      ],
+      "verificationStatus": "date_checked",
+      "lastVerified": "2026-08-18"
+    },
+    {
+      "id": "P5",
+      "class": "B",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "reyes_disclosure_precedes",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-SPEC-001",
+          "date": "2025-09-16",
+          "doi": "10.5281/zenodo.17732648",
+          "url": "https://doi.org/10.5281/zenodo.17732648"
+        }
+      ],
+      "laterWork": {
+        "title": "Self-Organized Stabilization of Straight Dark Solitons in Stripe Supersolids",
+        "manuscriptDate": "2026-06-24",
+        "url": "https://arxiv.org/abs/2606.25687"
+      },
+      "correspondence": [
+        "self-generated structure",
+        "stabilized localized soliton branch",
+        "hardened excitation spectrum"
+      ],
+      "verificationStatus": "date_checked",
+      "lastVerified": "2026-08-18"
+    },
+    {
+      "id": "P6",
+      "class": "B",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "reyes_disclosure_precedes",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-SPEC-001",
+          "date": "2025-09-16",
+          "doi": "10.5281/zenodo.17732648",
+          "url": "https://doi.org/10.5281/zenodo.17732648"
+        }
+      ],
+      "laterWork": {
+        "title": "Quantum Geometry in the Continuum: Solitons in Shallow Lattices",
+        "manuscriptDate": "2026-06-23",
+        "url": "https://arxiv.org/abs/2606.25064"
+      },
+      "correspondence": [
+        "fourth-order dispersion or geometry",
+        "localization",
+        "soliton structure"
+      ],
+      "verificationStatus": "date_checked",
+      "lastVerified": "2026-08-18"
+    },
+    {
+      "id": "P7",
+      "class": "B",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "reyes_disclosure_precedes",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-SPEC-001",
+          "date": "2025-09-16",
+          "doi": "10.5281/zenodo.17732648",
+          "url": "https://doi.org/10.5281/zenodo.17732648"
+        }
+      ],
+      "laterWork": {
+        "title": "Perfect soliton crystals in Kerr optical cavities with pure-quartic dispersion",
+        "manuscriptDate": "2026-04-22",
+        "publicationDate": "2026-07-13",
+        "doi": "10.1364/OL.603068",
+        "url": "https://doi.org/10.1364/OL.603068"
+      },
+      "correspondence": [
+        "chaos-to-order transition",
+        "persistent soliton crystals",
+        "high-order dispersion",
+        "nonlinearity"
+      ],
+      "verificationStatus": "date_checked",
+      "lastVerified": "2026-08-18"
+    }
   ],
   "auditCandidates": [
-    {"title":"Persistent-current superpositions in toroidal BECs","url":"https://arxiv.org/abs/2601.21144","status":"chronology_prior_art_review","mechanisms":"Toroidal topology; persistent currents; winding-sector structure; quantized circulation.","anchor":"WCT-PFF-001 + WCT-MASS-001"},
-    {"title":"Synthetic Hall Torus with a spinor BEC","url":"https://arxiv.org/abs/2602.14549","status":"chronology_prior_art_review","mechanisms":"Toroidal topology; synthetic gauge structure; Hall-like response; topological states.","anchor":"WCT-PFF-001 + WCT-MASS-001"},
-    {"title":"Stable vortex clusters bifurcating from ring solitons","url":"https://arxiv.org/abs/2607.18858","status":"chronology_prior_art_review","mechanisms":"Ring-localized states; vortex bifurcation; non-radial organization; stability.","anchor":"WCT-SPEC-001 + WCT-MASS-001"},
-    {"title":"Josephson-frequency splitting in a toroidal superfluid","url":"https://arxiv.org/abs/2607.08345","status":"chronology_prior_art_review","mechanisms":"Toroidal superfluid; discrete frequency splitting; circulation/topology; spectral structure.","anchor":"WCT-PFF-001 + WCT-MASS-001"}
+    {
+      "id": "A1",
+      "relationship": "candidate_structural_overlap",
+      "chronologyStatus": "chronology_prior_art_review",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-PFF-001",
+          "date": "2025-09-08",
+          "doi": "10.5281/zenodo.17578766",
+          "url": "https://doi.org/10.5281/zenodo.17578766"
+        },
+        {
+          "claimId": "WCT-MASS-001",
+          "date": "2025-10-27",
+          "doi": "10.5281/zenodo.17459463",
+          "url": "https://doi.org/10.5281/zenodo.17459463"
+        }
+      ],
+      "laterWork": {
+        "title": "Persistent-current superpositions in toroidal BECs",
+        "url": "https://arxiv.org/abs/2601.21144"
+      },
+      "correspondence": [
+        "toroidal topology",
+        "persistent currents",
+        "winding-sector structure",
+        "quantized circulation"
+      ],
+      "verificationStatus": "chronology_prior_art_review",
+      "lastVerified": "2026-08-18"
+    },
+    {
+      "id": "A2",
+      "relationship": "candidate_structural_overlap",
+      "chronologyStatus": "chronology_prior_art_review",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-PFF-001",
+          "date": "2025-09-08",
+          "doi": "10.5281/zenodo.17578766",
+          "url": "https://doi.org/10.5281/zenodo.17578766"
+        },
+        {
+          "claimId": "WCT-MASS-001",
+          "date": "2025-10-27",
+          "doi": "10.5281/zenodo.17459463",
+          "url": "https://doi.org/10.5281/zenodo.17459463"
+        }
+      ],
+      "laterWork": {
+        "title": "Synthetic Hall Torus with a spinor BEC",
+        "url": "https://arxiv.org/abs/2602.14549"
+      },
+      "correspondence": [
+        "toroidal topology",
+        "synthetic gauge structure",
+        "Hall-like response",
+        "topological states"
+      ],
+      "verificationStatus": "chronology_prior_art_review",
+      "lastVerified": "2026-08-18"
+    },
+    {
+      "id": "A3",
+      "relationship": "candidate_structural_overlap",
+      "chronologyStatus": "chronology_prior_art_review",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-SPEC-001",
+          "date": "2025-09-16",
+          "doi": "10.5281/zenodo.17732648",
+          "url": "https://doi.org/10.5281/zenodo.17732648"
+        },
+        {
+          "claimId": "WCT-MASS-001",
+          "date": "2025-10-27",
+          "doi": "10.5281/zenodo.17459463",
+          "url": "https://doi.org/10.5281/zenodo.17459463"
+        }
+      ],
+      "laterWork": {
+        "title": "Stable vortex clusters bifurcating from ring solitons",
+        "url": "https://arxiv.org/abs/2607.18858"
+      },
+      "correspondence": [
+        "ring-localized states",
+        "vortex bifurcation",
+        "non-radial organization",
+        "stability"
+      ],
+      "verificationStatus": "chronology_prior_art_review",
+      "lastVerified": "2026-08-18"
+    },
+    {
+      "id": "A4",
+      "relationship": "candidate_structural_overlap",
+      "chronologyStatus": "chronology_prior_art_review",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-PFF-001",
+          "date": "2025-09-08",
+          "doi": "10.5281/zenodo.17578766",
+          "url": "https://doi.org/10.5281/zenodo.17578766"
+        },
+        {
+          "claimId": "WCT-MASS-001",
+          "date": "2025-10-27",
+          "doi": "10.5281/zenodo.17459463",
+          "url": "https://doi.org/10.5281/zenodo.17459463"
+        }
+      ],
+      "laterWork": {
+        "title": "Josephson-frequency splitting in a toroidal superfluid",
+        "url": "https://arxiv.org/abs/2607.08345"
+      },
+      "correspondence": [
+        "toroidal superfluid",
+        "discrete frequency splitting",
+        "circulation and topology",
+        "spectral structure"
+      ],
+      "verificationStatus": "chronology_prior_art_review",
+      "lastVerified": "2026-08-18"
+    }
   ],
   "priorArtControls": [
-    "Localized Swift-Hohenberg states / homoclinic snaking",
-    "Toroidal BEC persistent currents",
-    "Pure-quartic solitons"
-  ]
+    {
+      "id": "PA-001",
+      "topic": "Localized Swift-Hohenberg states and homoclinic snaking",
+      "relationship": "pre_wct_prior_art",
+      "role": "Finite-wavenumber localization substantially predates WCT; WCT priority claims must concern narrower combinations or later-specific structures."
+    },
+    {
+      "id": "PA-002",
+      "topic": "Toroidal Bose-Einstein-condensate persistent currents",
+      "relationship": "pre_wct_prior_art",
+      "role": "Toroidal confinement, winding, and persistent circulation substantially predate WCT. WCT chronology claims concern narrower combinations or later-specific structures."
+    },
+    {
+      "id": "PA-003",
+      "topic": "Pure-quartic solitons",
+      "relationship": "pre_wct_prior_art",
+      "role": "Fourth-order-dispersion solitons were demonstrated before WCT, so later high-order-dispersion soliton work is convergence or context unless additional distinctive structure is present."
+    }
+  ],
+  "fieldNotes": {
+    "wctAnchors": "Canonical claim/date/DOI anchors drawn from the priority registry.",
+    "laterWork": "External work metadata. Manuscript and publication dates are kept separate when both are known.",
+    "correspondence": "Mechanistic or structural similarities under audit; this field is not evidence of copying or derivation.",
+    "lastVerified": "Date on which the public audit record was last reviewed."
+  }
 }
