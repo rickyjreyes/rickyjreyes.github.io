@@ -16,12 +16,16 @@
     .controls input,.controls select{min-height:44px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.03);color:var(--text)}
     .controls input{min-width:min(100%,420px);flex:1}
     .table-wrap{width:100%;overflow-x:auto;border-top:1px solid var(--line);margin-top:20px}
-    table{width:100%;border-collapse:collapse;min-width:980px}
+    table{width:100%;border-collapse:collapse;min-width:1520px}
     th,td{padding:15px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left;line-height:1.5}
     th{color:var(--muted-2);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
     td{font-size:.94rem}
     td.rank{width:58px;color:var(--muted-2);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-    td.score{width:130px;color:var(--accent);font-size:1.05rem;font-weight:800}
+    td.work{min-width:360px}
+    td.authors{min-width:300px;color:var(--muted)}
+    td.identifier{min-width:230px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+    td.identifier a{word-break:break-word}
+    td.score{width:160px;color:var(--accent);font-size:1.05rem;font-weight:800}
     .paper{font-weight:700;color:var(--text)}
     .source{display:block;margin-top:5px;color:var(--muted-2);font-size:.78rem}
     .pill{display:inline-flex;padding:4px 9px;border:1px solid rgba(103,212,255,.38);border-radius:999px;background:rgba(103,212,255,.06);font-size:.68rem;font-weight:800;white-space:nowrap}
