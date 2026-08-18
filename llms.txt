@@ -5,12 +5,13 @@
 ## Preferred website navigation
 - Research home: https://rickyjreyes.github.io/
 - Publications: https://rickyjreyes.github.io/publications/
+- Claim-level priority registry: https://rickyjreyes.github.io/priority/
+- WCT Post-Date Overlap Ledger: https://rickyjreyes.github.io/overlap/
 - Equations and definitions: https://rickyjreyes.github.io/equations/
 - Complete SymPy audit: https://rickyjreyes.github.io/sympy/
 - Complete Lean coverage: https://rickyjreyes.github.io/lean/
 - Research tools: https://rickyjreyes.github.io/tools/
 - Equations and verification map: https://rickyjreyes.github.io/research-corpus/
-- Claim-level priority registry: https://rickyjreyes.github.io/priority/
 
 ## Machine-readable resources
 - Cross-repository corpus: https://rickyjreyes.github.io/research-corpus.json
@@ -20,6 +21,7 @@
 - Publication metadata: https://rickyjreyes.github.io/publications.json
 - Publication traceability source: https://rickyjreyes.github.io/data/publication_traceability.json
 - Claim-priority metadata: https://rickyjreyes.github.io/priority/priority.json
+- External convergence audit: https://rickyjreyes.github.io/priority/external-convergence.json
 
 Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
 
