@@ -6,6 +6,7 @@ on:
     paths:
       - "data/publications.json"
       - "data/publication_traceability.json"
+      - "overlap/overlap-data-*.js"
       - "scripts/build_scholar_site.py"
       - "scripts/build_equation_explorer.py"
       - "scripts/patch_lean_definitions.py"
@@ -13,6 +14,7 @@ on:
       - "scripts/build_sympy_page.py"
       - "scripts/build_lean_page.py"
       - "scripts/build_research_corpus.py"
+      - "scripts/build_external_convergence.py"
       - "scripts/validate_registry_sync.py"
       - "scripts/enhance_verification_views.py"
       - "scripts/optimize_math_rendering.py"
@@ -24,6 +26,7 @@ on:
     paths:
       - "data/publications.json"
       - "data/publication_traceability.json"
+      - "overlap/overlap-data-*.js"
       - "scripts/build_scholar_site.py"
       - "scripts/build_equation_explorer.py"
       - "scripts/patch_lean_definitions.py"
@@ -31,6 +34,7 @@ on:
       - "scripts/build_sympy_page.py"
       - "scripts/build_lean_page.py"
       - "scripts/build_research_corpus.py"
+      - "scripts/build_external_convergence.py"
       - "scripts/validate_registry_sync.py"
       - "scripts/patch_site_navigation.py"
       - "scripts/patch_machine_metadata.py"
@@ -92,6 +96,9 @@ jobs:
       - name: Apply shared navigation, traceability, and discovery patches
         run: python scripts/patch_site_navigation.py
 
+      - name: Generate full machine-readable overlap ledger
+        run: python scripts/build_external_convergence.py
+
       - name: Connect publication, claim, and priority metadata
         run: python scripts/patch_machine_metadata.py
 
@@ -112,6 +119,8 @@ jobs:
             sympy/index.html
             lean/index.html
             data/publication_traceability.json
+            priority/external-convergence.json
+            overlap/index.html
             publications/*.html
 
       - name: Commit generated files
