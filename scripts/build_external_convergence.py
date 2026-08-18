@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://rickyjreyes.github.io/"
 OVERLAP_DIR = ROOT / "overlap"
 OUT_PATH = ROOT / "priority" / "external-convergence.json"
+OVERLAP_PAGE = OVERLAP_DIR / "index.html"
 
 
 def load_overlap_rows() -> list[list[Any]]:
@@ -24,8 +25,7 @@ def load_overlap_rows() -> list[list[Any]]:
         match = re.search(r"\.concat\((\[.*?\])\);", text, flags=re.S)
         if not match:
             raise RuntimeError(f"Could not parse overlap records from {path}")
-        chunk = json.loads(match.group(1))
-        rows.extend(chunk)
+        rows.extend(json.loads(match.group(1)))
 
     ranks = [int(row[0]) for row in rows]
     if len(ranks) != len(set(ranks)):
@@ -42,7 +42,7 @@ def load_existing() -> dict[str, Any]:
 
 
 def compact_external_chronology(later_work: dict[str, Any]) -> dict[str, Any]:
-    fields = {}
+    fields: dict[str, Any] = {}
     for key in ("manuscriptDate", "publicationDate", "date", "doi"):
         if later_work.get(key):
             fields[key] = later_work[key]
@@ -88,12 +88,34 @@ def build_record(row: list[Any], verified: dict[str, Any] | None, candidate: dic
         )
         if audit.get("lastVerified"):
             record["lastVerified"] = audit["lastVerified"]
-        later_work = audit.get("laterWork", {})
-        chronology = compact_external_chronology(later_work)
+        chronology = compact_external_chronology(audit.get("laterWork", {}))
         if chronology:
             record["externalChronology"] = chronology
 
     return record
+
+
+def patch_overlap_page(total: int, physics: int, ai: int, date_checked: int) -> None:
+    if not OVERLAP_PAGE.exists():
+        return
+    text = OVERLAP_PAGE.read_text(encoding="utf-8")
+
+    alternate = '<link rel="alternate" type="application/json" title="Full machine-readable overlap ledger" href="../priority/external-convergence.json">'
+    if alternate not in text:
+        author_link = '<link rel="author" href="https://orcid.org/0009-0005-5975-8718">'
+        if author_link in text:
+            text = text.replace(author_link, author_link + "\n  " + alternate, 1)
+        else:
+            text = text.replace("</head>", "  " + alternate + "\n</head>", 1)
+
+    stats = (
+        f'<div class="stats"><div><strong>{total}</strong><span>external comparison records</span></div>'
+        f'<div><strong>{physics}</strong><span>WCT / physics / photonics records</span></div>'
+        f'<div><strong>{ai}</strong><span>Recursive AI Drift / AI-system records</span></div>'
+        f'<div><strong>{date_checked}</strong><span>date-checked chronology cases</span></div></div>'
+    )
+    text = re.sub(r'<div class="stats">.*?</div></div>', stats, text, count=1, flags=re.S)
+    OVERLAP_PAGE.write_text(text, encoding="utf-8")
 
 
 def main() -> None:
@@ -188,6 +210,7 @@ def main() -> None:
     }
 
     OUT_PATH.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    patch_overlap_page(len(records), physics_count, ai_count, date_checked)
     print(
         f"Generated {OUT_PATH.relative_to(ROOT)} with {len(records)} records "
         f"({physics_count} physics, {ai_count} AI; {date_checked} date-checked, "
