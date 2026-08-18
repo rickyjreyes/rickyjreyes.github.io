@@ -17,6 +17,7 @@ on:
       - "scripts/enhance_verification_views.py"
       - "scripts/optimize_math_rendering.py"
       - "scripts/patch_site_navigation.py"
+      - "scripts/patch_machine_metadata.py"
       - "site-nav.js"
       - ".github/workflows/build-scholar-site.yml"
   pull_request:
@@ -32,6 +33,7 @@ on:
       - "scripts/build_research_corpus.py"
       - "scripts/validate_registry_sync.py"
       - "scripts/patch_site_navigation.py"
+      - "scripts/patch_machine_metadata.py"
       - ".github/workflows/build-scholar-site.yml"
   workflow_dispatch:
 
@@ -89,6 +91,9 @@ jobs:
 
       - name: Apply shared navigation, traceability, and discovery patches
         run: python scripts/patch_site_navigation.py
+
+      - name: Connect publication, claim, and priority metadata
+        run: python scripts/patch_machine_metadata.py
 
       - name: Validate cross-layer registry and publication traceability
         run: python scripts/validate_registry_sync.py
