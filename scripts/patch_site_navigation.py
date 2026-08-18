@@ -16,9 +16,13 @@ NAV_HTML = (
     '<nav id="site-nav" aria-label="Primary navigation">'
     '<a href="/">Home</a>'
     '<a href="/publications/">Publications</a>'
+    '<a href="/priority/">Priority</a>'
+    '<a href="/overlap/">Overlap</a>'
+    '<a href="/patents/">Patents</a>'
     '<a href="/equations/">Equations</a>'
     '<a href="/sympy/">SymPy</a>'
     '<a href="/lean/">Lean</a>'
+    '<a href="/reproduce/">Reproduce</a>'
     '<a href="/tools/">Tools</a>'
     '</nav>'
 )
@@ -178,6 +182,7 @@ def patch_sitemap() -> None:
         "lean/",
         "tools/",
         "priority/",
+        "overlap/",
         "research-corpus.json",
         "compiled-registry.json",
         "registry-validation-report.json",
@@ -211,12 +216,13 @@ def patch_llms() -> None:
 ## Preferred website navigation
 - Research home: {SITE}
 - Publications: {SITE}publications/
+- Claim-level priority registry: {SITE}priority/
+- WCT Post-Date Overlap Ledger: {SITE}overlap/
 - Equations and definitions: {SITE}equations/
 - Complete SymPy audit: {SITE}sympy/
 - Complete Lean coverage: {SITE}lean/
 - Research tools: {SITE}tools/
 - Equations and verification map: {SITE}research-corpus/
-- Claim-level priority registry: {SITE}priority/
 
 ## Machine-readable resources
 - Cross-repository corpus: {SITE}research-corpus.json
@@ -226,6 +232,7 @@ def patch_llms() -> None:
 - Publication metadata: {SITE}publications.json
 - Publication traceability source: {SITE}data/publication_traceability.json
 - Claim-priority metadata: {SITE}priority/priority.json
+- External convergence audit: {SITE}priority/external-convergence.json
 
 Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
 
