@@ -1,9 +1,11 @@
 {
-  "schemaVersion": "1.1",
-  "updated": "2026-08-10",
+  "schemaVersion": "1.2",
+  "updated": "2026-08-18",
   "title": "WCT External Literature Convergence Audit",
   "canonical": "https://rickyjreyes.github.io/priority/#convergence-title",
   "registry": "https://rickyjreyes.github.io/priority/",
+  "fullLedger": "https://rickyjreyes.github.io/overlap/",
+  "fullLedgerLabel": "WCT Post-Date Overlap Ledger",
   "interpretation": "This file records verified chronology cases and a small set of high-priority audit candidates. It does not assign probabilities of copying, influence, derivation, misconduct, or infringement.",
   "promotedRule": "A candidate is promoted only after its WCT anchor and date, external manuscript chronology, and older prior art are normalized. Derivation requires separate provenance evidence.",
   "verifiedCases": [
