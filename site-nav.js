@@ -15,6 +15,7 @@
     ['/', 'Home'],
     ['/publications/', 'Publications'],
     ['/priority/', 'Priority'],
+    ['/overlap/', 'Overlap'],
     ['/patents/', 'Patents'],
     ['/equations/', 'Equations'],
     ['/sympy/', 'SymPy'],
@@ -155,6 +156,13 @@
       priorityButton.textContent = 'View priority & convergence';
       heroActions.appendChild(priorityButton);
     }
+    if (heroActions && !heroActions.querySelector('a[href="/overlap/"]')) {
+      const overlapButton = document.createElement('a');
+      overlapButton.className = 'button secondary';
+      overlapButton.href = '/overlap/';
+      overlapButton.textContent = 'Post-date overlap ledger';
+      heroActions.appendChild(overlapButton);
+    }
     if (heroActions && !heroActions.querySelector('a[href="/patents/"]')) {
       const patentButton = document.createElement('a');
       patentButton.className = 'button secondary';
@@ -211,11 +219,28 @@
       link.textContent = 'Priority & convergence';
       footerResearch.appendChild(link);
     }
+    if (footerResearch && !footerResearch.querySelector('a[href="/overlap/"]')) {
+      const link = document.createElement('a');
+      link.href = '/overlap/';
+      link.textContent = 'Post-date overlap ledger';
+      footerResearch.appendChild(link);
+    }
     if (footerResearch && !footerResearch.querySelector('a[href="/patents/"]')) {
       const link = document.createElement('a');
       link.href = '/patents/';
       link.textContent = 'Patent applications';
       footerResearch.appendChild(link);
+    }
+  }
+
+  if (currentPath === '/priority/') {
+    const topLinks = document.querySelector('.toplinks');
+    if (topLinks && !topLinks.querySelector('a[href="/overlap/"]')) {
+      const link = document.createElement('a');
+      link.className = 'button secondary';
+      link.href = '/overlap/';
+      link.textContent = 'Post-Date Overlap Ledger';
+      topLinks.appendChild(link);
     }
   }
 
