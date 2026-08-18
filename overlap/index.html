@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <title>WCT Post-Date Overlap Ledger | Richard J. Reyes</title>
+  <meta name="description" content="Public ledger of external works published after Richard J. Reyes / WCT disclosures and ranked by post-date technical overlap.">
+  <meta name="author" content="Richard J. Reyes">
+  <meta name="robots" content="index,follow,max-snippet:-1">
+  <link rel="canonical" href="https://rickyjreyes.github.io/overlap/">
+  <link rel="author" href="https://orcid.org/0009-0005-5975-8718">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="overlap.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CollectionPage","name":"WCT Post-Date Overlap Ledger","url":"https://rickyjreyes.github.io/overlap/","dateModified":"2026-08-18","author":{"@type":"Person","name":"Richard J. Reyes","identifier":"https://orcid.org/0009-0005-5975-8718"},"about":["Wave Confinement Theory","post-date overlap","external literature","research chronology","Recursive AI Drift"]}
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
+  <main class="overlap-shell">
+    <header class="overlap-head">
+      <p class="eyebrow">Public chronology and technical convergence record</p>
+      <h1>WCT Post-Date Overlap Ledger</h1>
+      <p>This ledger records external papers, preprints, datasets, and experimental results identified after the corresponding Richard J. Reyes / Wave Confinement Theory research disclosures and ranks the degree of technical correspondence. The purpose is to preserve a public, timestamped record of later convergence around structures, mechanisms, and architectures already present in the Reyes research program.</p>
+      <div class="score-note"><strong>Post-Date Overlap Score.</strong>The 0–10 score ranks the density and specificity of technical overlap after date ordering: higher values indicate stronger multi-feature correspondence with earlier Reyes/WCT work. It is a comparison score, not a probability of influence, copying, derivation, misconduct, or infringement.</div>
+      <div class="anchor-note"><strong>Chronology anchors.</strong>The separate <a href="../priority/">Priority &amp; Provenance Registry</a> contains exact DOI-backed Reyes disclosure dates and the strongest date-normalized comparison cases. Rows marked <span class="pill">DATE-CHECKED</span> have already had the relevant WCT anchor date and external publication chronology normalized there.</div>
+      <div class="actions"><a class="button primary" href="../priority/">Priority &amp; Provenance</a><a class="button secondary" href="../publications/">Reyes publications</a><a class="button secondary" href="../priority/external-convergence.json">Convergence audit JSON</a><a class="button secondary" href="https://doi.org/10.5281/zenodo.15644222">The Geometry of Resonance</a><a class="button secondary" href="https://doi.org/10.5281/zenodo.17578766">Phase–Flux Field</a></div>
+      <div class="stats"><div><strong>95</strong><span>external comparison records</span></div><div><strong>83</strong><span>WCT / physics / photonics records</span></div><div><strong>12</strong><span>Recursive AI Drift / AI-system records</span></div><div><strong>6</strong><span>date-checked chronology cases</span></div></div>
+    </header>
+    <section class="section" aria-labelledby="physics-title">
+      <p class="eyebrow">Wave Confinement Theory</p><h2 id="physics-title">Physics, photonics, BEC, nonlinear-wave, plasma, and spectral overlap</h2>
+      <p class="lede">The list includes stable localized nonlinear modes, curvature- and dispersion-dependent operators, nonlinear eigenstates, dissipative solitons, Swift–Hohenberg pattern selection, toroidal spectral geometry, cavity persistence, BEC ring traps, photonic time crystals, plasma confinement, log-periodic spectra, and related wave-confinement mechanisms.</p>
+      <div class="controls"><input id="q-physics" type="search" placeholder="Filter WCT / physics records…" aria-label="Filter WCT physics overlap records"><select id="min-physics" aria-label="Minimum post-date overlap score"><option value="0">All scores</option><option value="9">9.0+</option><option value="8">8.0+</option><option value="7">7.0+</option><option value="6">6.0+</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>#</th><th>External work</th><th>Post-Date Overlap Score</th><th>Chronology status</th></tr></thead><tbody id="physics-body"></tbody></table></div>
+    </section>
+    <section class="section" aria-labelledby="ai-title">
+      <p class="eyebrow">Recursive AI Drift</p><h2 id="ai-title">AI-system post-date overlap</h2>
+      <p class="lede">This section tracks later work overlapping the Recursive AI Drift research line, including multi-agent degradation, evolving memory, problem drift, reward hacking, verifier gaming, emergent misalignment, and bounded-maintenance requirements.</p>
+      <div class="controls"><input id="q-ai" type="search" placeholder="Filter Recursive AI Drift records…" aria-label="Filter AI overlap records"><select id="min-ai" aria-label="Minimum AI post-date overlap score"><option value="0">All scores</option><option value="9">9.0+</option><option value="8">8.0+</option><option value="7">7.0+</option><option value="6">6.0+</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>#</th><th>External work</th><th>Post-Date Overlap Score</th><th>Chronology status</th></tr></thead><tbody id="ai-body"></tbody></table></div>
+    </section>
+    <p class="footer-note">Updated August 18, 2026. Direct DOI, arXiv, patent, or publisher links are used where available. Entries labeled “title search” use a Google Scholar title search where the working ledger did not contain a reliable unique identifier.</p>
+  </main>
+  <script src="overlap-data-1.js"></script>
+  <script src="overlap-data-2.js"></script>
+  <script src="overlap-data-3.js"></script>
+  <script>
+    const records=window.overlapRecords||[];
+    const dateChecked=new Set(["https://arxiv.org/abs/2606.25064","https://arxiv.org/abs/2606.25687","https://arxiv.org/abs/2607.07340","https://arxiv.org/abs/2607.19840","https://arxiv.org/abs/2607.29309","https://doi.org/10.1364/OL.603068"]);
+    const chronologyReview=new Set(["https://arxiv.org/abs/2601.21144","https://arxiv.org/abs/2602.14549","https://arxiv.org/abs/2607.08345","https://arxiv.org/abs/2607.18858"]);
+    const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    function status(url){
+      if(dateChecked.has(url)) return '<span class="pill">DATE-CHECKED</span>';
+      if(chronologyReview.has(url)) return '<span class="pill review">CHRONOLOGY REVIEW</span>';
+      return '<span class="pill ledger">LEDGER</span>';
+    }
+    function render(kind){
+      const q=document.getElementById('q-'+kind).value.trim().toLowerCase();
+      const min=Number(document.getElementById('min-'+kind).value);
+      const body=document.getElementById(kind+'-body');
+      body.innerHTML=records.filter(r=>r[4]===kind && r[3]>=min && (!q || r[1].toLowerCase().includes(q))).map(r=>`<tr><td class="rank">${r[0]}</td><td><a class="paper" href="${esc(r[2])}" target="_blank" rel="noopener noreferrer">${esc(r[1])}</a><span class="source">${esc(r[5])}</span></td><td class="score">${r[3].toFixed(1)}</td><td>${status(r[2])}</td></tr>`).join('');
+    }
+    ['physics','ai'].forEach(kind=>{document.getElementById('q-'+kind).addEventListener('input',()=>render(kind));document.getElementById('min-'+kind).addEventListener('change',()=>render(kind));render(kind);});
+  </script>
+  <script src="../site-nav.js" defer></script>
+</body>
+</html>
