@@ -1,8 +1,11 @@
 {
-  "schema_version": "1.0",
-  "last_reviewed": "2026-08-05",
+  "schema_version": "1.1",
+  "last_reviewed": "2026-08-18",
   "portfolio_owner": "Richard J. Reyes",
+  "orcid": "https://orcid.org/0009-0005-5975-8718",
   "public_page": "https://rickyjreyes.github.io/patents/",
+  "repository": "https://github.com/rickyjreyes/rickyjreyes.github.io",
+  "purpose": "Machine-readable public portfolio metadata for patent-family chronology, high-level technical context, related public research, and evidence boundaries.",
   "disclosure_boundary": {
     "public": [
       "high-level non-enabling summaries",
@@ -10,7 +13,10 @@
       "internal docket references",
       "related public papers",
       "related public repositories",
-      "evidence-status labels"
+      "evidence-status labels",
+      "high-level architecture descriptions",
+      "cross-family relationships",
+      "validation boundaries"
     ],
     "not_distributed": [
       "unpublished specifications",
@@ -19,10 +25,63 @@
       "secret state material",
       "tuning parameters",
       "unfiled improvements",
-      "filing forms containing personal information"
+      "filing forms containing personal information",
+      "non-public application numbers or correspondence",
+      "non-public prosecution strategy"
     ]
   },
-  "status_note": "Patent pending means an application has been filed and remains pending. It does not indicate allowance, validity, enforceability, examination outcome, or grant.",
+  "status_note": "Patent pending means an application has been filed and remains pending. It does not indicate allowance, validity, enforceability, examination outcome, patentability, claim scope, or grant.",
+  "evidence_vocabulary": {
+    "theory": [
+      "not_applicable",
+      "proposed",
+      "mathematically_supported",
+      "conditional",
+      "falsified"
+    ],
+    "simulation": [
+      "none",
+      "preliminary",
+      "reproduced_by_author",
+      "convergence_tested",
+      "independently_reproduced"
+    ],
+    "author_experiment": [
+      "none",
+      "preliminary",
+      "completed",
+      "replicated_by_author"
+    ],
+    "independent_replication": [
+      "none",
+      "partial",
+      "confirmed"
+    ],
+    "prototype": [
+      "none",
+      "concept",
+      "experimental",
+      "functional",
+      "production"
+    ],
+    "independent_review": [
+      "none",
+      "informal",
+      "peer_reviewed"
+    ],
+    "security_validation": [
+      "not_applicable",
+      "none",
+      "internal",
+      "independent_audit"
+    ],
+    "metrology_validation": [
+      "not_applicable",
+      "none",
+      "internal",
+      "independent"
+    ]
+  },
   "applications": [
     {
       "family_id": "wavelock",
@@ -30,11 +89,15 @@
       "docket": "REYES-WAVELOCK-2026-NP",
       "title": "Curvature-Regulated Wavefield Evolution, Protocol-Binding Commitments, and Drift Detection",
       "application_type": "U.S. nonprovisional application",
+      "jurisdiction": "US",
       "earliest_priority_date": "2025-06-18",
       "filing_date": "2026-06-07",
+      "status_as_of": "2026-08-18",
       "public_status": "patent pending",
       "official_publication": null,
+      "disclosure_level": "non-enabling public summary",
       "public_summary": "A computational architecture that evolves a discretized state under a curvature-regulated nonlinear process, derives reproducible commitments, records replay-verifiable ledger entries, and compares curvature-derived invariants to detect runtime drift.",
+      "problem_statement": "Provide a reproducible way to bind computational state and protocol context to verifiable outputs while detecting meaningful divergence from an expected evolution or invariant structure.",
       "public_scope": [
         "wavefield commitments",
         "protocol binding",
@@ -43,24 +106,84 @@
         "attestation",
         "runtime drift detection"
       ],
+      "technical_domains": [
+        "computational architecture",
+        "nonlinear dynamics",
+        "state commitments",
+        "runtime integrity",
+        "verification"
+      ],
+      "public_architecture": {
+        "inputs": "A discretized state together with protocol or execution context.",
+        "process": "Curvature-regulated nonlinear state evolution followed by deterministic derivation of public verification material.",
+        "outputs": "Reproducible commitments, ledger-compatible records, and curvature-derived comparison quantities.",
+        "verification_or_feedback": "Previously committed state or invariant information can be compared with later execution to identify drift, mismatch, or replay inconsistency."
+      },
+      "evidence_status": {
+        "theory": "proposed",
+        "simulation": "preliminary",
+        "author_experiment": "none",
+        "independent_replication": "none",
+        "prototype": "experimental",
+        "independent_review": "none",
+        "security_validation": "none",
+        "metrology_validation": "not_applicable"
+      },
+      "public_chronology": [
+        {
+          "date": "2025-06-18",
+          "event": "Earliest stated priority date for the family."
+        },
+        {
+          "date": "2026-06-07",
+          "event": "U.S. nonprovisional application filed."
+        }
+      ],
       "related_public_work": [
         {
           "title": "WaveLock repository",
           "url": "https://github.com/rickyjreyes/Wavelock",
+          "doi": null,
           "category": "public_code",
+          "relationship": "experimental public implementation and research prototype",
           "boundary": "Experimental research prototype; not represented as production cryptography."
         },
         {
           "title": "WaveLock: Curvature-Locked One-Way Function",
           "url": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-          "category": "theory_or_architecture_proposal"
+          "doi": null,
+          "category": "theory_or_architecture_proposal",
+          "relationship": "public theoretical and architectural context",
+          "boundary": "Public theory or architecture does not establish cryptographic security or patent claim scope."
         },
         {
           "title": "Recursive AI Drift Audit",
           "url": "https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html",
-          "category": "author_technical_note"
+          "doi": null,
+          "category": "author_technical_note",
+          "relationship": "public drift-detection motivation and evaluation context",
+          "boundary": "Author technical analysis is not independent validation of the patented architecture."
         }
-      ]
+      ],
+      "cross_family_relationships": [
+        {
+          "family_id": "persistent-wave-memory",
+          "relationship": "Shares bounded-state, persistence, and curvature-feedback research lineage.",
+          "legal_relationship": "No legal claim relationship is asserted by this metadata."
+        },
+        {
+          "family_id": "coherent-field-generator",
+          "relationship": "Shares curvature-regulated confinement and feedback concepts at a high architectural level.",
+          "legal_relationship": "No legal claim relationship is asserted by this metadata."
+        }
+      ],
+      "validation_boundaries": [
+        "A filed application is not evidence of allowance, validity, enforceability, or patentability.",
+        "The public WaveLock repository is an experimental research prototype and is not represented as production cryptography.",
+        "Author-developed theory, testing, or code is not independent security validation.",
+        "This record intentionally omits unpublished implementation details, claim language, secret state material, and tuning parameters."
+      ],
+      "last_reviewed": "2026-08-18"
     },
     {
       "family_id": "persistent-wave-memory",
@@ -68,11 +191,15 @@
       "docket": "REYES-MEM-2026-NP",
       "title": "Curvature-Feedback Persistent Wave Memory Device and Method of Operation",
       "application_type": "U.S. nonprovisional application",
+      "jurisdiction": "US",
       "earliest_priority_date": "2025-05-20",
       "filing_date": "2026-05-18",
+      "status_as_of": "2026-08-18",
       "public_status": "patent pending",
       "official_publication": null,
+      "disclosure_level": "non-enabling public summary",
       "public_summary": "A memory architecture in which information is written into a bounded medium as a localized wave-interference state, then read, refreshed, or reset through physical or computational interfaces.",
+      "problem_statement": "Explore whether persistent, bounded wave states can serve as addressable information-bearing states with write, read, refresh, and reset operations.",
       "public_scope": [
         "persistent wave-state storage",
         "spectral confinement",
@@ -81,24 +208,84 @@
         "physical cells and arrays",
         "software emulation"
       ],
+      "technical_domains": [
+        "memory architecture",
+        "wave interference",
+        "spectral confinement",
+        "nonlinear media",
+        "physical and computational state storage"
+      ],
+      "public_architecture": {
+        "inputs": "A controlled excitation or write operation applied to a bounded physical or computational medium.",
+        "process": "Formation and maintenance of a localized or spectrally confined wave-interference state.",
+        "outputs": "A persistent state that can be interrogated through an optical, acoustic, electrical, or computational interface.",
+        "verification_or_feedback": "Readout, refresh, and reset operations provide the public high-level control loop without exposing private tuning or device parameters."
+      },
+      "evidence_status": {
+        "theory": "proposed",
+        "simulation": "preliminary",
+        "author_experiment": "preliminary",
+        "independent_replication": "none",
+        "prototype": "concept",
+        "independent_review": "none",
+        "security_validation": "not_applicable",
+        "metrology_validation": "none"
+      },
+      "public_chronology": [
+        {
+          "date": "2025-05-20",
+          "event": "Earliest stated priority date for the family."
+        },
+        {
+          "date": "2026-05-18",
+          "event": "U.S. nonprovisional application filed."
+        }
+      ],
       "related_public_work": [
         {
-          "title": "Long-Lived Photon Resonance in Water Cavities",
+          "title": "Observation of Long-Lived Photon Resonance Confinement in Water Cavities",
           "url": "https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html",
+          "doi": "10.5281/zenodo.17206381",
           "category": "author_experiment",
+          "relationship": "public experimental context for persistence and relocking phenomena",
           "boundary": "Not independent replication of a memory device."
         },
         {
           "title": "The Geometry of Resonance",
           "url": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
-          "category": "theory_proposal"
+          "doi": "10.5281/zenodo.15644222",
+          "category": "theory_proposal",
+          "relationship": "foundational wave-confinement theory context",
+          "boundary": "Theory proposal is not empirical validation of a memory device."
         },
         {
           "title": "Geometry of Resonance repository",
           "url": "https://github.com/rickyjreyes/geometry_of_resonance",
-          "category": "public_research_archive"
+          "doi": null,
+          "category": "public_research_archive",
+          "relationship": "public computational and research lineage",
+          "boundary": "Repository contents do not by themselves establish device performance or patentability."
         }
-      ]
+      ],
+      "cross_family_relationships": [
+        {
+          "family_id": "coherent-field-generator",
+          "relationship": "Shares wave-state formation, confinement, feedback, and readout concepts at a high level.",
+          "legal_relationship": "No legal claim relationship is asserted by this metadata."
+        },
+        {
+          "family_id": "solid-state-frequency-reference",
+          "relationship": "Both investigate persistence and readout of resonant states in bounded physical media.",
+          "legal_relationship": "No legal claim relationship is asserted by this metadata."
+        }
+      ],
+      "validation_boundaries": [
+        "The cited water-cavity experiment is author-reported and is not independent replication of the proposed memory architecture.",
+        "A persistent resonance observation is not by itself evidence of a functional memory cell or array.",
+        "No independent device certification or commercial-readiness claim is made.",
+        "This record intentionally omits unpublished device dimensions, materials, tuning parameters, and claim language."
+      ],
+      "last_reviewed": "2026-08-18"
     },
     {
       "family_id": "solid-state-frequency-reference",
@@ -106,11 +293,15 @@
       "docket": "REYES-FREQ-2025",
       "title": "Solid-State Frequency Reference via Curvature-Locked Resonant Semiconductors",
       "application_type": "U.S. provisional application",
+      "jurisdiction": "US",
       "earliest_priority_date": "2025-12-18",
       "filing_date": "2025-12-18",
+      "status_as_of": "2026-08-18",
       "public_status": "application filed",
       "official_publication": null,
+      "disclosure_level": "non-enabling public summary",
       "public_summary": "A proposed solid-state frequency reference using optically programmed, persistent resonant states in semiconductor junction devices, with electrical readout and potential use in oscillator disciplining and synchronization.",
+      "problem_statement": "Investigate whether a reproducibly programmed resonant state in a semiconductor device can provide a stable electrical or spectral reference for frequency comparison or oscillator disciplining.",
       "public_scope": [
         "structured optical programming",
         "persistent semiconductor resonance",
@@ -118,19 +309,72 @@
         "frequency readout",
         "external oscillator integration"
       ],
+      "technical_domains": [
+        "frequency reference",
+        "semiconductor devices",
+        "optical programming",
+        "resonant states",
+        "oscillator synchronization"
+      ],
+      "public_architecture": {
+        "inputs": "Structured optical excitation applied to a semiconductor junction device.",
+        "process": "Programming or selection of a persistent resonant response in the device.",
+        "outputs": "Electrical or spectral signatures suitable for comparison with an external oscillator or measurement system.",
+        "verification_or_feedback": "Repeated readout and comparison can test persistence, repeatability, drift, and harmonic structure without disclosing private device-tuning details."
+      },
+      "evidence_status": {
+        "theory": "proposed",
+        "simulation": "none",
+        "author_experiment": "preliminary",
+        "independent_replication": "none",
+        "prototype": "experimental",
+        "independent_review": "none",
+        "security_validation": "not_applicable",
+        "metrology_validation": "none"
+      },
+      "public_chronology": [
+        {
+          "date": "2025-12-18",
+          "event": "Earliest stated priority date and U.S. provisional filing date."
+        }
+      ],
       "related_public_work": [
         {
           "title": "Photodiode repository",
           "url": "https://github.com/rickyjreyes/photodiode",
+          "doi": null,
           "category": "author_data_and_analysis",
+          "relationship": "public experimental data and analysis context",
           "boundary": "Not independent metrology certification or a commercial frequency standard."
         },
         {
           "title": "Photodiode Prediction Protocol Ledger",
           "url": "https://rickyjreyes.github.io/publications/photodiode-prediction-protocol-ledger.html",
-          "category": "author_prediction_ledger"
+          "doi": null,
+          "category": "author_prediction_ledger",
+          "relationship": "public chronology and prediction-record context",
+          "boundary": "A prediction ledger records chronology; it does not establish measurement accuracy or independent validation."
         }
-      ]
+      ],
+      "cross_family_relationships": [
+        {
+          "family_id": "persistent-wave-memory",
+          "relationship": "Both investigate persistent resonant states, programming, and readout in bounded media.",
+          "legal_relationship": "No legal claim relationship is asserted by this metadata."
+        },
+        {
+          "family_id": "coherent-field-generator",
+          "relationship": "Both use structured excitation and resonant-state stabilization at a high architectural level.",
+          "legal_relationship": "No legal claim relationship is asserted by this metadata."
+        }
+      ],
+      "validation_boundaries": [
+        "Author data and analysis are not independent metrology certification.",
+        "No claim of traceability to a national measurement standard is made.",
+        "No commercial frequency-standard performance is asserted.",
+        "This record intentionally omits unpublished device recipes, tuning values, fabrication details, and claim language."
+      ],
+      "last_reviewed": "2026-08-18"
     },
     {
       "family_id": "coherent-field-generator",
@@ -138,11 +382,15 @@
       "docket": "REYES-CPG-2026",
       "title": "Coherent Particle Field Generator via Curvature-Locked Wave Confinement",
       "application_type": "Updated U.S. provisional application",
+      "jurisdiction": "US",
       "earliest_priority_date": "2025-05-21",
       "filing_date": "2026-05-13",
+      "status_as_of": "2026-08-18",
       "public_status": "application filed",
       "official_publication": null,
+      "disclosure_level": "non-enabling public summary",
       "public_summary": "A physical wave-engineering architecture combining a nonlinear medium, structured multi-channel excitation, curvature-controlled confinement geometry, detector feedback, and harmonic stabilization to form geometry-pinned standing-wave configurations.",
+      "problem_statement": "Investigate whether structured excitation, bounded geometry, nonlinear response, and detector feedback can produce and maintain stable geometry-pinned standing-wave configurations.",
       "public_scope": [
         "nonlinear wave media",
         "structured excitation",
@@ -151,31 +399,99 @@
         "closed-loop relocking",
         "spectral or spatial readout"
       ],
+      "technical_domains": [
+        "wave engineering",
+        "nonlinear media",
+        "feedback control",
+        "resonant confinement",
+        "spectral stabilization"
+      ],
+      "public_architecture": {
+        "inputs": "Structured multi-channel excitation applied to a bounded nonlinear medium.",
+        "process": "Confinement geometry and nonlinear response select or stabilize standing-wave configurations.",
+        "outputs": "Spectral or spatial signatures associated with the resulting confined configuration.",
+        "verification_or_feedback": "Detector feedback can support relocking or stabilization while public metadata omits private control gains, tuning parameters, and device-specific implementation details."
+      },
+      "evidence_status": {
+        "theory": "proposed",
+        "simulation": "preliminary",
+        "author_experiment": "preliminary",
+        "independent_replication": "none",
+        "prototype": "concept",
+        "independent_review": "none",
+        "security_validation": "not_applicable",
+        "metrology_validation": "none"
+      },
+      "public_chronology": [
+        {
+          "date": "2025-05-21",
+          "event": "Earliest stated priority date for the family."
+        },
+        {
+          "date": "2026-05-13",
+          "event": "Updated U.S. provisional application filed."
+        }
+      ],
       "related_public_work": [
         {
-          "title": "Long-Lived Photon Resonance in Water Cavities",
+          "title": "Observation of Long-Lived Photon Resonance Confinement in Water Cavities",
           "url": "https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html",
-          "category": "author_experiment"
+          "doi": "10.5281/zenodo.17206381",
+          "category": "author_experiment",
+          "relationship": "public experimental context for persistence, perturbation, and relocking",
+          "boundary": "Author experiment; not independent validation of the claimed architecture."
         },
         {
           "title": "The Geometry of Resonance",
           "url": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
-          "category": "theory_proposal"
+          "doi": "10.5281/zenodo.15644222",
+          "category": "theory_proposal",
+          "relationship": "foundational theoretical context",
+          "boundary": "Theory proposal is not empirical validation."
         },
         {
           "title": "Geometry of Resonance repository",
           "url": "https://github.com/rickyjreyes/geometry_of_resonance",
+          "doi": null,
           "category": "public_research_archive",
+          "relationship": "public computational and research lineage",
           "boundary": "Public architecture concepts are not labeled as independently validated hardware."
         }
-      ]
+      ],
+      "cross_family_relationships": [
+        {
+          "family_id": "persistent-wave-memory",
+          "relationship": "Shares confined-wave-state formation, persistence, feedback, and readout concepts.",
+          "legal_relationship": "No legal claim relationship is asserted by this metadata."
+        },
+        {
+          "family_id": "solid-state-frequency-reference",
+          "relationship": "Shares structured excitation, resonant-state formation, and stabilization concepts at a high level.",
+          "legal_relationship": "No legal claim relationship is asserted by this metadata."
+        },
+        {
+          "family_id": "wavelock",
+          "relationship": "Shares curvature-regulated evolution and bounded-state concepts while addressing a different computational use case.",
+          "legal_relationship": "No legal claim relationship is asserted by this metadata."
+        }
+      ],
+      "validation_boundaries": [
+        "Related author experiments are not independent validation of the proposed generator architecture.",
+        "Public theory and simulation do not establish a realized particle-generation device.",
+        "No commercial hardware-readiness or independent performance certification claim is made.",
+        "This record intentionally omits unpublished geometry, tuning parameters, control settings, construction details, and claim language."
+      ],
+      "last_reviewed": "2026-08-18"
     }
   ],
   "interpretation_rules": [
-    "A related paper or repository documents public chronology and technical context; it does not establish patentability, claim scope, enablement, validity, or grant.",
+    "A related paper or repository documents public chronology and technical context; it does not establish patentability, claim scope, enablement, validity, enforceability, examination outcome, or grant.",
     "Author experiments are not independent replication.",
     "Public code is not automatically proof of security, correctness, commercial readiness, or physical validation.",
     "A theory proposal is not empirical validation.",
-    "An architecture concept may remain unbuilt or partially implemented."
+    "An architecture concept may remain unbuilt or partially implemented.",
+    "Cross-family relationships describe research lineage only unless an official filing explicitly establishes a legal relationship.",
+    "Null official-publication fields mean no official publication is identified in this public metadata record; they are not a statement about confidential prosecution records.",
+    "Evidence-status labels are descriptive archive metadata, not legal conclusions or third-party endorsements."
   ]
 }
