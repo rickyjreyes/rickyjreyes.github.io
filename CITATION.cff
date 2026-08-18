@@ -1,15 +1,38 @@
 cff-version: 1.2.0
 message: "Please cite the specific Zenodo release used. The complete publication list is available in publications.bib and publications.ris."
 title: "Richard J. Reyes Research Archive"
-type: website
+type: dataset
+abstract: >-
+  Canonical public research archive for Richard J. Reyes, containing citation
+  metadata and public research records spanning Wave Confinement Theory,
+  resonance and nonlinear-wave research, computational physics, WaveLock,
+  persistent wave memory, and recursive AI drift. Individual research outputs
+  should be cited using the specific Zenodo release used rather than the archive
+  landing page alone.
 authors:
+  - family-names: Reyes
+    given-names: "Richard J."
+    orcid: "https://orcid.org/0009-0005-5975-8718"
+contact:
   - family-names: Reyes
     given-names: "Richard J."
     orcid: "https://orcid.org/0009-0005-5975-8718"
 url: "https://rickyjreyes.github.io/"
 repository-code: "https://github.com/rickyjreyes/rickyjreyes.github.io"
-date-released: 2026-06-24
+date-released: "2026-06-24"
 license: CC-BY-4.0
+keywords:
+  - wave confinement theory
+  - nonlinear wave dynamics
+  - resonance
+  - wave localization
+  - curvature
+  - spectral confinement
+  - computational physics
+  - WaveLock
+  - persistent wave memory
+  - recursive AI drift
+  - AI stability
 preferred-citation:
   type: article
   title: "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime"
@@ -18,4 +41,67 @@ preferred-citation:
       given-names: "Richard J."
       orcid: "https://orcid.org/0009-0005-5975-8718"
   year: 2025
+  publisher:
+    name: Zenodo
   doi: "10.5281/zenodo.15644222"
+references:
+  - type: article
+    title: "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime"
+    authors:
+      - family-names: Reyes
+        given-names: "Richard J."
+        orcid: "https://orcid.org/0009-0005-5975-8718"
+    year: 2025
+    publisher:
+      name: Zenodo
+    doi: "10.5281/zenodo.15644222"
+  - type: article
+    title: "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum"
+    authors:
+      - family-names: Reyes
+        given-names: "Richard J."
+        orcid: "https://orcid.org/0009-0005-5975-8718"
+    year: 2025
+    publisher:
+      name: Zenodo
+    doi: "10.5281/zenodo.17578766"
+  - type: article
+    title: "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory"
+    authors:
+      - family-names: Reyes
+        given-names: "Richard J."
+        orcid: "https://orcid.org/0009-0005-5975-8718"
+    year: 2025
+    publisher:
+      name: Zenodo
+    doi: "10.5281/zenodo.17081283"
+  - type: article
+    title: "Observation of Long-Lived Photon Resonance Confinement in Water Cavities"
+    authors:
+      - family-names: Reyes
+        given-names: "Richard J."
+        orcid: "https://orcid.org/0009-0005-5975-8718"
+    year: 2025
+    publisher:
+      name: Zenodo
+    doi: "10.5281/zenodo.17206381"
+  - type: article
+    title: "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence"
+    authors:
+      - family-names: Reyes
+        given-names: "Richard J."
+        orcid: "https://orcid.org/0009-0005-5975-8718"
+    year: 2025
+    publisher:
+      name: Zenodo
+    doi: "10.5281/zenodo.17732661"
+  - type: article
+    title: "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy"
+    authors:
+      - family-names: Reyes
+        given-names: "Richard J."
+        orcid: "https://orcid.org/0009-0005-5975-8718"
+    year: 2025
+    publisher:
+      name: Zenodo
+    doi: "10.5281/zenodo.17459463"
