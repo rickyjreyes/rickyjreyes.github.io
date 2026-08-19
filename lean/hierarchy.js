@@ -93,7 +93,6 @@
     .lean-inventory-summary strong{display:block;font-size:.94rem}
     .lean-inventory-summary small{display:block;margin-top:4px;color:var(--muted-2);font-size:.72rem;font-weight:500}
     .lean-inventory-action{color:var(--accent);font-size:.76rem;font-weight:750}
-    .lean-inventory[open]>.lean-inventory-action{transform:rotate(180deg)}
     .lean-inventory-content{padding:0 12px 12px}
     .lean-filter-context{display:none;align-items:center;justify-content:space-between;gap:16px;margin:0 0 12px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(103,212,255,.045)}
     .lean-filter-context.is-active{display:flex}
@@ -173,11 +172,21 @@
     document.querySelectorAll('[data-lean-category]').forEach((card) => card.setAttribute('aria-pressed', 'false'));
     context?.classList.remove('is-active');
     const search = document.getElementById('lean-search');
-    const activeStateButton = document.querySelector('[data-filter][aria-pressed="true"]');
     if (search) search.dispatchEvent(new Event('input', { bubbles: true }));
-    else if (activeStateButton) activeStateButton.click();
     else rows.forEach((row) => { row.hidden = false; });
     if (keepOpen) inventory.open = true;
+  };
+
+  const resetAllFilters = () => {
+    activeCategory = null;
+    document.querySelectorAll('[data-lean-category]').forEach((card) => card.setAttribute('aria-pressed', 'false'));
+    context?.classList.remove('is-active');
+    const search = document.getElementById('lean-search');
+    if (search) search.value = '';
+    const allButton = document.querySelector('[data-filter=""]');
+    if (allButton) allButton.click();
+    else rows.forEach((row) => { row.hidden = false; });
+    inventory.open = true;
   };
 
   const openCategory = (category) => {
@@ -199,7 +208,7 @@
   });
 
   document.getElementById('lean-browse-all')?.addEventListener('click', () => {
-    clearCategory({ keepOpen: true });
+    resetAllFilters();
     requestAnimationFrame(() => inventory.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   });
   document.getElementById('lean-filter-clear')?.addEventListener('click', () => clearCategory({ keepOpen: true }));
