@@ -171,15 +171,36 @@
     });
   };
 
+  const mobileNav = window.matchMedia('(max-width: 760px)');
+
   nav.querySelectorAll('.nav-trigger').forEach((trigger) => {
+    const group = trigger.closest('.nav-group');
+
     trigger.addEventListener('click', (event) => {
+      if (!mobileNav.matches) {
+        closeDropdowns();
+        if (event.detail > 0) trigger.blur();
+        return;
+      }
+
       event.stopPropagation();
-      const group = trigger.closest('.nav-group');
       const willOpen = !group.classList.contains('open');
       closeDropdowns(group);
       group.classList.toggle('open', willOpen);
       trigger.setAttribute('aria-expanded', String(willOpen));
     });
+
+    group.addEventListener('mouseenter', () => {
+      if (!mobileNav.matches) trigger.setAttribute('aria-expanded', 'true');
+    });
+
+    group.addEventListener('mouseleave', () => {
+      if (!mobileNav.matches) trigger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  mobileNav.addEventListener?.('change', (event) => {
+    if (!event.matches) closeDropdowns();
   });
 
   const legacyMenuController = [...document.scripts].some((script) => /(^|\/)script\.js$/.test(script.getAttribute('src') || ''));
