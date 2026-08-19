@@ -13,17 +13,13 @@
   const currentPath = normalizePath(window.location.pathname);
   const isActivePath = (href) => {
     const target = normalizePath(href);
-    return target === '/'
-      ? currentPath === '/'
-      : currentPath === target || currentPath.startsWith(target);
+    return target === '/' ? currentPath === '/' : currentPath === target || currentPath.startsWith(target);
   };
 
   const navItems = [
     { type: 'link', href: '/', label: 'Home' },
     {
-      type: 'menu',
-      label: 'Research',
-      items: [
+      type: 'menu', label: 'Research', items: [
         ['/research-corpus/', 'Research Corpus', 'Structured map of the research program'],
         ['/equations/', 'Equations', 'Canonical equation and claim registry'],
         ['/tools/', 'Tools', 'Interactive concepts, timeline, and graph']
@@ -31,18 +27,14 @@
     },
     { type: 'link', href: '/publications/', label: 'Publications' },
     {
-      type: 'menu',
-      label: 'Verify',
-      items: [
+      type: 'menu', label: 'Verify', items: [
         ['/sympy/', 'SymPy Audit', 'Executable symbolic checks'],
         ['/lean/', 'Lean Coverage', 'Formal definitions and proof coverage'],
         ['/reproduce/', 'Reproduce', 'Pinned code, artifacts, and hashes']
       ]
     },
     {
-      type: 'menu',
-      label: 'Priority',
-      items: [
+      type: 'menu', label: 'Priority', items: [
         ['/priority/', 'Priority Registry', 'Dated disclosures and provenance'],
         ['/overlap/', 'Overlap Ledger', 'Post-date technical comparisons']
       ]
@@ -101,14 +93,12 @@
       #site-nav .nav-trigger:hover .nav-caret,#site-nav .nav-trigger:focus-visible .nav-caret{color:var(--accent,#67d4ff)}
       #site-nav>a.is-active,#site-nav>a[aria-current="page"],#site-nav .nav-group.is-active>.nav-trigger{color:var(--text,#e9f0f6)}
       #site-nav>a.is-active::after,#site-nav>a[aria-current="page"]::after,#site-nav .nav-group.is-active>.nav-trigger::after{position:absolute;right:0;bottom:3px;left:0;height:1px;content:"";background:rgba(103,212,255,.82);box-shadow:none}
-
       @media(min-width:761px){
         #site-nav .nav-dropdown{position:absolute;top:100%;left:0;z-index:120;display:none;min-width:272px;padding-top:9px;transform:none}
         #site-nav .nav-dropdown-shell{padding:7px;border:1px solid rgba(170,201,225,.18);border-radius:10px;background:rgba(5,12,21,.995);box-shadow:0 22px 64px rgba(0,0,0,.34)}
         #site-nav .nav-group:hover>.nav-dropdown,#site-nav .nav-group.hover-open>.nav-dropdown,#site-nav .nav-group:focus-within>.nav-dropdown{display:block}
         #site-nav .nav-group:hover>.nav-trigger .nav-caret,#site-nav .nav-group.hover-open>.nav-trigger .nav-caret,#site-nav .nav-group:focus-within>.nav-trigger .nav-caret{transform:rotate(180deg);color:var(--accent,#67d4ff)}
       }
-
       #site-nav .nav-dropdown-link{display:block;padding:10px 11px;border-radius:7px;color:var(--text,#e9f0f6);text-decoration:none;white-space:normal;transition:background 100ms ease}
       #site-nav .nav-dropdown-link:hover,#site-nav .nav-dropdown-link:focus-visible,#site-nav .nav-dropdown-link.is-active{color:var(--text,#e9f0f6);background:rgba(103,212,255,.075)}
       #site-nav .nav-dropdown-link.is-active{box-shadow:inset 2px 0 0 rgba(103,212,255,.72)}
@@ -211,33 +201,27 @@
   };
 
   const mobileNav = window.matchMedia('(max-width: 760px)');
-
   nav.querySelectorAll('.nav-trigger').forEach((trigger) => {
     const group = trigger.closest('.nav-group');
-
     group.addEventListener('mouseenter', () => {
       if (mobileNav.matches) return;
       group.classList.add('hover-open');
       trigger.setAttribute('aria-expanded', 'true');
     });
-
     group.addEventListener('mouseleave', () => {
       if (mobileNav.matches) return;
       group.classList.remove('hover-open');
       trigger.setAttribute('aria-expanded', 'false');
     });
-
     group.addEventListener('focusin', () => {
       if (!mobileNav.matches) trigger.setAttribute('aria-expanded', 'true');
     });
-
     group.addEventListener('focusout', () => {
       if (mobileNav.matches) return;
       requestAnimationFrame(() => {
         if (!group.contains(document.activeElement)) trigger.setAttribute('aria-expanded', 'false');
       });
     });
-
     trigger.addEventListener('click', (event) => {
       if (!mobileNav.matches) {
         if (event.detail > 0) trigger.blur();
@@ -266,8 +250,7 @@
   }
 
   nav.addEventListener('click', (event) => {
-    const selected = event.target.closest('a');
-    if (!selected) return;
+    if (!event.target.closest('a')) return;
     closeDropdowns();
     nav.classList.remove('open');
     menu?.setAttribute('aria-expanded', 'false');
@@ -289,6 +272,14 @@
     menu?.setAttribute('aria-expanded', 'false');
   });
 
+  if (currentPath === '/lean/' && !document.getElementById('lean-hierarchy-loader')) {
+    const script = document.createElement('script');
+    script.id = 'lean-hierarchy-loader';
+    script.src = '/lean/hierarchy.js?v=20260819a';
+    script.async = false;
+    document.body.appendChild(script);
+  }
+
   if (currentPath === '/') {
     const heroActions = document.querySelector('.hero-actions');
     if (heroActions) {
@@ -302,26 +293,10 @@
     if (identityLinks) {
       identityLinks.classList.add('profile-links');
       identityLinks.innerHTML = `
-        <a class="profile-link-card" data-brand="github" href="https://github.com/rickyjreyes" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on GitHub (opens in a new tab)">
-          <span class="profile-icon" aria-hidden="true">GH</span>
-          <span class="profile-copy"><strong>GitHub</strong><span>github.com/rickyjreyes</span></span>
-          <span class="profile-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="profile-link-card" data-brand="linkedin" href="https://www.linkedin.com/in/rickyjreyes/" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on LinkedIn (opens in a new tab)">
-          <span class="profile-icon" aria-hidden="true">in</span>
-          <span class="profile-copy"><strong>LinkedIn</strong><span>linkedin.com/in/rickyjreyes</span></span>
-          <span class="profile-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="profile-link-card" data-brand="zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Reyes%2C+Richard+J.%22" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes publications on Zenodo (opens in a new tab)">
-          <span class="profile-icon" aria-hidden="true">Z</span>
-          <span class="profile-copy"><strong>Zenodo</strong><span>DOI publication archive</span></span>
-          <span class="profile-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="profile-link-card" data-brand="orcid" href="https://orcid.org/0009-0005-5975-8718" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes ORCID record (opens in a new tab)">
-          <span class="profile-icon" aria-hidden="true">iD</span>
-          <span class="profile-copy"><strong>ORCID</strong><span>0009-0005-5975-8718</span></span>
-          <span class="profile-arrow" aria-hidden="true">↗</span>
-        </a>`;
+        <a class="profile-link-card" data-brand="github" href="https://github.com/rickyjreyes" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on GitHub (opens in a new tab)"><span class="profile-icon" aria-hidden="true">GH</span><span class="profile-copy"><strong>GitHub</strong><span>github.com/rickyjreyes</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
+        <a class="profile-link-card" data-brand="linkedin" href="https://www.linkedin.com/in/rickyjreyes/" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on LinkedIn (opens in a new tab)"><span class="profile-icon" aria-hidden="true">in</span><span class="profile-copy"><strong>LinkedIn</strong><span>linkedin.com/in/rickyjreyes</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
+        <a class="profile-link-card" data-brand="zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Reyes%2C+Richard+J.%22" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes publications on Zenodo (opens in a new tab)"><span class="profile-icon" aria-hidden="true">Z</span><span class="profile-copy"><strong>Zenodo</strong><span>DOI publication archive</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
+        <a class="profile-link-card" data-brand="orcid" href="https://orcid.org/0009-0005-5975-8718" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes ORCID record (opens in a new tab)"><span class="profile-icon" aria-hidden="true">iD</span><span class="profile-copy"><strong>ORCID</strong><span>0009-0005-5975-8718</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>`;
     }
 
     const orientationCards = [...document.querySelectorAll('.orientation-grid li')];
@@ -349,15 +324,7 @@
       const callout = document.createElement('section');
       callout.className = 'frozen-release-callout';
       callout.setAttribute('aria-label', 'Frozen reproducible release');
-      callout.innerHTML = `
-        <div class="section-shell frozen-release-inner">
-          <span class="frozen-release-dot" aria-hidden="true"></span>
-          <div class="frozen-release-copy">
-            <strong>WCT-2026.2 is frozen and reproducible.</strong>
-            <span>Exact commits, Lean, SymPy, registry, simulation, figure regeneration, Docker, Nix, and expected hashes.</span>
-          </div>
-          <a class="frozen-release-link" href="/reproduce/">Run it →</a>
-        </div>`;
+      callout.innerHTML = `<div class="section-shell frozen-release-inner"><span class="frozen-release-dot" aria-hidden="true"></span><div class="frozen-release-copy"><strong>WCT-2026.2 is frozen and reproducible.</strong><span>Exact commits, Lean, SymPy, registry, simulation, figure regeneration, Docker, Nix, and expected hashes.</span></div><a class="frozen-release-link" href="/reproduce/">Run it →</a></div>`;
       hero.insertAdjacentElement('afterend', callout);
     }
 
@@ -368,10 +335,7 @@
       section.setAttribute('aria-labelledby', 'patent-home-title');
       section.innerHTML = `
         <div class="section-shell">
-          <div class="patent-home-heading">
-            <div><p class="eyebrow">Inventions and intellectual property</p><h2 id="patent-home-title">Four filed technology families.</h2></div>
-            <p>Public, non-enabling summaries connect the filing chronology to related papers, repositories, experiments, and evidence-status labels without publishing confidential application material.</p>
-          </div>
+          <div class="patent-home-heading"><div><p class="eyebrow">Inventions and intellectual property</p><h2 id="patent-home-title">Four filed technology families.</h2></div><p>Public, non-enabling summaries connect the filing chronology to related papers, repositories, experiments, and evidence-status labels without publishing confidential application material.</p></div>
           <div class="patent-home-grid" aria-label="Filed technology families">
             <article class="patent-home-card"><div class="patent-home-brand"><span>Patent pending</span><img class="wavelock-card-logo" src="/assets/Wavelock_transparent.png" alt="WaveLock wave-shaped logo" loading="lazy" decoding="async"></div><h3>WaveLock and drift detection</h3><p>Curvature-regulated commitments, replay verification, protocol binding, attestation, and runtime drift analysis.</p></article>
             <article class="patent-home-card"><span>Patent pending</span><h3>Persistent wave memory</h3><p>Wave-state storage, spectral confinement, readout, reset control, physical cells, arrays, and software emulation.</p></article>
@@ -428,7 +392,6 @@
       logo.decoding = 'async';
       waveLockCard.querySelector('h2')?.insertAdjacentElement('beforebegin', logo);
     }
-
     const generatorCard = patentCards[3];
     if (generatorCard && !generatorCard.querySelector('.patent-experiment-image')) {
       const experiment = document.createElement('img');
