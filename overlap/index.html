@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#07111f">
   <title>WCT Post-Date Overlap Ledger | Richard J. Reyes</title>
-  <meta name="description" content="Public ledger of external works published after Richard J. Reyes / WCT disclosures and ranked by post-date technical overlap, with source-normalized titles, authors, DOI or permanent identifiers, and chronology status.">
+  <meta name="description" content="Public chronology audit showing date-checked WCT comparison cases first, with the complete external overlap ledger available as an expanded audit dataset.">
   <meta name="author" content="Richard J. Reyes">
   <meta name="robots" content="index,follow,max-snippet:-1">
   <link rel="canonical" href="https://rickyjreyes.github.io/overlap/">
@@ -14,38 +14,67 @@
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="overlap.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"CollectionPage","name":"WCT Post-Date Overlap Ledger","url":"https://rickyjreyes.github.io/overlap/","dateModified":"2026-08-18","author":{"@type":"Person","name":"Richard J. Reyes","identifier":"https://orcid.org/0009-0005-5975-8718"},"about":["Wave Confinement Theory","post-date overlap","external literature","research chronology","Recursive AI Drift"]}
+  {"@context":"https://schema.org","@type":"CollectionPage","name":"WCT Post-Date Overlap Ledger","url":"https://rickyjreyes.github.io/overlap/","dateModified":"2026-08-19","author":{"@type":"Person","name":"Richard J. Reyes","identifier":"https://orcid.org/0009-0005-5975-8718"},"about":["Wave Confinement Theory","post-date overlap","external literature","research chronology","Recursive AI Drift"]}
   </script>
 </head>
 <body>
   <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
+
   <main class="overlap-shell">
     <header class="overlap-head">
       <p class="eyebrow">Public chronology and technical convergence record</p>
       <h1>WCT Post-Date Overlap Ledger</h1>
-      <p>This ledger records external papers, preprints, datasets, and experimental results identified after the corresponding Richard J. Reyes / Wave Confinement Theory research disclosures and ranks the degree of technical correspondence. The purpose is to preserve a public, timestamped record of later convergence around structures, mechanisms, and architectures already present in the Reyes research program.</p>
-      <div class="score-note"><strong>Post-Date Overlap Score.</strong>The 0–10 score ranks the density and specificity of technical overlap after date ordering: higher values indicate stronger multi-feature correspondence with earlier Reyes/WCT work. It is a comparison score, not a probability of influence, copying, derivation, misconduct, or infringement.</div>
-      <div class="anchor-note"><strong>Chronology anchors.</strong>The separate <a href="../priority/">Priority &amp; Provenance Registry</a> contains exact DOI-backed Reyes disclosure dates and the strongest date-normalized comparison cases. Rows marked <span class="pill">DATE-CHECKED</span> have already had the relevant WCT anchor date and external publication chronology normalized there.</div>
-      <div class="anchor-note"><strong>Bibliographic normalization.</strong>Paper titles, author lists, and DOI/permanent identifiers are normalized to the linked primary record. arXiv entries show their DataCite DOI in the identifier column. Where a source has no DOI, the ledger says so and links to the primary record instead of inventing an identifier.</div>
-      <div class="actions"><a class="button primary" href="../priority/">Priority &amp; Provenance</a><a class="button secondary" href="../publications/">Reyes publications</a><a class="button secondary" href="../priority/external-convergence.json">Convergence audit JSON</a><a class="button secondary" href="https://doi.org/10.5281/zenodo.15644222">The Geometry of Resonance</a><a class="button secondary" href="https://doi.org/10.5281/zenodo.17578766">Phase–Flux Field</a></div>
+      <p>This page separates the strongest chronology-audited cases from the broader comparison dataset. The default view shows only records whose relevant WCT anchor date and external publication chronology have already been normalized. The complete comparison ledger remains available below for audit and discovery.</p>
+
+      <div class="score-note"><strong>Overlap is not provenance.</strong>The 0–10 Post-Date Overlap Score ranks density and specificity of technical correspondence. It is not a probability of influence, copying, derivation, misconduct, infringement, or scientific correctness.</div>
+      <div class="anchor-note"><strong>Why only six cases appear first.</strong>Rows marked <span class="pill">DATE-CHECKED</span> have passed the chronology-normalization step used by the <a href="../priority/">Priority &amp; Provenance Registry</a>. The remaining ledger records are comparison candidates, not promoted provenance conclusions.</div>
+
+      <div class="actions">
+        <a class="button primary" href="#date-checked">View date-checked cases</a>
+        <a class="button secondary" href="#complete-ledger">Complete comparison dataset</a>
+        <a class="button secondary" href="../priority/">Priority &amp; Provenance</a>
+        <a class="button secondary" href="../priority/external-convergence.json">Audit JSON</a>
+      </div>
+
       <div class="stats"><div><strong>109</strong><span>external comparison records</span></div><div><strong>92</strong><span>WCT / physics / photonics records</span></div><div><strong>17</strong><span>Recursive AI Drift / AI-system records</span></div><div><strong>6</strong><span>date-checked chronology cases</span></div></div>
     </header>
 
-    <section class="section" aria-labelledby="physics-title">
-      <p class="eyebrow">Wave Confinement Theory</p><h2 id="physics-title">Physics, photonics, BEC, nonlinear-wave, plasma, and spectral overlap</h2>
-      <p class="lede">The list includes stable localized nonlinear modes, curvature- and dispersion-dependent operators, nonlinear eigenstates, dissipative solitons, Swift–Hohenberg pattern selection, toroidal spectral geometry, cavity persistence, BEC ring traps, photonic time crystals, plasma confinement, log-periodic spectra, and related wave-confinement mechanisms.</p>
-      <div class="controls"><input id="q-physics" type="search" placeholder="Filter by title, author, DOI, or source…" aria-label="Filter WCT physics overlap records"><select id="min-physics" aria-label="Minimum post-date overlap score"><option value="0">All scores</option><option value="9">9.0+</option><option value="8">8.0+</option><option value="7">7.0+</option><option value="6">6.0+</option></select></div>
-      <div class="table-wrap"><table><thead><tr><th>#</th><th>External work</th><th>Authors</th><th>DOI / permanent ID</th><th>Post-Date Overlap Score</th><th>Chronology status</th></tr></thead><tbody id="physics-body"></tbody></table></div>
+    <section class="section verified-section" id="date-checked" aria-labelledby="verified-title">
+      <p class="eyebrow">Curated chronology audit</p>
+      <h2 id="verified-title">Six date-checked cases</h2>
+      <p class="lede">These are the records currently promoted out of the broader ledger because the relevant WCT disclosure anchor and later-work chronology have been normalized. Chronology establishes ordering only; influence and derivation require separate provenance evidence.</p>
+      <div class="table-wrap verified-table"><table><thead><tr><th>#</th><th>External work</th><th>Research line</th><th>Authors</th><th>DOI / permanent ID</th><th>Overlap score</th><th>Status</th></tr></thead><tbody id="verified-body"></tbody></table></div>
+      <p class="verified-foot"><a href="../priority/">Open the Priority &amp; Provenance Registry →</a> for WCT anchors, dates, correspondence notes, and prior-art normalization.</p>
     </section>
 
-    <section class="section" aria-labelledby="ai-title">
-      <p class="eyebrow">Recursive AI Drift</p><h2 id="ai-title">AI-system post-date overlap</h2>
-      <p class="lede">This section tracks later work overlapping the Recursive AI Drift research line, including multi-agent degradation, evolving memory, problem drift, reward hacking, verifier gaming, emergent misalignment, and bounded-maintenance requirements.</p>
-      <div class="controls"><input id="q-ai" type="search" placeholder="Filter by title, author, DOI, or source…" aria-label="Filter AI overlap records"><select id="min-ai" aria-label="Minimum AI post-date overlap score"><option value="0">All scores</option><option value="9">9.0+</option><option value="8">8.0+</option><option value="7">7.0+</option><option value="6">6.0+</option></select></div>
-      <div class="table-wrap"><table><thead><tr><th>#</th><th>External work</th><th>Authors</th><th>DOI / permanent ID</th><th>Post-Date Overlap Score</th><th>Chronology status</th></tr></thead><tbody id="ai-body"></tbody></table></div>
-    </section>
+    <details class="full-ledger" id="complete-ledger">
+      <summary>
+        <span><strong>View complete comparison dataset</strong><small>109 external records · exploratory ledger + chronology-review candidates + six date-checked cases</small></span>
+        <span class="summary-action" aria-hidden="true">Expand</span>
+      </summary>
 
-    <p class="footer-note">Updated August 18, 2026. Titles, authors, and DOI/permanent identifiers are normalized to the linked primary source. arXiv records display their DataCite DOI (10.48550/arXiv.…). Where no DOI is assigned, the primary official or permanent record is shown instead.</p>
+      <div class="full-ledger-inner">
+        <div class="ledger-warning"><strong>Interpretation boundary.</strong>Most records below have not been promoted through chronology and prior-art normalization. Inclusion means the work was identified as technically comparable; it does not establish priority, influence, derivation, copying, infringement, or validation.</div>
+
+        <section class="section ledger-section" aria-labelledby="physics-title">
+          <p class="eyebrow">Wave Confinement Theory</p>
+          <h2 id="physics-title">Physics, photonics, BEC, nonlinear-wave, plasma, and spectral overlap</h2>
+          <p class="lede">The broader ledger includes stable localized nonlinear modes, curvature- and dispersion-dependent operators, nonlinear eigenstates, dissipative solitons, Swift–Hohenberg pattern selection, toroidal spectral geometry, cavity persistence, BEC ring traps, photonic time crystals, plasma confinement, log-periodic spectra, and related wave-confinement mechanisms.</p>
+          <div class="controls"><input id="q-physics" type="search" placeholder="Filter by title, author, DOI, or source…" aria-label="Filter WCT physics overlap records"><select id="min-physics" aria-label="Minimum post-date overlap score"><option value="0">All scores</option><option value="9">9.0+</option><option value="8">8.0+</option><option value="7">7.0+</option><option value="6">6.0+</option></select></div>
+          <div class="table-wrap"><table><thead><tr><th>#</th><th>External work</th><th>Authors</th><th>DOI / permanent ID</th><th>Post-Date Overlap Score</th><th>Chronology status</th></tr></thead><tbody id="physics-body"></tbody></table></div>
+        </section>
+
+        <section class="section ledger-section" aria-labelledby="ai-title">
+          <p class="eyebrow">Recursive AI Drift</p>
+          <h2 id="ai-title">AI-system post-date overlap</h2>
+          <p class="lede">This section tracks later work overlapping the Recursive AI Drift research line, including multi-agent degradation, evolving memory, problem drift, reward hacking, verifier gaming, emergent misalignment, and bounded-maintenance requirements.</p>
+          <div class="controls"><input id="q-ai" type="search" placeholder="Filter by title, author, DOI, or source…" aria-label="Filter AI overlap records"><select id="min-ai" aria-label="Minimum AI post-date overlap score"><option value="0">All scores</option><option value="9">9.0+</option><option value="8">8.0+</option><option value="7">7.0+</option><option value="6">6.0+</option></select></div>
+          <div class="table-wrap"><table><thead><tr><th>#</th><th>External work</th><th>Authors</th><th>DOI / permanent ID</th><th>Post-Date Overlap Score</th><th>Chronology status</th></tr></thead><tbody id="ai-body"></tbody></table></div>
+        </section>
+      </div>
+    </details>
+
+    <p class="footer-note">Updated August 19, 2026. Titles, authors, and DOI/permanent identifiers are normalized to the linked primary source. arXiv records display their DataCite DOI (10.48550/arXiv.…). Where no DOI is assigned, the primary official or permanent record is shown instead.</p>
   </main>
 
   <script src="overlap-data-1.js"></script>
@@ -56,22 +85,56 @@
     const dateChecked=new Set(["https://arxiv.org/abs/2606.25064","https://arxiv.org/abs/2606.25687","https://arxiv.org/abs/2607.07340","https://arxiv.org/abs/2607.19840","https://arxiv.org/abs/2607.29309","https://doi.org/10.1364/OL.603068"]);
     const chronologyReview=new Set(["https://arxiv.org/abs/2601.21144","https://arxiv.org/abs/2602.14549","https://arxiv.org/abs/2607.08345","https://arxiv.org/abs/2607.18858"]);
     const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
     function status(url){
       if(dateChecked.has(url)) return '<span class="pill">DATE-CHECKED</span>';
       if(chronologyReview.has(url)) return '<span class="pill review">CHRONOLOGY REVIEW</span>';
       return '<span class="pill ledger">LEDGER</span>';
     }
+
+    function rowHtml(r,includeDomain=false){
+      const domain=includeDomain?`<td class="domain">${r[4]==='physics'?'WCT / physics':'Recursive AI Drift'}</td>`:'';
+      return `<tr><td class="rank">${r[0]}</td><td class="work"><a class="paper" href="${esc(r[2])}" target="_blank" rel="noopener noreferrer">${esc(r[1])}</a><span class="source">${esc(r[5])}</span></td>${domain}<td class="authors">${esc(r[6])}</td><td class="identifier"><a href="${esc(r[8])}" target="_blank" rel="noopener noreferrer">${esc(r[7])}</a></td><td class="score">${r[3].toFixed(1)}</td><td>${status(r[2])}</td></tr>`;
+    }
+
+    function renderVerified(){
+      const body=document.getElementById('verified-body');
+      body.innerHTML=records.filter(r=>dateChecked.has(r[2])).sort((a,b)=>a[0]-b[0]).map(r=>rowHtml(r,true)).join('');
+    }
+
     function render(kind){
       const q=document.getElementById('q-'+kind).value.trim().toLowerCase();
       const min=Number(document.getElementById('min-'+kind).value);
       const body=document.getElementById(kind+'-body');
       body.innerHTML=records
         .filter(r=>r[4]===kind && r[3]>=min && (!q || [r[1],r[5],r[6],r[7]].join(' ').toLowerCase().includes(q)))
-        .map(r=>`<tr><td class="rank">${r[0]}</td><td class="work"><a class="paper" href="${esc(r[2])}" target="_blank" rel="noopener noreferrer">${esc(r[1])}</a><span class="source">${esc(r[5])}</span></td><td class="authors">${esc(r[6])}</td><td class="identifier"><a href="${esc(r[8])}" target="_blank" rel="noopener noreferrer">${esc(r[7])}</a></td><td class="score">${r[3].toFixed(1)}</td><td>${status(r[2])}</td></tr>`)
+        .map(r=>rowHtml(r,false))
         .join('');
     }
-    ['physics','ai'].forEach(kind=>{document.getElementById('q-'+kind).addEventListener('input',()=>render(kind));document.getElementById('min-'+kind).addEventListener('change',()=>render(kind));render(kind);});
+
+    renderVerified();
+
+    const fullLedger=document.getElementById('complete-ledger');
+    let fullRendered=false;
+    function renderFullLedger(){
+      if(fullRendered) return;
+      ['physics','ai'].forEach(kind=>{
+        document.getElementById('q-'+kind).addEventListener('input',()=>render(kind));
+        document.getElementById('min-'+kind).addEventListener('change',()=>render(kind));
+        render(kind);
+      });
+      fullRendered=true;
+    }
+    fullLedger.addEventListener('toggle',()=>{
+      if(fullLedger.open) renderFullLedger();
+      const action=fullLedger.querySelector('.summary-action');
+      if(action) action.textContent=fullLedger.open?'Collapse':'Expand';
+    });
+    if(location.hash==='#complete-ledger'){
+      fullLedger.open=true;
+      renderFullLedger();
+    }
   </script>
-<script src="../site-nav.js" defer></script>
+  <script src="../site-nav.js" defer></script>
 </body>
 </html>
