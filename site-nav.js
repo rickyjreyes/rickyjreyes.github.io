@@ -86,20 +86,22 @@
     const style = document.createElement('style');
     style.id = 'site-enhancement-style';
     style.textContent = `
-      #site-nav>a,#site-nav .nav-trigger{position:relative;color:var(--muted,#9cb0c1);font-size:.86rem;font-weight:600;text-decoration:none;transition:color 140ms ease,background 140ms ease,box-shadow 140ms ease}
+      #site-nav>a,#site-nav .nav-trigger{position:relative;color:var(--muted,#9cb0c1);font-size:.86rem;font-weight:600;text-decoration:none}
       #site-nav>a{padding-block:8px}
       #site-nav .nav-group{position:relative}
-      #site-nav .nav-trigger{display:inline-flex;align-items:center;gap:6px;padding:8px 0;border:0;background:transparent;cursor:default}
-      #site-nav .nav-caret{font-size:.8rem;line-height:1;transition:transform 100ms ease}
+      #site-nav .nav-trigger{display:inline-flex;align-items:center;gap:6px;padding:8px 0;border:0;background:transparent;color:var(--muted,#9cb0c1);cursor:default}
+      #site-nav .nav-caret{font-size:.8rem;line-height:1;transition:transform 90ms ease}
       #site-nav>a:hover,#site-nav>a:focus-visible,#site-nav .nav-trigger:hover,#site-nav .nav-trigger:focus-visible,#site-nav .nav-group.is-active>.nav-trigger{color:var(--text,#e9f0f6)}
       #site-nav>a.is-active,#site-nav>a[aria-current="page"],#site-nav .nav-group.is-active>.nav-trigger{color:var(--text,#e9f0f6)}
       #site-nav>a.is-active::after,#site-nav>a[aria-current="page"]::after,#site-nav .nav-group.is-active>.nav-trigger::after{position:absolute;right:0;bottom:1px;left:0;height:2px;content:"";border-radius:999px;background:linear-gradient(90deg,var(--accent,#67d4ff),var(--accent-2,#8b7cff));box-shadow:0 0 14px rgba(103,212,255,.45)}
 
-      /* Desktop dropdown: the transparent top padding is a real hover bridge. */
-      #site-nav .nav-dropdown{position:absolute;top:100%;left:50%;z-index:120;min-width:220px;padding-top:10px;opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-2px);transition:opacity 70ms ease,transform 70ms ease,visibility 0s linear 70ms}
-      #site-nav .nav-dropdown-shell{padding:8px;border:1px solid var(--line,rgba(170,201,225,.16));border-radius:12px;background:rgba(4,10,18,.99);box-shadow:var(--shadow,0 24px 80px rgba(0,0,0,.26))}
-      #site-nav .nav-group:hover>.nav-dropdown,#site-nav .nav-group:focus-within>.nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0);transition-delay:0s}
-      #site-nav .nav-group:hover>.nav-trigger .nav-caret,#site-nav .nav-group:focus-within>.nav-trigger .nav-caret{transform:rotate(180deg)}
+      @media(min-width:761px){
+        #site-nav .nav-dropdown{position:absolute;top:100%;left:50%;z-index:120;display:none;min-width:220px;padding-top:8px;transform:translateX(-50%)}
+        #site-nav .nav-dropdown-shell{padding:8px;border:1px solid var(--line,rgba(170,201,225,.16));border-radius:12px;background:rgba(4,10,18,.995);box-shadow:var(--shadow,0 24px 80px rgba(0,0,0,.26))}
+        #site-nav .nav-group:hover>.nav-dropdown,#site-nav .nav-group.hover-open>.nav-dropdown,#site-nav .nav-group:focus-within>.nav-dropdown{display:block}
+        #site-nav .nav-group:hover>.nav-trigger .nav-caret,#site-nav .nav-group.hover-open>.nav-trigger .nav-caret,#site-nav .nav-group:focus-within>.nav-trigger .nav-caret{transform:rotate(180deg)}
+      }
+
       #site-nav .nav-dropdown-link{display:block;padding:10px 11px;border-radius:8px;color:var(--muted,#9cb0c1);font-size:.82rem;font-weight:600;text-decoration:none;white-space:nowrap}
       #site-nav .nav-dropdown-link:hover,#site-nav .nav-dropdown-link:focus-visible,#site-nav .nav-dropdown-link.is-active{color:var(--text,#e9f0f6);background:rgba(103,212,255,.09)}
       #site-nav .nav-dropdown-link.is-active::after{display:none}
@@ -156,11 +158,9 @@
         #site-nav .nav-group{width:100%}
         #site-nav .nav-trigger{width:100%;justify-content:space-between;padding:12px 11px;border-radius:8px;cursor:pointer}
         #site-nav .nav-trigger:hover{background:rgba(103,212,255,.06)}
-        #site-nav .nav-dropdown{position:static;display:none;min-width:0;width:100%;padding:0;opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:none}
-        #site-nav .nav-dropdown-shell{margin:0 0 5px;padding:4px 6px 6px;border-color:rgba(170,201,225,.11);border-radius:9px;background:rgba(103,212,255,.035);box-shadow:none}
+        #site-nav .nav-dropdown{position:static;display:none;width:100%;padding:0}
+        #site-nav .nav-dropdown-shell{margin:0 0 5px;padding:4px 6px 6px;border:1px solid rgba(170,201,225,.11);border-radius:9px;background:rgba(103,212,255,.035);box-shadow:none}
         #site-nav .nav-group.open>.nav-dropdown{display:block}
-        #site-nav .nav-group:hover>.nav-dropdown,#site-nav .nav-group:focus-within>.nav-dropdown{display:none;transform:none}
-        #site-nav .nav-group.open:hover>.nav-dropdown,#site-nav .nav-group.open:focus-within>.nav-dropdown{display:block}
         #site-nav .nav-group.open>.nav-trigger .nav-caret{transform:rotate(180deg)}
         #site-nav .nav-dropdown-link{padding:10px 14px;white-space:normal}
         .identity-links.profile-links{grid-template-columns:1fr;max-width:480px}
@@ -198,6 +198,29 @@
   nav.querySelectorAll('.nav-trigger').forEach((trigger) => {
     const group = trigger.closest('.nav-group');
 
+    group.addEventListener('mouseenter', () => {
+      if (mobileNav.matches) return;
+      group.classList.add('hover-open');
+      trigger.setAttribute('aria-expanded', 'true');
+    });
+
+    group.addEventListener('mouseleave', () => {
+      if (mobileNav.matches) return;
+      group.classList.remove('hover-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+
+    group.addEventListener('focusin', () => {
+      if (!mobileNav.matches) trigger.setAttribute('aria-expanded', 'true');
+    });
+
+    group.addEventListener('focusout', () => {
+      if (mobileNav.matches) return;
+      requestAnimationFrame(() => {
+        if (!group.contains(document.activeElement)) trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
     trigger.addEventListener('click', (event) => {
       if (!mobileNav.matches) {
         if (event.detail > 0) trigger.blur();
@@ -209,17 +232,11 @@
       group.classList.toggle('open', willOpen);
       trigger.setAttribute('aria-expanded', String(willOpen));
     });
-
-    group.addEventListener('mouseenter', () => {
-      if (!mobileNav.matches) trigger.setAttribute('aria-expanded', 'true');
-    });
-    group.addEventListener('mouseleave', () => {
-      if (!mobileNav.matches) trigger.setAttribute('aria-expanded', 'false');
-    });
   });
 
-  mobileNav.addEventListener?.('change', (event) => {
-    if (!event.matches) closeDropdowns();
+  mobileNav.addEventListener?.('change', () => {
+    closeDropdowns();
+    nav.querySelectorAll('.nav-group').forEach((group) => group.classList.remove('hover-open'));
   });
 
   const legacyMenuController = [...document.scripts].some((script) => /(^|\/)script\.js$/.test(script.getAttribute('src') || ''));
@@ -234,20 +251,14 @@
   nav.addEventListener('click', (event) => {
     const selected = event.target.closest('a');
     if (!selected) return;
-    nav.querySelectorAll('a').forEach((link) => {
-      link.classList.remove('is-active');
-      link.removeAttribute('aria-current');
-    });
-    selected.classList.add('is-active');
-    selected.setAttribute('aria-current', 'page');
     closeDropdowns();
     nav.classList.remove('open');
-    menu.setAttribute('aria-expanded', 'false');
+    menu?.setAttribute('aria-expanded', 'false');
   });
 
   document.addEventListener('click', (event) => {
     if (!nav.contains(event.target)) closeDropdowns();
-    if (!nav.contains(event.target) && !menu.contains(event.target)) {
+    if (menu && !nav.contains(event.target) && !menu.contains(event.target)) {
       nav.classList.remove('open');
       menu.setAttribute('aria-expanded', 'false');
     }
@@ -256,11 +267,20 @@
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
     closeDropdowns();
+    nav.querySelectorAll('.nav-group').forEach((group) => group.classList.remove('hover-open'));
     nav.classList.remove('open');
-    menu.setAttribute('aria-expanded', 'false');
+    menu?.setAttribute('aria-expanded', 'false');
   });
 
   if (currentPath === '/') {
+    const heroActions = document.querySelector('.hero-actions');
+    if (heroActions) {
+      heroActions.innerHTML = `
+        <a class="button primary" href="#start">Start reading</a>
+        <a class="button secondary" href="/publications/">Publications</a>
+        <a class="button secondary" href="/research-corpus/">Explore research</a>`;
+    }
+
     const identityLinks = document.querySelector('.identity-links');
     if (identityLinks) {
       identityLinks.classList.add('profile-links');
@@ -287,6 +307,26 @@
         </a>`;
     }
 
+    const orientationCards = [...document.querySelectorAll('.orientation-grid li')];
+    const zenodoCard = orientationCards.find((card) => card.querySelector('.orientation-tag')?.textContent.trim() === 'Zenodo');
+    const zenodoLink = zenodoCard?.querySelector('a');
+    if (zenodoLink) {
+      zenodoLink.href = 'https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Reyes%2C+Richard+J.%22';
+      zenodoLink.target = '_blank';
+      zenodoLink.rel = 'noopener noreferrer';
+      zenodoLink.innerHTML = 'View Zenodo archive <span aria-hidden="true">→</span>';
+    }
+
+    const publicationHeadingLink = document.querySelector('.publications-heading .text-link');
+    if (publicationHeadingLink) publicationHeadingLink.innerHTML = 'Browse all publications <span aria-hidden="true">→</span>';
+
+    const archiveActions = document.querySelector('.archive-cta-actions');
+    if (archiveActions) {
+      archiveActions.innerHTML = `
+        <a class="button primary" href="/publications/">Browse all publications</a>
+        <a class="button secondary" href="https://github.com/rickyjreyes/geometry_of_resonance" target="_blank" rel="noopener noreferrer">Code &amp; data on GitHub</a>`;
+    }
+
     const hero = document.querySelector('main .hero');
     if (hero && !document.querySelector('.frozen-release-callout')) {
       const callout = document.createElement('section');
@@ -303,19 +343,6 @@
         </div>`;
       hero.insertAdjacentElement('afterend', callout);
     }
-
-    const heroActions = document.querySelector('.hero-actions');
-    const addHeroButton = (href, label) => {
-      if (!heroActions || heroActions.querySelector(`a[href="${href}"]`)) return;
-      const button = document.createElement('a');
-      button.className = 'button secondary';
-      button.href = href;
-      button.textContent = label;
-      heroActions.appendChild(button);
-    };
-    addHeroButton('/priority/', 'View priority & convergence');
-    addHeroButton('/overlap/', 'Post-date overlap ledger');
-    addHeroButton('/patents/', 'View patent applications');
 
     const branches = document.querySelector('#branches');
     if (branches && !document.querySelector('.patent-home-section')) {
