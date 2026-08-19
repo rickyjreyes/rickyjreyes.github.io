@@ -75,7 +75,9 @@
           <span>${item.label}</span><span class="nav-caret" aria-hidden="true">⌄</span>
         </button>
         <div class="nav-dropdown" id="${menuId}" role="group" aria-label="${item.label}">
-          ${item.items.map(([href, label]) => renderLink(href, label, 'nav-dropdown-link')).join('')}
+          <div class="nav-dropdown-shell">
+            ${item.items.map(([href, label]) => renderLink(href, label, 'nav-dropdown-link')).join('')}
+          </div>
         </div>
       </div>`;
   }).join('');
@@ -84,20 +86,36 @@
     const style = document.createElement('style');
     style.id = 'site-enhancement-style';
     style.textContent = `
-      #site-nav>a,#site-nav .nav-trigger{position:relative;color:var(--muted,#9cb0c1);font-size:.86rem;font-weight:600;text-decoration:none;transition:color 160ms ease,background 160ms ease,box-shadow 160ms ease}
+      #site-nav>a,#site-nav .nav-trigger{position:relative;color:var(--muted,#9cb0c1);font-size:.86rem;font-weight:600;text-decoration:none;transition:color 140ms ease,background 140ms ease,box-shadow 140ms ease}
       #site-nav>a{padding-block:8px}
       #site-nav .nav-group{position:relative}
-      #site-nav .nav-trigger{display:inline-flex;align-items:center;gap:6px;padding:8px 0;border:0;background:transparent;cursor:pointer}
-      #site-nav .nav-caret{font-size:.8rem;line-height:1;transition:transform 160ms ease}
+      #site-nav .nav-trigger{display:inline-flex;align-items:center;gap:6px;padding:8px 0;border:0;background:transparent;cursor:default}
+      #site-nav .nav-caret{font-size:.8rem;line-height:1;transition:transform 100ms ease}
       #site-nav>a:hover,#site-nav>a:focus-visible,#site-nav .nav-trigger:hover,#site-nav .nav-trigger:focus-visible,#site-nav .nav-group.is-active>.nav-trigger{color:var(--text,#e9f0f6)}
       #site-nav>a.is-active,#site-nav>a[aria-current="page"],#site-nav .nav-group.is-active>.nav-trigger{color:var(--text,#e9f0f6)}
       #site-nav>a.is-active::after,#site-nav>a[aria-current="page"]::after,#site-nav .nav-group.is-active>.nav-trigger::after{position:absolute;right:0;bottom:1px;left:0;height:2px;content:"";border-radius:999px;background:linear-gradient(90deg,var(--accent,#67d4ff),var(--accent-2,#8b7cff));box-shadow:0 0 14px rgba(103,212,255,.45)}
-      #site-nav .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;z-index:120;min-width:210px;padding:8px;border:1px solid var(--line,rgba(170,201,225,.16));border-radius:12px;background:rgba(4,10,18,.98);box-shadow:var(--shadow,0 24px 80px rgba(0,0,0,.26));opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-5px);transition:opacity 140ms ease,transform 140ms ease,visibility 140ms ease}
-      #site-nav .nav-group:hover>.nav-dropdown,#site-nav .nav-group:focus-within>.nav-dropdown,#site-nav .nav-group.open>.nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
-      #site-nav .nav-group.open>.nav-trigger .nav-caret{transform:rotate(180deg)}
+
+      /* Desktop dropdown: the transparent top padding is a real hover bridge. */
+      #site-nav .nav-dropdown{position:absolute;top:100%;left:50%;z-index:120;min-width:220px;padding-top:10px;opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-2px);transition:opacity 70ms ease,transform 70ms ease,visibility 0s linear 70ms}
+      #site-nav .nav-dropdown-shell{padding:8px;border:1px solid var(--line,rgba(170,201,225,.16));border-radius:12px;background:rgba(4,10,18,.99);box-shadow:var(--shadow,0 24px 80px rgba(0,0,0,.26))}
+      #site-nav .nav-group:hover>.nav-dropdown,#site-nav .nav-group:focus-within>.nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0);transition-delay:0s}
+      #site-nav .nav-group:hover>.nav-trigger .nav-caret,#site-nav .nav-group:focus-within>.nav-trigger .nav-caret{transform:rotate(180deg)}
       #site-nav .nav-dropdown-link{display:block;padding:10px 11px;border-radius:8px;color:var(--muted,#9cb0c1);font-size:.82rem;font-weight:600;text-decoration:none;white-space:nowrap}
-      #site-nav .nav-dropdown-link:hover,#site-nav .nav-dropdown-link:focus-visible,#site-nav .nav-dropdown-link.is-active{color:var(--text,#e9f0f6);background:rgba(103,212,255,.08)}
+      #site-nav .nav-dropdown-link:hover,#site-nav .nav-dropdown-link:focus-visible,#site-nav .nav-dropdown-link.is-active{color:var(--text,#e9f0f6);background:rgba(103,212,255,.09)}
       #site-nav .nav-dropdown-link.is-active::after{display:none}
+
+      .identity-links.profile-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:650px;margin-top:24px}
+      .profile-link-card{display:grid;grid-template-columns:42px minmax(0,1fr) auto;align-items:center;gap:11px;min-height:64px;padding:10px 12px;border:1px solid var(--line,rgba(170,201,225,.16));border-radius:13px;color:var(--text,#e9f0f6);background:rgba(11,23,39,.72);text-decoration:none;transition:transform 140ms ease,border-color 140ms ease,background 140ms ease}
+      .profile-link-card:hover,.profile-link-card:focus-visible{color:var(--text,#e9f0f6);border-color:rgba(103,212,255,.38);background:rgba(14,29,48,.96);transform:translateY(-2px)}
+      .profile-icon{display:grid;width:42px;height:42px;place-items:center;border:1px solid rgba(255,255,255,.12);border-radius:11px;font-size:.8rem;font-weight:900;letter-spacing:-.02em;background:rgba(255,255,255,.055)}
+      .profile-link-card[data-brand="github"] .profile-icon{font-size:.72rem}
+      .profile-link-card[data-brand="linkedin"] .profile-icon{font-family:Arial,sans-serif;font-size:1rem}
+      .profile-link-card[data-brand="zenodo"] .profile-icon{font-size:1rem}
+      .profile-link-card[data-brand="orcid"] .profile-icon{font-size:.78rem}
+      .profile-copy{min-width:0}
+      .profile-copy strong{display:block;font-size:.87rem;line-height:1.2}
+      .profile-copy span{display:block;margin-top:4px;overflow:hidden;color:var(--muted-2,#71869a);font-size:.7rem;line-height:1.25;text-overflow:ellipsis;white-space:nowrap}
+      .profile-arrow{color:var(--accent,#67d4ff);font-size:1rem}
 
       .about-section.has-portrait{grid-template-columns:minmax(230px,.68fr) minmax(0,1.2fr) minmax(220px,.82fr);gap:clamp(30px,5vw,72px);align-items:start}
       .about-portrait{position:sticky;top:108px;margin:0}
@@ -136,12 +154,16 @@
         #site-nav>a.is-active,#site-nav>a[aria-current="page"],#site-nav .nav-group.is-active>.nav-trigger{padding-inline:10px;border-radius:8px;background:rgba(103,212,255,.08);box-shadow:inset 0 0 0 1px rgba(103,212,255,.2)}
         #site-nav>a.is-active::after,#site-nav>a[aria-current="page"]::after,#site-nav .nav-group.is-active>.nav-trigger::after{right:10px;left:10px}
         #site-nav .nav-group{width:100%}
-        #site-nav .nav-trigger{width:100%;justify-content:space-between;padding:12px 11px;border-radius:8px}
+        #site-nav .nav-trigger{width:100%;justify-content:space-between;padding:12px 11px;border-radius:8px;cursor:pointer}
         #site-nav .nav-trigger:hover{background:rgba(103,212,255,.06)}
-        #site-nav .nav-dropdown{position:static;display:none;min-width:0;width:100%;margin:0 0 5px;padding:4px 6px 6px;border-color:rgba(170,201,225,.11);border-radius:9px;background:rgba(103,212,255,.035);box-shadow:none;opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:none}
+        #site-nav .nav-dropdown{position:static;display:none;min-width:0;width:100%;padding:0;opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:none}
+        #site-nav .nav-dropdown-shell{margin:0 0 5px;padding:4px 6px 6px;border-color:rgba(170,201,225,.11);border-radius:9px;background:rgba(103,212,255,.035);box-shadow:none}
         #site-nav .nav-group.open>.nav-dropdown{display:block}
-        #site-nav .nav-group:hover>.nav-dropdown,#site-nav .nav-group:focus-within>.nav-dropdown{transform:none}
+        #site-nav .nav-group:hover>.nav-dropdown,#site-nav .nav-group:focus-within>.nav-dropdown{display:none;transform:none}
+        #site-nav .nav-group.open:hover>.nav-dropdown,#site-nav .nav-group.open:focus-within>.nav-dropdown{display:block}
+        #site-nav .nav-group.open>.nav-trigger .nav-caret{transform:rotate(180deg)}
         #site-nav .nav-dropdown-link{padding:10px 14px;white-space:normal}
+        .identity-links.profile-links{grid-template-columns:1fr;max-width:480px}
         .about-section.has-portrait{grid-template-columns:1fr}.about-section.has-portrait .about-facts{grid-column:auto}.about-portrait{position:static;width:min(100%,390px)}.wavelock-card-logo{width:76px;height:76px}.frozen-release-inner{grid-template-columns:auto 1fr}.frozen-release-link{grid-column:2}
       }
       @media(max-width:700px){.patent-home-heading{grid-template-columns:1fr;gap:16px}.patent-home-grid{grid-template-columns:1fr}.patent-home-card{min-height:auto}}
@@ -178,11 +200,9 @@
 
     trigger.addEventListener('click', (event) => {
       if (!mobileNav.matches) {
-        closeDropdowns();
         if (event.detail > 0) trigger.blur();
         return;
       }
-
       event.stopPropagation();
       const willOpen = !group.classList.contains('open');
       closeDropdowns(group);
@@ -193,7 +213,6 @@
     group.addEventListener('mouseenter', () => {
       if (!mobileNav.matches) trigger.setAttribute('aria-expanded', 'true');
     });
-
     group.addEventListener('mouseleave', () => {
       if (!mobileNav.matches) trigger.setAttribute('aria-expanded', 'false');
     });
@@ -240,7 +259,34 @@
     nav.classList.remove('open');
     menu.setAttribute('aria-expanded', 'false');
   });
+
   if (currentPath === '/') {
+    const identityLinks = document.querySelector('.identity-links');
+    if (identityLinks) {
+      identityLinks.classList.add('profile-links');
+      identityLinks.innerHTML = `
+        <a class="profile-link-card" data-brand="github" href="https://github.com/rickyjreyes" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on GitHub (opens in a new tab)">
+          <span class="profile-icon" aria-hidden="true">GH</span>
+          <span class="profile-copy"><strong>GitHub</strong><span>github.com/rickyjreyes</span></span>
+          <span class="profile-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="profile-link-card" data-brand="linkedin" href="https://www.linkedin.com/in/rickyjreyes/" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on LinkedIn (opens in a new tab)">
+          <span class="profile-icon" aria-hidden="true">in</span>
+          <span class="profile-copy"><strong>LinkedIn</strong><span>linkedin.com/in/rickyjreyes</span></span>
+          <span class="profile-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="profile-link-card" data-brand="zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Reyes%2C+Richard+J.%22" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes publications on Zenodo (opens in a new tab)">
+          <span class="profile-icon" aria-hidden="true">Z</span>
+          <span class="profile-copy"><strong>Zenodo</strong><span>DOI publication archive</span></span>
+          <span class="profile-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="profile-link-card" data-brand="orcid" href="https://orcid.org/0009-0005-5975-8718" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes ORCID record (opens in a new tab)">
+          <span class="profile-icon" aria-hidden="true">iD</span>
+          <span class="profile-copy"><strong>ORCID</strong><span>0009-0005-5975-8718</span></span>
+          <span class="profile-arrow" aria-hidden="true">↗</span>
+        </a>`;
+    }
+
     const hero = document.querySelector('main .hero');
     if (hero && !document.querySelector('.frozen-release-callout')) {
       const callout = document.createElement('section');
@@ -259,27 +305,17 @@
     }
 
     const heroActions = document.querySelector('.hero-actions');
-    if (heroActions && !heroActions.querySelector('a[href="/priority/"]')) {
-      const priorityButton = document.createElement('a');
-      priorityButton.className = 'button secondary';
-      priorityButton.href = '/priority/';
-      priorityButton.textContent = 'View priority & convergence';
-      heroActions.appendChild(priorityButton);
-    }
-    if (heroActions && !heroActions.querySelector('a[href="/overlap/"]')) {
-      const overlapButton = document.createElement('a');
-      overlapButton.className = 'button secondary';
-      overlapButton.href = '/overlap/';
-      overlapButton.textContent = 'Post-date overlap ledger';
-      heroActions.appendChild(overlapButton);
-    }
-    if (heroActions && !heroActions.querySelector('a[href="/patents/"]')) {
-      const patentButton = document.createElement('a');
-      patentButton.className = 'button secondary';
-      patentButton.href = '/patents/';
-      patentButton.textContent = 'View patent applications';
-      heroActions.appendChild(patentButton);
-    }
+    const addHeroButton = (href, label) => {
+      if (!heroActions || heroActions.querySelector(`a[href="${href}"]`)) return;
+      const button = document.createElement('a');
+      button.className = 'button secondary';
+      button.href = href;
+      button.textContent = label;
+      heroActions.appendChild(button);
+    };
+    addHeroButton('/priority/', 'View priority & convergence');
+    addHeroButton('/overlap/', 'Post-date overlap ledger');
+    addHeroButton('/patents/', 'View patent applications');
 
     const branches = document.querySelector('#branches');
     if (branches && !document.querySelector('.patent-home-section')) {
@@ -289,10 +325,7 @@
       section.innerHTML = `
         <div class="section-shell">
           <div class="patent-home-heading">
-            <div>
-              <p class="eyebrow">Inventions and intellectual property</p>
-              <h2 id="patent-home-title">Four filed technology families.</h2>
-            </div>
+            <div><p class="eyebrow">Inventions and intellectual property</p><h2 id="patent-home-title">Four filed technology families.</h2></div>
             <p>Public, non-enabling summaries connect the filing chronology to related papers, repositories, experiments, and evidence-status labels without publishing confidential application material.</p>
           </div>
           <div class="patent-home-grid" aria-label="Filed technology families">
@@ -301,10 +334,7 @@
             <article class="patent-home-card"><span>Application filed</span><h3>Solid-state frequency reference</h3><p>Optically programmed semiconductor resonance with harmonic readout and oscillator-integration concepts.</p></article>
             <article class="patent-home-card"><span>Application filed</span><h3>Coherent field generator</h3><p>Structured excitation, controlled confinement geometry, harmonic stabilization, relocking, and detector feedback.</p></article>
           </div>
-          <div class="patent-home-actions">
-            <a class="button primary" href="/patents/">Open patent portfolio</a>
-            <a class="button secondary" href="/patents.json">View machine-readable metadata</a>
-          </div>
+          <div class="patent-home-actions"><a class="button primary" href="/patents/">Open patent portfolio</a><a class="button secondary" href="/patents.json">View machine-readable metadata</a></div>
         </div>`;
       branches.insertAdjacentElement('afterend', section);
     }
@@ -314,33 +344,21 @@
       about.classList.add('has-portrait');
       const portrait = document.createElement('figure');
       portrait.className = 'about-portrait';
-      portrait.innerHTML = `
-        <div class="about-portrait-frame">
-          <img src="/assets/richardjreyes.png" alt="Richard J. Reyes, controls engineer and independent researcher" loading="lazy" decoding="async">
-        </div>
-        <figcaption><strong>Richard J. Reyes</strong>Controls engineer, software developer, independent researcher, and founder of WaveLock.</figcaption>`;
+      portrait.innerHTML = `<div class="about-portrait-frame"><img src="/assets/richardjreyes.png" alt="Richard J. Reyes, controls engineer and independent researcher" loading="lazy" decoding="async"></div><figcaption><strong>Richard J. Reyes</strong>Controls engineer, software developer, independent researcher, and founder of WaveLock.</figcaption>`;
       about.insertAdjacentElement('afterbegin', portrait);
     }
 
     const footerResearch = [...document.querySelectorAll('.site-footer h2')].find((heading) => heading.textContent.trim() === 'Research')?.parentElement;
-    if (footerResearch && !footerResearch.querySelector('a[href="/priority/"]')) {
+    const addFooterLink = (href, label) => {
+      if (!footerResearch || footerResearch.querySelector(`a[href="${href}"]`)) return;
       const link = document.createElement('a');
-      link.href = '/priority/';
-      link.textContent = 'Priority & convergence';
+      link.href = href;
+      link.textContent = label;
       footerResearch.appendChild(link);
-    }
-    if (footerResearch && !footerResearch.querySelector('a[href="/overlap/"]')) {
-      const link = document.createElement('a');
-      link.href = '/overlap/';
-      link.textContent = 'Post-date overlap ledger';
-      footerResearch.appendChild(link);
-    }
-    if (footerResearch && !footerResearch.querySelector('a[href="/patents/"]')) {
-      const link = document.createElement('a');
-      link.href = '/patents/';
-      link.textContent = 'Patent applications';
-      footerResearch.appendChild(link);
-    }
+    };
+    addFooterLink('/priority/', 'Priority & convergence');
+    addFooterLink('/overlap/', 'Post-date overlap ledger');
+    addFooterLink('/patents/', 'Patent applications');
   }
 
   if (currentPath === '/priority/') {
@@ -364,8 +382,7 @@
       logo.alt = 'WaveLock wave-shaped logo';
       logo.loading = 'lazy';
       logo.decoding = 'async';
-      const heading = waveLockCard.querySelector('h2');
-      if (heading) heading.insertAdjacentElement('beforebegin', logo);
+      waveLockCard.querySelector('h2')?.insertAdjacentElement('beforebegin', logo);
     }
 
     const generatorCard = patentCards[3];
@@ -376,8 +393,7 @@
       experiment.alt = 'Laser experiment associated with curvature-locked wave confinement research';
       experiment.loading = 'lazy';
       experiment.decoding = 'async';
-      const heading = generatorCard.querySelector('h2');
-      if (heading) heading.insertAdjacentElement('beforebegin', experiment);
+      generatorCard.querySelector('h2')?.insertAdjacentElement('beforebegin', experiment);
     }
   }
 
