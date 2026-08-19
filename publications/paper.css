@@ -8,6 +8,16 @@
 .paper-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--line-strong);border-radius:999px;font-size:.82rem;font-weight:650;color:var(--text)}
 .paper-chip .chip-label{color:var(--muted-2);font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
 .chip-status{border-color:rgba(103,212,255,.5);background:rgba(103,212,255,.07)}
+.paper-header::after{display:none;width:100%;aspect-ratio:16/9;margin-top:34px;border:1px solid var(--line);border-radius:18px;background-color:#030912;background-position:center;background-repeat:no-repeat;background-size:contain;box-shadow:0 18px 55px rgba(0,0,0,.22);content:""}
+.paper-actions-section::before{display:none;margin:0 0 20px;padding:9px 12px;border-left:2px solid var(--accent);color:var(--muted-2);background:rgba(103,212,255,.035);font-size:.76rem;line-height:1.55}
+html:has(link[rel="canonical"][href$="geometry-of-resonance.html"]) .paper-header::after{display:block;background-image:url("../assets/resonance.png")}
+html:has(link[rel="canonical"][href$="geometry-of-resonance.html"]) .paper-actions-section::before{display:block;content:"Publication visual · Concept illustration for The Geometry of Resonance. It provides visual orientation to the proposed closed-field geometry; it is not simulation output or empirical evidence."}
+html:has(link[rel="canonical"][href$="effective-mass-solenoidal-topology.html"]) .paper-header::after{display:block;background-image:url("../assets/emergent_mass.png")}
+html:has(link[rel="canonical"][href$="effective-mass-solenoidal-topology.html"]) .paper-actions-section::before{display:block;content:"Concept illustration · Geometric visualization accompanying the effective-mass proposal. The image is explanatory artwork, not a measurement or proof of the mass relation."}
+html:has(link[rel="canonical"][href$="phase-flux-field.html"]) .paper-header::after{display:block;background-image:url("../assets/Global%20Phase%20Harmony.png")}
+html:has(link[rel="canonical"][href$="phase-flux-field.html"]) .paper-actions-section::before{display:block;content:"Concept illustration · Visual explanation of phase organization in the Phase-Flux Field framework. The canonical equations and verification records, not the artwork, define the mathematical claims."}
+html:has(link[rel="canonical"][href$="long-lived-photon-resonance-water-cavities.html"]) .paper-header::after{display:block;background-image:url("../assets/resonant_cavity.png")}
+html:has(link[rel="canonical"][href$="long-lived-photon-resonance-water-cavities.html"]) .paper-actions-section::before{display:block;content:"Concept illustration · Resonance-cavity geometry used as a visual companion to this release. It is not a photograph of the experimental apparatus or an experimental measurement."}
 .paper-section{padding:42px 0;border-bottom:1px solid var(--line)}.paper-section h2{margin:0 0 18px;font:500 1.65rem/1.2 Georgia,serif}
 .paper-section>p{color:var(--muted);font-size:1.03rem;max-width:70ch}
 .paper-actions-section{padding-top:30px}
@@ -35,5 +45,5 @@ button.button{cursor:pointer;font-family:inherit}
 .machine-disclaimer{margin:24px 0 0;color:var(--muted-2);font-size:.84rem;max-width:75ch}
 .paper-footer{padding:28px 0;border-top:1px solid var(--line);background:var(--bg-deep)}.paper-footer .section-shell{display:flex;justify-content:space-between;gap:20px;color:var(--muted-2);font-size:.78rem}
 .paper-footer a{text-decoration:none}
-@media(max-width:700px){.paper-nav{gap:12px}.paper-shell{width:min(calc(100% - 28px),920px);padding-top:60px}.paper-header h1{font-size:clamp(2.1rem,9vw,3.4rem)}
+@media(max-width:700px){.paper-nav{gap:12px}.paper-shell{width:min(calc(100% - 28px),920px);padding-top:60px}.paper-header h1{font-size:clamp(2.1rem,9vw,3.4rem)}.paper-header::after{aspect-ratio:4/3;margin-top:26px;border-radius:14px}
 .asset-list div{grid-template-columns:1fr;gap:4px}.machine-note dl div{grid-template-columns:1fr;gap:4px}.paper-footer .section-shell{flex-direction:column}}
