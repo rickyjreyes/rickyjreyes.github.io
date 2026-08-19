@@ -21,5 +21,6 @@
 .coverage-card h3{margin:0 0 .75rem;font:500 1.25rem/1.2 Georgia,serif}.coverage-card p,.coverage-card li{color:var(--muted);font-size:.88rem}
 .inline-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.5rem 0}
 .page-nav{display:flex;flex-wrap:wrap;gap:.65rem;margin:1rem 0 2rem}.page-nav a{padding:.55rem .8rem;border:1px solid var(--line);border-radius:999px;text-decoration:none}.page-nav a[aria-current=page]{border-color:rgba(103,212,255,.5);background:rgba(103,212,255,.08)}
+.site-header{position:sticky!important;top:0!important;z-index:1000!important;isolation:isolate;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
 .lean-index{position:static!important;max-height:none!important;overflow:visible!important}
 @media(max-width:620px){.link-card{min-height:0}.inline-actions{flex-direction:column}.inline-actions .button{width:100%}}
