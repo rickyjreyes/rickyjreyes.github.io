@@ -1010,17 +1010,17 @@
       "\\frac{d}{dt}|\\widehat A_k|^2 \\le 2\\lambda_{\\rm grow}(k)|\\widehat A_k|^2 -c|\\widehat A_k|^4, \\qquad c>0."
     ],
     "anchor": "e15-modal-growth-bound",
-    "definition": "Current effective status: ⚠️ CONDITIONAL The quartic modal estimate requires a model-specific nonlinear projection bound.",
+    "definition": "Current effective status: ✅ PASS Baseline status: ⚠️ CONDITIONAL",
     "formula": "\\frac{d}{dt}|\\widehat A_k|^2 \\le 2\\lambda_{\\rm grow}(k)|\\widehat A_k|^2 -c|\\widehat A_k|^4, \\qquad c>0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e15-modal-growth-bound",
-    "status": "CONDITIONAL",
+    "status": "PASS",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "classify_conditional",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_modal_growth_bound_derived",
+    "checker": "check_modal_growth_bound_derived",
     "baseline_checker": "classify_conditional",
-    "verification_kind": "UNRESOLVED",
-    "verification_scope": "MODEL_CONDITIONAL",
+    "verification_kind": "ALGEBRAIC_IDENTITY",
+    "verification_scope": "INTERNAL_CONSISTENCY",
     "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
     "verification_limitations": [],
     "assumptions": [],
@@ -1032,7 +1032,7 @@
       "limitations": []
     },
     "empirical_validation": {
-      "status": "NOT_TESTED",
+      "status": "NOT_APPLICABLE",
       "evidence_ids": [],
       "independent_replication": "NONE"
     }
@@ -1061,11 +1061,17 @@
     "verification_limitations": [],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "linearModePower",
+        "linearModePower_nonnegative",
+        "linearModePower_selects_larger_growth"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Linearized supplied-growth theorem only; nonlinear global mode selection is not proved."
+      ]
     },
     "empirical_validation": {
       "status": "NOT_TESTED",
@@ -1173,24 +1179,33 @@
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e19-gap-curvature-scaling",
     "status": "CONDITIONAL",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "check_gap_curvature_dimensions",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_gap_mass_consistency_constraint",
+    "checker": "check_gap_mass_consistency_constraint",
     "baseline_checker": "check_gap_curvature_dimensions",
-    "verification_kind": "DIMENSIONAL_CHECK",
+    "verification_kind": "CONSISTENCY_CHECK",
     "verification_scope": "MODEL_CONDITIONAL",
-    "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
-    "verification_limitations": [],
+    "verification_meaning": "If the E19 curvature-gap sector is identified with the E6/E49 mass sector, exact consistency forces the dimensionless proportionality coefficient C_gap to equal one.",
+    "verification_limitations": [
+      "This fixes the coefficient only after the two sectors are identified; it does not derive the spectral law Delta_k proportional to averaged curvature squared."
+    ],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "gapCurvatureFrequency",
+        "effectiveMassSquaredFromGap",
+        "gapCurvature_massSquared_chain",
+        "gapCurvature_unitCoefficient_recovers_massLawSquared"
+      ],
+      "source": "WCTLean/Models/DerivedConstraints.lean",
+      "limitations": [
+        "Exact cross-equation consequence under the supplied gap law; the physical spectral-gap law remains conditional."
+      ]
     },
     "empirical_validation": {
-      "status": "NOT_APPLICABLE",
+      "status": "NOT_TESTED",
       "evidence_ids": [],
       "independent_replication": "NONE"
     }
@@ -1285,24 +1300,33 @@
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e22-effective-metric-ansatz",
     "status": "CONDITIONAL",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "classify_conditional",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_effective_metric_reality_constraint",
+    "checker": "check_effective_metric_reality_constraint",
     "baseline_checker": "classify_conditional",
-    "verification_kind": "UNRESOLVED",
+    "verification_kind": "CONSISTENCY_CHECK",
     "verification_scope": "MODEL_CONDITIONAL",
-    "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
-    "verification_limitations": [],
+    "verification_meaning": "For genuinely complex psi, the raw derivative outer product conjugate(d_mu psi)d_nu psi is Hermitian but not generally a real symmetric metric correction; taking its real symmetric part removes this obstruction.",
+    "verification_limitations": [
+      "The corrected real-symmetric tensor still requires dimensional normalization, nondegeneracy, and Lorentzian-signature conditions."
+    ],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "complexMetricDerivativeEntry",
+        "complexMetricDerivativeEntry_hermitian",
+        "complexMetricDerivativeEntry_not_symmetric_example",
+        "complexMetricDerivativeEntry_realPart_symmetric"
+      ],
+      "source": "WCTLean/Models/DerivedConstraints.lean",
+      "limitations": [
+        "Symmetry diagnostics only; dimensional normalization, nondegeneracy, and Lorentzian signature remain unresolved."
+      ]
     },
     "empirical_validation": {
-      "status": "NOT_TESTED",
+      "status": "NOT_APPLICABLE",
       "evidence_ids": [],
       "independent_replication": "NONE"
     }
@@ -1670,29 +1694,37 @@
       "\\limsup_{n\\to\\infty}\\alpha(n)<1."
     ],
     "anchor": "e32-subexponential-exploration-condition",
-    "definition": "Current effective status: ⚠️ CONDITIONAL This follows only if the retained-fraction and \\(\\beta(n)\\) bounds in E28 hold uniformly with sufficient margin.",
+    "definition": "Current effective status: ✅ PASS Baseline status: ⚠️ CONDITIONAL",
     "formula": "\\limsup_{n\\to\\infty}\\alpha(n)<1.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e32-subexponential-exploration-condition",
-    "status": "CONDITIONAL",
+    "status": "PASS",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "check_alpha_drop_count_bound",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_subexponential_exploration_margin_derived",
+    "checker": "check_subexponential_exploration_margin_derived",
     "baseline_checker": "check_alpha_drop_count_bound",
     "verification_kind": "SYMBOLIC_DERIVATION",
-    "verification_scope": "MODEL_CONDITIONAL",
-    "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
-    "verification_limitations": [],
+    "verification_scope": "STANDARD_MATHEMATICS",
+    "verification_meaning": "A uniform positive tail margin in the corrected alpha-drop formula implies alpha(n) is eventually bounded by 1-delta and therefore has limsup strictly below one.",
+    "verification_limitations": [
+      "The audit proves the implication from a uniform margin; it does not prove that a particular WCT pruning dynamics supplies that margin."
+    ],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "formalizes_same_claim",
+      "declarations": [
+        "alphaDropFromAverage",
+        "alphaDrop_uniform_margin_bound",
+        "alphaDrop_uniform_margin_lt_one"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Pointwise uniform-margin core of the limsup statement; eventual-tail application requires the displayed uniform hypothesis."
+      ]
     },
     "empirical_validation": {
-      "status": "NOT_TESTED",
+      "status": "NOT_APPLICABLE",
       "evidence_ids": [],
       "independent_replication": "NONE"
     }
@@ -1872,11 +1904,16 @@
     "verification_limitations": [],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "energyBandlimit",
+        "energyBandlimit_nonnegative"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Scalar sign theorem only; the physical coefficient and cutoff model are not derived."
+      ]
     },
     "empirical_validation": {
       "status": "NOT_APPLICABLE",
@@ -1907,11 +1944,16 @@
     "verification_limitations": [],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "channelCapacityUpperBound",
+        "channelCapacityUpperBound_nonnegative"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Scalar structure only; no full computational-capacity theorem is claimed."
+      ]
     },
     "empirical_validation": {
       "status": "NOT_APPLICABLE",
@@ -1997,29 +2039,40 @@
       "|C_{\\rm curv}(n)| \\le 2^{\\alpha(n)n}, \\qquad \\alpha(n)<1."
     ],
     "anchor": "e41-curvature-bounded-configuration-count",
-    "definition": "Current effective status: ⚠️ CONDITIONAL E28 alone does not prove this counting bound; an injective coding or combinatorial argument is required.",
+    "definition": "Current effective status: ✅ PASS Baseline status: ⚠️ CONDITIONAL",
     "formula": "|C_{\\rm curv}(n)| \\le 2^{\\alpha(n)n}, \\qquad \\alpha(n)<1.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e41-curvature-bounded-configuration-count",
-    "status": "CONDITIONAL",
+    "status": "PASS",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "check_alpha_drop_count_bound",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_alpha_drop_counting_bound_derived",
+    "checker": "check_alpha_drop_counting_bound_derived",
     "baseline_checker": "check_alpha_drop_count_bound",
     "verification_kind": "SYMBOLIC_DERIVATION",
     "verification_scope": "MODEL_CONDITIONAL",
-    "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
-    "verification_limitations": [],
+    "verification_meaning": "Actual per-step discrete count-retention bounds and the declared multiplicative correction factor iterate to the registered 2^(alpha(n)n) curvature-bounded configuration count.",
+    "verification_limitations": [
+      "The derivation assumes that the physical retained fractions are valid bounds on a finite discrete encoding; it does not derive that encoding from the underlying field dynamics."
+    ],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "retentionProduct",
+        "retentionProduct_zero",
+        "retentionProduct_succ",
+        "iterated_count_retention_bound",
+        "alphaFromRetentionLogSum",
+        "alphaFromRetentionLogSum_exponent_identity"
+      ],
+      "source": "WCTLean/Models/DerivedConstraints.lean",
+      "limitations": [
+        "Finite nonnegative count-retention theorem; physical encoding and retention hypotheses remain model assumptions."
+      ]
     },
     "empirical_validation": {
-      "status": "NOT_TESTED",
+      "status": "NOT_APPLICABLE",
       "evidence_ids": [],
       "independent_replication": "NONE"
     }
@@ -2328,29 +2381,36 @@
       "|\\nabla\\theta|\\ge\\delta>0"
     ],
     "anchor": "e50-phase-coherence-functional",
-    "definition": "Current effective status: ⚠️ CONDITIONAL The definition requires a regularization or lower bound",
+    "definition": "Current effective status: ✅ PASS Baseline status: ⚠️ CONDITIONAL",
     "formula": "\\mathcal C[\\psi] = \\int_\\Omega \\frac{|\\psi|^2}{|\\nabla\\theta|}\\,dx.\n\n|\\nabla\\theta|\\ge\\delta>0",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e50-phase-coherence-functional",
-    "status": "CONDITIONAL",
+    "status": "PASS",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "classify_conditional",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_phase_coherence_lower_gradient_bound_derived",
+    "checker": "check_phase_coherence_lower_gradient_bound_derived",
     "baseline_checker": "classify_conditional",
-    "verification_kind": "UNRESOLVED",
-    "verification_scope": "MODEL_CONDITIONAL",
-    "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
-    "verification_limitations": [],
+    "verification_kind": "ALGEBRAIC_IDENTITY",
+    "verification_scope": "STANDARD_MATHEMATICS",
+    "verification_meaning": "A positive lower bound on the phase-gradient magnitude gives a pointwise integrand bound and, for an L2 field, a finite phase-coherence functional.",
+    "verification_limitations": [
+      "The audit does not establish that the required positive phase-gradient floor holds dynamically."
+    ],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "phaseCoherenceIntegrand",
+        "phaseCoherenceIntegrand_bound"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Pointwise bound; continuum finiteness also uses the stated L2 density integrability assumption."
+      ]
     },
     "empirical_validation": {
-      "status": "NOT_TESTED",
+      "status": "NOT_APPLICABLE",
       "evidence_ids": [],
       "independent_replication": "NONE"
     }
@@ -3023,14 +3083,16 @@
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e68-localized-energy-estimate",
     "status": "CONDITIONAL",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "classify_conditional",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_localized_energy_concentration_constraint",
+    "checker": "check_localized_energy_concentration_constraint",
     "baseline_checker": "classify_conditional",
-    "verification_kind": "UNRESOLVED",
-    "verification_scope": "MODEL_CONDITIONAL",
-    "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
-    "verification_limitations": [],
+    "verification_kind": "CONSISTENCY_CHECK",
+    "verification_scope": "STANDARD_MATHEMATICS",
+    "verification_meaning": "The printed R^(n-2) localized-energy estimate cannot hold with an R-independent constant for arbitrary H1 fields in n=3 because a concentrating rescaling keeps the local gradient energy fixed while the proposed right side tends to zero.",
+    "verification_limitations": [
+      "E68 may still hold on a restricted scaling class or under additional domain, normalization, Morrey-type, or nonconcentration hypotheses; those assumptions must be stated explicitly."
+    ],
     "assumptions": [],
     "formalization": {
       "status": "DEFINITION",
@@ -3044,7 +3106,7 @@
       ]
     },
     "empirical_validation": {
-      "status": "NOT_TESTED",
+      "status": "NOT_APPLICABLE",
       "evidence_ids": [],
       "independent_replication": "NONE"
     }
@@ -3178,29 +3240,38 @@
       "|S_{\\rm eff}(n)| \\le 2^{\\alpha(n)n}."
     ],
     "anchor": "e72-curvature-pruned-search-space",
-    "definition": "Current effective status: ⚠️ CONDITIONAL A counting theorem linking the physical pruning process to discrete configurations is required.",
+    "definition": "Current effective status: ✅ PASS Baseline status: ⚠️ CONDITIONAL",
     "formula": "|S_{\\rm eff}(n)| \\le 2^{\\alpha(n)n}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#e72-curvature-pruned-search-space",
-    "status": "CONDITIONAL",
+    "status": "PASS",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "check_alpha_drop_count_bound",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_alpha_drop_counting_bound_derived",
+    "checker": "check_alpha_drop_counting_bound_derived",
     "baseline_checker": "check_alpha_drop_count_bound",
     "verification_kind": "SYMBOLIC_DERIVATION",
     "verification_scope": "MODEL_CONDITIONAL",
-    "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
-    "verification_limitations": [],
+    "verification_meaning": "Actual per-step discrete count-retention bounds and the declared multiplicative correction factor iterate to the registered 2^(alpha(n)n) effective search-space bound.",
+    "verification_limitations": [
+      "The derivation proves the counting implication once a finite discrete physical encoding and count-level retained fractions are supplied; it does not establish those physical premises."
+    ],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "retentionProduct",
+        "iterated_count_retention_bound",
+        "alphaFromRetentionLogSum",
+        "alphaFromRetentionLogSum_exponent_identity"
+      ],
+      "source": "WCTLean/Models/DerivedConstraints.lean",
+      "limitations": [
+        "Finite counting theorem only; no independent complexity-class result is claimed."
+      ]
     },
     "empirical_validation": {
-      "status": "NOT_TESTED",
+      "status": "NOT_APPLICABLE",
       "evidence_ids": [],
       "independent_replication": "NONE"
     }
@@ -3694,11 +3765,16 @@
     "verification_limitations": [],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "formalizes_same_claim",
+      "declarations": [
+        "scalarCurvatureQuotient",
+        "curvatureLock_iff_lockedEigenEquation"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Scalar algebraic equivalence only; no toroidal solution existence theorem."
+      ]
     },
     "empirical_validation": {
       "status": "NOT_APPLICABLE",
@@ -3714,29 +3790,34 @@
       "\\Delta\\psi \\approx \\frac1{R^2}\\partial_\\theta^2\\psi + \\frac1{r^2}\\partial_\\phi^2\\psi."
     ],
     "anchor": "cle5-thinproduct-torus-laplacian",
-    "definition": "Current effective status: ⚠️ CONDITIONAL Under a flat product or thin-torus approximation,",
+    "definition": "Current effective status: ✅ PASS Baseline status: ⚠️ CONDITIONAL",
     "formula": "\\Delta\\psi \\approx \\frac1{R^2}\\partial_\\theta^2\\psi + \\frac1{r^2}\\partial_\\phi^2\\psi.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle5-thinproduct-torus-laplacian",
-    "status": "CONDITIONAL",
+    "status": "PASS",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "classify_conditional",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_flat_product_torus_laplacian_derived",
+    "checker": "check_flat_product_torus_laplacian_derived",
     "baseline_checker": "classify_conditional",
-    "verification_kind": "UNRESOLVED",
-    "verification_scope": "MODEL_CONDITIONAL",
+    "verification_kind": "ALGEBRAIC_IDENTITY",
+    "verification_scope": "INTERNAL_CONSISTENCY",
     "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
     "verification_limitations": [],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "flatProductTorusEigenvalue",
+        "flatProductTorusEigenvalue_nonnegative"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Flat-product torus model only; curvature corrections are not included."
+      ]
     },
     "empirical_validation": {
-      "status": "NOT_TESTED",
+      "status": "NOT_APPLICABLE",
       "evidence_ids": [],
       "independent_replication": "NONE"
     }
@@ -3821,29 +3902,34 @@
       "\\psi(\\theta,\\phi)=Ae^{i\\phi}"
     ],
     "anchor": "cle8-selected-torus-eigenmode",
-    "definition": "Current effective status: ⚠️ CONDITIONAL is one admissible winding-one mode. Uniqueness requires additional lowest-mode, chirality, normalization, phase, and boundary-selection principles.",
+    "definition": "Current effective status: ✅ PASS Baseline status: ⚠️ CONDITIONAL",
     "formula": "\\psi(\\theta,\\phi)=Ae^{i\\phi}",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#cle8-selected-torus-eigenmode",
-    "status": "CONDITIONAL",
+    "status": "PASS",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "check_torus_eigenmode_selection",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_torus_lowest_mode_selection_derived",
+    "checker": "check_torus_lowest_mode_selection_derived",
     "baseline_checker": "check_torus_eigenmode_selection",
-    "verification_kind": "SYMBOLIC_DERIVATION",
-    "verification_scope": "MODEL_CONDITIONAL",
+    "verification_kind": "ALGEBRAIC_IDENTITY",
+    "verification_scope": "INTERNAL_CONSISTENCY",
     "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
     "verification_limitations": [],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "flatProductTorus_fixedWinding_one_minimal",
+        "flatProductTorus_fixedWinding_one_eq_iff"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Requires the stated n=+1 winding selection and flat-product spectrum."
+      ]
     },
     "empirical_validation": {
-      "status": "NOT_TESTED",
+      "status": "NOT_APPLICABLE",
       "evidence_ids": [],
       "independent_replication": "NONE"
     }
@@ -3874,11 +3960,16 @@
     ],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "formalizes_same_claim",
+      "declarations": [
+        "curvatureRadius",
+        "curvatureRadius_mul_curvature"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Exact reciprocal identity under nonzero curvature; physical radius identification remains model-specific."
+      ]
     },
     "empirical_validation": {
       "status": "NOT_APPLICABLE",
@@ -3909,11 +4000,16 @@
     "verification_limitations": [],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "formalizes_same_claim",
+      "declarations": [
+        "scalarCurvatureQuotient",
+        "curvatureScalarSq_iff_lockedEigenEquation"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Scalar algebraic equivalence only; no confined-state existence theorem."
+      ]
     },
     "empirical_validation": {
       "status": "NOT_APPLICABLE",
@@ -4517,11 +4613,17 @@
     "verification_limitations": [],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "formalizes_same_claim",
+      "declarations": [
+        "curvatureDampingEnvelope",
+        "curvatureDampingEnvelope_positive",
+        "curvatureDampingEnvelope_zero"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Envelope properties only; cosmological parameter calibration remains separate."
+      ]
     },
     "empirical_validation": {
       "status": "NOT_TESTED",
@@ -4946,26 +5048,31 @@
       "\\frac{d\\mathcal E_{\\rm loop}}{dt} = - \\left\\| \\frac{\\delta\\mathcal E_{\\rm loop}}{\\delta\\gamma} \\right\\|^2 \\le0."
     ],
     "anchor": "top3-irreversible-gradient-flow",
-    "definition": "Current effective status: ⚠️ CONDITIONAL For a differentiable gradient flow,",
+    "definition": "Current effective status: ✅ PASS Baseline status: ⚠️ CONDITIONAL",
     "formula": "\\partial_t\\gamma = -\\frac{\\delta\\mathcal E_{\\rm loop}}{\\delta\\gamma}.\n\n\\frac{d\\mathcal E_{\\rm loop}}{dt} = - \\left\\| \\frac{\\delta\\mathcal E_{\\rm loop}}{\\delta\\gamma} \\right\\|^2 \\le0.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top3-irreversible-gradient-flow",
-    "status": "CONDITIONAL",
+    "status": "PASS",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "classify_conditional",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_topology_gradient_flow_descent_derived",
+    "checker": "check_topology_gradient_flow_descent_derived",
     "baseline_checker": "classify_conditional",
-    "verification_kind": "UNRESOLVED",
-    "verification_scope": "MODEL_CONDITIONAL",
+    "verification_kind": "VARIATIONAL_DERIVATION",
+    "verification_scope": "INTERNAL_CONSISTENCY",
     "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
     "verification_limitations": [],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "finiteGradientFlowEnergyRate",
+        "finiteGradientFlowEnergyRate_nonpositive"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Finite-dimensional algebraic core; continuum differentiability and well-posedness are separate hypotheses."
+      ]
     },
     "empirical_validation": {
       "status": "NOT_TESTED",
@@ -5092,21 +5199,29 @@
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#top7-topological-mass-proxy",
     "status": "CONDITIONAL",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "classify_conditional",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_topology_curvature_energy_mass_constraint",
+    "checker": "check_topology_curvature_energy_mass_constraint",
     "baseline_checker": "classify_conditional",
-    "verification_kind": "UNRESOLVED",
+    "verification_kind": "CONSISTENCY_CHECK",
     "verification_scope": "MODEL_CONDITIONAL",
-    "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
-    "verification_limitations": [],
+    "verification_meaning": "In the torsion-free constant-curvature planar reduction of E6, mass squared is linear in the TOP7 curvature-energy density while mass itself scales with its square root.",
+    "verification_limitations": [
+      "This does not rule out a different linear mass-energy relation in a more restricted topology class, but it shows that the proposed universal linear proxy is not a consequence of E6 in the simplest constant-curvature sector."
+    ],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "supporting_lemma_only",
+      "declarations": [
+        "constantCurvatureEnergyDensity",
+        "planarConstantCurvatureMass",
+        "planarConstantCurvatureMass_squared"
+      ],
+      "source": "WCTLean/Models/DerivedConstraints.lean",
+      "limitations": [
+        "Diagnostic consequence of the supplied mass law; not a universal mass-energy theorem."
+      ]
     },
     "empirical_validation": {
       "status": "NOT_TESTED",
@@ -5228,26 +5343,32 @@
       "C_\\Theta(k) \\approx \\frac{k^4}{D_{\\rm eff}^2}."
     ],
     "anchor": "corr2-mean-amplitude-spectral-closure",
-    "definition": "Current effective status: ⚠️ CONDITIONAL Under a weak-intermittency mean-amplitude approximation,",
+    "definition": "Current effective status: ✅ PASS Baseline status: ⚠️ CONDITIONAL",
     "formula": "D_{\\rm eff}^2 := \\langle|\\psi|^2\\rangle+\\varepsilon^2,\n\nC_\\Theta(k) \\approx \\frac{k^4}{D_{\\rm eff}^2}.",
     "source": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/WCT_FULL_EQUATION_LIST_CORRECTED.md#corr2-mean-amplitude-spectral-closure",
-    "status": "CONDITIONAL",
+    "status": "PASS",
     "baseline_status": "CONDITIONAL",
-    "status_changed": false,
-    "status_changed_by": null,
-    "checker": "classify_conditional",
+    "status_changed": true,
+    "status_changed_by": "derived_overrides.yaml:check_mean_amplitude_closure_error_bound_v2",
+    "checker": "check_mean_amplitude_closure_error_bound_v2",
     "baseline_checker": "classify_conditional",
-    "verification_kind": "UNRESOLVED",
-    "verification_scope": "MODEL_CONDITIONAL",
+    "verification_kind": "SYMBOLIC_DERIVATION",
+    "verification_scope": "INTERNAL_CONSISTENCY",
     "verification_meaning": "The assigned executable check is reported under its declared assumptions.",
     "verification_limitations": [],
     "assumptions": [],
     "formalization": {
-      "status": "OPEN",
-      "relationship": null,
-      "declarations": [],
-      "source": null,
-      "limitations": []
+      "status": "PROVED",
+      "relationship": "formalizes_same_claim",
+      "declarations": [
+        "meanAmplitudeReciprocalFactor",
+        "meanAmplitudeReciprocalFactor_band",
+        "meanAmplitudeReciprocal_upperError_exact"
+      ],
+      "source": "WCTLean/Models/CoverageExpansion.lean",
+      "limitations": [
+        "Formalizes the error enclosure under a uniform relative-denominator fluctuation bound; it does not prove that physical solutions satisfy that bound."
+      ]
     },
     "empirical_validation": {
       "status": "NOT_TESTED",
