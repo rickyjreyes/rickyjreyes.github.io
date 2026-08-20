@@ -44,10 +44,10 @@ on:
 permissions:
   contents: write
 
-# The generated Lean page reads the version-3 canonical interoperability map
-# from rickyjreyes/wct-sympy, synchronized to the maintained wct-lean inventory.
+# Generated verification pages read the merged v5 canonical interoperability map
+# from rickyjreyes/wct-sympy main, synchronized to the maintained 80-ID wct-lean inventory.
 env:
-  WCT_SYMPY_REF: ${{ github.event_name == 'pull_request' && 'compiled-registry-v2' || 'main' }}
+  WCT_SYMPY_REF: main
 
 jobs:
   build:

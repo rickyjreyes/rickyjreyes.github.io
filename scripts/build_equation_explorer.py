@@ -28,7 +28,7 @@ METADATA_URL = WCT_SYMPY_RAW + "/equations/verification_metadata.yaml"
 ASSUMPTIONS_URL = WCT_SYMPY_RAW + "/equations/assumptions.yaml"
 LEAN_MAP_URL = WCT_SYMPY_RAW + "/interoperability/lean_map.yaml"
 ID_RE = re.compile(r"^##\s+((?:M|E|CLE|CM|TOP|CORR)\d+[A-Z]?|G1|EX|EY|EZ|FA)\s+[—-]\s+(.+?)\s*$")
-EXPECTED_COUNTS = {"PASS": 59, "CONDITIONAL": 27, "DEFINITION": 26, "OPEN": 30, "FAIL": 0}
+EXPECTED_COUNTS = {"PASS": 68, "CONDITIONAL": 18, "DEFINITION": 26, "OPEN": 30, "FAIL": 0}
 
 
 def fetch_text(url: str, required: bool = True) -> str:
