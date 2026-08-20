@@ -1,0 +1,43 @@
+name: Sync site to 68 PASS and Lean 80
+
+on:
+  push:
+    branches:
+      - agent/sync-68-80-site
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/sync-68-80-site
+      - name: Update site registry expectations and source ref
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          old = '{"PASS": 59, "CONDITIONAL": 27, "DEFINITION": 26, "OPEN": 30, "FAIL": 0}'
+          new = '{"PASS": 68, "CONDITIONAL": 18, "DEFINITION": 26, "OPEN": 30, "FAIL": 0}'
+          for name in ['scripts/build_equation_explorer.py', 'scripts/validate_registry_sync.py']:
+              p = Path(name)
+              text = p.read_text(encoding='utf-8')
+              if old not in text:
+                  raise SystemExit(f'expected totals literal not found in {name}')
+              p.write_text(text.replace(old, new), encoding='utf-8')
+          p = Path('.github/workflows/build-scholar-site.yml')
+          text = p.read_text(encoding='utf-8')
+          text = text.replace("WCT_SYMPY_REF: ${{ github.event_name == 'pull_request' && 'compiled-registry-v2' || 'main' }}", 'WCT_SYMPY_REF: main')
+          p.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit site sync inputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/build_equation_explorer.py scripts/validate_registry_sync.py .github/workflows/build-scholar-site.yml
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Sync site registry expectations to 68 PASS'
+          git push origin HEAD:agent/sync-68-80-site
