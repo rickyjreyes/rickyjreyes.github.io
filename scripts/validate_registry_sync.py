@@ -18,7 +18,7 @@ PUBLICATIONS_SOURCE = ROOT / "data" / "publications.json"
 TRACEABILITY_SOURCE = ROOT / "data" / "publication_traceability.json"
 PUBLICATIONS_DIR = ROOT / "publications"
 REPORT = ROOT / "registry-validation-report.json"
-EXPECTED_COUNTS = {"PASS": 59, "CONDITIONAL": 27, "DEFINITION": 26, "OPEN": 30, "FAIL": 0}
+EXPECTED_COUNTS = {"PASS": 68, "CONDITIONAL": 18, "DEFINITION": 26, "OPEN": 30, "FAIL": 0}
 EXPECTED_SAMPLES = {
     "E5": "PASS",
     "E9": "PASS",
