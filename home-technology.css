@@ -56,6 +56,45 @@
   animation:heroFieldShell 3.8s ease-in-out infinite!important;
 }
 .hero .wct-shell.outer{animation-duration:5.8s!important;animation-direction:reverse!important}
+
+/* Visible propagating wavefronts above the canvas. This is separate from the SVG guide lines so
+   the field itself visibly breathes and propagates even if the canvas frame loop is unavailable. */
+.hero .field-visual.wct-field::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-24%!important;
+  z-index:1!important;
+  display:block!important;
+  pointer-events:none!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:repeating-radial-gradient(circle at 50% 50%,rgba(103,212,255,.24) 0 1px,rgba(103,212,255,.055) 2px 3px,transparent 4px 22px)!important;
+  opacity:.34!important;
+  mix-blend-mode:screen;
+  filter:drop-shadow(0 0 7px rgba(103,212,255,.18));
+  transform-origin:50% 50%;
+  animation:heroWaveFronts 4.6s linear infinite!important;
+  will-change:transform,opacity;
+}
+.hero .field-visual.wct-field::after{
+  content:""!important;
+  position:absolute!important;
+  inset:-18%!important;
+  z-index:1!important;
+  display:block!important;
+  pointer-events:none!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:
+    repeating-radial-gradient(ellipse at 46% 53%,rgba(139,124,255,.13) 0 1px,transparent 2px 30px),
+    repeating-radial-gradient(ellipse at 55% 46%,rgba(182,255,218,.09) 0 1px,transparent 2px 38px)!important;
+  opacity:.28!important;
+  mix-blend-mode:screen;
+  transform-origin:50% 50%;
+  animation:heroWaveInterference 7.2s ease-in-out infinite alternate!important;
+  will-change:transform,opacity;
+}
+
 @keyframes heroFieldCanvas{
   0%{transform:scale(1) rotate(-.8deg);filter:saturate(.96) brightness(.9)}
   50%{transform:scale(1.025) rotate(.5deg);filter:saturate(1.12) brightness(1.08)}
@@ -69,6 +108,17 @@
 @keyframes heroFieldShell{
   0%,100%{transform:scale(.97);opacity:.46}
   50%{transform:scale(1.045);opacity:.94}
+}
+@keyframes heroWaveFronts{
+  0%{transform:scale(.72) rotate(0deg);opacity:.08}
+  18%{opacity:.38}
+  72%{opacity:.3}
+  100%{transform:scale(1.16) rotate(3deg);opacity:.04}
+}
+@keyframes heroWaveInterference{
+  0%{transform:translate3d(-2.5%,-1%,0) scale(.96) rotate(-2deg);opacity:.16}
+  50%{transform:translate3d(2%,1.5%,0) scale(1.035) rotate(1.5deg);opacity:.34}
+  100%{transform:translate3d(-1%,2%,0) scale(.985) rotate(3deg);opacity:.2}
 }
 
 .technology-bridge{padding-top:clamp(4.5rem,8vw,7rem);padding-bottom:clamp(4.5rem,8vw,7rem);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
