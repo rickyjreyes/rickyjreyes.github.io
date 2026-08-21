@@ -4,11 +4,15 @@ on:
   pull_request:
     paths:
       - "data/formal-upstream-sync.json"
+      - "scripts/enhance_verification_views.py"
+      - "scripts/optimize_math_rendering.py"
       - ".github/workflows/sync-formal-upstreams.yml"
   push:
     branches: [main]
     paths:
       - "data/formal-upstream-sync.json"
+      - "scripts/enhance_verification_views.py"
+      - "scripts/optimize_math_rendering.py"
       - ".github/workflows/sync-formal-upstreams.yml"
   workflow_dispatch:
 
@@ -53,8 +57,25 @@ jobs:
       - name: Generate machine-readable research corpus
         run: python scripts/build_research_corpus.py
 
+      - name: Restore status colors and readable equation layout
+        run: python scripts/enhance_verification_views.py
+
+      - name: Enable viewport MathJax rendering
+        run: python scripts/optimize_math_rendering.py
+
       - name: Validate formal registry synchronization
         run: python scripts/validate_registry_sync.py
+
+      - name: Verify presentation hooks survived regeneration
+        run: |
+          grep -q "verification-presentation-v2" equations/index.html
+          grep -q "verification-presentation-v2" sympy/index.html
+          grep -q "IntersectionObserver" equations/index.html
+          grep -q "IntersectionObserver" sympy/index.html
+          grep -q "equation-entry status-pass" equations/index.html
+          grep -q "audit-card status-pass" sympy/index.html
+          grep -q "math-line" equations/index.html
+          grep -q "math-line" sympy/index.html
 
       - name: Upload formal sync preview
         if: github.event_name == 'pull_request'
