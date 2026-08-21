@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "synced_date": "2026-08-20",
+  "wct_sympy": {
+    "repository": "rickyjreyes/wct-sympy",
+    "merge_commit": "386309ebf60ab15a7b248841a4886ff3c8258458",
+    "canonical_counts": {
+      "PASS": 68,
+      "CONDITIONAL": 18,
+      "DEFINITION": 26,
+      "OPEN": 30,
+      "FAIL": 0
+    }
+  },
+  "wct_lean": {
+    "repository": "rickyjreyes/wct-lean",
+    "merge_commit": "ac7c59d661ec8d083f7359dc23fff5040d33a082",
+    "canonical_mapped": 80,
+    "canonical_total": 142
+  },
+  "policy": "Paper-level closure and DSI additions remain outside canonical counts unless an exact canonical mapping is added and validated."
+}
