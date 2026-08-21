@@ -46,10 +46,6 @@ permissions:
 
 # Generated verification pages read the merged v5 canonical interoperability map
 # from rickyjreyes/wct-sympy main, synchronized to the maintained 80-ID wct-lean inventory.
-# Upstream sync checkpoint (2026-08-20):
-#   wct-sympy 386309ebf60ab15a7b248841a4886ff3c8258458
-#   wct-lean  ac7c59d661ec8d083f7359dc23fff5040d33a082
-# Paper-level closure/DSI additions remain separate from canonical counts unless an exact mapping is added later.
 env:
   WCT_SYMPY_REF: main
 
