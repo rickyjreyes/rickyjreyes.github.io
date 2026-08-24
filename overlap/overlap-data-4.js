@@ -12,7 +12,11 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
 [1010,"Local Sources of Phase Curvature and Rigidity in Finite Quantum Matter","https://arxiv.org/abs/2512.21940",9.1,"physics","arXiv","Riccardo Castagna","10.48550/arXiv.2512.21940","https://doi.org/10.48550/arXiv.2512.21940"],
 [1011,"Curvature-amplified angular localization of radially localized states","https://arxiv.org/abs/2607.29174",9.0,"physics","arXiv","Hiroyuki Shima","10.48550/arXiv.2607.29174","https://doi.org/10.48550/arXiv.2607.29174"],
 [1012,"Hidden Harmonic Structure of Fermion Masses and Flavor","https://arxiv.org/abs/2606.10405",9.0,"physics","arXiv","Petr Baron","10.48550/arXiv.2606.10405","https://doi.org/10.48550/arXiv.2606.10405"],
-[1013,"Tuning the critical current in toroidal superfluids via controllable impurities","https://doi.org/10.1103/316q-596d",9.0,"physics","Physical Review A","K. Xhani; G. Del Pace; N. Grani; D. Hernández-Rajkov; B. Donelli; G. Roati; L. Pezzè","10.1103/316q-596d","https://doi.org/10.1103/316q-596d"]
+[1013,"Tuning the critical current in toroidal superfluids via controllable impurities","https://doi.org/10.1103/316q-596d",9.0,"physics","Physical Review A","K. Xhani; G. Del Pace; N. Grani; D. Hernández-Rajkov; B. Donelli; G. Roati; L. Pezzè","10.1103/316q-596d","https://doi.org/10.1103/316q-596d"],
+[1014,"How Fusion-Born Alpha Particles Suppress Microturbulence in Burning Plasmas","https://arxiv.org/abs/2605.10694",9.6,"physics","arXiv","Alessandro Di Siena; Alejandro Banon Navarro; Pablo Rodriguez-Fernandez; Nathan T. Howard; Xin Wang; John Wright; Marco Muraca; Alexei Polevoi; Tobias Gorler; Emanuele Poli; Roberto Bilato; Sun Hee Kim; Florian Koechl; Martin Greenwald; Alberto Loarte; Frank Jenko","10.48550/arXiv.2605.10694","https://doi.org/10.48550/arXiv.2605.10694"],
+[1015,"Impact of energetic alpha particles on core turbulence in an ARC-class fusion power plant","https://arxiv.org/abs/2606.15965",9.1,"physics","arXiv","J. Hall; N. T. Howard; P. Rodriguez-Fernandez; R. A. Tinguely; I. Sfiligoi; J. Ruiz-Ruiz; J. C. Hillesheim; A. Creely; E. A. Belli; J. Candy","10.48550/arXiv.2606.15965","https://doi.org/10.48550/arXiv.2606.15965"],
+[1016,"Zonal-flow generation and saturation of electromagnetic ion-scale turbulence in tokamaks","https://arxiv.org/abs/2607.11789",8.6,"physics","arXiv","Y. Zhang; T. Adkins; M. Barnes; A. V. Dudkovskaia; M. R. Hardman; P. G. Ivanov; D. Kennedy; A. A. Schekochihin","10.48550/arXiv.2607.11789","https://doi.org/10.48550/arXiv.2607.11789"],
+[1017,"First observation of currents induced by Alfvén eigenmodes in a magnetic confinement device","https://doi.org/10.1103/1kzf-4n8n",9.2,"physics","Physical Review Letters","W. W. Heidbrink; X. D. Du; M. E. Austin; K. J. Callahan; C. T. Holcomb; J. B. Lestz; L. Liu; G. R. McKee; L. Schmitz; M. A. Van Zeeland; Z. Yan","10.1103/1kzf-4n8n","https://doi.org/10.1103/1kzf-4n8n"]
 ]);
 
 (() => {
@@ -22,4 +26,17 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
   physics.forEach((r,i)=>{r[0]=i+1;});
   ai.forEach((r,i)=>{r[0]=physics.length+i+1;});
   window.overlapRecords=[...physics,...ai];
+
+  // Keep the visible ledger counts synchronized with the loaded shards.
+  const highPhysics=physics.filter(r=>r[3]>=9).length;
+  const statValues=[window.overlapRecords.length,physics.length,highPhysics,ai.length];
+  document.querySelectorAll('.stats div strong').forEach((el,i)=>{
+    if(i<statValues.length) el.textContent=String(statValues[i]);
+  });
+  const intro=document.querySelector('.overlap-head > p:not(.eyebrow)');
+  if(intro) intro.textContent=`The default view shows the top ten comparison records in exact rank order, without skipping ranks. The August 24 high-specificity sweep expands the ledger to ${window.overlapRecords.length} records, including ${physics.length} WCT / physics / photonics comparisons and ${highPhysics} physics records scoring 9.0 or above. Chronology status remains separate from overlap rank.`;
+  const summary=document.querySelector('#complete-ledger summary small');
+  if(summary) summary.textContent=`${window.overlapRecords.length} external records · ${physics.length} physics / photonics + ${ai.length} AI-system comparisons · six date-checked cases`;
+  const footer=document.querySelector('.footer-note');
+  if(footer) footer.textContent='Updated August 24, 2026. Titles, authors, and DOI/permanent identifiers are normalized to the linked primary source. arXiv records display their DataCite DOI (10.48550/arXiv.…). Where no DOI is assigned, the primary official or permanent record is shown instead.';
 })();
