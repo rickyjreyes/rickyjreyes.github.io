@@ -27,10 +27,10 @@ def load_overlap_rows() -> list[list[Any]]:
             raise RuntimeError(f"Could not parse overlap records from {path}")
         raw_rows.extend(json.loads(match.group(1)))
 
-    # Overlay files may intentionally repeat an existing record in order to
-    # update its display rank or metadata. The primary URL is the stable key;
-    # later overlap-data files win. Display ranks are allowed to be sparse
-    # (for example the 1000+ branch-expansion ranks) and are not record counts.
+    # Primary URL is the record identity. Overlay files may intentionally repeat
+    # records and may also reuse historical display ranks before browser-side
+    # normalization. Later files win. Rank is presentation metadata, not a key
+    # and not a record count; sparse 1000+ branch-expansion ranks are valid.
     by_url: dict[str, list[Any]] = {}
     for row in raw_rows:
         if len(row) < 9:
@@ -40,12 +40,7 @@ def load_overlap_rows() -> list[list[Any]]:
             raise RuntimeError(f"Overlap ledger row has no primary URL: {row!r}")
         by_url[primary_url] = row
 
-    rows = list(by_url.values())
-    ranks = [int(row[0]) for row in rows]
-    if len(ranks) != len(set(ranks)):
-        raise RuntimeError("Duplicate overlap ledger ranks remain after URL deduplication")
-
-    return sorted(rows, key=lambda row: int(row[0]))
+    return sorted(by_url.values(), key=lambda row: (int(row[0]), str(row[2])))
 
 
 def load_existing() -> dict[str, Any]:
@@ -139,7 +134,6 @@ def patch_overlap_page(
 
     pretty_date = date.fromisoformat(today).strftime("%B %d, %Y").replace(" 0", " ")
     month_day = pretty_date.rsplit(",", 1)[0]
-
     text = re.sub(
         r'The August \d{1,2} high-specificity sweep expands the ledger to \d+ records, including \d+ WCT / physics / photonics comparisons and \d+ physics records scoring 9\.0 or above\.',
         f'The {month_day} high-specificity sweep expands the ledger to {total} records, including {physics} WCT / physics / photonics comparisons and {physics_9plus} physics records scoring 9.0 or above.',
@@ -154,7 +148,6 @@ def patch_overlap_page(
     )
     text = re.sub(r'"dateModified":"\d{4}-\d{2}-\d{2}"', f'"dateModified":"{today}"', text, count=1)
     text = re.sub(r'Updated [A-Z][a-z]+ \d{1,2}, \d{4}\.', f'Updated {pretty_date}.', text, count=1)
-
     OVERLAP_PAGE.write_text(text, encoding="utf-8")
 
 
@@ -244,7 +237,7 @@ def main() -> None:
             "not_assessed": "This audit does not assess the field.",
         },
         "recordFieldSemantics": {
-            "ledgerRank": "Display rank from the public overlap ledger; it is not a stable research identifier or a record count.",
+            "ledgerRank": "Display rank from the public overlap ledger; it is not a stable research identifier or a record count and may be sparse or historically reused before browser-side normalization.",
             "overlapScore": "Heuristic 0-10 comparison score for density and specificity of technical correspondence; it is not a probability.",
             "wctAnchors": "Exact dated WCT claim anchors only when chronology normalization has recorded them; an empty array means not yet normalized.",
             "verificationStatus": "Machine-readable audit state for this record.",
