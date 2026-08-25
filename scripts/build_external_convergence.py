@@ -15,7 +15,7 @@ OVERLAP_PAGE = OVERLAP_DIR / "index.html"
 
 
 def load_overlap_rows() -> list[list[Any]]:
-    rows: list[list[Any]] = []
+    raw_rows: list[list[Any]] = []
     paths = sorted(OVERLAP_DIR.glob("overlap-data-*.js"))
     if not paths:
         raise RuntimeError("No overlap-data-*.js files found")
@@ -25,13 +25,26 @@ def load_overlap_rows() -> list[list[Any]]:
         match = re.search(r"\.concat\((\[.*?\])\);", text, flags=re.S)
         if not match:
             raise RuntimeError(f"Could not parse overlap records from {path}")
-        rows.extend(json.loads(match.group(1)))
+        raw_rows.extend(json.loads(match.group(1)))
 
+    # Overlay files may intentionally repeat an existing record in order to
+    # update its display rank or metadata. The primary URL is the stable key;
+    # later overlap-data files win. Display ranks are allowed to be sparse
+    # (for example the 1000+ branch-expansion ranks) and are not record counts.
+    by_url: dict[str, list[Any]] = {}
+    for row in raw_rows:
+        if len(row) < 9:
+            raise RuntimeError(f"Malformed overlap ledger row: {row!r}")
+        primary_url = str(row[2]).strip()
+        if not primary_url:
+            raise RuntimeError(f"Overlap ledger row has no primary URL: {row!r}")
+        by_url[primary_url] = row
+
+    rows = list(by_url.values())
     ranks = [int(row[0]) for row in rows]
     if len(ranks) != len(set(ranks)):
-        raise RuntimeError("Duplicate overlap ledger ranks detected")
-    if sorted(ranks) != list(range(1, max(ranks) + 1)):
-        raise RuntimeError("Overlap ledger ranks are not contiguous")
+        raise RuntimeError("Duplicate overlap ledger ranks remain after URL deduplication")
+
     return sorted(rows, key=lambda row: int(row[0]))
 
 
@@ -95,7 +108,14 @@ def build_record(row: list[Any], verified: dict[str, Any] | None, candidate: dic
     return record
 
 
-def patch_overlap_page(total: int, physics: int, ai: int, date_checked: int) -> None:
+def patch_overlap_page(
+    total: int,
+    physics: int,
+    physics_9plus: int,
+    ai: int,
+    date_checked: int,
+    today: str,
+) -> None:
     if not OVERLAP_PAGE.exists():
         return
     text = OVERLAP_PAGE.read_text(encoding="utf-8")
@@ -111,10 +131,30 @@ def patch_overlap_page(total: int, physics: int, ai: int, date_checked: int) -> 
     stats = (
         f'<div class="stats"><div><strong>{total}</strong><span>external comparison records</span></div>'
         f'<div><strong>{physics}</strong><span>WCT / physics / photonics records</span></div>'
+        f'<div><strong>{physics_9plus}</strong><span>physics records scoring 9.0+</span></div>'
         f'<div><strong>{ai}</strong><span>Recursive AI Drift / AI-system records</span></div>'
         f'<div><strong>{date_checked}</strong><span>date-checked chronology cases</span></div></div>'
     )
     text = re.sub(r'<div class="stats">.*?</div></div>', stats, text, count=1, flags=re.S)
+
+    pretty_date = date.fromisoformat(today).strftime("%B %d, %Y").replace(" 0", " ")
+    month_day = pretty_date.rsplit(",", 1)[0]
+
+    text = re.sub(
+        r'The August \d{1,2} high-specificity sweep expands the ledger to \d+ records, including \d+ WCT / physics / photonics comparisons and \d+ physics records scoring 9\.0 or above\.',
+        f'The {month_day} high-specificity sweep expands the ledger to {total} records, including {physics} WCT / physics / photonics comparisons and {physics_9plus} physics records scoring 9.0 or above.',
+        text,
+        count=1,
+    )
+    text = re.sub(
+        r'<small>\d+ external records · \d+ physics / photonics \+ \d+ AI-system comparisons · (?:six|\d+) date-checked cases</small>',
+        f'<small>{total} external records · {physics} physics / photonics + {ai} AI-system comparisons · {date_checked} date-checked cases</small>',
+        text,
+        count=1,
+    )
+    text = re.sub(r'"dateModified":"\d{4}-\d{2}-\d{2}"', f'"dateModified":"{today}"', text, count=1)
+    text = re.sub(r'Updated [A-Z][a-z]+ \d{1,2}, \d{4}\.', f'Updated {pretty_date}.', text, count=1)
+
     OVERLAP_PAGE.write_text(text, encoding="utf-8")
 
 
@@ -144,6 +184,11 @@ def main() -> None:
     ]
 
     physics_count = sum(1 for record in records if record["domain"] == "physics")
+    physics_9plus_count = sum(
+        1
+        for record in records
+        if record["domain"] == "physics" and float(record["overlapScore"]) >= 9.0
+    )
     ai_count = sum(1 for record in records if record["domain"] == "ai")
     date_checked = sum(1 for record in records if record["verificationStatus"] == "date_checked")
     chronology_review = sum(
@@ -181,6 +226,7 @@ def main() -> None:
         "counts": {
             "totalRecords": len(records),
             "physicsRecords": physics_count,
+            "physics9Plus": physics_9plus_count,
             "aiRecords": ai_count,
             "dateChecked": date_checked,
             "chronologyPriorArtReview": chronology_review,
@@ -198,7 +244,7 @@ def main() -> None:
             "not_assessed": "This audit does not assess the field.",
         },
         "recordFieldSemantics": {
-            "ledgerRank": "Display rank from the public overlap ledger; it is not a stable research identifier.",
+            "ledgerRank": "Display rank from the public overlap ledger; it is not a stable research identifier or a record count.",
             "overlapScore": "Heuristic 0-10 comparison score for density and specificity of technical correspondence; it is not a probability.",
             "wctAnchors": "Exact dated WCT claim anchors only when chronology normalization has recorded them; an empty array means not yet normalized.",
             "verificationStatus": "Machine-readable audit state for this record.",
@@ -210,11 +256,18 @@ def main() -> None:
     }
 
     OUT_PATH.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    patch_overlap_page(len(records), physics_count, ai_count, date_checked)
+    patch_overlap_page(
+        len(records),
+        physics_count,
+        physics_9plus_count,
+        ai_count,
+        date_checked,
+        today,
+    )
     print(
-        f"Generated {OUT_PATH.relative_to(ROOT)} with {len(records)} records "
-        f"({physics_count} physics, {ai_count} AI; {date_checked} date-checked, "
-        f"{chronology_review} chronology-review)."
+        f"Generated {OUT_PATH.relative_to(ROOT)} with {len(records)} unique records "
+        f"({physics_count} physics, {physics_9plus_count} physics at 9.0+, {ai_count} AI; "
+        f"{date_checked} date-checked, {chronology_review} chronology-review)."
     )
 
 
