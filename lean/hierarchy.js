@@ -133,10 +133,11 @@
   const inventory = document.createElement('details');
   inventory.className = 'lean-inventory';
   inventory.id = 'lean-full-inventory';
+  inventory.open = true;
   inventory.innerHTML = `
     <summary>
       <span class="lean-inventory-summary"><strong>Complete Lean object browser</strong><small>Search and inspect all ${rows.length} canonical objects, formalization notes, declarations, symbolic status, and empirical status.</small></span>
-      <span class="lean-inventory-action" aria-hidden="true">Open ↓</span>
+      <span class="lean-inventory-action" aria-hidden="true">Close ↑</span>
     </summary>
     <div class="lean-inventory-content">
       <div class="lean-filter-context" id="lean-filter-context">
