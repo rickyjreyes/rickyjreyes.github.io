@@ -2,6 +2,13 @@
   const wrap = document.querySelector('.site-header .nav-wrap');
   if (!wrap) return;
 
+  const wordmark = wrap.querySelector('.wordmark');
+  if (wordmark) {
+    wordmark.href = '/#top';
+    wordmark.setAttribute('aria-label', 'Wave Confinement Theory home');
+    wordmark.innerHTML = `<img class="wct-wordmark-logo" src="/assets/Wavelock_transparent.png" alt="" aria-hidden="true"><span>WCT</span>`;
+  }
+
   const normalizePath = (value) => {
     let path = value || '/';
     path = path.replace(/index\.html$/i, '');
@@ -74,6 +81,7 @@
     style.textContent = `
       .site-header .wordmark{font-size:.97rem;font-weight:750;letter-spacing:.002em}
       .site-header .mark{width:34px;height:34px;border-color:rgba(103,212,255,.52);box-shadow:0 0 0 1px rgba(103,212,255,.04),0 8px 28px rgba(0,0,0,.2)}
+      .site-header .wct-wordmark-logo{display:block;width:38px;height:38px;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(0,0,0,.24))}
       #site-nav{gap:clamp(24px,2.35vw,38px)}
       #site-nav>a,#site-nav .nav-trigger{position:relative;color:var(--muted,#9cb0c1);font-size:.82rem;font-weight:560;letter-spacing:.012em;text-decoration:none;transition:color 120ms ease}
       #site-nav>a{padding-block:10px}
@@ -146,6 +154,7 @@
       @media(max-width:980px){.patent-home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
       @media(max-width:760px){
         .site-header .wordmark{font-size:.94rem}
+        .site-header .wct-wordmark-logo{width:34px;height:34px}
         #site-nav{gap:0}
         #site-nav>a,#site-nav .nav-trigger{font-size:.86rem;font-weight:620}
         #site-nav>a{padding:12px 11px}
