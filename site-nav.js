@@ -20,39 +20,69 @@
           color:var(--text,#e9f0f6);
           text-decoration:none;
           cursor:pointer;
-          transition:background 130ms ease,border-color 130ms ease,box-shadow 130ms ease,transform 130ms ease,color 130ms ease;
+          transition:color 130ms ease;
         }
         .site-header .wordmark span:last-child{
           font-weight:820;
           letter-spacing:.055em;
         }
         .site-header .wordmark:hover{
-          border-color:rgba(103,212,255,.3);
-          background:rgba(103,212,255,.075);
-          box-shadow:0 8px 28px rgba(0,0,0,.18),inset 0 0 0 1px rgba(103,212,255,.025);
-          color:#fff;
-          transform:translateY(-1px);
+          color:var(--text,#e9f0f6);
+          border-color:transparent;
+          background:transparent;
+          box-shadow:none;
+          transform:none;
         }
         .site-header .wordmark:focus-visible{
           outline:2px solid var(--accent,#67d4ff);
           outline-offset:3px;
-          border-color:rgba(103,212,255,.42);
-          background:rgba(103,212,255,.08);
+          border-color:transparent;
+          background:transparent;
         }
         .site-header .wordmark .wct-wordmark-logo{
           width:112px;
           height:112px;
           object-fit:contain;
-          transition:transform 130ms ease,filter 130ms ease;
+          transform:none;
+          filter:drop-shadow(0 8px 18px rgba(0,0,0,.24));
+          transition:none;
         }
         .site-header .wordmark:hover .wct-wordmark-logo,
         .site-header .wordmark:focus-visible .wct-wordmark-logo{
-          transform:scale(1.08);
-          filter:drop-shadow(0 0 9px rgba(103,212,255,.38)) drop-shadow(0 8px 18px rgba(0,0,0,.24));
+          transform:none;
+          filter:drop-shadow(0 8px 18px rgba(0,0,0,.24));
         }
+
+        #site-nav>a::after,
+        #site-nav .nav-group>.nav-trigger::after{
+          height:3px !important;
+          border-radius:999px;
+          background:linear-gradient(90deg,#67d4ff 0%,#8b7cff 52%,#b6ffda 100%) !important;
+          box-shadow:0 0 10px rgba(103,212,255,.18);
+        }
+        #site-nav>a:hover::after,
+        #site-nav>a:focus-visible::after,
+        #site-nav .nav-group>.nav-trigger:hover::after,
+        #site-nav .nav-group>.nav-trigger:focus-visible::after{
+          position:absolute;
+          right:0;
+          bottom:2px;
+          left:0;
+          height:3px;
+          content:"";
+          border-radius:999px;
+          background:linear-gradient(90deg,#67d4ff 0%,#8b7cff 52%,#b6ffda 100%);
+        }
+        #site-nav .nav-dropdown-link::after,
+        #site-nav .nav-dropdown-link:hover::after,
+        #site-nav .nav-dropdown-link:focus-visible::after{
+          display:none !important;
+        }
+
         @media(max-width:760px){
           .site-header .wordmark{min-height:120px;margin-left:-7px;padding:4px 7px;border-radius:10px}
           .site-header .wordmark .wct-wordmark-logo{width:112px;height:112px}
+          #site-nav>a::after,#site-nav .nav-group>.nav-trigger::after{display:none !important}
         }
       `;
       document.head.appendChild(style);
