@@ -3,56 +3,30 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f">
-<meta name="description" content="Explore Wave Confinement Theory visually through concepts, equations, chronology, and the interactive concept graph.">
+<meta name="description" content="Wave Confinement Theory interactive tools: glossary, equation explorer, research timeline, and concept graph.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://rickyjreyes.github.io/tools/">
-<title>Interactive WCT Tools | Richard J. Reyes</title>
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="tools-v2.css">
-<link rel="stylesheet" href="tools-v3.css">
-<link rel="stylesheet" href="tools-v4.css">
-<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["$$","$$"]]},svg:{fontCache:"global"}};</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<title>WCT Tools | Richard J. Reyes</title>
+<link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="tools-v2.css"><link rel="stylesheet" href="tools-v3.css"><link rel="stylesheet" href="tools-v4.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to tools</a>
-<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
+<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"></nav></div></header>
 <main id="main">
 <section class="tool-hero tool-wrap">
-  <p class="eyebrow">Interactive exploration</p>
-  <h1>Explore WCT visually.</h1>
-  <p class="tool-hero-lede">Move through the research program in four separate views: learn the concepts, inspect the equations, follow the chronology, or trace how ideas connect.</p>
-  <p class="tool-boundary">This page reads from the canonical research feeds. It is an exploration layer, not a second source of truth.</p>
-  <nav class="tool-modes" aria-label="WCT visual exploration modes">
-    <a class="tool-mode-card" href="#glossary"><span class="tool-mode-number">01</span><span class="tool-mode-copy"><strong>Concepts</strong><span>Alphabetical definitions, notation, and conceptual families.</span></span><span class="tool-mode-arrow" aria-hidden="true">↓</span></a>
-    <a class="tool-mode-card" href="#equations"><span class="tool-mode-number">02</span><span class="tool-mode-copy"><strong>Equations</strong><span>Browse and render all 142 canonical objects.</span></span><span class="tool-mode-arrow" aria-hidden="true">↓</span></a>
-    <a class="tool-mode-card" href="#chronology"><span class="tool-mode-number">03</span><span class="tool-mode-copy"><strong>Timeline</strong><span>Follow releases and branches across the research chronology.</span></span><span class="tool-mode-arrow" aria-hidden="true">↓</span></a>
-    <a class="tool-mode-card" href="#graph"><span class="tool-mode-number">04</span><span class="tool-mode-copy"><strong>Graph</strong><span>Explore semantic links and the master-equation architecture.</span></span><span class="tool-mode-arrow" aria-hidden="true">↓</span></a>
-  </nav>
-  <section class="tool-motion" aria-labelledby="motion-title">
-    <div class="tool-motion-head"><div><p class="eyebrow">Computational views</p><h2 id="motion-title">See the structures evolve.</h2></div><p>These loops are computational visualizations, not experimental footage. They are included to make the spatial behavior easier to inspect before moving into the equation and verification layers.</p></div>
-    <div class="tool-motion-grid">
-      <figure class="tool-motion-card"><video src="../assets/psi_ring.mp4" autoplay muted loop playsinline controls preload="metadata" aria-label="Computational visualization of an evolving ring-like wave structure"></video><figcaption><span class="tool-media-kind">Numerical visualization</span><strong>Ring-mode evolution.</strong><span>Dynamic view of a localized annular structure used for visual inspection of persistence and confinement behavior.</span></figcaption></figure>
-      <figure class="tool-motion-card"><video src="../assets/self_emergent_cavity.mp4" poster="../assets/emergent_cavity.png" autoplay muted loop playsinline controls preload="metadata" aria-label="Computational visualization of an evolving cavity-like wave structure"></video><figcaption><span class="tool-media-kind">Numerical visualization</span><strong>Cavity formation.</strong><span>Dynamic cavity-like field structure presented as computational output rather than empirical measurement.</span></figcaption></figure>
-    </div>
-  </section>
-  <div class="tool-reference-links" aria-label="Canonical verification links"><span>Canonical layers:</span><a href="../equations/">Equation registry</a><a href="../sympy/">SymPy audit</a><a href="../lean/">Lean coverage</a></div>
+<p class="eyebrow">Interactive exploration</p><h1>WCT tools.</h1>
+<p class="tool-hero-lede">Each tool now has its own page. Open the glossary, inspect the equation registry, follow the research chronology, or explore the concept graph.</p>
+<p class="tool-boundary">These interfaces read from the canonical research feeds. They are exploration layers, not separate sources of truth.</p>
+<nav class="tool-modes" aria-label="WCT tools">
+<a class="tool-mode-card" href="glossary/"><span class="tool-mode-number">01</span><span class="tool-mode-copy"><strong>Glossary</strong><span>Alphabetical definitions, notation, and conceptual families.</span></span><span class="tool-mode-arrow" aria-hidden="true">→</span></a>
+<a class="tool-mode-card" href="equations/"><span class="tool-mode-number">02</span><span class="tool-mode-copy"><strong>Equations</strong><span>Browse and render the canonical equation and claim registry.</span></span><span class="tool-mode-arrow" aria-hidden="true">→</span></a>
+<a class="tool-mode-card" href="timeline/"><span class="tool-mode-number">03</span><span class="tool-mode-copy"><strong>Timeline</strong><span>Follow dated releases and branches across the research chronology.</span></span><span class="tool-mode-arrow" aria-hidden="true">→</span></a>
+<a class="tool-mode-card" href="graph/"><span class="tool-mode-number">04</span><span class="tool-mode-copy"><strong>Graph</strong><span>Explore semantic links and the master-equation architecture.</span></span><span class="tool-mode-arrow" aria-hidden="true">→</span></a>
+</nav>
+<section class="tool-motion" aria-labelledby="motion-title"><div class="tool-motion-head"><div><p class="eyebrow">Computational views</p><h2 id="motion-title">See the structures evolve.</h2></div><p>These loops are computational visualizations, not experimental footage. They provide spatial context before entering the equation and verification layers.</p></div><div class="tool-motion-grid"><figure class="tool-motion-card"><video src="../assets/psi_ring.mp4" autoplay muted loop playsinline controls preload="metadata" aria-label="Computational visualization of an evolving ring-like wave structure"></video><figcaption><span class="tool-media-kind">Numerical visualization</span><strong>Ring-mode evolution.</strong><span>Dynamic view of a localized annular structure used for visual inspection of persistence and confinement behavior.</span></figcaption></figure><figure class="tool-motion-card"><video src="../assets/self_emergent_cavity.mp4" poster="../assets/emergent_cavity.png" autoplay muted loop playsinline controls preload="metadata" aria-label="Computational visualization of an evolving cavity-like wave structure"></video><figcaption><span class="tool-media-kind">Numerical visualization</span><strong>Cavity formation.</strong><span>Dynamic cavity-like field structure presented as computational output rather than empirical measurement.</span></figcaption></figure></div></section>
+<div class="tool-reference-links" aria-label="Canonical verification links"><span>Canonical layers:</span><a href="../equations/">Equation registry</a><a href="../sympy/">SymPy audit</a><a href="../lean/">Lean coverage</a></div>
 </section>
-
-<section class="tool-section tool-wrap" id="glossary"><div class="tool-head"><div><p class="eyebrow">Concepts</p><h2>Alphabetical glossary.</h2></div><p>Browse A–Z or search by term, definition, mathematical notation, or conceptual family.</p></div><div class="tool-toolbar"><input id="termSearch" type="search" placeholder="Search glossary"><select id="termFamily"><option value="">All concept families</option></select><span class="tool-count" id="termCount"></span></div><div class="tool-grid" id="glossaryGrid"></div></section>
-
-<section class="tool-section tool-wrap" id="equations"><div class="tool-head"><div><p class="eyebrow">Equations</p><h2>Canonical equation tool.</h2></div><p>All 142 equations with rendered formulas, definitions, status labels, exact entry links, and canonical sources.</p></div><div class="tool-toolbar"><input id="eqSearch" type="search" placeholder="Search equation ID, title, definition, or formula"><select id="eqFamily"><option value="">All equation families</option></select><span class="tool-count" id="eqCount"></span></div><div class="equation-layout"><div class="equation-list" id="eqList"></div><article class="equation-box"><p class="eyebrow" id="eqFamilyOut">Equation</p><h2 id="eqTitle">Select an equation</h2><p class="tool-note" id="eqMeaning"></p><div class="latex" id="eqRendered"></div><details><summary>LaTeX source</summary><pre class="src" id="eqLatex"></pre></details><div class="equation-links"><a id="eqPageLink" href="../equations/">Open full equation card</a><a id="eqSourceLink" href="#" target="_blank" rel="noopener noreferrer">Canonical source ↗</a></div><p class="tool-note" id="eqStatus"></p></article></div></section>
-
-<section class="tool-section tool-wrap" id="chronology"><div class="tool-head"><div><p class="eyebrow">Timeline</p><h2>Calendar of the research program.</h2></div><p>Events are positioned by year, month, and day. The continuous timescale preserves the full interval from the first release to the latest dated release.</p></div><div class="tool-toolbar"><input id="calendarSearch" type="search" placeholder="Search chronology by title or branch"></div><div class="calendar-controls" id="calendarControls" aria-label="Chronology year filters"></div><div id="calendarRoot"></div><aside class="calendar-detail" id="calendarDetail" hidden></aside></section>
-
-<section class="tool-section tool-wrap" id="graph"><div class="tool-head"><div><p class="eyebrow">Graph</p><h2>Obsidian-style corpus graph.</h2></div><p>Glossary terms connect to family hubs, explicit semantic edges, and the master-equation architecture. Drag nodes, pan, zoom, search, and filter by family.</p></div><div class="tool-toolbar"><input id="graphSearch" type="search" placeholder="Find a concept and its neighbors"><select id="graphFamily"><option value="">All concept families</option></select><button id="graphLabels" type="button" aria-pressed="false">Show all labels</button><button id="graphReset" type="button">Reset view</button></div><div class="graph-shell"><div class="graph-stage"><svg id="conceptGraph" viewBox="0 0 1200 720" role="img" aria-label="Interactive WCT concept graph"><defs><pattern id="graphGrid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(180,205,235,.18)" stroke-width=".6"/></pattern></defs><rect class="graph-grid" width="1200" height="720" fill="url(#graphGrid)"></rect><g id="graphScene"><g id="graphEdges"></g><g id="graphNodes"></g></g></svg><div class="graph-hint">Drag nodes · drag background to pan · scroll to zoom</div></div><aside class="graph-inspector" id="graphInspector"><span class="tool-tag">Graph inspector</span><h3>Select a node</h3><p>Its definition, notation, family, and direct connections will appear here.</p></aside></div><div class="graph-legend" id="graphLegend" aria-label="Concept family colors"></div></section>
 </main>
 <footer class="site-footer"><div class="section-shell footer-bottom"><span>Interactive WCT tools</span><a href="#top">Back to top ↑</a></div></footer>
-<script src="corpus-data.js"></script>
-<script src="equations-data.js"></script>
-<script src="tools-v2.js"></script>
-<script src="tools-v3.js"></script>
-<script src="tools-v4.js"></script>
 <script src="../site-nav.js" defer></script>
-</body>
-</html>
+</body></html>
