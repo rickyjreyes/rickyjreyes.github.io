@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Interactive Wave Confinement Theory canonical equation explorer.">
+<link rel="canonical" href="https://rickyjreyes.github.io/tools/equations/">
+<title>WCT Equation Tool | Richard J. Reyes</title>
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../tools-v2.css"><link rel="stylesheet" href="../tools-v3.css">
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["$$","$$"]]},svg:{fontCache:"global"}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to equation tool</a>
+<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"></nav></div></header>
+<main id="main">
+<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Equations</p><h1>Canonical equation tool.</h1><p class="tool-hero-lede">Browse the canonical equation and claim registry with rendered formulas, definitions, status labels, exact entry links, and source records.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../glossary/">Glossary</a><a href="../timeline/">Timeline</a><a href="../graph/">Graph</a></div></section>
+<section class="tool-section tool-wrap" id="equations"><div class="tool-head"><div><p class="eyebrow">Equation registry</p><h2>Inspect each object.</h2></div><p>Search by ID, title, definition, formula, family, or status.</p></div><div class="tool-toolbar"><input id="eqSearch" type="search" placeholder="Search equation ID, title, definition, or formula"><select id="eqFamily"><option value="">All equation families</option></select><span class="tool-count" id="eqCount"></span></div><div class="equation-layout"><div class="equation-list" id="eqList"></div><article class="equation-box"><p class="eyebrow" id="eqFamilyOut">Equation</p><h2 id="eqTitle">Select an equation</h2><p class="tool-note" id="eqMeaning"></p><div class="latex" id="eqRendered"></div><details><summary>LaTeX source</summary><pre class="src" id="eqLatex"></pre></details><div class="equation-links"><a id="eqPageLink" href="../../equations/">Open full equation card</a><a id="eqSourceLink" href="#" target="_blank" rel="noopener noreferrer">Canonical source ↗</a></div><p class="tool-note" id="eqStatus"></p></article></div></section>
+</main>
+<footer class="site-footer"><div class="section-shell footer-bottom"><span>WCT Equation Tool</span><a href="#top">Back to top ↑</a></div></footer>
+<script src="../corpus-data.js"></script><script src="../equations-data.js"></script>
+<script>
+(() => {
+ const corpus=window.WCT_CORPUS||{}, equations=window.WCT_EQUATIONS||corpus.equations||[];
+ const s=document.getElementById('eqSearch'), f=document.getElementById('eqFamily'), list=document.getElementById('eqList'), count=document.getElementById('eqCount');
+ const famOut=document.getElementById('eqFamilyOut'), title=document.getElementById('eqTitle'), meaning=document.getElementById('eqMeaning'), rendered=document.getElementById('eqRendered'), latex=document.getElementById('eqLatex'), status=document.getElementById('eqStatus'), page=document.getElementById('eqPageLink'), source=document.getElementById('eqSourceLink');
+ const esc=v=>String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
+ [...new Set(equations.map(e=>e.family))].sort().forEach(x=>f.add(new Option(x,x)));
+ function select(id){const e=equations.find(x=>x.id===id)||equations[0]; if(!e)return; famOut.textContent=`${e.family} · ${e.id}`; title.textContent=e.title; meaning.textContent=e.meaning; rendered.innerHTML=`$$${e.latex}$$`; latex.textContent=e.latex; status.textContent=e.status; page.href=`../../equations/#${encodeURIComponent(e.id)}`; source.href=e.source||page.href; document.querySelectorAll('.equation-item').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===e.id))); if(window.MathJax?.typesetPromise)window.MathJax.typesetPromise([rendered]);}
+ function render(){const q=s.value.trim().toLowerCase(), fam=f.value; const shown=equations.filter(e=>(!q||Object.values(e).join(' ').toLowerCase().includes(q))&&(!fam||e.family===fam)); list.innerHTML=''; shown.forEach(e=>{const b=document.createElement('button');b.className='equation-item';b.dataset.id=e.id;b.innerHTML=`<strong>${esc(e.id)} — ${esc(e.title)}</strong><span>${esc(e.family)} · ${esc(e.status)}</span>`;b.addEventListener('click',()=>select(e.id));list.appendChild(b)}); count.textContent=`${shown.length} of ${equations.length} equations`; if(shown.length)select(shown[0].id);}
+ s.addEventListener('input',render);f.addEventListener('change',render);render();
+})();
+</script>
+<script src="../../site-nav.js" defer></script>
+</body></html>
