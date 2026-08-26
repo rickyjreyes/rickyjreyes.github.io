@@ -10,24 +10,123 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to timeline</a>
-<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
+<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"></nav></div></header>
 <main id="main">
 <section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Timeline</p><h1>Research timeline.</h1><p class="tool-hero-lede">Follow dated releases and research branches across the Wave Confinement Theory chronology.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../glossary/">Glossary</a><a href="../equations/">Equations</a><a href="../graph/">Graph</a></div></section>
-<section class="tool-section tool-wrap" id="chronology"><div class="tool-head"><div><p class="eyebrow">Chronology</p><h2>Calendar of the research program.</h2></div><p>Events are positioned by year, month, and day from the first dated release to the latest entry.</p></div><div class="tool-toolbar"><input id="calendarSearch" type="search" placeholder="Search chronology by title or branch"></div><div class="calendar-controls" id="calendarControls" aria-label="Chronology year filters"></div><div id="calendarRoot"></div><aside class="calendar-detail" id="calendarDetail" hidden></aside></section>
+<section class="tool-section tool-wrap" id="chronology"><div class="tool-head"><div><p class="eyebrow">Chronology</p><h2>Calendar of the research program.</h2></div><p>Events are positioned by year, month, and day. The continuous timescale preserves the full interval from the first release to the latest dated release.</p></div><div class="tool-toolbar"><input id="calendarSearch" type="search" placeholder="Search chronology by title or branch"></div><div class="calendar-controls" id="calendarControls" aria-label="Chronology year filters"></div><div id="calendarRoot"></div><aside class="calendar-detail" id="calendarDetail" hidden></aside></section>
 </main>
 <footer class="site-footer"><div class="section-shell footer-bottom"><span>WCT Timeline</span><a href="#top">Back to top ↑</a></div></footer>
 <script src="../corpus-data.js"></script>
 <script>
 (() => {
- const corpus=window.WCT_CORPUS||{}; const esc=v=>String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
- const events=(corpus.chronology||[]).map(([date,title,summary])=>({date,title,summary,value:new Date(`${date}T12:00:00`)})).sort((a,b)=>a.value-b.value);
- const root=document.getElementById('calendarRoot'), controls=document.getElementById('calendarControls'), search=document.getElementById('calendarSearch'), detail=document.getElementById('calendarDetail');
- const months=Array.from({length:12},(_,m)=>new Intl.DateTimeFormat('en-US',{month:'short'}).format(new Date(2025,m,1))); const years=[...new Set(events.map(e=>e.value.getFullYear()))]; let active='';
- function show(e){detail.hidden=false;detail.innerHTML=`<p class="eyebrow">${esc(new Intl.DateTimeFormat('en-US',{dateStyle:'long'}).format(e.value))}</p><h3>${esc(e.title)}</h3><p>${esc(e.summary)}</p>`;detail.scrollIntoView({block:'nearest',behavior:'smooth'});}
- function render(){root.innerHTML='';years.forEach(year=>{const ye=events.filter(e=>e.value.getFullYear()===year);const section=document.createElement('section');section.className='calendar-year';section.dataset.year=year;section.innerHTML=`<div class="calendar-year-header"><h3>${year}</h3><span>${ye.length} dated releases</span></div><div class="calendar-grid"></div>`;const grid=section.querySelector('.calendar-grid');for(let m=0;m<12;m++){const me=ye.filter(e=>e.value.getMonth()===m);const card=document.createElement('article');card.className=`calendar-month${me.length?'':' is-empty'}`;card.innerHTML=`<h4>${months[m]}</h4>`;me.forEach(e=>{const b=document.createElement('button');b.type='button';b.className='calendar-event';b.dataset.search=`${e.title} ${e.summary}`.toLowerCase();b.innerHTML=`<span class="calendar-day">${e.value.getDate()}</span><span><strong>${esc(e.title)}</strong><small>${esc(e.summary)}</small></span>`;b.addEventListener('click',()=>show(e));card.appendChild(b)});grid.appendChild(card)}root.appendChild(section)});}
- function filter(){const q=search.value.trim().toLowerCase();document.querySelectorAll('.calendar-year').forEach(section=>{let visible=0;section.querySelectorAll('.calendar-event').forEach(b=>{const ok=!q||b.dataset.search.includes(q);b.hidden=!ok;if(ok)visible++;});section.querySelectorAll('.calendar-month').forEach(m=>{const bs=[...m.querySelectorAll('.calendar-event')];m.hidden=!!q&&bs.length>0&&!bs.some(b=>!b.hidden)});section.hidden=(!active||section.dataset.year===active)?(!!q&&visible===0):true;});}
- controls.innerHTML=`<button type="button" data-year="" aria-pressed="true">All years</button>${years.map(y=>`<button type="button" data-year="${y}" aria-pressed="false">${y}</button>`).join('')}`;controls.addEventListener('click',e=>{const b=e.target.closest('button[data-year]');if(!b)return;active=b.dataset.year;controls.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));filter();});search.addEventListener('input',filter);render();
+  const corpus = window.WCT_CORPUS || {};
+  const escapeHTML = (value) => String(value ?? '').replace(/[&<>\"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[char]));
+  const chronology = (corpus.chronology || []).map(([date, title, summary]) => ({ date, title, summary, value: new Date(`${date}T12:00:00`) })).sort((a, b) => a.value - b.value);
+  const calendarRoot = document.getElementById('calendarRoot');
+  const calendarControls = document.getElementById('calendarControls');
+  const calendarSearch = document.getElementById('calendarSearch');
+  const calendarDetail = document.getElementById('calendarDetail');
+  const monthNames = Array.from({ length: 12 }, (_, month) => new Intl.DateTimeFormat('en-US', { month: 'short' }).format(new Date(2025, month, 1)));
+  const years = [...new Set(chronology.map((event) => event.value.getFullYear()))];
+  let activeYear = '';
+
+  function dayOfYear(date) {
+    const start = new Date(date.getFullYear(), 0, 0);
+    return Math.floor((date - start) / 86400000);
+  }
+
+  function daysInYear(year) {
+    return ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) ? 366 : 365;
+  }
+
+  function showCalendarDetail(event) {
+    calendarDetail.hidden = false;
+    calendarDetail.innerHTML = `<p class="eyebrow">${escapeHTML(new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(event.value))}</p><h3>${escapeHTML(event.title)}</h3><p>${escapeHTML(event.summary)}</p>`;
+    calendarDetail.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  function renderCalendar() {
+    calendarRoot.innerHTML = '';
+    years.forEach((year) => {
+      const yearEvents = chronology.filter((event) => event.value.getFullYear() === year);
+      const section = document.createElement('section');
+      section.className = 'calendar-year';
+      section.dataset.year = String(year);
+      section.innerHTML = `<div class="calendar-year-header"><h3>${year}</h3><span>${yearEvents.length} dated releases</span></div><div class="year-rail" aria-label="${year} release rail"></div><div class="calendar-grid"></div>`;
+
+      const rail = section.querySelector('.year-rail');
+      monthNames.forEach((name, month) => {
+        const marker = document.createElement('div');
+        marker.className = 'year-rail-month';
+        marker.style.left = `${(month / 12) * 100}%`;
+        marker.innerHTML = `<label>${name}</label>`;
+        rail.appendChild(marker);
+      });
+      yearEvents.forEach((event) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'year-event';
+        dot.style.left = `${(dayOfYear(event.value) / daysInYear(year)) * 100}%`;
+        dot.title = `${event.date} — ${event.title}`;
+        dot.dataset.search = `${event.title} ${event.summary}`.toLowerCase();
+        dot.addEventListener('click', () => showCalendarDetail(event));
+        rail.appendChild(dot);
+      });
+
+      const grid = section.querySelector('.calendar-grid');
+      for (let month = 0; month < 12; month += 1) {
+        const monthEvents = yearEvents.filter((event) => event.value.getMonth() === month);
+        const monthCard = document.createElement('article');
+        monthCard.className = `calendar-month${monthEvents.length ? '' : ' is-empty'}`;
+        monthCard.innerHTML = `<h4>${monthNames[month]}</h4>`;
+        monthEvents.forEach((event) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'calendar-event';
+          button.dataset.search = `${event.title} ${event.summary}`.toLowerCase();
+          button.innerHTML = `<span class="calendar-day">${event.value.getDate()}</span><span><strong>${escapeHTML(event.title)}</strong><small>${escapeHTML(event.summary)}</small></span>`;
+          button.addEventListener('click', () => showCalendarDetail(event));
+          monthCard.appendChild(button);
+        });
+        grid.appendChild(monthCard);
+      }
+      calendarRoot.appendChild(section);
+    });
+  }
+
+  function applyCalendarFilters() {
+    const query = calendarSearch.value.trim().toLowerCase();
+    document.querySelectorAll('.calendar-year').forEach((section) => {
+      const yearMatches = !activeYear || section.dataset.year === activeYear;
+      let visibleEvents = 0;
+      section.querySelectorAll('.calendar-event').forEach((button) => {
+        const matches = !query || button.dataset.search.includes(query);
+        button.hidden = !matches;
+        if (matches) visibleEvents += 1;
+      });
+      section.querySelectorAll('.year-event').forEach((dot) => {
+        dot.hidden = !!query && !dot.dataset.search.includes(query);
+      });
+      section.querySelectorAll('.calendar-month').forEach((month) => {
+        const eventButtons = [...month.querySelectorAll('.calendar-event')];
+        month.hidden = !!query && eventButtons.length > 0 && !eventButtons.some((button) => !button.hidden);
+      });
+      section.hidden = !yearMatches || (!!query && visibleEvents === 0);
+    });
+  }
+
+  calendarControls.innerHTML = `<button type="button" data-year="" aria-pressed="true">All years</button>${years.map((year) => `<button type="button" data-year="${year}" aria-pressed="false">${year}</button>`).join('')}`;
+  calendarControls.addEventListener('click', (event) => {
+    const button = event.target.closest('button[data-year]');
+    if (!button) return;
+    activeYear = button.dataset.year;
+    calendarControls.querySelectorAll('button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+    applyCalendarFilters();
+  });
+  calendarSearch.addEventListener('input', applyCalendarFilters);
+  renderCalendar();
 })();
 </script>
+<script src="../tools-v3.js"></script>
 <script src="../../site-nav.js" defer></script>
 </body></html>
