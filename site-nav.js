@@ -54,6 +54,11 @@
       document.head.appendChild(style);
     }
 
+    if (currentPath === '/') {
+      const heroEyebrow = document.querySelector('.hero-copy > .eyebrow');
+      if (heroEyebrow) heroEyebrow.textContent = 'Richard J. Reyes';
+    }
+
     const nav = document.querySelector('#site-nav');
     if (nav) {
       const toolsLink = [...nav.children].find((item) => item.matches?.('a[href="/tools/"]'));
