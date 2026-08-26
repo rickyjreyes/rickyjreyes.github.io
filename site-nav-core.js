@@ -17,29 +17,20 @@
   };
 
   const navItems = [
-    { type: 'link', href: '/', label: 'Home' },
-    {
-      type: 'menu', label: 'Research', items: [
-        ['/research-corpus/', 'Research Corpus', 'Structured map of the research program'],
-        ['/equations/', 'Equations', 'Canonical equation and claim registry'],
-        ['/tools/', 'Tools', 'Interactive concepts, timeline, and graph']
-      ]
-    },
     { type: 'link', href: '/publications/', label: 'Publications' },
+    { type: 'link', href: '/priority/', label: 'Priority' },
+    { type: 'link', href: '/overlap/', label: 'WCT Adoption' },
+    { type: 'link', href: '/patents/', label: 'Patents' },
+    { type: 'link', href: '/equations/', label: 'Equations' },
     {
       type: 'menu', label: 'Verify', items: [
         ['/sympy/', 'SymPy Audit', 'Executable symbolic checks'],
-        ['/lean/', 'Lean Coverage', 'Formal definitions and proof coverage'],
-        ['/reproduce/', 'Reproduce', 'Pinned code, artifacts, and hashes']
+        ['/lean/', 'Lean Coverage', 'Formal definitions and proof coverage']
       ]
     },
-    {
-      type: 'menu', label: 'Priority', items: [
-        ['/priority/', 'Priority Registry', 'Dated disclosures and provenance'],
-        ['/overlap/', 'Overlap Ledger', 'Post-date technical comparisons']
-      ]
-    },
-    { type: 'link', href: '/patents/', label: 'Patents' }
+    { type: 'link', href: '/reproduce/', label: 'Reproduce' },
+    { type: 'link', href: '/tools/', label: 'Tools' },
+    { type: 'link', href: '/foundations/', label: 'Foundations' }
   ];
 
   let nav = wrap.querySelector('nav');
