@@ -97,6 +97,51 @@
       if (aboutSection && statusStrip) statusStrip.insertAdjacentElement('afterend', aboutSection);
     }
 
+    if (foundationsActive) {
+      if (!document.getElementById('foundation-selectable-style')) {
+        const style = document.createElement('style');
+        style.id = 'foundation-selectable-style';
+        style.textContent = `
+          .foundation-shell tbody tr.foundation-selectable-row{cursor:pointer;transition:background 120ms ease,box-shadow 120ms ease}
+          .foundation-shell tbody tr.foundation-selectable-row td{transition:background 120ms ease,color 120ms ease}
+          .foundation-shell tbody tr.foundation-selectable-row:hover td,
+          .foundation-shell tbody tr.foundation-selectable-row:focus-visible td{
+            background:linear-gradient(90deg,rgba(103,212,255,.075),rgba(139,124,255,.065),rgba(182,255,218,.045));
+          }
+          .foundation-shell tbody tr.foundation-selectable-row:hover .work a,
+          .foundation-shell tbody tr.foundation-selectable-row:focus-visible .work a{color:#fff}
+          .foundation-shell tbody tr.foundation-selectable-row:focus-visible{outline:2px solid rgba(103,212,255,.72);outline-offset:-2px}
+          .foundation-shell tbody tr.foundation-selectable-row .rank{position:relative}
+          .foundation-shell tbody tr.foundation-selectable-row .rank::after{content:'↗';display:block;margin-top:5px;color:var(--muted-2,#71869a);font-size:.66rem;font-weight:700;opacity:.42;transition:opacity 120ms ease,transform 120ms ease}
+          .foundation-shell tbody tr.foundation-selectable-row:hover .rank::after,
+          .foundation-shell tbody tr.foundation-selectable-row:focus-visible .rank::after{opacity:1;transform:translate(1px,-1px);color:var(--accent,#67d4ff)}
+        `;
+        document.head.appendChild(style);
+      }
+
+      document.querySelectorAll('.foundation-shell tbody tr').forEach((row) => {
+        const primaryLink = row.querySelector('.work a[href]');
+        if (!primaryLink || row.classList.contains('foundation-selectable-row')) return;
+        const title = primaryLink.textContent.trim();
+        row.classList.add('foundation-selectable-row');
+        row.tabIndex = 0;
+        row.setAttribute('role', 'link');
+        row.setAttribute('aria-label', `Open source for ${title} in a new tab`);
+
+        const openPrimary = () => window.open(primaryLink.href, '_blank', 'noopener,noreferrer');
+        row.addEventListener('click', (event) => {
+          if (event.target.closest('a')) return;
+          openPrimary();
+        });
+        row.addEventListener('keydown', (event) => {
+          if (event.target.closest('a')) return;
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          openPrimary();
+        });
+      });
+    }
+
     const nav = document.querySelector('#site-nav');
     if (nav) {
       const toolsLink = [...nav.children].find((item) => item.matches?.('a[href="/tools/"]'));
