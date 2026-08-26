@@ -12,7 +12,7 @@
           display:inline-flex;
           align-items:center;
           gap:9px;
-          min-height:48px;
+          min-height:124px;
           margin-left:-10px;
           padding:5px 10px;
           border:1px solid transparent;
@@ -41,7 +41,7 @@
         }
         .site-header .wordmark .wct-wordmark-logo{
           width:112px;
-          height:38px;
+          height:112px;
           object-fit:contain;
           transition:transform 130ms ease,filter 130ms ease;
         }
@@ -51,8 +51,8 @@
           filter:drop-shadow(0 0 9px rgba(103,212,255,.38)) drop-shadow(0 8px 18px rgba(0,0,0,.24));
         }
         @media(max-width:760px){
-          .site-header .wordmark{min-height:46px;margin-left:-7px;padding:4px 7px;border-radius:10px}
-          .site-header .wordmark .wct-wordmark-logo{width:104px;height:34px}
+          .site-header .wordmark{min-height:120px;margin-left:-7px;padding:4px 7px;border-radius:10px}
+          .site-header .wordmark .wct-wordmark-logo{width:112px;height:112px}
         }
       `;
       document.head.appendChild(style);
@@ -61,6 +61,10 @@
     if (currentPath === '/') {
       const heroEyebrow = document.querySelector('.hero-copy > .eyebrow');
       if (heroEyebrow) heroEyebrow.textContent = 'Richard J. Reyes';
+
+      const aboutSection = document.getElementById('about');
+      const statusStrip = document.querySelector('.status-strip');
+      if (aboutSection && statusStrip) statusStrip.insertAdjacentElement('afterend', aboutSection);
     }
 
     const nav = document.querySelector('#site-nav');
