@@ -27,10 +27,9 @@ def load_overlap_rows() -> list[list[Any]]:
             raise RuntimeError(f"Could not parse overlap records from {path}")
         raw_rows.extend(json.loads(match.group(1)))
 
-    # Primary URL is the record identity. Overlay files may intentionally repeat
-    # records and may also reuse historical display ranks before browser-side
-    # normalization. Later files win. Rank is presentation metadata, not a key
-    # and not a record count; sparse 1000+ branch-expansion ranks are valid.
+    # Primary URL is the stable record identity. Overlay files may repeat a
+    # record or carry historical placeholder ranks; later files win. After
+    # URL deduplication, ranks are regenerated from the actual public ordering.
     by_url: dict[str, list[Any]] = {}
     for row in raw_rows:
         if len(row) < 9:
@@ -40,7 +39,30 @@ def load_overlap_rows() -> list[list[Any]]:
             raise RuntimeError(f"Overlap ledger row has no primary URL: {row!r}")
         by_url[primary_url] = row
 
-    return sorted(by_url.values(), key=lambda row: (int(row[0]), str(row[2])))
+    def source_rank(row: list[Any]) -> int:
+        try:
+            return int(row[0])
+        except (TypeError, ValueError):
+            return 999999
+
+    def ranking_key(row: list[Any]) -> tuple[Any, ...]:
+        return (
+            -float(row[3]),
+            source_rank(row),
+            str(row[1]).casefold(),
+            str(row[2]),
+        )
+
+    unique_rows = list(by_url.values())
+    physics = sorted((row for row in unique_rows if row[4] == "physics"), key=ranking_key)
+    ai = sorted((row for row in unique_rows if row[4] == "ai"), key=ranking_key)
+    other = sorted(
+        (row for row in unique_rows if row[4] not in {"physics", "ai"}),
+        key=ranking_key,
+    )
+
+    ranked_rows = physics + ai + other
+    return [[rank, *row[1:]] for rank, row in enumerate(ranked_rows, start=1)]
 
 
 def load_existing() -> dict[str, Any]:
@@ -237,7 +259,7 @@ def main() -> None:
             "not_assessed": "This audit does not assess the field.",
         },
         "recordFieldSemantics": {
-            "ledgerRank": "Display rank from the public overlap ledger; it is not a stable research identifier or a record count and may be sparse or historically reused before browser-side normalization.",
+            "ledgerRank": "Sequential display rank derived from domain ordering and descending Post-Date Overlap Score; it is not a stable research identifier.",
             "overlapScore": "Heuristic 0-10 comparison score for density and specificity of technical correspondence; it is not a probability.",
             "wctAnchors": "Exact dated WCT claim anchors only when chronology normalization has recorded them; an empty array means not yet normalized.",
             "verificationStatus": "Machine-readable audit state for this record.",
