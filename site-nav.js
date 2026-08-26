@@ -90,6 +90,70 @@
       document.head.appendChild(style);
     }
 
+    if (!document.getElementById('site-scroll-behavior-style')) {
+      const style = document.createElement('style');
+      style.id = 'site-scroll-behavior-style';
+      style.textContent = `
+        html{
+          scroll-behavior:smooth;
+          scroll-padding-top:142px;
+        }
+        body{
+          overscroll-behavior-y:none;
+        }
+        .site-header{
+          position:sticky !important;
+          top:0 !important;
+          z-index:1000 !important;
+          transition:background-color .22s ease,border-color .22s ease,box-shadow .22s ease,backdrop-filter .22s ease;
+          -webkit-backdrop-filter:blur(18px);
+          backdrop-filter:blur(18px);
+        }
+        main [id],section[id],article[id],header[id],footer[id]{
+          scroll-margin-top:142px;
+        }
+        .audit-toolbar,
+        .lean-controls,
+        .tool-toolbar{
+          position:sticky !important;
+          top:132px !important;
+          z-index:45 !important;
+          background:rgba(7,17,31,.96) !important;
+          box-shadow:0 12px 28px rgba(4,10,18,.22);
+          -webkit-backdrop-filter:blur(16px);
+          backdrop-filter:blur(16px);
+          transition:background-color .22s ease,border-color .22s ease,box-shadow .22s ease,transform .22s ease;
+        }
+        .table-wrap,
+        .status-table-wrap,
+        .audit-equation,
+        .lean-equation,
+        .lean-index,
+        .nav-dropdown,
+        .nav-dropdown-shell,
+        .timeline-scroll,
+        [data-scroll],
+        [class*="scroll"]{
+          scroll-behavior:smooth;
+          overscroll-behavior:contain;
+          scrollbar-gutter:stable;
+          -webkit-overflow-scrolling:touch;
+        }
+        @media(max-width:760px){
+          html{scroll-padding-top:134px}
+          main [id],section[id],article[id],header[id],footer[id]{scroll-margin-top:134px}
+          .audit-toolbar,.lean-controls,.tool-toolbar{top:124px !important}
+        }
+        @media(prefers-reduced-motion:reduce){
+          html,.table-wrap,.status-table-wrap,.audit-equation,.lean-equation,.lean-index,.nav-dropdown,.nav-dropdown-shell,.timeline-scroll,[data-scroll],[class*="scroll"]{
+            scroll-behavior:auto !important;
+          }
+          .site-header,.audit-toolbar,.lean-controls,.tool-toolbar{transition:none !important}
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
     if (currentPath === '/') {
       const heroEyebrow = document.querySelector('.hero-copy > .eyebrow');
       if (heroEyebrow) heroEyebrow.textContent = 'Richard J. Reyes';
