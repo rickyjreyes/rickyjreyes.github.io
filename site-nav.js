@@ -6,6 +6,28 @@
     const sympyActive = currentPath === '/sympy/' || currentPath.startsWith('/sympy/');
     const leanActive = currentPath === '/lean/' || currentPath.startsWith('/lean/');
 
+    if (!document.querySelector('link[data-wct-favicon]')) {
+      const icon = document.createElement('link');
+      icon.rel = 'icon';
+      icon.type = 'image/svg+xml';
+      icon.href = '/favicon.svg';
+      icon.dataset.wctFavicon = 'true';
+      document.head.appendChild(icon);
+
+      const shortcut = document.createElement('link');
+      shortcut.rel = 'shortcut icon';
+      shortcut.href = '/favicon.svg';
+      shortcut.dataset.wctFavicon = 'true';
+      document.head.appendChild(shortcut);
+
+      if (!document.querySelector('link[rel="manifest"]')) {
+        const manifest = document.createElement('link');
+        manifest.rel = 'manifest';
+        manifest.href = '/site.webmanifest';
+        document.head.appendChild(manifest);
+      }
+    }
+
     if (!document.getElementById('wct-wordmark-clickable-style')) {
       const style = document.createElement('style');
       style.id = 'wct-wordmark-clickable-style';
