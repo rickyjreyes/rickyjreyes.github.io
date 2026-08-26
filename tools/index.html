@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="tools-v2.css">
 <link rel="stylesheet" href="tools-v3.css">
+<link rel="stylesheet" href="tools-v4.css">
 <script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["$$","$$"]]},svg:{fontCache:"global"}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
@@ -20,10 +21,10 @@
 <section class="tool-hero tool-wrap">
   <p class="eyebrow">Interactive exploration</p>
   <h1>Explore WCT visually.</h1>
-  <p class="tool-hero-lede">Move through the research program in four views: learn the concepts, inspect the equations, follow the chronology, or trace how ideas connect.</p>
+  <p class="tool-hero-lede">Move through the research program in four separate views: learn the concepts, inspect the equations, follow the chronology, or trace how ideas connect.</p>
   <p class="tool-boundary">This page reads from the canonical research feeds. It is an exploration layer, not a second source of truth.</p>
   <nav class="tool-modes" aria-label="WCT visual exploration modes">
-    <a class="tool-mode-card" href="#glossary"><span class="tool-mode-number">01</span><span class="tool-mode-copy"><strong>Concepts</strong><span>Definitions, notation, and conceptual families.</span></span><span class="tool-mode-arrow" aria-hidden="true">↓</span></a>
+    <a class="tool-mode-card" href="#glossary"><span class="tool-mode-number">01</span><span class="tool-mode-copy"><strong>Concepts</strong><span>Alphabetical definitions, notation, and conceptual families.</span></span><span class="tool-mode-arrow" aria-hidden="true">↓</span></a>
     <a class="tool-mode-card" href="#equations"><span class="tool-mode-number">02</span><span class="tool-mode-copy"><strong>Equations</strong><span>Browse and render all 142 canonical objects.</span></span><span class="tool-mode-arrow" aria-hidden="true">↓</span></a>
     <a class="tool-mode-card" href="#chronology"><span class="tool-mode-number">03</span><span class="tool-mode-copy"><strong>Timeline</strong><span>Follow releases and branches across the research chronology.</span></span><span class="tool-mode-arrow" aria-hidden="true">↓</span></a>
     <a class="tool-mode-card" href="#graph"><span class="tool-mode-number">04</span><span class="tool-mode-copy"><strong>Graph</strong><span>Explore semantic links and the master-equation architecture.</span></span><span class="tool-mode-arrow" aria-hidden="true">↓</span></a>
@@ -38,7 +39,7 @@
   <div class="tool-reference-links" aria-label="Canonical verification links"><span>Canonical layers:</span><a href="../equations/">Equation registry</a><a href="../sympy/">SymPy audit</a><a href="../lean/">Lean coverage</a></div>
 </section>
 
-<section class="tool-section tool-wrap" id="glossary"><div class="tool-head"><div><p class="eyebrow">Concepts</p><h2>Concept definitions.</h2></div><p>Search by term, definition, mathematical notation, or conceptual family.</p></div><div class="tool-toolbar"><input id="termSearch" type="search" placeholder="Search glossary"><select id="termFamily"><option value="">All concept families</option></select><span class="tool-count" id="termCount"></span></div><div class="tool-grid" id="glossaryGrid"></div></section>
+<section class="tool-section tool-wrap" id="glossary"><div class="tool-head"><div><p class="eyebrow">Concepts</p><h2>Alphabetical glossary.</h2></div><p>Browse A–Z or search by term, definition, mathematical notation, or conceptual family.</p></div><div class="tool-toolbar"><input id="termSearch" type="search" placeholder="Search glossary"><select id="termFamily"><option value="">All concept families</option></select><span class="tool-count" id="termCount"></span></div><div class="tool-grid" id="glossaryGrid"></div></section>
 
 <section class="tool-section tool-wrap" id="equations"><div class="tool-head"><div><p class="eyebrow">Equations</p><h2>Canonical equation tool.</h2></div><p>All 142 equations with rendered formulas, definitions, status labels, exact entry links, and canonical sources.</p></div><div class="tool-toolbar"><input id="eqSearch" type="search" placeholder="Search equation ID, title, definition, or formula"><select id="eqFamily"><option value="">All equation families</option></select><span class="tool-count" id="eqCount"></span></div><div class="equation-layout"><div class="equation-list" id="eqList"></div><article class="equation-box"><p class="eyebrow" id="eqFamilyOut">Equation</p><h2 id="eqTitle">Select an equation</h2><p class="tool-note" id="eqMeaning"></p><div class="latex" id="eqRendered"></div><details><summary>LaTeX source</summary><pre class="src" id="eqLatex"></pre></details><div class="equation-links"><a id="eqPageLink" href="../equations/">Open full equation card</a><a id="eqSourceLink" href="#" target="_blank" rel="noopener noreferrer">Canonical source ↗</a></div><p class="tool-note" id="eqStatus"></p></article></div></section>
 
@@ -51,6 +52,7 @@
 <script src="equations-data.js"></script>
 <script src="tools-v2.js"></script>
 <script src="tools-v3.js"></script>
+<script src="tools-v4.js"></script>
 <script src="../site-nav.js" defer></script>
 </body>
 </html>
