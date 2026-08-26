@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Wave Confinement Theory research chronology and dated release timeline.">
+<link rel="canonical" href="https://rickyjreyes.github.io/tools/timeline/">
+<title>WCT Timeline | Richard J. Reyes</title>
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../tools-v2.css"><link rel="stylesheet" href="../tools-v3.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to timeline</a>
+<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"></nav></div></header>
+<main id="main">
+<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Timeline</p><h1>Research timeline.</h1><p class="tool-hero-lede">Follow dated releases and research branches across the Wave Confinement Theory chronology.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../glossary/">Glossary</a><a href="../equations/">Equations</a><a href="../graph/">Graph</a></div></section>
+<section class="tool-section tool-wrap" id="chronology"><div class="tool-head"><div><p class="eyebrow">Chronology</p><h2>Calendar of the research program.</h2></div><p>Events are positioned by year, month, and day from the first dated release to the latest entry.</p></div><div class="tool-toolbar"><input id="calendarSearch" type="search" placeholder="Search chronology by title or branch"></div><div class="calendar-controls" id="calendarControls" aria-label="Chronology year filters"></div><div id="calendarRoot"></div><aside class="calendar-detail" id="calendarDetail" hidden></aside></section>
+</main>
+<footer class="site-footer"><div class="section-shell footer-bottom"><span>WCT Timeline</span><a href="#top">Back to top ↑</a></div></footer>
+<script src="../corpus-data.js"></script>
+<script>
+(() => {
+ const corpus=window.WCT_CORPUS||{}; const esc=v=>String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
+ const events=(corpus.chronology||[]).map(([date,title,summary])=>({date,title,summary,value:new Date(`${date}T12:00:00`)})).sort((a,b)=>a.value-b.value);
+ const root=document.getElementById('calendarRoot'), controls=document.getElementById('calendarControls'), search=document.getElementById('calendarSearch'), detail=document.getElementById('calendarDetail');
+ const months=Array.from({length:12},(_,m)=>new Intl.DateTimeFormat('en-US',{month:'short'}).format(new Date(2025,m,1))); const years=[...new Set(events.map(e=>e.value.getFullYear()))]; let active='';
+ function show(e){detail.hidden=false;detail.innerHTML=`<p class="eyebrow">${esc(new Intl.DateTimeFormat('en-US',{dateStyle:'long'}).format(e.value))}</p><h3>${esc(e.title)}</h3><p>${esc(e.summary)}</p>`;detail.scrollIntoView({block:'nearest',behavior:'smooth'});}
+ function render(){root.innerHTML='';years.forEach(year=>{const ye=events.filter(e=>e.value.getFullYear()===year);const section=document.createElement('section');section.className='calendar-year';section.dataset.year=year;section.innerHTML=`<div class="calendar-year-header"><h3>${year}</h3><span>${ye.length} dated releases</span></div><div class="calendar-grid"></div>`;const grid=section.querySelector('.calendar-grid');for(let m=0;m<12;m++){const me=ye.filter(e=>e.value.getMonth()===m);const card=document.createElement('article');card.className=`calendar-month${me.length?'':' is-empty'}`;card.innerHTML=`<h4>${months[m]}</h4>`;me.forEach(e=>{const b=document.createElement('button');b.type='button';b.className='calendar-event';b.dataset.search=`${e.title} ${e.summary}`.toLowerCase();b.innerHTML=`<span class="calendar-day">${e.value.getDate()}</span><span><strong>${esc(e.title)}</strong><small>${esc(e.summary)}</small></span>`;b.addEventListener('click',()=>show(e));card.appendChild(b)});grid.appendChild(card)}root.appendChild(section)});}
+ function filter(){const q=search.value.trim().toLowerCase();document.querySelectorAll('.calendar-year').forEach(section=>{let visible=0;section.querySelectorAll('.calendar-event').forEach(b=>{const ok=!q||b.dataset.search.includes(q);b.hidden=!ok;if(ok)visible++;});section.querySelectorAll('.calendar-month').forEach(m=>{const bs=[...m.querySelectorAll('.calendar-event')];m.hidden=!!q&&bs.length>0&&!bs.some(b=>!b.hidden)});section.hidden=(!active||section.dataset.year===active)?(!!q&&visible===0):true;});}
+ controls.innerHTML=`<button type="button" data-year="" aria-pressed="true">All years</button>${years.map(y=>`<button type="button" data-year="${y}" aria-pressed="false">${y}</button>`).join('')}`;controls.addEventListener('click',e=>{const b=e.target.closest('button[data-year]');if(!b)return;active=b.dataset.year;controls.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));filter();});search.addEventListener('input',filter);render();
+})();
+</script>
+<script src="../../site-nav.js" defer></script>
+</body></html>
