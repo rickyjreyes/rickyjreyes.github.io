@@ -95,11 +95,8 @@
       style.id = 'site-scroll-behavior-style';
       style.textContent = `
         html{
-          scroll-behavior:smooth;
+          scroll-behavior:auto !important;
           scroll-padding-top:142px;
-        }
-        body{
-          overscroll-behavior-y:none;
         }
         .site-header{
           position:sticky !important;
@@ -112,18 +109,6 @@
         main [id],section[id],article[id],header[id],footer[id]{
           scroll-margin-top:142px;
         }
-        .audit-toolbar,
-        .lean-controls,
-        .tool-toolbar{
-          position:sticky !important;
-          top:132px !important;
-          z-index:45 !important;
-          background:rgba(7,17,31,.96) !important;
-          box-shadow:0 12px 28px rgba(4,10,18,.22);
-          -webkit-backdrop-filter:blur(16px);
-          backdrop-filter:blur(16px);
-          transition:background-color .22s ease,border-color .22s ease,box-shadow .22s ease,transform .22s ease;
-        }
         .table-wrap,
         .status-table-wrap,
         .audit-equation,
@@ -134,7 +119,7 @@
         .timeline-scroll,
         [data-scroll],
         [class*="scroll"]{
-          scroll-behavior:smooth;
+          scroll-behavior:auto;
           overscroll-behavior:contain;
           scrollbar-gutter:stable;
           -webkit-overflow-scrolling:touch;
@@ -142,17 +127,59 @@
         @media(max-width:760px){
           html{scroll-padding-top:134px}
           main [id],section[id],article[id],header[id],footer[id]{scroll-margin-top:134px}
-          .audit-toolbar,.lean-controls,.tool-toolbar{top:124px !important}
         }
         @media(prefers-reduced-motion:reduce){
-          html,.table-wrap,.status-table-wrap,.audit-equation,.lean-equation,.lean-index,.nav-dropdown,.nav-dropdown-shell,.timeline-scroll,[data-scroll],[class*="scroll"]{
-            scroll-behavior:auto !important;
-          }
-          .site-header,.audit-toolbar,.lean-controls,.tool-toolbar{transition:none !important}
+          .site-header{transition:none !important}
         }
       `;
       document.head.appendChild(style);
     }
+
+    const initializeLenis = () => {
+      if (window.__wctLenis || window.__wctLenisLoading) return;
+      window.__wctLenisLoading = true;
+
+      if (!document.getElementById('wct-lenis-css')) {
+        const link = document.createElement('link');
+        link.id = 'wct-lenis-css';
+        link.rel = 'stylesheet';
+        link.href = 'https://unpkg.com/lenis@1.3.26/dist/lenis.css';
+        document.head.appendChild(link);
+      }
+
+      const start = () => {
+        if (!window.Lenis || window.__wctLenis) return;
+        window.__wctLenis = new window.Lenis({
+          autoRaf: true,
+          autoToggle: true,
+          anchors: { offset: -142 },
+          allowNestedScroll: true,
+          stopInertiaOnNavigate: true,
+          respectReducedMotion: true,
+          smoothWheel: true
+        });
+        window.__wctLenisLoading = false;
+      };
+
+      if (window.Lenis) {
+        start();
+        return;
+      }
+
+      let script = document.getElementById('wct-lenis-script');
+      if (!script) {
+        script = document.createElement('script');
+        script.id = 'wct-lenis-script';
+        script.src = 'https://unpkg.com/lenis@1.3.26/dist/lenis.min.js';
+        script.async = true;
+        script.addEventListener('load', start, { once: true });
+        script.addEventListener('error', () => { window.__wctLenisLoading = false; }, { once: true });
+        document.head.appendChild(script);
+      } else {
+        script.addEventListener('load', start, { once: true });
+      }
+    };
+    initializeLenis();
 
     if (currentPath === '/') {
       const heroEyebrow = document.querySelector('.hero-copy > .eyebrow');
