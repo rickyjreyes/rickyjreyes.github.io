@@ -40,6 +40,9 @@
           background:rgba(103,212,255,.08);
         }
         .site-header .wordmark .wct-wordmark-logo{
+          width:48px;
+          height:38px;
+          object-fit:contain;
           transition:transform 130ms ease,filter 130ms ease;
         }
         .site-header .wordmark:hover .wct-wordmark-logo,
@@ -49,6 +52,7 @@
         }
         @media(max-width:760px){
           .site-header .wordmark{min-height:46px;margin-left:-7px;padding:4px 7px;border-radius:10px}
+          .site-header .wordmark .wct-wordmark-logo{width:43px;height:34px}
         }
       `;
       document.head.appendChild(style);
