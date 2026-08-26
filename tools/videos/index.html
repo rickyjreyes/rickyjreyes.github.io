@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Wave Confinement Theory video library with each video from the WCT YouTube playlist presented individually with a description and direct playback links.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://rickyjreyes.github.io/tools/videos/">
+<title>WCT Videos | Richard J. Reyes</title>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../tools-v2.css">
+<link rel="stylesheet" href="../tools-v3.css">
+<link rel="stylesheet" href="../tools-v4.css">
+<style>
+  .video-library{margin-top:20px;margin-bottom:40px;padding:clamp(26px,4vw,48px);border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(14,29,48,.48),rgba(7,17,31,.72))}
+  .playlist-intro{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(260px,.72fr);gap:clamp(24px,4vw,52px);align-items:start;margin-bottom:34px}
+  .playlist-player{position:relative;overflow:hidden;width:100%;aspect-ratio:16/9;border:1px solid rgba(103,212,255,.18);border-radius:18px;background:#02060b;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+  .playlist-player iframe{width:100%;height:100%;border:0}
+  .playlist-copy{padding-top:4px}.playlist-copy h2{margin:.25rem 0 .8rem;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:500;letter-spacing:-.035em;line-height:1.05}.playlist-copy p{color:var(--muted)}
+  .playlist-copy .button{display:inline-flex;margin-top:12px}
+  .video-list-head{display:flex;align-items:end;justify-content:space-between;gap:20px;padding-top:28px;border-top:1px solid var(--line)}
+  .video-list-head h2{margin:.2rem 0 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.8rem,3.6vw,3rem);font-weight:500;letter-spacing:-.03em}.video-status{color:var(--muted-2);font-size:.84rem;text-align:right}
+  .video-list{display:grid;gap:14px;margin-top:22px}
+  .video-card{display:grid;grid-template-columns:minmax(220px,320px) minmax(0,1fr);gap:clamp(20px,3vw,34px);align-items:center;padding:16px;border:1px solid var(--line);border-radius:17px;background:rgba(10,22,37,.72);transition:border-color 130ms ease,background 130ms ease,transform 130ms ease}
+  .video-card:hover{border-color:rgba(103,212,255,.34);background:rgba(13,28,47,.94);transform:translateY(-1px)}
+  .video-thumb{position:relative;overflow:hidden;display:block;aspect-ratio:16/9;border-radius:12px;background:#02060b}.video-thumb img{display:block;width:100%;height:100%;object-fit:cover}.video-index{position:absolute;top:9px;left:9px;display:grid;min-width:34px;height:28px;padding:0 8px;place-items:center;border:1px solid rgba(255,255,255,.17);border-radius:999px;color:#fff;background:rgba(4,10,18,.78);font-size:.72rem;font-weight:800;backdrop-filter:blur(8px)}
+  .video-card-copy{min-width:0}.video-card-copy h3{margin:0 0 9px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.2rem,2.1vw,1.55rem);font-weight:500;line-height:1.2}.video-card-copy p{margin:0;color:var(--muted);line-height:1.7}.video-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.video-action{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border:1px solid rgba(103,212,255,.22);border-radius:9px;color:var(--text);background:rgba(103,212,255,.055);font:700 .78rem/1 inherit;text-decoration:none;cursor:pointer}.video-action:hover,.video-action:focus-visible{color:#fff;border-color:rgba(103,212,255,.48);background:rgba(103,212,255,.11)}
+  .video-fallback{padding:24px;border:1px dashed rgba(170,201,225,.22);border-radius:14px;color:var(--muted);background:rgba(255,255,255,.02)}
+  @media(max-width:820px){.playlist-intro{grid-template-columns:1fr}.video-card{grid-template-columns:1fr}.video-thumb{max-width:520px}.video-list-head{align-items:start;flex-direction:column}.video-status{text-align:left}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to videos</a>
+<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
+<main id="main">
+<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Videos</p><h1>WCT videos.</h1><p class="tool-hero-lede">Watch the research playlist as a sequence or browse every video individually with a short description and direct playback link.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../glossary/">Glossary</a><a href="../equations/">Equations</a><a href="../timeline/">Timeline</a><a href="../graph/">Graph</a></div></section>
+<section class="video-library tool-wrap" aria-labelledby="video-library-title">
+  <div class="playlist-intro">
+    <div class="playlist-player"><div id="youtubePlayer" aria-label="WCT YouTube playlist player"></div></div>
+    <div class="playlist-copy"><p class="eyebrow">Research playlist</p><h2 id="video-library-title">Visual explanations and demonstrations.</h2><p>The video library is synchronized to the YouTube playlist. Each item below is presented separately so a visitor can understand what it covers before opening it.</p><p class="tool-boundary">Video explanations are orientation and demonstration material. Mathematical and empirical claims remain governed by the equation, verification, publication, and reproducibility records.</p><a class="button secondary" href="https://www.youtube.com/playlist?list=PL0EyO-OxER7swCdIt-BI_CqUkWaEwtxuo" target="_blank" rel="noopener noreferrer">Open full playlist on YouTube ↗</a></div>
+  </div>
+  <div class="video-list-head"><div><p class="eyebrow">Individual videos</p><h2>Browse one at a time.</h2></div><p class="video-status" id="videoStatus">Loading playlist…</p></div>
+  <div class="video-list" id="videoList"><div class="video-fallback">The individual video index loads from the YouTube playlist in your browser.</div></div>
+</section>
+</main>
+<footer class="site-footer"><div class="section-shell footer-bottom"><span>WCT Videos</span><a href="#top">Back to top ↑</a></div></footer>
+<script>
+(() => {
+  const PLAYLIST_ID='PL0EyO-OxER7swCdIt-BI_CqUkWaEwtxuo';
+  const root=document.getElementById('videoList');
+  const status=document.getElementById('videoStatus');
+  let player;
+  const esc=v=>String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
+
+  function descriptionFor(title){
+    const t=String(title||'').toLowerCase();
+    if(/wave confinement|wct/.test(t)) return 'An overview or focused explanation of Wave Confinement Theory, connecting the visual presentation to the research program’s confinement, phase, curvature, spectral, or verification layers.';
+    if(/laser|cavity|mirror|optical|photon|light/.test(t)) return 'An optical or experimental research video examining resonant behavior, cavity structure, light-field organization, or the measurements used to probe confinement-related effects.';
+    if(/resonan|frequency|harmonic|fft|spectr/.test(t)) return 'A resonance and spectral-analysis video focused on frequency structure, harmonics, Fourier behavior, or how preferred modes emerge and are measured.';
+    if(/curvature|geometry|toroid|ring|winding|topolog/.test(t)) return 'A geometric explanation of closed-path structure, curvature, winding, topology, or toroidal/ring-like configurations used in the WCT research language.';
+    if(/simulation|simulat|numerical|model|pde|fem/.test(t)) return 'A computational or numerical demonstration showing how a modeled field evolves, localizes, forms structure, or fails under a stated set of equations and parameters.';
+    if(/mass|particle|electron|quantum|field/.test(t)) return 'A conceptual or mathematical discussion connecting confined wave structure to field behavior, particle-like states, effective mass, or quantum-scale interpretation.';
+    if(/ai|drift|agent|recursive|alignment/.test(t)) return 'A Recursive AI Drift video examining how repeated updates can lose semantic or behavioral constraints and how bounded-state diagnostics may be used to detect that degradation.';
+    if(/control|feedback|pid|stabil|lock/.test(t)) return 'A control and stabilization video focused on feedback, locking, persistence, diagnostics, or the engineering conditions required to keep a state inside a desired operating region.';
+    if(/experiment|test|demo|demonstr/.test(t)) return 'A research demonstration or experiment presented as visual evidence or exploratory testing, with interpretation separated from the formal mathematical claims.';
+    return 'A video from the WCT research playlist providing visual explanation, research context, or demonstration material related to the broader Wave Confinement Theory program.';
+  }
+
+  async function titleFor(id,index){
+    try{
+      const url='https://www.youtube.com/oembed?url='+encodeURIComponent('https://www.youtube.com/watch?v='+id)+'&format=json';
+      const response=await fetch(url,{mode:'cors'});
+      if(!response.ok) throw new Error('metadata unavailable');
+      const data=await response.json();
+      return data.title||`Playlist video ${index+1}`;
+    }catch(_){return `Playlist video ${index+1}`;}
+  }
+
+  async function renderVideos(ids){
+    if(!ids?.length){status.textContent='Playlist items could not be read.';return;}
+    status.textContent=`${ids.length} videos · synced from YouTube`;
+    const titles=await Promise.all(ids.map((id,index)=>titleFor(id,index)));
+    root.innerHTML=ids.map((id,index)=>{
+      const title=titles[index];
+      return `<article class="video-card" id="video-${index+1}"><a class="video-thumb" href="https://www.youtube.com/watch?v=${id}&list=${PLAYLIST_ID}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(title)} on YouTube"><img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Thumbnail for ${esc(title)}" loading="lazy" decoding="async"><span class="video-index">${String(index+1).padStart(2,'0')}</span></a><div class="video-card-copy"><h3>${esc(title)}</h3><p>${esc(descriptionFor(title))}</p><div class="video-actions"><button class="video-action" type="button" data-play-index="${index}">Play here</button><a class="video-action" href="https://www.youtube.com/watch?v=${id}&list=${PLAYLIST_ID}" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div></article>`;
+    }).join('');
+    root.querySelectorAll('[data-play-index]').forEach(button=>button.addEventListener('click',()=>{
+      const index=Number(button.dataset.playIndex||0);
+      player?.playVideoAt(index);
+      document.querySelector('.playlist-player')?.scrollIntoView({behavior:'smooth',block:'center'});
+    }));
+  }
+
+  window.onYouTubeIframeAPIReady=()=>{
+    player=new YT.Player('youtubePlayer',{
+      width:'100%',height:'100%',
+      playerVars:{listType:'playlist',list:PLAYLIST_ID,rel:0,modestbranding:1,origin:location.origin},
+      events:{
+        onReady:event=>event.target.cuePlaylist({listType:'playlist',list:PLAYLIST_ID,index:0}),
+        onStateChange:event=>{
+          if(event.data===YT.PlayerState.CUED){
+            const ids=event.target.getPlaylist();
+            if(ids?.length&&!root.dataset.loaded){root.dataset.loaded='true';renderVideos(ids);}
+          }
+        },
+        onError:()=>{status.textContent='Open the playlist on YouTube to view all videos.';}
+      }
+    });
+  };
+  const api=document.createElement('script');api.src='https://www.youtube.com/iframe_api';api.async=true;document.head.appendChild(api);
+})();
+</script>
+<script src="../../site-nav.js" defer></script>
+</body></html>
