@@ -1,0 +1,15 @@
+{
+  "name": "Wave Confinement Theory",
+  "short_name": "WCT",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#07111f",
+  "background_color": "#07111f",
+  "display": "standalone"
+}
