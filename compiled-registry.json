@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0.0",
   "registry_id": "wct-effective-registry",
-  "generated_at": "2026-08-26T02:13:28+00:00",
+  "generated_at": "2026-08-26T02:14:17+00:00",
   "source_ref": {
     "wct_sympy": "main",
     "geometry_of_resonance": "main"
