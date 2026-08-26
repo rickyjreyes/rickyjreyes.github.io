@@ -99,21 +99,17 @@
       if (aboutSection && statusStrip) statusStrip.insertAdjacentElement('afterend', aboutSection);
     }
 
-    if (sympyActive && !document.getElementById('sympy-full-width-style')) {
+    if (sympyActive && !document.getElementById('sympy-card-width-style')) {
       const style = document.createElement('style');
-      style.id = 'sympy-full-width-style';
+      style.id = 'sympy-card-width-style';
       style.textContent = `
-        #main > .section.section-shell,
-        #main .audit-hero.section-shell{
-          width:calc(100% - 40px) !important;
-          max-width:none !important;
+        #main .audit-grid{
+          grid-template-columns:minmax(0,1fr) !important;
         }
-        #main .section-heading.narrow{max-width:980px}
-        #main .audit-grid{grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
-        @media(max-width:760px){
-          #main > .section.section-shell,
-          #main .audit-hero.section-shell{width:calc(100% - 24px) !important}
-          #main .audit-grid{grid-template-columns:1fr}
+        #main .audit-card{
+          width:100%;
+          max-width:none;
+          min-height:0;
         }
       `;
       document.head.appendChild(style);
