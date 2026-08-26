@@ -6,6 +6,14 @@
     const sympyActive = currentPath === '/sympy/' || currentPath.startsWith('/sympy/');
     const leanActive = currentPath === '/lean/' || currentPath.startsWith('/lean/');
 
+    if (!document.querySelector('link[data-wct-motion-tokens]')) {
+      const tokens = document.createElement('link');
+      tokens.rel = 'stylesheet';
+      tokens.href = '/motion-tokens.css?v=20260826';
+      tokens.dataset.wctMotionTokens = 'true';
+      document.head.appendChild(tokens);
+    }
+
     if (!document.querySelector('link[data-wct-favicon]')) {
       const icon = document.createElement('link');
       icon.rel = 'icon';
