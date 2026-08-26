@@ -132,6 +132,19 @@
       const action=fullLedger.querySelector('.summary-action');
       if(action) action.textContent=fullLedger.open?'Collapse':'Expand';
     });
+
+    const ledgerSummary=fullLedger.querySelector('summary');
+    if('IntersectionObserver' in window && ledgerSummary){
+      const autoExpandObserver=new IntersectionObserver((entries,observer)=>{
+        if(entries.some(entry=>entry.isIntersecting)){
+          if(!fullLedger.open) fullLedger.open=true;
+          renderFullLedger();
+          observer.disconnect();
+        }
+      },{threshold:.15,rootMargin:'0px 0px -12% 0px'});
+      autoExpandObserver.observe(ledgerSummary);
+    }
+
     if(location.hash==='#complete-ledger'){
       fullLedger.open=true;
       renderFullLedger();
