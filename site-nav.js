@@ -3,6 +3,8 @@
     const currentPath = window.location.pathname.replace(/index\.html$/i, '').replace(/\/{2,}/g, '/');
     const foundationsActive = currentPath === '/foundations/' || currentPath.startsWith('/foundations/');
     const toolsActive = currentPath === '/tools/' || currentPath.startsWith('/tools/');
+    const sympyActive = currentPath === '/sympy/' || currentPath.startsWith('/sympy/');
+    const leanActive = currentPath === '/lean/' || currentPath.startsWith('/lean/');
 
     if (!document.getElementById('wct-wordmark-clickable-style')) {
       const style = document.createElement('style');
@@ -95,6 +97,50 @@
       const aboutSection = document.getElementById('about');
       const statusStrip = document.querySelector('.status-strip');
       if (aboutSection && statusStrip) statusStrip.insertAdjacentElement('afterend', aboutSection);
+    }
+
+    if (sympyActive && !document.getElementById('sympy-full-width-style')) {
+      const style = document.createElement('style');
+      style.id = 'sympy-full-width-style';
+      style.textContent = `
+        #main > .section.section-shell,
+        #main .audit-hero.section-shell{
+          width:calc(100% - 40px) !important;
+          max-width:none !important;
+        }
+        #main .section-heading.narrow{max-width:980px}
+        #main .audit-grid{grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+        @media(max-width:760px){
+          #main > .section.section-shell,
+          #main .audit-hero.section-shell{width:calc(100% - 24px) !important}
+          #main .audit-grid{grid-template-columns:1fr}
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    if (leanActive) {
+      const typesetLeanOnLoad = () => {
+        let attempts = 0;
+        const run = () => {
+          const detail = document.querySelector('.lean-detail');
+          const mathJax = window.MathJax;
+          if (!detail) return;
+          if (mathJax?.startup?.promise && mathJax?.typesetPromise) {
+            mathJax.startup.promise.then(() => {
+              requestAnimationFrame(() => {
+                mathJax.typesetPromise([detail]).catch(() => {});
+              });
+            });
+            return;
+          }
+          if (attempts++ < 80) window.setTimeout(run, 50);
+        };
+        run();
+      };
+
+      if (document.readyState === 'complete') typesetLeanOnLoad();
+      else window.addEventListener('load', typesetLeanOnLoad, { once: true });
     }
 
     if (currentPath === '/tools/glossary/') {
