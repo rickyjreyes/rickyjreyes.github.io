@@ -3,18 +3,24 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f">
-<meta name="description" content="Interactive Wave Confinement Theory canonical equation explorer.">
+<meta name="description" content="Interactive Wave Confinement Theory canonical equation explorer with a plain and Unicode equation to LaTeX converter.">
 <link rel="canonical" href="https://rickyjreyes.github.io/tools/equations/">
 <title>WCT Equation Tool | Richard J. Reyes</title>
-<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../tools-v2.css"><link rel="stylesheet" href="../tools-v3.css">
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../tools-v2.css"><link rel="stylesheet" href="../tools-v3.css"><link rel="stylesheet" href="../tools-v5.css">
 <script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["$$","$$"]]},svg:{fontCache:"global"}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to equation tool</a>
 <header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
 <main id="main">
-<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Equations</p><h1>Canonical equation tool.</h1><p class="tool-hero-lede">Browse the canonical equation and claim registry with rendered formulas, definitions, status labels, exact entry links, and source records.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../glossary/">Glossary</a><a href="../timeline/">Timeline</a><a href="../graph/">Graph</a></div></section>
-<section class="tool-section tool-wrap" id="equations"><div class="tool-head"><div><p class="eyebrow">Equation registry</p><h2>Inspect each object.</h2></div><p>Search by ID, title, definition, formula, family, or status.</p></div><div class="tool-toolbar"><input id="eqSearch" type="search" placeholder="Search equation ID, title, definition, or formula"><select id="eqFamily"><option value="">All equation families</option></select><span class="tool-count" id="eqCount"></span></div><div class="equation-layout"><div class="equation-list" id="eqList"></div><article class="equation-box"><p class="eyebrow" id="eqFamilyOut">Equation</p><h2 id="eqTitle">Select an equation</h2><p class="tool-note" id="eqMeaning"></p><div class="latex" id="eqRendered"></div><details><summary>LaTeX source</summary><pre class="src" id="eqLatex"></pre></details><div class="equation-links"><a id="eqPageLink" href="../../equations/">Open full equation card</a><a id="eqSourceLink" href="#" target="_blank" rel="noopener noreferrer">Canonical source ↗</a></div><p class="tool-note" id="eqStatus"></p></article></div></section>
+<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Equations</p><h1>Canonical equation tool.</h1><p class="tool-hero-lede">Browse the canonical equation and claim registry, copy exact LaTeX, or convert plain and Unicode mathematical notation into editable LaTeX with a live rendered preview.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../glossary/">Glossary</a><a href="../timeline/">Timeline</a><a href="../graph/">Graph</a></div></section>
+
+<section class="tool-section tool-wrap latex-converter" id="latex-converter"><div class="tool-head"><div><p class="eyebrow">Equation utility</p><h2>Plain equation → LaTeX converter.</h2></div><p>Paste ordinary text, Unicode mathematics, or existing LaTeX. The output stays editable and renders immediately.</p></div>
+<div class="converter-shell"><div class="converter-panel"><label for="converterInput">Equation input</label><textarea id="converterInput" spellcheck="false" placeholder="Example: Θ[ψ] = -∇²ψ / (ψ + ε exp(-α|ψ|²))"></textarea><div class="converter-actions"><button class="converter-button primary" id="convertButton" type="button">Convert to LaTeX</button><button class="converter-button" id="loadSelectedButton" type="button">Load selected equation</button><button class="converter-button" id="clearConverterButton" type="button">Clear</button></div><div class="converter-examples" aria-label="Converter examples"><button type="button" data-example="Θ[ψ] = -∇²ψ / (ψ + ε exp(-α|ψ|²))">Curvature operator</button><button type="button" data-example="dE/dt ≤ 0">Lyapunov descent</button><button type="button" data-example="H²(Ω) → L∞(Ω) implies n ≤ 3">Dimensional bound</button></div><p class="converter-help">This is a conservative browser-side notation helper, not a computer algebra system. It converts common Greek symbols, operators, superscripts/subscripts, functions, arrows, inequalities, and simple notation. Complex nested fractions or custom macros may still need manual editing.</p></div>
+<div class="converter-panel"><label for="converterOutput">LaTeX output</label><textarea id="converterOutput" spellcheck="false" placeholder="LaTeX appears here"></textarea><div class="converter-actions"><button class="converter-button primary" id="copyConverterButton" type="button">Copy LaTeX</button><button class="converter-button" id="renderConverterButton" type="button">Render edited output</button><span class="copy-feedback" id="converterFeedback" aria-live="polite"></span></div><div class="converter-preview" id="converterPreview" aria-label="Rendered LaTeX preview">Enter an equation to preview it.</div></div></div>
+</section>
+
+<section class="tool-section tool-wrap" id="equations"><div class="tool-head"><div><p class="eyebrow">Equation registry</p><h2>Inspect each object.</h2></div><p>Search by ID, title, definition, formula, family, or status.</p></div><div class="tool-toolbar"><input id="eqSearch" type="search" placeholder="Search equation ID, title, definition, or formula"><select id="eqFamily"><option value="">All equation families</option></select><span class="tool-count" id="eqCount"></span></div><div class="equation-layout"><div class="equation-list" id="eqList"></div><article class="equation-box"><p class="eyebrow" id="eqFamilyOut">Equation</p><h2 id="eqTitle">Select an equation</h2><p class="tool-note" id="eqMeaning"></p><div class="latex" id="eqRendered"></div><details open><summary>LaTeX source</summary><pre class="src" id="eqLatex"></pre></details><div class="selected-latex-actions"><button id="copySelectedButton" type="button">Copy selected LaTeX</button><button id="sendSelectedButton" type="button">Send to converter</button><span class="copy-feedback" id="selectedFeedback" aria-live="polite"></span></div><div class="equation-links"><a id="eqPageLink" href="../../equations/">Open full equation card</a><a id="eqSourceLink" href="#" target="_blank" rel="noopener noreferrer">Canonical source ↗</a></div><p class="tool-note" id="eqStatus"></p></article></div></section>
 </main>
 <footer class="site-footer"><div class="section-shell footer-bottom"><span>WCT Equation Tool</span><a href="#top">Back to top ↑</a></div></footer>
 <script src="../corpus-data.js"></script><script src="../equations-data.js"></script>
@@ -23,11 +29,71 @@
  const corpus=window.WCT_CORPUS||{}, equations=window.WCT_EQUATIONS||corpus.equations||[];
  const s=document.getElementById('eqSearch'), f=document.getElementById('eqFamily'), list=document.getElementById('eqList'), count=document.getElementById('eqCount');
  const famOut=document.getElementById('eqFamilyOut'), title=document.getElementById('eqTitle'), meaning=document.getElementById('eqMeaning'), rendered=document.getElementById('eqRendered'), latex=document.getElementById('eqLatex'), status=document.getElementById('eqStatus'), page=document.getElementById('eqPageLink'), source=document.getElementById('eqSourceLink');
+ const converterInput=document.getElementById('converterInput'), converterOutput=document.getElementById('converterOutput'), converterPreview=document.getElementById('converterPreview'), converterFeedback=document.getElementById('converterFeedback'), selectedFeedback=document.getElementById('selectedFeedback');
  const esc=v=>String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
+ let selectedEquation=null;
+ const replacements=[
+  ['Θ','\\Theta'],['θ','\\theta'],['ψ','\\psi'],['φ','\\varphi'],['ϕ','\\phi'],['κ','\\kappa'],['τ','\\tau'],['σ','\\sigma'],['ε','\\varepsilon'],['α','\\alpha'],['β','\\beta'],['γ','\\gamma'],['δ','\\delta'],['μ','\\mu'],['ν','\\nu'],['λ','\\lambda'],['ρ','\\rho'],['ω','\\omega'],['Ω','\\Omega'],['Γ','\\Gamma'],['Λ','\\Lambda'],['Δ','\\Delta'],['∇','\\nabla'],['ℏ','\\hbar'],['∞','\\infty'],['∂','\\partial'],['∫','\\int'],['∑','\\sum'],['∏','\\prod'],['≈','\\approx'],['≃','\\simeq'],['≠','\\ne'],['≤','\\le'],['≥','\\ge'],['→','\\to'],['↦','\\mapsto'],['∈','\\in'],['∉','\\notin'],['⊂','\\subset'],['⊆','\\subseteq'],['×','\\times'],['·','\\cdot'],['±','\\pm'],['∓','\\mp']
+ ];
+ const supers={'⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁺':'+','⁻':'-'};
+ const subs={'₀':'0','₁':'1','₂':'2','₃':'3','₄':'4','₅':'5','₆':'6','₇':'7','₈':'8','₉':'9','₊':'+','₋':'-'};
+ function collapseScripts(text,map,marker){
+   let out='',buf='';
+   const flush=()=>{if(buf){out+=marker+'{'+buf+'}';buf='';}};
+   for(const ch of text){if(Object.prototype.hasOwnProperty.call(map,ch)){buf+=map[ch]}else{flush();out+=ch;}}
+   flush(); return out;
+ }
+ function convertPlainMath(raw){
+   let out=String(raw||'').trim(); if(!out)return '';
+   if(/\\[A-Za-z]+/.test(out))return out;
+   out=out.replace(/sqrt\s*\(([^()]+)\)/gi,'\\sqrt{$1}');
+   out=out.replace(/\b(exp|log|ln|sin|cos|tan|sinh|cosh|tanh)\s*\(/g,(m,name)=>`\\${name}(`);
+   out=out.replace(/\bimplies\b/gi,'\\implies').replace(/\biff\b/gi,'\\iff').replace(/\bforall\b/gi,'\\forall').replace(/\bexists\b/gi,'\\exists');
+   out=out.replace(/<=/g,'\\le ').replace(/>=/g,'\\ge ').replace(/!=/g,'\\ne ').replace(/->/g,'\\to ');
+   out=collapseScripts(out,supers,'^'); out=collapseScripts(out,subs,'_');
+   replacements.forEach(([from,to])=>{out=out.split(from).join(to+' ')});
+   out=out.replace(/\s+/g,' ').replace(/\\(Theta|theta|psi|varphi|phi|kappa|tau|sigma|varepsilon|alpha|beta|gamma|delta|mu|nu|lambda|rho|omega|Omega|Gamma|Lambda|Delta|nabla|hbar|infty|partial|int|sum|prod|approx|simeq|ne|le|ge|to|mapsto|in|notin|subset|subseteq|times|cdot|pm|mp)\s+([_\^])/g,'\\$1$2').trim();
+   return out;
+ }
+ async function copyText(text,feedback){
+   if(!text)return;
+   try{await navigator.clipboard.writeText(text);feedback.textContent='Copied.';}
+   catch(err){const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();feedback.textContent='Copied.';}
+   setTimeout(()=>feedback.textContent='',1400);
+ }
+ function renderLatexPreview(value){
+   const code=String(value||'').trim();
+   if(!code){converterPreview.textContent='Enter an equation to preview it.';return;}
+   converterPreview.innerHTML=`$$${code}$$`;
+   if(window.MathJax?.typesetPromise)window.MathJax.typesetPromise([converterPreview]).catch(()=>{converterPreview.textContent=code;});
+ }
+ function runConverter(){const result=convertPlainMath(converterInput.value);converterOutput.value=result;renderLatexPreview(result);}
+ function select(id){
+   const e=equations.find(x=>x.id===id)||equations[0]; if(!e)return; selectedEquation=e;
+   famOut.textContent=`${e.family} · ${e.id}`; title.textContent=e.title; meaning.textContent=e.meaning; rendered.innerHTML=`$$${e.latex}$$`; latex.textContent=e.latex; status.textContent=e.status; page.href=`../../equations/#${encodeURIComponent(e.id)}`; source.href=e.source||page.href;
+   document.querySelectorAll('.equation-item').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===e.id)));
+   if(window.MathJax?.typesetPromise)window.MathJax.typesetPromise([rendered]);
+ }
+ function render(){
+   const q=s.value.trim().toLowerCase(), fam=f.value;
+   const shown=equations.filter(e=>(!q||Object.values(e).join(' ').toLowerCase().includes(q))&&(!fam||e.family===fam));
+   list.innerHTML='';
+   shown.forEach(e=>{const b=document.createElement('button');b.className='equation-item';b.dataset.id=e.id;b.innerHTML=`<strong>${esc(e.id)} — ${esc(e.title)}</strong><span>${esc(e.family)} · ${esc(e.status)}</span>`;b.addEventListener('click',()=>select(e.id));list.appendChild(b)});
+   count.textContent=`${shown.length} of ${equations.length} equations`; if(shown.length)select(shown[0].id);
+ }
  [...new Set(equations.map(e=>e.family))].sort().forEach(x=>f.add(new Option(x,x)));
- function select(id){const e=equations.find(x=>x.id===id)||equations[0]; if(!e)return; famOut.textContent=`${e.family} · ${e.id}`; title.textContent=e.title; meaning.textContent=e.meaning; rendered.innerHTML=`$$${e.latex}$$`; latex.textContent=e.latex; status.textContent=e.status; page.href=`../../equations/#${encodeURIComponent(e.id)}`; source.href=e.source||page.href; document.querySelectorAll('.equation-item').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===e.id))); if(window.MathJax?.typesetPromise)window.MathJax.typesetPromise([rendered]);}
- function render(){const q=s.value.trim().toLowerCase(), fam=f.value; const shown=equations.filter(e=>(!q||Object.values(e).join(' ').toLowerCase().includes(q))&&(!fam||e.family===fam)); list.innerHTML=''; shown.forEach(e=>{const b=document.createElement('button');b.className='equation-item';b.dataset.id=e.id;b.innerHTML=`<strong>${esc(e.id)} — ${esc(e.title)}</strong><span>${esc(e.family)} · ${esc(e.status)}</span>`;b.addEventListener('click',()=>select(e.id));list.appendChild(b)}); count.textContent=`${shown.length} of ${equations.length} equations`; if(shown.length)select(shown[0].id);}
+ const query=new URLSearchParams(location.search).get('q'); if(query)s.value=query;
  s.addEventListener('input',render);f.addEventListener('change',render);render();
+ document.getElementById('convertButton').addEventListener('click',runConverter);
+ converterInput.addEventListener('input',runConverter);
+ converterOutput.addEventListener('input',()=>renderLatexPreview(converterOutput.value));
+ document.getElementById('renderConverterButton').addEventListener('click',()=>renderLatexPreview(converterOutput.value));
+ document.getElementById('copyConverterButton').addEventListener('click',()=>copyText(converterOutput.value,converterFeedback));
+ document.getElementById('copySelectedButton').addEventListener('click',()=>copyText(selectedEquation?.latex||'',selectedFeedback));
+ const loadSelected=()=>{if(!selectedEquation)return;converterInput.value=selectedEquation.latex;converterOutput.value=selectedEquation.latex;renderLatexPreview(selectedEquation.latex);document.getElementById('latex-converter').scrollIntoView({behavior:'smooth',block:'start'});};
+ document.getElementById('loadSelectedButton').addEventListener('click',loadSelected); document.getElementById('sendSelectedButton').addEventListener('click',loadSelected);
+ document.getElementById('clearConverterButton').addEventListener('click',()=>{converterInput.value='';converterOutput.value='';renderLatexPreview('');converterInput.focus();});
+ document.querySelectorAll('[data-example]').forEach(btn=>btn.addEventListener('click',()=>{converterInput.value=btn.dataset.example||'';runConverter();}));
 })();
 </script>
 <script src="../../site-nav.js" defer></script>
