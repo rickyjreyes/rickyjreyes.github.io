@@ -112,7 +112,8 @@
       .profile-icon{display:grid;width:42px;height:42px;place-items:center;border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.055)}
       .profile-brand-logo{display:block;width:24px;height:24px;object-fit:contain}
       .profile-link-card[data-brand="github"] .profile-brand-logo{width:25px;height:25px}
-      .profile-link-card[data-brand="linkedin"] .profile-brand-logo{width:23px;height:23px}
+      .profile-link-card[data-brand="linkedin"] .profile-icon{border-color:transparent;background:#0A66C2}
+      .profile-link-card[data-brand="linkedin"] .profile-brand-logo{width:25px;height:25px}
       .profile-link-card[data-brand="zenodo"] .profile-brand-logo{width:25px;height:25px}
       .profile-link-card[data-brand="orcid"] .profile-brand-logo{width:26px;height:26px}
       .profile-copy{min-width:0}
@@ -295,7 +296,7 @@
       identityLinks.classList.add('profile-links');
       identityLinks.innerHTML = `
         <a class="profile-link-card" data-brand="github" href="https://github.com/rickyjreyes" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on GitHub (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/github/FFFFFF" alt=""></span><span class="profile-copy"><strong>GitHub</strong><span>github.com/rickyjreyes</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
-        <a class="profile-link-card" data-brand="linkedin" href="https://www.linkedin.com/in/rickyjreyes/" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on LinkedIn (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/linkedin/0A66C2" alt=""></span><span class="profile-copy"><strong>LinkedIn</strong><span>linkedin.com/in/rickyjreyes</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
+        <a class="profile-link-card" data-brand="linkedin" href="https://www.linkedin.com/in/rickyjreyes/" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on LinkedIn (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/linkedin/FFFFFF" alt=""></span><span class="profile-copy"><strong>LinkedIn</strong><span>linkedin.com/in/rickyjreyes</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
         <a class="profile-link-card" data-brand="zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Reyes%2C+Richard+J.%22" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes publications on Zenodo (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/zenodo/1682D4" alt=""></span><span class="profile-copy"><strong>Zenodo</strong><span>DOI publication archive</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
         <a class="profile-link-card" data-brand="orcid" href="https://orcid.org/0009-0005-5975-8718" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes ORCID record (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/orcid/A6CE39" alt=""></span><span class="profile-copy"><strong>ORCID</strong><span>0009-0005-5975-8718</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>`;
     }
