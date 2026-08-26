@@ -20,3 +20,22 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
 [1018,"Dissipation-tunable extended and localized steady states in a non-disordered lattice","https://arxiv.org/abs/2608.19694",9.2,"physics","arXiv","Ming-Jie Tao; Yi-Ting Wang; Jing Li; Hongsheng Hou; Xiang-Ping Jiang; Lei Pan","10.48550/arXiv.2608.19694","https://doi.org/10.48550/arXiv.2608.19694"],
 [1019,"Dissipation driven boundary localization in higher order topological insulators","https://arxiv.org/abs/2608.20867",9.0,"physics","arXiv","Xue Ping Ren; Xiao Ran Wang; Xin Ran Ma; Xi Hu; Su Peng Kou","10.48550/arXiv.2608.20867","https://doi.org/10.48550/arXiv.2608.20867"]
 ]);
+
+// Normalize the public ledger after all overlay files have loaded. Primary URL
+// is the stable record key; source rank values are only historical tie-breakers.
+(() => {
+  const byUrl = new Map();
+  (window.overlapRecords || []).forEach(record => byUrl.set(record[2], record));
+  const records = [...byUrl.values()];
+  const oldRank = record => Number.isFinite(Number(record[0])) ? Number(record[0]) : 999999;
+  const ranked = (domain) => records
+    .filter(record => record[4] === domain)
+    .sort((a, b) =>
+      (Number(b[3]) - Number(a[3])) ||
+      (oldRank(a) - oldRank(b)) ||
+      String(a[1]).localeCompare(String(b[1])) ||
+      String(a[2]).localeCompare(String(b[2]))
+    );
+  const ordered = [...ranked('physics'), ...ranked('ai')];
+  window.overlapRecords = ordered.map((record, index) => [index + 1, ...record.slice(1)]);
+})();
