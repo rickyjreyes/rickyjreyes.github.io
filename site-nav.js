@@ -31,6 +31,22 @@
     document.head.appendChild(script);
   });
 
+  const syncLenisWithScrollTrigger = () => {
+    let attempts = 0;
+    const connect = () => {
+      if (window.__wctLenis && window.ScrollTrigger) {
+        if (!window.__wctLenisScrollTriggerBound) {
+          window.__wctLenis.on('scroll', window.ScrollTrigger.update);
+          window.__wctLenisScrollTriggerBound = true;
+        }
+        window.ScrollTrigger.refresh();
+        return;
+      }
+      if (attempts++ < 120) window.setTimeout(connect, 50);
+    };
+    connect();
+  };
+
   const initializeGsap = async () => {
     if (window.__wctGsapReady || window.__wctGsapLoading) return;
     window.__wctGsapLoading = true;
@@ -65,6 +81,8 @@
     window.__wctGsapReady = true;
     window.__wctGsapLoading = false;
 
+    syncLenisWithScrollTrigger();
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const sections = [...document.querySelectorAll('main section')]
@@ -75,20 +93,22 @@
       section.dataset.wctGsapIntro = 'true';
 
       window.gsap.from(section, {
-        y: 22,
-        autoAlpha: 0.86,
-        duration: 0.82,
-        ease: 'power2.out',
+        y: 48,
+        scale: 0.985,
+        autoAlpha: 0.28,
+        duration: 1.05,
+        ease: 'power3.out',
         clearProps: 'transform,opacity,visibility',
         scrollTrigger: {
           trigger: section,
-          start: 'top 88%',
+          start: 'top 92%',
           once: true
         }
       });
     });
 
     window.ScrollTrigger.refresh();
+    window.setTimeout(() => window.ScrollTrigger?.refresh(), 300);
   };
 
   loadBaseRuntime();
