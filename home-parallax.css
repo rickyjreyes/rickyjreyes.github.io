@@ -1,0 +1,49 @@
+/* Homepage hero parallax: transform-only progressive enhancement. */
+@media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
+  .hero[data-parallax-ready="true"] .eyebrow,
+  .hero[data-parallax-ready="true"] h1,
+  .hero[data-parallax-ready="true"] .hero-lede,
+  .hero[data-parallax-ready="true"] .hero-actions,
+  .hero[data-parallax-ready="true"] .identity-links,
+  .hero[data-parallax-ready="true"] .field-visual {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, var(--hero-parallax-y, 0px), 0);
+  }
+
+  .hero[data-parallax-ready="true"] .eyebrow {
+    --hero-parallax-y: calc(var(--hero-parallax-progress, 0) * -10px);
+  }
+
+  .hero[data-parallax-ready="true"] h1 {
+    --hero-parallax-y: calc(var(--hero-parallax-progress, 0) * -28px);
+  }
+
+  .hero[data-parallax-ready="true"] .hero-lede {
+    --hero-parallax-y: calc(var(--hero-parallax-progress, 0) * -20px);
+  }
+
+  .hero[data-parallax-ready="true"] .hero-actions {
+    --hero-parallax-y: calc(var(--hero-parallax-progress, 0) * -15px);
+  }
+
+  .hero[data-parallax-ready="true"] .identity-links {
+    --hero-parallax-y: calc(var(--hero-parallax-progress, 0) * -11px);
+  }
+
+  .hero[data-parallax-ready="true"] .field-visual {
+    --hero-parallax-y: calc(var(--hero-parallax-progress, 0) * 30px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce), (max-width: 760px) {
+  .hero .eyebrow,
+  .hero h1,
+  .hero .hero-lede,
+  .hero .hero-actions,
+  .hero .identity-links,
+  .hero .field-visual {
+    transform: none !important;
+    will-change: auto !important;
+  }
+}
