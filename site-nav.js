@@ -4,6 +4,56 @@
     const foundationsActive = currentPath === '/foundations/' || currentPath.startsWith('/foundations/');
     const toolsActive = currentPath === '/tools/' || currentPath.startsWith('/tools/');
 
+    if (!document.getElementById('wct-wordmark-clickable-style')) {
+      const style = document.createElement('style');
+      style.id = 'wct-wordmark-clickable-style';
+      style.textContent = `
+        .site-header .wordmark{
+          display:inline-flex;
+          align-items:center;
+          gap:9px;
+          min-height:48px;
+          margin-left:-10px;
+          padding:5px 10px;
+          border:1px solid transparent;
+          border-radius:12px;
+          color:var(--text,#e9f0f6);
+          text-decoration:none;
+          cursor:pointer;
+          transition:background 130ms ease,border-color 130ms ease,box-shadow 130ms ease,transform 130ms ease,color 130ms ease;
+        }
+        .site-header .wordmark span:last-child{
+          font-weight:820;
+          letter-spacing:.055em;
+        }
+        .site-header .wordmark:hover{
+          border-color:rgba(103,212,255,.3);
+          background:rgba(103,212,255,.075);
+          box-shadow:0 8px 28px rgba(0,0,0,.18),inset 0 0 0 1px rgba(103,212,255,.025);
+          color:#fff;
+          transform:translateY(-1px);
+        }
+        .site-header .wordmark:focus-visible{
+          outline:2px solid var(--accent,#67d4ff);
+          outline-offset:3px;
+          border-color:rgba(103,212,255,.42);
+          background:rgba(103,212,255,.08);
+        }
+        .site-header .wordmark .wct-wordmark-logo{
+          transition:transform 130ms ease,filter 130ms ease;
+        }
+        .site-header .wordmark:hover .wct-wordmark-logo,
+        .site-header .wordmark:focus-visible .wct-wordmark-logo{
+          transform:scale(1.08);
+          filter:drop-shadow(0 0 9px rgba(103,212,255,.38)) drop-shadow(0 8px 18px rgba(0,0,0,.24));
+        }
+        @media(max-width:760px){
+          .site-header .wordmark{min-height:46px;margin-left:-7px;padding:4px 7px;border-radius:10px}
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
     const nav = document.querySelector('#site-nav');
     if (nav) {
       const toolsLink = [...nav.children].find((item) => item.matches?.('a[href="/tools/"]'));
