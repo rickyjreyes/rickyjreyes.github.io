@@ -67,25 +67,26 @@
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const currentPath = window.location.pathname.replace(/index\.html$/i, '').replace(/\/{2,}/g, '/');
-    if (currentPath === '/') {
-      const target = document.querySelector('#idea .section-heading');
-      if (target && !target.dataset.wctGsapIntro) {
-        target.dataset.wctGsapIntro = 'true';
-        window.gsap.from(target, {
-          y: 18,
-          autoAlpha: 0.86,
-          duration: 0.8,
-          ease: 'power2.out',
-          clearProps: 'transform,opacity,visibility',
-          scrollTrigger: {
-            trigger: target,
-            start: 'top 84%',
-            once: true
-          }
-        });
-      }
-    }
+    const sections = [...document.querySelectorAll('main section')]
+      .filter((section) => !section.classList.contains('hero'));
+
+    sections.forEach((section) => {
+      if (section.dataset.wctGsapIntro) return;
+      section.dataset.wctGsapIntro = 'true';
+
+      window.gsap.from(section, {
+        y: 22,
+        autoAlpha: 0.86,
+        duration: 0.82,
+        ease: 'power2.out',
+        clearProps: 'transform,opacity,visibility',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 88%',
+          once: true
+        }
+      });
+    });
 
     window.ScrollTrigger.refresh();
   };
