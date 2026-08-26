@@ -99,6 +99,79 @@
       if (aboutSection && statusStrip) statusStrip.insertAdjacentElement('afterend', aboutSection);
     }
 
+    const standardHeaderPaths = new Set([
+      '/publications/', '/priority/', '/overlap/', '/patents/', '/equations/',
+      '/sympy/', '/lean/', '/reproduce/', '/tools/', '/foundations/'
+    ]);
+    const standardHeaderActive = standardHeaderPaths.has(currentPath) || currentPath.startsWith('/tools/');
+    if (standardHeaderActive) {
+      const pageTitle = document.querySelector('main h1');
+      const pageHero = pageTitle?.closest('header,section');
+      if (pageTitle && pageHero) {
+        pageHero.classList.add('site-page-hero');
+
+        if (!pageTitle.querySelector('span') && pageTitle.childElementCount === 0) {
+          const titleText = pageTitle.textContent.trim();
+          const splitAt = titleText.lastIndexOf(' ');
+          if (splitAt > 0) {
+            pageTitle.textContent = `${titleText.slice(0, splitAt)} `;
+            const accent = document.createElement('span');
+            accent.className = 'site-page-title-accent';
+            accent.textContent = titleText.slice(splitAt + 1);
+            pageTitle.appendChild(accent);
+          }
+        }
+
+        if (!document.getElementById('site-page-hero-style')) {
+          const style = document.createElement('style');
+          style.id = 'site-page-hero-style';
+          style.textContent = `
+            .site-page-hero{
+              padding-top:88px !important;
+              padding-bottom:54px !important;
+            }
+            .site-page-hero h1{
+              max-width:900px;
+              margin:0 !important;
+              font-family:Georgia,"Times New Roman",serif !important;
+              font-size:clamp(3rem,7vw,6rem) !important;
+              font-weight:500 !important;
+              letter-spacing:-.045em !important;
+              line-height:1.02 !important;
+            }
+            .site-page-hero h1>.site-page-title-accent,
+            .site-page-hero.patent-hero h1>span{
+              color:transparent !important;
+              background:linear-gradient(100deg,var(--accent,#67d4ff) 0%,#8fd8ff 42%,#a899ff 100%);
+              background-clip:text;
+              -webkit-background-clip:text;
+            }
+            .site-page-hero>h1+p,
+            .site-page-hero .section-heading h1+p,
+            .site-page-hero .foundation-head h1+p,
+            .site-page-hero .pub-index-head h1+p,
+            .site-page-hero .tool-hero-lede,
+            .site-page-hero .hero-lede{
+              max-width:880px !important;
+              margin-top:1.2rem;
+              color:var(--muted,#9cb0c1);
+              font-size:clamp(1rem,1.55vw,1.16rem);
+              line-height:1.75;
+            }
+            .site-page-hero>.eyebrow,
+            .site-page-hero .section-heading>.eyebrow,
+            .site-page-hero>.paper-kicker{
+              margin-bottom:.75rem;
+            }
+            @media(max-width:620px){
+              .site-page-hero{padding-top:64px !important;padding-bottom:40px !important}
+            }
+          `;
+          document.head.appendChild(style);
+        }
+      }
+    }
+
     const typesetRawMath = (selector) => {
       let attempts = 0;
       const run = () => {
