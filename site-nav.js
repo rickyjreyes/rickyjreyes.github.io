@@ -99,42 +99,52 @@
       if (aboutSection && statusStrip) statusStrip.insertAdjacentElement('afterend', aboutSection);
     }
 
-    if (sympyActive && !document.getElementById('sympy-card-width-style')) {
-      const style = document.createElement('style');
-      style.id = 'sympy-card-width-style';
-      style.textContent = `
-        #main .audit-grid{
-          grid-template-columns:minmax(0,1fr) !important;
+    const typesetRawMath = (selector) => {
+      let attempts = 0;
+      const run = () => {
+        const mathJax = window.MathJax;
+        const raw = [...document.querySelectorAll(selector)].filter((node) => !node.querySelector('mjx-container'));
+        if (!raw.length) return;
+        if (mathJax?.startup?.promise && mathJax?.typesetPromise) {
+          mathJax.startup.promise.then(() => {
+            requestAnimationFrame(() => {
+              mathJax.typesetPromise(raw).catch(() => {});
+            });
+          });
+          return;
         }
-        #main .audit-card{
-          width:100%;
-          max-width:none;
-          min-height:0;
-        }
-      `;
-      document.head.appendChild(style);
+        if (attempts++ < 100) window.setTimeout(run, 50);
+      };
+      run();
+    };
+
+    if (sympyActive) {
+      if (!document.getElementById('sympy-card-width-style')) {
+        const style = document.createElement('style');
+        style.id = 'sympy-card-width-style';
+        style.textContent = `
+          #main .audit-grid{
+            display:block !important;
+          }
+          #main .audit-card{
+            display:flex;
+            width:100%;
+            max-width:none;
+            min-height:0;
+            margin:0 0 1rem;
+          }
+          #main .audit-card:last-child{margin-bottom:0}
+        `;
+        document.head.appendChild(style);
+      }
+
+      const typesetSympy = () => typesetRawMath('.audit-equation');
+      if (document.readyState === 'complete') typesetSympy();
+      else window.addEventListener('load', typesetSympy, { once: true });
     }
 
     if (leanActive) {
-      const typesetLeanOnLoad = () => {
-        let attempts = 0;
-        const run = () => {
-          const detail = document.querySelector('.lean-detail');
-          const mathJax = window.MathJax;
-          if (!detail) return;
-          if (mathJax?.startup?.promise && mathJax?.typesetPromise) {
-            mathJax.startup.promise.then(() => {
-              requestAnimationFrame(() => {
-                mathJax.typesetPromise([detail]).catch(() => {});
-              });
-            });
-            return;
-          }
-          if (attempts++ < 80) window.setTimeout(run, 50);
-        };
-        run();
-      };
-
+      const typesetLeanOnLoad = () => typesetRawMath('.lean-equation');
       if (document.readyState === 'complete') typesetLeanOnLoad();
       else window.addEventListener('load', typesetLeanOnLoad, { once: true });
     }
