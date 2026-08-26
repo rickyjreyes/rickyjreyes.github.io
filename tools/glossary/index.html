@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Alphabetical Wave Confinement Theory glossary with definitions, notation, and conceptual families.">
+<link rel="canonical" href="https://rickyjreyes.github.io/tools/glossary/">
+<title>WCT Glossary | Richard J. Reyes</title>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../tools-v2.css">
+<link rel="stylesheet" href="../tools-v3.css">
+<link rel="stylesheet" href="../tools-v4.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to glossary</a>
+<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"></nav></div></header>
+<main id="main">
+<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Glossary</p><h1>WCT glossary.</h1><p class="tool-hero-lede">Alphabetical definitions, mathematical notation, and conceptual families used across the Wave Confinement Theory research program.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../equations/">Equations</a><a href="../timeline/">Timeline</a><a href="../graph/">Graph</a></div></section>
+<section class="tool-section tool-wrap" id="glossary"><div class="tool-head"><div><p class="eyebrow">A–Z</p><h2>Alphabetical glossary.</h2></div><p>Search by term, definition, notation, or conceptual family.</p></div><div class="tool-toolbar"><input id="termSearch" type="search" placeholder="Search glossary"><select id="termFamily"><option value="">All concept families</option></select><span class="tool-count" id="termCount"></span></div><div class="tool-grid" id="glossaryGrid"></div></section>
+</main>
+<footer class="site-footer"><div class="section-shell footer-bottom"><span>WCT Glossary</span><a href="#top">Back to top ↑</a></div></footer>
+<script src="../corpus-data.js"></script>
+<script>
+(() => {
+  const corpus=window.WCT_CORPUS||{}; const terms=corpus.terms||[];
+  const search=document.getElementById('termSearch'), family=document.getElementById('termFamily'), root=document.getElementById('glossaryGrid'), count=document.getElementById('termCount');
+  const esc=v=>String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
+  [...new Set(terms.map(t=>t[2]))].sort((a,b)=>a.localeCompare(b)).forEach(f=>family.add(new Option(f,f)));
+  function render(){
+    const q=search.value.trim().toLowerCase(), fam=family.value;
+    const filtered=terms.filter(t=>(!q||t.join(' ').toLowerCase().includes(q))&&(!fam||t[2]===fam)).slice().sort((a,b)=>a[0].localeCompare(b[0],'en',{sensitivity:'base'}));
+    root.innerHTML=''; let letter='';
+    filtered.forEach(t=>{ const next=/^[A-Z]$/.test(t[0].charAt(0).toUpperCase())?t[0].charAt(0).toUpperCase():'#'; if(next!==letter){letter=next; const d=document.createElement('div'); d.className='glossary-letter'; d.textContent=letter; root.appendChild(d);} const card=document.createElement('article'); card.className='tool-card glossary-card'; card.innerHTML=`<span class="tool-tag">${esc(t[2])}</span><h3>${esc(t[0])}</h3><p>${esc(t[1])}</p>${t[3]?`<p class="mathline">${esc(t[3])}</p>`:''}<p class="tool-note">${esc(t[4])}</p>`; root.appendChild(card); });
+    count.textContent=`${filtered.length} of ${terms.length} terms`;
+  }
+  search.addEventListener('input',render); family.addEventListener('change',render); render();
+})();
+</script>
+<script src="../../site-nav.js" defer></script>
+</body></html>
