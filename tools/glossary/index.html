@@ -3,37 +3,132 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f">
-<meta name="description" content="Alphabetical Wave Confinement Theory glossary with definitions, notation, and conceptual families.">
+<meta name="description" content="Detailed alphabetical Wave Confinement Theory glossary with definitions, research context, notation, evaluation guidance, and related concepts.">
 <link rel="canonical" href="https://rickyjreyes.github.io/tools/glossary/">
 <title>WCT Glossary | Richard J. Reyes</title>
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="../tools-v2.css">
 <link rel="stylesheet" href="../tools-v3.css">
 <link rel="stylesheet" href="../tools-v4.css">
+<link rel="stylesheet" href="../tools-v5.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to glossary</a>
 <header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
 <main id="main">
-<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Glossary</p><h1>WCT glossary.</h1><p class="tool-hero-lede">Alphabetical definitions, mathematical notation, and conceptual families used across the Wave Confinement Theory research program.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../equations/">Equations</a><a href="../timeline/">Timeline</a><a href="../graph/">Graph</a></div></section>
-<section class="tool-section tool-wrap" id="glossary"><div class="tool-head"><div><p class="eyebrow">A–Z</p><h2>Alphabetical glossary.</h2></div><p>Search by term, definition, notation, or conceptual family.</p></div><div class="tool-toolbar"><input id="termSearch" type="search" placeholder="Search glossary"><select id="termFamily"><option value="">All concept families</option></select><span class="tool-count" id="termCount"></span></div><div class="tool-grid" id="glossaryGrid"></div></section>
+<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Glossary</p><h1>WCT glossary.</h1><p class="tool-hero-lede">Detailed alphabetical definitions, mathematical notation, research context, evaluation boundaries, and conceptual relationships used across the Wave Confinement Theory research program.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../equations/">Equations</a><a href="../timeline/">Timeline</a><a href="../graph/">Graph</a></div></section>
+<section class="tool-section tool-wrap" id="glossary"><div class="tool-head"><div><p class="eyebrow">A–Z</p><h2>Alphabetical glossary.</h2></div><p>Search by term, definition, notation, conceptual family, or research role.</p></div>
+<div class="glossary-guide" aria-label="Glossary entry guide"><div><strong>Definition</strong><span>What the term means in ordinary mathematical, physical, computational, or experimental language.</span></div><div><strong>Research context</strong><span>Where the concept enters WCT or an adjacent branch of the research corpus.</span></div><div><strong>Why it matters</strong><span>The role the concept plays in a derivation, test, architecture, or falsifiable claim.</span></div><div><strong>How to evaluate</strong><span>The evidence, proof obligation, control, or boundary needed before treating the concept as established.</span></div></div>
+<div class="tool-toolbar"><input id="termSearch" type="search" placeholder="Search glossary"><select id="termFamily"><option value="">All concept families</option></select><span class="tool-count" id="termCount"></span></div><div class="tool-grid" id="glossaryGrid"></div></section>
 </main>
 <footer class="site-footer"><div class="section-shell footer-bottom"><span>WCT Glossary</span><a href="#top">Back to top ↑</a></div></footer>
 <script src="../corpus-data.js"></script>
 <script>
 (() => {
-  const corpus=window.WCT_CORPUS||{}; const terms=corpus.terms||[];
+  const corpus=window.WCT_CORPUS||{};
+  const terms=corpus.terms||[];
   const search=document.getElementById('termSearch'), family=document.getElementById('termFamily'), root=document.getElementById('glossaryGrid'), count=document.getElementById('termCount');
   const esc=v=>String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
+  const slug=v=>String(v||'term').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  const familyProfiles={
+    'Core field':{
+      context:'This belongs to the field-level vocabulary used to define the state variables, conserved quantities, continuum limits, and geometric observables from which WCT is built.',
+      why:'Core-field concepts determine what is actually being evolved or measured. If these definitions are ambiguous, every later confinement, mass, or stability claim inherits that ambiguity.',
+      evaluate:'Check the exact definition, units, regularity assumptions, conservation law, and whether the quantity is directly observable, derived, or only model-defined.'
+    },
+    'Curvature':{
+      context:'This appears in the curvature branch, where local field geometry, phase gradients, curvature–torsion structure, and nonlinear feedback are connected to confinement or effective dynamics.',
+      why:'Curvature terms are central to the proposed locking mechanism. Their mathematical form controls whether localization is bounded, stable, and distinguishable from a generic nonlinear-wave model.',
+      evaluate:'Trace the term to a declared equation, verify dimensions and regularization, test singular or high-curvature limits, and separate proved identities from phenomenological ansätze.'
+    },
+    'Spectral':{
+      context:'This belongs to the spectral-selection branch, which studies how Fourier power, finite-wavenumber growth, entropy, and shell formation organize a field into preferred modes.',
+      why:'Spectral organization provides a concrete route from broadband or noisy initial conditions to structured states without assuming the final geometry in advance.',
+      evaluate:'Use resolution studies, windowing controls, null spectra, alternate baselines, and parameter sweeps to show that a feature is not a binning, leakage, or finite-grid artifact.'
+    },
+    'Stability':{
+      context:'This is part of the mathematical stability layer used to ask whether a proposed confined state persists under perturbation and whether the governing energy or flow is well posed.',
+      why:'A visually localized state is not enough; stability concepts determine whether the state survives perturbations, refinement, long-time evolution, and admissible variations.',
+      evaluate:'State the admissible function space, boundary conditions, conserved quantities, coercive or Lyapunov estimate, perturbation class, and the first step that is not yet proved.'
+    },
+    'Evidence':{
+      context:'This is analysis and measurement vocabulary used in experiments or public-data studies rather than a defining postulate of WCT itself.',
+      why:'Evidence terms determine how an observed signal is separated from background, detector effects, fit flexibility, and selection bias before it can support or constrain a model.',
+      evaluate:'Require explicit controls, uncertainty propagation, alternative baselines, multiple-testing accounting where relevant, and a clear statement of what the observation does and does not establish.'
+    },
+    'AI / drift':{
+      context:'This belongs to the Recursive AI Drift branch, where recursive updating, semantic anchoring, constraint retention, and long-horizon degradation are treated as measurable system properties.',
+      why:'These concepts translate the broader confinement idea into an information-system setting: the central question is whether an evolving system remains inside a bounded semantic or behavioral region.',
+      evaluate:'Define the metric operationally, compare against non-recursive controls, separate metaphor from mechanism, and test whether the proposed diagnostic predicts failures before they occur.'
+    },
+    'Computation':{
+      context:'This belongs to the computational and WaveLock branches, including complexity, local update rules, finite-resource computation, commitments, and model-relative one-way behavior.',
+      why:'The computation branch asks what changes when algorithms are constrained by explicit physical or geometric resources instead of abstract unlimited precision and state capacity.',
+      evaluate:'Specify the computational model, resource accounting, adversary, reduction or hardness assumption, and whether a result is a theorem, simulation result, protocol property, or conjecture.'
+    },
+    'Control / fusion':{
+      context:'This is engineering vocabulary for closed-loop regulation, diagnostics, safe operating regions, actuators, and resonance-aware control architectures.',
+      why:'Control concepts turn a descriptive model into an actionable system: measurable state must be connected to an actuator in a way that improves stability without creating a stronger instability elsewhere.',
+      evaluate:'Identify sensor bandwidth, actuator limits, delays, saturation, noise, stability margins, fallback logic, and the plant model against which the controller is validated.'
+    },
+    'Topology':{
+      context:'This belongs to the topology branch, where winding, closed paths, discrete mode labels, and invariant geometric structure constrain the allowed field configurations.',
+      why:'Topological structure can provide robustness that does not depend only on local amplitude, making it a candidate mechanism for persistent state labeling or mode protection.',
+      evaluate:'Define the invariant and domain precisely, show it is preserved under the allowed dynamics, and distinguish true topological protection from merely long-lived geometry.'
+    },
+    'Cosmology':{
+      context:'This is a cosmological extension of the research program rather than part of the experimentally established core field model.',
+      why:'Cosmological concepts test whether the same mathematical structure can be extended consistently to large-scale effective geometry or constants without contradicting known limits.',
+      evaluate:'Treat the extension as speculative until it reproduces the relevant standard limits, uses covariant definitions, and makes a quantitatively distinguishable prediction.'
+    }
+  };
+  const fallbackProfile={
+    context:'This term is used as supporting vocabulary within the broader WCT research corpus and should be interpreted in the context of the specific paper, equation, experiment, or software branch where it appears.',
+    why:'The term matters because it connects a verbal claim to a more precise mathematical, computational, experimental, or engineering object.',
+    evaluate:'Check the primary source, exact definition, assumptions, units or data provenance, and whether the surrounding claim is established, conditional, model-relative, or open.'
+  };
+  const stop=new Set(['the','and','for','with','from','that','this','into','used','where','under','through','over','field','state','model','term','used','branch','system','wave','wct']);
+  const words=t=>new Set(String(t).toLowerCase().replace(/[^a-z0-9α-ω]+/g,' ').split(/\s+/).filter(w=>w.length>3&&!stop.has(w)));
+  const termTokens=new Map(terms.map(t=>[t[0],words([t[0],t[1],t[3]].join(' '))]));
+  function relatedTerms(t){
+    const base=termTokens.get(t[0])||new Set();
+    return terms.filter(x=>x!==t).map(x=>{
+      const other=termTokens.get(x[0])||new Set(); let shared=0; base.forEach(w=>{if(other.has(w))shared++});
+      let score=shared*4+(x[2]===t[2]?2:0);
+      if(String(x[1]).toLowerCase().includes(String(t[0]).toLowerCase()))score+=3;
+      if(String(t[1]).toLowerCase().includes(String(x[0]).toLowerCase()))score+=3;
+      return {x,score};
+    }).sort((a,b)=>b.score-a.score||a.x[0].localeCompare(b.x[0])).slice(0,4).map(r=>r.x);
+  }
+  function profileFor(t){return familyProfiles[t[2]]||fallbackProfile;}
+  function contextFor(t,p){
+    const notation=t[3]?` The notation “${t[3]}” is the shorthand used in this corpus when the concept is connected to equations, simulations, or diagnostics.`:'';
+    return `${p.context}${notation}`;
+  }
+  function scopeFor(t){
+    const note=String(t[4]||'').trim();
+    if(!note)return 'Scope: glossary concept; verify against the linked primary equation, paper, experiment, or implementation.';
+    if(/imported glossary concept/i.test(note))return 'Scope: supporting or imported concept. Inclusion in the glossary does not by itself make the concept unique to WCT or validate a WCT claim.';
+    return `Scope: ${note}`;
+  }
   [...new Set(terms.map(t=>t[2]))].sort((a,b)=>a.localeCompare(b)).forEach(f=>family.add(new Option(f,f)));
   function render(){
     const q=search.value.trim().toLowerCase(), fam=family.value;
-    const filtered=terms.filter(t=>(!q||t.join(' ').toLowerCase().includes(q))&&(!fam||t[2]===fam)).slice().sort((a,b)=>a[0].localeCompare(b[0],'en',{sensitivity:'base'}));
+    const filtered=terms.filter(t=>(!q||t.join(' ').toLowerCase().includes(q)||Object.values(profileFor(t)).join(' ').toLowerCase().includes(q))&&(!fam||t[2]===fam)).slice().sort((a,b)=>a[0].localeCompare(b[0],'en',{sensitivity:'base'}));
     root.innerHTML=''; let letter='';
-    filtered.forEach(t=>{ const next=/^[A-Z]$/.test(t[0].charAt(0).toUpperCase())?t[0].charAt(0).toUpperCase():'#'; if(next!==letter){letter=next; const d=document.createElement('div'); d.className='glossary-letter'; d.textContent=letter; root.appendChild(d);} const card=document.createElement('article'); card.className='tool-card glossary-card'; card.innerHTML=`<span class="tool-tag">${esc(t[2])}</span><h3>${esc(t[0])}</h3><p>${esc(t[1])}</p>${t[3]?`<p class="mathline">${esc(t[3])}</p>`:''}<p class="tool-note">${esc(t[4])}</p>`; root.appendChild(card); });
+    filtered.forEach(t=>{
+      const next=/^[A-Z]$/.test(t[0].charAt(0).toUpperCase())?t[0].charAt(0).toUpperCase():'#';
+      if(next!==letter){letter=next;const d=document.createElement('div');d.className='glossary-letter';d.textContent=letter;root.appendChild(d);}
+      const p=profileFor(t), related=relatedTerms(t), id=`term-${slug(t[0])}`;
+      const card=document.createElement('article');
+      card.className='tool-card glossary-card rich-glossary-card'; card.id=id;
+      card.innerHTML=`<div class="glossary-identity"><span class="tool-tag">${esc(t[2])}</span><h3>${esc(t[0])}</h3><a class="glossary-anchor" href="#${id}" aria-label="Permanent link to ${esc(t[0])}"># permanent link</a></div><div class="glossary-body"><p class="glossary-definition">${esc(t[1])}</p><div class="glossary-detail-grid"><div class="glossary-detail"><strong>Research context</strong><p>${esc(contextFor(t,p))}</p></div><div class="glossary-detail"><strong>Why it matters</strong><p>${esc(p.why)}</p></div><div class="glossary-detail"><strong>How to evaluate</strong><p>${esc(p.evaluate)}</p></div></div><div class="glossary-meta-row">${t[3]?`<div class="glossary-notation"><strong>Notation</strong><code>${esc(t[3])}</code></div>`:''}<a class="glossary-equation-link" href="../equations/?q=${encodeURIComponent(t[0])}">Find related equations →</a></div><div class="glossary-related"><strong>Related</strong>${related.map(x=>`<a href="#term-${slug(x[0])}">${esc(x[0])}</a>`).join('')}</div><p class="glossary-scope">${esc(scopeFor(t))}</p></div>`;
+      root.appendChild(card);
+    });
     count.textContent=`${filtered.length} of ${terms.length} terms`;
   }
   search.addEventListener('input',render); family.addEventListener('change',render); render();
+  if(location.hash&&location.hash.startsWith('#term-'))requestAnimationFrame(()=>document.querySelector(location.hash)?.scrollIntoView({block:'start'}));
 })();
 </script>
 <script src="../../site-nav.js" defer></script>
