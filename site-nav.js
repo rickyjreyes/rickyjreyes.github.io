@@ -97,6 +97,13 @@
       if (aboutSection && statusStrip) statusStrip.insertAdjacentElement('afterend', aboutSection);
     }
 
+    if (currentPath === '/tools/glossary/') {
+      const glossaryDefinitions = document.createElement('script');
+      glossaryDefinitions.src = '/tools/glossary-definitions.js?v=20260826-expanded';
+      glossaryDefinitions.async = false;
+      document.head.appendChild(glossaryDefinitions);
+    }
+
     if (foundationsActive) {
       if (!document.getElementById('foundation-selectable-style')) {
         const style = document.createElement('style');
