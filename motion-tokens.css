@@ -1,0 +1,55 @@
+:root {
+  /* Motion durations */
+  --motion-duration-instant: 100ms;
+  --motion-duration-fast: 160ms;
+  --motion-duration-base: 240ms;
+  --motion-duration-slow: 420ms;
+  --motion-duration-cinematic: 800ms;
+
+  /* Motion easing */
+  --motion-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --motion-ease-emphasized: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Motion distances */
+  --motion-distance-xs: 4px;
+  --motion-distance-sm: 8px;
+  --motion-distance-md: 16px;
+  --motion-distance-lg: 32px;
+  --motion-distance-xl: 56px;
+
+  /* Shared spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 6rem;
+  --space-section: clamp(5.5rem, 11vw, 9.25rem);
+
+  /* Hero/layout scale */
+  --hero-min-height: calc(100svh - 73px);
+  --hero-gap: clamp(2.625rem, 7vw, 6rem);
+  --hero-padding-top: clamp(4rem, 8vw, 5.5rem);
+  --hero-padding-bottom: clamp(4.75rem, 9vw, 6rem);
+
+  /* Typography scale */
+  --type-display: clamp(3.1rem, 7.6vw, 6.85rem);
+  --type-page-title: clamp(3rem, 7vw, 6rem);
+  --type-section-title: clamp(2.4rem, 5.1vw, 4.9rem);
+  --type-subsection-title: clamp(1.45rem, 3vw, 2.15rem);
+  --type-lede: clamp(1.02rem, 1.7vw, 1.22rem);
+  --type-body: 1rem;
+  --type-meta: 0.77rem;
+
+  /* Shared typography rhythm */
+  --tracking-display: -0.045em;
+  --tracking-heading: -0.038em;
+  --leading-display: 1.02;
+  --leading-heading: 1.04;
+  --leading-body: 1.65;
+}
