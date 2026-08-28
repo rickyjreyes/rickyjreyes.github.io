@@ -12,6 +12,9 @@ JS_OUT = GLOSSARY / "terminology-priority.js"
 INDEX = GLOSSARY / "index.html"
 LLMS = ROOT / "llms.txt"
 AUDIT_SOURCE = ROOT / "data" / "terminology_exact_phrase_audit.json"
+AUDIT_BATCH_SOURCES = [
+    ROOT / "data" / "terminology_exact_phrase_audit_44_additions.json",
+]
 
 RELEASES = {
   1:("2025-04-22","10.5281/zenodo.15644222","geometry-of-resonance","The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime"),
@@ -65,12 +68,63 @@ def date_key(value: str) -> str:
     return value + ("-01" if len(value) == 7 else "")
 
 
+def unique(items: list[str]) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for item in items:
+        key = item.casefold()
+        if key not in seen:
+            seen.add(key)
+            out.append(item)
+    return out
+
+
 def load_audit() -> dict:
     audit = json.loads(AUDIT_SOURCE.read_text(encoding="utf-8"))
-    if len(audit.get("survivors", [])) != 175:
-        raise ValueError("Exact-phrase audit must contain exactly 175 survivors")
+    batches: list[dict] = []
+    survivors = list(audit.get("survivors", []))
+    prior_phrase = list(audit.get("reclassifiedPriorPhrase", []))
+    latest_timestamp = audit.get("auditTimestamp", "")
+    latest_method = audit.get("method", "")
+
+    for path in AUDIT_BATCH_SOURCES:
+        if not path.exists():
+            continue
+        batch = json.loads(path.read_text(encoding="utf-8"))
+        batch_survivors = list(batch.get("survivors", []))
+        batch_prior = list(batch.get("priorPhraseFound", []))
+        if set(x.casefold() for x in batch_survivors) & set(x.casefold() for x in batch_prior):
+            raise ValueError(f"Audit batch {path.name} classifies a term as both survivor and prior-phrase")
+        expected_candidates = batch.get("candidateCount")
+        if expected_candidates is not None and len(batch_survivors) + len(batch_prior) != expected_candidates:
+            raise ValueError(f"Audit batch {path.name} candidate count does not match classifications")
+        survivors.extend(batch_survivors)
+        prior_phrase.extend(batch_prior)
+        batches.append({
+            "source": path.name,
+            "batchId": batch.get("batchId", path.stem),
+            "auditTimestamp": batch.get("auditTimestamp", ""),
+            "candidateCount": batch.get("candidateCount", len(batch_survivors) + len(batch_prior)),
+            "survivorCount": len(batch_survivors),
+            "priorPhraseCount": len(batch_prior),
+        })
+        if batch.get("auditTimestamp", "") > latest_timestamp:
+            latest_timestamp = batch["auditTimestamp"]
+            latest_method = batch.get("method", latest_method)
+
+    audit["survivors"] = unique(survivors)
+    audit["priorPhraseFound"] = unique(prior_phrase)
+    audit["auditTimestamp"] = latest_timestamp
+    audit["method"] = latest_method
+    audit["auditBatches"] = batches
+
+    overlap = set(x.casefold() for x in audit["survivors"]) & set(x.casefold() for x in audit["priorPhraseFound"])
+    if overlap:
+        raise ValueError("Merged exact-phrase audit contains survivor/prior-phrase overlap")
     if len(audit.get("strongCoined", [])) != 5:
         raise ValueError("Strong coinage set must contain exactly five terms")
+    if not set(x.casefold() for x in audit["strongCoined"]).issubset(set(x.casefold() for x in audit["survivors"])):
+        raise ValueError("All strong coinages must also be exact-phrase survivors")
     return audit
 
 
@@ -80,7 +134,7 @@ def add_record(records: dict[str, dict], name: str, release: int, provenance: st
     date, doi, slug, title = RELEASES[release]
     survivors = set(audit["survivors"])
     strong = set(audit["strongCoined"])
-    prior_phrase = set(audit.get("reclassifiedPriorPhrase", []))
+    prior_phrase = set(audit.get("priorPhraseFound", audit.get("reclassifiedPriorPhrase", [])))
 
     if name in strong:
         final_provenance = "Coined by Reyes"
@@ -137,7 +191,7 @@ def parse_terms(audit: dict) -> list[dict]:
         records[name.casefold()]["priorityAuditRelease"] = 20
         records[name.casefold()]["priorityAuditDoi"] = RELEASES[20][1]
 
-    # Two former coinage labels remain RCA-defined but have earlier unrelated lexical uses.
+    # Only the two historical RCA badge corrections need their release forced back to Release 05.
     for name in audit.get("reclassifiedPriorPhrase", []):
         add_record(records, name, 5, "WCT-defined", audit)
 
@@ -158,17 +212,18 @@ def build_registry(terms: list[dict], audit: dict) -> dict:
         })
     survivor_count = sum(1 for t in terms if t["lexicalAuditStatus"] in {"exact_phrase_survivor", "strong_explicit_coinage"})
     strong_count = sum(1 for t in terms if t["lexicalAuditStatus"] == "strong_explicit_coinage")
+    prior_count = sum(1 for t in terms if t["lexicalAuditStatus"] == "prior_phrase_found")
     return {
-        "schemaVersion": "1.1",
+        "schemaVersion": "1.2",
         "registryName": "Richard J. Reyes WCT Terminology Priority Crosswalk",
         "auditTimestamp": audit["auditTimestamp"],
-        "scope": "Paper-by-paper terminology crosswalk for all 22 DOI-archived releases, augmented by an exact-phrase lexical-priority audit.",
+        "scope": "Paper-by-paper terminology crosswalk for all 22 DOI-archived releases, augmented by exact-phrase lexical-priority audits.",
         "prioritySemantics": {
             "explicit_terminology_priority": "A term is explicitly claimed by the Reyes corpus as a coinage and no earlier indexed exact-phrase occurrence was located in the recorded lexical audit. This remains an evidence-bounded historical priority claim, not proof that the phrase never appeared anywhere.",
-            "exact_phrase_priority_survivor": "The WCT/RCA public record predates every indexed external exact-phrase occurrence located in the recorded search. Phrase variants differing only by obvious hyphen/dash typography are treated as equivalent. This is reported as no earlier indexed exact occurrence located, not as universal proof of coinage.",
+            "exact_phrase_priority_survivor": "The WCT/RCA public record predates every indexed external exact-phrase occurrence located in the recorded search. Obvious hyphen/dash variants are treated as equivalent. Canonical alias bundles are checked against their named aliases so a synthetic combined label cannot manufacture lexical priority. This is reported as no earlier indexed exact occurrence located, not as universal proof of coinage.",
             "dated_wct_definition_or_specialization": "The date identifies the mapped DOI-archived WCT public record for a project-specific name, construction, or specialized definition. It does not itself assert lexical priority.",
             "prior_phrase_found": "The phrase has an earlier unrelated external use; the WCT/RCA-specific definition remains attributable to this corpus, but the words are not claimed as coined by Reyes.",
-            "auditTimestamp": "The audit timestamp records when the lexical-priority crosswalk was assembled; it is not substituted for the earlier DOI/public-record dates.",
+            "auditTimestamp": "The audit timestamp records when the latest lexical-priority batch was assembled; it is not substituted for the earlier DOI/public-record dates.",
         },
         "lexicalAuditMethod": audit["method"],
         "audit": {
@@ -177,9 +232,12 @@ def build_registry(terms: list[dict], audit: dict) -> dict:
             "exactPhraseSurvivorCount": survivor_count,
             "exactPhraseNonCoinedCount": survivor_count - strong_count,
             "strongExplicitCoinageCount": strong_count,
+            "priorPhraseFoundCount": prior_count,
             "priorPhraseReclassifiedCount": len(audit.get("reclassifiedPriorPhrase", [])),
             "notInSurvivorSetCount": len(terms) - survivor_count,
         },
+        "auditBatches": audit.get("auditBatches", []),
+        "priorPhraseFound": audit.get("priorPhraseFound", []),
         "reclassifiedPriorPhrase": audit.get("reclassifiedPriorPhrase", []),
         "releases": releases,
         "terms": terms,
@@ -210,12 +268,15 @@ def patch_llms() -> None:
     nav = "- Terminology priority crosswalk: https://rickyjreyes.github.io/priority/terminology/\n"
     machine = "- Terminology-priority metadata: https://rickyjreyes.github.io/priority/terminology-priority.json\n"
     lexical = "- Exact-phrase terminology audit source: https://rickyjreyes.github.io/data/terminology_exact_phrase_audit.json\n"
+    lexical_batch = "- Supplemental 44-term exact-phrase audit: https://rickyjreyes.github.io/data/terminology_exact_phrase_audit_44_additions.json\n"
     if nav not in text:
         text = text.replace("- Claim-level priority registry: https://rickyjreyes.github.io/priority/\n", "- Claim-level priority registry: https://rickyjreyes.github.io/priority/\n" + nav)
     if machine not in text:
         text = text.replace("- Claim-priority metadata: https://rickyjreyes.github.io/priority/priority.json\n", "- Claim-priority metadata: https://rickyjreyes.github.io/priority/priority.json\n" + machine)
     if lexical not in text:
         text = text.replace(machine, machine + lexical)
+    if lexical_batch not in text:
+        text = text.replace(lexical, lexical + lexical_batch)
     rule = "- Terminology priority has separate levels: five audit-surviving explicit Reyes coinages; additional exact-phrase survivors for which no earlier indexed exact occurrence was located; WCT-defined specializations without lexical-priority claims; and established/external vocabulary. Do not promote an exact-phrase survivor to universal historical coinage.\n"
     if rule not in text:
         text = text.replace("- Preserve the distinction between archival titles and current qualified claim status.\n", "- Preserve the distinction between archival titles and current qualified claim status.\n" + rule)
@@ -232,6 +293,7 @@ def main() -> None:
     print(
         f"Wrote terminology registry: {len(terms)} records; "
         f"{registry['audit']['exactPhraseSurvivorCount']} exact-phrase survivors; "
+        f"{registry['audit']['priorPhraseFoundCount']} prior-phrase findings; "
         f"{registry['audit']['strongExplicitCoinageCount']} strong explicit coinages; "
         f"audit {audit['auditTimestamp']}"
     )
