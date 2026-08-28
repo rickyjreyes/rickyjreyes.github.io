@@ -556,7 +556,7 @@ def build_llms() -> str:
 - RIS: {SITE}publications.ris
 
 ## Claim discipline
-WCT is an evolving independent research framework, not an established physical theory. Distinguish definitions, ansätze, derivations, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions.
+WCT is an independently developed research program with claims at different stages of mathematical, computational, and empirical validation. Distinguish definitions, ansätze, derivations, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions.
 
 ## DOI authority
 Zenodo is the archival publisher and DOI landing-page authority for the listed releases. Use the DOI URLs on each publication page for citation.
