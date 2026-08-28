@@ -8,6 +8,16 @@
     document.head.appendChild(script);
   };
 
+  const loadGlossaryPriorityStyles = () => {
+    if (location.pathname !== '/tools/glossary/' && location.pathname !== '/tools/glossary/index.html') return;
+    if (document.getElementById('wct-glossary-priority-readable')) return;
+    const link = document.createElement('link');
+    link.id = 'wct-glossary-priority-readable';
+    link.rel = 'stylesheet';
+    link.href = '/tools/glossary/priority-readable.css?v=20260828-readable';
+    document.head.appendChild(link);
+  };
+
   const loadExternalScript = (id, src) => new Promise((resolve) => {
     const existing = document.getElementById(id);
     if (existing) {
@@ -111,6 +121,7 @@
     window.setTimeout(() => window.ScrollTrigger?.refresh(), 300);
   };
 
+  loadGlossaryPriorityStyles();
   loadBaseRuntime();
   initializeGsap().catch(() => {
     window.__wctGsapLoading = false;
