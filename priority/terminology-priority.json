@@ -13,12 +13,12 @@
   "lexicalAuditMethod": "Reyes public date < earliest indexed external exact-phrase occurrence; obvious hyphen/dash variants treated as equivalent. Negative search results are not proof of universal historical coinage.",
   "audit": {
     "releaseCount": 22,
-    "termCount": 263,
+    "termCount": 305,
     "exactPhraseSurvivorCount": 175,
     "exactPhraseNonCoinedCount": 170,
     "strongExplicitCoinageCount": 5,
     "priorPhraseReclassifiedCount": 2,
-    "notInSurvivorSetCount": 88
+    "notInSurvivorSetCount": 130
   },
   "reclassifiedPriorPhrase": [
     "Collapse score",
@@ -31,7 +31,7 @@
       "doi": "10.5281/zenodo.15644222",
       "title": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
       "url": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
-      "termCount": 5
+      "termCount": 17
     },
     {
       "release": 2,
@@ -39,7 +39,7 @@
       "doi": "10.5281/zenodo.15596159",
       "title": "Structure and Derivation of Physical Constants through Wave Confinement",
       "url": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
-      "termCount": 3
+      "termCount": 11
     },
     {
       "release": 3,
@@ -71,7 +71,7 @@
       "doi": "10.5281/zenodo.17081283",
       "title": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
       "url": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
-      "termCount": 6
+      "termCount": 15
     },
     {
       "release": 7,
@@ -95,7 +95,7 @@
       "doi": "10.5281/zenodo.17459463",
       "title": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "url": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "termCount": 9
+      "termCount": 14
     },
     {
       "release": 10,
@@ -103,7 +103,7 @@
       "doi": "10.5281/zenodo.20533537",
       "title": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "url": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "termCount": 13
+      "termCount": 14
     },
     {
       "release": 11,
@@ -135,7 +135,7 @@
       "doi": "10.5281/zenodo.17887562",
       "title": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "url": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "termCount": 17
+      "termCount": 19
     },
     {
       "release": 15,
@@ -183,7 +183,7 @@
       "doi": "10.5281/zenodo.20142976",
       "title": "Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note",
       "url": "https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html",
-      "termCount": 0
+      "termCount": 5
     },
     {
       "release": 21,
@@ -215,7 +215,84 @@
       "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
+      "term": "Curvature-Modified Dirac Equation",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Curvature-Overlap Scattering Amplitude",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Curvature-to-Zeta Transform Cascade",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Effective Mass",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Entropy-Action Term",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "First Resonance",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Frequency-Domain Path Integral",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Operator Quantization of Curvature Feedback",
       "provenance": "WCT-defined",
       "sourceRelease": 1,
       "publicRecordDate": "2025-04-22",
@@ -237,6 +314,39 @@
       "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
+      "term": "Regularized Curvature Operator",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Topological Charge Quantization",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Torque Density",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "Wave Confinement Theory",
       "provenance": "WCT-defined",
       "sourceRelease": 1,
@@ -248,6 +358,28 @@
       "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
+      "term": "Wave Curvature Scalar",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Zeta Spectral Lattice of Coherent Standing Waves",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "ψ-field",
       "provenance": "WCT-defined",
       "sourceRelease": 1,
@@ -255,6 +387,17 @@
       "doi": "10.5281/zenodo.15644222",
       "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
       "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Domain-Local Redefinitions from Resonance Confinement",
+      "provenance": "WCT-defined",
+      "sourceRelease": 2,
+      "publicRecordDate": "2025-04-26",
+      "doi": "10.5281/zenodo.15596159",
+      "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
       "priorityType": "dated_wct_definition_or_specialization",
       "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
@@ -270,7 +413,84 @@
       "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
+      "term": "Nonlinear Curvature Feedback Coefficient",
+      "provenance": "WCT-defined",
+      "sourceRelease": 2,
+      "publicRecordDate": "2025-04-26",
+      "doi": "10.5281/zenodo.15596159",
+      "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Phase Distortion Scale",
+      "provenance": "WCT-defined",
+      "sourceRelease": 2,
+      "publicRecordDate": "2025-04-26",
+      "doi": "10.5281/zenodo.15596159",
+      "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Phase-Speed Curvature Correction Coefficient",
+      "provenance": "WCT-defined",
+      "sourceRelease": 2,
+      "publicRecordDate": "2025-04-26",
+      "doi": "10.5281/zenodo.15596159",
+      "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Resonance Confinement Efficiency",
+      "provenance": "WCT-defined",
+      "sourceRelease": 2,
+      "publicRecordDate": "2025-04-26",
+      "doi": "10.5281/zenodo.15596159",
+      "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "Resonance strength factor",
+      "provenance": "WCT-defined",
+      "sourceRelease": 2,
+      "publicRecordDate": "2025-04-26",
+      "doi": "10.5281/zenodo.15596159",
+      "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Resonance Units",
+      "provenance": "WCT-defined",
+      "sourceRelease": 2,
+      "publicRecordDate": "2025-04-26",
+      "doi": "10.5281/zenodo.15596159",
+      "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Topological Resonance Index",
+      "provenance": "WCT-defined",
+      "sourceRelease": 2,
+      "publicRecordDate": "2025-04-26",
+      "doi": "10.5281/zenodo.15596159",
+      "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Vacuum Coherence Length",
       "provenance": "WCT-defined",
       "sourceRelease": 2,
       "publicRecordDate": "2025-04-26",
@@ -1072,6 +1292,17 @@
       "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
+      "term": "Covariant Curvature-Feedback Operator",
+      "provenance": "WCT-defined",
+      "sourceRelease": 6,
+      "publicRecordDate": "2025-08-13",
+      "doi": "10.5281/zenodo.17081283",
+      "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "Curvature-Feedback Instability",
       "provenance": "WCT-defined",
       "sourceRelease": 6,
@@ -1083,7 +1314,62 @@
       "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
+      "term": "Dimensional Collapse Trichotomy",
+      "provenance": "WCT-defined",
+      "sourceRelease": 6,
+      "publicRecordDate": "2025-08-13",
+      "doi": "10.5281/zenodo.17081283",
+      "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "Dimensional stability",
+      "provenance": "WCT-defined",
+      "sourceRelease": 6,
+      "publicRecordDate": "2025-08-13",
+      "doi": "10.5281/zenodo.17081283",
+      "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Entropy Localization",
+      "provenance": "WCT-defined",
+      "sourceRelease": 6,
+      "publicRecordDate": "2025-08-13",
+      "doi": "10.5281/zenodo.17081283",
+      "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Exact Dimensional Scaling Constant",
+      "provenance": "WCT-defined",
+      "sourceRelease": 6,
+      "publicRecordDate": "2025-08-13",
+      "doi": "10.5281/zenodo.17081283",
+      "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Hard Upper Bound on Spatial Dimensionality",
+      "provenance": "WCT-defined",
+      "sourceRelease": 6,
+      "publicRecordDate": "2025-08-13",
+      "doi": "10.5281/zenodo.17081283",
+      "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Loss of Link-Locking for n≥4",
       "provenance": "WCT-defined",
       "sourceRelease": 6,
       "publicRecordDate": "2025-08-13",
@@ -1103,6 +1389,28 @@
       "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
       "priorityType": "exact_phrase_priority_survivor",
       "lexicalAuditStatus": "exact_phrase_survivor"
+    },
+    {
+      "term": "Rotation-Confinement Projector",
+      "provenance": "WCT-defined",
+      "sourceRelease": 6,
+      "publicRecordDate": "2025-08-13",
+      "doi": "10.5281/zenodo.17081283",
+      "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Six-Route Convergence",
+      "provenance": "WCT-defined",
+      "sourceRelease": 6,
+      "publicRecordDate": "2025-08-13",
+      "doi": "10.5281/zenodo.17081283",
+      "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Spatial Dimension Bound",
@@ -1125,6 +1433,17 @@
       "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
       "priorityType": "exact_phrase_priority_survivor",
       "lexicalAuditStatus": "exact_phrase_survivor"
+    },
+    {
+      "term": "Symbolic Entropy Functional",
+      "provenance": "WCT-defined",
+      "sourceRelease": 6,
+      "publicRecordDate": "2025-08-13",
+      "doi": "10.5281/zenodo.17081283",
+      "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Topological resonance breakdown",
@@ -1457,6 +1776,17 @@
       "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
+      "term": "Curvature Gap / Effective Mass Channel",
+      "provenance": "WCT-defined",
+      "sourceRelease": 9,
+      "publicRecordDate": "2025-10-27",
+      "doi": "10.5281/zenodo.17459463",
+      "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "Density-Weighted Loop–Mass Invariant",
       "provenance": "WCT-defined",
       "sourceRelease": 9,
@@ -1469,6 +1799,17 @@
     },
     {
       "term": "Effective geometric wavenumber",
+      "provenance": "WCT-defined",
+      "sourceRelease": 9,
+      "publicRecordDate": "2025-10-27",
+      "doi": "10.5281/zenodo.17459463",
+      "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Geometric Index",
       "provenance": "WCT-defined",
       "sourceRelease": 9,
       "publicRecordDate": "2025-10-27",
@@ -1523,6 +1864,28 @@
       "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
+      "term": "Loop-Quantized Mass Law",
+      "provenance": "WCT-defined",
+      "sourceRelease": 9,
+      "publicRecordDate": "2025-10-27",
+      "doi": "10.5281/zenodo.17459463",
+      "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Möbius Half-Twist Spin-1/2 Realization",
+      "provenance": "WCT-defined",
+      "sourceRelease": 9,
+      "publicRecordDate": "2025-10-27",
+      "doi": "10.5281/zenodo.17459463",
+      "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "Photon-loop mass",
       "provenance": "WCT-defined",
       "sourceRelease": 9,
@@ -1543,6 +1906,17 @@
       "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
       "priorityType": "exact_phrase_priority_survivor",
       "lexicalAuditStatus": "exact_phrase_survivor"
+    },
+    {
+      "term": "Stable ψ-Identities",
+      "provenance": "WCT-defined",
+      "sourceRelease": 9,
+      "publicRecordDate": "2025-10-27",
+      "doi": "10.5281/zenodo.17459463",
+      "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Covariant Locking Principle",
@@ -1598,6 +1972,17 @@
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
       "priorityType": "exact_phrase_priority_survivor",
       "lexicalAuditStatus": "exact_phrase_survivor"
+    },
+    {
+      "term": "Geometric Curvature Rate",
+      "provenance": "WCT-defined",
+      "sourceRelease": 10,
+      "publicRecordDate": "2025-11-11",
+      "doi": "10.5281/zenodo.20533537",
+      "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Geometric Origin of Energy",
@@ -2370,6 +2755,17 @@
       "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
+      "term": "Curvature Saturation Invariant",
+      "provenance": "WCT-defined",
+      "sourceRelease": 14,
+      "publicRecordDate": "2025-12-10",
+      "doi": "10.5281/zenodo.17887562",
+      "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "Curvature-Koide Invariant",
       "provenance": "WCT-defined",
       "sourceRelease": 14,
@@ -2437,6 +2833,17 @@
     },
     {
       "term": "Poloidal Curvature Parameter",
+      "provenance": "WCT-defined",
+      "sourceRelease": 14,
+      "publicRecordDate": "2025-12-10",
+      "doi": "10.5281/zenodo.17887562",
+      "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Sobolev Control of the Regularized Denominator",
       "provenance": "WCT-defined",
       "sourceRelease": 14,
       "publicRecordDate": "2025-12-10",
@@ -2841,6 +3248,61 @@
       "sourceUrl": "https://rickyjreyes.github.io/publications/curvature-log-periodic-c9-deformation.html",
       "priorityType": "exact_phrase_priority_survivor",
       "lexicalAuditStatus": "exact_phrase_survivor"
+    },
+    {
+      "term": "10+ Interacting-Agent Deployment Projection",
+      "provenance": "WCT-defined",
+      "sourceRelease": 20,
+      "publicRecordDate": "2026-05",
+      "doi": "10.5281/zenodo.20142976",
+      "sourceTitle": "Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "10–30 Recursion Window",
+      "provenance": "WCT-defined",
+      "sourceRelease": 20,
+      "publicRecordDate": "2026-05",
+      "doi": "10.5281/zenodo.20142976",
+      "sourceTitle": "Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Mechanism-Level vs. Threshold-Level Validation",
+      "provenance": "WCT-defined",
+      "sourceRelease": 20,
+      "publicRecordDate": "2026-05",
+      "doi": "10.5281/zenodo.20142976",
+      "sourceTitle": "Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Projection Anchor",
+      "provenance": "WCT-defined",
+      "sourceRelease": 20,
+      "publicRecordDate": "2026-05",
+      "doi": "10.5281/zenodo.20142976",
+      "sourceTitle": "Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Validation Meter",
+      "provenance": "WCT-defined",
+      "sourceRelease": 20,
+      "publicRecordDate": "2026-05",
+      "doi": "10.5281/zenodo.20142976",
+      "sourceTitle": "Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/recursive-ai-drift-audit.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Active-Domain Log-Winding",
