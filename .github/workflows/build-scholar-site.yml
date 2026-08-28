@@ -20,6 +20,7 @@ on:
       - "scripts/optimize_math_rendering.py"
       - "scripts/patch_site_navigation.py"
       - "scripts/patch_machine_metadata.py"
+      - "scripts/normalize_research_status.py"
       - "site-nav.js"
       - ".github/workflows/build-scholar-site.yml"
   pull_request:
@@ -38,6 +39,7 @@ on:
       - "scripts/validate_registry_sync.py"
       - "scripts/patch_site_navigation.py"
       - "scripts/patch_machine_metadata.py"
+      - "scripts/normalize_research_status.py"
       - ".github/workflows/build-scholar-site.yml"
   workflow_dispatch:
 
@@ -101,6 +103,9 @@ jobs:
 
       - name: Connect publication, claim, and priority metadata
         run: python scripts/patch_machine_metadata.py
+
+      - name: Normalize research status language
+        run: python scripts/normalize_research_status.py
 
       - name: Validate cross-layer registry and publication traceability
         run: python scripts/validate_registry_sync.py
