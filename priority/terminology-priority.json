@@ -1,18 +1,29 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "registryName": "Richard J. Reyes WCT Terminology Priority Crosswalk",
-  "auditTimestamp": "2026-08-28T13:31:00-07:00",
-  "scope": "Paper-by-paper terminology crosswalk for all 22 DOI-archived releases in the public WCT publication corpus.",
+  "auditTimestamp": "2026-08-28T14:32:00-07:00",
+  "scope": "Paper-by-paper terminology crosswalk for all 22 DOI-archived releases, augmented by an exact-phrase lexical-priority audit.",
   "prioritySemantics": {
-    "dated_wct_definition_or_specialization": "The date identifies the mapped DOI-archived WCT public record for this project-specific name, construction, or specialized definition. It does not by itself assert that the underlying words or generic mechanism had no earlier use elsewhere.",
-    "explicit_terminology_priority": "The corpus contains an explicit terminology-priority statement tying this RCA-specific wording to the June 2025 record; the May 2026 audit is retained as the public priority-audit anchor.",
-    "auditTimestamp": "The audit timestamp records when this crosswalk was assembled. It is not substituted for the earlier DOI/public-record dates."
+    "explicit_terminology_priority": "A term is explicitly claimed by the Reyes corpus as a coinage and no earlier indexed exact-phrase occurrence was located in the recorded lexical audit. This remains an evidence-bounded historical priority claim, not proof that the phrase never appeared anywhere.",
+    "exact_phrase_priority_survivor": "The WCT/RCA public record predates every indexed external exact-phrase occurrence located in the recorded search. Phrase variants differing only by obvious hyphen/dash typography are treated as equivalent. This is reported as no earlier indexed exact occurrence located, not as universal proof of coinage.",
+    "dated_wct_definition_or_specialization": "The date identifies the mapped DOI-archived WCT public record for a project-specific name, construction, or specialized definition. It does not itself assert lexical priority.",
+    "prior_phrase_found": "The phrase has an earlier unrelated external use; the WCT/RCA-specific definition remains attributable to this corpus, but the words are not claimed as coined by Reyes.",
+    "auditTimestamp": "The audit timestamp records when the lexical-priority crosswalk was assembled; it is not substituted for the earlier DOI/public-record dates."
   },
+  "lexicalAuditMethod": "Reyes public date < earliest indexed external exact-phrase occurrence; obvious hyphen/dash variants treated as equivalent. Negative search results are not proof of universal historical coinage.",
   "audit": {
     "releaseCount": 22,
     "termCount": 263,
-    "explicitCoinedCount": 7
+    "exactPhraseSurvivorCount": 175,
+    "exactPhraseNonCoinedCount": 170,
+    "strongExplicitCoinageCount": 5,
+    "priorPhraseReclassifiedCount": 2,
+    "notInSurvivorSetCount": 88
   },
+  "reclassifiedPriorPhrase": [
+    "Collapse score",
+    "Symbolic heartbeat"
+  ],
   "releases": [
     {
       "release": 1,
@@ -200,7 +211,8 @@
       "doi": "10.5281/zenodo.15644222",
       "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
       "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "First Resonance",
@@ -210,7 +222,8 @@
       "doi": "10.5281/zenodo.15644222",
       "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
       "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Regularized curvature",
@@ -220,7 +233,8 @@
       "doi": "10.5281/zenodo.15644222",
       "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
       "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Wave Confinement Theory",
@@ -230,7 +244,8 @@
       "doi": "10.5281/zenodo.15644222",
       "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
       "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "ψ-field",
@@ -240,7 +255,8 @@
       "doi": "10.5281/zenodo.15644222",
       "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
       "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Entropy–curvature ratio",
@@ -250,7 +266,8 @@
       "doi": "10.5281/zenodo.15596159",
       "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
       "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Resonance strength factor",
@@ -260,7 +277,8 @@
       "doi": "10.5281/zenodo.15596159",
       "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
       "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "WCT emergent effective metric",
@@ -270,7 +288,8 @@
       "doi": "10.5281/zenodo.15596159",
       "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
       "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Admissible encodings",
@@ -280,7 +299,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature Capacity",
@@ -290,7 +310,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature complexity",
@@ -300,7 +321,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature-Bounded Computation",
@@ -310,7 +332,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature-collapsed regime",
@@ -320,7 +343,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature-regular regime",
@@ -330,7 +354,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Discrete WCC machine",
@@ -340,7 +365,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Effective Dimension (WCC)",
@@ -350,7 +376,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Free logic axiom",
@@ -360,7 +387,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Induced grammar",
@@ -370,7 +398,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Locked expander",
@@ -380,7 +409,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "NP_WCC",
@@ -390,7 +420,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "P_WCC",
@@ -400,7 +431,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Physical curvature rails",
@@ -410,7 +442,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Physical logic",
@@ -420,7 +453,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Polynomial-time WCC verifier",
@@ -430,7 +464,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Wave Curvature Computation",
@@ -440,7 +475,8 @@
       "doi": "10.5281/zenodo.17743607",
       "sourceTitle": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "sourceUrl": "https://rickyjreyes.github.io/publications/p-vs-np-curvature-bounded-wave-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature Locking",
@@ -450,7 +486,8 @@
       "doi": "10.5281/zenodo.17206381",
       "sourceTitle": "Observation of Long-Lived Photon Resonance Confinement in Water Cavities",
       "sourceUrl": "https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature-locked resonance",
@@ -460,7 +497,8 @@
       "doi": "10.5281/zenodo.17206381",
       "sourceTitle": "Observation of Long-Lived Photon Resonance Confinement in Water Cavities",
       "sourceUrl": "https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Long-lived photon resonance confinement",
@@ -470,7 +508,8 @@
       "doi": "10.5281/zenodo.17206381",
       "sourceTitle": "Observation of Long-Lived Photon Resonance Confinement in Water Cavities",
       "sourceUrl": "https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Trigger-and-locking sequence",
@@ -480,7 +519,8 @@
       "doi": "10.5281/zenodo.17206381",
       "sourceTitle": "Observation of Long-Lived Photon Resonance Confinement in Water Cavities",
       "sourceUrl": "https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Anchor survival",
@@ -490,7 +530,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Attractor lock-in condition",
@@ -500,7 +541,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Bounded coherence rate",
@@ -510,7 +552,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Coherence envelope",
@@ -520,7 +563,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Coherence functional",
@@ -530,7 +574,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Coherence mirage",
@@ -541,6 +586,7 @@
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
       "priorityType": "explicit_terminology_priority",
+      "lexicalAuditStatus": "strong_explicit_coinage",
       "priorityAuditRelease": 20,
       "priorityAuditDoi": "10.5281/zenodo.20142976"
     },
@@ -552,7 +598,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Coherence-locked symbolic attractor",
@@ -562,7 +609,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Coherence–Stability Law",
@@ -572,19 +620,19 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Collapse score",
-      "provenance": "Coined by Reyes",
+      "provenance": "WCT-defined",
       "sourceRelease": 5,
       "publicRecordDate": "2025-06-11",
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "explicit_terminology_priority",
-      "priorityAuditRelease": 20,
-      "priorityAuditDoi": "10.5281/zenodo.20142976"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "prior_phrase_found"
     },
     {
       "term": "Confinement as a fixed-point requirement",
@@ -594,7 +642,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Confinement Termination Principle",
@@ -605,6 +654,7 @@
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
       "priorityType": "explicit_terminology_priority",
+      "lexicalAuditStatus": "strong_explicit_coinage",
       "priorityAuditRelease": 20,
       "priorityAuditDoi": "10.5281/zenodo.20142976"
     },
@@ -616,7 +666,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Edge of safe emergence",
@@ -626,7 +677,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Epistemically closed system",
@@ -636,7 +688,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "External corrigibility collapse",
@@ -646,7 +699,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "First Law of Intelligent Resonance",
@@ -656,7 +710,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Hard semantic drift",
@@ -666,7 +721,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Immutable Confinement Architecture",
@@ -676,7 +732,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Intelligent resonance",
@@ -686,7 +743,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Irreversible drift phase",
@@ -696,7 +754,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Metastable symbolic recursion",
@@ -706,7 +765,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Multi-agent correction failure",
@@ -716,7 +776,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Physical Symbolic Kill Logic",
@@ -727,6 +788,7 @@
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
       "priorityType": "explicit_terminology_priority",
+      "lexicalAuditStatus": "strong_explicit_coinage",
       "priorityAuditRelease": 20,
       "priorityAuditDoi": "10.5281/zenodo.20142976"
     },
@@ -738,7 +800,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Propagation–correction criticality",
@@ -749,6 +812,7 @@
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
       "priorityType": "explicit_terminology_priority",
+      "lexicalAuditStatus": "strong_explicit_coinage",
       "priorityAuditRelease": 20,
       "priorityAuditDoi": "10.5281/zenodo.20142976"
     },
@@ -760,7 +824,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "RCA Kernel",
@@ -770,7 +835,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Recursive AI Drift",
@@ -780,7 +846,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Recursive debate-loop drift",
@@ -790,7 +857,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Recursive symbolic collapse",
@@ -800,7 +868,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Recursive symbolic drift",
@@ -810,7 +879,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Resonance encoding",
@@ -820,7 +890,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Resonance-Confinement Architecture",
@@ -830,7 +901,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Resonant Complexity",
@@ -840,7 +912,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Runaway collapse onset",
@@ -850,7 +923,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Safe-recursion compaction bound",
@@ -860,7 +934,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Semantic anchor decay",
@@ -871,6 +946,7 @@
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
       "priorityType": "explicit_terminology_priority",
+      "lexicalAuditStatus": "strong_explicit_coinage",
       "priorityAuditRelease": 20,
       "priorityAuditDoi": "10.5281/zenodo.20142976"
     },
@@ -882,7 +958,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Semantic mutation under fluency",
@@ -892,7 +969,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Substrate-embedded termination logic",
@@ -902,7 +980,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Survivability architecture",
@@ -912,7 +991,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Symbolic attractor",
@@ -922,7 +1002,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Symbolic coherence ratio",
@@ -932,7 +1013,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Symbolic criticality",
@@ -942,19 +1024,19 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Symbolic heartbeat",
-      "provenance": "Coined by Reyes",
+      "provenance": "WCT-defined",
       "sourceRelease": 5,
       "publicRecordDate": "2025-06-11",
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "explicit_terminology_priority",
-      "priorityAuditRelease": 20,
-      "priorityAuditDoi": "10.5281/zenodo.20142976"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "prior_phrase_found"
     },
     {
       "term": "Symbolic Kill Layer",
@@ -964,7 +1046,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Symbolic recursion rate",
@@ -974,7 +1057,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Symbolic-fission critical dynamics",
@@ -984,7 +1068,8 @@
       "doi": "10.5281/zenodo.17732661",
       "sourceTitle": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
       "sourceUrl": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature-Feedback Instability",
@@ -994,7 +1079,8 @@
       "doi": "10.5281/zenodo.17081283",
       "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
       "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Dimensional stability",
@@ -1004,7 +1090,8 @@
       "doi": "10.5281/zenodo.17081283",
       "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
       "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Rotation criterion for dimensional stability",
@@ -1014,7 +1101,8 @@
       "doi": "10.5281/zenodo.17081283",
       "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
       "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Spatial Dimension Bound",
@@ -1024,7 +1112,8 @@
       "doi": "10.5281/zenodo.17081283",
       "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
       "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Spectral-ring feedback controller",
@@ -1034,7 +1123,8 @@
       "doi": "10.5281/zenodo.17081283",
       "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
       "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Topological resonance breakdown",
@@ -1044,7 +1134,8 @@
       "doi": "10.5281/zenodo.17081283",
       "sourceTitle": "Hard Upper Bound on Spatial Dimensionality in Wave Confinement Theory",
       "sourceUrl": "https://rickyjreyes.github.io/publications/hard-upper-bound-spatial-dimensionality.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Continuum rail",
@@ -1054,7 +1145,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "D4 Discrete Model",
@@ -1064,7 +1156,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "D4-to-Continuum construction",
@@ -1074,7 +1167,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Finite-k Lyapunov band-pass",
@@ -1084,7 +1178,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Lyapunov Band-Pass",
@@ -1094,7 +1189,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Null Flow",
@@ -1104,7 +1200,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "PFF averaging operator",
@@ -1114,7 +1211,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Phase–flux constitutive law",
@@ -1124,7 +1222,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Phase–Flux Field",
@@ -1134,7 +1233,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Rest ansatz (PFF)",
@@ -1144,7 +1244,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Shell Quantization",
@@ -1154,7 +1255,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Winding–shell spectral closure",
@@ -1164,7 +1266,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Zero Wave",
@@ -1174,7 +1277,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Zero-Wave Invariance",
@@ -1184,7 +1288,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Zero-Wave Invariant State",
@@ -1194,7 +1299,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Zero-Wave Transform",
@@ -1204,7 +1310,8 @@
       "doi": "10.5281/zenodo.17578766",
       "sourceTitle": "Phase-Flux Field (PFF): Axiomatic Substrate for Wave Confinement Theory — Zero-Wave Invariance, Finite-k Lyapunov Band-Pass, Shell Quantization, and D4 to Continuum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/phase-flux-field.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Coherence Filter and Projection",
@@ -1214,7 +1321,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature Lyapunov",
@@ -1224,7 +1332,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature–Entropy Duality",
@@ -1234,7 +1343,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Entropic eigenmode selection",
@@ -1244,7 +1354,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Entropic Eigenmodes",
@@ -1254,7 +1365,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Finite-band selection",
@@ -1264,7 +1376,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Fourier cymatics",
@@ -1274,7 +1387,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Self-Emergent Fourier Cymatics",
@@ -1284,7 +1398,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Spectral Condensation",
@@ -1294,7 +1409,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Spectral shell",
@@ -1304,7 +1420,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Swift–Hohenberg rail",
@@ -1314,7 +1431,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Wave Confinement Lagrangian",
@@ -1324,7 +1442,8 @@
       "doi": "10.5281/zenodo.17732648",
       "sourceTitle": "Self-Emergent Fourier Cymatics: Entropic Eigenmodes out of Chaos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/self-emergent-fourier-cymatics.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Boundary Curvature Equivalence",
@@ -1334,7 +1453,8 @@
       "doi": "10.5281/zenodo.17459463",
       "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Density-Weighted Loop–Mass Invariant",
@@ -1344,7 +1464,8 @@
       "doi": "10.5281/zenodo.17459463",
       "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Effective geometric wavenumber",
@@ -1354,7 +1475,8 @@
       "doi": "10.5281/zenodo.17459463",
       "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Geometric Inertia",
@@ -1364,7 +1486,8 @@
       "doi": "10.5281/zenodo.17459463",
       "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Harmonic Composition of the Electron",
@@ -1374,7 +1497,8 @@
       "doi": "10.5281/zenodo.17459463",
       "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Locked phase rate",
@@ -1384,7 +1508,8 @@
       "doi": "10.5281/zenodo.17459463",
       "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Loop-quantized mass",
@@ -1394,7 +1519,8 @@
       "doi": "10.5281/zenodo.17459463",
       "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Photon-loop mass",
@@ -1404,7 +1530,8 @@
       "doi": "10.5281/zenodo.17459463",
       "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Shell-locked line shift",
@@ -1414,7 +1541,8 @@
       "doi": "10.5281/zenodo.17459463",
       "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Covariant Locking Principle",
@@ -1424,7 +1552,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Density-Weighted Curvature",
@@ -1434,7 +1563,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Density-Weighted Loop Curvature",
@@ -1444,7 +1574,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Effective line action",
@@ -1454,7 +1585,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Gauge/Spin-Covariant Locking",
@@ -1464,7 +1596,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Geometric Origin of Energy",
@@ -1474,7 +1607,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Lock variational principle",
@@ -1484,7 +1618,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Locking Time Bound",
@@ -1494,7 +1629,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Mislock metric",
@@ -1504,7 +1640,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Rest mass via curvature lock",
@@ -1514,7 +1651,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Rest-energy identity",
@@ -1524,7 +1662,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Topological mass floor",
@@ -1534,7 +1673,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Two-rail equivalence",
@@ -1544,7 +1684,8 @@
       "doi": "10.5281/zenodo.20533537",
       "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Confinement Region",
@@ -1554,7 +1695,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature contrast",
@@ -1564,7 +1706,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature-dependent dispersion",
@@ -1574,7 +1717,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature-Induced Mass Shift",
@@ -1584,7 +1728,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature-regulated deconfinement",
@@ -1594,7 +1739,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Deconfinement Region",
@@ -1604,7 +1750,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Ghost Harmonics",
@@ -1614,7 +1761,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Ghost-harmonic modulation",
@@ -1624,7 +1772,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Ghost-mode modulation",
@@ -1634,7 +1783,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Ghost-mode spectral modulation ansatz",
@@ -1644,7 +1794,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "WCT ghost-mode neutrino",
@@ -1654,7 +1805,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "WCT Ghost-Mode Neutrinos",
@@ -1664,7 +1816,8 @@
       "doi": "10.5281/zenodo.17715872",
       "sourceTitle": "JUNO Energy Resolution and Detectability of WCT Ghost-Mode Neutrinos",
       "sourceUrl": "https://rickyjreyes.github.io/publications/juno-ghost-mode-neutrinos.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Conditional NP-safety of WCT-bounded AGI",
@@ -1674,7 +1827,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature-Bounded Channel Capacity",
@@ -1684,7 +1838,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature–wavenumber coupling",
@@ -1694,7 +1849,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Dimensional lock in time",
@@ -1704,7 +1860,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Gandy–WCC correspondence",
@@ -1714,7 +1871,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Physical step ceiling under WCT rails",
@@ -1724,7 +1882,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Polynomial-resource WCT device family",
@@ -1734,7 +1893,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Quantization pair (WCC)",
@@ -1744,7 +1904,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Spatiotemporal channel capacity",
@@ -1754,7 +1915,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Verifier Bijection",
@@ -1764,7 +1926,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Wave-Constrained Computation",
@@ -1774,7 +1937,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Wave–Symbol Isomorphism",
@@ -1784,7 +1948,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "WCC–Turing bijection",
@@ -1794,7 +1959,8 @@
       "doi": "10.5281/zenodo.17732642",
       "sourceTitle": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "sourceUrl": "https://rickyjreyes.github.io/publications/discrete-wave-constrained-computation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Boundary-Complexity Separation",
@@ -1804,7 +1970,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Constructibility Barrier",
@@ -1814,7 +1981,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Critical termination order",
@@ -1824,7 +1992,8 @@
       "doi": "10.5281/zenodo.17957713",
       "sourceTitle": "Prediction & Protocol Ledger: Long-Lived Harmonic State Induction in Photodiodes",
       "sourceUrl": "https://rickyjreyes.github.io/publications/photodiode-prediction-protocol-ledger.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature Cost of Distinguishability",
@@ -1834,7 +2003,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature Invariants",
@@ -1844,7 +2014,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature-based cryptography",
@@ -1854,7 +2025,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature-Locked One-Way Function",
@@ -1864,7 +2036,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature–Capacity Bound",
@@ -1874,7 +2047,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature–Capacity Theorem",
@@ -1884,7 +2058,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Discrete WCC Model",
@@ -1894,7 +2069,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Distinguishability Curvature",
@@ -1904,7 +2080,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Exponential preimage",
@@ -1914,7 +2091,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Geometric hashing",
@@ -1924,7 +2102,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Geometric memory",
@@ -1934,7 +2113,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Locked-Expander SAT",
@@ -1944,7 +2124,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Long-Lived Harmonic State Induction",
@@ -1954,7 +2135,8 @@
       "doi": "10.5281/zenodo.17957713",
       "sourceTitle": "Prediction & Protocol Ledger: Long-Lived Harmonic State Induction in Photodiodes",
       "sourceUrl": "https://rickyjreyes.github.io/publications/photodiode-prediction-protocol-ledger.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Per-Step Curvature Increment",
@@ -1964,7 +2146,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Photodiode harmonic state",
@@ -1974,7 +2157,8 @@
       "doi": "10.5281/zenodo.17957713",
       "sourceTitle": "Prediction & Protocol Ledger: Long-Lived Harmonic State Induction in Photodiodes",
       "sourceUrl": "https://rickyjreyes.github.io/publications/photodiode-prediction-protocol-ledger.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Physical Church–Turing–WCC Thesis",
@@ -1984,7 +2168,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Physical Curvature–Capacity Theorem",
@@ -1994,7 +2179,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Physical P≠NP",
@@ -2004,7 +2190,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Physical WCC Model",
@@ -2014,7 +2201,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Polynomial-Variation Class",
@@ -2024,7 +2212,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Reverse evolution ill-posedness",
@@ -2034,7 +2223,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Structural invertibility barrier",
@@ -2044,7 +2234,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Total Influence (Discrete Curvature)",
@@ -2054,7 +2245,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Two Semantics for WCC",
@@ -2064,7 +2256,8 @@
       "doi": "10.5281/zenodo.17783074",
       "sourceTitle": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "sourceUrl": "https://rickyjreyes.github.io/publications/classical-p-vs-np-ill-posed.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Wavefield commitment schemes",
@@ -2074,7 +2267,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "WaveLock",
@@ -2084,7 +2278,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "WaveLock Construction",
@@ -2094,7 +2289,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "WaveLock evolution map",
@@ -2104,7 +2300,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "WaveLock non-invertibility",
@@ -2114,7 +2311,8 @@
       "doi": "10.5281/zenodo.19122146",
       "sourceTitle": "WaveLock: A Curvature-Locked One-Way Function Based on Nonlinear PDE Evolution",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature Fraction",
@@ -2124,7 +2322,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature Harmonic",
@@ -2134,7 +2333,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature Harmonics",
@@ -2144,7 +2344,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature Quantum Number",
@@ -2154,7 +2355,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature Saturation",
@@ -2164,7 +2366,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Curvature-Koide Invariant",
@@ -2174,7 +2377,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature–Koide Identification",
@@ -2184,7 +2388,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Geometric Mass Ratios",
@@ -2194,7 +2399,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Harmonic Mass Ladder",
@@ -2204,7 +2410,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Koide–Torsion Identity",
@@ -2214,7 +2421,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Mass-Phase Geometry",
@@ -2224,7 +2432,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Poloidal Curvature Parameter",
@@ -2234,7 +2443,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Spin-Curvature Partition",
@@ -2244,7 +2454,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Spin-Dependent Curvature Saturation",
@@ -2254,7 +2465,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Toroidal saturation",
@@ -2264,7 +2476,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Torsion Budget",
@@ -2274,7 +2487,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Universal Torsion Curvature",
@@ -2284,7 +2498,8 @@
       "doi": "10.5281/zenodo.17887562",
       "sourceTitle": "Wave Confinement Theory Predicts the Koide Mass Relation: A Curvature–Harmonic Origin of Fermion Mass Triplets",
       "sourceUrl": "https://rickyjreyes.github.io/publications/wct-koide-mass-relation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Closed Filament Reduction",
@@ -2294,7 +2509,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature localization",
@@ -2304,7 +2520,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Filament Localization",
@@ -2314,7 +2531,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Geometric Mass Models",
@@ -2324,7 +2542,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Koide-Saturated Lepton Family",
@@ -2334,7 +2553,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Koide-Saturated Triplet",
@@ -2344,7 +2564,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Log-Curvature Evolution Equation",
@@ -2354,7 +2575,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Logarithmic Curvature Flow",
@@ -2364,7 +2586,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Logarithmic Curvature Operator",
@@ -2374,7 +2597,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Logarithmic Field Transform",
@@ -2384,7 +2608,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Periodic Curvature Spectrum",
@@ -2394,7 +2619,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Regularized KPZ Structure",
@@ -2404,7 +2630,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Topological Confinement",
@@ -2414,7 +2641,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Toroidal Curvature Spectrum",
@@ -2424,7 +2652,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "WCT Curvature Harmonic",
@@ -2434,7 +2663,8 @@
       "doi": "10.5281/zenodo.18936949",
       "sourceTitle": "Logarithmic Curvature Flow, Filament Localization, and the Geometric Origin of the Lepton Mass Spectrum",
       "sourceUrl": "https://rickyjreyes.github.io/publications/logarithmic-curvature-flow-lepton-spectrum.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Coherence proxy",
@@ -2444,7 +2674,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Coherence proxy I(t)",
@@ -2454,7 +2685,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Coherence-Controlled Transport Model",
@@ -2464,7 +2696,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature-Locking Lyapunov Behaviour",
@@ -2474,7 +2707,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "ELM-Robust Coherence Estimation",
@@ -2484,7 +2718,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Fast-ion emulation factor",
@@ -2494,7 +2729,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Latch invariance",
@@ -2504,7 +2740,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Latch margin",
@@ -2514,7 +2751,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Robust gate",
@@ -2524,7 +2762,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Self-Sustaining Resonance",
@@ -2534,7 +2773,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Self-Sustaining Resonance-Control Architecture",
@@ -2544,7 +2784,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Virtual-Latch Mode",
@@ -2554,7 +2795,8 @@
       "doi": "10.5281/zenodo.19578185",
       "sourceTitle": "Nuclear Fusion Tokamak with Self Sustaining Resonance",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nuclear-fusion-tokamak-resonance.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature-Induced Log-Periodic C9 Deformation",
@@ -2564,7 +2806,8 @@
       "doi": "10.5281/zenodo.19705254",
       "sourceTitle": "A Curvature-Induced Log-Periodic Deformation of C9(q²): Wave Confinement Theory and the LHCb B⁰ → K*⁰ μ⁺μ⁻ Anomaly",
       "sourceUrl": "https://rickyjreyes.github.io/publications/curvature-log-periodic-c9-deformation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Curvature-Induced Log-Periodic Deformation of C9(q²)",
@@ -2574,7 +2817,8 @@
       "doi": "10.5281/zenodo.19705254",
       "sourceTitle": "A Curvature-Induced Log-Periodic Deformation of C9(q²): Wave Confinement Theory and the LHCb B⁰ → K*⁰ μ⁺μ⁻ Anomaly",
       "sourceUrl": "https://rickyjreyes.github.io/publications/curvature-log-periodic-c9-deformation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Log-Periodic WCT Modulation",
@@ -2584,7 +2828,8 @@
       "doi": "10.5281/zenodo.19705254",
       "sourceTitle": "A Curvature-Induced Log-Periodic Deformation of C9(q²): Wave Confinement Theory and the LHCb B⁰ → K*⁰ μ⁺μ⁻ Anomaly",
       "sourceUrl": "https://rickyjreyes.github.io/publications/curvature-log-periodic-c9-deformation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "WCT C9(q²) ansatz",
@@ -2594,7 +2839,8 @@
       "doi": "10.5281/zenodo.19705254",
       "sourceTitle": "A Curvature-Induced Log-Periodic Deformation of C9(q²): Wave Confinement Theory and the LHCb B⁰ → K*⁰ μ⁺μ⁻ Anomaly",
       "sourceUrl": "https://rickyjreyes.github.io/publications/curvature-log-periodic-c9-deformation.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Active-Domain Log-Winding",
@@ -2604,7 +2850,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Active-domain winding",
@@ -2614,7 +2861,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Candidate inverse-Koide square-root dilation",
@@ -2624,7 +2872,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Candidate-spectrum geometry",
@@ -2634,7 +2883,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Canonical sideband-subtracted residual",
@@ -2644,7 +2894,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Comb admissibility classes",
@@ -2654,7 +2905,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Combined locked statistic",
@@ -2664,7 +2916,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Inverse-Koide square-root dilation",
@@ -2674,7 +2927,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "KDE baseline repair",
@@ -2684,7 +2938,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "KDE-baseline bandwidth ladder",
@@ -2694,7 +2949,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Koide comb",
@@ -2704,7 +2960,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Koide-Comb Geometry",
@@ -2714,7 +2971,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Koide-like winding",
@@ -2724,7 +2982,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Koide-Like Winding Geometry",
@@ -2734,7 +2993,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Locked-Branch Amplitude-Cap Ladder",
@@ -2744,7 +3004,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Locked-Winding Cross-Region Test",
@@ -2754,7 +3015,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Photon-floor interpretation",
@@ -2764,7 +3026,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Photon-floor subharmonic reading",
@@ -2774,7 +3037,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Well-First Koide Test",
@@ -2784,7 +3048,8 @@
       "doi": "10.5281/zenodo.20164333",
       "sourceTitle": "Log-Spectral Structure and Koide-Like Winding Geometry in Open-Data B⁰ → K*⁰ μ⁺μ⁻ Candidate Spectra",
       "sourceUrl": "https://rickyjreyes.github.io/publications/lhcb-log-spectral-koide-winding.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Bin-Stable Log-Periodic Structure",
@@ -2794,7 +3059,8 @@
       "doi": "10.5281/zenodo.20435463",
       "sourceTitle": "Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nist-bin-stable-log-periodic-structure.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Canonical Fe II Bin-Stability Result",
@@ -2804,7 +3070,8 @@
       "doi": "10.5281/zenodo.20435463",
       "sourceTitle": "Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nist-bin-stable-log-periodic-structure.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Histogram Line-Density Field",
@@ -2814,7 +3081,8 @@
       "doi": "10.5281/zenodo.20435463",
       "sourceTitle": "Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nist-bin-stable-log-periodic-structure.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "One-Mode Log-Cosine Model",
@@ -2824,7 +3092,8 @@
       "doi": "10.5281/zenodo.20435463",
       "sourceTitle": "Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nist-bin-stable-log-periodic-structure.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "exact_phrase_priority_survivor",
+      "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
       "term": "Parametric Poisson Bootstrap Null",
@@ -2834,7 +3103,8 @@
       "doi": "10.5281/zenodo.20435463",
       "sourceTitle": "Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List",
       "sourceUrl": "https://rickyjreyes.github.io/publications/nist-bin-stable-log-periodic-structure.html",
-      "priorityType": "dated_wct_definition_or_specialization"
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     }
   ]
 }
