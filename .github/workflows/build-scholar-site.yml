@@ -54,6 +54,7 @@ on:
 permissions:
   contents: write
 
+# The glossary is a versioned public snapshot; no build step requires access to the private Obsidian repository.
 # Generated verification pages read the merged v5 canonical interoperability map
 # from rickyjreyes/wct-sympy main, synchronized to the maintained 80-ID wct-lean inventory.
 env:
