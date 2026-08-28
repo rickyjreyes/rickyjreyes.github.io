@@ -91,7 +91,7 @@
         "States the control limitations that must be resolved by independent replication."
       ],
       "evidence": ["Laboratory measurement"],
-      "limitations": "This is a preliminary observation with control limitations the report itself identifies; the results require independent replication before any confirmed interpretation.",
+      "limitations": "This is a experimental report with control limitations the report itself identifies; the results require independent replication before any confirmed interpretation.",
       "related": [
         {"slug": "photodiode-prediction-protocol-ledger", "relation": "Related experiment"}
       ]
