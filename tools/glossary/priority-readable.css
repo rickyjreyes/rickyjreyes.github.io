@@ -1,0 +1,122 @@
+/* Readable glossary priority hierarchy.
+   Priority is conveyed with edge color and a compact header badge,
+   while the card body remains the normal high-contrast site panel. */
+
+#glossaryGrid .glossary-card.standard-term,
+#glossaryGrid .glossary-card.wct-term,
+#glossaryGrid .glossary-card.priority-survivor,
+#glossaryGrid .glossary-card.priority-coinage {
+  color: var(--text) !important;
+}
+
+/* Ordinary reference cards remain completely normal. */
+#glossaryGrid .glossary-card.standard-term {
+  opacity: 1 !important;
+  border: 1px solid var(--line) !important;
+  background: rgba(255,255,255,.018) !important;
+  box-shadow: none !important;
+}
+#glossaryGrid .glossary-card.standard-term h3,
+#glossaryGrid .glossary-card.standard-term .glossary-definition {
+  color: var(--text) !important;
+  text-shadow: none !important;
+}
+#glossaryGrid .glossary-card.standard-term .glossary-anchor {
+  opacity: 1 !important;
+}
+
+/* WCT-defined: normal card with a quiet violet identity rail. */
+#glossaryGrid .glossary-card.wct-term:not(.priority-survivor):not(.priority-coinage) {
+  border: 1px solid rgba(139,124,255,.28) !important;
+  border-left: 3px solid var(--accent-2) !important;
+  background: var(--panel, #0b1727) !important;
+  box-shadow: none !important;
+}
+
+/* Exact-phrase priority: same readable panel, stronger cyan/violet frame. */
+#glossaryGrid .glossary-card.priority-survivor {
+  position: relative;
+  border: 1px solid rgba(103,212,255,.48) !important;
+  border-left: 5px solid var(--accent) !important;
+  background: var(--panel, #0b1727) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.16) !important;
+}
+#glossaryGrid .glossary-card.priority-survivor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  pointer-events: none;
+}
+#glossaryGrid .glossary-card.priority-survivor::after {
+  content: "PRIORITY";
+  position: absolute;
+  top: 13px;
+  right: 14px;
+  padding: 5px 9px;
+  border: 1px solid rgba(103,212,255,.42);
+  border-radius: 999px;
+  background: #0e1d30;
+  color: var(--accent);
+  font-size: .55rem;
+  font-weight: 900;
+  letter-spacing: .11em;
+}
+
+/* Strongest coinage tier: mint/cyan edge, still a solid dark readable panel. */
+#glossaryGrid .glossary-card.priority-coinage {
+  position: relative;
+  border: 1px solid rgba(182,255,218,.58) !important;
+  border-left: 6px solid var(--accent-3) !important;
+  background: var(--panel-soft, #0e1d30) !important;
+  box-shadow: 0 14px 32px rgba(0,0,0,.18) !important;
+}
+#glossaryGrid .glossary-card.priority-coinage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,var(--accent-3),var(--accent),var(--accent-2));
+  pointer-events: none;
+}
+#glossaryGrid .glossary-card.priority-coinage::after {
+  content: "PRIORITY · COINED";
+  position: absolute;
+  top: 13px;
+  right: 14px;
+  padding: 5px 9px;
+  border: 1px solid rgba(182,255,218,.48);
+  border-radius: 999px;
+  background: #0b1727;
+  color: var(--accent-3);
+  font-size: .55rem;
+  font-weight: 900;
+  letter-spacing: .11em;
+}
+
+/* Remove the previous glow/tint treatment from text and metadata. */
+#glossaryGrid .glossary-card.priority-survivor h3,
+#glossaryGrid .glossary-card.priority-coinage h3,
+#glossaryGrid .glossary-card.priority-survivor .glossary-definition,
+#glossaryGrid .glossary-card.priority-coinage .glossary-definition {
+  color: var(--text) !important;
+  text-shadow: none !important;
+}
+#glossaryGrid .glossary-card.priority-survivor .glossary-compact-meta,
+#glossaryGrid .glossary-card.priority-coinage .glossary-compact-meta {
+  border-top-color: var(--line) !important;
+}
+
+@media (max-width:760px) {
+  #glossaryGrid .glossary-card.priority-survivor::after,
+  #glossaryGrid .glossary-card.priority-coinage::after {
+    position: static;
+    display: inline-flex;
+    margin: 0 0 12px 0;
+  }
+}
