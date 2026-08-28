@@ -21,6 +21,7 @@ on:
       - "scripts/patch_site_navigation.py"
       - "scripts/patch_machine_metadata.py"
       - "scripts/normalize_research_status.py"
+      - "scripts/harden_publication_metadata.py"
       - "site-nav.js"
       - ".github/workflows/build-scholar-site.yml"
   pull_request:
@@ -40,6 +41,7 @@ on:
       - "scripts/patch_site_navigation.py"
       - "scripts/patch_machine_metadata.py"
       - "scripts/normalize_research_status.py"
+      - "scripts/harden_publication_metadata.py"
       - ".github/workflows/build-scholar-site.yml"
   workflow_dispatch:
 
@@ -106,6 +108,9 @@ jobs:
 
       - name: Normalize research status language
         run: python scripts/normalize_research_status.py
+
+      - name: Harden publication-level evidence framing
+        run: python scripts/harden_publication_metadata.py
 
       - name: Validate cross-layer registry and publication traceability
         run: python scripts/validate_registry_sync.py
