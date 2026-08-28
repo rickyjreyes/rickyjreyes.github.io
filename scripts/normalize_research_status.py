@@ -26,7 +26,7 @@ positive_status = (
 homepage_old = (
     negative_short
     + " Definitions, derivations, simulations, measurements, phenomenology, and "
-      "speculative extensions are separated so each claim can be evaluated independently."
+      "conjectural extensions are separated so each claim can be evaluated independently."
 )
 homepage_new = (
     "WCT is an independently developed research program spanning mathematical formulation, "
@@ -56,13 +56,13 @@ replacements = (
     (negative_research, positive_status),
     (negative_short, positive_status),
     (
-        "What is established, preliminary, proposed, or unresolved?",
+        "Which results are derived, simulated, measured, proposed, or unresolved?",
         "Which results are derived, simulated, measured, proposed, or unresolved?",
     ),
-    ("Preliminary observation", "Experimental report"),
-    ("speculative extensions", "conjectural extensions"),
+    ("Experimental report", "Experimental report"),
+    ("conjectural extensions", "conjectural extensions"),
     (
-        "WCT begins as a mathematical framework, but several branches are being explored as computational, photonic, memory, security, and control architectures. These are proposed application directions, not demonstrated commercial products.",
+        "WCT begins as a mathematical framework and extends into computational, photonic, memory, security, and control architectures. Implementation status is tracked at the project level so theoretical claims, prototypes, experiments, and engineering milestones remain distinct.",
         "WCT begins as a mathematical framework and extends into computational, photonic, memory, security, and control architectures. Implementation status is tracked at the project level so theoretical claims, prototypes, experiments, and engineering milestones remain distinct.",
     ),
     (
@@ -70,11 +70,11 @@ replacements = (
         "<p class=\"technology-boundary\"><strong>Engineering evaluation:</strong> commercial performance, scaling behavior, production-scale hardware feasibility, and independent replication are tracked as separate validation milestones.</p>",
     ),
     (
-        "Experimental path-dependent commitments, one-time signatures, adversarial audits, and a prototype ledger. Not production cryptography.",
+        "Experimental path-dependent commitments, one-time signatures, adversarial audits, and a prototype ledger with documented security-analysis targets.",
         "Experimental path-dependent commitments, one-time signatures, adversarial audits, and a prototype ledger with documented security-analysis targets.",
     ),
     (
-        "The current constructions are experimental research prototypes with documented security limitations and unresolved proof obligations.",
+        "The current constructions are experimental research prototypes; security properties are tracked through documented proof obligations, adversarial tests, and implementation audits.",
         "The current constructions are experimental research prototypes; security properties are tracked through documented proof obligations, adversarial tests, and implementation audits.",
     ),
     (
@@ -82,47 +82,47 @@ replacements = (
         "<div class=\"portfolio-note\"><strong>Filing status:</strong> four U.S. patent-application families are listed below with dated filing chronology. “Patent pending” is used for filed, pending applications; examination and grant status are updated from the official record when public.</div>",
     ),
     (
-        "Related links document the public research and development record. They do not establish patentability, enablement, claim scope, commercial readiness, independent replication, or physical validation.",
+        "Related links document the public research-and-development record and technical context for each filed family. Patent examination and claim scope are governed by the applications and official USPTO record; technical validation is tracked separately by evidence type.",
         "Related links document the public research-and-development record and technical context for each filed family. Patent examination and claim scope are governed by the applications and official USPTO record; technical validation is tracked separately by evidence type.",
     ),
     (
-        "The public repository is an experimental research prototype and is not represented as production cryptography.",
+        "The public repository is an experimental research prototype; production-security evaluation is tracked as a separate validation stage.",
         "The public repository is an experimental research prototype; production-security evaluation is tracked as a separate validation stage.",
     ),
     (
-        "Public observations and simulations are author-generated and are not presented as independent replication of a memory device.",
+        "Public observations and simulations document the technical development record for persistence and relocking; replication source and device-level validation are tracked separately.",
         "Public observations and simulations document the technical development record for persistence and relocking; replication source and device-level validation are tracked separately.",
     ),
     (
-        "The linked measurements are part of the public research record and are not represented as independent metrology certification or a commercial frequency standard.",
+        "The linked measurements document the experimental development record; metrology certification and product qualification are tracked as separate stages.",
         "The linked measurements document the experimental development record; metrology certification and product qualification are tracked as separate stages.",
     ),
     (
-        "The multi-channel generator and closed-loop stabilization descriptions are public architecture concepts; they are not labeled as independently validated hardware.",
+        "The public record documents the multi-channel generator and closed-loop stabilization architecture; hardware validation status is tracked separately.",
         "The public record documents the multi-channel generator and closed-loop stabilization architecture; hardware validation status is tracked separately.",
     ),
     (
-        "A repository or executable implementation is available for inspection. This does not by itself establish security, correctness, or commercial readiness.",
+        "A repository or executable implementation is available for inspection. Security, correctness, performance, and product readiness are evaluated as separate dimensions.",
         "A repository or executable implementation is available for inspection. Security, correctness, performance, and product readiness are evaluated as separate dimensions.",
     ),
     (
-        "A measurement or observation was conducted and reported by the inventor. It is not independent replication.",
+        "A measurement or observation was conducted and reported by the inventor. Replication source and status are recorded separately.",
         "A measurement or observation was conducted and reported by the inventor. Replication source and status are recorded separately.",
     ),
     (
-        "A mathematical or physical framework has been publicly described. It is not equivalent to empirical validation.",
+        "A mathematical or physical framework has been publicly described. Empirical tests and validation status are recorded separately.",
         "A mathematical or physical framework has been publicly described. Empirical tests and validation status are recorded separately.",
     ),
     (
-        "A system design or embodiment has been described at a public, non-proprietary level. It may remain unbuilt or partially implemented.",
+        "A system design or embodiment has been described at a public, non-proprietary level. Implementation status is recorded separately for each family.",
         "A system design or embodiment has been described at a public, non-proprietary level. Implementation status is recorded separately for each family.",
     ),
     (
-        "This timeline records application-family chronology only. It does not resolve legal priority entitlement for any particular claim.",
+        "This timeline records the filing chronology of the application families. Legal priority for individual claims is determined from the application record and applicable law.",
         "This timeline records the filing chronology of the application families. Legal priority for individual claims is determined from the application record and applicable law.",
     ),
     (
-        "This page is an informational summary and does not define legal scope, priority entitlement, claim construction, validity, enforceability, technical validation, or commercial readiness. Those matters depend on the official application records, claims, amendments, evidence, and USPTO proceedings. This page does not itself grant a license; any applicable license must be stated in the relevant repository or a separate written agreement.",
+        "This page is an informational portfolio summary. Legal scope, priority, claim construction, validity, enforceability, technical validation, and commercial status are determined from their respective application records, evidence, and USPTO proceedings. Any license must be stated in the relevant repository or a separate written agreement.",
         "This page is an informational portfolio summary. Legal scope, priority, claim construction, validity, enforceability, technical validation, and commercial status are determined from their respective application records, evidence, and USPTO proceedings. Any license must be stated in the relevant repository or a separate written agreement.",
     ),
 )

@@ -267,7 +267,7 @@ Use the internal website pages first because they preserve navigation and backli
 - Prefer registry-validation-report.json when checking whether public status layers agree.
 
 ## Claim discipline
-WCT is an independently developed research program with claims at different stages of mathematical, computational, and empirical validation. Distinguish definitions, ansätze, derivations, model-relative results, simulations, experiments, open-data tests, prediction ledgers, architectures, and speculative extensions. Empty evidence or replication fields mean that support has not yet been recorded; they must not be silently upgraded.
+WCT is an independently developed research program with claims at different stages of mathematical, computational, and empirical validation. Distinguish definitions, ansätze, derivations, model-relative results, simulations, experiments, open-data tests, prediction ledgers, architectures, and conjectural extensions. Empty evidence or replication fields mean that support has not yet been recorded; they must not be silently upgraded.
 """
     (ROOT / "llms.txt").write_text(text, encoding="utf-8")
 

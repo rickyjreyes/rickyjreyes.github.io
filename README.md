@@ -9,7 +9,7 @@ The site is optimized for readability, access, and research navigation. A new re
 - Who is Richard J. Reyes, and what is Wave Confinement Theory?
 - Which paper should I read first? (a four-paper "Start here" path)
 - What does each paper ask, claim, and rely on for evidence?
-- What is established, preliminary, proposed, or unresolved?
+- Which results are derived, simulated, measured, proposed, or unresolved?
 - How can the work be cited or reproduced?
 - How can the core concepts be explored visually? (interactive glossary, equation explorer, maps, timeline, dependency graph, and toy simulation playground)
 
