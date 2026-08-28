@@ -7,6 +7,7 @@
 - Publications: https://rickyjreyes.github.io/publications/
 - Claim-level priority registry: https://rickyjreyes.github.io/priority/
 - WCT Post-Date Overlap Ledger: https://rickyjreyes.github.io/overlap/
+- Patent applications: https://rickyjreyes.github.io/patents/
 - Equations and definitions: https://rickyjreyes.github.io/equations/
 - Complete SymPy audit: https://rickyjreyes.github.io/sympy/
 - Complete Lean coverage: https://rickyjreyes.github.io/lean/
@@ -19,6 +20,7 @@
 - Registry validation report: https://rickyjreyes.github.io/registry-validation-report.json
 - Equation feed: https://rickyjreyes.github.io/equations/equations.json
 - Publication metadata: https://rickyjreyes.github.io/publications.json
+- Patent application metadata: https://rickyjreyes.github.io/patents.json
 - Publication traceability source: https://rickyjreyes.github.io/data/publication_traceability.json
 - Claim-priority metadata: https://rickyjreyes.github.io/priority/priority.json
 - External convergence audit: https://rickyjreyes.github.io/priority/external-convergence.json

@@ -186,7 +186,7 @@ def paper_page(pub: dict, titles: dict[str, str]) -> str:
 </div></header>
 <main id="paper" class="paper-shell"><article>
 <header class="paper-header">
-<p class="paper-kicker">Preprint · Release {pub['n']:02d}</p>
+<p class="paper-kicker">DOI-archived release · {pub['n']:02d}</p>
 <h1 class="citation_title">{esc(pub['title'])}</h1>
 <p class="citation_author">{AUTHOR}</p>
 <p class="paper-meta">Independent Researcher · {pub['display_date']} · <a href="{doi_url}">{pub['doi']}</a></p>
@@ -223,7 +223,7 @@ def paper_page(pub: dict, titles: dict[str, str]) -> str:
 <div><dt>Local metadata</dt><dd><a href="{url}">{url}</a></dd></div>
 <div><dt>Author</dt><dd><a href="https://orcid.org/{ORCID}">ORCID {ORCID}</a></dd></div>
 </dl>
-<p class="machine-disclaimer">This landing page provides accessible summaries and citation metadata for an archival preprint. The authoritative manuscript and downloadable files are maintained on the Zenodo DOI record. Wave Confinement Theory is an independently developed research program; claims should be evaluated according to the derivations, simulations, experiments, data analyses, assumptions, and limitations stated in the paper itself.</p>
+<p class="machine-disclaimer">This landing page provides accessible summaries and citation metadata for a DOI-archived research release. The authoritative manuscript and downloadable files are maintained on the Zenodo DOI record. Wave Confinement Theory is an independently developed research program; claims should be evaluated according to the derivations, simulations, experiments, data analyses, assumptions, and limitations stated in the paper itself.</p>
 </section>
 </article></main>
 <footer class="paper-footer"><div class="section-shell"><a href="./">← Publication archive</a><span>Wave Confinement Theory research program</span></div></footer>
