@@ -11,9 +11,17 @@ for(const [name,release] of mappings){
  term.provenance=term.provenance==='Coined by Reyes'?'Coined by Reyes':'WCT-defined';
  term.release=release;
  term.source_title=titles[String(release)];
- if(['coherence mirage','semantic anchor decay','propagation–correction criticality','collapse score','symbolic heartbeat','physical symbolic kill logic','confinement termination principle'].includes(name.toLocaleLowerCase())) term.priority_audit_release=20;
+}
+const coinedOrigins=['Coherence mirage','Semantic anchor decay','Propagation–correction criticality','Collapse score','Symbolic heartbeat','Physical Symbolic Kill Logic','Confinement Termination Principle'];
+for(const name of coinedOrigins){
+ const term=map.get(name.toLocaleLowerCase());
+ if(!term) continue;
+ term.provenance='Coined by Reyes';
+ term.release=5;
+ term.source_title=titles['5'];
+ term.priority_audit_release=20;
 }
 const audited=base.filter(t=>Number.isInteger(t.release)&&t.release>=1&&t.release<=22);
-window.WCT_GLOSSARY_PAPER_AUDIT={...(window.WCT_GLOSSARY_PAPER_AUDIT||{}),release_count:22,audited_term_count:audited.length,canonical_mapped_count:mappings.length};
+window.WCT_GLOSSARY_PAPER_AUDIT={...(window.WCT_GLOSSARY_PAPER_AUDIT||{}),release_count:22,audited_term_count:audited.length,canonical_mapped_count:mappings.length,coined_origin_release:5,terminology_priority_audit_release:20};
 window.WCT_GLOSSARY_META={...(window.WCT_GLOSSARY_META||{}),source:'22-release publication corpus + canonical glossary',path:'/publications/ · 22-release term audit',count:base.length,audited_releases:22,audited_wct_terms:audited.length};
 })();
