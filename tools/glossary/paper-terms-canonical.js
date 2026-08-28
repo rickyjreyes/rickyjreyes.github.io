@@ -12,7 +12,7 @@ for(const [name,release] of mappings){
  term.release=release;
  term.source_title=titles[String(release)];
 }
-const coinedOrigins=['Coherence mirage','Semantic anchor decay','Propagation–correction criticality','Collapse score','Symbolic heartbeat','Physical Symbolic Kill Logic','Confinement Termination Principle'];
+const coinedOrigins=["Coherence mirage","Semantic anchor decay","Propagation–correction criticality","Physical Symbolic Kill Logic","Confinement Termination Principle"];
 for(const name of coinedOrigins){
  const term=map.get(name.toLocaleLowerCase());
  if(!term) continue;
