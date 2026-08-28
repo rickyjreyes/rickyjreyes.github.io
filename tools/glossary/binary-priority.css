@@ -1,0 +1,38 @@
+/* Binary glossary presentation: only My priority terms vs General. */
+.glossary-provenance-guide{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.glossary-provenance-guide>div{opacity:1!important;background:rgba(255,255,255,.018)!important;border-color:var(--line)!important;box-shadow:none!important}
+.glossary-provenance-guide>div:first-child{border-color:rgba(103,212,255,.42)!important;box-shadow:inset 4px 0 0 var(--accent)!important;background:rgba(103,212,255,.035)!important}
+
+#termOrigin,#termPriority{display:none!important}
+#glossary .tool-toolbar{grid-template-columns:minmax(220px,1fr) minmax(180px,.55fr) minmax(180px,.55fr) auto!important}
+
+#glossaryGrid .term-origin,#glossaryGrid .term-priority-status{display:none!important}
+#glossaryGrid .term-binary{display:inline-flex;align-items:center;padding:4px 9px;border:1px solid var(--line-strong);border-radius:999px;font-size:.62rem;font-weight:850;letter-spacing:.06em;text-transform:uppercase}
+#glossaryGrid .term-binary.priority{border-color:rgba(103,212,255,.5);background:rgba(103,212,255,.09);color:var(--text)}
+#glossaryGrid .term-binary.general{border-color:var(--line);background:rgba(255,255,255,.02);color:var(--muted)}
+
+/* Reset every non-priority card to the ordinary readable glossary surface. */
+#glossaryGrid .glossary-card.standard-term,
+#glossaryGrid .glossary-card.wct-term{opacity:1!important;border:1px solid var(--line)!important;background:rgba(255,255,255,.018)!important;box-shadow:none!important}
+#glossaryGrid .glossary-card.standard-term h3,
+#glossaryGrid .glossary-card.wct-term h3,
+#glossaryGrid .glossary-card.standard-term .glossary-definition,
+#glossaryGrid .glossary-card.wct-term .glossary-definition{color:var(--text)!important}
+#glossaryGrid .glossary-card.standard-term .glossary-anchor{opacity:1!important}
+
+/* Both audited priority subclasses deliberately share one card design. */
+#glossaryGrid .glossary-card.priority-survivor,
+#glossaryGrid .glossary-card.priority-coinage{position:relative;opacity:1!important;border:1px solid rgba(103,212,255,.38)!important;background:var(--panel)!important;box-shadow:inset 4px 0 0 var(--accent)!important}
+#glossaryGrid .glossary-card.priority-survivor::before,
+#glossaryGrid .glossary-card.priority-coinage::before{content:""!important;position:absolute!important;top:0!important;left:0!important;right:0!important;height:2px!important;background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--accent-3))!important;pointer-events:none}
+#glossaryGrid .glossary-card.priority-survivor::after,
+#glossaryGrid .glossary-card.priority-coinage::after{content:none!important;display:none!important}
+#glossaryGrid .glossary-card.priority-survivor h3,
+#glossaryGrid .glossary-card.priority-coinage h3{color:var(--text)!important;text-shadow:none!important}
+#glossaryGrid .glossary-card.priority-survivor .glossary-definition,
+#glossaryGrid .glossary-card.priority-coinage .glossary-definition{color:var(--text)!important}
+
+#glossaryGrid .glossary-card[hidden]{display:none!important}
+
+@media(max-width:900px){#glossary .tool-toolbar{grid-template-columns:1fr 1fr!important}}
+@media(max-width:760px){.glossary-provenance-guide{grid-template-columns:1fr!important}#glossary .tool-toolbar{grid-template-columns:1fr!important}}
