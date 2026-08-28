@@ -12,9 +12,7 @@ JS_OUT = GLOSSARY / "terminology-priority.js"
 INDEX = GLOSSARY / "index.html"
 LLMS = ROOT / "llms.txt"
 AUDIT_SOURCE = ROOT / "data" / "terminology_exact_phrase_audit.json"
-AUDIT_BATCH_SOURCES = [
-    ROOT / "data" / "terminology_exact_phrase_audit_44_additions.json",
-]
+AUDIT_BATCH_SOURCES = sorted((ROOT / "data").glob("terminology_exact_phrase_audit_*.json"))
 
 RELEASES = {
   1:("2025-04-22","10.5281/zenodo.15644222","geometry-of-resonance","The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime"),
@@ -88,7 +86,7 @@ def load_audit() -> dict:
     latest_method = audit.get("method", "")
 
     for path in AUDIT_BATCH_SOURCES:
-        if not path.exists():
+        if path == AUDIT_SOURCE or not path.exists():
             continue
         batch = json.loads(path.read_text(encoding="utf-8"))
         batch_survivors = list(batch.get("survivors", []))
