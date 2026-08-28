@@ -22,6 +22,9 @@ on:
       - "scripts/patch_machine_metadata.py"
       - "scripts/normalize_research_status.py"
       - "scripts/harden_publication_metadata.py"
+      - "scripts/sync_glossary_inventory.py"
+      - "tools/glossary/index.html"
+      - "tools/glossary-definitions.js"
       - "site-nav.js"
       - ".github/workflows/build-scholar-site.yml"
   pull_request:
@@ -42,6 +45,9 @@ on:
       - "scripts/patch_machine_metadata.py"
       - "scripts/normalize_research_status.py"
       - "scripts/harden_publication_metadata.py"
+      - "scripts/sync_glossary_inventory.py"
+      - "tools/glossary/index.html"
+      - "tools/glossary-definitions.js"
       - ".github/workflows/build-scholar-site.yml"
   workflow_dispatch:
 
@@ -69,6 +75,9 @@ jobs:
 
       - name: Install generator dependencies
         run: python -m pip install PyYAML
+
+      - name: Sync complete glossary inventory
+        run: python scripts/sync_glossary_inventory.py
 
       - name: Generate publication pages and metadata
         run: python scripts/build_scholar_site.py
@@ -132,6 +141,7 @@ jobs:
             priority/external-convergence.json
             overlap/index.html
             publications/*.html
+            tools/glossary/all-terms.js
 
       - name: Commit generated files
         if: github.event_name == 'push'
@@ -143,5 +153,5 @@ jobs:
             echo "No generated changes."
             exit 0
           fi
-          git commit -m "Generate synchronized equation, publication traceability, and corpus views"
+          git commit -m "Generate synchronized equation, publication traceability, glossary, and corpus views"
           git push
