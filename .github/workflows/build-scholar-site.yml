@@ -6,6 +6,7 @@ on:
     paths:
       - "data/publications.json"
       - "data/publication_traceability.json"
+      - "data/terminology_exact_phrase_audit.json"
       - "overlap/overlap-data-*.js"
       - "scripts/build_scholar_site.py"
       - "scripts/build_equation_explorer.py"
@@ -34,6 +35,7 @@ on:
     paths:
       - "data/publications.json"
       - "data/publication_traceability.json"
+      - "data/terminology_exact_phrase_audit.json"
       - "overlap/overlap-data-*.js"
       - "scripts/build_scholar_site.py"
       - "scripts/build_equation_explorer.py"
@@ -145,6 +147,7 @@ jobs:
             sympy/index.html
             lean/index.html
             data/publication_traceability.json
+            data/terminology_exact_phrase_audit.json
             priority/external-convergence.json
             priority/terminology-priority.json
             tools/glossary/terminology-priority.js
