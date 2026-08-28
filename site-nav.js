@@ -22,7 +22,7 @@
     if (!document.getElementById('wct-glossary-binary-priority-js')) {
       const script = document.createElement('script');
       script.id = 'wct-glossary-binary-priority-js';
-      script.src = '/tools/glossary/binary-priority.js?v=20260828-fullwidth';
+      script.src = '/tools/glossary/binary-priority.js?v=20260828-audit203';
       script.defer = true;
       document.head.appendChild(script);
     }
