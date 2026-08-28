@@ -24,7 +24,7 @@
         "Proposes mechanisms for the emergence of mass, force, and effective spacetime geometry."
       ],
       "evidence": ["Analytical derivation", "Conceptual architecture"],
-      "limitations": "This is the foundational proposal of an evolving independent framework, not established physics. Its mechanisms and derivations require independent mathematical and empirical validation.",
+      "limitations": "This release defines the foundational WCT proposal. Independent mathematical review and empirical testing are tracked as separate validation stages for its mechanisms and derivations.",
       "related": [
         {"slug": "phase-flux-field", "relation": "Axiomatic substrate"},
         {"slug": "effective-mass-solenoidal-topology", "relation": "Extends to mass"},
@@ -47,7 +47,7 @@
         "Proposes candidate structural origins for selected physical constants within the WCT framework."
       ],
       "evidence": ["Analytical derivation"],
-      "limitations": "The mappings are exploratory and the candidate values are presented as structural proposals, not validated determinations of measured constants.",
+      "limitations": "The mappings are exploratory structural proposals; comparison with measured constants, uncertainty analysis, and independent validation are tracked separately.",
       "related": [
         {"slug": "geometry-of-resonance", "relation": "Foundation"}
       ]
@@ -68,7 +68,7 @@
         "Establishes a model-relative separation argument for P_WCC and NP_WCC."
       ],
       "evidence": ["Analytical derivation", "Conceptual architecture"],
-      "limitations": "The separation is explicitly model-relative and does not claim an unrestricted proof of the classical P versus NP problem.",
+      "limitations": "The separation is explicitly model-relative to P_WCC and NP_WCC under the stated constraints; the unrestricted classical P versus NP problem is outside the scope of this result.",
       "related": [
         {"slug": "discrete-wave-constrained-computation", "relation": "Related model"},
         {"slug": "classical-p-vs-np-ill-posed", "relation": "Related critique"}
@@ -83,15 +83,15 @@
       "doi": "10.5281/zenodo.17206381",
       "category": "Experiment and physical systems",
       "status": "Experimental report",
-      "summary": "This experimental report describes long-lived optical and harmonic behavior observed in chilled water cavities after excitation. It presents the apparatus, persistence observations, perturbation and relocking behavior, spectral measurements, and the control limitations that must be resolved by independent replication.",
+      "summary": "This experimental report describes long-lived optical and harmonic behavior observed in chilled water cavities after excitation. It presents the apparatus, persistence observations, perturbation and relocking behavior, spectral measurements, and the control limitations and the independent-replication stage required for validation.",
       "question": "Can long-lived optical and harmonic resonance behavior be observed in chilled water cavities after excitation?",
       "contributions": [
         "Reports the apparatus and persistence observations for excited chilled water cavities.",
         "Documents perturbation and relocking behavior and spectral measurements.",
-        "States the control limitations that must be resolved by independent replication."
+        "States the control limitations and the independent-replication stage required for validation."
       ],
       "evidence": ["Laboratory measurement"],
-      "limitations": "This is a experimental report with control limitations the report itself identifies; the results require independent replication before any confirmed interpretation.",
+      "limitations": "This experimental report identifies its control limitations explicitly; independent replication is tracked as the next validation stage.",
       "related": [
         {"slug": "photodiode-prediction-protocol-ledger", "relation": "Related experiment"}
       ]
@@ -105,7 +105,7 @@
       "doi": "10.5281/zenodo.17732661",
       "category": "AI architecture",
       "status": "Control architecture",
-      "summary": "This architecture proposal maps resonance, coherence, bounded curvature, contradiction control, and Lyapunov-like stabilization into an artificial-intelligence substrate. It is presented as a physically bounded design framework and research specification, not as a completed artificial general intelligence implementation.",
+      "summary": "This architecture proposal maps resonance, coherence, bounded curvature, contradiction control, and Lyapunov-like stabilization into an artificial-intelligence substrate. It is presented as a physically bounded design framework and research specification for implementation and evaluation.",
       "question": "Can resonance, coherence, bounded curvature, and Lyapunov-like stabilization be mapped into a physically bounded substrate for artificial intelligence?",
       "contributions": [
         "Maps resonance, coherence, bounded curvature, and contradiction control into an AI substrate design.",
@@ -113,7 +113,7 @@
         "Frames the result as a design framework and research specification."
       ],
       "evidence": ["Conceptual architecture"],
-      "limitations": "It is a design framework and research specification, not a completed or evaluated artificial general intelligence implementation.",
+      "limitations": "Full implementation and evaluation of the architecture are tracked as separate development stages.",
       "related": [
         {"slug": "geometry-of-resonance", "relation": "Foundation"},
         {"slug": "recursive-ai-drift-audit", "relation": "Related AI note"}
@@ -158,7 +158,7 @@
         "Constructs shell quantization, a zero-wave invariant state, and a D4-to-continuum limit."
       ],
       "evidence": ["Analytical derivation"],
-      "limitations": "This is an axiomatic foundational construction within an evolving framework; its physical correspondence remains to be tested.",
+      "limitations": "This is an axiomatic foundational construction; physical correspondence is evaluated through separate empirical tests.",
       "related": [
         {"slug": "geometry-of-resonance", "relation": "Builds toward"},
         {"slug": "self-emergent-fourier-cymatics", "relation": "Numerical support"}
@@ -202,7 +202,7 @@
         "Connects confinement geometry to inertial behavior and cavity-scale predictions."
       ],
       "evidence": ["Analytical derivation"],
-      "limitations": "The model is a geometric proposal within WCT; its cavity-scale predictions remain to be tested experimentally.",
+      "limitations": "The model is a geometric WCT proposal with cavity-scale predictions that define direct experimental tests.",
       "related": [
         {"slug": "geometry-of-resonance", "relation": "Foundation"},
         {"slug": "rest-energy-density-weighted-loop-curvature", "relation": "Refines mass relation"}
@@ -225,7 +225,7 @@
         "Proposes the mass relation E_rest = ℏ c k_eff."
       ],
       "evidence": ["Analytical derivation"],
-      "limitations": "The locking principle and proposed mass relation are derived within WCT and await independent verification.",
+      "limitations": "The locking principle and proposed mass relation are derived within WCT; independent mathematical and empirical verification are tracked as separate validation stages.",
       "related": [
         {"slug": "effective-mass-solenoidal-topology", "relation": "Earlier mass model"},
         {"slug": "logarithmic-curvature-flow-lepton-spectrum", "relation": "Applied to leptons"}
@@ -247,7 +247,7 @@
         "Provides amplitude-damping estimates as a falsifiable, detector-facing forecast."
       ],
       "evidence": ["Analytical derivation", "Numerical simulation"],
-      "limitations": "This is a detectability forecast based on detector-resolution modeling, not a measurement; it depends on the assumed signal model and detector parameters.",
+      "limitations": "This is a detector-resolution forecast whose conclusions depend on the assumed signal model and detector parameters; experimental measurement is a separate validation stage.",
       "related": [
         {"slug": "geometry-of-resonance", "relation": "Foundation"}
       ]
@@ -312,7 +312,7 @@
         "Relates loop geometry, harmonic sidebands, and scale-free ratios to the charged-lepton value Q = 2/3."
       ],
       "evidence": ["Analytical derivation"],
-      "limitations": "The result is treated as a WCT phenomenological derivation, not an independently confirmed prediction of the Standard Model mass spectrum.",
+      "limitations": "The result is a WCT phenomenological derivation; independent confirmation and comparison against Standard Model mass-spectrum treatments are tracked separately.",
       "related": [
         {"slug": "rest-energy-density-weighted-loop-curvature", "relation": "Mass-locking basis"},
         {"slug": "logarithmic-curvature-flow-lepton-spectrum", "relation": "Related lepton model"}
@@ -402,7 +402,7 @@
         "Compares it with a constant-shift description of the LHCb anomaly using frequency scans and null behavior."
       ],
       "evidence": ["Public-data analysis"],
-      "limitations": "The study itself notes covariance and look-elsewhere limitations of the available data; it is a phenomenological comparison, not a discovery claim.",
+      "limitations": "The study is a phenomenological comparison with explicit covariance and look-elsewhere controls; discovery-level significance is outside the scope of the current analysis.",
       "related": [
         {"slug": "lhcb-log-spectral-koide-winding", "relation": "Open-data analysis"}
       ]
@@ -423,7 +423,7 @@
         "Applies KDE baseline repair, sideband and charm-continuum controls, and veto-window covariance."
       ],
       "evidence": ["Public-data analysis"],
-      "limitations": "The analysis states explicit non-discovery caveats and covariance controls; it reports a methodology and search, not a confirmed signal.",
+      "limitations": "The analysis reports a methodology and search with explicit covariance controls; signal confirmation is a separate evidentiary stage.",
       "repo": "https://github.com/rickyjreyes/LHC",
       "related": [
         {"slug": "curvature-log-periodic-c9-deformation", "relation": "Phenomenological model"},
@@ -482,14 +482,14 @@
       "doi": "10.5281/zenodo.19122146",
       "category": "Cryptographic research",
       "status": "Cryptographic prototype",
-      "summary": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work is an experimental cryptographic research artifact with adversarial tests, prototype signatures and ledger components, and explicit unresolved security proof obligations; it is not production cryptography.",
+      "summary": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work is an experimental cryptographic research artifact with adversarial tests, prototype signatures and ledger components, and a documented security-proof program.",
       "question": "Can nonlinear PDE evolution and path-dependent curvature commitments support useful one-way (cryptographic) behavior?",
       "contributions": [
         "Explores a curvature-locked one-way function based on nonlinear PDE evolution.",
         "Provides adversarial tests and prototype signature and ledger components."
       ],
       "evidence": ["Conceptual architecture", "Numerical simulation"],
-      "limitations": "This is an experimental research prototype with explicit unresolved security proof obligations; it is not production cryptography.",
+      "limitations": "This is an experimental research prototype; security properties are tracked through explicit proof obligations, adversarial tests, and implementation audits.",
       "repo": "https://github.com/rickyjreyes/Wavelock",
       "related": [
         {"slug": "p-vs-np-curvature-bounded-wave-computation", "relation": "Related computation model"}

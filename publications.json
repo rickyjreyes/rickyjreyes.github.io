@@ -81,7 +81,7 @@
       "landingPage": "https://rickyjreyes.github.io/publications/long-lived-photon-resonance-water-cavities.html",
       "category": "Experiment and physical systems",
       "status": "Experimental report",
-      "abstract": "This experimental report describes long-lived optical and harmonic behavior observed in chilled water cavities after excitation. It presents the apparatus, persistence observations, perturbation and relocking behavior, spectral measurements, and the control limitations that must be resolved by independent replication."
+      "abstract": "This experimental report describes long-lived optical and harmonic behavior observed in chilled water cavities after excitation. It presents the apparatus, persistence observations, perturbation and relocking behavior, spectral measurements, and the control limitations and the independent-replication stage required for validation."
     },
     {
       "id": 5,
@@ -101,7 +101,7 @@
       "landingPage": "https://rickyjreyes.github.io/publications/resonance-confinement-architecture.html",
       "category": "AI architecture",
       "status": "Control architecture",
-      "abstract": "This architecture proposal maps resonance, coherence, bounded curvature, contradiction control, and Lyapunov-like stabilization into an artificial-intelligence substrate. It is presented as a physically bounded design framework and research specification, not as a completed artificial general intelligence implementation."
+      "abstract": "This architecture proposal maps resonance, coherence, bounded curvature, contradiction control, and Lyapunov-like stabilization into an artificial-intelligence substrate. It is presented as a physically bounded design framework and research specification for implementation and evaluation."
     },
     {
       "id": 6,
@@ -441,7 +441,7 @@
       "landingPage": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
       "category": "Cryptographic research",
       "status": "Cryptographic prototype",
-      "abstract": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work is an experimental cryptographic research artifact with adversarial tests, prototype signatures and ledger components, and explicit unresolved security proof obligations; it is not production cryptography."
+      "abstract": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work is an experimental cryptographic research artifact with adversarial tests, prototype signatures and ledger components, and a documented security-proof program."
     }
   ]
 }
