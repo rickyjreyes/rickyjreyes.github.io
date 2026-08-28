@@ -3,6 +3,9 @@
 
   let selectedClass = '';
   const isPriorityCard = card => card.classList.contains('priority-coinage') || card.classList.contains('priority-survivor');
+  const priorityCount = () => window.WCT_TERMINOLOGY_PRIORITY?.audit?.exactPhraseSurvivorCount
+    || window.WCT_GLOSSARY_META?.exact_phrase_survivor_count
+    || document.querySelectorAll('#glossaryGrid .priority-coinage, #glossaryGrid .priority-survivor').length;
 
   const setActiveTab = value => {
     selectedClass = value;
@@ -30,7 +33,7 @@
       </button>
       <button type="button" role="tab" data-value="priority" aria-selected="false" tabindex="-1">
         <strong>My priority terms</strong>
-        <span>175 audited WCT/RCA terms whose public Reyes record predates every indexed external exact-phrase occurrence located in the terminology audit.</span>
+        <span>${priorityCount()} audited WCT/RCA terms whose public Reyes record predates every indexed external exact-phrase occurrence located in the terminology audit.</span>
       </button>
       <button type="button" role="tab" data-value="general" aria-selected="false" tabindex="-1">
         <strong>General terms</strong>
