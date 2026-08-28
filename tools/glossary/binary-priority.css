@@ -1,16 +1,17 @@
 /* Binary glossary presentation: only My priority terms vs General. */
-.glossary-provenance-guide{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-.glossary-provenance-guide>div{opacity:1!important;background:rgba(255,255,255,.018)!important;border-color:var(--line)!important;box-shadow:none!important}
-.glossary-provenance-guide>div:first-child{border-color:rgba(103,212,255,.42)!important;box-shadow:inset 4px 0 0 var(--accent)!important;background:rgba(103,212,255,.035)!important}
+.glossary-provenance-guide.term-class-selector{display:grid!important;grid-template-columns:minmax(150px,.55fr) minmax(0,1fr) minmax(0,1fr)!important;gap:10px!important;width:100%;margin:0 0 26px!important}
+.glossary-provenance-guide.term-class-selector>button{appearance:none;width:100%;min-height:112px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;color:var(--text);background:rgba(255,255,255,.018);text-align:left;cursor:pointer;transition:border-color .16s ease,background .16s ease,box-shadow .16s ease,transform .16s ease}
+.glossary-provenance-guide.term-class-selector>button:hover{border-color:var(--line-strong);background:rgba(255,255,255,.028)}
+.glossary-provenance-guide.term-class-selector>button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.glossary-provenance-guide.term-class-selector>button strong{display:block;margin:0 0 7px;color:var(--text);font-size:.82rem;letter-spacing:.04em}
+.glossary-provenance-guide.term-class-selector>button span{display:block;color:var(--muted);font-size:.78rem;line-height:1.48}
+.glossary-provenance-guide.term-class-selector>button.active{border-color:rgba(103,212,255,.46);background:rgba(103,212,255,.045);box-shadow:inset 4px 0 0 var(--accent)}
+.glossary-provenance-guide.term-class-selector>button[data-value="priority"].active{border-color:rgba(103,212,255,.56);background:rgba(103,212,255,.055);box-shadow:inset 4px 0 0 var(--accent)}
+.glossary-provenance-guide.term-class-selector>button[data-value="general"].active{border-color:var(--line-strong);background:rgba(255,255,255,.035);box-shadow:inset 4px 0 0 var(--muted-2)}
 
 #termOrigin,#termPriority{display:none!important}
-#glossary .tool-toolbar{grid-template-columns:minmax(220px,1fr) minmax(180px,.55fr) auto auto!important;align-items:center}
-
-.term-class-tabs{display:inline-flex;align-items:center;gap:3px;padding:3px;border:1px solid var(--line-strong);border-radius:10px;background:rgba(4,10,18,.58);white-space:nowrap}
-.term-class-tabs button{appearance:none;border:0;border-radius:7px;padding:8px 11px;color:var(--muted);background:transparent;font:750 .72rem/1 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer;transition:color .16s ease,background .16s ease,box-shadow .16s ease}
-.term-class-tabs button:hover{color:var(--text);background:rgba(255,255,255,.035)}
-.term-class-tabs button.active{color:var(--bg-deep);background:var(--accent);box-shadow:0 2px 10px rgba(103,212,255,.14)}
-.term-class-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#glossary .tool-toolbar{grid-template-columns:minmax(220px,1fr) minmax(180px,.55fr) auto!important;align-items:center}
+#glossary .tool-toolbar>.term-class-tabs{display:none!important}
 
 #glossaryGrid .term-origin,#glossaryGrid .term-priority-status{display:none!important}
 #glossaryGrid .term-binary{display:inline-flex;align-items:center;padding:4px 9px;border:1px solid var(--line-strong);border-radius:999px;font-size:.62rem;font-weight:850;letter-spacing:.06em;text-transform:uppercase}
@@ -40,5 +41,5 @@
 
 #glossaryGrid .glossary-card[hidden]{display:none!important}
 
-@media(max-width:980px){#glossary .tool-toolbar{grid-template-columns:1fr 1fr!important}.term-class-tabs{grid-column:1/-1;justify-self:start}}
-@media(max-width:760px){.glossary-provenance-guide{grid-template-columns:1fr!important}#glossary .tool-toolbar{grid-template-columns:1fr!important}.term-class-tabs{grid-column:auto;width:100%;justify-content:stretch}.term-class-tabs button{flex:1}}
+@media(max-width:900px){.glossary-provenance-guide.term-class-selector{grid-template-columns:1fr 1fr!important}.glossary-provenance-guide.term-class-selector>button:first-child{grid-column:1/-1;min-height:auto}#glossary .tool-toolbar{grid-template-columns:1fr 1fr!important}}
+@media(max-width:760px){.glossary-provenance-guide.term-class-selector{grid-template-columns:1fr!important}.glossary-provenance-guide.term-class-selector>button:first-child{grid-column:auto}.glossary-provenance-guide.term-class-selector>button{min-height:auto}#glossary .tool-toolbar{grid-template-columns:1fr!important}}
