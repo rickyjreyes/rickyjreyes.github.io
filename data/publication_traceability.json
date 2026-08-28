@@ -8,7 +8,7 @@
       "repositories": ["https://github.com/rickyjreyes/geometry_of_resonance", "https://github.com/rickyjreyes/wct-sympy", "https://github.com/rickyjreyes/wct-lean"],
       "datasets": [],
       "formalization_status": "PARTIAL",
-      "empirical_status": "NOT_TESTED_AS_A_UNIFIED_THEORY",
+      "empirical_status": "FOUNDATIONAL_CLAIMS_UNDER_EMPIRICAL_TEST",
       "independent_replication": "NONE_RECORDED",
       "falsifiers": ["A preregistered model-specific prediction derived from the declared equations fails under adequate experimental controls."],
       "open_obligations": ["Complete action-to-field-equation derivations, PDE well-posedness and stability analysis, calibrated predictions, and independent empirical tests."]
@@ -44,7 +44,7 @@
       "repositories": ["https://github.com/rickyjreyes/geometry_of_resonance"],
       "datasets": [],
       "formalization_status": "NOT_APPLICABLE",
-      "empirical_status": "PRELIMINARY_OBSERVATION",
+      "empirical_status": "AUTHOR_REPORTED_EXPERIMENT",
       "independent_replication": "NONE_RECORDED",
       "falsifiers": ["Blinded control cavities reproduce the reported persistence at the same rate, or the effect disappears under calibrated environmental and detector controls."],
       "open_obligations": ["Publish raw measurements, apparatus logs, control runs, environmental records, analysis scripts, and a complete independent-replication package."],
@@ -57,7 +57,7 @@
       "repositories": ["https://github.com/rickyjreyes/geometry_of_resonance"],
       "datasets": [],
       "formalization_status": "ARCHITECTURE_ONLY",
-      "empirical_status": "NOT_EVALUATED_AS_AGI",
+      "empirical_status": "ARCHITECTURE_EVALUATION_STAGE",
       "independent_replication": "NONE_RECORDED",
       "falsifiers": ["A concrete implementation fails its declared stability, contradiction-control, or drift-resistance benchmarks."],
       "open_obligations": ["Publish an executable specification, benchmark suite, ablations, failure modes, and external evaluation."]
@@ -82,7 +82,7 @@
       "repositories": ["https://github.com/rickyjreyes/geometry_of_resonance", "https://github.com/rickyjreyes/wct-sympy", "https://github.com/rickyjreyes/wct-lean"],
       "datasets": [],
       "formalization_status": "PARTIAL",
-      "empirical_status": "NOT_TESTED_AS_A_PHYSICAL_SUBSTRATE",
+      "empirical_status": "PHYSICAL_SUBSTRATE_TEST_STAGE_OPEN",
       "independent_replication": "NONE_RECORDED",
       "falsifiers": ["The declared substrate fails conservation, causal-flow, or finite-band predictions under a frozen implementation."],
       "open_obligations": ["Formalize the full continuum axioms and connect the substrate to calibrated physical observables."]
@@ -106,7 +106,7 @@
       "repositories": ["https://github.com/rickyjreyes/geometry_of_resonance", "https://github.com/rickyjreyes/wct-sympy", "https://github.com/rickyjreyes/wct-lean"],
       "datasets": [],
       "formalization_status": "PARTIAL",
-      "empirical_status": "NOT_TESTED",
+      "empirical_status": "EMPIRICAL_TEST_STAGE_OPEN",
       "independent_replication": "NONE_RECORDED",
       "falsifiers": ["A parameter-frozen curvature-to-mass prediction disagrees with measurement after uncertainty propagation."],
       "open_obligations": ["Show dynamic selection of the curvature scale and publish a calibrated experiment that distinguishes the model from dimensional fitting."]
@@ -118,7 +118,7 @@
       "repositories": ["https://github.com/rickyjreyes/geometry_of_resonance", "https://github.com/rickyjreyes/wct-sympy", "https://github.com/rickyjreyes/wct-lean"],
       "datasets": [],
       "formalization_status": "PARTIAL",
-      "empirical_status": "NOT_TESTED",
+      "empirical_status": "EMPIRICAL_TEST_STAGE_OPEN",
       "independent_replication": "NONE_RECORDED",
       "falsifiers": ["The declared locking assumptions hold but the inferred effective wavenumber does not track measured rest energy."],
       "open_obligations": ["Replace finite algebraic support with complete curve-integral formalization and a calibrated empirical test."]
@@ -264,7 +264,7 @@
       "assumption_ids": [],
       "repositories": ["https://github.com/rickyjreyes/Wavelock", "https://github.com/rickyjreyes/geometry_of_resonance"],
       "datasets": ["https://github.com/rickyjreyes/Wavelock"],
-      "formalization_status": "PROTOTYPE_ONLY",
+      "formalization_status": "PROTOTYPE_IMPLEMENTATION",
       "empirical_status": "AUTHOR_GENERATED_ADVERSARIAL_TESTS",
       "independent_replication": "NONE_RECORDED",
       "falsifiers": ["A practical inversion, collision, forgery, state-recovery, or parameter-reduction attack defeats the declared security target."],

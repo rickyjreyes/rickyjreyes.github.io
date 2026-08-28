@@ -11,7 +11,7 @@
   },
   "canonical_root": "https://rickyjreyes.github.io/research-corpus.json",
   "compiled_registry": "https://rickyjreyes.github.io/compiled-registry.json",
-  "generated_at": "2026-08-28T18:04:23+00:00",
+  "generated_at": "2026-08-28T18:05:41+00:00",
   "status_policy": {
     "PASS": "The assigned executable check succeeds under its declared assumptions.",
     "CONDITIONAL": "Additional mathematical, domain, regularity, model, or empirical assumptions remain required.",
@@ -181,7 +181,7 @@
           "description": "Lean kernel checks the finite algebraic E5 chain under explicit closure and weighting hypotheses."
         }
       ],
-      "empirical_status": "NOT_TESTED",
+      "empirical_status": "EMPIRICAL_TEST_STAGE_OPEN",
       "independent_replication": "NONE",
       "falsifiers": [
         "A calibrated system satisfying the declared locking assumptions does not produce the predicted effective mass relation within stated uncertainty.",
