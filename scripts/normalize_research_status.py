@@ -79,6 +79,22 @@ replacements = (
     ("preliminary " + "observation", "experimental report"),
     ("speculative " + "extensions", "conjectural extensions"),
     (
+        '<p class="paper-kicker">Preprint · Release ',
+        '<p class="paper-kicker">DOI-archived release · ',
+    ),
+    (
+        "This landing page provides accessible summaries and citation metadata for an archival preprint.",
+        "This landing page provides accessible summaries and citation metadata for a DOI-archived research release.",
+    ),
+    (
+        "- WCT Post-Date Overlap Ledger: https://rickyjreyes.github.io/overlap/\n- Equations and definitions:",
+        "- WCT Post-Date Overlap Ledger: https://rickyjreyes.github.io/overlap/\n- Patent applications: https://rickyjreyes.github.io/patents/\n- Equations and definitions:",
+    ),
+    (
+        "- Publication metadata: https://rickyjreyes.github.io/publications.json\n- Publication traceability source:",
+        "- Publication metadata: https://rickyjreyes.github.io/publications.json\n- Patent application metadata: https://rickyjreyes.github.io/patents.json\n- Publication traceability source:",
+    ),
+    (
         j(
             "WCT begins as a mathematical framework, but several branches are being explored as ",
             "computational, photonic, memory, security, and control architectures. These are proposed ",
