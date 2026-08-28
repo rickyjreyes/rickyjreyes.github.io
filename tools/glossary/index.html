@@ -35,7 +35,7 @@
 <a class="skip-link" href="#main">Skip to glossary</a>
 <header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
 <main id="main">
-<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Glossary</p><h1>WCT glossary.</h1><p class="tool-hero-lede">Complete A–Z terminology used across the Wave Confinement Theory research corpus. Entries are concise, and terminology introduced or specifically defined in the Reyes/WCT corpus is separated from established external vocabulary. WCT-specific terminology is cross-checked paper-by-paper against all 22 archival releases.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../equations/">Equations</a><a href="../timeline/">Timeline</a><a href="../graph/">Graph</a></div></section>
+<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Glossary</p><h1>WCT glossary.</h1><p class="tool-hero-lede">Complete A–Z terminology used across the Wave Confinement Theory research corpus. Entries are concise, and terminology introduced or specifically defined in the Reyes/WCT corpus is separated from established external vocabulary. WCT-specific terminology is cross-checked paper-by-paper against all 22 archival releases.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../equations/">Equations</a><a href="../timeline/">Timeline</a><a href="../graph/">Graph</a><a href="../../priority/terminology/">Terminology priority</a></div></section>
 <section class="tool-section tool-wrap" id="glossary"><div class="tool-head"><div><p class="eyebrow">A–Z</p><h2>Terms and definitions.</h2></div><p>Search the complete corpus vocabulary or filter by concept family and terminology provenance.</p></div>
 <div class="glossary-provenance-guide" aria-label="Terminology provenance guide">
   <div><strong>Coined by Reyes</strong><span>Terminology retained in the conservative priority-backed subset where the dated corpus makes an explicit terminology-priority claim.</span></div>
@@ -54,6 +54,8 @@
 <script src="paper-terms-12-16.js"></script>
 <script src="paper-terms-17-22.js"></script>
 <script src="paper-terms-canonical.js"></script>
+<script src="paper-terms-title-aliases.js"></script>
+<script src="terminology-priority.js"></script>
 <script>
 (() => {
   const corpus=window.WCT_CORPUS||{};
@@ -86,7 +88,7 @@
       notation:t.notation||prior.notation||'',
       provenance:t.provenance||prior.provenance||provenanceFallback(t.name),
       release:t.release||prior.release||null,
-      source_title:t.source_title||prior.source_title||''
+      source_title:t.source_title||prior.source_title||'',public_record_date:t.public_record_date||prior.public_record_date||'',doi:t.doi||prior.doi||'',priority_type:t.priority_type||prior.priority_type||'',priority_record:t.priority_record||prior.priority_record||''
     });
   });
   const terms=[...byName.values()].sort((a,b)=>a.name.localeCompare(b.name,'en',{sensitivity:'base'}));
@@ -96,7 +98,7 @@
 
   function render(){
     const q=search.value.trim().toLowerCase(), fam=family.value, prov=origin.value;
-    const filtered=terms.filter(t=>(!q||[t.name,t.definition,t.family,t.notation,t.provenance,t.source_title,t.release].join(' ').toLowerCase().includes(q))&&(!fam||t.family===fam)&&(!prov||t.provenance===prov));
+    const filtered=terms.filter(t=>(!q||[t.name,t.definition,t.family,t.notation,t.provenance,t.source_title,t.release,t.public_record_date,t.doi].join(' ').toLowerCase().includes(q))&&(!fam||t.family===fam)&&(!prov||t.provenance===prov));
     root.innerHTML=''; let letter='';
     filtered.forEach(t=>{
       const first=t.name.charAt(0).toUpperCase();
@@ -106,14 +108,14 @@
       const card=document.createElement('article');
       card.className='tool-card glossary-card'; card.id=id;
       const releaseBadge=t.release?`<span class="term-release" title="${esc(t.source_title)}">Release ${String(t.release).padStart(2,'0')}</span>`:'';
-      card.innerHTML=`<div class="glossary-identity"><div class="glossary-badges"><span class="tool-tag">${esc(t.family)}</span><span class="term-origin ${originClass(t.provenance)}">${esc(t.provenance)}</span>${releaseBadge}</div><h3>${esc(t.name)}</h3><a class="glossary-anchor" href="#${id}" aria-label="Permanent link to ${esc(t.name)}"># permanent link</a></div><div class="glossary-body"><p class="glossary-definition">${esc(t.definition)}</p><div class="glossary-compact-meta">${t.notation?`<div class="glossary-notation"><strong>Notation</strong><code>${esc(t.notation)}</code></div>`:''}<a class="glossary-equation-link" href="../equations/?q=${encodeURIComponent(t.name)}">Find related equations →</a></div></div>`;
+      card.innerHTML=`<div class="glossary-identity"><div class="glossary-badges"><span class="tool-tag">${esc(t.family)}</span><span class="term-origin ${originClass(t.provenance)}">${esc(t.provenance)}</span>${releaseBadge}</div><h3>${esc(t.name)}</h3><a class="glossary-anchor" href="#${id}" aria-label="Permanent link to ${esc(t.name)}"># permanent link</a></div><div class="glossary-body"><p class="glossary-definition">${esc(t.definition)}</p><div class="glossary-compact-meta">${t.notation?`<div class="glossary-notation"><strong>Notation</strong><code>${esc(t.notation)}</code></div>`:''}${t.public_record_date?`<div class="glossary-notation"><strong>Public WCT record</strong><a href="${esc(t.priority_record||'../../priority/terminology/')}">${esc(t.public_record_date)}</a>${t.doi?`<code>${esc(t.doi)}</code>`:''}</div>`:''}<a class="glossary-equation-link" href="../equations/?q=${encodeURIComponent(t.name)}">Find related equations →</a></div></div>`;
       root.appendChild(card);
     });
     count.textContent=`${filtered.length} of ${terms.length} terms`;
   }
 
   search.addEventListener('input',render); family.addEventListener('change',render); origin.addEventListener('change',render); render();
-  const auditText=meta.audited_releases?` Audited paper-by-paper against all ${meta.audited_releases} archival releases; ${meta.audited_wct_terms||0} WCT-defined/priority terminology records are mapped to source releases.`:'';
+  const auditText=meta.audited_releases?` Audited paper-by-paper against all ${meta.audited_releases} archival releases; ${meta.terminology_priority_count||meta.audited_wct_terms||0} timestamped terminology records are mapped to source releases and DOI anchors.${meta.terminology_priority_audit?` Priority crosswalk audited ${meta.terminology_priority_audit}.`:''}`:'';
   source.textContent=complete.length?`Complete inventory generated from ${meta.source||'the canonical research corpus'}${meta.path?` · ${meta.path}`:''}.${auditText}`:'Using the embedded glossary inventory; the complete generated inventory will appear after the next site build.';
   if(location.hash&&location.hash.startsWith('#term-'))requestAnimationFrame(()=>document.querySelector(location.hash)?.scrollIntoView({block:'start'}));
 })();
