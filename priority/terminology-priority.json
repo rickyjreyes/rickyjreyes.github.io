@@ -13,13 +13,13 @@
   "lexicalAuditMethod": "Reyes public date < earliest indexed external exact-phrase occurrence; obvious hyphen/dash variants are treated as equivalent. For a canonical headword that explicitly bundles named aliases, the aliases are also checked so a synthetic combined label cannot manufacture lexical priority. Negative search results are not proof of universal historical coinage.",
   "audit": {
     "releaseCount": 22,
-    "termCount": 305,
+    "termCount": 309,
     "exactPhraseSurvivorCount": 203,
     "exactPhraseNonCoinedCount": 198,
     "strongExplicitCoinageCount": 5,
-    "priorPhraseFoundCount": 17,
+    "priorPhraseFoundCount": 15,
     "priorPhraseReclassifiedCount": 2,
-    "notInSurvivorSetCount": 102
+    "notInSurvivorSetCount": 106
   },
   "auditBatches": [
     {
@@ -61,7 +61,7 @@
       "doi": "10.5281/zenodo.15644222",
       "title": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
       "url": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
-      "termCount": 17
+      "termCount": 19
     },
     {
       "release": 2,
@@ -125,7 +125,7 @@
       "doi": "10.5281/zenodo.17459463",
       "title": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
       "url": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
-      "termCount": 14
+      "termCount": 15
     },
     {
       "release": 10,
@@ -133,7 +133,7 @@
       "doi": "10.5281/zenodo.20533537",
       "title": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
       "url": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
-      "termCount": 14
+      "termCount": 15
     },
     {
       "release": 11,
@@ -355,6 +355,28 @@
       "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
+      "term": "Regularized Denominator",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "SU(2)/SU(3) curvature-mode mapping",
+      "provenance": "WCT-defined",
+      "sourceRelease": 1,
+      "publicRecordDate": "2025-04-22",
+      "doi": "10.5281/zenodo.15644222",
+      "sourceTitle": "The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "Topological Charge Quantization",
       "provenance": "WCT-defined",
       "sourceRelease": 1,
@@ -454,7 +476,7 @@
       "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
-      "term": "Phase Distortion Scale",
+      "term": "Phase-coherence distortion scale",
       "provenance": "WCT-defined",
       "sourceRelease": 2,
       "publicRecordDate": "2025-04-26",
@@ -462,7 +484,7 @@
       "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
       "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
       "priorityType": "dated_wct_definition_or_specialization",
-      "lexicalAuditStatus": "prior_phrase_found"
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "Phase-Speed Curvature Correction Coefficient",
@@ -520,7 +542,7 @@
       "lexicalAuditStatus": "exact_phrase_survivor"
     },
     {
-      "term": "Vacuum Coherence Length",
+      "term": "Vacuum coherence scale",
       "provenance": "WCT-defined",
       "sourceRelease": 2,
       "publicRecordDate": "2025-04-26",
@@ -528,7 +550,7 @@
       "sourceTitle": "Structure and Derivation of Physical Constants through Wave Confinement",
       "sourceUrl": "https://rickyjreyes.github.io/publications/physical-constants-through-wave-confinement.html",
       "priorityType": "dated_wct_definition_or_specialization",
-      "lexicalAuditStatus": "prior_phrase_found"
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
       "term": "WCT emergent effective metric",
@@ -1839,6 +1861,17 @@
       "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
     },
     {
+      "term": "Effective Phase Velocity",
+      "provenance": "WCT-defined",
+      "sourceRelease": 9,
+      "publicRecordDate": "2025-10-27",
+      "doi": "10.5281/zenodo.17459463",
+      "sourceTitle": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/effective-mass-solenoidal-topology.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
       "term": "Geometric Index",
       "provenance": "WCT-defined",
       "sourceRelease": 9,
@@ -2027,6 +2060,17 @@
     },
     {
       "term": "Lock variational principle",
+      "provenance": "WCT-defined",
+      "sourceRelease": 10,
+      "publicRecordDate": "2025-11-11",
+      "doi": "10.5281/zenodo.20533537",
+      "sourceTitle": "Rest Energy from Density-Weighted Loop Curvature: A Covariant Locking Principle",
+      "sourceUrl": "https://rickyjreyes.github.io/publications/rest-energy-density-weighted-loop-curvature.html",
+      "priorityType": "dated_wct_definition_or_specialization",
+      "lexicalAuditStatus": "not_in_exact_phrase_survivor_set"
+    },
+    {
+      "term": "Locking Functional",
       "provenance": "WCT-defined",
       "sourceRelease": 10,
       "publicRecordDate": "2025-11-11",
