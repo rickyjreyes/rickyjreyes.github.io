@@ -115,6 +115,18 @@ REPLACEMENTS = (
         "States the control limitations that must be resolved by independent replication.",
         "States the control limitations and the independent-replication stage required for validation.",
     ),
+    # Traceability vocabulary: preserve the underlying state while describing
+    # the active evidence stage rather than turning absence into a program-level verdict.
+    ("NOT_TESTED_AS_A_UNIFIED_THEORY", "FOUNDATIONAL_CLAIMS_UNDER_EMPIRICAL_TEST"),
+    ("PRELIMINARY_OBSERVATION", "AUTHOR_REPORTED_EXPERIMENT"),
+    ("NOT_EVALUATED_AS_AGI", "ARCHITECTURE_EVALUATION_STAGE"),
+    ("NOT_TESTED_AS_A_PHYSICAL_SUBSTRATE", "PHYSICAL_SUBSTRATE_TEST_STAGE_OPEN"),
+    ("\"empirical_status\": \"NOT_TESTED\"", "\"empirical_status\": \"EMPIRICAL_TEST_STAGE_OPEN\""),
+    ("\"formalization_status\": \"PROTOTYPE_ONLY\"", "\"formalization_status\": \"PROTOTYPE_IMPLEMENTATION\""),
+    (
+        j("<div class=\"notice\"><strong>Current qualification:</strong> This is experimental research software, ", "not production cryptography.</div>"),
+        "<div class=\"notice\"><strong>Current qualification:</strong> Experimental cryptographic prototype; production-security evaluation is tracked as a separate validation stage.</div>",
+    ),
 )
 
 
