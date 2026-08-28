@@ -8,14 +8,24 @@
     document.head.appendChild(script);
   };
 
-  const loadGlossaryPriorityStyles = () => {
+  const loadGlossaryBinaryView = () => {
     if (location.pathname !== '/tools/glossary/' && location.pathname !== '/tools/glossary/index.html') return;
-    if (document.getElementById('wct-glossary-priority-readable')) return;
-    const link = document.createElement('link');
-    link.id = 'wct-glossary-priority-readable';
-    link.rel = 'stylesheet';
-    link.href = '/tools/glossary/priority-readable.css?v=20260828-readable';
-    document.head.appendChild(link);
+
+    if (!document.getElementById('wct-glossary-binary-priority')) {
+      const link = document.createElement('link');
+      link.id = 'wct-glossary-binary-priority';
+      link.rel = 'stylesheet';
+      link.href = '/tools/glossary/binary-priority.css?v=20260828-binary';
+      document.head.appendChild(link);
+    }
+
+    if (!document.getElementById('wct-glossary-binary-priority-js')) {
+      const script = document.createElement('script');
+      script.id = 'wct-glossary-binary-priority-js';
+      script.src = '/tools/glossary/binary-priority.js?v=20260828-binary';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   };
 
   const loadExternalScript = (id, src) => new Promise((resolve) => {
@@ -121,7 +131,7 @@
     window.setTimeout(() => window.ScrollTrigger?.refresh(), 300);
   };
 
-  loadGlossaryPriorityStyles();
+  loadGlossaryBinaryView();
   loadBaseRuntime();
   initializeGsap().catch(() => {
     window.__wctGsapLoading = false;
