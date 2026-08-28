@@ -4,16 +4,6 @@
   let selectedClass = '';
   const isPriorityCard = card => card.classList.contains('priority-coinage') || card.classList.contains('priority-survivor');
 
-  const setupGuide = () => {
-    const guide = document.querySelector('.glossary-provenance-guide');
-    if (!guide || guide.dataset.binaryReady) return;
-    guide.dataset.binaryReady = 'true';
-    guide.setAttribute('aria-label', 'Glossary term classes');
-    guide.innerHTML = `
-      <div><strong>My priority terms</strong><span>175 audited WCT/RCA terms whose public Reyes record predates every indexed external exact-phrase occurrence located in the terminology audit.</span></div>
-      <div><strong>General terms</strong><span>Standard external vocabulary plus WCT-used terms for which this glossary does not make an exact-phrase priority claim.</span></div>`;
-  };
-
   const setActiveTab = value => {
     selectedClass = value;
     document.querySelectorAll('#termClassTabs [role="tab"]').forEach(tab => {
@@ -25,26 +15,29 @@
     applyBinaryView();
   };
 
-  const setupFilter = () => {
-    const toolbar = document.querySelector('#glossary .tool-toolbar');
-    if (!toolbar || document.getElementById('termClassTabs')) return;
+  const setupSelector = () => {
+    const guide = document.querySelector('.glossary-provenance-guide');
+    if (!guide || guide.dataset.binaryReady) return;
+    guide.dataset.binaryReady = 'true';
+    guide.id = 'termClassTabs';
+    guide.classList.add('term-class-selector');
+    guide.setAttribute('role', 'tablist');
+    guide.setAttribute('aria-label', 'Filter glossary by term class');
+    guide.innerHTML = `
+      <button type="button" role="tab" data-value="" aria-selected="true" class="active">
+        <strong>All terms</strong>
+        <span>Show the complete glossary.</span>
+      </button>
+      <button type="button" role="tab" data-value="priority" aria-selected="false" tabindex="-1">
+        <strong>My priority terms</strong>
+        <span>175 audited WCT/RCA terms whose public Reyes record predates every indexed external exact-phrase occurrence located in the terminology audit.</span>
+      </button>
+      <button type="button" role="tab" data-value="general" aria-selected="false" tabindex="-1">
+        <strong>General terms</strong>
+        <span>Standard external vocabulary plus WCT-used terms for which this glossary does not make an exact-phrase priority claim.</span>
+      </button>`;
 
-    document.getElementById('termClass')?.remove();
-
-    const count = document.getElementById('termCount');
-    const tabs = document.createElement('div');
-    tabs.id = 'termClassTabs';
-    tabs.className = 'term-class-tabs';
-    tabs.setAttribute('role', 'tablist');
-    tabs.setAttribute('aria-label', 'Filter glossary by priority class');
-    tabs.innerHTML = `
-      <button type="button" role="tab" data-value="" aria-selected="true" class="active">All</button>
-      <button type="button" role="tab" data-value="priority" aria-selected="false" tabindex="-1">My priority</button>
-      <button type="button" role="tab" data-value="general" aria-selected="false" tabindex="-1">General</button>`;
-
-    toolbar.insertBefore(tabs, count || null);
-
-    const buttons = [...tabs.querySelectorAll('[role="tab"]')];
+    const buttons = [...guide.querySelectorAll('[role="tab"]')];
     buttons.forEach((button, index) => {
       button.addEventListener('click', () => setActiveTab(button.dataset.value || ''));
       button.addEventListener('keydown', event => {
@@ -59,6 +52,11 @@
         setActiveTab(buttons[next].dataset.value || '');
       });
     });
+  };
+
+  const cleanupOldFilter = () => {
+    document.getElementById('termClass')?.remove();
+    document.querySelector('#glossary .tool-toolbar .term-class-tabs')?.remove();
   };
 
   const decorateCards = () => {
@@ -94,8 +92,8 @@
   }
 
   const boot = () => {
-    setupGuide();
-    setupFilter();
+    cleanupOldFilter();
+    setupSelector();
     applyBinaryView();
     const grid = document.getElementById('glossaryGrid');
     if (grid && !grid.dataset.binaryObserver) {
