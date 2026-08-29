@@ -41,17 +41,20 @@
         .priority-shell .table-wrap,
         .overlap-shell .table-wrap{
           display:block !important;
-          width:100% !important;
-          max-width:100% !important;
+          width:calc(100% - 32px) !important;
+          max-width:calc(100% - 32px) !important;
           min-width:0 !important;
+          margin-left:16px !important;
+          margin-right:16px !important;
           overflow-x:auto !important;
-          overflow-y:hidden !important;
+          overflow-y:visible !important;
           -webkit-overflow-scrolling:touch;
           overscroll-behavior-x:contain;
+          overscroll-behavior-y:auto;
           scrollbar-gutter:stable;
           scrollbar-width:thin;
           scrollbar-color:rgba(103,212,255,.5) rgba(255,255,255,.045);
-          touch-action:pan-x pan-y;
+          touch-action:auto;
         }
         .priority-shell .table-wrap::-webkit-scrollbar,
         .overlap-shell .table-wrap::-webkit-scrollbar{height:11px}
@@ -60,7 +63,7 @@
         .priority-shell .table-wrap::-webkit-scrollbar-thumb,
         .overlap-shell .table-wrap::-webkit-scrollbar-thumb{background:rgba(103,212,255,.42);border-radius:999px}
 
-        .priority-shell .patent-wrap{max-width:1120px !important}
+        .priority-shell .patent-wrap{max-width:1088px !important}
         .priority-shell .patent-table{min-width:960px !important}
         .priority-shell .convergence-table{min-width:1180px !important}
         .priority-shell .candidate-table{min-width:1040px !important}
@@ -83,6 +86,13 @@
         .overlap-shell td{padding-left:12px !important;padding-right:12px !important}
 
         @media(max-width:760px){
+          .priority-shell .table-wrap,
+          .overlap-shell .table-wrap{
+            width:calc(100% - 20px) !important;
+            max-width:calc(100% - 20px) !important;
+            margin-left:10px !important;
+            margin-right:10px !important;
+          }
           .priority-shell .patent-table{min-width:900px !important}
           .priority-shell .convergence-table{min-width:1080px !important}
           .priority-shell .candidate-table{min-width:960px !important}
@@ -99,12 +109,22 @@
 
     const enableNestedScroll = () => {
       document.querySelectorAll('.priority-shell .table-wrap, .overlap-shell .table-wrap').forEach((wrap) => {
-        wrap.setAttribute('data-lenis-prevent', '');
-        wrap.setAttribute('data-lenis-prevent-wheel', '');
-        wrap.setAttribute('data-lenis-prevent-touch', '');
+        wrap.removeAttribute('data-lenis-prevent');
+        wrap.removeAttribute('data-lenis-prevent-wheel');
+        wrap.removeAttribute('data-lenis-prevent-touch');
         wrap.tabIndex = wrap.tabIndex >= 0 ? wrap.tabIndex : 0;
         wrap.setAttribute('role', 'region');
-        if (!wrap.getAttribute('aria-label')) wrap.setAttribute('aria-label', 'Scrollable data table');
+        if (!wrap.getAttribute('aria-label')) wrap.setAttribute('aria-label', 'Horizontally scrollable data table');
+
+        if (!wrap.dataset.wctWheelBound) {
+          wrap.addEventListener('wheel', (event) => {
+            if (!event.shiftKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+            if (wrap.scrollWidth <= wrap.clientWidth) return;
+            event.preventDefault();
+            wrap.scrollLeft += event.deltaY;
+          }, { passive: false });
+          wrap.dataset.wctWheelBound = 'true';
+        }
       });
     };
 
