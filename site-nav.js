@@ -110,7 +110,7 @@
     const enableNestedScroll = () => {
       document.querySelectorAll('.priority-shell .table-wrap, .overlap-shell .table-wrap').forEach((wrap) => {
         wrap.removeAttribute('data-lenis-prevent');
-        wrap.removeAttribute('data-lenis-prevent-wheel');
+        wrap.setAttribute('data-lenis-prevent-wheel', '');
         wrap.removeAttribute('data-lenis-prevent-touch');
         wrap.tabIndex = wrap.tabIndex >= 0 ? wrap.tabIndex : 0;
         wrap.setAttribute('role', 'region');
@@ -118,10 +118,22 @@
 
         if (!wrap.dataset.wctWheelBound) {
           wrap.addEventListener('wheel', (event) => {
-            if (!event.shiftKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
-            if (wrap.scrollWidth <= wrap.clientWidth) return;
+            const scale = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1;
+            const dx = event.deltaX * scale;
+            const dy = event.deltaY * scale;
+            const horizontalIntent = event.shiftKey || Math.abs(dx) > Math.abs(dy);
+
             event.preventDefault();
-            wrap.scrollLeft += event.deltaY;
+            event.stopPropagation();
+
+            if (horizontalIntent && wrap.scrollWidth > wrap.clientWidth) {
+              wrap.scrollLeft += event.shiftKey && Math.abs(dx) <= Math.abs(dy) ? dy : dx;
+              return;
+            }
+
+            const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+            const nextY = Math.max(0, Math.min(maxY, window.scrollY + dy));
+            window.scrollTo({ top: nextY, left: window.scrollX, behavior: 'auto' });
           }, { passive: false });
           wrap.dataset.wctWheelBound = 'true';
         }
