@@ -259,7 +259,7 @@
         document.documentElement.classList.add('wct-magnet-moving');
         lenis.scrollTo(stops[index].y, {
           duration,
-          lock:true,
+          lock:false,
           force:true,
           easing:(t) => 1 - Math.pow(1 - t, 4),
           onComplete:() => {
@@ -386,6 +386,7 @@
       const style = document.createElement('style');
       style.id = 'wct-magnet-parallax-style';
       style.textContent = `
+        html{scrollbar-gutter:stable}
         main section,main article,main details,main [class*="card"]{position:relative}
         .wct-parallax-child{will-change:transform;transform:translateZ(0)}
         html.wct-magnet-moving{scroll-behavior:auto!important}
