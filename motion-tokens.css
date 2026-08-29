@@ -53,3 +53,29 @@
   --leading-heading: 1.04;
   --leading-body: 1.65;
 }
+
+/* Keep the primary navigation visually static while magnetic scrolling is active. */
+html.wct-magnet-moving #site-nav > a,
+html.wct-magnet-moving #site-nav > .nav-group > .nav-trigger,
+html.wct-magnet-moving #site-nav > a:hover,
+html.wct-magnet-moving #site-nav > a:focus-visible,
+html.wct-magnet-moving #site-nav > .nav-group > .nav-trigger:hover,
+html.wct-magnet-moving #site-nav > .nav-group > .nav-trigger:focus-visible {
+  color: var(--muted, #9cb0c1) !important;
+  font-size: .82rem !important;
+  font-weight: 560 !important;
+  letter-spacing: .012em !important;
+  transition: none !important;
+}
+
+html.wct-magnet-moving #site-nav > a.is-active,
+html.wct-magnet-moving #site-nav > a[aria-current="page"],
+html.wct-magnet-moving #site-nav > .nav-group.is-active > .nav-trigger {
+  color: var(--text, #e9f0f6) !important;
+}
+
+html.wct-magnet-moving #site-nav > a:not(.is-active):not([aria-current="page"])::after,
+html.wct-magnet-moving #site-nav > .nav-group:not(.is-active) > .nav-trigger::after {
+  content: none !important;
+  opacity: 0 !important;
+}
