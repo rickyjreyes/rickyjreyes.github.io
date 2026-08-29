@@ -107,10 +107,10 @@
       document.head.appendChild(style);
     }
 
-    const enableNestedScroll = () => {
+    const enableTableScroll = () => {
       document.querySelectorAll('.priority-shell .table-wrap, .overlap-shell .table-wrap').forEach((wrap) => {
         wrap.removeAttribute('data-lenis-prevent');
-        wrap.setAttribute('data-lenis-prevent-wheel', '');
+        wrap.removeAttribute('data-lenis-prevent-wheel');
         wrap.removeAttribute('data-lenis-prevent-touch');
         wrap.tabIndex = wrap.tabIndex >= 0 ? wrap.tabIndex : 0;
         wrap.setAttribute('role', 'region');
@@ -118,22 +118,11 @@
 
         if (!wrap.dataset.wctWheelBound) {
           wrap.addEventListener('wheel', (event) => {
-            const scale = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1;
-            const dx = event.deltaX * scale;
-            const dy = event.deltaY * scale;
-            const horizontalIntent = event.shiftKey || Math.abs(dx) > Math.abs(dy);
-
+            if (!event.shiftKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+            if (wrap.scrollWidth <= wrap.clientWidth) return;
             event.preventDefault();
             event.stopPropagation();
-
-            if (horizontalIntent && wrap.scrollWidth > wrap.clientWidth) {
-              wrap.scrollLeft += event.shiftKey && Math.abs(dx) <= Math.abs(dy) ? dy : dx;
-              return;
-            }
-
-            const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-            const nextY = Math.max(0, Math.min(maxY, window.scrollY + dy));
-            window.scrollTo({ top: nextY, left: window.scrollX, behavior: 'auto' });
+            wrap.scrollLeft += event.deltaY;
           }, { passive: false });
           wrap.dataset.wctWheelBound = 'true';
         }
@@ -141,10 +130,166 @@
     };
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', enableNestedScroll, { once: true });
+      document.addEventListener('DOMContentLoaded', enableTableScroll, { once: true });
     } else {
-      enableNestedScroll();
+      enableTableScroll();
     }
+  };
+
+  const initializeMagneticScroll = () => {
+    if (window.__wctMagneticScrollReady) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
+    let attempts = 0;
+    const connect = () => {
+      const lenis = window.__wctLenis;
+      if (!lenis) {
+        if (attempts++ < 160) window.setTimeout(connect, 50);
+        return;
+      }
+      if (window.__wctMagneticScrollReady) return;
+      window.__wctMagneticScrollReady = true;
+
+      let locked = false;
+      let impulse = 0;
+      let lastWheelAt = 0;
+      let unlockTimer = 0;
+
+      const headerOffset = () => window.matchMedia('(max-width:760px)').matches ? 134 : 142;
+      const pageY = (node) => node.getBoundingClientRect().top + window.scrollY;
+      const visible = (node) => {
+        const style = window.getComputedStyle(node);
+        return style.display !== 'none' && style.visibility !== 'hidden' && node.getBoundingClientRect().height > 96;
+      };
+
+      const getBlocks = () => {
+        const main = document.querySelector('main');
+        if (!main) return [];
+        const blocks = [...main.children].filter((node) =>
+          node.matches('header,section,article,details,.hero,.section,.status-strip,[data-magnetic-block]') &&
+          !node.matches('[data-magnetic-ignore]') &&
+          visible(node)
+        );
+        const footer = document.querySelector('body > footer.site-footer');
+        if (footer && visible(footer)) blocks.push(footer);
+        return blocks;
+      };
+
+      const metrics = (node) => {
+        const top = pageY(node);
+        const height = node.getBoundingClientRect().height;
+        return { node, top, height, bottom: top + height };
+      };
+
+      const currentIndex = (blocks) => {
+        const probe = window.scrollY + headerOffset() + Math.min(window.innerHeight * .34, 280);
+        let best = 0;
+        let bestDistance = Infinity;
+        blocks.forEach((node, i) => {
+          const m = metrics(node);
+          if (probe >= m.top && probe < m.bottom) {
+            best = i;
+            bestDistance = 0;
+            return;
+          }
+          if (bestDistance !== 0) {
+            const distance = Math.min(Math.abs(probe - m.top), Math.abs(probe - m.bottom));
+            if (distance < bestDistance) {
+              bestDistance = distance;
+              best = i;
+            }
+          }
+        });
+        return best;
+      };
+
+      const shouldFreeScrollInsideLongBlock = (block, direction) => {
+        const m = metrics(block);
+        const offset = headerOffset();
+        const viewportTop = window.scrollY + offset;
+        const viewportBottom = window.scrollY + window.innerHeight - 24;
+        const longBlock = m.height > Math.max(window.innerHeight * 1.38, 980);
+        if (!longBlock) return false;
+        const edgeBand = Math.min(window.innerHeight * .24, 220);
+        if (direction > 0) return (m.bottom - viewportBottom) > edgeBand;
+        return (viewportTop - m.top) > edgeBand;
+      };
+
+      const scrollToBlock = (node) => {
+        const destination = Math.max(0, pageY(node) - headerOffset() - 4);
+        locked = true;
+        window.clearTimeout(unlockTimer);
+        lenis.scrollTo(destination, {
+          duration: .92,
+          easing: (t) => 1 - Math.pow(1 - t, 4),
+          lock: true,
+          force: true,
+          onComplete: () => {
+            locked = false;
+            impulse = 0;
+          }
+        });
+        unlockTimer = window.setTimeout(() => {
+          locked = false;
+          impulse = 0;
+        }, 1150);
+      };
+
+      window.addEventListener('wheel', (event) => {
+        if (event.ctrlKey || event.metaKey) return;
+        const target = event.target instanceof Element ? event.target : null;
+        if (target?.closest('input,textarea,select,[contenteditable="true"],.nav-dropdown,.nav-dropdown-shell,[data-magnetic-ignore]')) return;
+
+        const table = target?.closest('.table-wrap,.status-table-wrap,.timeline-scroll,[data-scroll]');
+        const horizontalIntent = event.shiftKey || Math.abs(event.deltaX) > Math.abs(event.deltaY) * .9;
+        if (table && horizontalIntent) return;
+        if (horizontalIntent) return;
+        if (Math.abs(event.deltaY) < .5) return;
+
+        const blocks = getBlocks();
+        if (blocks.length < 2) return;
+
+        const now = performance.now();
+        if (now - lastWheelAt > 190) impulse = 0;
+        lastWheelAt = now;
+
+        if (locked) {
+          event.preventDefault();
+          return;
+        }
+
+        const direction = event.deltaY > 0 ? 1 : -1;
+        const index = currentIndex(blocks);
+        const current = blocks[index];
+
+        if (shouldFreeScrollInsideLongBlock(current, direction)) {
+          impulse = 0;
+          return;
+        }
+
+        event.preventDefault();
+        impulse += event.deltaY;
+
+        const threshold = event.deltaMode === 1 ? 9 : 34;
+        if (Math.abs(impulse) < threshold) return;
+
+        const nextIndex = Math.max(0, Math.min(blocks.length - 1, index + direction));
+        if (nextIndex === index) {
+          impulse = 0;
+          lenis.scrollTo(direction > 0 ? document.documentElement.scrollHeight : 0, {
+            duration: .7,
+            easing: (t) => 1 - Math.pow(1 - t, 3)
+          });
+          return;
+        }
+
+        impulse = 0;
+        scrollToBlock(blocks[nextIndex]);
+      }, { passive: false, capture: true });
+    };
+
+    connect();
   };
 
   const loadExternalScript = (id, src) => new Promise((resolve) => {
@@ -253,6 +398,7 @@
   loadGlossaryBinaryView();
   normalizeWideRegistryTables();
   loadBaseRuntime();
+  initializeMagneticScroll();
   initializeGsap().catch(() => {
     window.__wctGsapLoading = false;
   });
