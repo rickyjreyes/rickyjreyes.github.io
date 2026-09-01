@@ -216,8 +216,8 @@
     return stops;
   };
 
-  const initializeDiscreteMagnetScroll = () => {
-    if (window.__wctDiscreteMagnetReady) return;
+  const initializeFlexibleMagnetScroll = () => {
+    if (window.__wctFlexibleMagnetReady) return;
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (matchMedia('(pointer: coarse)').matches) return;
 
@@ -228,113 +228,82 @@
         if (attempts++ < 180) setTimeout(connect, 50);
         return;
       }
-      if (window.__wctDiscreteMagnetReady) return;
-      window.__wctDiscreteMagnetReady = true;
+      if (window.__wctFlexibleMagnetReady) return;
+      window.__wctFlexibleMagnetReady = true;
 
-      let locked = false;
-      let unlockTimer = 0;
       let idleTimer = 0;
-      let lastWheel = 0;
+      let releaseTimer = 0;
+      let snapping = false;
+      let direction = 0;
+      let lastY = lenis.animatedScroll ?? window.scrollY;
 
       const currentScroll = () => lenis.animatedScroll ?? window.scrollY;
+      const captureRadius = () => Math.min(88, Math.max(48, window.innerHeight * .075));
 
-      const nearestIndex = (stops) => {
-        const y = currentScroll();
-        let best = 0;
-        let distance = Infinity;
-        stops.forEach((stop, index) => {
-          const d = Math.abs(y - stop.y);
-          if (d < distance) {
-            distance = d;
-            best = index;
-          }
-        });
-        return best;
+      const nearestDirectionalStop = (stops, y) => {
+        const directionalSlop = 18;
+        let candidates = stops;
+        if (direction > 0) candidates = stops.filter((stop) => stop.y >= y - directionalSlop);
+        if (direction < 0) candidates = stops.filter((stop) => stop.y <= y + directionalSlop);
+        if (!candidates.length) return null;
+
+        return candidates.reduce((best, stop) => {
+          if (!best) return stop;
+          return Math.abs(stop.y - y) < Math.abs(best.y - y) ? stop : best;
+        }, null);
       };
 
-      const goTo = (stops, index, duration = .72) => {
-        if (!stops[index]) return;
-        locked = true;
-        clearTimeout(unlockTimer);
+      const release = () => {
+        snapping = false;
+        document.documentElement.classList.remove('wct-magnet-moving');
+      };
+
+      const settleNearStop = () => {
+        if (snapping) return;
+        const stops = collectMagneticStops();
+        if (stops.length < 2) return;
+
+        const y = currentScroll();
+        const target = nearestDirectionalStop(stops, y);
+        if (!target) return;
+
+        const distance = Math.abs(target.y - y);
+        if (distance <= 4 || distance > captureRadius()) return;
+
+        snapping = true;
+        clearTimeout(releaseTimer);
         document.documentElement.classList.add('wct-magnet-moving');
-        lenis.scrollTo(stops[index].y, {
-          duration,
+        lenis.scrollTo(target.y, {
+          duration:.32,
           lock:false,
           force:true,
           easing:(t) => 1 - Math.pow(1 - t, 4),
-          onComplete:() => {
-            locked = false;
-            document.documentElement.classList.remove('wct-magnet-moving');
-          }
+          onComplete:release
         });
-        unlockTimer = setTimeout(() => {
-          locked = false;
-          document.documentElement.classList.remove('wct-magnet-moving');
-        }, Math.max(900, duration * 1400));
+        releaseTimer = setTimeout(release, 650);
       };
 
-      const isHorizontalGesture = (event) => {
-        const target = event.target instanceof Element ? event.target : null;
-        const table = target?.closest('.table-wrap,.status-table-wrap,.timeline-scroll,[data-scroll]');
-        return !!table && (event.shiftKey || Math.abs(event.deltaX) > Math.abs(event.deltaY));
-      };
-
-      window.addEventListener('wheel', (event) => {
-        if (event.ctrlKey || event.metaKey || isHorizontalGesture(event)) return;
-        if (Math.abs(event.deltaY) < .5) return;
-
-        const target = event.target instanceof Element ? event.target : null;
-        if (target?.closest('input,textarea,select,[contenteditable="true"],.nav-dropdown,.nav-dropdown-shell')) return;
-
-        const stops = collectMagneticStops();
-        if (stops.length < 2) return;
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        if (locked) return;
-
-        const now = performance.now();
-        if (now - lastWheel < 55) return;
-        lastWheel = now;
-
-        const direction = event.deltaY > 0 ? 1 : -1;
-        const y = currentScroll();
-        const nearest = nearestIndex(stops);
-        let index = nearest;
-
-        if (Math.abs(y - stops[nearest].y) < 24) {
-          index = nearest + direction;
-        } else if (direction > 0) {
-          index = stops.findIndex((stop) => stop.y > y + 12);
-          if (index < 0) index = stops.length - 1;
-        } else {
-          index = [...stops].map((stop, i) => ({...stop, i})).reverse().find((stop) => stop.y < y - 12)?.i ?? 0;
-        }
-
-        index = Math.max(0, Math.min(stops.length - 1, index));
-        goTo(stops, index);
-      }, { passive:false, capture:true });
-
-      const snapNearestAfterScrollbarDrag = () => {
-        if (locked) return;
-        const stops = collectMagneticStops();
-        if (stops.length < 2) return;
-        const index = nearestIndex(stops);
-        const distance = Math.abs(currentScroll() - stops[index].y);
-        if (distance > 6 && distance < Math.min(window.innerHeight * .65, 620)) {
-          goTo(stops, index, .5);
-        }
+      const scheduleSettle = () => {
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(settleNearStop, 260);
       };
 
       lenis.on('scroll', () => {
-        if (locked) return;
-        clearTimeout(idleTimer);
-        idleTimer = setTimeout(snapNearestAfterScrollbarDrag, 160);
+        const y = currentScroll();
+        const delta = y - lastY;
+        if (Math.abs(delta) > .25) direction = delta > 0 ? 1 : -1;
+        lastY = y;
+        if (!snapping) scheduleSettle();
       });
+
+      window.addEventListener('wheel', (event) => {
+        if (Math.abs(event.deltaY) > 1) direction = event.deltaY > 0 ? 1 : -1;
+      }, { passive:true, capture:true });
 
       window.addEventListener('resize', () => {
         clearTimeout(idleTimer);
+        clearTimeout(releaseTimer);
+        release();
       }, { passive:true });
     };
 
@@ -429,7 +398,7 @@
   loadGlossaryBinaryView();
   normalizeWideRegistryTables();
   loadBaseRuntime();
-  initializeDiscreteMagnetScroll();
+  initializeFlexibleMagnetScroll();
   initializeParallax().catch(() => {
     window.__wctMagnetParallaxLoading = false;
   });
