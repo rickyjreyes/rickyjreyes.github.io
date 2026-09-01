@@ -9,6 +9,7 @@ on:
       - "data/terminology_exact_phrase_audit.json"
       - "overlap/overlap-data-*.js"
       - "scripts/build_scholar_site.py"
+      - "scripts/patch_repository_publications.py"
       - "scripts/build_equation_explorer.py"
       - "scripts/patch_lean_definitions.py"
       - "scripts/refine_equation_definitions.py"
@@ -39,6 +40,7 @@ on:
       - "data/terminology_exact_phrase_audit.json"
       - "overlap/overlap-data-*.js"
       - "scripts/build_scholar_site.py"
+      - "scripts/patch_repository_publications.py"
       - "scripts/build_equation_explorer.py"
       - "scripts/patch_lean_definitions.py"
       - "scripts/refine_equation_definitions.py"
@@ -95,6 +97,9 @@ jobs:
 
       - name: Generate publication pages and metadata
         run: python scripts/build_scholar_site.py
+
+      - name: Preserve repository-backed current studies
+        run: python scripts/patch_repository_publications.py
 
       - name: Generate compiled registry and canonical equation explorer
         run: python scripts/build_equation_explorer.py
