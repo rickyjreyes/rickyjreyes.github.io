@@ -23,12 +23,24 @@
         "Develops a curvature-feedback field model in which nonlinear wave dynamics, entropy regulation, phase organization, and resonance stabilize localized structure.",
         "Proposes mechanisms for the emergence of mass, force, and effective spacetime geometry."
       ],
-      "evidence": ["Analytical derivation", "Conceptual architecture"],
+      "evidence": [
+        "Analytical derivation",
+        "Conceptual architecture"
+      ],
       "limitations": "This release defines the foundational WCT proposal. Independent mathematical review and empirical testing are tracked as separate validation stages for its mechanisms and derivations.",
       "related": [
-        {"slug": "phase-flux-field", "relation": "Axiomatic substrate"},
-        {"slug": "effective-mass-solenoidal-topology", "relation": "Extends to mass"},
-        {"slug": "hard-upper-bound-spatial-dimensionality", "relation": "Stability bound"}
+        {
+          "slug": "phase-flux-field",
+          "relation": "Axiomatic substrate"
+        },
+        {
+          "slug": "effective-mass-solenoidal-topology",
+          "relation": "Extends to mass"
+        },
+        {
+          "slug": "hard-upper-bound-spatial-dimensionality",
+          "relation": "Stability bound"
+        }
       ]
     },
     {
@@ -46,16 +58,21 @@
         "Develops mappings between confinement parameters, harmonic organization, and information constraints.",
         "Proposes candidate structural origins for selected physical constants within the WCT framework."
       ],
-      "evidence": ["Analytical derivation"],
+      "evidence": [
+        "Analytical derivation"
+      ],
       "limitations": "The mappings are exploratory structural proposals; comparison with measured constants, uncertainty analysis, and independent validation are tracked separately.",
       "related": [
-        {"slug": "geometry-of-resonance", "relation": "Foundation"}
+        {
+          "slug": "geometry-of-resonance",
+          "relation": "Foundation"
+        }
       ]
     },
     {
       "n": 3,
       "slug": "p-vs-np-curvature-bounded-wave-computation",
-      "title": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
+      "title": "Part I — P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "date": "2025-05-07",
       "display_date": "May 7, 2025",
       "doi": "10.5281/zenodo.17743607",
@@ -67,11 +84,20 @@
         "Defines a curvature-bounded wave-computation model with explicit physical and geometric constraints.",
         "Establishes a model-relative separation argument for P_WCC and NP_WCC."
       ],
-      "evidence": ["Analytical derivation", "Conceptual architecture"],
+      "evidence": [
+        "Analytical derivation",
+        "Conceptual architecture"
+      ],
       "limitations": "The separation is explicitly model-relative to P_WCC and NP_WCC under the stated constraints; the unrestricted classical P versus NP problem is outside the scope of this result.",
       "related": [
-        {"slug": "discrete-wave-constrained-computation", "relation": "Related model"},
-        {"slug": "classical-p-vs-np-ill-posed", "relation": "Related critique"}
+        {
+          "slug": "discrete-wave-constrained-computation",
+          "relation": "Related model"
+        },
+        {
+          "slug": "classical-p-vs-np-ill-posed",
+          "relation": "Related critique"
+        }
       ]
     },
     {
@@ -90,10 +116,15 @@
         "Documents perturbation and relocking behavior and spectral measurements.",
         "States the control limitations and the independent-replication stage required for validation."
       ],
-      "evidence": ["Laboratory measurement"],
+      "evidence": [
+        "Laboratory measurement"
+      ],
       "limitations": "This experimental report identifies its control limitations explicitly; independent replication is tracked as the next validation stage.",
       "related": [
-        {"slug": "photodiode-prediction-protocol-ledger", "relation": "Related experiment"}
+        {
+          "slug": "photodiode-prediction-protocol-ledger",
+          "relation": "Related experiment"
+        }
       ]
     },
     {
@@ -112,11 +143,19 @@
         "Specifies Lyapunov-like stabilization as a bounding mechanism.",
         "Frames the result as a design framework and research specification."
       ],
-      "evidence": ["Conceptual architecture"],
+      "evidence": [
+        "Conceptual architecture"
+      ],
       "limitations": "Full implementation and evaluation of the architecture are tracked as separate development stages.",
       "related": [
-        {"slug": "geometry-of-resonance", "relation": "Foundation"},
-        {"slug": "recursive-ai-drift-audit", "relation": "Related AI note"}
+        {
+          "slug": "geometry-of-resonance",
+          "relation": "Foundation"
+        },
+        {
+          "slug": "recursive-ai-drift-audit",
+          "relation": "Related AI note"
+        }
       ]
     },
     {
@@ -134,11 +173,19 @@
         "Argues that stable curvature-locked confinement is restricted to at most three spatial dimensions.",
         "Combines Sobolev control, Lyapunov scaling, entropy localization, topology, and curvature feedback into convergent routes toward the same bound."
       ],
-      "evidence": ["Analytical derivation"],
+      "evidence": [
+        "Analytical derivation"
+      ],
       "limitations": "The bound is derived within the stated WCT assumptions; its scope is conditional on that framework and its modeling choices.",
       "related": [
-        {"slug": "geometry-of-resonance", "relation": "Foundation"},
-        {"slug": "phase-flux-field", "relation": "Substrate"}
+        {
+          "slug": "geometry-of-resonance",
+          "relation": "Foundation"
+        },
+        {
+          "slug": "phase-flux-field",
+          "relation": "Substrate"
+        }
       ]
     },
     {
@@ -157,11 +204,19 @@
         "Develops conservation and causal-flow constraints and a finite-wavenumber Lyapunov band-pass.",
         "Constructs shell quantization, a zero-wave invariant state, and a D4-to-continuum limit."
       ],
-      "evidence": ["Analytical derivation"],
+      "evidence": [
+        "Analytical derivation"
+      ],
       "limitations": "This is an axiomatic foundational construction; physical correspondence is evaluated through separate empirical tests.",
       "related": [
-        {"slug": "geometry-of-resonance", "relation": "Builds toward"},
-        {"slug": "self-emergent-fourier-cymatics", "relation": "Numerical support"}
+        {
+          "slug": "geometry-of-resonance",
+          "relation": "Builds toward"
+        },
+        {
+          "slug": "self-emergent-fourier-cymatics",
+          "relation": "Numerical support"
+        }
       ]
     },
     {
@@ -180,10 +235,15 @@
         "Connects spectral entropy reduction, annular Fourier support, mode competition, and Lyapunov descent.",
         "Relates the dynamics to Swift–Hohenberg-type behavior."
       ],
-      "evidence": ["Numerical simulation"],
+      "evidence": [
+        "Numerical simulation"
+      ],
       "limitations": "Findings are based on numerical simulation of specific model dynamics and are subject to the chosen models, parameters, and discretization.",
       "related": [
-        {"slug": "phase-flux-field", "relation": "Finite-k foundation"}
+        {
+          "slug": "phase-flux-field",
+          "relation": "Finite-k foundation"
+        }
       ]
     },
     {
@@ -201,11 +261,19 @@
         "Develops a geometric model relating loop geometry, phase delay, curvature, and torsion to effective mass.",
         "Connects confinement geometry to inertial behavior and cavity-scale predictions."
       ],
-      "evidence": ["Analytical derivation"],
+      "evidence": [
+        "Analytical derivation"
+      ],
       "limitations": "The model is a geometric WCT proposal with cavity-scale predictions that define direct experimental tests.",
       "related": [
-        {"slug": "geometry-of-resonance", "relation": "Foundation"},
-        {"slug": "rest-energy-density-weighted-loop-curvature", "relation": "Refines mass relation"}
+        {
+          "slug": "geometry-of-resonance",
+          "relation": "Foundation"
+        },
+        {
+          "slug": "rest-energy-density-weighted-loop-curvature",
+          "relation": "Refines mass relation"
+        }
       ]
     },
     {
@@ -224,11 +292,19 @@
         "Defines density-weighted geometric averages, a locking action, and stationarity conditions.",
         "Proposes the mass relation E_rest = ℏ c k_eff."
       ],
-      "evidence": ["Analytical derivation"],
+      "evidence": [
+        "Analytical derivation"
+      ],
       "limitations": "The locking principle and proposed mass relation are derived within WCT; independent mathematical and empirical verification are tracked as separate validation stages.",
       "related": [
-        {"slug": "effective-mass-solenoidal-topology", "relation": "Earlier mass model"},
-        {"slug": "logarithmic-curvature-flow-lepton-spectrum", "relation": "Applied to leptons"}
+        {
+          "slug": "effective-mass-solenoidal-topology",
+          "relation": "Earlier mass model"
+        },
+        {
+          "slug": "logarithmic-curvature-flow-lepton-spectrum",
+          "relation": "Applied to leptons"
+        }
       ]
     },
     {
@@ -246,16 +322,22 @@
         "Derives detectability conditions for WCT-motivated log-energy or ghost-mode modulations under JUNO resolution.",
         "Provides amplitude-damping estimates as a falsifiable, detector-facing forecast."
       ],
-      "evidence": ["Analytical derivation", "Numerical simulation"],
+      "evidence": [
+        "Analytical derivation",
+        "Numerical simulation"
+      ],
       "limitations": "This is a detector-resolution forecast whose conclusions depend on the assumed signal model and detector parameters; experimental measurement is a separate validation stage.",
       "related": [
-        {"slug": "geometry-of-resonance", "relation": "Foundation"}
+        {
+          "slug": "geometry-of-resonance",
+          "relation": "Foundation"
+        }
       ]
     },
     {
       "n": 12,
       "slug": "discrete-wave-constrained-computation",
-      "title": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
+      "title": "Part II — Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "date": "2025-11-26",
       "display_date": "November 26, 2025",
       "doi": "10.5281/zenodo.17732642",
@@ -267,17 +349,25 @@
         "Defines a discrete wave-constrained computation model.",
         "Studies encoding, simulation, and equivalence conditions relative to classical Turing computation for P and NP."
       ],
-      "evidence": ["Analytical derivation"],
+      "evidence": [
+        "Analytical derivation"
+      ],
       "limitations": "Equivalence results hold under the stated discrete model and its encoding assumptions.",
       "related": [
-        {"slug": "p-vs-np-curvature-bounded-wave-computation", "relation": "Related model"},
-        {"slug": "classical-p-vs-np-ill-posed", "relation": "Related critique"}
+        {
+          "slug": "p-vs-np-curvature-bounded-wave-computation",
+          "relation": "Related model"
+        },
+        {
+          "slug": "classical-p-vs-np-ill-posed",
+          "relation": "Related critique"
+        }
       ]
     },
     {
       "n": 13,
       "slug": "classical-p-vs-np-ill-posed",
-      "title": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
+      "title": "Part III — The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "date": "2025-12-01",
       "display_date": "December 1, 2025",
       "doi": "10.5281/zenodo.17783074",
@@ -289,11 +379,20 @@
         "Argues that classical complexity theory omits physical resource and interface constraints relevant to realizable computation.",
         "Proposes reframing complexity claims through explicit computational substrates and resource models."
       ],
-      "evidence": ["Literature audit", "Conceptual architecture"],
+      "evidence": [
+        "Literature audit",
+        "Conceptual architecture"
+      ],
       "limitations": "This is a critical and philosophical technical note; it reframes the problem rather than resolving the classical question.",
       "related": [
-        {"slug": "p-vs-np-curvature-bounded-wave-computation", "relation": "Related model"},
-        {"slug": "discrete-wave-constrained-computation", "relation": "Related model"}
+        {
+          "slug": "p-vs-np-curvature-bounded-wave-computation",
+          "relation": "Related model"
+        },
+        {
+          "slug": "discrete-wave-constrained-computation",
+          "relation": "Related model"
+        }
       ]
     },
     {
@@ -311,11 +410,19 @@
         "Develops a curvature-harmonic model for Koide-like fermion mass triplets.",
         "Relates loop geometry, harmonic sidebands, and scale-free ratios to the charged-lepton value Q = 2/3."
       ],
-      "evidence": ["Analytical derivation"],
+      "evidence": [
+        "Analytical derivation"
+      ],
       "limitations": "The result is a WCT phenomenological derivation; independent confirmation and comparison against Standard Model mass-spectrum treatments are tracked separately.",
       "related": [
-        {"slug": "rest-energy-density-weighted-loop-curvature", "relation": "Mass-locking basis"},
-        {"slug": "logarithmic-curvature-flow-lepton-spectrum", "relation": "Related lepton model"}
+        {
+          "slug": "rest-energy-density-weighted-loop-curvature",
+          "relation": "Mass-locking basis"
+        },
+        {
+          "slug": "logarithmic-curvature-flow-lepton-spectrum",
+          "relation": "Related lepton model"
+        }
       ]
     },
     {
@@ -334,11 +441,16 @@
         "Defines reproducibility requirements and the controls needed for falsification.",
         "Separates predeclared predictions from later analysis."
       ],
-      "evidence": ["Protocol design"],
+      "evidence": [
+        "Protocol design"
+      ],
       "limitations": "This is a predeclared protocol and prediction ledger; it specifies the controls required for falsification rather than reporting confirmed results.",
       "repo": "https://github.com/rickyjreyes/photodiode",
       "related": [
-        {"slug": "long-lived-photon-resonance-water-cavities", "relation": "Related experiment"}
+        {
+          "slug": "long-lived-photon-resonance-water-cavities",
+          "relation": "Related experiment"
+        }
       ]
     },
     {
@@ -357,11 +469,19 @@
         "Connects the transformed dynamics to viscous Hamilton–Jacobi and Cole–Hopf structures.",
         "Develops a filament-localization and loop-geometry model for the charged-lepton mass spectrum."
       ],
-      "evidence": ["Analytical derivation"],
+      "evidence": [
+        "Analytical derivation"
+      ],
       "limitations": "The lepton-spectrum model is a WCT geometric derivation and awaits independent validation.",
       "related": [
-        {"slug": "rest-energy-density-weighted-loop-curvature", "relation": "Mass-locking basis"},
-        {"slug": "wct-koide-mass-relation", "relation": "Related lepton model"}
+        {
+          "slug": "rest-energy-density-weighted-loop-curvature",
+          "relation": "Mass-locking basis"
+        },
+        {
+          "slug": "wct-koide-mass-relation",
+          "relation": "Related lepton model"
+        }
       ]
     },
     {
@@ -380,10 +500,16 @@
         "Develops transport proxies, actuator allocation, safety margins, and energy-accounting gates.",
         "Specifies simulated handoff logic for the control architecture."
       ],
-      "evidence": ["Conceptual architecture", "Numerical simulation"],
+      "evidence": [
+        "Conceptual architecture",
+        "Numerical simulation"
+      ],
       "limitations": "The work is an engineering control architecture with simulated logic; it remains distinct from demonstrating physical wall-power independence.",
       "related": [
-        {"slug": "resonance-confinement-architecture", "relation": "Related control architecture"}
+        {
+          "slug": "resonance-confinement-architecture",
+          "relation": "Related control architecture"
+        }
       ]
     },
     {
@@ -401,10 +527,15 @@
         "Introduces a WCT-motivated log-periodic deformation of C9(q²).",
         "Compares it with a constant-shift description of the LHCb anomaly using frequency scans and null behavior."
       ],
-      "evidence": ["Public-data analysis"],
+      "evidence": [
+        "Public-data analysis"
+      ],
       "limitations": "The study is a phenomenological comparison with explicit covariance and look-elsewhere controls; discovery-level significance is outside the scope of the current analysis.",
       "related": [
-        {"slug": "lhcb-log-spectral-koide-winding", "relation": "Open-data analysis"}
+        {
+          "slug": "lhcb-log-spectral-koide-winding",
+          "relation": "Open-data analysis"
+        }
       ]
     },
     {
@@ -422,12 +553,20 @@
         "Searches open-data candidate spectra for log-domain residual structure and Koide-like comb geometry.",
         "Applies KDE baseline repair, sideband and charm-continuum controls, and veto-window covariance."
       ],
-      "evidence": ["Public-data analysis"],
+      "evidence": [
+        "Public-data analysis"
+      ],
       "limitations": "The analysis reports a methodology and search with explicit covariance controls; signal confirmation is a separate evidentiary stage.",
       "repo": "https://github.com/rickyjreyes/LHC",
       "related": [
-        {"slug": "curvature-log-periodic-c9-deformation", "relation": "Phenomenological model"},
-        {"slug": "wct-koide-mass-relation", "relation": "Koide geometry"}
+        {
+          "slug": "curvature-log-periodic-c9-deformation",
+          "relation": "Phenomenological model"
+        },
+        {
+          "slug": "wct-koide-mass-relation",
+          "relation": "Koide geometry"
+        }
       ]
     },
     {
@@ -445,10 +584,15 @@
         "Audits dated 2025 recursive-AI-drift claims against later developments and observed model behavior.",
         "Separates chronology, correspondence, partial support, failures, and unresolved questions."
       ],
-      "evidence": ["Literature audit"],
+      "evidence": [
+        "Literature audit"
+      ],
       "limitations": "The note deliberately avoids treating later events as direct validation of the full architecture; several questions remain unresolved.",
       "related": [
-        {"slug": "resonance-confinement-architecture", "relation": "Audited architecture"}
+        {
+          "slug": "resonance-confinement-architecture",
+          "relation": "Audited architecture"
+        }
       ]
     },
     {
@@ -466,11 +610,16 @@
         "Reports a reproducible log-cosine line-density scan over public NIST Atomic Spectra Database exports.",
         "Tests bin stability, active-domain winding, Poisson-bootstrap nulls, neighboring ions, and implementation parity for the Fe II analysis."
       ],
-      "evidence": ["Public-data analysis"],
+      "evidence": [
+        "Public-data analysis"
+      ],
       "limitations": "NIST is the public data provider only; no NIST endorsement, certification, or validation is claimed, and the analysis reports a reproducible method with null controls rather than a confirmed effect.",
       "repo": "https://github.com/rickyjreyes/NIST",
       "related": [
-        {"slug": "lhcb-log-spectral-koide-winding", "relation": "Related open-data method"}
+        {
+          "slug": "lhcb-log-spectral-koide-winding",
+          "relation": "Related open-data method"
+        }
       ]
     },
     {
@@ -488,11 +637,17 @@
         "Explores a curvature-locked one-way function based on nonlinear PDE evolution.",
         "Provides adversarial tests and prototype signature and ledger components."
       ],
-      "evidence": ["Conceptual architecture", "Numerical simulation"],
+      "evidence": [
+        "Conceptual architecture",
+        "Numerical simulation"
+      ],
       "limitations": "This is an experimental research prototype; security properties are tracked through explicit proof obligations, adversarial tests, and implementation audits.",
       "repo": "https://github.com/rickyjreyes/Wavelock",
       "related": [
-        {"slug": "p-vs-np-curvature-bounded-wave-computation", "relation": "Related computation model"}
+        {
+          "slug": "p-vs-np-curvature-bounded-wave-computation",
+          "relation": "Related computation model"
+        }
       ]
     }
   ]

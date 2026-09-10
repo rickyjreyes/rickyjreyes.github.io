@@ -46,7 +46,7 @@
     {
       "id": 3,
       "type": "ScholarlyArticle",
-      "title": "P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
+      "title": "Part I — P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
       "author": [
         {
           "name": "Richard J. Reyes",
@@ -226,7 +226,7 @@
     {
       "id": 12,
       "type": "ScholarlyArticle",
-      "title": "Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
+      "title": "Part II — Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
       "author": [
         {
           "name": "Richard J. Reyes",
@@ -246,7 +246,7 @@
     {
       "id": 13,
       "type": "ScholarlyArticle",
-      "title": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
+      "title": "Part III — The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
       "author": [
         {
           "name": "Richard J. Reyes",
