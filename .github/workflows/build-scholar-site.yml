@@ -26,6 +26,7 @@ on:
       - "scripts/harden_publication_metadata.py"
       - "scripts/normalize_glossary_priority_sources.py"
       - "scripts/build_terminology_priority.py"
+      - "scripts/normalize_pvnp_trilogy_titles.py"
       - "tools/glossary/index.html"
       - "tools/glossary/all-terms.js"
       - "tools/glossary/paper-terms-*.js"
@@ -55,6 +56,7 @@ on:
       - "scripts/harden_publication_metadata.py"
       - "scripts/normalize_glossary_priority_sources.py"
       - "scripts/build_terminology_priority.py"
+      - "scripts/normalize_pvnp_trilogy_titles.py"
       - "tools/glossary/index.html"
       - "tools/glossary/all-terms.js"
       - "tools/glossary/paper-terms-*.js"
@@ -94,6 +96,9 @@ jobs:
 
       - name: Generate timestamped terminology priority crosswalk
         run: python scripts/build_terminology_priority.py
+
+      - name: Normalize P vs NP trilogy titles
+        run: python scripts/normalize_pvnp_trilogy_titles.py
 
       - name: Generate publication pages and metadata
         run: python scripts/build_scholar_site.py
