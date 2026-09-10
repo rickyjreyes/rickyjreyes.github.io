@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS = ROOT / "data" / "publications.json"
 
 TITLES = {
-    3: "Part I — P vs NP in Curvature-Bounded Wave Computation: A Model-Relative P_WCC ≠ NP_WCC Separation",
+    3: "Part I — P vs NP in Curvature-Bounded Wave Computation: A Model-Relative Pᴡᴄᴄ ≠ NPᴡᴄᴄ Separation",
     12: "Part II — Discrete Wave-Constrained Computation and Classical Complexity: Turing Equivalence for P and NP",
     13: "Part III — The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
 }
