@@ -73,6 +73,17 @@ STUDIES = [
         "search": "geometric turbulence wave confinement theory wct phase-locked curvature filaments soliton-gas regime nonlinear wavefields narrow-band spectral forcing filament localization numerical study",
         "archived": True,
     },
+    {
+        "title": "From Wave Confinement to Recursive AI Instability: A Propagation-Correction Criticality Law and Successful Prospective Prediction",
+        "date": "September 14, 2026",
+        "year": "2026",
+        "category": "AI architecture",
+        "status": "Mathematical derivation",
+        "href": "https://zenodo.org/records/22757003",
+        "source": "10.5281/zenodo.22757003",
+        "search": "from wave confinement to recursive ai instability propagation-correction criticality law successful prospective prediction wave confinement theory wct recursive artificial intelligence ai safety recursion correction scaling law coherence stabilization mathematical derivation",
+        "archived": True,
+    },
 ]
 
 
@@ -96,6 +107,23 @@ def render_article(study: dict[str, object], number: int) -> str:
 
 def main() -> None:
     text = INDEX.read_text(encoding="utf-8")
+
+    # Keep native select menus readable in the site's dark theme. The explicit
+    # option colors matter on browsers/OSes that otherwise render a light popup
+    # with inherited light text.
+    old_select_css = (
+        '.pub-facet select{width:100%;padding:11px 13px;color:var(--text);'
+        'border:1px solid var(--line-strong);border-radius:10px;'
+        'background:rgba(255,255,255,.025);font:inherit}'
+    )
+    new_select_css = (
+        '.pub-facet select{width:100%;padding:11px 13px;color:var(--text);'
+        'border:1px solid var(--line-strong);border-radius:10px;'
+        'background:var(--panel);font:inherit;color-scheme:dark}\n'
+        '.pub-facet select option{color:var(--text);background:var(--panel)}'
+    )
+    if old_select_css in text:
+        text = text.replace(old_select_css, new_select_css, 1)
 
     # Add the gravitational-wave category to the archive filter when needed.
     category = str(STUDIES[0]["category"])
