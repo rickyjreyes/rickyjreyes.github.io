@@ -1,4 +1,13 @@
-/* Homepage hero motion: keep typography fixed and use only subtle visual depth. */
+/* Homepage motion: keep all typography and section content visually stable.
+   The global site runtime adds GSAP parallax to section children; override it here
+   so the homepage reads as a fixed editorial layout. */
+
+/* Stop the global GSAP child-parallax from shifting homepage content. */
+main .wct-parallax-child {
+  transform: none !important;
+  will-change: auto !important;
+}
+
 @media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
   .hero[data-parallax-ready="true"] .eyebrow,
   .hero[data-parallax-ready="true"] h1,
@@ -6,11 +15,12 @@
   .hero[data-parallax-ready="true"] .hero-actions,
   .hero[data-parallax-ready="true"] .identity-links {
     transform: none !important;
-    will-change: auto;
+    will-change: auto !important;
   }
 
+  /* Preserve only a nearly imperceptible depth cue on the hero graphic. */
   .hero[data-parallax-ready="true"] .field-visual {
-    --hero-parallax-y: calc(var(--hero-parallax-progress, 0) * 12px);
+    --hero-parallax-y: calc(var(--hero-parallax-progress, 0) * 3px);
     will-change: transform;
     backface-visibility: hidden;
     transform: translate3d(0, var(--hero-parallax-y, 0px), 0);
@@ -23,7 +33,8 @@
   .hero .hero-lede,
   .hero .hero-actions,
   .hero .identity-links,
-  .hero .field-visual {
+  .hero .field-visual,
+  main .wct-parallax-child {
     transform: none !important;
     will-change: auto !important;
   }
