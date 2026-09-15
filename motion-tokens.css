@@ -46,10 +46,35 @@
   --type-body: 1rem;
   --type-meta: 0.77rem;
 
-  /* Shared typography rhythm */
-  --tracking-display: -0.045em;
-  --tracking-heading: -0.038em;
-  --leading-display: 1.02;
-  --leading-heading: 1.04;
+  /* Shared typography rhythm — use optical kerning, not extreme tracking. */
+  --tracking-display: -0.018em;
+  --tracking-heading: -0.012em;
+  --leading-display: 1.04;
+  --leading-heading: 1.06;
   --leading-body: 1.65;
+}
+
+/* Global kerning correction.
+   The old header used +.055em tracking while page titles used -.045em,
+   creating a stretched wordmark and visibly crushed serif pairs. */
+html body .site-header .wordmark span:last-child {
+  letter-spacing: 0.01em !important;
+  font-weight: 760 !important;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1;
+  font-variant-ligatures: common-ligatures;
+}
+
+html body main h1,
+html body main .site-page-hero h1,
+html body main .priority-head h1,
+html body main .overlap-head h1,
+html body main .patent-hero h1,
+html body main .foundation-head h1,
+html body main .term-priority-head h1 {
+  letter-spacing: var(--tracking-display) !important;
+  line-height: var(--leading-display) !important;
+  font-kerning: normal !important;
+  font-feature-settings: "kern" 1, "liga" 1 !important;
+  font-variant-ligatures: common-ligatures;
 }
