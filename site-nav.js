@@ -1,9 +1,95 @@
 (() => {
+  /*
+   * Global stability pass.
+   *
+   * The previous runtime layered Lenis smooth scrolling, magnetic settling,
+   * GSAP parallax, translateZ(0), and fractional scale transforms across nearly
+   * every page. Those effects made headings and body copy move after scroll
+   * input and forced text through composited/subpixel rendering, which can look
+   * soft or shimmer on Windows/Chromium displays.
+   *
+   * Keep navigation and page utilities, but make scrolling/content rendering
+   * static by default across the entire site.
+   */
+  window.__wctLenisLoading = true;
+  window.__wctFlexibleMagnetReady = true;
+  window.__wctMagnetParallaxReady = true;
+
+  const applyStaticRendering = () => {
+    if (document.getElementById('wct-static-rendering-style')) return;
+
+    const style = document.createElement('style');
+    style.id = 'wct-static-rendering-style';
+    style.textContent = `
+      html,
+      body{
+        scroll-behavior:auto !important;
+      }
+
+      body{
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        text-rendering:optimizeLegibility;
+        font-kerning:normal;
+        font-synthesis:none;
+      }
+
+      /* Neutralize any stale/runtime parallax classes or inline transforms. */
+      main .wct-parallax-child{
+        transform:none !important;
+        scale:none !important;
+        translate:none !important;
+        will-change:auto !important;
+        backface-visibility:visible !important;
+      }
+
+      /* Keep readable text out of GPU/composited transform layers. */
+      main h1,
+      main h2,
+      main h3,
+      main h4,
+      main p,
+      main li,
+      main th,
+      main td,
+      main code,
+      main pre{
+        will-change:auto !important;
+        backface-visibility:visible !important;
+        text-rendering:optimizeLegibility;
+        font-kerning:normal;
+      }
+
+      /* Gradient-clipped serif text is noticeably rougher on Windows Chromium. */
+      .site-page-hero h1 > span,
+      .patent-hero h1 > span,
+      .hero h1 > span{
+        color:var(--accent,#67d4ff) !important;
+        background:none !important;
+        background-image:none !important;
+        background-clip:border-box !important;
+        -webkit-background-clip:border-box !important;
+        -webkit-text-fill-color:currentColor !important;
+      }
+
+      html.wct-magnet-moving{
+        scroll-behavior:auto !important;
+      }
+
+      @media(prefers-reduced-motion:reduce){
+        *,*::before,*::after{
+          scroll-behavior:auto !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  };
+
   const loadBaseRuntime = () => {
     if (document.getElementById('wct-site-nav-base')) return;
     const script = document.createElement('script');
     script.id = 'wct-site-nav-base';
-    script.src = '/site-nav-base.js?v=20260829-magnet4';
+    script.src = '/site-nav-base.js?v=20260915-static1';
     script.async = false;
     document.head.appendChild(script);
   };
@@ -134,272 +220,8 @@
     }
   };
 
-  const loadExternalScript = (id, src) => new Promise((resolve) => {
-    const existing = document.getElementById(id);
-    if (existing) {
-      if (existing.dataset.loaded === 'true') resolve(true);
-      else {
-        existing.addEventListener('load', () => resolve(true), { once:true });
-        existing.addEventListener('error', () => resolve(false), { once:true });
-      }
-      return;
-    }
-    const script = document.createElement('script');
-    script.id = id;
-    script.src = src;
-    script.async = true;
-    script.addEventListener('load', () => {
-      script.dataset.loaded = 'true';
-      resolve(true);
-    }, { once:true });
-    script.addEventListener('error', () => resolve(false), { once:true });
-    document.head.appendChild(script);
-  });
-
-  const headerOffset = () => matchMedia('(max-width:760px)').matches ? 134 : 142;
-  const pageY = (node) => node.getBoundingClientRect().top + window.scrollY;
-
-  const isVisible = (node) => {
-    if (!(node instanceof Element)) return false;
-    const rect = node.getBoundingClientRect();
-    const style = getComputedStyle(node);
-    return rect.height > 56 && rect.width > 40 && style.display !== 'none' && style.visibility !== 'hidden';
-  };
-
-  const collectMagneticStops = () => {
-    const main = document.querySelector('main');
-    if (!main) return [];
-
-    const selectors = [
-      ':scope > header',
-      ':scope > section',
-      ':scope > article',
-      ':scope > details',
-      'section',
-      '.definition-card',
-      '.control-item',
-      '.audit-strip > div',
-      '.stats > div',
-      '.publication',
-      '.publication-card',
-      '.branch-card',
-      '.audit-card',
-      '.tool-card',
-      '.paper-card',
-      '.result-card',
-      '[data-snap-card]',
-      '[data-snap-section]'
-    ];
-
-    const candidates = [];
-    selectors.forEach((selector) => {
-      try {
-        main.querySelectorAll(selector).forEach((node) => candidates.push(node));
-      } catch (_) {}
-    });
-
-    const offset = headerOffset() + 6;
-    const raw = [...new Set(candidates)]
-      .filter((node) => isVisible(node) && !node.matches('[data-snap-ignore],[data-magnetic-ignore]'))
-      .filter((node) => !node.closest('.table-wrap,.status-table-wrap,.timeline-scroll'))
-      .map((node) => ({ node, y:Math.max(0, pageY(node) - offset) }))
-      .sort((a,b) => a.y - b.y);
-
-    const stops = [];
-    raw.forEach((stop) => {
-      const previous = stops[stops.length - 1];
-      if (!previous || Math.abs(stop.y - previous.y) > 28) {
-        stops.push(stop);
-      }
-    });
-
-    return stops;
-  };
-
-  const initializeFlexibleMagnetScroll = () => {
-    if (window.__wctFlexibleMagnetReady) return;
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (matchMedia('(pointer: coarse)').matches) return;
-
-    let attempts = 0;
-    const connect = () => {
-      const lenis = window.__wctLenis;
-      if (!lenis) {
-        if (attempts++ < 180) setTimeout(connect, 50);
-        return;
-      }
-      if (window.__wctFlexibleMagnetReady) return;
-      window.__wctFlexibleMagnetReady = true;
-
-      let idleTimer = 0;
-      let releaseTimer = 0;
-      let snapping = false;
-      let direction = 0;
-      let lastY = lenis.animatedScroll ?? window.scrollY;
-
-      const currentScroll = () => lenis.animatedScroll ?? window.scrollY;
-      const captureRadius = () => Math.min(88, Math.max(48, window.innerHeight * .075));
-
-      const nearestDirectionalStop = (stops, y) => {
-        const directionalSlop = 18;
-        let candidates = stops;
-        if (direction > 0) candidates = stops.filter((stop) => stop.y >= y - directionalSlop);
-        if (direction < 0) candidates = stops.filter((stop) => stop.y <= y + directionalSlop);
-        if (!candidates.length) return null;
-
-        return candidates.reduce((best, stop) => {
-          if (!best) return stop;
-          return Math.abs(stop.y - y) < Math.abs(best.y - y) ? stop : best;
-        }, null);
-      };
-
-      const release = () => {
-        snapping = false;
-        document.documentElement.classList.remove('wct-magnet-moving');
-      };
-
-      const settleNearStop = () => {
-        if (snapping) return;
-        const stops = collectMagneticStops();
-        if (stops.length < 2) return;
-
-        const y = currentScroll();
-        const target = nearestDirectionalStop(stops, y);
-        if (!target) return;
-
-        const distance = Math.abs(target.y - y);
-        if (distance <= 4 || distance > captureRadius()) return;
-
-        snapping = true;
-        clearTimeout(releaseTimer);
-        document.documentElement.classList.add('wct-magnet-moving');
-        lenis.scrollTo(target.y, {
-          duration:.32,
-          lock:false,
-          force:true,
-          easing:(t) => 1 - Math.pow(1 - t, 4),
-          onComplete:release
-        });
-        releaseTimer = setTimeout(release, 650);
-      };
-
-      const scheduleSettle = () => {
-        clearTimeout(idleTimer);
-        idleTimer = setTimeout(settleNearStop, 260);
-      };
-
-      lenis.on('scroll', () => {
-        const y = currentScroll();
-        const delta = y - lastY;
-        if (Math.abs(delta) > .25) direction = delta > 0 ? 1 : -1;
-        lastY = y;
-        if (!snapping) scheduleSettle();
-      });
-
-      window.addEventListener('wheel', (event) => {
-        if (Math.abs(event.deltaY) > 1) direction = event.deltaY > 0 ? 1 : -1;
-      }, { passive:true, capture:true });
-
-      window.addEventListener('resize', () => {
-        clearTimeout(idleTimer);
-        clearTimeout(releaseTimer);
-        release();
-      }, { passive:true });
-    };
-
-    connect();
-  };
-
-  const syncLenisWithScrollTrigger = () => {
-    let attempts = 0;
-    const connect = () => {
-      if (window.__wctLenis && window.ScrollTrigger) {
-        if (!window.__wctLenisScrollTriggerBound) {
-          window.__wctLenis.on('scroll', window.ScrollTrigger.update);
-          window.__wctLenisScrollTriggerBound = true;
-        }
-        window.ScrollTrigger.refresh();
-        return;
-      }
-      if (attempts++ < 140) setTimeout(connect, 50);
-    };
-    connect();
-  };
-
-  const initializeParallax = async () => {
-    if (window.__wctMagnetParallaxLoading || window.__wctMagnetParallaxReady) return;
-    window.__wctMagnetParallaxLoading = true;
-
-    let coreReady = !!window.gsap;
-    if (!coreReady) coreReady = await loadExternalScript('wct-gsap-script', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js');
-    if (!coreReady || !window.gsap) {
-      window.__wctMagnetParallaxLoading = false;
-      return;
-    }
-
-    let triggerReady = !!window.ScrollTrigger;
-    if (!triggerReady) triggerReady = await loadExternalScript('wct-scrolltrigger-script', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js');
-    if (!triggerReady || !window.ScrollTrigger) {
-      window.__wctMagnetParallaxLoading = false;
-      return;
-    }
-
-    gsap.registerPlugin(ScrollTrigger);
-    window.__wctMagnetParallaxReady = true;
-    window.__wctMagnetParallaxLoading = false;
-    syncLenisWithScrollTrigger();
-
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    if (!document.getElementById('wct-magnet-parallax-style')) {
-      const style = document.createElement('style');
-      style.id = 'wct-magnet-parallax-style';
-      style.textContent = `
-        html{scrollbar-gutter:stable}
-        main section,main article,main details,main [class*="card"]{position:relative}
-        .wct-parallax-child{will-change:transform;transform:translateZ(0)}
-        html.wct-magnet-moving{scroll-behavior:auto!important}
-      `;
-      document.head.appendChild(style);
-    }
-
-    document.querySelectorAll('main > header, main section, main article, main details').forEach((block) => {
-      if (block.dataset.wctParallaxMagnet) return;
-      block.dataset.wctParallaxMagnet = 'true';
-
-      const children = [...block.children].filter((node) =>
-        !node.matches('.table-wrap,.status-table-wrap,.timeline-scroll,script,style,[data-parallax-ignore]')
-      );
-      children.forEach((child, index) => {
-        child.classList.add('wct-parallax-child');
-        const amount = Math.min(120, Math.max(58, innerHeight * .11)) * (1 + Math.min(index, 3) * .08);
-        gsap.fromTo(child,
-          { y:amount * .55, scale:.99 },
-          {
-            y:-amount * .45,
-            scale:1.01,
-            ease:'none',
-            scrollTrigger:{
-              trigger:block,
-              start:'top bottom',
-              end:'bottom top',
-              scrub:.45,
-              invalidateOnRefresh:true
-            }
-          }
-        );
-      });
-    });
-
-    ScrollTrigger.refresh();
-    setTimeout(() => ScrollTrigger.refresh(), 300);
-  };
-
+  applyStaticRendering();
   loadGlossaryBinaryView();
   normalizeWideRegistryTables();
   loadBaseRuntime();
-  initializeFlexibleMagnetScroll();
-  initializeParallax().catch(() => {
-    window.__wctMagnetParallaxLoading = false;
-  });
 })();
