@@ -1,22 +1,23 @@
-/* Homepage desktop composition: keep the opening statement readable and the interactive field fully visible. */
+/* Homepage desktop composition: prioritize readable type and a stable opening layout. */
 @media (min-width:1181px){
   .hero{
     min-height:auto;
-    grid-template-columns:minmax(0,1.08fr) minmax(390px,.92fr);
+    grid-template-columns:minmax(0,1.1fr) minmax(380px,.9fr);
     align-items:center;
-    gap:clamp(36px,4.5vw,64px);
+    gap:clamp(32px,4vw,56px);
     padding-block:clamp(44px,5vw,68px) clamp(54px,6vw,78px);
   }
+  .hero-copy{max-width:720px}
   .hero h1{
-    max-width:700px;
-    font-size:clamp(3.5rem,4.8vw,5rem);
-    line-height:1.01;
-    letter-spacing:-.04em;
+    max-width:660px;
+    font-size:clamp(3.25rem,4.2vw,4.5rem);
+    line-height:1.06;
+    letter-spacing:-.03em;
   }
-  .hero-lede{max-width:670px;margin-top:22px}
-  .hero-actions{margin-top:26px}
-  .hero .identity-links{margin-top:22px}
-  .hero .wct-wrap{width:min(100%,430px)!important;justify-self:end!important}
+  .hero-lede{max-width:640px;margin-top:20px;line-height:1.65}
+  .hero-actions{margin-top:24px}
+  .hero .identity-links{margin-top:20px}
+  .hero .wct-wrap{width:min(100%,420px)!important;justify-self:end!important}
 }
 
 /* Two columns become too cramped on smaller laptops; stack before the text starts breaking word-by-word. */
@@ -24,12 +25,13 @@
   .hero{
     min-height:auto;
     grid-template-columns:1fr;
-    gap:48px;
-    padding-block:64px 76px;
+    gap:44px;
+    padding-block:60px 72px;
   }
-  .hero-copy{max-width:820px}
-  .hero h1{max-width:780px;font-size:clamp(3.7rem,7vw,5rem)}
-  .hero .wct-wrap{width:min(100%,430px)!important;justify-self:center!important}
+  .hero-copy{max-width:780px}
+  .hero h1{max-width:740px;font-size:clamp(3.15rem,6vw,4.4rem);line-height:1.06;letter-spacing:-.03em}
+  .hero-lede{max-width:680px}
+  .hero .wct-wrap{width:min(100%,420px)!important;justify-self:center!important}
 }
 
 .technology-bridge{padding-top:clamp(4.5rem,8vw,7rem);padding-bottom:clamp(4.5rem,8vw,7rem);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
