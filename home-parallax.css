@@ -1,30 +1,51 @@
-/* Homepage motion: keep all typography and section content visually stable.
-   The global site runtime adds GSAP parallax to section children; override it here
-   so the homepage reads as a fixed editorial layout. */
+/* Homepage rendering: prioritize stable, crisp typography over motion.
+   The global runtime adds GSAP transforms to section children; remove those on the
+   homepage so text stays on the browser's normal text-rendering path. */
 
-/* Stop the global GSAP child-parallax from shifting homepage content. */
-main .wct-parallax-child {
+/* Keep homepage content out of GPU/subpixel transform layers. */
+main .wct-parallax-child,
+.hero-copy,
+.hero-copy *,
+.hero .field-visual {
   transform: none !important;
   will-change: auto !important;
+  backface-visibility: visible !important;
 }
 
-@media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
-  .hero[data-parallax-ready="true"] .eyebrow,
-  .hero[data-parallax-ready="true"] h1,
-  .hero[data-parallax-ready="true"] .hero-lede,
-  .hero[data-parallax-ready="true"] .hero-actions,
-  .hero[data-parallax-ready="true"] .identity-links {
-    transform: none !important;
-    will-change: auto !important;
-  }
+/* Improve large-type rasterization and kerning. */
+.hero h1,
+.hero h1 span,
+.section-heading h2,
+.about-copy h2,
+.contact-inner h2 {
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
+  font-synthesis: none;
+}
 
-  /* Preserve only a nearly imperceptible depth cue on the hero graphic. */
-  .hero[data-parallax-ready="true"] .field-visual {
-    --hero-parallax-y: calc(var(--hero-parallax-progress, 0) * 3px);
-    will-change: transform;
-    backface-visibility: hidden;
-    transform: translate3d(0, var(--hero-parallax-y, 0px), 0);
-  }
+/* Background-clipped gradient text can produce visibly rough serif edges,
+   especially on Windows/Chrome and fractional display scaling. Use a solid
+   accent for the hero emphasis so the glyphs render as ordinary text. */
+.hero h1 span {
+  color: #8fd8ff !important;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* Do not re-enable hero transforms even when the parallax runtime is active. */
+.hero[data-parallax-ready="true"] .eyebrow,
+.hero[data-parallax-ready="true"] h1,
+.hero[data-parallax-ready="true"] .hero-lede,
+.hero[data-parallax-ready="true"] .hero-actions,
+.hero[data-parallax-ready="true"] .identity-links,
+.hero[data-parallax-ready="true"] .field-visual {
+  transform: none !important;
+  will-change: auto !important;
+  backface-visibility: visible !important;
 }
 
 @media (prefers-reduced-motion: reduce), (max-width: 760px) {
