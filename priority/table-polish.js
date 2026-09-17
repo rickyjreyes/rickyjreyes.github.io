@@ -33,6 +33,20 @@
       const style = document.createElement('style');
       style.id = 'priority-table-polish-style';
       style.textContent = `
+        /* Keep tables aligned with the same left/right content edge as their headings. */
+        .priority-shell .table-wrap{
+          width:100% !important;
+          max-width:100% !important;
+          margin-left:0 !important;
+          margin-right:0 !important;
+          box-sizing:border-box;
+        }
+        .priority-shell .priority-fold-body .table-wrap{
+          width:100% !important;
+          max-width:100% !important;
+          margin-left:0 !important;
+          margin-right:0 !important;
+        }
         .priority-rel,.priority-verify{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:.66rem;font-weight:850;letter-spacing:.035em;white-space:nowrap}
         .priority-rel-convergence{color:#67d4ff;border:1px solid rgba(103,212,255,.5);background:rgba(103,212,255,.09)}
         .priority-rel-priority{color:#c7a5ff;border:1px solid rgba(183,137,255,.48);background:rgba(183,137,255,.09)}
