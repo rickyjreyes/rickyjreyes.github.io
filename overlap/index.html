@@ -24,7 +24,7 @@
     <header class="overlap-head">
       <p class="eyebrow">Public chronology and technical convergence record</p>
       <h1>WCT Post-Date Overlap Ledger</h1>
-      <p>The default view shows the top ten comparison records in exact rank order, without skipping ranks. The September 9 high-specificity sweep expands the ledger to 154 records, including 139 WCT / physics / photonics comparisons and 45 physics records scoring 9.0 or above. Chronology status remains separate from overlap rank.</p>
+      <p>The default view shows the top ten comparison records in exact rank order, without skipping ranks. The September 17 update expands the ledger to 181 records, including 142 WCT / physics / photonics comparisons and 39 Recursive AI Drift / AI-system comparisons. The new AI tranche adds independent academic convergence, frontier-lab disclosures, incident catalogues, monitoring and control research, and longitudinal memory-safety work. Chronology status remains separate from overlap rank.</p>
 
       <div class="score-note"><strong>Overlap is not provenance.</strong>The 0–10 Post-Date Overlap Score ranks density and specificity of technical correspondence. It is not a probability of influence, copying, derivation, misconduct, infringement, or scientific correctness.</div>
       <div class="anchor-note"><strong>The top table is rank-complete.</strong>Ranks 1 through 10 appear consecutively. Rows marked <span class="pill">DATE-CHECKED</span> have passed the chronology-normalization step used by the <a href="../priority/">Priority &amp; Provenance Registry</a>; other rows remain comparison candidates until that separate audit is complete.</div>
@@ -54,7 +54,7 @@
       </summary>
 
       <div class="full-ledger-inner">
-        <div class="ledger-warning"><strong>Interpretation boundary.</strong>Most records below have not been promoted through chronology and prior-art normalization. Inclusion means the work was identified as technically comparable; it does not establish priority, influence, derivation, copying, infringement, or validation.</div>
+        <div class="ledger-warning"><strong>Interpretation boundary.</strong>Most records below have not been promoted through chronology and prior-art normalization. Inclusion means the work was identified as technically comparable; it does not establish priority, influence, derivation, copying, infringement, or validation. Institutional disclosures and mitigation programs are tracked as empirical or operational convergence unless direct citation or use of WCT / Recursive AI Drift is established.</div>
 
         <section class="section ledger-section" aria-labelledby="physics-title">
           <p class="eyebrow">Wave Confinement Theory</p>
@@ -67,7 +67,7 @@
         <section class="section ledger-section" aria-labelledby="ai-title">
           <p class="eyebrow">Recursive AI Drift</p>
           <h2 id="ai-title">AI-system post-date overlap</h2>
-          <p class="lede">This section tracks later work overlapping the Recursive AI Drift research line, including multi-agent degradation, evolving memory, problem drift, reward hacking, verifier gaming, emergent misalignment, and bounded-maintenance requirements.</p>
+          <p class="lede">This section tracks later work and disclosures overlapping the Recursive AI Drift research line, including longitudinal memory contamination, persistent state effects, multi-agent degradation and coordination, problem and constraint drift, reward hacking, verifier gaming, evaluation awareness, alignment faking, monitor evasion, unauthorized agent actions, emergent misalignment, and system-level monitoring or control responses.</p>
           <div class="controls"><input id="q-ai" type="search" placeholder="Filter by title, author, DOI, or source…" aria-label="Filter AI overlap records"><select id="min-ai" aria-label="Minimum AI post-date overlap score"><option value="0">All scores</option><option value="9">9.0+</option><option value="8">8.0+</option><option value="7">7.0+</option><option value="6">6.0+</option></select></div>
           <div class="table-wrap"><table><thead><tr><th>#</th><th>External work</th><th>Authors</th><th>DOI / permanent ID</th><th>Post-Date Overlap Score</th><th>Chronology status</th></tr></thead><tbody id="ai-body"></tbody></table></div>
         </section>
@@ -82,6 +82,7 @@
   <script src="overlap-data-3.js"></script>
   <script src="overlap-data-4.js"></script>
   <script src="overlap-data-5.js"></script>
+  <script src="overlap-data-6.js"></script>
   <script>
     const records=window.overlapRecords||[];
     const dateChecked=new Set(["https://arxiv.org/abs/2606.25064","https://arxiv.org/abs/2606.25687","https://arxiv.org/abs/2607.07340","https://arxiv.org/abs/2607.19840","https://arxiv.org/abs/2607.29309","https://doi.org/10.1364/OL.603068"]);
