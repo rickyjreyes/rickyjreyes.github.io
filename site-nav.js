@@ -122,6 +122,16 @@
     document.head.appendChild(script);
   };
 
+  const loadPriorityTablePolish = () => {
+    const path = location.pathname.replace(/index\.html$/i, '');
+    if (path !== '/priority/' || document.getElementById('wct-priority-table-polish')) return;
+    const script = document.createElement('script');
+    script.id = 'wct-priority-table-polish';
+    script.src = '/priority/table-polish.js?v=20260917-table1';
+    script.defer = true;
+    document.head.appendChild(script);
+  };
+
   const normalizeWideRegistryTables = () => {
     const path = location.pathname.replace(/index\.html$/i, '');
     const isPriority = path === '/priority/';
@@ -233,6 +243,7 @@
   applyStaticRendering();
   loadGlossaryBinaryView();
   loadPriorityEvidence();
+  loadPriorityTablePolish();
   normalizeWideRegistryTables();
   loadBaseRuntime();
 })();
