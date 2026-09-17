@@ -2,9 +2,87 @@
   const path = location.pathname.replace(/index\.html$/i, '');
   if (path !== '/priority/') return;
 
+  const rewritePriorityCopy = (main) => {
+    const intro = document.querySelector('.priority-head h1 + p');
+    if (intro) intro.textContent = 'This registry documents the earliest verifiable public disclosures of technical contributions by Richard J. Reyes, the priority dates of related patent families, and later external works that exhibit materially corresponding structures, mechanisms, observations, or control responses.';
+
+    const rules = document.querySelector('[aria-labelledby="rules-title"]');
+    if (rules) {
+      const h2 = rules.querySelector('h2');
+      const lede = rules.querySelector('.section-lede');
+      if (h2) h2.textContent = 'How the priority record is organized.';
+      if (lede) lede.textContent = 'The registry separates dated origin, later convergence, empirical corroboration, institutional response, and provenance signals so each kind of evidence can be evaluated directly.';
+
+      rules.querySelectorAll('.definition-card').forEach((card) => {
+        const title = card.querySelector('strong');
+        const body = card.querySelector('p');
+        if (!title || !body) return;
+        const label = title.textContent.trim();
+        if (label === 'Patent-family priority') {
+          body.textContent = 'The earliest reported priority date for a filed application family, establishing the public filing chronology for that family.';
+        } else if (label === 'Structural convergence') {
+          body.textContent = 'A later external work exhibits the same or a closely corresponding mechanism, architecture, mathematical structure, or observed behavior.';
+        } else if (label === 'Influence / derivation') {
+          title.textContent = 'Provenance indicators';
+          body.textContent = 'Citation trails, terminology transfer, matching mathematical constructions, parameter or figure correspondences, code similarity, documented access, and communications provide additional provenance signals when available.';
+        }
+      });
+    }
+
+    const patent = document.querySelector('[aria-labelledby="patent-title"]');
+    if (patent) {
+      const lede = patent.querySelector('.section-lede');
+      if (lede) lede.textContent = 'These records show the earliest reported priority date for each filed family together with the later filing stage and publicly described scope.';
+      const note = patent.querySelector('.note');
+      if (note) note.innerHTML = '<strong>Patent chronology:</strong> family → earliest reported priority date → later filing stage → public scope.';
+    }
+
+    const convergence = document.querySelector('[aria-labelledby="convergence-title"]');
+    if (convergence) {
+      const lede = convergence.querySelector('.section-lede');
+      if (lede) lede.textContent = 'These six date-checked cases pair specific earlier Reyes disclosures with later external publications exhibiting material mechanism-level correspondence.';
+
+      convergence.querySelectorAll('.status-pill').forEach((pill) => {
+        const text = pill.textContent.trim();
+        if (text === 'INFLUENCE UNRESOLVED') {
+          pill.textContent = 'POST-DATE CONVERGENCE';
+          pill.classList.remove('muted-status');
+        } else if (/Chronology\s*\/\s*prior-art review/i.test(text)) {
+          pill.textContent = 'HIGH-PRIORITY COMPARISON';
+          pill.classList.remove('muted-status');
+        }
+      });
+
+      const candidateHeading = Array.from(convergence.querySelectorAll('h3')).find((el) => /Additional high-priority comparisons/i.test(el.textContent));
+      if (candidateHeading) {
+        candidateHeading.textContent = 'Additional high-priority comparisons';
+        const candidateLede = candidateHeading.nextElementSibling;
+        if (candidateLede && candidateLede.classList.contains('section-lede')) {
+          candidateLede.textContent = 'These cases show strong multi-mechanism correspondence and remain active targets for deeper chronology, source, and prior-art normalization.';
+        }
+      }
+
+      const audit = convergence.querySelector('.audit-status');
+      if (audit) audit.innerHTML = '<strong>Evidence promotion.</strong> Cases are strengthened by normalized WCT anchors, external publication chronology, mechanism-level correspondence, and prior-art controls. Additional provenance indicators are recorded when available.';
+    }
+
+    const controls = document.querySelector('[aria-labelledby="controls-title"]');
+    if (controls) {
+      const eyebrow = controls.querySelector('.eyebrow');
+      const h2 = controls.querySelector('h2');
+      const lede = controls.querySelector('.section-lede');
+      if (eyebrow) eyebrow.textContent = 'Historical controls';
+      if (h2) h2.textContent = 'Earlier literature defines the baseline for narrower WCT priority claims.';
+      if (lede) lede.textContent = 'Established pre-2025 mechanisms are retained as controls so the registry can isolate the narrower combinations, constructions, and predictions associated with the WCT corpus.';
+    }
+  };
+
   const run = () => {
     const main = document.querySelector('.priority-shell');
-    if (!main || document.getElementById('expanded-evidence')) return;
+    if (!main) return;
+
+    rewritePriorityCopy(main);
+    if (document.getElementById('expanded-evidence')) return;
 
     const style = document.createElement('style');
     style.id = 'priority-evidence-style';
@@ -56,7 +134,7 @@
     section.innerHTML = `
       <p class="eyebrow">Expanded external evidence layer</p>
       <h2 id="expanded-evidence-title">Independent and empirical evidence now extends beyond the six normalized physics cases.</h2>
-      <p class="section-lede">The public convergence ledger now contains 181 external records, including 39 Recursive AI Drift / AI-system records. The six physics cases above remain the fully normalized chronology subset; the evidence below highlights the strongest post-2025 AI observations, independent research, and institutional responses relevant to persistent state, drift, unauthorized action, oversight failure, and agent control.</p>
+      <p class="section-lede">The public convergence ledger now contains 181 external records, including 39 Recursive AI Drift / AI-system records. The evidence below highlights the strongest post-2025 AI observations, independent research, and institutional responses relevant to persistent state, drift, unauthorized action, oversight failure, and agent control.</p>
 
       <div class="evidence-metrics" aria-label="Expanded evidence totals">
         <div class="evidence-metric"><strong>181</strong><span>external records across WCT physics, photonics, and AI-system research</span></div>
