@@ -139,6 +139,16 @@
     document.head.appendChild(script);
   };
 
+  const loadFoundationCuration = () => {
+    const path = location.pathname.replace(/index\.html$/i, '');
+    if (path !== '/foundations/' || document.getElementById('wct-foundation-curation')) return;
+    const script = document.createElement('script');
+    script.id = 'wct-foundation-curation';
+    script.src = '/foundations/curation.js?v=20260917-curated1';
+    script.defer = true;
+    document.head.appendChild(script);
+  };
+
   const normalizeWideRegistryTables = () => {
     const path = location.pathname.replace(/index\.html$/i, '');
     const isPriority = path === '/priority/';
@@ -252,6 +262,7 @@
   loadPriorityEvidence();
   loadPriorityTablePolish();
   loadReproduceLayoutPolish();
+  loadFoundationCuration();
   normalizeWideRegistryTables();
   loadBaseRuntime();
 })();
