@@ -112,6 +112,16 @@
     }
   };
 
+  const loadPriorityEvidence = () => {
+    const path = location.pathname.replace(/index\.html$/i, '');
+    if (path !== '/priority/' || document.getElementById('wct-priority-evidence')) return;
+    const script = document.createElement('script');
+    script.id = 'wct-priority-evidence';
+    script.src = '/priority/evidence-panel.js?v=20260917-evidence1';
+    script.defer = true;
+    document.head.appendChild(script);
+  };
+
   const normalizeWideRegistryTables = () => {
     const path = location.pathname.replace(/index\.html$/i, '');
     const isPriority = path === '/priority/';
@@ -222,6 +232,7 @@
 
   applyStaticRendering();
   loadGlossaryBinaryView();
+  loadPriorityEvidence();
   normalizeWideRegistryTables();
   loadBaseRuntime();
 })();
