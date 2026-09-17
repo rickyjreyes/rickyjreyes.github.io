@@ -34,7 +34,6 @@
         font-synthesis:none;
       }
 
-      /* Neutralize any stale/runtime parallax classes or inline transforms. */
       main .wct-parallax-child{
         transform:none !important;
         scale:none !important;
@@ -43,7 +42,6 @@
         backface-visibility:visible !important;
       }
 
-      /* Keep readable text out of GPU/composited transform layers. */
       main h1,
       main h2,
       main h3,
@@ -60,7 +58,6 @@
         font-kerning:normal;
       }
 
-      /* Gradient-clipped serif text is noticeably rougher on Windows Chromium. */
       .site-page-hero h1 > span,
       .patent-hero h1 > span,
       .hero h1 > span{
@@ -128,6 +125,16 @@
     const script = document.createElement('script');
     script.id = 'wct-priority-table-polish';
     script.src = '/priority/table-polish.js?v=20260917-table1';
+    script.defer = true;
+    document.head.appendChild(script);
+  };
+
+  const loadReproduceLayoutPolish = () => {
+    const path = location.pathname.replace(/index\.html$/i, '');
+    if (path !== '/reproduce/' || document.getElementById('wct-reproduce-layout-polish')) return;
+    const script = document.createElement('script');
+    script.id = 'wct-reproduce-layout-polish';
+    script.src = '/reproduce/layout-polish.js?v=20260917-layout1';
     script.defer = true;
     document.head.appendChild(script);
   };
@@ -244,6 +251,7 @@
   loadGlossaryBinaryView();
   loadPriorityEvidence();
   loadPriorityTablePolish();
+  loadReproduceLayoutPolish();
   normalizeWideRegistryTables();
   loadBaseRuntime();
 })();
