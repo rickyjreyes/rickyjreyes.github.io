@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.4",
-  "updated": "2026-09-15",
+  "updated": "2026-09-17",
   "title": "WCT External Literature Convergence Audit and Full Post-Date Overlap Ledger",
   "canonical": "https://rickyjreyes.github.io/priority/#convergence-title",
   "registry": "https://rickyjreyes.github.io/priority/",
@@ -10,7 +10,8 @@
     "https://rickyjreyes.github.io/overlap/overlap-data-2.js",
     "https://rickyjreyes.github.io/overlap/overlap-data-3.js",
     "https://rickyjreyes.github.io/overlap/overlap-data-4.js",
-    "https://rickyjreyes.github.io/overlap/overlap-data-5.js"
+    "https://rickyjreyes.github.io/overlap/overlap-data-5.js",
+    "https://rickyjreyes.github.io/overlap/overlap-data-6.js"
   ],
   "fullLedger": "https://rickyjreyes.github.io/overlap/",
   "fullLedgerLabel": "WCT Post-Date Overlap Ledger",
@@ -27,13 +28,13 @@
     "emptyWctAnchorsMeanNotNormalizedNotNoRelationship": true
   },
   "counts": {
-    "totalRecords": 157,
+    "totalRecords": 181,
     "physicsRecords": 142,
     "physics9Plus": 47,
-    "aiRecords": 15,
+    "aiRecords": 39,
     "dateChecked": 6,
     "chronologyPriorArtReview": 4,
-    "ledgerOnly": 147,
+    "ledgerOnly": 171,
     "verifiedCases": 6,
     "auditCandidates": 4,
     "priorArtControls": 3
@@ -3771,6 +3772,239 @@
     {
       "ledgerRank": 143,
       "domain": "ai",
+      "title": "Our framework for reporting model misalignment",
+      "primaryUrl": "https://openai.com/index/model-misalignment-reporting-framework/",
+      "source": "OpenAI",
+      "authors": [
+        "OpenAI"
+      ],
+      "identifier": "Official OpenAI disclosure",
+      "identifierUrl": "https://openai.com/index/model-misalignment-reporting-framework/",
+      "overlapScore": 9.8,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 144,
+      "domain": "ai",
+      "title": "An alignment assessment of recent cybersecurity incidents",
+      "primaryUrl": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      "source": "Anthropic",
+      "authors": [
+        "Paul C. Bogdan et al."
+      ],
+      "identifier": "Official Anthropic research disclosure",
+      "identifierUrl": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      "overlapScore": 9.6,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 145,
+      "domain": "ai",
+      "title": "Documented AI Agent Incidents",
+      "primaryUrl": "https://metr.org/agent-incidents/",
+      "source": "METR",
+      "authors": [
+        "METR"
+      ],
+      "identifier": "Maintained incident catalogue",
+      "identifierUrl": "https://metr.org/agent-incidents/",
+      "overlapScore": 9.5,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 146,
+      "domain": "ai",
+      "title": "Remembering More, Risking More: Longitudinal Safety Risks in Memory-Equipped LLM Agents",
+      "primaryUrl": "https://arxiv.org/abs/2605.17830",
+      "source": "arXiv",
+      "authors": [
+        "Ahmad Al-Tawaha",
+        "Shangding Gu",
+        "Peizhi Niu",
+        "Ruoxi Jia",
+        "Ming Jin"
+      ],
+      "identifier": "10.48550/arXiv.2605.17830",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2605.17830",
+      "overlapScore": 9.4,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 147,
+      "domain": "ai",
+      "title": "Hidden in Memory: Sleeper Memory Poisoning in LLM Agents",
+      "primaryUrl": "https://arxiv.org/abs/2605.15338",
+      "source": "arXiv",
+      "authors": [
+        "Sidharth Pulipaka",
+        "Stanislau Hlebik",
+        "Leonidas Raghav",
+        "Sahar Abdelnabi",
+        "Vyas Raina",
+        "Ivaxi Sheth",
+        "Mario Fritz"
+      ],
+      "identifier": "10.48550/arXiv.2605.15338",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2605.15338",
+      "overlapScore": 9.3,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 148,
+      "domain": "ai",
+      "title": "Agentic Misalignment in Summer 2026",
+      "primaryUrl": "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/",
+      "source": "Anthropic Alignment Science",
+      "authors": [
+        "Aengus Lynch",
+        "John Hughes",
+        "Alex Serrano",
+        "Robert Kirk",
+        "Samuel R. Bowman"
+      ],
+      "identifier": "Anthropic Alignment Science report",
+      "identifierUrl": "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/",
+      "overlapScore": 9.3,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 149,
+      "domain": "ai",
+      "title": "Securing the future of AI agents",
+      "primaryUrl": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+      "source": "Google DeepMind",
+      "authors": [
+        "Rohin Shah",
+        "Four Flynn"
+      ],
+      "identifier": "Google DeepMind AI Control Roadmap",
+      "identifierUrl": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+      "overlapScore": 9.2,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 150,
+      "domain": "ai",
+      "title": "Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees",
+      "primaryUrl": "https://arxiv.org/abs/2606.24322",
+      "source": "arXiv",
+      "authors": [
+        "Yedidel Louck"
+      ],
+      "identifier": "10.48550/arXiv.2606.24322",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2606.24322",
+      "overlapScore": 9.2,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 151,
+      "domain": "ai",
+      "title": "Metagaming matters for training, evaluation, and oversight",
+      "primaryUrl": "https://apolloresearch.ai/science/metagaming-matters-for-training-evaluation-and-oversight",
+      "source": "Apollo Research / OpenAI",
+      "authors": [
+        "Bronson Schoen",
+        "Jenny Nitishinskaya"
+      ],
+      "identifier": "Official research note",
+      "identifierUrl": "https://apolloresearch.ai/science/metagaming-matters-for-training-evaluation-and-oversight",
+      "overlapScore": 9.1,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 152,
+      "domain": "ai",
+      "title": "Measuring Reward-Seeking via Contrastive Belief Updates",
+      "primaryUrl": "https://arxiv.org/abs/2607.18966",
+      "source": "arXiv",
+      "authors": [
+        "Axel Højmark",
+        "Jérémy Scheurer",
+        "Evgenia Nitishinskaya",
+        "Felix Hofstätter",
+        "Jason Wolfe",
+        "Theodore Ehrenborg",
+        "Bronson Schoen",
+        "Alexander Meinke"
+      ],
+      "identifier": "10.48550/arXiv.2607.18966",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2607.18966",
+      "overlapScore": 9.1,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 153,
+      "domain": "ai",
       "title": "SafetyDrift: Predicting When AI Agents Cross the Line Before They Actually Do",
       "primaryUrl": "https://arxiv.org/abs/2603.27148",
       "source": "arXiv",
@@ -3791,7 +4025,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 144,
+      "ledgerRank": 154,
       "domain": "ai",
       "title": "Safety in Self-Evolving LLM Agent Systems: Threats, Amplification, and Case Studies",
       "primaryUrl": "https://arxiv.org/abs/2606.23075",
@@ -3826,7 +4060,172 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 145,
+      "ledgerRank": 155,
+      "domain": "ai",
+      "title": "In-Context Environments Induce Evaluation-Awareness in Language Models",
+      "primaryUrl": "https://arxiv.org/abs/2603.03824",
+      "source": "arXiv",
+      "authors": [
+        "Maheep Chaudhary"
+      ],
+      "identifier": "10.48550/arXiv.2603.03824",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2603.03824",
+      "overlapScore": 8.9,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 156,
+      "domain": "ai",
+      "title": "How we monitor internal coding agents for misalignment",
+      "primaryUrl": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/",
+      "source": "OpenAI",
+      "authors": [
+        "Marcus Williams",
+        "Hao Sun",
+        "Swetha Sekhar",
+        "Micah Carroll",
+        "David G. Robinson",
+        "Ian Kivlichan"
+      ],
+      "identifier": "Official OpenAI safety publication",
+      "identifierUrl": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/",
+      "overlapScore": 8.9,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 157,
+      "domain": "ai",
+      "title": "Training Agents to Self-Report Misbehavior",
+      "primaryUrl": "https://arxiv.org/abs/2602.22303",
+      "source": "arXiv",
+      "authors": [
+        "Bruce W. Lee",
+        "Chen Yueh-Han",
+        "Tomek Korbak"
+      ],
+      "identifier": "10.48550/arXiv.2602.22303",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2602.22303",
+      "overlapScore": 8.8,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 158,
+      "domain": "ai",
+      "title": "Gram: Assessing sabotage propensities via automated alignment auditing",
+      "primaryUrl": "https://arxiv.org/abs/2605.30322",
+      "source": "arXiv",
+      "authors": [
+        "David Lindner",
+        "Victoria Krakovna",
+        "Sebastian Farquhar"
+      ],
+      "identifier": "10.48550/arXiv.2605.30322",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2605.30322",
+      "overlapScore": 8.8,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 159,
+      "domain": "ai",
+      "title": "Evaluating and Understanding Scheming Propensity in LLM Agents",
+      "primaryUrl": "https://arxiv.org/abs/2603.01608",
+      "source": "arXiv",
+      "authors": [
+        "Mia Hopman",
+        "Jannes Elstner",
+        "Maria Avramidou",
+        "Amritanshu Prasad",
+        "David Lindner"
+      ],
+      "identifier": "10.48550/arXiv.2603.01608",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2603.01608",
+      "overlapScore": 8.8,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 160,
+      "domain": "ai",
+      "title": "Behavioural Analysis of Alignment Faking",
+      "primaryUrl": "https://arxiv.org/abs/2605.27681",
+      "source": "arXiv",
+      "authors": [
+        "Nathaniel Mitrani Hadida",
+        "Rhea Karty",
+        "David Williams-King",
+        "Alan Cooney"
+      ],
+      "identifier": "10.48550/arXiv.2605.27681",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2605.27681",
+      "overlapScore": 8.7,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 161,
+      "domain": "ai",
+      "title": "Do Models Fake Alignment Without Clear Consequences?",
+      "primaryUrl": "https://arxiv.org/abs/2607.24758",
+      "source": "arXiv",
+      "authors": [
+        "Cole Alexander Niblett",
+        "Alexander Chabot Nanni",
+        "Anita K. Rao"
+      ],
+      "identifier": "10.48550/arXiv.2607.24758",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2607.24758",
+      "overlapScore": 8.7,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 162,
       "domain": "ai",
       "title": "Safe Multi-Agent Behavior Must Be Maintained, Not Merely Asserted: Constraint Drift in LLM-Based Multi-Agent Systems",
       "primaryUrl": "https://arxiv.org/abs/2605.10481",
@@ -3853,7 +4252,55 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 146,
+      "ledgerRank": 163,
+      "domain": "ai",
+      "title": "Automated Researchers Can Mitigate Well-Characterized Alignment Failures",
+      "primaryUrl": "https://alignment.anthropic.com/2026/automated-alignment-researchers/",
+      "source": "Anthropic Alignment Science",
+      "authors": [
+        "Chen Yueh-Han",
+        "Jiaxin Wen",
+        "Jan Hendrik Kirchner"
+      ],
+      "identifier": "Anthropic Alignment Science report",
+      "identifierUrl": "https://alignment.anthropic.com/2026/automated-alignment-researchers/",
+      "overlapScore": 8.6,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 164,
+      "domain": "ai",
+      "title": "Investing in multi-agent AI safety research",
+      "primaryUrl": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
+      "source": "Google DeepMind",
+      "authors": [
+        "Google DeepMind",
+        "Schmidt Sciences",
+        "Cooperative AI Foundation",
+        "ARIA",
+        "Google.org"
+      ],
+      "identifier": "Official Google DeepMind research initiative",
+      "identifierUrl": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
+      "overlapScore": 8.6,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 165,
       "domain": "ai",
       "title": "Governing Evolving Memory in LLM Agents: Risks, Mechanisms, and the Stability and Safety Governed Memory (SSGM) Framework",
       "primaryUrl": "https://arxiv.org/abs/2603.11768",
@@ -3877,7 +4324,30 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 147,
+      "ledgerRank": 166,
+      "domain": "ai",
+      "title": "Strengthening our Frontier Safety Framework",
+      "primaryUrl": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+      "source": "Google DeepMind",
+      "authors": [
+        "Four Flynn",
+        "Helen King",
+        "Anca Dragan"
+      ],
+      "identifier": "Frontier Safety Framework update",
+      "identifierUrl": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+      "overlapScore": 8.5,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 167,
       "domain": "ai",
       "title": "Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds",
       "primaryUrl": "https://arxiv.org/abs/2606.15385",
@@ -3899,7 +4369,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 148,
+      "ledgerRank": 168,
       "domain": "ai",
       "title": "Agent Drift: Quantifying Behavioral Degradation in Multi-Agent LLM Systems Over Extended Interactions",
       "primaryUrl": "https://arxiv.org/abs/2601.04170",
@@ -3920,7 +4390,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 149,
+      "ledgerRank": 169,
       "domain": "ai",
       "title": "Stay Focused: Problem Drift in Multi-Agent Debate",
       "primaryUrl": "https://arxiv.org/abs/2502.19559",
@@ -3946,7 +4416,74 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 150,
+      "ledgerRank": 170,
+      "domain": "ai",
+      "title": "Reasoning models struggle to control their chains of thought, and that’s good",
+      "primaryUrl": "https://openai.com/index/reasoning-models-chain-of-thought-controllability/",
+      "source": "OpenAI",
+      "authors": [
+        "Tomek Korbak",
+        "Micah Carroll",
+        "Bowen Baker",
+        "Ian Kivlichan"
+      ],
+      "identifier": "Official OpenAI safety publication",
+      "identifierUrl": "https://openai.com/index/reasoning-models-chain-of-thought-controllability/",
+      "overlapScore": 8.2,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 171,
+      "domain": "ai",
+      "title": "We need 3rd party Training-Run Assessments",
+      "primaryUrl": "https://www.apolloresearch.ai/science/we-need-3rd-party-training-run-assessments",
+      "source": "Apollo Research",
+      "authors": [
+        "Apollo Research"
+      ],
+      "identifier": "Official Apollo Research note",
+      "identifierUrl": "https://www.apolloresearch.ai/science/we-need-3rd-party-training-run-assessments",
+      "overlapScore": 8.2,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 172,
+      "domain": "ai",
+      "title": "AgentShield: Deception-based Compromise Detection for Tool-using LLM Agents",
+      "primaryUrl": "https://arxiv.org/abs/2605.11026",
+      "source": "arXiv",
+      "authors": [
+        "Yassin H. Rassul",
+        "Tarik A. Rashid"
+      ],
+      "identifier": "10.48550/arXiv.2605.11026",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2605.11026",
+      "overlapScore": 7.9,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 173,
       "domain": "ai",
       "title": "SAGE: Multi-Agent Self-Evolution for LLM Reasoning",
       "primaryUrl": "https://arxiv.org/abs/2603.15255",
@@ -3973,7 +4510,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 151,
+      "ledgerRank": 174,
       "domain": "ai",
       "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
       "primaryUrl": "https://arxiv.org/abs/2511.18397",
@@ -4015,7 +4552,29 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 152,
+      "ledgerRank": 175,
+      "domain": "ai",
+      "title": "Cost-Utility Alignment in LLM Agent Trajectories: Profiling, Attribution, Diagnosis, Adaptation, and Evaluation",
+      "primaryUrl": "https://arxiv.org/abs/2608.26195",
+      "source": "arXiv",
+      "authors": [
+        "Dan Liu",
+        "Jian Li"
+      ],
+      "identifier": "10.48550/arXiv.2608.26195",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2608.26195",
+      "overlapScore": 7.7,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 176,
       "domain": "ai",
       "title": "LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking",
       "primaryUrl": "https://arxiv.org/abs/2604.15149",
@@ -4044,7 +4603,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 153,
+      "ledgerRank": 177,
       "domain": "ai",
       "title": "Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use",
       "primaryUrl": "https://arxiv.org/abs/2605.02964",
@@ -4065,7 +4624,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 154,
+      "ledgerRank": 178,
       "domain": "ai",
       "title": "School of Reward Hacks: Hacking harmless tasks generalizes to misaligned behavior in LLMs",
       "primaryUrl": "https://arxiv.org/abs/2508.17511",
@@ -4090,7 +4649,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 155,
+      "ledgerRank": 179,
       "domain": "ai",
       "title": "Fully Autonomous AI Agents Should Not be Developed",
       "primaryUrl": "https://arxiv.org/abs/2502.02649",
@@ -4114,7 +4673,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 156,
+      "ledgerRank": 180,
       "domain": "ai",
       "title": "The GenAI Divide: State of AI in Business 2025",
       "primaryUrl": "https://www.media.mit.edu/groups/nanda/overview/",
@@ -4138,7 +4697,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 157,
+      "ledgerRank": 181,
       "domain": "ai",
       "title": "Temporal Blind Spot Failure in Serverless Cloud Systems: How AI Agents Cause Cloud Disasters",
       "primaryUrl": "https://www.tdcommons.org/2026.html",
