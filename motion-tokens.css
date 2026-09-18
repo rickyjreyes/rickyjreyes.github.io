@@ -78,3 +78,10 @@ html body main .term-priority-head h1 {
   font-feature-settings: "kern" 1, "liga" 1 !important;
   font-variant-ligatures: common-ligatures;
 }
+
+/* Horizontal foundation tables must not trap normal vertical wheel scrolling. */
+html body .foundation-shell .table-wrap {
+  overscroll-behavior-x: contain !important;
+  overscroll-behavior-y: auto !important;
+  touch-action: pan-x pan-y !important;
+}
