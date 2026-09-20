@@ -24,6 +24,7 @@ on:
       - "scripts/patch_machine_metadata.py"
       - "scripts/normalize_research_status.py"
       - "scripts/harden_publication_metadata.py"
+      - "scripts/strengthen_provenance.py"
       - "scripts/normalize_glossary_priority_sources.py"
       - "scripts/build_terminology_priority.py"
       - "scripts/normalize_pvnp_trilogy_titles.py"
@@ -54,6 +55,7 @@ on:
       - "scripts/patch_machine_metadata.py"
       - "scripts/normalize_research_status.py"
       - "scripts/harden_publication_metadata.py"
+      - "scripts/strengthen_provenance.py"
       - "scripts/normalize_glossary_priority_sources.py"
       - "scripts/build_terminology_priority.py"
       - "scripts/normalize_pvnp_trilogy_titles.py"
@@ -145,6 +147,9 @@ jobs:
       - name: Harden publication-level evidence framing
         run: python scripts/harden_publication_metadata.py
 
+      - name: Strengthen canonical researcher and publication provenance
+        run: python scripts/strengthen_provenance.py
+
       - name: Validate cross-layer registry and publication traceability
         run: python scripts/validate_registry_sync.py
 
@@ -168,6 +173,7 @@ jobs:
             tools/glossary/terminology-priority.js
             overlap/index.html
             publications/*.html
+            researcher/index.html
             tools/glossary/all-terms.js
 
       - name: Commit generated files
