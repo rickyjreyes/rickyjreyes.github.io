@@ -99,7 +99,7 @@
     if (intro) intro.textContent = 'A curated map of the mathematical and physical substrate WCT builds on, followed by the core Reyes papers that define the WCT research program. Application-specific evidence is kept in its own research tracks rather than mixed into the foundation layer.';
 
     const boundary = head.querySelector('.boundary');
-    if (boundary) boundary.innerHTML = '<strong>Foundation rule.</strong> This page contains established external mathematics and physics that form the substrate for WCT, plus a separate WCT Core layer. AI drift, particle-data tests, neutrino studies, fusion, cryptography, and post-2025 convergence are organized elsewhere on the site.';
+    if (boundary) boundary.innerHTML = '<strong>Foundation scope.</strong> This page collects the external mathematics and physics underlying WCT together with the WCT Core layer. AI drift, particle-data analyses, neutrino studies, fusion, cryptography, and later convergence are organized in their respective research tracks.';
 
     const actions = head.querySelector('.actions');
     if (actions) actions.innerHTML = '<a class="primary" href="#wct-core">WCT Core</a><a href="#math">PDE & nonlinear waves</a><a href="#geometry">Geometry & topology</a><a href="#physics">Physics substrate</a><a href="#information">Information & entropy</a>';
@@ -115,7 +115,7 @@
         <div class="wct-core-grid">${coreWct.map((r,i)=>`<article class="wct-core-card"><span class="core-index">WCT ${String(i+1).padStart(2,'0')}</span><h3><a href="${esc(r[3])}" target="_blank" rel="noopener noreferrer">${esc(r[0])}</a></h3><time>${esc(r[1])}</time><p>${esc(r[2])}</p></article>`).join('')}</div>
       </section>
       ${groups.map(g=>`<section class="tier" id="${g.id}"><div class="tier-head"><div><p class="eyebrow">${esc(g.kicker)}</p><h2>${esc(g.title)}</h2></div><p>${esc(g.lede)}</p></div><div class="table-wrap"><table><thead><tr><th>#</th><th>Foundational work</th><th>Year</th><th>Role in the WCT substrate</th><th>Domain</th></tr></thead><tbody>${renderRows(g.rows)}</tbody></table></div></section>`).join('')}
-      <p class="footer-note"><strong>33 canonical external sources.</strong> The list is intentionally selective: foundation means mathematical or physical substrate, not every work cited anywhere in the WCT corpus. Application-specific literature remains with its corresponding research track.</p>
+      <p class="footer-note"><strong>33 canonical external sources.</strong> This collection focuses on the mathematical and physical foundations most directly connected to the WCT framework. Application-specific literature is organized with its corresponding research track.</p>
     `;
     head.after(wrap);
 
