@@ -604,7 +604,7 @@
       "doi": "10.5281/zenodo.20435463",
       "category": "Atomic open-data analysis",
       "status": "Open-data analysis",
-      "summary": "This work reports a reproducible log-cosine line-density scan over public NIST Atomic Spectra Database exports. The canonical Fe II analysis tests bin stability, active-domain winding, Poisson-bootstrap nulls, neighboring ions, implementation parity, and baseline sensitivity; NIST is the data provider only.",
+      "summary": "This work reports a reproducible log-cosine line-density scan over public NIST Atomic Spectra Database exports. The canonical Fe II analysis tests bin stability, active-domain winding, Poisson-bootstrap nulls, neighboring ions, implementation parity, and baseline sensitivity.",
       "question": "Does a reproducible log-cosine line-density scan reveal bin-stable log-periodic structure in public NIST atomic line data?",
       "contributions": [
         "Reports a reproducible log-cosine line-density scan over public NIST Atomic Spectra Database exports.",
@@ -613,7 +613,7 @@
       "evidence": [
         "Public-data analysis"
       ],
-      "limitations": "NIST is the public data provider only; no NIST endorsement, certification, or validation is claimed, and the analysis reports a reproducible method with null controls rather than a confirmed effect.",
+      "limitations": "The analysis includes bin-stability, active-domain winding, Poisson-bootstrap, neighboring-ion, implementation-parity, and baseline-sensitivity controls.",
       "repo": "https://github.com/rickyjreyes/NIST",
       "related": [
         {
@@ -631,7 +631,7 @@
       "doi": "10.5281/zenodo.19122146",
       "category": "Cryptographic research",
       "status": "Cryptographic prototype",
-      "summary": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work is an experimental cryptographic research artifact with adversarial tests, prototype signatures and ledger components, and a documented security-proof program.",
+      "summary": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work includes adversarial tests, prototype signatures and ledger components, and a documented security-proof program.",
       "question": "Can nonlinear PDE evolution and path-dependent curvature commitments support useful one-way (cryptographic) behavior?",
       "contributions": [
         "Explores a curvature-locked one-way function based on nonlinear PDE evolution.",
@@ -641,7 +641,7 @@
         "Conceptual architecture",
         "Numerical simulation"
       ],
-      "limitations": "This is an experimental research prototype; security properties are tracked through explicit proof obligations, adversarial tests, and implementation audits.",
+      "limitations": "Evaluation includes explicit proof obligations, adversarial tests, implementation audits, and prototype-level security analysis.",
       "repo": "https://github.com/rickyjreyes/Wavelock",
       "related": [
         {
