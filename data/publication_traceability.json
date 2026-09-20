@@ -255,8 +255,7 @@
       "empirical_status": "PUBLIC_DATA_ANALYSIS",
       "independent_replication": "NONE_RECORDED",
       "falsifiers": ["The feature fails preregistered neighboring-ion, binning, baseline, bootstrap, implementation-parity, or held-out tests."],
-      "open_obligations": ["Freeze a release with source exports, hashes, exact commands, expected outputs, and unaffiliated reproduction."],
-      "qualification": "NIST is the public data provider only; no NIST endorsement, certification, or validation is claimed."
+      "open_obligations": ["Freeze a release with source exports, hashes, exact commands, expected outputs, and unaffiliated reproduction."]
     },
     "wavelock-curvature-locked-one-way-function": {
       "claim_ids": ["CLM-CURVATURE-COMPUTATION"],
@@ -268,8 +267,7 @@
       "empirical_status": "AUTHOR_GENERATED_ADVERSARIAL_TESTS",
       "independent_replication": "NONE_RECORDED",
       "falsifiers": ["A practical inversion, collision, forgery, state-recovery, or parameter-reduction attack defeats the declared security target."],
-      "open_obligations": ["Publish a frozen threat model, attack matrix, security reductions or explicit absence thereof, benchmark methodology, and independent cryptanalysis."],
-      "qualification": "This is experimental research software, not production cryptography."
+      "open_obligations": ["Publish a frozen threat model, attack matrix, security reductions or explicit absence thereof, benchmark methodology, and independent cryptanalysis."]
     }
   }
 }
