@@ -421,7 +421,7 @@
       "landingPage": "https://rickyjreyes.github.io/publications/nist-bin-stable-log-periodic-structure.html",
       "category": "Atomic open-data analysis",
       "status": "Open-data analysis",
-      "abstract": "This work reports a reproducible log-cosine line-density scan over public NIST Atomic Spectra Database exports. The canonical Fe II analysis tests bin stability, active-domain winding, Poisson-bootstrap nulls, neighboring ions, implementation parity, and baseline sensitivity; NIST is the data provider only."
+      "abstract": "This work reports a reproducible log-cosine line-density scan over public NIST Atomic Spectra Database exports. The canonical Fe II analysis tests bin stability, active-domain winding, Poisson-bootstrap nulls, neighboring ions, implementation parity, and baseline sensitivity."
     },
     {
       "id": 22,
@@ -441,7 +441,7 @@
       "landingPage": "https://rickyjreyes.github.io/publications/wavelock-curvature-locked-one-way-function.html",
       "category": "Cryptographic research",
       "status": "Cryptographic prototype",
-      "abstract": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work is an experimental cryptographic research artifact with adversarial tests, prototype signatures and ledger components, and a documented security-proof program."
+      "abstract": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work includes adversarial tests, prototype signatures and ledger components, and a documented security-proof program."
     }
   ]
 }
