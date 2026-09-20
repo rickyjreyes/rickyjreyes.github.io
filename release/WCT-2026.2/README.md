@@ -11,7 +11,7 @@ This release freezes the synchronized WCT research stack after the Lean expansio
 - exact source commits and selected Git blob identities pinned in `release-manifest.json`;
 - deterministic finite-band simulation artifacts checked by SHA-256.
 
-Typed Lean support does not mean 62 unconditional proofs. It includes algebraic theorems, dimensional lemmas, finite analogues, conditional theorems, analytic contracts, definitions, counterexamples, and an unresolved proposition.
+Typed Lean support spans algebraic theorems, dimensional lemmas, finite analogues, conditional theorems, analytic contracts, definitions, counterexamples, and an unresolved proposition. Each object retains its explicit support type in the formal coverage index.
 
 ## Run locally
 
@@ -47,12 +47,12 @@ or:
 make nix-reproduce
 ```
 
-## What a PASS means
+## What a PASS establishes
 
-A successful release run establishes that the pinned sources build and reproduce the declared maintained artifacts and cross-layer counts. It does not independently validate WCT as a physical theory.
+A successful release run establishes that the pinned sources build and reproduce the declared maintained artifacts, cross-layer counts, formal mappings, and deterministic simulation hashes.
 
-- A SymPy `PASS` remains scoped to its encoded checker and assumptions.
-- A Lean theorem proves only its typed statement under displayed hypotheses.
-- Definitions and analytic contracts are not completed theorems.
-- The deterministic simulation is a linear finite-band fixture, not a nonlinear confinement theorem or experiment.
-- External mathematical review and experimental replication remain separate requirements.
+- A SymPy `PASS` records the result of its encoded checker under the declared assumptions.
+- A Lean theorem records a kernel-accepted typed statement under displayed hypotheses.
+- Definitions and analytic contracts retain their distinct formal classifications.
+- The deterministic simulation is a reproducible linear finite-band fixture with its exact inputs and hashes recorded.
+- External mathematical review, empirical testing, and replication are tracked as separate evidence layers in the broader WCT research program.
