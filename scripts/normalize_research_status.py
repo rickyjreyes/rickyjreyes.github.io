@@ -115,22 +115,6 @@ replacements = (
     ),
     (
         j(
-            "Experimental path-dependent commitments, one-time signatures, adversarial audits, and a prototype ledger. ",
-            "Not production cryptography.",
-        ),
-        "Experimental path-dependent commitments, one-time signatures, adversarial audits, and a prototype ledger "
-        "with documented security-analysis targets.",
-    ),
-    (
-        j(
-            "The current constructions are experimental research prototypes with documented security limitations ",
-            "and unresolved proof obligations.",
-        ),
-        "The current constructions are experimental research prototypes; security properties are tracked through "
-        "documented proof obligations, adversarial tests, and implementation audits.",
-    ),
-    (
-        j(
             '<div class="portfolio-note"><strong>Status terminology:</strong> these are patent applications, ',
             "not issued patents. “Patent pending” indicates that an application has been filed and remains pending; ",
             "it does not indicate allowance, examination outcome, validity, or grant.</div>",
@@ -147,14 +131,6 @@ replacements = (
         "Related links document the public research-and-development record and technical context for each filed family. "
         "Patent examination and claim scope are governed by the applications and official USPTO record; technical "
         "validation is tracked separately by evidence type.",
-    ),
-    (
-        j(
-            "The public repository is an experimental research prototype and is not represented as ",
-            "production cryptography.",
-        ),
-        "The public repository is an experimental research prototype; production-security evaluation is tracked as "
-        "a separate validation stage.",
     ),
     (
         j(
