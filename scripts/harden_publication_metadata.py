@@ -75,21 +75,6 @@ REPLACEMENTS = (
     ),
     (
         j(
-            "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. ",
-            "The current work is an experimental cryptographic research artifact with adversarial tests, prototype signatures and ledger components, ",
-            "and explicit unresolved security proof obligations; it is not production cryptography.",
-        ),
-        "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work is an experimental cryptographic research artifact with adversarial tests, prototype signatures and ledger components, and a documented security-proof program.",
-    ),
-    (
-        j(
-            "This is an experimental research prototype with explicit unresolved security proof obligations; ",
-            "it is not production cryptography.",
-        ),
-        "This is an experimental research prototype; security properties are tracked through explicit proof obligations, adversarial tests, and implementation audits.",
-    ),
-    (
-        j(
             "This is a experimental report with control limitations the report itself identifies; ",
             "the results require independent replication before any confirmed interpretation.",
         ),
@@ -123,10 +108,6 @@ REPLACEMENTS = (
     ("NOT_TESTED_AS_A_PHYSICAL_SUBSTRATE", "PHYSICAL_SUBSTRATE_TEST_STAGE_OPEN"),
     ("\"empirical_status\": \"NOT_TESTED\"", "\"empirical_status\": \"EMPIRICAL_TEST_STAGE_OPEN\""),
     ("\"formalization_status\": \"PROTOTYPE_ONLY\"", "\"formalization_status\": \"PROTOTYPE_IMPLEMENTATION\""),
-    (
-        j("<div class=\"notice\"><strong>Current qualification:</strong> This is experimental research software, ", "not production cryptography.</div>"),
-        "<div class=\"notice\"><strong>Current qualification:</strong> Experimental cryptographic prototype; production-security evaluation is tracked as a separate validation stage.</div>",
-    ),
 )
 
 
