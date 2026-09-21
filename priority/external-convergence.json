@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.4",
-  "updated": "2026-09-20",
+  "updated": "2026-09-21",
   "title": "WCT External Literature Convergence Audit and Full Post-Date Overlap Ledger",
   "canonical": "https://rickyjreyes.github.io/priority/#convergence-title",
   "registry": "https://rickyjreyes.github.io/priority/",
@@ -28,13 +28,13 @@
     "emptyWctAnchorsMeanNotNormalizedNotNoRelationship": true
   },
   "counts": {
-    "totalRecords": 181,
-    "physicsRecords": 142,
-    "physics9Plus": 47,
+    "totalRecords": 188,
+    "physicsRecords": 149,
+    "physics9Plus": 49,
     "aiRecords": 39,
     "dateChecked": 6,
     "chronologyPriorArtReview": 4,
-    "ledgerOnly": 171,
+    "ledgerOnly": 178,
     "verifiedCases": 6,
     "auditCandidates": 4,
     "priorArtControls": 3
@@ -947,6 +947,27 @@
     {
       "ledgerRank": 32,
       "domain": "physics",
+      "title": "Vortex solitons in star networks",
+      "primaryUrl": "https://arxiv.org/abs/2609.13951",
+      "source": "arXiv",
+      "authors": [
+        "Yaroslav V. Kartashov"
+      ],
+      "identifier": "10.48550/arXiv.2609.13951",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2609.13951",
+      "overlapScore": 9.2,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 33,
+      "domain": "physics",
       "title": "Generating persistent-current superpositions in Bose-Einstein condensates using dynamic optical potentials",
       "primaryUrl": "https://arxiv.org/abs/2601.21144",
       "source": "arXiv",
@@ -987,7 +1008,7 @@
       "lastVerified": "2026-08-18"
     },
     {
-      "ledgerRank": 33,
+      "ledgerRank": 34,
       "domain": "physics",
       "title": "Proving symmetry of localized solutions and application to dihedral patterns in the planar Swift-Hohenberg PDE",
       "primaryUrl": "https://arxiv.org/abs/2509.10375",
@@ -1009,7 +1030,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 34,
+      "ledgerRank": 35,
       "domain": "physics",
       "title": "Dissipative bright and dark pulses under periodic forcing",
       "primaryUrl": "https://arxiv.org/abs/2608.14077",
@@ -1031,7 +1052,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 35,
+      "ledgerRank": 36,
       "domain": "physics",
       "title": "Local Sources of Phase Curvature and Rigidity in Finite Quantum Matter",
       "primaryUrl": "https://arxiv.org/abs/2512.21940",
@@ -1052,7 +1073,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 36,
+      "ledgerRank": 37,
       "domain": "physics",
       "title": "Impact of energetic alpha particles on core turbulence in an ARC-class fusion power plant",
       "primaryUrl": "https://arxiv.org/abs/2606.15965",
@@ -1082,7 +1103,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 37,
+      "ledgerRank": 38,
       "domain": "physics",
       "title": "Topological Arrest of Ballooning Modes in Nonaxisymmetric Toroidal Plasmas",
       "primaryUrl": "https://doi.org/10.1103/6m2z-wlmb",
@@ -1103,7 +1124,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 38,
+      "ledgerRank": 39,
       "domain": "physics",
       "title": "Bifurcation structure of soliton self-injection locking in microresonators",
       "primaryUrl": "https://doi.org/10.1364/OL.608452",
@@ -1126,7 +1147,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 39,
+      "ledgerRank": 40,
       "domain": "physics",
       "title": "Pattern formation in a Swift-Hohenberg equation with spatially periodic coefficients",
       "primaryUrl": "https://doi.org/10.1016/j.physd.2026.135239",
@@ -1148,7 +1169,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 40,
+      "ledgerRank": 41,
       "domain": "physics",
       "title": "Realization of a Synthetic Hall Torus with a Spinor Bose-Einstein Condensate",
       "primaryUrl": "https://arxiv.org/abs/2602.14549",
@@ -1196,7 +1217,7 @@
       "lastVerified": "2026-08-18"
     },
     {
-      "ledgerRank": 41,
+      "ledgerRank": 42,
       "domain": "physics",
       "title": "Curvature-amplified angular localization of radially localized states",
       "primaryUrl": "https://arxiv.org/abs/2607.29174",
@@ -1217,7 +1238,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 42,
+      "ledgerRank": 43,
       "domain": "physics",
       "title": "Hidden Harmonic Structure of Fermion Masses and Flavor",
       "primaryUrl": "https://arxiv.org/abs/2606.10405",
@@ -1238,7 +1259,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 43,
+      "ledgerRank": 44,
       "domain": "physics",
       "title": "Tuning the critical current in toroidal superfluids via controllable impurities",
       "primaryUrl": "https://doi.org/10.1103/316q-596d",
@@ -1265,7 +1286,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 44,
+      "ledgerRank": 45,
       "domain": "physics",
       "title": "Dissipation driven boundary localization in higher order topological insulators",
       "primaryUrl": "https://arxiv.org/abs/2608.20867",
@@ -1290,7 +1311,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 45,
+      "ledgerRank": 46,
       "domain": "physics",
       "title": "Nonlinear periodic orbit solutions and their bifurcation structure at the origin of soliton hopping in coupled microresonators",
       "primaryUrl": "https://doi.org/10.1038/s42005-026-02623-6",
@@ -1315,7 +1336,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 46,
+      "ledgerRank": 47,
       "domain": "physics",
       "title": "Quantum limit cycles with continuous symmetries from coherent parametric driving: Exact solutions and many-body extensions",
       "primaryUrl": "https://doi.org/10.1103/xb4r-9wxk",
@@ -1337,7 +1358,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 47,
+      "ledgerRank": 48,
       "domain": "physics",
       "title": "Supersolid rotation in an annular Bose-Einstein condensate coupled to a ring cavity",
       "primaryUrl": "https://doi.org/10.1103/2h27-c8sp",
@@ -1362,7 +1383,35 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 48,
+      "ledgerRank": 49,
+      "domain": "physics",
+      "title": "Helicon wave propagation, plasma generation and interaction with low-frequency waves in toroidal magnetic configurations",
+      "primaryUrl": "https://arxiv.org/abs/2609.18883",
+      "source": "arXiv",
+      "authors": [
+        "Simon P. H. Vincent",
+        "Mounir Alfazzaa",
+        "Patrick Quigley",
+        "Cyrille Sepulchre",
+        "Philippe Guittienne",
+        "Rémy Jacquier",
+        "Marcelo Baquero-Ruiz",
+        "Ivo Furno"
+      ],
+      "identifier": "10.48550/arXiv.2609.18883",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2609.18883",
+      "overlapScore": 9.0,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 50,
       "domain": "physics",
       "title": "Adaptive Laser Beam Engineering with Coherent Beam Combining for Efficient Power Delivery",
       "primaryUrl": "https://arxiv.org/abs/2510.19464",
@@ -1386,7 +1435,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 49,
+      "ledgerRank": 51,
       "domain": "physics",
       "title": "Analysis of optical bottle generation by coherent beam combining",
       "primaryUrl": "https://doi.org/10.1364/OE.550102",
@@ -1407,7 +1456,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 50,
+      "ledgerRank": 52,
       "domain": "physics",
       "title": "Optoelectronic Physical Unclonable Functions and Reservoir-Inspired Computation with Low-Symmetry Integrated Photonics",
       "primaryUrl": "https://arxiv.org/abs/2507.06473",
@@ -1435,7 +1484,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 51,
+      "ledgerRank": 53,
       "domain": "physics",
       "title": "Brillouin- and Raman-Kerr soliton combs in a z-cut magnesium fluoride microresonator",
       "primaryUrl": "https://doi.org/10.1016/j.optlastec.2026.115113",
@@ -1457,7 +1506,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 52,
+      "ledgerRank": 54,
       "domain": "physics",
       "title": "Stable and deterministic generation of soliton microcombs in Si3N4 coupled cavities via resonance splitting",
       "primaryUrl": "https://doi.org/10.1016/j.optlastec.2026.115112",
@@ -1483,7 +1532,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 53,
+      "ledgerRank": 55,
       "domain": "physics",
       "title": "Stabilization of dark states in emitter arrays coupled to a half-waveguide",
       "primaryUrl": "https://arxiv.org/abs/2609.03040",
@@ -1507,7 +1556,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 54,
+      "ledgerRank": 56,
       "domain": "physics",
       "title": "Cosmological discrete self-similarity in primordial black hole formation",
       "primaryUrl": "https://doi.org/10.1103/58r5-8zng",
@@ -1531,7 +1580,57 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 55,
+      "ledgerRank": 57,
+      "domain": "physics",
+      "title": "Nonlinear dynamics and mechanical frequency combs with a Meissner-levitated micromagnet",
+      "primaryUrl": "https://arxiv.org/abs/2609.11668",
+      "source": "arXiv",
+      "authors": [
+        "Yiqi Wang",
+        "Trisha Madhavan",
+        "Vanessa Wachter",
+        "J. DaLi Schaefer",
+        "Addison NewRingeisen",
+        "Zhiyuan Wei",
+        "Frankie Fung",
+        "Benjamin A. Stickler",
+        "Mikhail D. Lukin"
+      ],
+      "identifier": "10.48550/arXiv.2609.11668",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2609.11668",
+      "overlapScore": 8.9,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 58,
+      "domain": "physics",
+      "title": "Emergent Conformal Symmetry on Superfluid Vortices in Two-Color QCD and Pseudoreal Gauge Theories",
+      "primaryUrl": "https://arxiv.org/abs/2609.12080",
+      "source": "arXiv",
+      "authors": [
+        "Muneto Nitta"
+      ],
+      "identifier": "10.48550/arXiv.2609.12080",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2609.12080",
+      "overlapScore": 8.9,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 59,
       "domain": "physics",
       "title": "Bright solitons in hybrid-dispersion photonic-crystal microresonators",
       "primaryUrl": "https://arxiv.org/abs/2607.06406",
@@ -1556,7 +1655,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 56,
+      "ledgerRank": 60,
       "domain": "physics",
       "title": "Time Crystals in Coupled Exciton-Polariton Condensates",
       "primaryUrl": "https://arxiv.org/abs/2605.14250",
@@ -1580,7 +1679,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 57,
+      "ledgerRank": 61,
       "domain": "physics",
       "title": "Suppressed Stiffness of energetic particle transport due to thermal plasma nonlinearity in tokamak plasmas",
       "primaryUrl": "https://arxiv.org/abs/2606.13938",
@@ -1603,7 +1702,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 58,
+      "ledgerRank": 62,
       "domain": "physics",
       "title": "Stable rotating vortex clusters in three-dimensional quantum droplets",
       "primaryUrl": "https://arxiv.org/abs/2608.24036",
@@ -1625,7 +1724,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 59,
+      "ledgerRank": 63,
       "domain": "physics",
       "title": "Reproducible nucleation and control of stable quantum vortex rings in Bose-Einstein condensates",
       "primaryUrl": "https://doi.org/10.1103/qvg7-mr18",
@@ -1650,7 +1749,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 60,
+      "ledgerRank": 64,
       "domain": "physics",
       "title": "Josephson dynamics in two-dimensional ring-shaped condensates",
       "primaryUrl": "https://doi.org/10.1103/3249-x994",
@@ -1674,7 +1773,56 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 61,
+      "ledgerRank": 65,
+      "domain": "physics",
+      "title": "Stable three-dimensional lattice solitons in spin-orbit-coupled Bose-Einstein condensates",
+      "primaryUrl": "https://arxiv.org/abs/2609.17092",
+      "source": "arXiv",
+      "authors": [
+        "Liangwei Zeng",
+        "Boris A. Malomed",
+        "Yaroslav V. Kartashov",
+        "Xing Zhu"
+      ],
+      "identifier": "10.48550/arXiv.2609.17092",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2609.17092",
+      "overlapScore": 8.8,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 66,
+      "domain": "physics",
+      "title": "Nonlinear Reshaping of Gaussian Water Wave Packets",
+      "primaryUrl": "https://arxiv.org/abs/2609.03259",
+      "source": "arXiv",
+      "authors": [
+        "Zibo Zheng",
+        "Takuji Waseda",
+        "C. Martijn de Sterke",
+        "Andrea Blanco-Redondo",
+        "Amin Chabchoub"
+      ],
+      "identifier": "10.48550/arXiv.2609.03259",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2609.03259",
+      "overlapScore": 8.8,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 67,
       "domain": "physics",
       "title": "Vortex clusters bifurcating from multipoles and second-order ring solitons",
       "primaryUrl": "https://arxiv.org/abs/2607.18858",
@@ -1717,7 +1865,7 @@
       "lastVerified": "2026-08-18"
     },
     {
-      "ledgerRank": 62,
+      "ledgerRank": 68,
       "domain": "physics",
       "title": "Deep learning for simultaneous phase and amplitude identification in coherent beam combination",
       "primaryUrl": "https://doi.org/10.1038/s41598-025-96385-w",
@@ -1743,7 +1891,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 63,
+      "ledgerRank": 69,
       "domain": "physics",
       "title": "Quantum-Secure Physical Unclonable Function enabled by Silicon Photonics Integrated Circuits",
       "primaryUrl": "https://arxiv.org/abs/2605.14959",
@@ -1774,7 +1922,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 64,
+      "ledgerRank": 70,
       "domain": "physics",
       "title": "Multipulse Soliton Attractors Facilitated by High-Birefringence Fibers",
       "primaryUrl": "https://arxiv.org/abs/2508.10274",
@@ -1799,7 +1947,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 65,
+      "ledgerRank": 71,
       "domain": "physics",
       "title": "Irreversible Thermalization vs Reversible Dynamics Mediated by Anomalous Correlators: Wave Turbulence Theory and Experiments in Optical Fibers",
       "primaryUrl": "https://doi.org/10.1103/tgtw-qnyq",
@@ -1830,7 +1978,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 66,
+      "ledgerRank": 72,
       "domain": "physics",
       "title": "Quantum tidal locking in orbiting Bose-Einstein condensates",
       "primaryUrl": "https://doi.org/10.1103/35kh-qp2g",
@@ -1860,7 +2008,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 67,
+      "ledgerRank": 73,
       "domain": "physics",
       "title": "Anomalous transport in quasiperiodic lattices: Emergent exceptional points at band edges and log-periodic oscillations",
       "primaryUrl": "https://doi.org/10.1103/18d3-vdf3",
@@ -1882,7 +2030,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 68,
+      "ledgerRank": 74,
       "domain": "physics",
       "title": "Weakly Driven and Finite Detuning Boundary Time Crystals Enabled by Low-Dissipation Dynamical Channels",
       "primaryUrl": "https://arxiv.org/abs/2609.03491",
@@ -1905,7 +2053,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 69,
+      "ledgerRank": 75,
       "domain": "physics",
       "title": "Dissipative quadratic soliton mode-locked optical parametric oscillator",
       "primaryUrl": "https://arxiv.org/abs/2604.03474",
@@ -1928,7 +2076,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 70,
+      "ledgerRank": 76,
       "domain": "physics",
       "title": "Dynamics of driven dissipative temporal solitons in an intracavity phase trap",
       "primaryUrl": "https://doi.org/10.1038/s41377-025-02147-8",
@@ -1953,7 +2101,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 71,
+      "ledgerRank": 77,
       "domain": "physics",
       "title": "Influence of plasma shaping on the parity of core-localized toroidal Alfvén eigenmode in an advanced tokamak configuration",
       "primaryUrl": "https://arxiv.org/abs/2512.17337",
@@ -1976,7 +2124,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 72,
+      "ledgerRank": 78,
       "domain": "physics",
       "title": "Zonal-flow generation and saturation of electromagnetic ion-scale turbulence in tokamaks",
       "primaryUrl": "https://arxiv.org/abs/2607.11789",
@@ -2004,7 +2152,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 73,
+      "ledgerRank": 79,
       "domain": "physics",
       "title": "Topological charge switching in trapped polariton condensates",
       "primaryUrl": "https://arxiv.org/abs/2609.00979",
@@ -2028,7 +2176,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 74,
+      "ledgerRank": 80,
       "domain": "physics",
       "title": "Quasinormal modes in dispersive photonic time crystals",
       "primaryUrl": "https://doi.org/10.1103/m5ww-n7ws",
@@ -2051,7 +2199,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 75,
+      "ledgerRank": 81,
       "domain": "physics",
       "title": "Basic Properties of High-Dynamic Beam Shaping with Coherent Combining of High-Power Laser Beams for Materials Processing",
       "primaryUrl": "https://doi.org/10.3390/jmmp9030085",
@@ -2079,7 +2227,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 76,
+      "ledgerRank": 82,
       "domain": "physics",
       "title": "A Non-Volatile Heterogeneous Quantum Dot III-V/Si DFB Laser with Optical Memristive Behavior",
       "primaryUrl": "https://arxiv.org/abs/2605.22577",
@@ -2107,7 +2255,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 77,
+      "ledgerRank": 83,
       "domain": "physics",
       "title": "Nonlinear magnetoelastic wave dynamics and field tunable soliton excitations in hexagonal multiferroic media",
       "primaryUrl": "https://arxiv.org/abs/2603.05948",
@@ -2130,7 +2278,28 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 78,
+      "ledgerRank": 84,
+      "domain": "physics",
+      "title": "Uniform-in-Time Approximation of Calogero-Moser Particles by Continuum Multisolitons",
+      "primaryUrl": "https://arxiv.org/abs/2609.21314",
+      "source": "arXiv",
+      "authors": [
+        "Hedong Wang"
+      ],
+      "identifier": "10.48550/arXiv.2609.21314",
+      "identifierUrl": "https://doi.org/10.48550/arXiv.2609.21314",
+      "overlapScore": 8.5,
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
+      "influenceStatus": "unresolved",
+      "derivationStatus": "unresolved",
+      "patentScopeStatus": "not_assessed",
+      "wctAnchors": [],
+      "correspondence": []
+    },
+    {
+      "ledgerRank": 85,
       "domain": "physics",
       "title": "Formation and dynamics of self-bound droplets in dipolar molecular condensate",
       "primaryUrl": "https://arxiv.org/abs/2606.22503",
@@ -2158,7 +2327,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 79,
+      "ledgerRank": 86,
       "domain": "physics",
       "title": "Generation of strongly localized skin solitons in non-Hermitian waveguide arrays with the Kerr effect",
       "primaryUrl": "https://arxiv.org/abs/2607.00618",
@@ -2181,7 +2350,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 80,
+      "ledgerRank": 87,
       "domain": "physics",
       "title": "Multiple soliton regimes enabled by parametric down-conversion in χ(2)+χ(3) microresonators",
       "primaryUrl": "https://arxiv.org/abs/2607.17706",
@@ -2205,7 +2374,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 81,
+      "ledgerRank": 88,
       "domain": "physics",
       "title": "High-speed non-volatile barium titanate field-programmable photonic gate array",
       "primaryUrl": "https://doi.org/10.1038/s41566-026-01934-y",
@@ -2238,7 +2407,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 82,
+      "ledgerRank": 89,
       "domain": "physics",
       "title": "Ferroelectric-based Pockels photonic memory",
       "primaryUrl": "https://doi.org/10.1038/s41467-025-63850-z",
@@ -2267,7 +2436,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 83,
+      "ledgerRank": 90,
       "domain": "physics",
       "title": "Next-generation soliton frequency combs in photonic-crystal and nanocomposite microresonators",
       "primaryUrl": "https://arxiv.org/abs/2508.13393",
@@ -2291,7 +2460,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 84,
+      "ledgerRank": 91,
       "domain": "physics",
       "title": "Precise spectral asymptotics, exponential localization, and spectral gap estimates for the three-boson lattice Schrödinger operator",
       "primaryUrl": "https://arxiv.org/abs/2609.02488",
@@ -2315,7 +2484,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 85,
+      "ledgerRank": 92,
       "domain": "physics",
       "title": "Self-organized photonic time quasicrystal",
       "primaryUrl": "https://arxiv.org/abs/2605.05649",
@@ -2341,7 +2510,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 86,
+      "ledgerRank": 93,
       "domain": "physics",
       "title": "Mode-locking instability and multiple soliton formation in GaN polariton waveguide cavities",
       "primaryUrl": "https://arxiv.org/abs/2607.11278",
@@ -2374,7 +2543,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 87,
+      "ledgerRank": 94,
       "domain": "physics",
       "title": "Rotation Sensing via Josephson-frequency Splitting in a Toroidal Superfluid",
       "primaryUrl": "https://arxiv.org/abs/2607.08345",
@@ -2416,7 +2585,7 @@
       "lastVerified": "2026-08-18"
     },
     {
-      "ledgerRank": 88,
+      "ledgerRank": 95,
       "domain": "physics",
       "title": "Nonlinear states of the conservative complex Swift-Hohenberg equation",
       "primaryUrl": "https://arxiv.org/abs/2504.19947",
@@ -2438,7 +2607,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 89,
+      "ledgerRank": 96,
       "domain": "physics",
       "title": "Dynamics of the breathing mode with rotational symmetry in two-dimensional Bose–Einstein condensates",
       "primaryUrl": "https://doi.org/10.1016/j.chaos.2026.118344",
@@ -2465,7 +2634,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 90,
+      "ledgerRank": 97,
       "domain": "physics",
       "title": "Nonlinear Modal Reduction for Subwavelength Dielectric Scattering",
       "primaryUrl": "https://arxiv.org/abs/2608.24290",
@@ -2488,7 +2657,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 91,
+      "ledgerRank": 98,
       "domain": "physics",
       "title": "Dynamics of soliton microcombs in hybrid-nonlinear microresonators governed by higher-order dispersion and Raman effect",
       "primaryUrl": "https://doi.org/10.1016/j.chaos.2026.118468",
@@ -2514,7 +2683,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 92,
+      "ledgerRank": 99,
       "domain": "physics",
       "title": "Toward a Thermodynamic Framework for Dissipative Solitons: From Photonics to Turbulence and Bose–Einstein Condensate Analogies",
       "primaryUrl": "https://arxiv.org/abs/2608.10510",
@@ -2536,7 +2705,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 93,
+      "ledgerRank": 100,
       "domain": "physics",
       "title": "Photon-conserving Raman soliton attractors in focusing and defocusing Kerr media",
       "primaryUrl": "https://arxiv.org/abs/2607.05244",
@@ -2565,7 +2734,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 94,
+      "ledgerRank": 101,
       "domain": "physics",
       "title": "On nonlinear saturation of toroidal Alfvén eigenmode due to thermal plasma nonlinearities",
       "primaryUrl": "https://arxiv.org/abs/2604.15024",
@@ -2595,7 +2764,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 95,
+      "ledgerRank": 102,
       "domain": "physics",
       "title": "Memory in Integrated Photonic Neural Networks: From Physical Mechanisms to Neuromorphic Architectures",
       "primaryUrl": "https://arxiv.org/abs/2604.22620",
@@ -2622,7 +2791,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 96,
+      "ledgerRank": 103,
       "domain": "physics",
       "title": "Design of Energy-Efficient Cross-coupled Differential Photonic-SRAM (pSRAM) Bitcell for High-Speed On-Chip Photonic Memory and Compute Systems",
       "primaryUrl": "https://arxiv.org/abs/2503.19544",
@@ -2648,7 +2817,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 97,
+      "ledgerRank": 104,
       "domain": "physics",
       "title": "All-silicon non-volatile optical memory based on photon avalanche-induced trapping",
       "primaryUrl": "https://doi.org/10.1038/s42005-025-01934-4",
@@ -2678,7 +2847,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 98,
+      "ledgerRank": 105,
       "domain": "physics",
       "title": "Dissipative solitons in mode-locked parity–time-symmetric lasers",
       "primaryUrl": "https://doi.org/10.1038/s41566-025-01840-9",
@@ -2701,7 +2870,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 99,
+      "ledgerRank": 106,
       "domain": "physics",
       "title": "Global Well-posedness and Asymptotic Analysis of a Damped Nonlinear Wave Equation with a Codimension-One Constraint",
       "primaryUrl": "https://arxiv.org/abs/2609.02842",
@@ -2723,7 +2892,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 100,
+      "ledgerRank": 107,
       "domain": "physics",
       "title": "Shapiro steps of superfluid Fermi gases in a ring trap across the BCS--BEC crossover",
       "primaryUrl": "https://arxiv.org/abs/2605.17940",
@@ -2746,7 +2915,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 101,
+      "ledgerRank": 108,
       "domain": "physics",
       "title": "Efimovian Phonon Production for an Analog Coasting Universe in Bose-Einstein Condensates",
       "primaryUrl": "https://arxiv.org/abs/2603.16095",
@@ -2771,7 +2940,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 102,
+      "ledgerRank": 109,
       "domain": "physics",
       "title": "NEO-PGA: Nonvolatile electro-optically programmable gate array",
       "primaryUrl": "https://arxiv.org/abs/2506.18592",
@@ -2798,7 +2967,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 103,
+      "ledgerRank": 110,
       "domain": "physics",
       "title": "Chaos-induced scalar-to-vector soliton transitions in birefringent chiral media driven by Rodrigues–Legendre fields",
       "primaryUrl": "https://doi.org/10.1016/j.chaos.2026.118510",
@@ -2820,7 +2989,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 104,
+      "ledgerRank": 111,
       "domain": "physics",
       "title": "Antiresonances of Wannier-Stark ladders in Su-Schrieffer-Heeger lattices",
       "primaryUrl": "https://arxiv.org/abs/2609.01363",
@@ -2842,7 +3011,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 105,
+      "ledgerRank": 112,
       "domain": "physics",
       "title": "Emergent discrete space-time crystal of Majorana-like quasiparticles in chiral liquid crystals",
       "primaryUrl": "https://doi.org/10.1038/s41467-026-70880-8",
@@ -2865,7 +3034,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 106,
+      "ledgerRank": 113,
       "domain": "physics",
       "title": "Injection locking of Rydberg dissipative time crystals",
       "primaryUrl": "https://doi.org/10.1038/s42005-026-02585-9",
@@ -2886,7 +3055,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 107,
+      "ledgerRank": 114,
       "domain": "physics",
       "title": "Observation of wave amplification and temporal topological state in a genuine photonic time crystal",
       "primaryUrl": "https://arxiv.org/abs/2507.02223",
@@ -2915,7 +3084,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 108,
+      "ledgerRank": 115,
       "domain": "physics",
       "title": "Chaos-induced soliton dynamics and energy localization under Doppler-broadened in Electromagnetically Induced Transparency media",
       "primaryUrl": "https://doi.org/10.1016/j.chaos.2026.118534",
@@ -2939,7 +3108,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 109,
+      "ledgerRank": 116,
       "domain": "physics",
       "title": "Multi-mode Photonic Time Crystals Based on Time-Modulated Metasurface Waveguides",
       "primaryUrl": "https://arxiv.org/abs/2605.14268",
@@ -2963,7 +3132,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 110,
+      "ledgerRank": 117,
       "domain": "physics",
       "title": "Non-Hermitian Interaction between Light and Photonic Time Crystal Beyond the Floquet Quasinormal Mode Approximation",
       "primaryUrl": "https://arxiv.org/abs/2607.14912",
@@ -2990,7 +3159,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 111,
+      "ledgerRank": 118,
       "domain": "physics",
       "title": "Non-Foster Photonic Time Crystals",
       "primaryUrl": "https://arxiv.org/abs/2509.00795",
@@ -3015,7 +3184,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 112,
+      "ledgerRank": 119,
       "domain": "physics",
       "title": "Resonant states of structured photonic time crystals",
       "primaryUrl": "https://arxiv.org/abs/2506.01472",
@@ -3041,7 +3210,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 113,
+      "ledgerRank": 120,
       "domain": "physics",
       "title": "Demonstration of Broadband Non-Resonant Time-Crystal Amplification in Microwaves",
       "primaryUrl": "https://arxiv.org/abs/2605.21014",
@@ -3066,7 +3235,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 114,
+      "ledgerRank": 121,
       "domain": "physics",
       "title": "Quantum analysis of multi-frequency laser with photonic time crystal",
       "primaryUrl": "https://arxiv.org/abs/2605.20042",
@@ -3088,7 +3257,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 115,
+      "ledgerRank": 122,
       "domain": "physics",
       "title": "Analogs of spontaneous emission and lasing in photonic time crystals",
       "primaryUrl": "https://arxiv.org/abs/2507.19916",
@@ -3118,7 +3287,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 116,
+      "ledgerRank": 123,
       "domain": "physics",
       "title": "Spontaneous symmetry breaking of dissipative solitons under localized parametric drives",
       "primaryUrl": "https://doi.org/10.1016/j.chaos.2026.118390",
@@ -3143,7 +3312,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 117,
+      "ledgerRank": 124,
       "domain": "physics",
       "title": "Observation of Higher-Order Hybrid Bright-Dark Soliton Complexes in an NPR Mode-Locked Fiber Laser",
       "primaryUrl": "https://arxiv.org/abs/2606.22523",
@@ -3166,7 +3335,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 118,
+      "ledgerRank": 125,
       "domain": "physics",
       "title": "Collision and coalescence dynamics of bosonic quantum Hall droplets",
       "primaryUrl": "https://arxiv.org/abs/2606.27768",
@@ -3194,7 +3363,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 119,
+      "ledgerRank": 126,
       "domain": "physics",
       "title": "Fractality-induced photonic topological insulators",
       "primaryUrl": "https://arxiv.org/abs/2606.23505",
@@ -3219,7 +3388,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 120,
+      "ledgerRank": 127,
       "domain": "physics",
       "title": "Solitons and periodic wave solutions for complex Ginzburg-Landau equation modelling fiber lasers and nonequilibrium phenomena",
       "primaryUrl": "https://arxiv.org/abs/2608.14918",
@@ -3241,7 +3410,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 121,
+      "ledgerRank": 128,
       "domain": "physics",
       "title": "On prethermal time crystals from semi-holography",
       "primaryUrl": "https://arxiv.org/abs/2512.21690",
@@ -3265,7 +3434,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 122,
+      "ledgerRank": 129,
       "domain": "physics",
       "title": "Emergence of Time Semicrystals in Holographic Driven-Dissipative Systems",
       "primaryUrl": "https://arxiv.org/abs/2604.14131",
@@ -3289,7 +3458,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 123,
+      "ledgerRank": 130,
       "domain": "physics",
       "title": "Time crystals in cavity-BEC systems",
       "primaryUrl": "https://arxiv.org/abs/2605.23881",
@@ -3311,7 +3480,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 124,
+      "ledgerRank": 131,
       "domain": "physics",
       "title": "Topological Winding Readout of an Emergent Page-Wootters Clock",
       "primaryUrl": "https://arxiv.org/abs/2608.27650",
@@ -3334,7 +3503,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 125,
+      "ledgerRank": 132,
       "domain": "physics",
       "title": "Binary Dipolar Condensates of Dysprosium Isotopes with Tunable Spatial Order",
       "primaryUrl": "https://arxiv.org/abs/2606.26606",
@@ -3361,7 +3530,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 126,
+      "ledgerRank": 133,
       "domain": "physics",
       "title": "Low-Threshold Degenerate Optical Parametric Oscillations in Bichromatically-Pumped Normal-Dispersion Photonic-Crystal Microresonator",
       "primaryUrl": "https://arxiv.org/abs/2606.26860",
@@ -3387,7 +3556,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 127,
+      "ledgerRank": 134,
       "domain": "physics",
       "title": "Dynamic quantum-light radiation shaping with time-modulated BTO-driven nanoantennas array",
       "primaryUrl": "https://doi.org/10.1038/s44310-026-00141-5",
@@ -3410,7 +3579,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 128,
+      "ledgerRank": 135,
       "domain": "physics",
       "title": "Vacuum Fluctuation-Induced State Switching in Degenerate Optical Parametric Oscillators",
       "primaryUrl": "https://arxiv.org/abs/2606.28178",
@@ -3438,7 +3607,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 129,
+      "ledgerRank": 136,
       "domain": "physics",
       "title": "Exact soliton solutions, chaotic dynamics, and high-precision simulations for the modified complex Ginzburg–Landau equation",
       "primaryUrl": "https://doi.org/10.1063/5.0336210",
@@ -3462,7 +3631,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 130,
+      "ledgerRank": 137,
       "domain": "physics",
       "title": "Localized waves and interaction solution for the fifth-order nonlinear Schrödinger equation from Heisenberg ferromagnetism",
       "primaryUrl": "https://doi.org/10.1088/1402-4896/ae3f61",
@@ -3485,7 +3654,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 131,
+      "ledgerRank": 138,
       "domain": "physics",
       "title": "Nonlinear Meissner States, Vortex Sheets, and Laminar Structures in Extreme Type-II Superconductors",
       "primaryUrl": "https://arxiv.org/abs/2607.29608",
@@ -3506,7 +3675,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 132,
+      "ledgerRank": 139,
       "domain": "physics",
       "title": "Nonlinear Fourier spectral signatures of rogue waves observed in Bose-Einstein condensates",
       "primaryUrl": "https://arxiv.org/abs/2607.27734",
@@ -3531,7 +3700,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 133,
+      "ledgerRank": 140,
       "domain": "physics",
       "title": "Condensation and Non-condensation Times for 4-Wave Kinetic Equations",
       "primaryUrl": "https://doi.org/10.1007/s00205-026-02217-0",
@@ -3553,7 +3722,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 134,
+      "ledgerRank": 141,
       "domain": "physics",
       "title": "Extended envelope nonlinear waves in dusty plasma chain",
       "primaryUrl": "https://doi.org/10.1017/S0022377826101354",
@@ -3579,7 +3748,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 135,
+      "ledgerRank": 142,
       "domain": "physics",
       "title": "Multi-parameter Perturbations of the Laplacian and Resonance Near a Simple Embedded Eigenvalue",
       "primaryUrl": "https://arxiv.org/abs/2606.28263",
@@ -3602,7 +3771,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 136,
+      "ledgerRank": 143,
       "domain": "physics",
       "title": "Effective Lagrangian of a bosonic system in a non-trivial topology under magnetic effects",
       "primaryUrl": "https://doi.org/10.1140/epjc/s10052-026-15907-6",
@@ -3626,7 +3795,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 137,
+      "ledgerRank": 144,
       "domain": "physics",
       "title": "A high-order regularization of the non-linear shallow water equations with weakly singular shock waves and its approximation by finite volume methods",
       "primaryUrl": "https://doi.org/10.1007/s40314-026-03839-6",
@@ -3648,7 +3817,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 138,
+      "ledgerRank": 145,
       "domain": "physics",
       "title": "Perturbation theory for kinks of the defocusing modified Korteweg-de Vries equation",
       "primaryUrl": "https://arxiv.org/abs/2606.28250",
@@ -3672,7 +3841,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 139,
+      "ledgerRank": 146,
       "domain": "physics",
       "title": "Localization region detection with directionality estimation in a two-dimensional hexagonal crystal lattice model",
       "primaryUrl": "https://arxiv.org/abs/2606.24923",
@@ -3694,7 +3863,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 140,
+      "ledgerRank": 147,
       "domain": "physics",
       "title": "Nitrogen-induced ELM suppression and confinement improvement in the EAST tokamak with a full metal wall",
       "primaryUrl": "https://arxiv.org/abs/2604.26403",
@@ -3725,7 +3894,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 141,
+      "ledgerRank": 148,
       "domain": "physics",
       "title": "A conservative Mixed Finite Element Method for a Regularised Nonlinear Long-Wave Model",
       "primaryUrl": "https://doi.org/10.1007/s10915-026-03242-7",
@@ -3748,7 +3917,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 142,
+      "ledgerRank": 149,
       "domain": "physics",
       "title": "Scattering and Low-Speed Critical Elements for the 3D Focusing Energy-Critical NLS",
       "primaryUrl": "https://arxiv.org/abs/2607.04214",
@@ -3770,7 +3939,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 143,
+      "ledgerRank": 150,
       "domain": "ai",
       "title": "Our framework for reporting model misalignment",
       "primaryUrl": "https://openai.com/index/model-misalignment-reporting-framework/",
@@ -3791,7 +3960,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 144,
+      "ledgerRank": 151,
       "domain": "ai",
       "title": "An alignment assessment of recent cybersecurity incidents",
       "primaryUrl": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
@@ -3812,7 +3981,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 145,
+      "ledgerRank": 152,
       "domain": "ai",
       "title": "Documented AI Agent Incidents",
       "primaryUrl": "https://metr.org/agent-incidents/",
@@ -3833,7 +4002,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 146,
+      "ledgerRank": 153,
       "domain": "ai",
       "title": "Remembering More, Risking More: Longitudinal Safety Risks in Memory-Equipped LLM Agents",
       "primaryUrl": "https://arxiv.org/abs/2605.17830",
@@ -3858,7 +4027,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 147,
+      "ledgerRank": 154,
       "domain": "ai",
       "title": "Hidden in Memory: Sleeper Memory Poisoning in LLM Agents",
       "primaryUrl": "https://arxiv.org/abs/2605.15338",
@@ -3885,7 +4054,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 148,
+      "ledgerRank": 155,
       "domain": "ai",
       "title": "Agentic Misalignment in Summer 2026",
       "primaryUrl": "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/",
@@ -3910,7 +4079,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 149,
+      "ledgerRank": 156,
       "domain": "ai",
       "title": "Securing the future of AI agents",
       "primaryUrl": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
@@ -3932,7 +4101,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 150,
+      "ledgerRank": 157,
       "domain": "ai",
       "title": "Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees",
       "primaryUrl": "https://arxiv.org/abs/2606.24322",
@@ -3953,7 +4122,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 151,
+      "ledgerRank": 158,
       "domain": "ai",
       "title": "Metagaming matters for training, evaluation, and oversight",
       "primaryUrl": "https://apolloresearch.ai/science/metagaming-matters-for-training-evaluation-and-oversight",
@@ -3975,7 +4144,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 152,
+      "ledgerRank": 159,
       "domain": "ai",
       "title": "Measuring Reward-Seeking via Contrastive Belief Updates",
       "primaryUrl": "https://arxiv.org/abs/2607.18966",
@@ -4003,7 +4172,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 153,
+      "ledgerRank": 160,
       "domain": "ai",
       "title": "SafetyDrift: Predicting When AI Agents Cross the Line Before They Actually Do",
       "primaryUrl": "https://arxiv.org/abs/2603.27148",
@@ -4025,7 +4194,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 154,
+      "ledgerRank": 161,
       "domain": "ai",
       "title": "Safety in Self-Evolving LLM Agent Systems: Threats, Amplification, and Case Studies",
       "primaryUrl": "https://arxiv.org/abs/2606.23075",
@@ -4060,7 +4229,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 155,
+      "ledgerRank": 162,
       "domain": "ai",
       "title": "In-Context Environments Induce Evaluation-Awareness in Language Models",
       "primaryUrl": "https://arxiv.org/abs/2603.03824",
@@ -4081,7 +4250,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 156,
+      "ledgerRank": 163,
       "domain": "ai",
       "title": "How we monitor internal coding agents for misalignment",
       "primaryUrl": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/",
@@ -4107,7 +4276,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 157,
+      "ledgerRank": 164,
       "domain": "ai",
       "title": "Training Agents to Self-Report Misbehavior",
       "primaryUrl": "https://arxiv.org/abs/2602.22303",
@@ -4130,7 +4299,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 158,
+      "ledgerRank": 165,
       "domain": "ai",
       "title": "Gram: Assessing sabotage propensities via automated alignment auditing",
       "primaryUrl": "https://arxiv.org/abs/2605.30322",
@@ -4153,7 +4322,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 159,
+      "ledgerRank": 166,
       "domain": "ai",
       "title": "Evaluating and Understanding Scheming Propensity in LLM Agents",
       "primaryUrl": "https://arxiv.org/abs/2603.01608",
@@ -4178,7 +4347,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 160,
+      "ledgerRank": 167,
       "domain": "ai",
       "title": "Behavioural Analysis of Alignment Faking",
       "primaryUrl": "https://arxiv.org/abs/2605.27681",
@@ -4202,7 +4371,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 161,
+      "ledgerRank": 168,
       "domain": "ai",
       "title": "Do Models Fake Alignment Without Clear Consequences?",
       "primaryUrl": "https://arxiv.org/abs/2607.24758",
@@ -4225,7 +4394,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 162,
+      "ledgerRank": 169,
       "domain": "ai",
       "title": "Safe Multi-Agent Behavior Must Be Maintained, Not Merely Asserted: Constraint Drift in LLM-Based Multi-Agent Systems",
       "primaryUrl": "https://arxiv.org/abs/2605.10481",
@@ -4252,7 +4421,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 163,
+      "ledgerRank": 170,
       "domain": "ai",
       "title": "Automated Researchers Can Mitigate Well-Characterized Alignment Failures",
       "primaryUrl": "https://alignment.anthropic.com/2026/automated-alignment-researchers/",
@@ -4275,7 +4444,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 164,
+      "ledgerRank": 171,
       "domain": "ai",
       "title": "Investing in multi-agent AI safety research",
       "primaryUrl": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
@@ -4300,7 +4469,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 165,
+      "ledgerRank": 172,
       "domain": "ai",
       "title": "Governing Evolving Memory in LLM Agents: Risks, Mechanisms, and the Stability and Safety Governed Memory (SSGM) Framework",
       "primaryUrl": "https://arxiv.org/abs/2603.11768",
@@ -4324,7 +4493,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 166,
+      "ledgerRank": 173,
       "domain": "ai",
       "title": "Strengthening our Frontier Safety Framework",
       "primaryUrl": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
@@ -4347,7 +4516,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 167,
+      "ledgerRank": 174,
       "domain": "ai",
       "title": "Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds",
       "primaryUrl": "https://arxiv.org/abs/2606.15385",
@@ -4369,7 +4538,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 168,
+      "ledgerRank": 175,
       "domain": "ai",
       "title": "Agent Drift: Quantifying Behavioral Degradation in Multi-Agent LLM Systems Over Extended Interactions",
       "primaryUrl": "https://arxiv.org/abs/2601.04170",
@@ -4390,7 +4559,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 169,
+      "ledgerRank": 176,
       "domain": "ai",
       "title": "Stay Focused: Problem Drift in Multi-Agent Debate",
       "primaryUrl": "https://arxiv.org/abs/2502.19559",
@@ -4416,7 +4585,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 170,
+      "ledgerRank": 177,
       "domain": "ai",
       "title": "Reasoning models struggle to control their chains of thought, and that’s good",
       "primaryUrl": "https://openai.com/index/reasoning-models-chain-of-thought-controllability/",
@@ -4440,7 +4609,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 171,
+      "ledgerRank": 178,
       "domain": "ai",
       "title": "We need 3rd party Training-Run Assessments",
       "primaryUrl": "https://www.apolloresearch.ai/science/we-need-3rd-party-training-run-assessments",
@@ -4461,7 +4630,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 172,
+      "ledgerRank": 179,
       "domain": "ai",
       "title": "AgentShield: Deception-based Compromise Detection for Tool-using LLM Agents",
       "primaryUrl": "https://arxiv.org/abs/2605.11026",
@@ -4483,7 +4652,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 173,
+      "ledgerRank": 180,
       "domain": "ai",
       "title": "SAGE: Multi-Agent Self-Evolution for LLM Reasoning",
       "primaryUrl": "https://arxiv.org/abs/2603.15255",
@@ -4510,7 +4679,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 174,
+      "ledgerRank": 181,
       "domain": "ai",
       "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
       "primaryUrl": "https://arxiv.org/abs/2511.18397",
@@ -4552,7 +4721,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 175,
+      "ledgerRank": 182,
       "domain": "ai",
       "title": "Cost-Utility Alignment in LLM Agent Trajectories: Profiling, Attribution, Diagnosis, Adaptation, and Evaluation",
       "primaryUrl": "https://arxiv.org/abs/2608.26195",
@@ -4574,7 +4743,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 176,
+      "ledgerRank": 183,
       "domain": "ai",
       "title": "LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking",
       "primaryUrl": "https://arxiv.org/abs/2604.15149",
@@ -4603,7 +4772,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 177,
+      "ledgerRank": 184,
       "domain": "ai",
       "title": "Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use",
       "primaryUrl": "https://arxiv.org/abs/2605.02964",
@@ -4624,7 +4793,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 178,
+      "ledgerRank": 185,
       "domain": "ai",
       "title": "School of Reward Hacks: Hacking harmless tasks generalizes to misaligned behavior in LLMs",
       "primaryUrl": "https://arxiv.org/abs/2508.17511",
@@ -4649,7 +4818,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 179,
+      "ledgerRank": 186,
       "domain": "ai",
       "title": "Fully Autonomous AI Agents Should Not be Developed",
       "primaryUrl": "https://arxiv.org/abs/2502.02649",
@@ -4673,7 +4842,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 180,
+      "ledgerRank": 187,
       "domain": "ai",
       "title": "The GenAI Divide: State of AI in Business 2025",
       "primaryUrl": "https://www.media.mit.edu/groups/nanda/overview/",
@@ -4697,7 +4866,7 @@
       "correspondence": []
     },
     {
-      "ledgerRank": 181,
+      "ledgerRank": 188,
       "domain": "ai",
       "title": "Temporal Blind Spot Failure in Serverless Cloud Systems: How AI Agents Cause Cloud Disasters",
       "primaryUrl": "https://www.tdcommons.org/2026.html",
