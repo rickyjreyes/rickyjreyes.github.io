@@ -1,0 +1,57 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-main
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Determine changed paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/indexnow-changed.txt"
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            cat > "$OUT" <<'EOF'
+          index.html
+          llms.txt
+          sitemap.xml
+          priority/priority.json
+          priority/external-convergence.json
+          overlap/index.html
+          publications/geometry-of-resonance.html
+          publications.json
+          research-corpus.json
+          compiled-registry.json
+          EOF
+          elif [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+            git show --pretty="" --name-only "${{ github.sha }}" > "$OUT"
+          else
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" > "$OUT"
+          fi
+
+          echo "Changed paths:"
+          cat "$OUT"
+
+      - name: Submit changed URLs to IndexNow
+        run: |
+          python scripts/submit_indexnow.py \
+            --changed-file-list "$RUNNER_TEMP/indexnow-changed.txt" \
+            --key-file "bfc365ba2ff4031ae8febc9bf0bd52ed.txt" \
+            --wait-for-key-seconds 180
