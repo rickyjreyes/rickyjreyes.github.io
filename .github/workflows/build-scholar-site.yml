@@ -25,6 +25,7 @@ on:
       - "scripts/normalize_research_status.py"
       - "scripts/harden_publication_metadata.py"
       - "scripts/strengthen_provenance.py"
+      - "scripts/strengthen_convergence_metadata.py"
       - "scripts/normalize_glossary_priority_sources.py"
       - "scripts/build_terminology_priority.py"
       - "scripts/normalize_pvnp_trilogy_titles.py"
@@ -56,6 +57,7 @@ on:
       - "scripts/normalize_research_status.py"
       - "scripts/harden_publication_metadata.py"
       - "scripts/strengthen_provenance.py"
+      - "scripts/strengthen_convergence_metadata.py"
       - "scripts/normalize_glossary_priority_sources.py"
       - "scripts/build_terminology_priority.py"
       - "scripts/normalize_pvnp_trilogy_titles.py"
@@ -149,6 +151,9 @@ jobs:
 
       - name: Strengthen canonical researcher and publication provenance
         run: python scripts/strengthen_provenance.py
+
+      - name: Strengthen chronology-first convergence metadata
+        run: python scripts/strengthen_convergence_metadata.py
 
       - name: Validate cross-layer registry and publication traceability
         run: python scripts/validate_registry_sync.py
