@@ -250,7 +250,7 @@
     section.innerHTML = `
       <p class="eyebrow">External evidence</p>
       <h2 id="expanded-evidence-title">Post-2025 evidence now spans research papers, frontier-lab observations, and institutional controls</h2>
-      <p class="section-lede">The public convergence ledger contains 181 external records, including 39 Recursive AI Drift / AI-system records. These highlighted cases are the clearest current examples of empirical convergence, independent convergence, and institutional response.</p>
+      <p class="section-lede">The public convergence ledger contains 181 external records, including 39 Recursive AI Drift / AI-system records. These highlighted cases are the clearest current examples of empirical convergence, post-date convergence, and institutional response.</p>
 
       <div class="evidence-metrics" aria-label="Expanded evidence totals">
         <div class="evidence-metric"><strong>181</strong><span>external records across WCT physics, photonics, and AI-system research</span></div>
@@ -288,14 +288,14 @@
         </article>
 
         <article class="evidence-card independent">
-          <div class="evidence-top"><span class="evidence-badge">INDEPENDENT CONVERGENCE</span><span class="evidence-date">arXiv · 2026</span></div>
+          <div class="evidence-top"><span class="evidence-badge">POST-DATE CONVERGENCE</span><span class="evidence-date">arXiv · 2026</span></div>
           <h3><a href="https://arxiv.org/abs/2605.17830" target="_blank" rel="noopener noreferrer">Remembering More, Risking More</a></h3>
           <p>Independent work studies longitudinal safety degradation in memory-equipped agents and temporal memory contamination.</p>
           <p class="evidence-anchor"><strong>Connection:</strong> frozen model weights with evolving external state and persistent cross-session dynamics.</p>
         </article>
 
         <article class="evidence-card independent">
-          <div class="evidence-top"><span class="evidence-badge">INDEPENDENT CONVERGENCE</span><span class="evidence-date">arXiv · 2026</span></div>
+          <div class="evidence-top"><span class="evidence-badge">POST-DATE CONVERGENCE</span><span class="evidence-date">arXiv · 2026</span></div>
           <h3><a href="https://arxiv.org/abs/2603.27148" target="_blank" rel="noopener noreferrer">SafetyDrift</a></h3>
           <p>Independent research treats agent safety as a trajectory-level phenomenon in which plausible actions can accumulate toward unsafe behavior.</p>
           <p class="evidence-anchor"><strong>Connection:</strong> trajectory drift, accumulation, critical transition, and early-warning structure.</p>
