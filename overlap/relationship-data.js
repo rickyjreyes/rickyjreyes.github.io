@@ -37,7 +37,14 @@ window.overlapRelationshipByUrl = Object.assign(window.overlapRelationshipByUrl 
   "https://arxiv.org/abs/2508.17511": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2502.02649": "STRUCTURAL OVERLAP",
   "https://www.media.mit.edu/groups/nanda/overview/": "STRUCTURAL OVERLAP",
-  "https://www.tdcommons.org/2026.html": "EMPIRICAL CONVERGENCE"
+  "https://www.tdcommons.org/2026.html": "EMPIRICAL CONVERGENCE",
+  "https://arxiv.org/abs/2609.13951": "INDEPENDENT CONVERGENCE",
+  "https://arxiv.org/abs/2609.18883": "EMPIRICAL CONVERGENCE",
+  "https://arxiv.org/abs/2609.11668": "EMPIRICAL CONVERGENCE",
+  "https://arxiv.org/abs/2609.12080": "INDEPENDENT CONVERGENCE",
+  "https://arxiv.org/abs/2609.17092": "INDEPENDENT CONVERGENCE",
+  "https://arxiv.org/abs/2609.03259": "EMPIRICAL CONVERGENCE",
+  "https://arxiv.org/abs/2609.21314": "INDEPENDENT CONVERGENCE"
 });
 
 window.overlapRelationshipDefinitions = {

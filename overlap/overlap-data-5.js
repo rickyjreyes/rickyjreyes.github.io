@@ -6,7 +6,14 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
 [1045,"Antiresonances of Wannier-Stark ladders in Su-Schrieffer-Heeger lattices","https://arxiv.org/abs/2609.01363",7.8,"physics","arXiv","Yonatan Betancur-Ocampo; Guillermo Monsivais","10.48550/arXiv.2609.01363","https://doi.org/10.48550/arXiv.2609.01363"],
 [1046,"Pattern formation in a Swift-Hohenberg equation with spatially periodic coefficients","https://doi.org/10.1016/j.physd.2026.135239",9.1,"physics","Physica D: Nonlinear Phenomena","Jolien Kamphuis; Martina Chirilus-Bruckner","10.1016/j.physd.2026.135239","https://doi.org/10.1016/j.physd.2026.135239"],
 [1047,"Supersolid rotation in an annular Bose-Einstein condensate coupled to a ring cavity","https://doi.org/10.1103/2h27-c8sp",9.0,"physics","Physical Review A","Gunjan Yadav; Nilamoni Daloi; Pardeep Kumar; M. Bhattacharya; Tarak Nath Dey","10.1103/2h27-c8sp","https://doi.org/10.1103/2h27-c8sp"],
-[1048,"Cosmological discrete self-similarity in primordial black hole formation","https://doi.org/10.1103/58r5-8zng",8.9,"physics","Physical Review D","Luis E. Padilla; Tomohiro Harada; Ethan Milligan; David Mulryne","10.1103/58r5-8zng","https://doi.org/10.1103/58r5-8zng"]
+[1048,"Cosmological discrete self-similarity in primordial black hole formation","https://doi.org/10.1103/58r5-8zng",8.9,"physics","Physical Review D","Luis E. Padilla; Tomohiro Harada; Ethan Milligan; David Mulryne","10.1103/58r5-8zng","https://doi.org/10.1103/58r5-8zng"],
+[1073,"Vortex solitons in star networks","https://arxiv.org/abs/2609.13951",9.2,"physics","arXiv","Yaroslav V. Kartashov","10.48550/arXiv.2609.13951","https://doi.org/10.48550/arXiv.2609.13951"],
+[1074,"Helicon wave propagation, plasma generation and interaction with low-frequency waves in toroidal magnetic configurations","https://arxiv.org/abs/2609.18883",9.0,"physics","arXiv","Simon P. H. Vincent; Mounir Alfazzaa; Patrick Quigley; Cyrille Sepulchre; Philippe Guittienne; Rémy Jacquier; Marcelo Baquero-Ruiz; Ivo Furno","10.48550/arXiv.2609.18883","https://doi.org/10.48550/arXiv.2609.18883"],
+[1075,"Nonlinear dynamics and mechanical frequency combs with a Meissner-levitated micromagnet","https://arxiv.org/abs/2609.11668",8.9,"physics","arXiv","Yiqi Wang; Trisha Madhavan; Vanessa Wachter; J. DaLi Schaefer; Addison NewRingeisen; Zhiyuan Wei; Frankie Fung; Benjamin A. Stickler; Mikhail D. Lukin","10.48550/arXiv.2609.11668","https://doi.org/10.48550/arXiv.2609.11668"],
+[1076,"Emergent Conformal Symmetry on Superfluid Vortices in Two-Color QCD and Pseudoreal Gauge Theories","https://arxiv.org/abs/2609.12080",8.9,"physics","arXiv","Muneto Nitta","10.48550/arXiv.2609.12080","https://doi.org/10.48550/arXiv.2609.12080"],
+[1077,"Stable three-dimensional lattice solitons in spin-orbit-coupled Bose-Einstein condensates","https://arxiv.org/abs/2609.17092",8.8,"physics","arXiv","Liangwei Zeng; Boris A. Malomed; Yaroslav V. Kartashov; Xing Zhu","10.48550/arXiv.2609.17092","https://doi.org/10.48550/arXiv.2609.17092"],
+[1078,"Nonlinear Reshaping of Gaussian Water Wave Packets","https://arxiv.org/abs/2609.03259",8.8,"physics","arXiv","Zibo Zheng; Takuji Waseda; C. Martijn de Sterke; Andrea Blanco-Redondo; Amin Chabchoub","10.48550/arXiv.2609.03259","https://doi.org/10.48550/arXiv.2609.03259"],
+[1079,"Uniform-in-Time Approximation of Calogero-Moser Particles by Continuum Multisolitons","https://arxiv.org/abs/2609.21314",8.5,"physics","arXiv","Hedong Wang","10.48550/arXiv.2609.21314","https://doi.org/10.48550/arXiv.2609.21314"]
 ]);
 
 // Re-normalize after this overlay so newly appended records participate in
@@ -18,7 +25,7 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
   const oldRank = record => Number.isFinite(Number(record[0])) ? Number(record[0]) : 999999;
   const ranked = domain => records
     .filter(record => record[4] === domain)
-    .sort((a,b) =>
+    .sort((a,b)=>
       (Number(b[3]) - Number(a[3])) ||
       (oldRank(a) - oldRank(b)) ||
       String(a[1]).localeCompare(String(b[1])) ||
