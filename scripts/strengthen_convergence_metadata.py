@@ -184,6 +184,8 @@ def patch_overlap_page() -> bool:
     )
     updated = updated.replace("WCT Adoption &amp; Independent Convergence", "WCT Priority &amp; Post-Date Convergence")
     updated = updated.replace("WCT Adoption & Independent Convergence", "WCT Priority & Post-Date Convergence")
+    updated = updated.replace("External uptake · independent convergence · empirical observation", "External chronology · post-date convergence · empirical observation")
+    updated = updated.replace("This page documents documented external overlap and convergence records", "This page documents post-date external overlap and convergence records")
     updated = updated.replace("INDEPENDENT CONVERGENCE", "POST-DATE CONVERGENCE")
     updated = updated.replace(
         "Later independent work develops a closely corresponding concept, mechanism, or systems model.",
