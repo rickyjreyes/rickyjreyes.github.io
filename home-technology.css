@@ -2,22 +2,22 @@
 @media (min-width:1181px){
   .hero{
     min-height:auto;
-    grid-template-columns:minmax(0,1.1fr) minmax(380px,.9fr);
+    grid-template-columns:minmax(0,1.02fr) minmax(460px,.98fr);
     align-items:center;
-    gap:clamp(32px,4vw,56px);
+    gap:clamp(28px,3vw,44px);
     padding-block:clamp(44px,5vw,68px) clamp(54px,6vw,78px);
   }
-  .hero-copy{max-width:720px}
+  .hero-copy{max-width:700px}
   .hero h1{
     max-width:660px;
     font-size:clamp(3.25rem,4.2vw,4.5rem);
     line-height:1.06;
     letter-spacing:-.03em;
   }
-  .hero-lede{max-width:640px;margin-top:20px;line-height:1.65}
+  .hero-lede{max-width:650px;margin-top:20px;line-height:1.65}
   .hero-actions{margin-top:24px}
   .hero .identity-links{margin-top:20px}
-  .hero .wct-wrap{width:min(100%,420px)!important;justify-self:end!important}
+  .hero .wct-wrap{width:min(100%,550px)!important;justify-self:end!important}
 }
 
 /* Two columns become too cramped on smaller laptops; stack before the text starts breaking word-by-word. */
@@ -31,7 +31,7 @@
   .hero-copy{max-width:780px}
   .hero h1{max-width:740px;font-size:clamp(3.15rem,6vw,4.4rem);line-height:1.06;letter-spacing:-.03em}
   .hero-lede{max-width:680px}
-  .hero .wct-wrap{width:min(100%,420px)!important;justify-self:center!important}
+  .hero .wct-wrap{width:min(100%,540px)!important;justify-self:center!important}
 }
 
 .technology-bridge{padding-top:clamp(4.5rem,8vw,7rem);padding-bottom:clamp(4.5rem,8vw,7rem);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
