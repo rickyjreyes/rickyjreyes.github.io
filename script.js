@@ -165,7 +165,7 @@
 
   const panel = document.createElement('div');
   panel.className = 'wct-panel';
-  panel.innerHTML = `<div class="wct-tabs" aria-label="WCT field concepts"><button class="wct-tab" data-concept="transport" type="button" aria-pressed="false">Wave transport</button><button class="wct-tab" data-concept="band" type="button" aria-pressed="false">Finite-k selection</button><button class="wct-tab" data-concept="curvature" type="button" aria-pressed="false">Curvature feedback</button><button class="wct-tab" data-concept="lock" type="button" aria-pressed="false">Phase locking</button></div><div class="wct-copy" aria-live="polite"><p class="wct-kicker"></p><h2 class="wct-title"></h2><p class="wct-description"></p></div><p class="wct-note">Illustrative field map, not a numerical simulation or empirical result.</p>`;
+  panel.innerHTML = `<div class="wct-tabs" aria-label="WCT field concepts"><button class="wct-tab" data-concept="transport" type="button" aria-pressed="false">Wave transport</button><button class="wct-tab" data-concept="band" type="button" aria-pressed="false">Finite-k selection</button><button class="wct-tab" data-concept="curvature" type="button" aria-pressed="false">Curvature feedback</button><button class="wct-tab" data-concept="lock" type="button" aria-pressed="false">Phase locking</button></div><div class="wct-copy" aria-live="polite"><p class="wct-kicker"></p><h2 class="wct-title"></h2><p class="wct-description"></p></div><p class="wct-note">Illustrative staged field dynamics, not a numerical simulation or empirical result.</p>`;
   wrap.appendChild(panel);
 
   const controls = wrap.querySelectorAll('[data-concept]');
@@ -224,8 +224,35 @@
     canvas.height = Math.max(1, Math.round(rect.height * ratio));
   };
 
+  const modeKeys = ['transport', 'band', 'curvature', 'lock'];
+  const modeMix = { transport: 1, band: 0, curvature: 0, lock: 0 };
+
+  const updateModeMix = (time) => {
+    const target = { transport: 0, band: 0, curvature: 0, lock: 0 };
+    const active = field.dataset.active || 'overview';
+
+    if (active === 'overview') {
+      const cycle = (time % 16) / 4;
+      const index = Math.floor(cycle) % modeKeys.length;
+      const next = (index + 1) % modeKeys.length;
+      const raw = cycle - Math.floor(cycle);
+      const blend = raw * raw * (3 - 2 * raw);
+      target[modeKeys[index]] = 1 - blend;
+      target[modeKeys[next]] = blend;
+    } else if (target[active] !== undefined) {
+      target[active] = 1;
+    } else {
+      target.transport = 1;
+    }
+
+    for (const key of modeKeys) {
+      modeMix[key] += (target[key] - modeMix[key]) * .14;
+    }
+  };
+
   const render = (time) => {
     const pixels = image.data;
+    updateModeMix(time);
 
     for (let p = 0; p < size * size; p++) {
       const i = p * 4;
@@ -234,34 +261,80 @@
       const radius = coordinates[i + 2];
       const angle = coordinates[i + 3];
 
-      const envelope = Math.exp(-2.8 * radius * radius);
       const outerFade = Math.max(0, Math.min(1, (1.42 - radius) * 2.45));
+      const curvatureEnvelope = Math.exp(-1.45 * radius * radius);
+      const lockEnvelope = Math.exp(-3.05 * radius * radius);
 
-      // Travelling wave packets. The phase term changes every frame so the actual background propagates.
+      // 01 Wave transport: broadband directional packets translate across the field.
       let travelling = 0;
       for (let channel = 0; channel < 3; channel++) {
         const direction = channel * Math.PI * 2 / 3 + .22;
         const along = x * Math.cos(direction) + y * Math.sin(direction);
         const across = -x * Math.sin(direction) + y * Math.cos(direction);
-        const channelEnvelope = .5 + .5 * Math.exp(-2.1 * across * across);
-        travelling += Math.sin(14.8 * along - time * (2.35 + channel * .27) + channel * 1.75) * channelEnvelope;
+        const channelEnvelope = .48 + .52 * Math.exp(-1.85 * across * across);
+        travelling += Math.sin(13.4 * along - time * (2.65 + channel * .31) + channel * 1.72) * channelEnvelope;
       }
-
-      // Counter-propagating components create moving interference rather than simple expanding rings.
+      travelling /= 3;
       const crossing =
-        .68 * Math.sin(12.4 * (x + .67 * y) + time * 1.95) +
-        .58 * Math.cos(14.1 * (.72 * x - y) - time * 2.2);
+        .48 * Math.sin(9.8 * (x + .72 * y) + time * 1.82) +
+        .42 * Math.cos(18.6 * (.67 * x - y) - time * 2.28);
+      const transportField = travelling + .38 * crossing;
 
-      // Curved localized wave structure around the center.
-      const locked =
-        Math.sin(17.2 * radius - time * 2.55 + 1.15 * Math.sin(angle * 2 - time * .62)) +
-        .34 * Math.cos(24.2 * radius + angle * 3 + time * 1.08);
+      // 02 Finite-k selection: every retained component shares the same preferred |k|.
+      // The pattern still evolves, but its spatial scale is narrow-band instead of broadband.
+      const k0 = 15.4;
+      let finiteBand = 0;
+      for (let channel = 0; channel < 4; channel++) {
+        const direction = channel * Math.PI / 4 + .12;
+        const along = x * Math.cos(direction) + y * Math.sin(direction);
+        const phase = channel * 1.17;
+        finiteBand += Math.cos(k0 * along + .58 * Math.sin(time * .52 + phase));
+      }
+      finiteBand = finiteBand / 4 + .22 * Math.cos(k0 * radius - time * .44);
 
-      const interference = .42 * travelling + .31 * crossing + .9 * envelope * locked;
-      const crest = .5 + .5 * Math.tanh(interference * 1.08);
-      const amplitude = Math.min(1, Math.abs(interference) * .5 + envelope * .18) * outerFade;
-      const node = Math.exp(-28 * Math.abs(interference)) * envelope * .16;
-      const pulse = .94 + .06 * Math.sin(time * 1.25 - radius * 4.2);
+      // 03 Curvature feedback: the phase metric is warped so wavefronts bend and tighten
+      // toward the center rather than remaining plane or purely radial waves.
+      const warpedRadius = radius + .13 * radius * radius + .035 * radius * radius * radius;
+      const angularWarp =
+        1.22 * Math.sin(2 * angle - time * .42) * (1 - .34 * radius) +
+        .36 * Math.sin(3 * angle + time * .31) * radius;
+      const curvedField =
+        Math.sin(15.8 * warpedRadius - time * 1.28 + angularWarp) +
+        .38 * Math.cos(21.6 * warpedRadius + 3 * angle + time * .72);
+
+      // 04 Phase locking: spatial phase is fixed. Time changes only the mode amplitude,
+      // producing a standing localized pattern instead of translating wave crests.
+      const lockedShape =
+        Math.sin(16.8 * radius + 1.08 * Math.sin(2 * angle)) +
+        .34 * Math.cos(23.4 * radius + 3 * angle);
+      const lockedField = lockedShape * (.88 + .12 * Math.sin(time * 1.18));
+
+      const interference =
+        modeMix.transport * 1.05 * transportField +
+        modeMix.band * 1.34 * finiteBand +
+        modeMix.curvature * 1.46 * curvatureEnvelope * curvedField +
+        modeMix.lock * 1.72 * lockEnvelope * lockedField;
+
+      const structuralEnvelope =
+        modeMix.transport * .05 +
+        modeMix.band * .12 +
+        modeMix.curvature * .55 * curvatureEnvelope +
+        modeMix.lock * .95 * lockEnvelope;
+
+      const crest = .5 + .5 * Math.tanh(interference * 1.12);
+      const amplitude = Math.min(1, Math.abs(interference) * .72 + structuralEnvelope * .24) * outerFade;
+      const nodeWeight =
+        modeMix.transport * .035 +
+        modeMix.band * .07 +
+        modeMix.curvature * .12 * curvatureEnvelope +
+        modeMix.lock * .2 * lockEnvelope;
+      const node = Math.exp(-26 * Math.abs(interference)) * nodeWeight;
+      const pulse =
+        1 +
+        modeMix.transport * .025 * Math.sin(time * 1.9 - radius * 5.5) +
+        modeMix.band * .018 * Math.sin(time * .78) +
+        modeMix.curvature * .035 * Math.sin(time * 1.04 - radius * 3.1) +
+        modeMix.lock * .055 * Math.sin(time * 1.18);
       const glow = amplitude * pulse;
 
       pixels[i] = Math.round(4 + (90 + 44 * (1 - crest)) * glow + 88 * node);
