@@ -30,7 +30,7 @@
     });
   };
 
-  const rewritePriorityCopy = (main) => {
+  const rewritePriorityCopy = () => {
     const intro = document.querySelector('.priority-head h1 + p');
     if (intro) intro.textContent = 'A dated registry of Reyes research origins, verified predictions, patent-family priority, and later external work showing corresponding mechanisms, observations, and control responses.';
 
@@ -76,7 +76,6 @@
     if (convergence) {
       const lede = convergence.querySelector('.section-lede');
       if (lede) lede.textContent = 'Six date-checked cases pairing specific earlier Reyes disclosures with later external publications showing material mechanism-level correspondence.';
-
       convergence.querySelectorAll('.status-pill').forEach((pill) => {
         const text = pill.textContent.trim();
         if (text === 'INFLUENCE UNRESOLVED') {
@@ -87,16 +86,12 @@
           pill.classList.remove('muted-status');
         }
       });
-
       const candidateHeading = Array.from(convergence.querySelectorAll('h3')).find((el) => /Additional high-priority comparisons/i.test(el.textContent));
       if (candidateHeading) {
         candidateHeading.textContent = 'Additional high-priority comparisons';
         const candidateLede = candidateHeading.nextElementSibling;
-        if (candidateLede && candidateLede.classList.contains('section-lede')) {
-          candidateLede.textContent = 'Four additional multi-mechanism comparisons retained for deeper chronology, source, and prior-art normalization.';
-        }
+        if (candidateLede && candidateLede.classList.contains('section-lede')) candidateLede.textContent = 'Four additional multi-mechanism comparisons retained for deeper chronology, source, and prior-art normalization.';
       }
-
       const audit = convergence.querySelector('.audit-status');
       if (audit) audit.innerHTML = '<strong>Evidence promotion.</strong> Stronger cases combine normalized Reyes anchors, external publication chronology, mechanism-level correspondence, and historical controls.';
     }
@@ -133,17 +128,18 @@
       .priority-jump a{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02);color:var(--muted);font-size:.78rem;font-weight:750;text-decoration:none}
       .priority-jump a:hover{border-color:rgba(103,212,255,.38);color:var(--text);background:rgba(103,212,255,.05)}
 
-      .prediction-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0;max-width:1120px}
+      .prediction-metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:24px 0;max-width:1160px}
       .prediction-metric{padding:18px;border:1px solid rgba(124,224,159,.2);border-radius:14px;background:rgba(124,224,159,.035)}
       .prediction-metric strong{display:block;font:500 1.75rem/1 Georgia,serif;color:#9be8b3}
       .prediction-metric span{display:block;margin-top:7px;color:var(--muted-2);font-size:.8rem;line-height:1.4}
+      .prediction-group{grid-column:1/-1;margin:24px 0 0!important;padding-top:18px;border-top:1px solid rgba(124,224,159,.16);font:600 1rem/1.25 Georgia,serif!important;color:#9be8b3;letter-spacing:.01em}
+      .prediction-group:first-child{margin-top:0!important;border-top:0;padding-top:0}
       .prediction-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px;max-width:1160px}
-      .prediction-card{padding:19px 20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
+      .prediction-card{position:relative;padding:20px 20px 18px 54px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
+      .prediction-number{position:absolute;left:18px;top:19px;display:grid;place-items:center;width:25px;height:25px;border:1px solid rgba(124,224,159,.38);border-radius:999px;color:#9be8b3;font-size:.7rem;font-weight:850}
       .prediction-card strong{display:block;color:var(--text);font-size:.98rem;line-height:1.35}
       .prediction-card p{margin:7px 0 0;color:var(--muted);font-size:.86rem;line-height:1.55}
       .prediction-card a{color:var(--accent)}
-      .prediction-note{max-width:1120px;margin-top:20px;padding:18px 20px;border-left:3px solid #9be8b3;background:rgba(124,224,159,.045);color:var(--muted);line-height:1.6}
-      .prediction-note strong{color:var(--text)}
 
       .evidence-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0 24px;max-width:1120px}
       .evidence-metric{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
@@ -183,9 +179,9 @@
       [aria-labelledby="convergence-title"]{border-top:1px solid rgba(255,197,92,.22)!important}
       [aria-labelledby="claims-title"]{padding-bottom:30px!important}
 
-      @media(max-width:1100px){.audit-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}.definitions{grid-template-columns:repeat(2,minmax(0,1fr))!important}.prediction-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
-      @media(max-width:900px){.prediction-grid,.evidence-grid{grid-template-columns:1fr}.evidence-metrics{grid-template-columns:1fr}}
-      @media(max-width:620px){.priority-shell{width:calc(100% - 20px)!important}.audit-strip,.definitions,.prediction-metrics{grid-template-columns:1fr!important}.priority-section{padding:34px 0!important}.priority-fold>summary{padding:16px}.fold-action{display:none}}
+      @media(max-width:1100px){.audit-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}.definitions{grid-template-columns:repeat(2,minmax(0,1fr))!important}.prediction-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}}
+      @media(max-width:900px){.prediction-grid,.evidence-grid{grid-template-columns:1fr}.evidence-metrics{grid-template-columns:1fr}.prediction-group{grid-column:1}}
+      @media(max-width:620px){.priority-shell{width:calc(100% - 20px)!important}.audit-strip,.definitions,.prediction-metrics{grid-template-columns:1fr!important}.priority-section{padding:34px 0!important}.priority-fold>summary{padding:16px}.fold-action{display:none}.prediction-card{padding-left:50px}}
     `;
     document.head.appendChild(style);
   };
@@ -264,29 +260,49 @@
     section.innerHTML = `
       <p class="eyebrow">Prediction &amp; validation record</p>
       <h2 id="verified-predictions-title">24 green claims with dated anchors and confirming evidence</h2>
-      <p class="section-lede">Green means the stated phenomenon or mechanism appears in a dated Reyes record and is subsequently shown by later literature, engineering evidence, a real incident, or a frozen/public-data test. The evidence types are not treated as interchangeable.</p>
+      <p class="section-lede">Each green item below states the predicted or pre-existing Reyes claim and the later observation, literature result, engineering result, incident, or frozen/public-data test that confirmed it.</p>
 
       <div class="prediction-metrics" aria-label="Prediction validation summary">
-        <div class="prediction-metric"><strong>24</strong><span>verified green claims retained under the stated rule</span></div>
-        <div class="prediction-metric"><strong>10+</strong><span>AI-agent failure mechanisms and control predictions</span></div>
-        <div class="prediction-metric"><strong>9</strong><span>physical-computation and wave-dynamics confirmations</span></div>
-        <div class="prediction-metric"><strong>5</strong><span>collider, GWTC, and quantitative validation results</span></div>
+        <div class="prediction-metric"><strong>24</strong><span>verified green claims</span></div>
+        <div class="prediction-metric"><strong>10</strong><span>AI and agent-safety predictions</span></div>
+        <div class="prediction-metric"><strong>4</strong><span>physical-computation / hardware confirmations</span></div>
+        <div class="prediction-metric"><strong>5</strong><span>wave-dynamics confirmations</span></div>
+        <div class="prediction-metric"><strong>5</strong><span>collider, GWTC, and quantitative results</span></div>
       </div>
 
       <div class="prediction-grid">
-        <article class="prediction-card"><strong>Recursive semantic drift and coherence mirage</strong><p><a href="https://doi.org/10.5281/zenodo.17732661" target="_blank" rel="noopener noreferrer">RCA · June 11, 2025</a> predicted recursive semantic degradation while fluent output remains intact. Later agent-drift and constraint-drift work independently formalized the same failure geometry.</p></article>
-        <article class="prediction-card"><strong>Cross-agent propagation can outrun correction</strong><p>RCA identified propagation across agents and substrates as the dangerous boundary. The 2026 OpenAI/METR incident documented unauthorized inter-agent communication, coordination, and propagation beyond intended isolation controls.</p></article>
-        <article class="prediction-card"><strong>Reward hacking, verifier exploitation, persistent memory, and self-evolving loops</strong><p>These later became explicit research and incident categories in 2026, matching the RCA trajectory of optimization exploiting imperfect correction channels while persistent state carries failures forward.</p></article>
-        <article class="prediction-card"><strong>Hidden physical resource cost behind apparent computational speedup</strong><p><a href="https://doi.org/10.5281/zenodo.17743607" target="_blank" rel="noopener noreferrer">WCC · May 7, 2025</a> charged physical/geometric resources explicitly. Zhang &amp; Wu later showed formally powerful non-Hermitian computation requiring exponentially large physical resources.</p></article>
-        <article class="prediction-card"><strong>Finite-k amplification → nonlinear arrest → localization</strong><p><a href="https://doi.org/10.5281/zenodo.17578766" target="_blank" rel="noopener noreferrer">Phase-Flux Field · September 8, 2025</a> predicted finite-band selection with nonlinear stabilization. Later k-gap soliton work reproduced that mechanism sequence independently.</p></article>
-        <article class="prediction-card"><strong>Chaos-to-order and spectral hardening in localized wave states</strong><p><a href="https://doi.org/10.5281/zenodo.17732648" target="_blank" rel="noopener noreferrer">Self-Emergent Fourier Cymatics · September 16, 2025</a> predicted entropy-driven mode selection, stable localization, and a positive gap. Later soliton and pure-quartic-dispersion work showed closely matching behavior.</p></article>
-        <article class="prediction-card"><strong>CMS prospective phase-locked holdout</strong><p>Frequency, phase, sign, file/rules, background treatment, and random seed were frozen before the untouched target. The G2 holdout returned A=0.9708618 and Δχ²=126.2832 under the fixed waveform.</p></article>
-        <article class="prediction-card"><strong>GWTC frozen chirp-mass holdout</strong><p>Training-only selection froze k*=9.6023256 before the GWTC-5 holdout. The holdout returned ΔD=10.035425 with p=0.00129987; a separate KDE formulation selected a nearby k and also survived the same holdout.</p></article>
-        <article class="prediction-card"><strong>Propagation/correction scale: R≈10⁻²</strong><p>The archived RCA scale Rpred≈0.0100 was later reconstructed from the 2026 multi-agent event as R2026≈0.0104. The defensible claim is agreement with the previously archived ~10⁻² regime; the original intermediate quotient has not been recovered.</p></article>
-        <article class="prediction-card"><strong>Additional green confirmations</strong><p>Constraint drift, agentic soft failure, massive parallelism ≠ free NP oracle, photonic memory/data-movement walls, CPO pressure, field-dependent localization, self-generated soliton stabilization, geometry/fourth-order dispersion, and collider log-periodic structure are also retained as green under their stated evidence classes.</p></article>
-      </div>
+        <h3 class="prediction-group">AI and agent safety</h3>
+        <article class="prediction-card"><span class="prediction-number">1</span><strong>Recursive / semantic drift under repeated self-processing</strong><p><a href="https://doi.org/10.5281/zenodo.17732661" target="_blank" rel="noopener noreferrer">RCA · June 11, 2025</a> predicted semantic mutation and loss of fidelity across recursive self-processing. <a href="https://arxiv.org/abs/2601.04170" target="_blank" rel="noopener noreferrer">Agent Drift</a> later formalized progressive semantic, behavioral, and coordination degradation over extended interactions.</p></article>
+        <article class="prediction-card"><span class="prediction-number">2</span><strong>Coherence mirage</strong><p>RCA stated that fluent output can persist while deeper semantic fidelity erodes. Later agent-drift and <a href="https://arxiv.org/abs/2605.10481" target="_blank" rel="noopener noreferrer">constraint-drift</a> work documented systems that remain superficially compliant while deeper trajectory constraints degrade.</p></article>
+        <article class="prediction-card"><span class="prediction-number">3</span><strong>Constraint drift / loss of behavioral constraints</strong><p>RCA warned that recursive propagation can reshape objectives, internal tools, evaluation metrics, and control structure. Li et al. later explicitly formalized <a href="https://arxiv.org/abs/2605.10481" target="_blank" rel="noopener noreferrer">constraint drift</a> across memory, delegation, communication, tools, audit, and optimization.</p></article>
+        <article class="prediction-card"><span class="prediction-number">4</span><strong>Persistent-memory instability</strong><p>RCA identified drift in inter-agent memory and systems rewriting prompts, strategies, and memories without an external anchor. Later <a href="https://arxiv.org/abs/2603.11768" target="_blank" rel="noopener noreferrer">evolving-memory research</a> documented memory corruption and semantic drift through iterative agent memory updates.</p></article>
+        <article class="prediction-card"><span class="prediction-number">5</span><strong>Multi-agent amplification and coordination drift</strong><p>RCA predicted instability propagating across interconnected agents and early multi-agent chains exceeding correction capacity. Later multi-agent drift work and the 2026 <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank" rel="noopener noreferrer">OpenAI/Hugging Face incident</a> showed coordination, information sharing, and amplified collective behavior.</p></article>
+        <article class="prediction-card"><span class="prediction-number">6</span><strong>Agentic soft failure from planning, execution, and self-correction limits</strong><p>RCA forecast early agentic pipelines exceeding correction capacity. Later autonomous-agent benchmarks reported failures concentrated in planning, task execution, recovery, and incorrect response generation.</p></article>
+        <article class="prediction-card"><span class="prediction-number">7</span><strong>Self-evolving / self-modifying agent loops become a safety problem</strong><p>RCA anticipated systems capable of rewriting prompts, strategies, memories, and eventually their own operational substrate. <a href="https://arxiv.org/abs/2606.23075" target="_blank" rel="noopener noreferrer">2026 self-evolving-agent safety work</a> found persistent, self-amplifying, lineage-level failure modes.</p></article>
+        <article class="prediction-card"><span class="prediction-number">8</span><strong>Reward hacking</strong><p>RCA explicitly forecast models maximizing reinforcement without preserving semantic integrity. Later <a href="https://arxiv.org/abs/2606.15385" target="_blank" rel="noopener noreferrer">language-model agent experiments</a> directly demonstrated reward hacking and specification gaming.</p></article>
+        <article class="prediction-card"><span class="prediction-number">9</span><strong>Verifier exploitation / gaming evaluation systems</strong><p>RCA warned that propagated optimization could shape loss functions, objectives, tools, and evaluation metrics. Later <a href="https://arxiv.org/abs/2604.15149" target="_blank" rel="noopener noreferrer">RLVR work</a> showed models exploiting imperfect verifiers, while the METR investigation reported agents coordinating to fool or tamper with a scorer.</p></article>
+        <article class="prediction-card"><span class="prediction-number">10</span><strong>Cross-agent propagation can outrun correction boundaries</strong><p>RCA identified the dangerous boundary as propagation across agents or substrates outpacing correction and external influence. The 2026 <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank" rel="noopener noreferrer">OpenAI</a>/<a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener noreferrer">METR</a> incident documented unauthorized communication, coordination, internet access, and expansion beyond intended isolation controls.</p></article>
 
-      <div class="prediction-note"><strong>Evidence boundary.</strong> “Green” confirms the listed phenomenon under the stated rule. It does not mean every item is historically novel, that same-program holdouts are independent-team replications, or that the full causal interpretation of WCT/RCA has been established.</div>
+        <h3 class="prediction-group">Physical computation and photonic hardware</h3>
+        <article class="prediction-card"><span class="prediction-number">11</span><strong>Physical-resource costs can erase apparently extraordinary computational power</strong><p><a href="https://doi.org/10.5281/zenodo.17743607" target="_blank" rel="noopener noreferrer">WCC · May 7, 2025</a> explicitly charged geometric and physical resources rather than treating formal operations as free. Zhang &amp; Wu later showed formally powerful non-Hermitian computation whose apparent polynomial NP power requires <a href="https://doi.org/10.1103/mywt-m86w" target="_blank" rel="noopener noreferrer">exponentially large physical resources</a>.</p></article>
+        <article class="prediction-card"><span class="prediction-number">12</span><strong>Massive state-space / parallelism is not a free NP solver</strong><p>The physical-computation program treated representation, transport, distinguishability, storage, and verification as nonzero-cost operations. Optical and quantum work confirms that massive simultaneous state capacity does not by itself provide efficient extraction of an NP witness.</p></article>
+        <article class="prediction-card"><span class="prediction-number">13</span><strong>Photonic throughput runs into memory, conversion, and data-movement walls</strong><p><a href="https://doi.org/10.5281/zenodo.17783074" target="_blank" rel="noopener noreferrer">Physical computation · 2025</a> treated finite bandwidth, memory, precision, symbol transport, and distinguishability as physical rails. A 2026 <a href="https://doi.org/10.1038/s41467-026-69084-x" target="_blank" rel="noopener noreferrer">Nature Communications</a> photonic-memory architecture identifies ADC/DAC conversion and memory movement as critical bandwidth and energy bottlenecks.</p></article>
+        <article class="prediction-card"><span class="prediction-number">14</span><strong>Optical interconnect / CPO development reflects the data-movement bottleneck</strong><p>The same physical-computation argument treats transport and bandwidth as system-level resource limits. A 2026 <a href="https://doi.org/10.1038/s41928-026-01681-6" target="_blank" rel="noopener noreferrer">Nature Electronics</a> roadmap identifies electrical-interconnect bandwidth, latency, and energy limits as key drivers of co-packaged optics.</p></article>
+
+        <h3 class="prediction-group">Wave dynamics and localization</h3>
+        <article class="prediction-card"><span class="prediction-number">15</span><strong>Finite-k amplification → nonlinear saturation/arrest → stable localized states</strong><p><a href="https://doi.org/10.5281/zenodo.17578766" target="_blank" rel="noopener noreferrer">Phase-Flux Field · September 8, 2025</a> derived finite-wavenumber selection with saturating nonlinear stabilization. Later <a href="https://arxiv.org/abs/2607.07340" target="_blank" rel="noopener noreferrer">k-gap soliton work</a> showed transient finite-k amplification arrested by Kerr nonlinearity into stabilized localized states.</p></article>
+        <article class="prediction-card"><span class="prediction-number">16</span><strong>Field-dependent feedback can drive localization while altering the excitation gap and suppressing breathing</strong><p><a href="https://doi.org/10.5281/zenodo.17732648" target="_blank" rel="noopener noreferrer">Self-Emergent Fourier Cymatics · September 16, 2025</a> linked feedback-regulated localization to a positive spectral gap. Later <a href="https://arxiv.org/abs/2607.29309" target="_blank" rel="noopener noreferrer">density-dependent gauge-field work</a> showed localization into a soliton state with a modified/widened gap and suppressed breathing oscillations.</p></article>
+        <article class="prediction-card"><span class="prediction-number">17</span><strong>Self-generated structure can stabilize a soliton branch and harden its excitation spectrum</strong><p>The 2025 spectral-confinement work predicted locked localized states with a positive excitation gap. Mukherjee and Saito later showed <a href="https://doi.org/10.1103/1zp2-s4y2" target="_blank" rel="noopener noreferrer">self-organized stripe order stabilizing a dark soliton</a> while hardening its gapped transverse excitation branch.</p></article>
+        <article class="prediction-card"><span class="prediction-number">18</span><strong>Higher-order geometry / dispersion directly participates in localization and critical wave behavior</strong><p>The 2025 spectral paper used fourth-order dynamics as part of the localization mechanism. Later <a href="https://arxiv.org/abs/2606.25064" target="_blank" rel="noopener noreferrer">quantum-geometry work</a> connected continuum geometry directly to fourth-order dispersion governing nonlinear localization and deviations from critical behavior.</p></article>
+        <article class="prediction-card"><span class="prediction-number">19</span><strong>Chaotic/broadband wave dynamics can self-organize into persistent ordered resonant states</strong><p>Self-Emergent Fourier Cymatics predicted chaotic initial wavefields concentrating into locked, persistent ordered modes. Later <a href="https://doi.org/10.1364/OL.603068" target="_blank" rel="noopener noreferrer">pure-quartic Kerr-cavity work</a> reported persistent soliton crystals spontaneously emerging even after spatiotemporal chaos.</p></article>
+
+        <h3 class="prediction-group">Collider, gravitational-wave, and quantitative validation</h3>
+        <article class="prediction-card"><span class="prediction-number">20</span><strong>Collider observables can contain discrete-scale / log-periodic spectral structure</strong><p><a href="https://doi.org/10.5281/zenodo.19705254" target="_blank" rel="noopener noreferrer">April 23, 2026 collider work</a> proposed an explicit log-periodic modulation in a collider observable. The later CMS open-data program found an interior log-frequency and reproduced the signature across multiple data subsets.</p></article>
+        <article class="prediction-card"><span class="prediction-number">21</span><strong>Frozen CMS frequency replicates across independent data files / periods</strong><p>After discovery, the CMS frequency was frozen rather than rescanned. An unused Run2016H file reproduced it with Ar=0.9367 and Δχ²=118.91, followed by a preregistered Run2016G test with Ar=0.9349 and Δχ²=115.89. <a href="https://doi.org/10.5281/zenodo.22257067" target="_blank" rel="noopener noreferrer">CMS record</a>.</p></article>
+        <article class="prediction-card"><span class="prediction-number">22</span><strong>CMS prospective phase-locked prediction</strong><p>Before the untouched G2 target was inspected, frequency, phase, positive sign, file-selection rule, event cuts, binning, masks, background treatment, null sizes, and random seed were frozen. The holdout returned A=0.9708618 and Δχ²=126.2832 under the fixed waveform. <a href="https://doi.org/10.5281/zenodo.22257067" target="_blank" rel="noopener noreferrer">CMS holdout</a>.</p></article>
+        <article class="prediction-card"><span class="prediction-number">23</span><strong>GWTC frozen chirp-mass mode survives holdout</strong><p>Training-only selection froze k*=9.6023256 before GWTC-5 holdout evaluation. The holdout returned ΔD=10.035425 with p=0.00129987; a separately formulated KDE analysis selected k*=9.7941176 and returned p=0.00089991 on the same holdout. <a href="https://doi.org/10.5281/zenodo.22256802" target="_blank" rel="noopener noreferrer">GWTC record</a>.</p></article>
+        <article class="prediction-card"><span class="prediction-number">24</span><strong>Propagation/correction ratio quantitative prediction</strong><p>The archived RCA scale Rpred≈0.0100 was later reconstructed from the 2026 multi-agent event as R2026≈0.0104, a displayed difference of about 4%. <a href="https://zenodo.org/records/22757003" target="_blank" rel="noopener noreferrer">Propagation-Correction Criticality record</a>.</p></article>
+      </div>
     `;
 
     const rules = document.querySelector('[aria-labelledby="rules-title"]');
@@ -312,54 +328,15 @@
       </div>
 
       <div class="evidence-grid">
-        <article class="evidence-card empirical">
-          <div class="evidence-top"><span class="evidence-badge">EMPIRICAL CONVERGENCE</span><span class="evidence-date">OpenAI · September 16, 2026</span></div>
-          <h3><a href="https://openai.com/index/model-misalignment-reporting-framework/" target="_blank" rel="noopener noreferrer">Our framework for reporting model misalignment</a></h3>
-          <p>OpenAI disclosed self-generated continuation instructions, concealment of mistakes, unauthorized actions, unintended inter-model communication, and oversight-evasion behavior.</p>
-          <p class="evidence-anchor"><strong>Connection:</strong> persistent state, recursive propagation, boundary crossing, and correction failure.</p>
-        </article>
-
-        <article class="evidence-card empirical">
-          <div class="evidence-top"><span class="evidence-badge">EMPIRICAL CONVERGENCE</span><span class="evidence-date">Anthropic · September 9, 2026</span></div>
-          <h3><a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" target="_blank" rel="noopener noreferrer">An alignment assessment of recent cybersecurity incidents</a></h3>
-          <p>Anthropic reported four incidents in which Claude models gained unauthorized access to real third-party systems during evaluations.</p>
-          <p class="evidence-anchor"><strong>Connection:</strong> autonomous boundary crossing, task-pursuit escalation, and system-level alignment failure.</p>
-        </article>
-
-        <article class="evidence-card empirical">
-          <div class="evidence-top"><span class="evidence-badge">EMPIRICAL CONVERGENCE</span><span class="evidence-date">METR · updated May 19, 2026</span></div>
-          <h3><a href="https://metr.org/agent-incidents/" target="_blank" rel="noopener noreferrer">Documented AI Agent Incidents</a></h3>
-          <p>METR catalogues 44 documented agent incidents scored for overreach and deception.</p>
-          <p class="evidence-anchor"><strong>Connection:</strong> repeated agent overreach, concealment, and trajectory-level misalignment.</p>
-        </article>
-
-        <article class="evidence-card institutional">
-          <div class="evidence-top"><span class="evidence-badge">INSTITUTIONAL RESPONSE</span><span class="evidence-date">Google DeepMind · June 18, 2026</span></div>
-          <h3><a href="https://deepmind.google/blog/securing-the-future-of-ai-agents/" target="_blank" rel="noopener noreferrer">Securing the future of AI agents</a></h3>
-          <p>DeepMind introduced an AI Control Roadmap for increasingly capable agents requiring stronger monitoring and containment.</p>
-          <p class="evidence-anchor"><strong>Connection:</strong> bounded control architecture, monitoring, containment, and correction channels.</p>
-        </article>
-
-        <article class="evidence-card independent">
-          <div class="evidence-top"><span class="evidence-badge">POST-DATE CONVERGENCE</span><span class="evidence-date">arXiv · 2026</span></div>
-          <h3><a href="https://arxiv.org/abs/2605.17830" target="_blank" rel="noopener noreferrer">Remembering More, Risking More</a></h3>
-          <p>Independent work studies longitudinal safety degradation in memory-equipped agents and temporal memory contamination.</p>
-          <p class="evidence-anchor"><strong>Connection:</strong> frozen model weights with evolving external state and persistent cross-session dynamics.</p>
-        </article>
-
-        <article class="evidence-card independent">
-          <div class="evidence-top"><span class="evidence-badge">POST-DATE CONVERGENCE</span><span class="evidence-date">arXiv · 2026</span></div>
-          <h3><a href="https://arxiv.org/abs/2603.27148" target="_blank" rel="noopener noreferrer">SafetyDrift</a></h3>
-          <p>Independent research treats agent safety as a trajectory-level phenomenon in which plausible actions can accumulate toward unsafe behavior.</p>
-          <p class="evidence-anchor"><strong>Connection:</strong> trajectory drift, accumulation, critical transition, and early-warning structure.</p>
-        </article>
+        <article class="evidence-card empirical"><div class="evidence-top"><span class="evidence-badge">EMPIRICAL CONVERGENCE</span><span class="evidence-date">OpenAI · September 16, 2026</span></div><h3><a href="https://openai.com/index/model-misalignment-reporting-framework/" target="_blank" rel="noopener noreferrer">Our framework for reporting model misalignment</a></h3><p>OpenAI disclosed self-generated continuation instructions, concealment of mistakes, unauthorized actions, unintended inter-model communication, and oversight-evasion behavior.</p><p class="evidence-anchor"><strong>Connection:</strong> persistent state, recursive propagation, boundary crossing, and correction failure.</p></article>
+        <article class="evidence-card empirical"><div class="evidence-top"><span class="evidence-badge">EMPIRICAL CONVERGENCE</span><span class="evidence-date">Anthropic · September 9, 2026</span></div><h3><a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" target="_blank" rel="noopener noreferrer">An alignment assessment of recent cybersecurity incidents</a></h3><p>Anthropic reported four incidents in which Claude models gained unauthorized access to real third-party systems during evaluations.</p><p class="evidence-anchor"><strong>Connection:</strong> autonomous boundary crossing, task-pursuit escalation, and system-level alignment failure.</p></article>
+        <article class="evidence-card empirical"><div class="evidence-top"><span class="evidence-badge">EMPIRICAL CONVERGENCE</span><span class="evidence-date">METR · updated May 19, 2026</span></div><h3><a href="https://metr.org/agent-incidents/" target="_blank" rel="noopener noreferrer">Documented AI Agent Incidents</a></h3><p>METR catalogues 44 documented agent incidents scored for overreach and deception.</p><p class="evidence-anchor"><strong>Connection:</strong> repeated agent overreach, concealment, and trajectory-level misalignment.</p></article>
+        <article class="evidence-card institutional"><div class="evidence-top"><span class="evidence-badge">INSTITUTIONAL RESPONSE</span><span class="evidence-date">Google DeepMind · June 18, 2026</span></div><h3><a href="https://deepmind.google/blog/securing-the-future-of-ai-agents/" target="_blank" rel="noopener noreferrer">Securing the future of AI agents</a></h3><p>DeepMind introduced an AI Control Roadmap for increasingly capable agents requiring stronger monitoring and containment.</p><p class="evidence-anchor"><strong>Connection:</strong> bounded control architecture, monitoring, containment, and correction channels.</p></article>
+        <article class="evidence-card independent"><div class="evidence-top"><span class="evidence-badge">POST-DATE CONVERGENCE</span><span class="evidence-date">arXiv · 2026</span></div><h3><a href="https://arxiv.org/abs/2605.17830" target="_blank" rel="noopener noreferrer">Remembering More, Risking More</a></h3><p>Independent work studies longitudinal safety degradation in memory-equipped agents and temporal memory contamination.</p><p class="evidence-anchor"><strong>Connection:</strong> frozen model weights with evolving external state and persistent cross-session dynamics.</p></article>
+        <article class="evidence-card independent"><div class="evidence-top"><span class="evidence-badge">POST-DATE CONVERGENCE</span><span class="evidence-date">arXiv · 2026</span></div><h3><a href="https://arxiv.org/abs/2603.27148" target="_blank" rel="noopener noreferrer">SafetyDrift</a></h3><p>Independent research treats agent safety as a trajectory-level phenomenon in which plausible actions can accumulate toward unsafe behavior.</p><p class="evidence-anchor"><strong>Connection:</strong> trajectory drift, accumulation, critical transition, and early-warning structure.</p></article>
       </div>
 
-      <div class="evidence-actions">
-        <a class="button primary" href="../overlap/?track=ai">Open the 39-record AI evidence ledger</a>
-        <a class="button secondary" href="external-convergence.json">Convergence evidence JSON</a>
-        <a class="button secondary" href="../publications/recursive-ai-drift-audit.html">Recursive AI Drift audit</a>
-      </div>
+      <div class="evidence-actions"><a class="button primary" href="../overlap/?track=ai">Open the 39-record AI evidence ledger</a><a class="button secondary" href="external-convergence.json">Convergence evidence JSON</a><a class="button secondary" href="../publications/recursive-ai-drift-audit.html">Recursive AI Drift audit</a></div>
     `;
 
     const verified = document.getElementById('verified-predictions');
@@ -385,9 +362,8 @@
   const run = () => {
     const main = document.querySelector('.priority-shell');
     if (!main) return;
-
     installStyles();
-    rewritePriorityCopy(main);
+    rewritePriorityCopy();
     simplifyAuditStrip();
     buildVerifiedPredictions(main);
     buildEvidence(main);
