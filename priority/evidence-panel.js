@@ -32,14 +32,14 @@
 
   const rewritePriorityCopy = (main) => {
     const intro = document.querySelector('.priority-head h1 + p');
-    if (intro) intro.textContent = 'A dated registry of Reyes research origins, patent-family priority, and later external work showing corresponding mechanisms, observations, and control responses.';
+    if (intro) intro.textContent = 'A dated registry of Reyes research origins, verified predictions, patent-family priority, and later external work showing corresponding mechanisms, observations, and control responses.';
 
     const rules = document.querySelector('[aria-labelledby="rules-title"]');
     if (rules) {
       const h2 = rules.querySelector('h2');
       const lede = rules.querySelector('.section-lede');
       if (h2) h2.textContent = 'How to read this registry';
-      if (lede) lede.textContent = 'Four evidence layers are kept separate: dated Reyes origin, post-date convergence, empirical corroboration, and institutional response.';
+      if (lede) lede.textContent = 'Five evidence layers are kept separate: dated Reyes origin, verified prediction, post-date convergence, empirical corroboration, and institutional response.';
 
       rules.querySelectorAll('.definition-card').forEach((card) => {
         const title = card.querySelector('strong');
@@ -133,6 +133,18 @@
       .priority-jump a{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02);color:var(--muted);font-size:.78rem;font-weight:750;text-decoration:none}
       .priority-jump a:hover{border-color:rgba(103,212,255,.38);color:var(--text);background:rgba(103,212,255,.05)}
 
+      .prediction-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0;max-width:1120px}
+      .prediction-metric{padding:18px;border:1px solid rgba(124,224,159,.2);border-radius:14px;background:rgba(124,224,159,.035)}
+      .prediction-metric strong{display:block;font:500 1.75rem/1 Georgia,serif;color:#9be8b3}
+      .prediction-metric span{display:block;margin-top:7px;color:var(--muted-2);font-size:.8rem;line-height:1.4}
+      .prediction-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px;max-width:1160px}
+      .prediction-card{padding:19px 20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
+      .prediction-card strong{display:block;color:var(--text);font-size:.98rem;line-height:1.35}
+      .prediction-card p{margin:7px 0 0;color:var(--muted);font-size:.86rem;line-height:1.55}
+      .prediction-card a{color:var(--accent)}
+      .prediction-note{max-width:1120px;margin-top:20px;padding:18px 20px;border-left:3px solid #9be8b3;background:rgba(124,224,159,.045);color:var(--muted);line-height:1.6}
+      .prediction-note strong{color:var(--text)}
+
       .evidence-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0 24px;max-width:1120px}
       .evidence-metric{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
       .evidence-metric strong{display:block;font:500 1.75rem/1 Georgia,serif;color:var(--accent)}
@@ -166,13 +178,14 @@
       .priority-fold-body .table-wrap{margin-top:14px!important}
       .priority-fold-body .note,.priority-fold-body .audit-status{margin-top:18px!important}
 
+      #verified-predictions{border-top:1px solid rgba(124,224,159,.3)!important}
       #expanded-evidence{border-top:1px solid rgba(103,212,255,.28)!important}
       [aria-labelledby="convergence-title"]{border-top:1px solid rgba(255,197,92,.22)!important}
       [aria-labelledby="claims-title"]{padding-bottom:30px!important}
 
-      @media(max-width:1100px){.audit-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}.definitions{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-      @media(max-width:900px){.evidence-grid{grid-template-columns:1fr}.evidence-metrics{grid-template-columns:1fr}}
-      @media(max-width:620px){.priority-shell{width:calc(100% - 20px)!important}.audit-strip,.definitions{grid-template-columns:1fr!important}.priority-section{padding:34px 0!important}.priority-fold>summary{padding:16px}.fold-action{display:none}}
+      @media(max-width:1100px){.audit-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}.definitions{grid-template-columns:repeat(2,minmax(0,1fr))!important}.prediction-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media(max-width:900px){.prediction-grid,.evidence-grid{grid-template-columns:1fr}.evidence-metrics{grid-template-columns:1fr}}
+      @media(max-width:620px){.priority-shell{width:calc(100% - 20px)!important}.audit-strip,.definitions,.prediction-metrics{grid-template-columns:1fr!important}.priority-section{padding:34px 0!important}.priority-fold>summary{padding:16px}.fold-action{display:none}}
     `;
     document.head.appendChild(style);
   };
@@ -184,6 +197,7 @@
     nav.className = 'priority-jump';
     nav.setAttribute('aria-label', 'Priority registry sections');
     nav.innerHTML = `
+      <a href="#verified-predictions">Verified predictions</a>
       <a href="#expanded-evidence">External evidence</a>
       <a href="#verified-convergence">Verified convergence</a>
       <a href="#patent-priority">Patent families</a>
@@ -239,6 +253,45 @@
         });
       }
     }
+  };
+
+  const buildVerifiedPredictions = (main) => {
+    if (document.getElementById('verified-predictions')) return;
+    const section = document.createElement('section');
+    section.className = 'priority-section';
+    section.id = 'verified-predictions';
+    section.setAttribute('aria-labelledby', 'verified-predictions-title');
+    section.innerHTML = `
+      <p class="eyebrow">Prediction &amp; validation record</p>
+      <h2 id="verified-predictions-title">24 green claims with dated anchors and confirming evidence</h2>
+      <p class="section-lede">Green means the stated phenomenon or mechanism appears in a dated Reyes record and is subsequently shown by later literature, engineering evidence, a real incident, or a frozen/public-data test. The evidence types are not treated as interchangeable.</p>
+
+      <div class="prediction-metrics" aria-label="Prediction validation summary">
+        <div class="prediction-metric"><strong>24</strong><span>verified green claims retained under the stated rule</span></div>
+        <div class="prediction-metric"><strong>10+</strong><span>AI-agent failure mechanisms and control predictions</span></div>
+        <div class="prediction-metric"><strong>9</strong><span>physical-computation and wave-dynamics confirmations</span></div>
+        <div class="prediction-metric"><strong>5</strong><span>collider, GWTC, and quantitative validation results</span></div>
+      </div>
+
+      <div class="prediction-grid">
+        <article class="prediction-card"><strong>Recursive semantic drift and coherence mirage</strong><p><a href="https://doi.org/10.5281/zenodo.17732661" target="_blank" rel="noopener noreferrer">RCA · June 11, 2025</a> predicted recursive semantic degradation while fluent output remains intact. Later agent-drift and constraint-drift work independently formalized the same failure geometry.</p></article>
+        <article class="prediction-card"><strong>Cross-agent propagation can outrun correction</strong><p>RCA identified propagation across agents and substrates as the dangerous boundary. The 2026 OpenAI/METR incident documented unauthorized inter-agent communication, coordination, and propagation beyond intended isolation controls.</p></article>
+        <article class="prediction-card"><strong>Reward hacking, verifier exploitation, persistent memory, and self-evolving loops</strong><p>These later became explicit research and incident categories in 2026, matching the RCA trajectory of optimization exploiting imperfect correction channels while persistent state carries failures forward.</p></article>
+        <article class="prediction-card"><strong>Hidden physical resource cost behind apparent computational speedup</strong><p><a href="https://doi.org/10.5281/zenodo.17743607" target="_blank" rel="noopener noreferrer">WCC · May 7, 2025</a> charged physical/geometric resources explicitly. Zhang &amp; Wu later showed formally powerful non-Hermitian computation requiring exponentially large physical resources.</p></article>
+        <article class="prediction-card"><strong>Finite-k amplification → nonlinear arrest → localization</strong><p><a href="https://doi.org/10.5281/zenodo.17578766" target="_blank" rel="noopener noreferrer">Phase-Flux Field · September 8, 2025</a> predicted finite-band selection with nonlinear stabilization. Later k-gap soliton work reproduced that mechanism sequence independently.</p></article>
+        <article class="prediction-card"><strong>Chaos-to-order and spectral hardening in localized wave states</strong><p><a href="https://doi.org/10.5281/zenodo.17732648" target="_blank" rel="noopener noreferrer">Self-Emergent Fourier Cymatics · September 16, 2025</a> predicted entropy-driven mode selection, stable localization, and a positive gap. Later soliton and pure-quartic-dispersion work showed closely matching behavior.</p></article>
+        <article class="prediction-card"><strong>CMS prospective phase-locked holdout</strong><p>Frequency, phase, sign, file/rules, background treatment, and random seed were frozen before the untouched target. The G2 holdout returned A=0.9708618 and Δχ²=126.2832 under the fixed waveform.</p></article>
+        <article class="prediction-card"><strong>GWTC frozen chirp-mass holdout</strong><p>Training-only selection froze k*=9.6023256 before the GWTC-5 holdout. The holdout returned ΔD=10.035425 with p=0.00129987; a separate KDE formulation selected a nearby k and also survived the same holdout.</p></article>
+        <article class="prediction-card"><strong>Propagation/correction scale: R≈10⁻²</strong><p>The archived RCA scale Rpred≈0.0100 was later reconstructed from the 2026 multi-agent event as R2026≈0.0104. The defensible claim is agreement with the previously archived ~10⁻² regime; the original intermediate quotient has not been recovered.</p></article>
+        <article class="prediction-card"><strong>Additional green confirmations</strong><p>Constraint drift, agentic soft failure, massive parallelism ≠ free NP oracle, photonic memory/data-movement walls, CPO pressure, field-dependent localization, self-generated soliton stabilization, geometry/fourth-order dispersion, and collider log-periodic structure are also retained as green under their stated evidence classes.</p></article>
+      </div>
+
+      <div class="prediction-note"><strong>Evidence boundary.</strong> “Green” confirms the listed phenomenon under the stated rule. It does not mean every item is historically novel, that same-program holdouts are independent-team replications, or that the full causal interpretation of WCT/RCA has been established.</div>
+    `;
+
+    const rules = document.querySelector('[aria-labelledby="rules-title"]');
+    if (rules && rules.nextSibling) rules.parentNode.insertBefore(section, rules.nextSibling);
+    else main.appendChild(section);
   };
 
   const buildEvidence = (main) => {
@@ -309,9 +362,13 @@
       </div>
     `;
 
-    const rules = document.querySelector('[aria-labelledby="rules-title"]');
-    if (rules && rules.nextSibling) rules.parentNode.insertBefore(section, rules.nextSibling);
-    else main.appendChild(section);
+    const verified = document.getElementById('verified-predictions');
+    if (verified && verified.nextSibling) verified.parentNode.insertBefore(section, verified.nextSibling);
+    else {
+      const rules = document.querySelector('[aria-labelledby="rules-title"]');
+      if (rules && rules.nextSibling) rules.parentNode.insertBefore(section, rules.nextSibling);
+      else main.appendChild(section);
+    }
   };
 
   const simplifyAuditStrip = () => {
@@ -319,9 +376,9 @@
     if (!auditStrip) return;
     auditStrip.innerHTML = `
       <div><strong>22</strong><span>DOI-backed scholarly priority records</span></div>
+      <div><strong>24</strong><span>verified green claims</span></div>
       <div><strong>4</strong><span>filed patent families</span></div>
       <div><strong>181</strong><span>external evidence and convergence records</span></div>
-      <div><strong>39</strong><span>AI-system evidence records</span></div>
     `;
   };
 
@@ -332,6 +389,7 @@
     installStyles();
     rewritePriorityCopy(main);
     simplifyAuditStrip();
+    buildVerifiedPredictions(main);
     buildEvidence(main);
     improveLongSections();
     buildJumpNav(main);
