@@ -114,7 +114,7 @@
     if (path !== '/priority/' || document.getElementById('wct-priority-evidence')) return;
     const script = document.createElement('script');
     script.id = 'wct-priority-evidence';
-    script.src = '/priority/evidence-panel.js?v=20260917-evidence3';
+    script.src = '/priority/evidence-panel.js?v=20260925-audit4';
     script.defer = true;
     document.head.appendChild(script);
   };
