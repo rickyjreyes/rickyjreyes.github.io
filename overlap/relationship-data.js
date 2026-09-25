@@ -44,7 +44,14 @@ window.overlapRelationshipByUrl = Object.assign(window.overlapRelationshipByUrl 
   "https://arxiv.org/abs/2609.12080": "POST-DATE CONVERGENCE",
   "https://arxiv.org/abs/2609.17092": "POST-DATE CONVERGENCE",
   "https://arxiv.org/abs/2609.03259": "EMPIRICAL CONVERGENCE",
-  "https://arxiv.org/abs/2609.21314": "POST-DATE CONVERGENCE"
+  "https://arxiv.org/abs/2609.21314": "POST-DATE CONVERGENCE",
+  "https://doi.org/10.1140/epjd/s10053-026-01252-6": "POST-DATE CONVERGENCE",
+  "https://doi.org/10.1007/s11071-026-13056-9": "POST-DATE CONVERGENCE",
+  "https://arxiv.org/abs/2609.24327": "POST-DATE CONVERGENCE",
+  "https://arxiv.org/abs/2609.24063": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2609.19348": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2609.02374": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2609.11577": "STRUCTURAL OVERLAP"
 });
 
 window.overlapRelationshipDefinitions = {
