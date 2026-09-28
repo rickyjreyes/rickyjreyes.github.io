@@ -51,14 +51,27 @@ window.overlapRelationshipByUrl = Object.assign(window.overlapRelationshipByUrl 
   "https://arxiv.org/abs/2609.24063": "STRUCTURAL OVERLAP",
   "https://arxiv.org/abs/2609.19348": "STRUCTURAL OVERLAP",
   "https://arxiv.org/abs/2609.02374": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2609.11577": "STRUCTURAL OVERLAP"
+  "https://arxiv.org/abs/2609.11577": "STRUCTURAL OVERLAP",
+
+  "https://arxiv.org/abs/2507.02223": "EMPIRICAL CONVERGENCE",
+  "https://doi.org/10.1038/s41586-026-10825-9": "EMPIRICAL CONVERGENCE",
+  "https://doi.org/10.1038/s41377-025-02147-8": "EMPIRICAL CONVERGENCE",
+  "https://doi.org/10.1038/s41566-025-01840-9": "EMPIRICAL CONVERGENCE",
+  "https://doi.org/10.1038/s41586-026-10292-2": "EMPIRICAL CONVERGENCE",
+  "https://doi.org/10.1016/j.optlastec.2026.115112": "EMPIRICAL CONVERGENCE",
+  "https://doi.org/10.1364/CLEO_FS.2026.FW1H.3": "EMPIRICAL CONVERGENCE",
+  "https://doi.org/10.1364/CLEO_FS.2026.FW1H.7": "EMPIRICAL CONVERGENCE",
+  "https://doi.org/10.1103/v6pf-rgv8": "POST-DATE CONVERGENCE",
+  "https://arxiv.org/abs/2609.31267": "POST-DATE CONVERGENCE",
+  "https://iramis.cea.fr/en/2026/07/first-all-optical-photonic-time-crystal-opens-a-new-route-to-controlling-light/": "INSTITUTIONAL RESPONSE",
+  "https://www.southampton.ac.uk/study/postgraduate-research/projects/photonic-time-crystals-timetronics": "INSTITUTIONAL RESPONSE"
 });
 
 window.overlapRelationshipDefinitions = {
   "DIRECT ADOPTION": "Explicit citation, implementation, use, testing, or discussion of WCT / Recursive AI Drift.",
-  "POST-DATE CONVERGENCE": "A later external work develops a closely corresponding concept, mechanism, or systems model; causal influence remains separately unresolved unless evidenced.",
-  "EMPIRICAL CONVERGENCE": "External experiments, evaluations, disclosures, or incidents directly observe the same class of behavior.",
-  "INSTITUTIONAL RESPONSE": "A research lab or safety program introduces monitoring, containment, governance, or mitigation aimed at the same failure class.",
+  "POST-DATE CONVERGENCE": "A later external work develops a closely corresponding concept, mechanism, or systems model.",
+  "EMPIRICAL CONVERGENCE": "Experiments, evaluations, datasets, disclosures, or incidents directly observe the same class of behavior.",
+  "INSTITUTIONAL RESPONSE": "A lab, university, company, government, or funded program establishes sustained research, monitoring, containment, or engineering around the same problem class.",
   "STRUCTURAL OVERLAP": "A technically related comparison with meaningful structural correspondence.",
   "PRIOR ART / CONTROL": "Earlier work retained as a chronology, novelty, or baseline control."
 };
