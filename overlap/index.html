@@ -41,11 +41,11 @@
         <h2 id="relationship-title">Filter by relationship</h2>
       </div>
       <div class="relationship-key" id="relationship-key" aria-label="Relationship filters">
-        <div class="rel-card direct" data-relation="DIRECT ADOPTION" role="button" tabindex="0" aria-pressed="false" title="Filter records by Direct Adoption"><div class="rel-card-head"><span class="pill rel-direct">DIRECT ADOPTION</span><strong class="rel-count" data-rel-count="DIRECT ADOPTION">0</strong></div><p>Explicit citation, implementation, testing, use, or discussion of WCT / Recursive AI Drift.</p></div>
+        <div class="rel-card structural" data-relation="STRUCTURAL OVERLAP" role="button" tabindex="0" aria-pressed="false" title="Filter records by Structural Overlap"><div class="rel-card-head"><span class="pill rel-structural">STRUCTURAL OVERLAP</span><strong class="rel-count" data-rel-count="STRUCTURAL OVERLAP">0</strong></div><p>Technically related work with meaningful structural correspondence to the research program.</p></div>
         <div class="rel-card independent" data-relation="POST-DATE CONVERGENCE" role="button" tabindex="0" aria-pressed="false" title="Filter records by Post-Date Convergence"><div class="rel-card-head"><span class="pill rel-independent">POST-DATE CONVERGENCE</span><strong class="rel-count" data-rel-count="POST-DATE CONVERGENCE">0</strong></div><p>A later external work develops a closely corresponding concept, mechanism, or systems model.</p></div>
         <div class="rel-card empirical" data-relation="EMPIRICAL CONVERGENCE" role="button" tabindex="0" aria-pressed="false" title="Filter records by Empirical Convergence"><div class="rel-card-head"><span class="pill rel-empirical">EMPIRICAL CONVERGENCE</span><strong class="rel-count" data-rel-count="EMPIRICAL CONVERGENCE">0</strong></div><p>Experiments, evaluations, datasets, disclosures, or incidents directly observe the same class of behavior.</p></div>
         <div class="rel-card institutional" data-relation="INSTITUTIONAL RESPONSE" role="button" tabindex="0" aria-pressed="false" title="Filter records by Institutional Response"><div class="rel-card-head"><span class="pill rel-institutional">INSTITUTIONAL RESPONSE</span><strong class="rel-count" data-rel-count="INSTITUTIONAL RESPONSE">0</strong></div><p>A lab, university, company, government, standards body, or funded program establishes sustained research, monitoring, containment, or engineering around the same problem class.</p></div>
-        <div class="rel-card structural" data-relation="STRUCTURAL OVERLAP" role="button" tabindex="0" aria-pressed="false" title="Filter records by Structural Overlap"><div class="rel-card-head"><span class="pill rel-structural">STRUCTURAL OVERLAP</span><strong class="rel-count" data-rel-count="STRUCTURAL OVERLAP">0</strong></div><p>Technically related work with meaningful structural correspondence to the research program.</p></div>
+        <div class="rel-card direct" data-relation="DIRECT ADOPTION" role="button" tabindex="0" aria-pressed="false" title="Filter records by Direct Adoption"><div class="rel-card-head"><span class="pill rel-direct">DIRECT ADOPTION</span><strong class="rel-count" data-rel-count="DIRECT ADOPTION">0</strong></div><p>Explicit citation, implementation, testing, use, or discussion of WCT / Recursive AI Drift.</p></div>
       </div>
     </section>
 
@@ -59,23 +59,23 @@
       </div>
 
       <div class="research-switch" role="tablist" aria-label="Choose research program">
-        <button class="track-tab is-active" type="button" role="tab" aria-selected="true" data-track="physics" id="tab-physics" aria-controls="track-content">
-          <span class="track-kicker">Wave Confinement Theory</span>
-          <strong>WCT / Physics</strong>
-          <small>171 evidence records · photonics · BEC · nonlinear waves · spectral structure · GWTC</small>
-        </button>
-        <button class="track-tab" type="button" role="tab" aria-selected="false" data-track="ai" id="tab-ai" aria-controls="track-content">
+        <button class="track-tab is-active" type="button" role="tab" aria-selected="true" data-track="ai" id="tab-ai" aria-controls="track-content">
           <span class="track-kicker">Recursive AI Drift</span>
           <strong>AI Systems</strong>
           <small>49 evidence records · drift · memory · agents · cascading failure · oversight · control</small>
         </button>
+        <button class="track-tab" type="button" role="tab" aria-selected="false" data-track="physics" id="tab-physics" aria-controls="track-content">
+          <span class="track-kicker">Wave Confinement Theory</span>
+          <strong>WCT / Physics</strong>
+          <small>171 evidence records · photonics · BEC · nonlinear waves · spectral structure · GWTC</small>
+        </button>
       </div>
 
-      <div id="track-content" class="track-content" role="tabpanel" aria-labelledby="tab-physics">
+      <div id="track-content" class="track-content" role="tabpanel" aria-labelledby="tab-ai">
         <div class="track-heading">
-          <p class="eyebrow" id="active-track-kicker">Wave Confinement Theory</p>
-          <h2 id="active-track-title">WCT / physics / photonics evidence</h2>
-          <p class="lede" id="active-track-description">External work spanning localized nonlinear modes, curvature- and dispersion-dependent operators, toroidal geometry, Koide geometry, solitons, condensates, spectral structure, and GWTC population structure.</p>
+          <p class="eyebrow" id="active-track-kicker">Recursive AI Drift</p>
+          <h2 id="active-track-title">AI-system adoption &amp; evidence</h2>
+          <p class="lede" id="active-track-description">External work and disclosures spanning longitudinal memory effects, multi-agent drift and coordination, reward hacking, cascading failures, agent worms, evaluation awareness, unauthorized actions, oversight evasion, and AI control responses.</p>
         </div>
 
         <section class="section verified-section" id="top-ranked" aria-labelledby="verified-title">
@@ -86,8 +86,8 @@
 
         <section class="section ledger-section" id="complete-ledger" aria-labelledby="complete-title">
           <div class="ledger-head">
-            <div><p class="eyebrow">Adoption / external evidence dataset</p><h3 id="complete-title">All WCT / physics evidence records</h3></div>
-            <div class="record-count"><strong id="active-count">171</strong><span>records</span></div>
+            <div><p class="eyebrow">Adoption / external evidence dataset</p><h3 id="complete-title">All Recursive AI Drift / AI-system evidence records</h3></div>
+            <div class="record-count"><strong id="active-count">49</strong><span>records</span></div>
           </div>
           <div class="controls"><input id="q-track" type="search" placeholder="Filter by title, author, DOI, source, or relationship…" aria-label="Filter selected research records"><select id="min-track" aria-label="Minimum overlap score"><option value="0">All scores</option><option value="9">9.0+</option><option value="8">8.0+</option><option value="7">7.0+</option><option value="6">6.0+</option></select></div>
           <div class="table-wrap"><table><thead><tr><th>#</th><th>External work</th><th>Authors</th><th>DOI / permanent ID</th><th>Overlap Score</th><th>Relationship</th></tr></thead><tbody id="track-body"></tbody></table></div>
@@ -164,7 +164,7 @@
     };
 
     const requestedTrack=new URLSearchParams(location.search).get('track');
-    let activeTrack=requestedTrack==='ai'?'ai':'physics';
+    let activeTrack=requestedTrack==='physics'?'physics':'ai';
     let activeRelationship=null;
 
     function relationshipFilteredRecords(kind){
@@ -264,10 +264,11 @@
     document.querySelectorAll('.track-tab').forEach(btn=>btn.addEventListener('click',()=>{
       if(btn.dataset.track===activeTrack) return;
       activeTrack=btn.dataset.track;
+      activeRelationship=null;
       document.getElementById('q-track').value='';
       document.getElementById('min-track').value='0';
       const url=new URL(location.href);
-      if(activeTrack==='ai') url.searchParams.set('track','ai'); else url.searchParams.delete('track');
+      if(activeTrack==='physics') url.searchParams.set('track','physics'); else url.searchParams.delete('track');
       history.replaceState({},'',url);
       renderTrack();
       document.getElementById('track-content').focus({preventScroll:true});
