@@ -25,7 +25,7 @@ window.overlapRelationshipByUrl = Object.assign(window.overlapRelationshipByUrl 
   "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/": "INSTITUTIONAL RESPONSE",
   "https://arxiv.org/abs/2606.15385": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2601.04170": "POST-DATE CONVERGENCE",
-  "https://arxiv.org/abs/2502.19559": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2502.19559": "PRIOR ART / CONTROL",
   "https://openai.com/index/reasoning-models-chain-of-thought-controllability/": "INSTITUTIONAL RESPONSE",
   "https://www.apolloresearch.ai/science/we-need-3rd-party-training-run-assessments": "INSTITUTIONAL RESPONSE",
   "https://arxiv.org/abs/2605.11026": "POST-DATE CONVERGENCE",
@@ -35,7 +35,7 @@ window.overlapRelationshipByUrl = Object.assign(window.overlapRelationshipByUrl 
   "https://arxiv.org/abs/2604.15149": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2605.02964": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2508.17511": "EMPIRICAL CONVERGENCE",
-  "https://arxiv.org/abs/2502.02649": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2502.02649": "PRIOR ART / CONTROL",
   "https://www.media.mit.edu/groups/nanda/overview/": "STRUCTURAL OVERLAP",
   "https://www.tdcommons.org/2026.html": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2609.13951": "POST-DATE CONVERGENCE",
@@ -69,13 +69,31 @@ window.overlapRelationshipByUrl = Object.assign(window.overlapRelationshipByUrl 
   "https://arxiv.org/abs/2608.19277": "POST-DATE CONVERGENCE",
   "https://zenodo.org/records/20738865": "POST-DATE CONVERGENCE",
   "https://arxiv.org/abs/2605.09651": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2609.21033": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2609.21033": "ALTERNATIVE EXPLANATION",
   "https://arxiv.org/abs/2604.02630": "STRUCTURAL OVERLAP",
   "https://arxiv.org/abs/2608.14611": "INSTITUTIONAL RESPONSE",
   "https://arxiv.org/abs/2603.15727": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2605.02812": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2609.00595": "POST-DATE CONVERGENCE",
-  "https://arxiv.org/abs/2609.11149": "EMPIRICAL CONVERGENCE"
+  "https://arxiv.org/abs/2609.11149": "EMPIRICAL CONVERGENCE",
+
+  "https://arxiv.org/abs/2605.27226": "ALTERNATIVE EXPLANATION",
+  "https://physics.aps.org/articles/v19/96": "ALTERNATIVE EXPLANATION",
+  "https://arxiv.org/abs/2508.20787": "ALTERNATIVE EXPLANATION",
+  "https://arxiv.org/abs/2507.08778": "ALTERNATIVE EXPLANATION",
+  "https://arxiv.org/abs/2605.24866": "POST-DATE CONVERGENCE",
+  "https://zenodo.org/records/20090881": "POST-DATE CONVERGENCE",
+  "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/": "EMPIRICAL CONVERGENCE",
+  "https://openai.com/index/hugging-face-incident-and-the-road-ahead/": "EMPIRICAL CONVERGENCE",
+  "https://openai.com/index/hugging-face-model-evaluation-security-incident/": "EMPIRICAL CONVERGENCE",
+  "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/": "INSTITUTIONAL RESPONSE",
+  "https://arxiv.org/abs/2605.19240": "EMPIRICAL CONVERGENCE",
+  "https://arxiv.org/abs/2604.07775": "EMPIRICAL CONVERGENCE",
+  "https://arxiv.org/abs/2603.04474": "EMPIRICAL CONVERGENCE",
+
+  "https://arxiv.org/abs/2504.19947": "PRIOR ART / CONTROL",
+  "https://arxiv.org/abs/2508.10274": "PRIOR ART / CONTROL",
+  "https://arxiv.org/abs/2508.13393": "PRIOR ART / CONTROL"
 });
 
 window.overlapRelationshipDefinitions = {
@@ -84,5 +102,6 @@ window.overlapRelationshipDefinitions = {
   "EMPIRICAL CONVERGENCE": "Experiments, evaluations, datasets, disclosures, or incidents directly observe the same class of behavior.",
   "INSTITUTIONAL RESPONSE": "A lab, university, company, government, or funded program establishes sustained research, monitoring, containment, or engineering around the same problem class.",
   "STRUCTURAL OVERLAP": "A technically related comparison with meaningful structural correspondence.",
-  "PRIOR ART / CONTROL": "Earlier work retained as a chronology, novelty, or baseline control."
+  "ALTERNATIVE EXPLANATION": "External work supports an observed structure or scale while supplying a competing physical or causal mechanism.",
+  "PRIOR ART / CONTROL": "Earlier work retained as a chronology, novelty, or baseline control and excluded from post-date adoption or convergence counts."
 };
