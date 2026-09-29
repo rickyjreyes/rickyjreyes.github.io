@@ -54,3 +54,62 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
   const aiTab = document.querySelector('[data-track="ai"] small');
   if (aiTab) aiTab.textContent = `${ai.length} records · drift · memory · agents · reward hacking · oversight · control`;
 })();
+
+// SEO/discovery overlay for the latest high-specificity WCT/RCA additions.
+(() => {
+  document.title = 'WCT Adoption & Post-Date Convergence | Koide, AgentWorm, Recursive AI Drift | Richard J. Reyes';
+  const description = 'WCT Adoption and post-date convergence ledger by Richard J. Reyes covering Wave Confinement Theory, Koide relation geometry, toroidal winding modes, self-similar black-hole mass spectra, discrete scale invariance, AgentWorm, autonomous LLM agent worms, recursive language-model fragility, multi-agent AI safety, and institutional response.';
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', description);
+  const dcSubject = document.querySelector('meta[name="DC.subject"]');
+  if (dcSubject) dcSubject.setAttribute('content', 'Wave Confinement Theory; WCT Adoption; Richard J. Reyes; Koide relation; toroidal winding modes; discrete scale invariance; black-hole mass spectra; AgentWorm; autonomous LLM agent worms; Recursive AI Drift; recursive language-model training; multi-agent AI safety; post-date convergence');
+
+  const latestUrls = new Set([
+    'https://zenodo.org/records/21195612',
+    'https://arxiv.org/abs/2608.19277',
+    'https://zenodo.org/records/20738865',
+    'https://arxiv.org/abs/2605.09651',
+    'https://arxiv.org/abs/2609.21033',
+    'https://arxiv.org/abs/2604.02630',
+    'https://arxiv.org/abs/2608.14611',
+    'https://arxiv.org/abs/2603.15727',
+    'https://arxiv.org/abs/2605.02812',
+    'https://arxiv.org/abs/2609.00595',
+    'https://arxiv.org/abs/2609.11149'
+  ]);
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const records = (window.overlapRecords || []).filter(r => latestUrls.has(r[2]));
+    const rel = window.overlapRelationshipByUrl || {};
+    const anchor = document.querySelector('.relationship-section');
+    if (!anchor || !records.length || document.getElementById('latest-adoption-additions')) return;
+
+    const section = document.createElement('section');
+    section.className = 'section ledger-section';
+    section.id = 'latest-adoption-additions';
+    section.setAttribute('aria-labelledby', 'latest-adoption-title');
+    section.innerHTML = `<div class="ledger-head"><div><p class="eyebrow">Latest WCT Adoption additions</p><h2 id="latest-adoption-title">Koide, discrete-scale physics, AgentWorm, recursive training & multi-agent safety</h2><p class="lede">Eleven newly indexed external works added to the WCT / Recursive AI Drift post-date convergence ledger.</p></div><div class="record-count"><strong>${records.length}</strong><span>new records</span></div></div><div class="table-wrap"><table><thead><tr><th>External work</th><th>Authors</th><th>DOI / permanent ID</th><th>Relationship</th></tr></thead><tbody>${records.map(r => `<tr><td class="work"><a class="paper" href="${r[2]}" target="_blank" rel="noopener noreferrer">${r[1]}</a><span class="source">${r[5]}</span></td><td class="authors">${r[6]}</td><td class="identifier"><a href="${r[8]}" target="_blank" rel="noopener noreferrer">${r[7]}</a></td><td class="relationship"><span class="pill">${rel[r[2]] || 'STRUCTURAL OVERLAP'}</span></td></tr>`).join('')}</tbody></table></div>`;
+    anchor.insertAdjacentElement('afterend', section);
+
+    const structured = document.createElement('script');
+    structured.type = 'application/ld+json';
+    structured.textContent = JSON.stringify({
+      '@context':'https://schema.org',
+      '@type':'ItemList',
+      name:'Latest WCT Adoption and Post-Date Convergence Additions',
+      itemListElement: records.map((r, index) => ({
+        '@type':'ListItem',
+        position:index + 1,
+        item:{
+          '@type':'ScholarlyArticle',
+          name:r[1],
+          url:r[2],
+          identifier:r[7],
+          author:r[6].split(';').map(name => ({'@type':'Person',name:name.trim()})),
+          isPartOf:{'@type':'Dataset',name:'Richard J. Reyes / WCT Post-Date External Convergence and Priority Record',url:'https://rickyjreyes.github.io/overlap/'}
+        }
+      }))
+    });
+    document.head.appendChild(structured);
+  });
+})();
