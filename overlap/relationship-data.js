@@ -64,7 +64,18 @@ window.overlapRelationshipByUrl = Object.assign(window.overlapRelationshipByUrl 
   "https://doi.org/10.1103/v6pf-rgv8": "POST-DATE CONVERGENCE",
   "https://arxiv.org/abs/2609.31267": "POST-DATE CONVERGENCE",
   "https://iramis.cea.fr/en/2026/07/first-all-optical-photonic-time-crystal-opens-a-new-route-to-controlling-light/": "INSTITUTIONAL RESPONSE",
-  "https://www.southampton.ac.uk/study/postgraduate-research/projects/photonic-time-crystals-timetronics": "INSTITUTIONAL RESPONSE"
+  "https://www.southampton.ac.uk/study/postgraduate-research/projects/photonic-time-crystals-timetronics": "INSTITUTIONAL RESPONSE",
+  "https://zenodo.org/records/21195612": "POST-DATE CONVERGENCE",
+  "https://arxiv.org/abs/2608.19277": "POST-DATE CONVERGENCE",
+  "https://zenodo.org/records/20738865": "POST-DATE CONVERGENCE",
+  "https://arxiv.org/abs/2605.09651": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2609.21033": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2604.02630": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2608.14611": "INSTITUTIONAL RESPONSE",
+  "https://arxiv.org/abs/2603.15727": "EMPIRICAL CONVERGENCE",
+  "https://arxiv.org/abs/2605.02812": "EMPIRICAL CONVERGENCE",
+  "https://arxiv.org/abs/2609.00595": "POST-DATE CONVERGENCE",
+  "https://arxiv.org/abs/2609.11149": "EMPIRICAL CONVERGENCE"
 });
 
 window.overlapRelationshipDefinitions = {
