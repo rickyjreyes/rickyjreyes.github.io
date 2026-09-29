@@ -10,7 +10,7 @@
   <meta name="DC.creator" content="Richard J. Reyes">
   <meta name="DC.date" content="2025-04-22">
   <meta name="DC.identifier" content="https://doi.org/10.5281/zenodo.15644222">
-  <meta name="DC.subject" content="Wave Confinement Theory; WCT Adoption; Richard J. Reyes; Recursive AI Drift; GWTC-5; Koide relation; AgentWorm; Hugging Face incident; cascading failures; post-date convergence; prior art chronology">
+  <meta name="DC.subject" content="Wave Confinement Theory; WCT Adoption; Richard J. Reyes; Recursive AI Drift; GWTC-5; Koide relation; AgentWorm; Hugging Face incident; cascading failures; post-date convergence">
   <meta name="robots" content="index,follow,max-snippet:-1">
   <link rel="canonical" href="https://rickyjreyes.github.io/overlap/">
   <link rel="author" href="https://orcid.org/0009-0005-5975-8718">
@@ -23,10 +23,10 @@
   <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
 
   <main class="overlap-shell">
-<header class="overlap-head">
+    <header class="overlap-head">
       <p class="eyebrow">WCT Adoption · external chronology · empirical evidence · competing explanations</p>
       <h1>WCT Adoption &amp; External Evidence</h1>
-      <p class="hero-lede">A chronology-first record of later research, observations, institutional responses, and competing explanations related to the Richard J. Reyes Wave Confinement Theory and Recursive AI Drift research programs. Earlier literature is retained separately as prior art / chronology control and is excluded from the adoption and post-date evidence counts.</p>
+      <p class="hero-lede">A chronology-first record of later research, observations, institutional responses, and competing explanations related to the Richard J. Reyes Wave Confinement Theory and Recursive AI Drift research programs.</p>
 
       <div class="stats" aria-label="Adoption and evidence totals">
         <div class="stat-total"><strong>220</strong><span>Adoption / post-date / external-evidence records</span></div>
@@ -47,7 +47,6 @@
         <div class="rel-card institutional" data-relation="INSTITUTIONAL RESPONSE"><div class="rel-card-head"><span class="pill rel-institutional">INSTITUTIONAL RESPONSE</span><strong class="rel-count" data-rel-count="INSTITUTIONAL RESPONSE">0</strong></div><p>A lab, university, company, government, standards body, or funded program establishes sustained research, monitoring, containment, or engineering around the same problem class.</p></div>
         <div class="rel-card structural" data-relation="STRUCTURAL OVERLAP"><div class="rel-card-head"><span class="pill rel-structural">STRUCTURAL OVERLAP</span><strong class="rel-count" data-rel-count="STRUCTURAL OVERLAP">0</strong></div><p>Technically related work with meaningful structural correspondence to the research program.</p></div>
         <div class="rel-card structural" data-relation="ALTERNATIVE EXPLANATION"><div class="rel-card-head"><span class="pill rel-structural">ALTERNATIVE EXPLANATION</span><strong class="rel-count" data-rel-count="ALTERNATIVE EXPLANATION">0</strong></div><p>External work supports an observed structure or scale while supplying a competing physical or causal mechanism.</p></div>
-        <div class="rel-card prior" data-relation="PRIOR ART / CONTROL"><div class="rel-card-head"><span class="pill rel-prior">PRIOR ART / CONTROL</span><strong class="rel-count" data-rel-count="PRIOR ART / CONTROL">0</strong></div><p>Earlier work retained for chronology and novelty control. These records are displayed separately and excluded from adoption / post-date counts.</p></div>
       </div>
     </section>
 
@@ -97,15 +96,7 @@
       </div>
     </section>
 
-    <section class="section ledger-section" id="prior-art-controls" aria-labelledby="prior-art-title">
-      <div class="ledger-head">
-        <div><p class="eyebrow">Chronology / novelty controls</p><h2 id="prior-art-title">Prior art and pre-disclosure controls</h2><p class="lede">Earlier sources that reviewers should see are preserved here instead of being counted as WCT Adoption, post-date convergence, or RCA convergence. This table also contains current-ledger records whose external dates predate the WCT/RCA claims they would otherwise be compared against.</p></div>
-        <div class="record-count"><strong id="prior-art-count">0</strong><span>controls</span></div>
-      </div>
-      <div class="table-wrap"><table><thead><tr><th>External work</th><th>Date</th><th>Authors</th><th>DOI / permanent ID</th><th>Control role</th></tr></thead><tbody id="prior-art-body"></tbody></table></div>
-    </section>
-
-    <p class="footer-note">Updated September 29, 2026. Prior-art controls are excluded from the WCT Adoption / post-date evidence totals. Alternative-explanation records support an observed structure or scale while offering a competing mechanism. Titles, authors, and DOI/permanent identifiers are normalized to linked primary sources where available.</p>
+    <p class="footer-note">Updated September 29, 2026. Alternative-explanation records support an observed structure or scale while offering a competing mechanism. Titles, authors, and DOI/permanent identifiers are normalized to linked primary sources where available.</p>
   </main>
 
   <script src="overlap-data-1.js"></script>
@@ -135,8 +126,7 @@
         'EMPIRICAL CONVERGENCE':'rel-empirical',
         'INSTITUTIONAL RESPONSE':'rel-institutional',
         'STRUCTURAL OVERLAP':'rel-structural',
-        'ALTERNATIVE EXPLANATION':'rel-structural',
-        'PRIOR ART / CONTROL':'rel-prior'
+        'ALTERNATIVE EXPLANATION':'rel-structural'
       })[label]||'rel-structural';
     }
 
@@ -192,7 +182,7 @@
 
     function renderRelationshipCounts(){
       const counts={};
-      allDomainRecords(activeTrack).forEach(r=>{
+      domainRecords(activeTrack).forEach(r=>{
         const label=relationship(r);
         counts[label]=(counts[label]||0)+1;
       });
@@ -215,18 +205,6 @@
       const indexByUrl=new Map(all.map((r,i)=>[r[2],i+1]));
       body.innerHTML=filtered.map(r=>rowHtml(r,indexByUrl.get(r[2]))).join('');
       document.getElementById('active-count').textContent=filtered.length===all.length?all.length:`${filtered.length}/${all.length}`;
-    }
-
-    function renderPriorArt(){
-      const ledgerControls=records.filter(r=>relationship(r)==='PRIOR ART / CONTROL').map(r=>({
-        title:r[1],url:r[2],date:(r[7].match(/arXiv\.(\d{2})(\d{2})/)||[]).slice(1).join('-')||'Pre-disclosure',authors:r[6],identifier:r[7],identifierUrl:r[8],role:'Current ledger record reclassified as a chronology control because its external date predates the matched WCT/RCA claim.'
-      }));
-      const referenceControls=(window.priorArtReferenceRecords||[]).map(r=>({title:r[0],url:r[1],date:r[2],authors:r[4],identifier:r[5],identifierUrl:r[6],role:r[7]}));
-      const byUrl=new Map();
-      [...referenceControls,...ledgerControls].forEach(r=>byUrl.set(r.url,r));
-      const controls=[...byUrl.values()].sort((a,b)=>String(a.date).localeCompare(String(b.date))||a.title.localeCompare(b.title));
-      document.getElementById('prior-art-count').textContent=controls.length;
-      document.getElementById('prior-art-body').innerHTML=controls.map(r=>`<tr><td class="work"><a class="paper" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></td><td>${esc(r.date)}</td><td class="authors">${esc(r.authors)}</td><td class="identifier"><a href="${esc(r.identifierUrl)}" target="_blank" rel="noopener noreferrer">${esc(r.identifier)}</a></td><td>${esc(r.role)}</td></tr>`).join('');
     }
 
     function renderTrack(){
@@ -263,7 +241,6 @@
     document.getElementById('min-track').addEventListener('change',renderLedger);
     document.getElementById('track-content').tabIndex=-1;
     renderSummaryCounts();
-    renderPriorArt();
     renderTrack();
   </script>
 <script src="../site-nav.js" defer></script>
