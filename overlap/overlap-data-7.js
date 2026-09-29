@@ -35,3 +35,22 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
   const ordered = [...ranked('physics'), ...ranked('ai')];
   window.overlapRecords = ordered.map((record,index) => [index + 1, ...record.slice(1)]);
 })();
+
+// Keep hard-coded summary labels synchronized with the live ledger.
+(() => {
+  const records = window.overlapRecords || [];
+  const physics = records.filter(r => r[4] === 'physics');
+  const ai = records.filter(r => r[4] === 'ai');
+  const setText = (selector, value) => {
+    const el = document.querySelector(selector);
+    if (el) el.textContent = String(value);
+  };
+  setText('.stat-total strong', records.length);
+  setText('.stat-wct strong', physics.length);
+  setText('.stat-ai strong', ai.length);
+  setText('#active-count', physics.length);
+  const physicsTab = document.querySelector('[data-track="physics"] small');
+  if (physicsTab) physicsTab.textContent = `${physics.length} records · photonics · BEC · nonlinear waves · plasma · spectral structure`;
+  const aiTab = document.querySelector('[data-track="ai"] small');
+  if (aiTab) aiTab.textContent = `${ai.length} records · drift · memory · agents · reward hacking · oversight · control`;
+})();
