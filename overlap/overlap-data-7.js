@@ -31,21 +31,6 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
 [1116,"From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration","https://arxiv.org/abs/2603.04474",9.6,"ai","arXiv","Yizhe Xie; Congcong Zhu; Xinyue Zhang; Tianqing Zhu; Dayong Ye; Minfeng Qi; Huajie Chen; Wanlei Zhou","10.48550/arXiv.2603.04474","https://doi.org/10.48550/arXiv.2603.04474"]
 ]);
 
-// Earlier literature retained as chronology and novelty controls. These records
-// are rendered in a separate table and excluded from WCT Adoption/post-date counts.
-window.priorArtReferenceRecords = [
-  ["Stable spinning optical solitons in three dimensions","https://arxiv.org/abs/nlin/0201029","2002","physics","D. Mihalache; D. Mazilu; L.-C. Crasovan; I. Towers; A. V. Buryak; B. A. Malomed; L. Torner; J. P. Torres; F. Lederer","nlin/0201029","https://arxiv.org/abs/nlin/0201029","Stable 3D vortex-torus precedent."],
-  ["Stable three-dimensional Langmuir vortex soliton","https://arxiv.org/abs/2004.03268","2020","physics","Volodymyr M. Lashkin","10.48550/arXiv.2004.03268","https://doi.org/10.48550/arXiv.2004.03268","Stable 3D toroidal vortex soliton with saturating nonlinearity."],
-  ["Solitons in combined linear and nonlinear lattice potentials","https://arxiv.org/abs/1001.0425","2010","physics","Hidetsugu Sakaguchi; Boris A. Malomed","10.48550/arXiv.1001.0425","https://doi.org/10.48550/arXiv.1001.0425","Established anti-VK behavior for gap-soliton stability."],
-  ["Stabilization of solitons under competing nonlinearities by external potentials","https://arxiv.org/abs/1411.6787","2014","physics","Krzysztof B. Zegadlo; Tomasz Wasak; Boris A. Malomed; Miroslaw A. Karpierz; Marek Trippenbach","10.48550/arXiv.1411.6787","https://doi.org/10.48550/arXiv.1411.6787","VK and anti-VK stability precedent under trapping."],
-  ["Log-periodic quantum magneto-oscillations and discrete scale invariance in topological material HfTe5","https://arxiv.org/abs/1810.03109","2018","physics","Huichao Wang; Haiwen Liu; Yunyou Li; Yijun Liu; Junfeng Wang; Jiawei Liu; Jinsong Wang; Yong Wang; Liang Li; Jie Wang; Xiaohui Chen; Yi Wang; Ling Li; X. C. Xie; Jian Wang","10.48550/arXiv.1810.03109","https://doi.org/10.48550/arXiv.1810.03109","Early measured log-periodic quantum oscillations / discrete scale invariance."],
-  ["A note on Koide's lepton mass relation","https://arxiv.org/abs/hep-ph/9402242","1994","physics","R. Foot","hep-ph/9402242","https://arxiv.org/abs/hep-ph/9402242","Early geometric interpretation of the Koide relation."],
-  ["Family Gauge Symmetry as an Origin of Koide's Mass Formula and Charged Lepton Spectrum","https://arxiv.org/abs/0903.3640","2009","physics","Y. Sumino","10.48550/arXiv.0903.3640","https://doi.org/10.48550/arXiv.0903.3640","Pre-WCT mechanism for the Koide mass formula."],
-  ["The Curse of Recursion: Training on Generated Data Makes Models Forget","https://arxiv.org/abs/2305.17493","2023","ai","Ilia Shumailov; Zakhar Shumaylov; Yiren Zhao; Yarin Gal; Nicolas Papernot; Ross Anderson","10.48550/arXiv.2305.17493","https://doi.org/10.48550/arXiv.2305.17493","Pre-RCA model-collapse / recursive-training precedent."],
-  ["Why Do Multi-Agent LLM Systems Fail?","https://arxiv.org/abs/2503.13657","2025-03-17","ai","Mert Cemri; Melissa Z. Pan; Shuyi Yang; Lakshya A. Agrawal; Bhavya Chopra; Rishabh Tiwari; Kurt Keutzer; Aditya Parameswaran; Dan Klein; Kannan Ramchandran; Matei Zaharia; Joseph E. Gonzalez; Ion Stoica","10.48550/arXiv.2503.13657","https://doi.org/10.48550/arXiv.2503.13657","Pre-RCA multi-agent-system failure taxonomy (MAST)."],
-  ["Multi-Agent Risks from Advanced AI","https://arxiv.org/abs/2502.14143","2025-02-19","ai","Lewis Hammond; Alan Chan; Jesse Clifton; Jason Hoelscher-Obermaier; Akbir Khan; Euan McLean; Chan Jun Shern; Stuart Armstrong; etc.","10.48550/arXiv.2502.14143","https://doi.org/10.48550/arXiv.2502.14143","Pre-RCA Cooperative AI Foundation multi-agent risk report."]
-];
-
 // Re-normalize after the latest overlay. Primary URL is the stable identity.
 (() => {
   const byUrl = new Map();
@@ -65,7 +50,7 @@ window.priorArtReferenceRecords = [
 })();
 
 // Keep hard-coded summary labels synchronized with the live ledger before the
-// relationship-aware page renderer applies the chronology-control exclusions.
+// relationship-aware page renderer applies chronology-control exclusions.
 (() => {
   const records = window.overlapRecords || [];
   const physics = records.filter(r => r[4] === 'physics');
@@ -84,7 +69,7 @@ window.priorArtReferenceRecords = [
   if (aiTab) aiTab.textContent = `${ai.length} records · drift · memory · agents · reward hacking · oversight · control`;
 })();
 
-// SEO/discovery overlay for the latest high-specificity WCT/RCA additions.
+// SEO/discovery metadata for the latest high-specificity WCT/RCA additions.
 (() => {
   document.title = 'WCT Adoption & RCA Evidence | GWTC-5, Koide, AgentWorm, Hugging Face Incident | Richard J. Reyes';
   const description = 'WCT Adoption and Recursive AI Drift evidence ledger by Richard J. Reyes: GWTC-5 and hierarchical black-hole alternatives, Koide geometry, toroidal winding modes, METR/OpenAI Hugging Face incident reports, AgentWorm, cascading failures, recursive language-model fragility, and multi-agent AI safety.';
@@ -92,66 +77,4 @@ window.priorArtReferenceRecords = [
   if (meta) meta.setAttribute('content', description);
   const dcSubject = document.querySelector('meta[name="DC.subject"]');
   if (dcSubject) dcSubject.setAttribute('content', 'Wave Confinement Theory; WCT Adoption; Richard J. Reyes; GWTC-5; hierarchical black hole mergers; Koide relation; toroidal winding modes; METR Hugging Face incident; OpenAI Hugging Face incident; AgentWorm; cascading failures; Recursive AI Drift; multi-agent AI safety; post-date convergence');
-
-  const latestUrls = new Set([
-    'https://zenodo.org/records/21195612',
-    'https://arxiv.org/abs/2608.19277',
-    'https://zenodo.org/records/20738865',
-    'https://arxiv.org/abs/2605.09651',
-    'https://arxiv.org/abs/2609.21033',
-    'https://arxiv.org/abs/2604.02630',
-    'https://arxiv.org/abs/2608.14611',
-    'https://arxiv.org/abs/2603.15727',
-    'https://arxiv.org/abs/2605.02812',
-    'https://arxiv.org/abs/2609.00595',
-    'https://arxiv.org/abs/2609.11149',
-    'https://arxiv.org/abs/2605.27226',
-    'https://physics.aps.org/articles/v19/96',
-    'https://arxiv.org/abs/2508.20787',
-    'https://arxiv.org/abs/2507.08778',
-    'https://arxiv.org/abs/2605.24866',
-    'https://zenodo.org/records/20090881',
-    'https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/',
-    'https://openai.com/index/hugging-face-incident-and-the-road-ahead/',
-    'https://openai.com/index/hugging-face-model-evaluation-security-incident/',
-    'https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/',
-    'https://arxiv.org/abs/2605.19240',
-    'https://arxiv.org/abs/2604.07775',
-    'https://arxiv.org/abs/2603.04474'
-  ]);
-
-  window.addEventListener('DOMContentLoaded', () => {
-    const records = (window.overlapRecords || []).filter(r => latestUrls.has(r[2]));
-    const rel = window.overlapRelationshipByUrl || {};
-    const anchor = document.querySelector('.relationship-section');
-    if (!anchor || !records.length || document.getElementById('latest-adoption-additions')) return;
-
-    const section = document.createElement('section');
-    section.className = 'section ledger-section';
-    section.id = 'latest-adoption-additions';
-    section.setAttribute('aria-labelledby', 'latest-adoption-title');
-    section.innerHTML = `<div class="ledger-head"><div><p class="eyebrow">Latest WCT Adoption / RCA evidence additions</p><h2 id="latest-adoption-title">GWTC alternatives, Koide geometry, Hugging Face incident, cascade attacks & multi-agent failure</h2><p class="lede">Twenty-four newly indexed external works, with competing GWTC explanations explicitly separated from convergence and chronology controls kept out of the adoption count.</p></div><div class="record-count"><strong>${records.length}</strong><span>new records</span></div></div><div class="table-wrap"><table><thead><tr><th>External work</th><th>Authors</th><th>DOI / permanent ID</th><th>Relationship</th></tr></thead><tbody>${records.map(r => `<tr><td class="work"><a class="paper" href="${r[2]}" target="_blank" rel="noopener noreferrer">${r[1]}</a><span class="source">${r[5]}</span></td><td class="authors">${r[6]}</td><td class="identifier"><a href="${r[8]}" target="_blank" rel="noopener noreferrer">${r[7]}</a></td><td class="relationship"><span class="pill">${rel[r[2]] || 'STRUCTURAL OVERLAP'}</span></td></tr>`).join('')}</tbody></table></div>`;
-    anchor.insertAdjacentElement('afterend', section);
-
-    const structured = document.createElement('script');
-    structured.type = 'application/ld+json';
-    structured.textContent = JSON.stringify({
-      '@context':'https://schema.org',
-      '@type':'ItemList',
-      name:'Latest WCT Adoption, RCA Evidence, and Alternative-Explanation Sources',
-      itemListElement: records.map((r, index) => ({
-        '@type':'ListItem',
-        position:index + 1,
-        item:{
-          '@type':'ScholarlyArticle',
-          name:r[1],
-          url:r[2],
-          identifier:r[7],
-          author:r[6].split(';').map(name => ({'@type':'Person',name:name.trim()})),
-          isPartOf:{'@type':'Dataset',name:'Richard J. Reyes / WCT Adoption and External Evidence Ledger',url:'https://rickyjreyes.github.io/overlap/'}
-        }
-      }))
-    });
-    document.head.appendChild(structured);
-  });
 })();
