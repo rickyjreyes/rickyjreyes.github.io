@@ -71,7 +71,6 @@
       const style = document.createElement('style');
       style.id = 'priority-table-polish-style';
       style.textContent = `
-        /* Keep tables aligned with the same left/right content edge as their headings. */
         .priority-shell .table-wrap{
           width:100% !important;
           max-width:100% !important;
@@ -120,7 +119,7 @@
   if (path !== '/priority/' || document.getElementById('wct-priority-organization-pass')) return;
   const script = document.createElement('script');
   script.id = 'wct-priority-organization-pass';
-  script.src = '/priority/organization-pass.js?v=20260929-org1';
+  script.src = '/priority/organization-pass.js?v=20260929-org2';
   script.defer = true;
   document.head.appendChild(script);
 })();
