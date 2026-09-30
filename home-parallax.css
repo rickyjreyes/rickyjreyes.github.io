@@ -48,6 +48,363 @@ main .wct-parallax-child,
   backface-visibility: visible !important;
 }
 
+/* -------------------------------------------------------------------------
+   Progressive WCT field visual.
+
+   The original .field-visual markup in index.html remains the no-JavaScript
+   and failure fallback. home-parallax.js replaces only that visual when the
+   browser can support the enhanced component. SVG is the canonical visual
+   layer; Canvas is optional real-time enhancement.
+   ------------------------------------------------------------------------- */
+
+.wct-wrap {
+  width: 100%;
+  max-width: 470px;
+  justify-self: end;
+  color: #eef6ff;
+}
+
+.wct-wrap,
+.wct-wrap * {
+  box-sizing: border-box;
+}
+
+/* Override the older circular hero visual without relying on aspect-ratio. */
+.hero .field-visual.wct-field {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 470px;
+  overflow: hidden;
+  border: 1px solid rgba(103, 212, 255, 0.18);
+  border-radius: 24px;
+  background: #06101b;
+  background: radial-gradient(circle at 50% 48%, rgba(103, 212, 255, 0.11) 0%, rgba(7, 17, 31, 0.96) 58%, #040a12 100%);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.34), inset 0 0 100px rgba(103, 212, 255, 0.04);
+}
+
+.hero .field-visual.wct-field::before,
+.hero .field-visual.wct-field::after {
+  display: none;
+  content: none;
+}
+
+/* The SVG stays in normal flow so it provides the field's square dimensions
+   even in browsers that do not support CSS aspect-ratio. */
+.wct-svg {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.wct-canvas,
+.wct-vignette {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Canvas starts hidden. JavaScript reveals it only after getContext succeeds. */
+.wct-canvas {
+  z-index: 1;
+  display: none;
+}
+
+.wct-field.wct-canvas-ready .wct-canvas {
+  display: block;
+}
+
+.wct-vignette {
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(circle, transparent 44%, rgba(4, 10, 18, 0.16) 67%, rgba(4, 10, 18, 0.72) 100%);
+}
+
+.wct-flow,
+.wct-band,
+.wct-shell {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  transition: opacity 180ms ease, stroke-width 180ms ease, stroke 180ms ease;
+}
+
+.wct-flow {
+  stroke: rgba(103, 212, 255, 0.28);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 5 8;
+}
+
+.wct-band {
+  stroke: rgba(143, 216, 255, 0.24);
+  stroke-width: 1;
+}
+
+.wct-shell {
+  stroke: rgba(168, 153, 255, 0.52);
+  stroke-width: 1.5;
+}
+
+.wct-shell.outer {
+  stroke: rgba(103, 212, 255, 0.55);
+}
+
+.wct-core {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  width: 104px;
+  height: 104px;
+  margin-left: -52px;
+  margin-top: -52px;
+  display: table;
+  text-align: center;
+  border: 1px solid rgba(103, 212, 255, 0.5);
+  border-radius: 50%;
+  background: #0a1827;
+  background: radial-gradient(circle at 35% 30%, #17324a, #081321 68%, #050b13 100%);
+  box-shadow: 0 0 52px rgba(103, 212, 255, 0.18), inset 0 0 32px rgba(143, 216, 255, 0.06);
+  pointer-events: none;
+}
+
+.wct-core-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.wct-core strong {
+  display: block;
+  color: #8fd8ff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.wct-core span {
+  display: block;
+  margin-top: 6px;
+  color: #8fa4b8;
+  font-size: 0.59rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.wct-hotspot {
+  position: absolute;
+  z-index: 6;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  padding: 0;
+  border: 1px solid rgba(103, 212, 255, 0.44);
+  border-radius: 50%;
+  color: #dff5ff;
+  background: #091725;
+  background: rgba(7, 17, 31, 0.9);
+  font: 700 0.78rem/36px Arial, Helvetica, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.wct-hotspot:hover,
+.wct-hotspot:focus,
+.wct-hotspot[aria-pressed="true"] {
+  color: #04111a;
+  background: #8fd8ff;
+  border-color: #8fd8ff;
+  outline: none;
+}
+
+.wct-hotspot:focus {
+  box-shadow: 0 0 0 3px rgba(143, 216, 255, 0.22);
+}
+
+.wct-hotspot[data-concept="transport"] { left: 11%; top: 28%; }
+.wct-hotspot[data-concept="band"] { right: 14%; top: 18%; }
+.wct-hotspot[data-concept="curvature"] { right: 12%; bottom: 24%; }
+.wct-hotspot[data-concept="lock"] { left: 18%; bottom: 17%; }
+
+.wct-panel {
+  margin-top: 15px;
+  padding: 16px 17px 15px;
+  border: 1px solid rgba(103, 212, 255, 0.13);
+  border-radius: 16px;
+  background: #07111f;
+  background: rgba(7, 17, 31, 0.74);
+}
+
+.wct-tabs {
+  display: block;
+  margin: -4px -4px 10px;
+}
+
+.wct-tab {
+  display: inline-block;
+  min-height: 38px;
+  margin: 4px;
+  padding: 8px 10px;
+  border: 1px solid rgba(103, 212, 255, 0.16);
+  border-radius: 9px;
+  color: #9fb2c3;
+  background: #081522;
+  background: rgba(255, 255, 255, 0.025);
+  font: 700 0.69rem/1.25 Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.wct-tab:hover,
+.wct-tab:focus,
+.wct-tab[aria-pressed="true"] {
+  color: #eef6ff;
+  border-color: rgba(103, 212, 255, 0.48);
+  background: rgba(103, 212, 255, 0.09);
+  outline: none;
+}
+
+.wct-tab:focus {
+  box-shadow: 0 0 0 2px rgba(143, 216, 255, 0.16);
+}
+
+.wct-copy {
+  min-height: 96px;
+}
+
+.wct-kicker,
+.wct-note,
+.wct-description,
+.wct-title {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.wct-kicker {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #67d4ff;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.wct-title {
+  margin-top: 0;
+  margin-bottom: 7px;
+  color: #eef6ff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 1.18;
+}
+
+.wct-description {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #a7bacb;
+  font-size: 0.79rem;
+  line-height: 1.55;
+}
+
+.wct-note {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(103, 212, 255, 0.1);
+  color: #73889c;
+  font-size: 0.65rem;
+  line-height: 1.45;
+}
+
+/* Concept isolation: SVG still carries the meaning if Canvas is unavailable. */
+.wct-field[data-active="transport"] .wct-band,
+.wct-field[data-active="transport"] .wct-shell {
+  opacity: 0.18;
+}
+.wct-field[data-active="transport"] .wct-flow {
+  opacity: 1;
+  stroke-width: 2;
+  stroke: rgba(103, 212, 255, 0.72);
+}
+
+.wct-field[data-active="band"] .wct-flow,
+.wct-field[data-active="band"] .wct-shell {
+  opacity: 0.14;
+}
+.wct-field[data-active="band"] .wct-band {
+  opacity: 1;
+  stroke-width: 1.8;
+  stroke: rgba(143, 216, 255, 0.75);
+}
+
+.wct-field[data-active="curvature"] .wct-flow,
+.wct-field[data-active="curvature"] .wct-band {
+  opacity: 0.13;
+}
+.wct-field[data-active="curvature"] .wct-shell {
+  opacity: 1;
+  stroke-width: 2.2;
+}
+
+.wct-field[data-active="lock"] .wct-flow,
+.wct-field[data-active="lock"] .wct-band,
+.wct-field[data-active="lock"] .wct-shell {
+  opacity: 0.16;
+}
+.wct-field[data-active="lock"] .wct-core {
+  border-color: rgba(143, 216, 255, 0.9);
+  box-shadow: 0 0 72px rgba(103, 212, 255, 0.34), inset 0 0 38px rgba(168, 153, 255, 0.12);
+}
+
+/* IE10/11 and other browsers without modern grid/flex simply use the block
+   layout above. These rules only add small, safe compatibility adjustments. */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .wct-wrap {
+    display: block;
+    width: 470px;
+    max-width: 100%;
+  }
+
+  .wct-panel {
+    display: block;
+  }
+
+  .wct-canvas {
+    display: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .wct-wrap {
+    margin: 34px auto 0;
+    justify-self: center;
+  }
+
+  .wct-hotspot {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    line-height: 40px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce), (max-width: 760px) {
   .hero .eyebrow,
   .hero h1,
@@ -58,5 +415,18 @@ main .wct-parallax-child,
   main .wct-parallax-child {
     transform: none !important;
     will-change: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wct-field *,
+  .wct-panel * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .wct-canvas {
+    display: none !important;
   }
 }
