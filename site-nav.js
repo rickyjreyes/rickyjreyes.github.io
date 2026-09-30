@@ -119,6 +119,16 @@
     document.head.appendChild(script);
   };
 
+  const loadRcaAudit42 = () => {
+    const path = location.pathname.replace(/index\.html$/i, '');
+    if (path !== '/priority/' || document.getElementById('wct-priority-rca-audit-42')) return;
+    const script = document.createElement('script');
+    script.id = 'wct-priority-rca-audit-42';
+    script.src = '/priority/rca-audit-42.js?v=20260929-audit42c1';
+    script.defer = true;
+    document.head.appendChild(script);
+  };
+
   const loadPriorityTablePolish = () => {
     const path = location.pathname.replace(/index\.html$/i, '');
     if (path !== '/priority/' || document.getElementById('wct-priority-table-polish')) return;
@@ -260,6 +270,7 @@
   applyStaticRendering();
   loadGlossaryBinaryView();
   loadPriorityEvidence();
+  loadRcaAudit42();
   loadPriorityTablePolish();
   loadReproduceLayoutPolish();
   loadFoundationCuration();
