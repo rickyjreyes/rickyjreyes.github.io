@@ -134,7 +134,7 @@
     if (path !== '/priority/' || document.getElementById('wct-priority-table-polish')) return;
     const script = document.createElement('script');
     script.id = 'wct-priority-table-polish';
-    script.src = '/priority/table-polish.js?v=20260917-table1';
+    script.src = '/priority/table-polish.js?v=20260929-org1';
     script.defer = true;
     document.head.appendChild(script);
   };
