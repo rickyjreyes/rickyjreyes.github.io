@@ -119,7 +119,7 @@
   if (path !== '/priority/' || document.getElementById('wct-priority-organization-pass')) return;
   const script = document.createElement('script');
   script.id = 'wct-priority-organization-pass';
-  script.src = '/priority/organization-pass.js?v=20260929-org2';
+  script.src = '/priority/organization-pass.js?v=20260929-org3';
   script.defer = true;
   document.head.appendChild(script);
 })();
