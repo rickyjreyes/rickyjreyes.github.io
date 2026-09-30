@@ -67,107 +67,101 @@
     const style = document.createElement('style');
     style.id = 'rca-audit-42-style';
     style.textContent = `
-      #verified-predictions{border-top:1px solid rgba(103,212,255,.3)!important}
-      #verified-predictions .rca-audit-legend{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 6px;max-width:1180px}
-      #verified-predictions .rca-legend-item{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02);font-size:.72rem;font-weight:800;color:var(--muted)}
-      #verified-predictions .rca-legend-dot{width:8px;height:8px;border-radius:50%;background:var(--audit-color)}
-      #verified-predictions .prediction-metrics{grid-template-columns:repeat(5,minmax(0,1fr))!important}
-      #verified-predictions .prediction-metric{border-color:color-mix(in srgb,var(--audit-color) 34%, transparent)!important;background:color-mix(in srgb,var(--audit-color) 7%, transparent)!important}
-      #verified-predictions .prediction-metric strong{color:var(--audit-color)!important}
-      #verified-predictions .prediction-grid{align-items:stretch}
-      #verified-predictions .prediction-card{--audit-color:#67d4ff;overflow:hidden;border-color:color-mix(in srgb,var(--audit-color) 32%, var(--line))!important;background:color-mix(in srgb,var(--audit-color) 5%, rgba(255,255,255,.015))!important}
-      #verified-predictions .prediction-card::before{content:'';position:absolute;inset:0 auto 0 0;width:4px;background:var(--audit-color)}
-      #verified-predictions .prediction-card.status-landed{--audit-color:#7ce09f}
-      #verified-predictions .prediction-card.status-convergence{--audit-color:#67d4ff}
-      #verified-predictions .prediction-card.status-partial{--audit-color:#ffc55c}
-      #verified-predictions .prediction-card.status-open{--audit-color:#b789ff}
-      #verified-predictions .prediction-card.status-prospective{--audit-color:#8f9bad}
-      #verified-predictions .prediction-number{border-color:color-mix(in srgb,var(--audit-color) 62%, transparent)!important;color:var(--audit-color)!important;background:color-mix(in srgb,var(--audit-color) 8%, transparent)}
-      #verified-predictions .audit-status-pill{display:inline-flex;margin-top:12px;padding:5px 8px;border:1px solid currentColor;border-radius:999px;color:var(--audit-color);font-size:.64rem;font-weight:900;letter-spacing:.045em;text-transform:uppercase}
-      #verified-predictions .audit-evidence{margin-top:8px!important}
-      #verified-predictions .audit-current-status{margin-top:7px!important;color:var(--text)!important;font-size:.8rem!important}
-      #verified-predictions .audit-current-status strong{display:inline;color:var(--audit-color);font-size:inherit}
-      @media(max-width:1100px){#verified-predictions .prediction-metrics{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
-      @media(max-width:620px){#verified-predictions .prediction-metrics{grid-template-columns:1fr!important}}
+      #rca-prediction-audit{border-top:1px solid rgba(183,137,255,.3)!important}
+      #rca-prediction-audit .rca-audit-summary{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px;max-width:1180px}
+      #rca-prediction-audit .rca-summary-item{--audit-color:#67d4ff;display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid color-mix(in srgb,var(--audit-color) 34%, var(--line));border-radius:999px;background:color-mix(in srgb,var(--audit-color) 6%, transparent);font-size:.73rem;font-weight:800;color:var(--muted)}
+      #rca-prediction-audit .rca-summary-item strong{color:var(--audit-color)}
+      #rca-prediction-audit .rca-audit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px;max-width:1180px}
+      #rca-prediction-audit .rca-audit-card{--audit-color:#67d4ff;position:relative;padding:20px 20px 18px 54px;border:1px solid color-mix(in srgb,var(--audit-color) 30%, var(--line));border-radius:15px;background:color-mix(in srgb,var(--audit-color) 5%, rgba(255,255,255,.015));overflow:hidden}
+      #rca-prediction-audit .rca-audit-card::before{content:'';position:absolute;inset:0 auto 0 0;width:4px;background:var(--audit-color)}
+      #rca-prediction-audit .status-landed{--audit-color:#7ce09f}
+      #rca-prediction-audit .status-convergence{--audit-color:#67d4ff}
+      #rca-prediction-audit .status-partial{--audit-color:#ffc55c}
+      #rca-prediction-audit .status-open{--audit-color:#b789ff}
+      #rca-prediction-audit .status-prospective{--audit-color:#8f9bad}
+      #rca-prediction-audit .rca-audit-number{position:absolute;left:18px;top:19px;display:grid;place-items:center;width:25px;height:25px;border:1px solid color-mix(in srgb,var(--audit-color) 62%, transparent);border-radius:999px;color:var(--audit-color);background:color-mix(in srgb,var(--audit-color) 8%, transparent);font-size:.7rem;font-weight:850}
+      #rca-prediction-audit .rca-audit-card h3{margin:0;color:var(--text);font-size:1rem;line-height:1.35}
+      #rca-prediction-audit .rca-audit-card p{margin:8px 0 0;color:var(--muted);font-size:.86rem;line-height:1.55}
+      #rca-prediction-audit .rca-audit-status{display:inline-flex;margin-top:12px;padding:5px 8px;border:1px solid currentColor;border-radius:999px;color:var(--audit-color);font-size:.64rem;font-weight:900;letter-spacing:.045em;text-transform:uppercase}
+      #rca-prediction-audit .rca-status-detail{color:var(--text)!important;font-size:.8rem!important}
+      #rca-prediction-audit .rca-status-detail strong{color:var(--audit-color)}
+      @media(max-width:900px){#rca-prediction-audit .rca-audit-grid{grid-template-columns:1fr}}
     `;
     document.head.appendChild(style);
   };
 
-  const patchExternalTotals = () => {
-    const strip = document.querySelector('.priority-head .audit-strip');
-    if (strip) {
-      const cards = strip.querySelectorAll(':scope > div');
-      if (cards.length >= 4) {
-        cards[1].innerHTML = '<strong>42</strong><span>RCA / WCT-AI prediction and mechanism audit items</span>';
-        cards[3].innerHTML = '<strong>237</strong><span>external evidence and convergence records</span>';
-      }
-    }
-
-    const evidence = document.getElementById('expanded-evidence');
-    if (evidence) {
-      const lede = evidence.querySelector('.section-lede');
-      if (lede) lede.textContent = 'The public convergence ledger contains 237 visible external records, including 66 Recursive AI Drift / AI-system records. Highlighted cases below remain examples; the full ledger is maintained on the WCT Adoption & External Evidence page.';
-      const metrics = evidence.querySelectorAll('.evidence-metric');
-      if (metrics[0]) metrics[0].innerHTML = '<strong>237</strong><span>visible external records across WCT physics, photonics, and AI-system research</span>';
-      if (metrics[1]) metrics[1].innerHTML = '<strong>66</strong><span>Recursive AI Drift / AI-system records</span>';
-      const primaryAction = evidence.querySelector('.evidence-actions .button.primary');
-      if (primaryAction) primaryAction.textContent = 'Open the 66-record AI evidence ledger';
-    }
+  const addJumpLink = () => {
+    const nav = document.getElementById('priority-jump');
+    if (!nav || nav.querySelector('a[href="#rca-prediction-audit"]')) return;
+    const link = document.createElement('a');
+    link.href = '#rca-prediction-audit';
+    link.textContent = 'RCA audit';
+    const external = nav.querySelector('a[href="#expanded-evidence"]');
+    if (external) nav.insertBefore(link, external);
+    else nav.appendChild(link);
   };
 
-  const patch = () => {
-    const section = document.getElementById('verified-predictions');
-    if (!section) return false;
-    if (section.dataset.rcaAudit42 === 'true') return true;
+  const build = () => {
+    const verified = document.getElementById('verified-predictions');
+    if (!verified) return false;
+    if (document.getElementById('rca-prediction-audit')) {
+      addJumpLink();
+      return true;
+    }
 
     installStyles();
-    section.dataset.rcaAudit42 = 'true';
+
+    const section = document.createElement('section');
+    section.className = 'priority-section';
+    section.id = 'rca-prediction-audit';
+    section.setAttribute('aria-labelledby', 'rca-prediction-audit-title');
     section.innerHTML = `
-      <p class="eyebrow">RCA prediction &amp; validation audit · original release June 11, 2025</p>
-      <h2 id="verified-predictions-title">42 RCA / WCT-AI items: what landed, what converged, and what remains prospective</h2>
-      <p class="section-lede">This replaces the previous all-green summary with a status-aware audit. Each item states the original RCA / WCT-AI mechanism or forecast, the later corresponding evidence class, and its present validation status. These are author-side audit items and are not added to the external-evidence record count.</p>
+      <p class="eyebrow">RCA / WCT-AI mechanism and forecast audit · original release June 11, 2025</p>
+      <h2 id="rca-prediction-audit-title">42 RCA / WCT-AI items and their current evidence status</h2>
+      <p class="section-lede">A separate term-by-term audit of RCA mechanisms, diagnostics, forecast milestones, and later corresponding evidence. These 42 author-side audit items are not counted as external-evidence or adoption records and do not replace the verified-predictions section above.</p>
 
-      <div class="rca-audit-legend" aria-label="RCA audit status colors">
-        <span class="rca-legend-item" style="--audit-color:#7ce09f"><span class="rca-legend-dot"></span>Green · landed (${counts.landed})</span>
-        <span class="rca-legend-item" style="--audit-color:#67d4ff"><span class="rca-legend-dot"></span>Cyan · convergence (${counts.convergence})</span>
-        <span class="rca-legend-item" style="--audit-color:#ffc55c"><span class="rca-legend-dot"></span>Amber · partial / precursor (${counts.partial})</span>
-        <span class="rca-legend-item" style="--audit-color:#b789ff"><span class="rca-legend-dot"></span>Violet · open validation (${counts.open})</span>
-        <span class="rca-legend-item" style="--audit-color:#8f9bad"><span class="rca-legend-dot"></span>Slate · prospective / unestablished (${counts.prospective})</span>
+      <div class="rca-audit-summary" aria-label="RCA audit status summary">
+        <span class="rca-summary-item" style="--audit-color:#7ce09f"><strong>${counts.landed}</strong> landed / strong hits</span>
+        <span class="rca-summary-item" style="--audit-color:#67d4ff"><strong>${counts.convergence}</strong> convergence</span>
+        <span class="rca-summary-item" style="--audit-color:#ffc55c"><strong>${counts.partial}</strong> partial / precursor</span>
+        <span class="rca-summary-item" style="--audit-color:#b789ff"><strong>${counts.open}</strong> open validation</span>
+        <span class="rca-summary-item" style="--audit-color:#8f9bad"><strong>${counts.prospective}</strong> prospective / unestablished</span>
       </div>
 
-      <div class="prediction-metrics" aria-label="RCA audit summary">
-        <div class="prediction-metric" style="--audit-color:#7ce09f"><strong>${counts.landed}</strong><span>landed / strong mechanism or quantitative hits</span></div>
-        <div class="prediction-metric" style="--audit-color:#67d4ff"><strong>${counts.convergence}</strong><span>structural, conceptual, or metric convergence</span></div>
-        <div class="prediction-metric" style="--audit-color:#ffc55c"><strong>${counts.partial}</strong><span>partial support, analogues, or precursors</span></div>
-        <div class="prediction-metric" style="--audit-color:#b789ff"><strong>${counts.open}</strong><span>derived result awaiting broader external validation</span></div>
-        <div class="prediction-metric" style="--audit-color:#8f9bad"><strong>${counts.prospective}</strong><span>not yet due, not yet literal, or not established</span></div>
-      </div>
-
-      <div class="prediction-grid">
+      <div class="rca-audit-grid">
         ${audit.map(([n,title,evidence,status,kind]) => `
-          <article class="prediction-card status-${kind}">
-            <span class="prediction-number">${n}</span>
-            <strong>${esc(title)}</strong>
-            <p class="audit-evidence">${esc(evidence)}</p>
-            <p class="audit-current-status"><strong>Status:</strong> ${esc(status)}</p>
-            <span class="audit-status-pill">${labels[kind]}</span>
+          <article class="rca-audit-card status-${kind}">
+            <span class="rca-audit-number">${n}</span>
+            <h3>${esc(title)}</h3>
+            <p>${esc(evidence)}</p>
+            <p class="rca-status-detail"><strong>Status:</strong> ${esc(status)}</p>
+            <span class="rca-audit-status">${labels[kind]}</span>
           </article>`).join('')}
       </div>
     `;
 
-    patchExternalTotals();
+    const expandedEvidence = document.getElementById('expanded-evidence');
+    if (expandedEvidence && expandedEvidence.parentNode) {
+      expandedEvidence.parentNode.insertBefore(section, expandedEvidence);
+    } else if (verified.nextSibling) {
+      verified.parentNode.insertBefore(section, verified.nextSibling);
+    } else {
+      verified.parentNode.appendChild(section);
+    }
+
+    addJumpLink();
     return true;
   };
 
-  if (patch()) return;
+  if (build()) return;
 
   const observer = new MutationObserver(() => {
-    if (patch()) observer.disconnect();
+    if (build()) observer.disconnect();
   });
   observer.observe(document.documentElement, {childList:true, subtree:true});
 
   window.addEventListener('load', () => {
-    patch();
+    build();
     setTimeout(() => observer.disconnect(), 5000);
   }, {once:true});
 })();
