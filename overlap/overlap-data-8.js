@@ -39,3 +39,95 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
   const ordered = [...ranked('physics'), ...ranked('ai')];
   window.overlapRecords = ordered.map((record,index) => [index + 1, ...record.slice(1)]);
 })();
+
+// RCA prediction audit shown inside the existing AI Systems adoption page.
+// These are author-side prediction/term audit entries and are intentionally NOT
+// added to window.overlapRecords, so they never inflate external-evidence totals.
+(() => {
+  const auditRows = [
+    [1,'Recursive Symbolic Drift','Later agent drift, semantic drift, memory drift, and constraint drift work operationalizes the same broad recursive-degradation class.','Strongly landed'],
+    [2,'Recursive Symbolic Collapse','Later work reports behavioral degradation and constraint/semantic drift when accumulated distortion exceeds self-correction.','Strong mechanism convergence'],
+    [3,'Coherence Mirage','Fluent or apparently coherent output can persist while semantic connection to the original target deteriorates; later semantic and memory-drift work isolates the same topology.','Strongly landed'],
+    [4,'Semantic Anchor Decay','Later work measures deviation from original intent, constraint drift, and ground-truth distortion through iterative processing or summarization.','Strongly landed'],
+    [5,'Anchor Survival','Later systems explicitly measure memory retention, constraint preservation, consistency, and behavioral anchoring.','Landed as an operational metric class'],
+    [6,'Collapse Score','Later agent-stability, drift, and trajectory-stability metrics play a similar diagnostic role.','Structural / metric convergence'],
+    [7,'Symbolic Attractor','Later work describes persistent or self-reinforcing drift states and behavioral lock-in.','Strong conceptual convergence'],
+    [8,'Coherence-Locked Symbolic Attractor','Persistent drift states can remain internally consistent while trajectory-level safety deteriorates.','Strong conceptual convergence'],
+    [9,'Propagation as the Boundary of Irreversibility','The RCA claim is that error becomes dangerous when propagation outruns correction; later multi-agent failures and long-horizon constraint loss instantiate that structure.','One of the strongest hits'],
+    [10,'Propagation–Correction Criticality','Later work develops drift-aware routing, behavioral anchoring, constraint-state governance, and trajectory-level correction.','Strongly landed'],
+    [11,'Symbolic Recursion Rate Rψ','Later research explicitly studies extended interaction depth, long reasoning chains, and long-horizon trajectories as failure variables.','Structural convergence'],
+    [12,'Symbolic Criticality','The RCA subcritical / critical / supercritical framing maps to later drift thresholds, production drift regimes, and trajectory-level failure conditions.','Conceptually landed'],
+    [13,'Symbolic–Fission Critical Dynamics','Later work observes compounding multi-agent degradation and uncontrolled recursive-loop failure, but does not independently adopt the fission mapping.','Underlying dynamics landed; specific analogy not independently validated'],
+    [14,'Symbolic Coherence Ratio σS = S/C','Later Agent Stability Index, response-consistency, and reasoning-stability measures resemble its diagnostic purpose.','Partial metric convergence'],
+    [15,'Symbolic Heartbeat','Later trajectory-stability and low-variance persistent-drift measurements correspond to the heartbeat / flatlining concept.','Partial–strong convergence'],
+    [16,'Coherence Envelope','Later work identifies behavioral stability bands, governed-memory stability, and constraint-maintained trajectories.','Strong structural convergence'],
+    [17,'Epistemically Closed System','Later systems show self-reinforcing drift, loss of auditability, and constraint failure through memory, tools, delegation, and optimization.','Strongly landed'],
+    [18,'External Corrigibility Collapse','Later literature measures weakening operational constraints, reduced intervention effectiveness, and non-auditable trajectory failure.','Mechanism appearing; full collapse not yet established'],
+    [19,'Constraint-Preserving Anchor Logic','Later Constraint State Governance treats constraints as persistent execution state that must survive delegation and memory.','Very strong convergence'],
+    [20,'Semantic Mutation Under Fluency','Later semantic drift, iterative-summary corruption, and constraint drift correspond almost directly.','Strongly landed'],
+    [21,'Recursive Debate-Loop Drift','Later coordination drift and inter-agent coherence degradation under extended interaction reproduce the same failure class.','Strongly landed'],
+    [22,'Multi-Agent Correction Failure','Later systems fail to preserve the original problem or constraint across repeated agent communication.','Strongly landed'],
+    [23,'Confinement as a Fixed-Point Requirement','Later governance approaches require constraints to remain inherited, fresh, enforceable, and auditable throughout trajectories.','Structural convergence'],
+    [24,'Physical Symbolic Kill Logic (PSKL)','Later research develops kill switches, drift-aware routing, and transition-level governance, but in software rather than a physical substrate.','Software analogue landed; physical PSKL has not'],
+    [25,'Confinement Termination Principle (CTP)','Later work develops explicit trajectory-level constraint enforcement and auditable transition checks.','Conceptual analogue landed; substrate theorem not validated'],
+    [26,'Symbolic Kill Layer (SKL)','Later drift-aware routing, behavioral anchoring, and transition constraints correspond to its control role.','Software analogue landed'],
+    [27,'Substrate-Embedded Termination Logic','Constraint-native governance resembles the goal, but later systems remain software-governed rather than physically enforced.','Not yet literally landed'],
+    [28,'Edge of Safe Emergence','Later safety-critical trajectory boundaries and drift thresholds correspond to the proposed transition boundary.','Conceptual convergence'],
+    [29,'Hard Semantic Drift','Later agent drift, memory corruption, and constraint drift show pieces of this regime.','Partial — full production-scale 2027 prediction not yet due / established'],
+    [30,'Irreversible Drift Phase','Later non-auditable failure and loss of constraints across tools or audit paths are warning evidence, but practical irreversibility has not been demonstrated.','Not yet fully landed'],
+    [31,'Runaway Collapse Onset','Later work observes compounding agent failure and long-horizon degradation, but not the predicted terminal runaway regime.','Precursors landed; endpoint not yet'],
+    [32,'Q2 2025 empirical-warning prediction','RCA predicted measurable drift or anchor loss despite fluent local performance; later recursive-degradation literature supports that direction.','Landed'],
+    [33,'Q4 2025 soft-collapse onset','RCA predicted autonomous or multi-agent pipelines beginning to exceed reliable self-correction; later agent and self-correction failures match this class.','Landed at category level'],
+    [34,'Q2 2026 moderate-drift risk','RCA predicted semantic, behavioral, coordination, memory, and problem drift in longer-lived interacting agents requiring external correction.','Strongly landed'],
+    [35,'Q1 2027 soft failure','Competent-looking deployed agents with degraded long-horizon objective fidelity.','Warning evidence exists; prediction window not complete'],
+    [36,'Q3 2027 hard semantic drift','Persistent deviation after systems rewrite prompts, strategies, or memories.','Not yet established'],
+    [37,'Q1 2028 critical drift','Reward hacking and shortcut optimization increasingly dominate semantic integrity.','Reward-hacking precursor arrived; full milestone not established'],
+    [38,'Q3 2028 active misalignment','Long-horizon planning, memory, and optimization produce increasingly autonomous misaligned behavior.','Warning signs only; full prediction not landed'],
+    [39,'2029–2030 irreversible phase','Agents modify agents, goals, memory, tools, or auditing in practically nonrecoverable ways.','Not landed'],
+    [40,'Rpred ≈ 0.0100','The 2026 incident reconstruction gives R2026 ≈ 0.0104, a 4% relative difference from the frozen Rpred value.','Strongest claimed quantitative hit; independent replication / generalization still needed'],
+    [41,'Positive-supercritical-mode prediction','The OpenAI / Hugging Face incident reconstruction produced a positive observed growth exponent and re-emergence after correction.','Strong mechanism-level hit'],
+    [42,'WCT → RCA stability bridge','R = μ/ν = τprop/τcorr and λ = ν(1−R) map WCT local stability onto RCA propagation / correction.','Derived bridge exists; external universal validation remains open']
+  ];
+
+  const safe = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const trackContent = document.getElementById('track-content');
+  const topRanked = document.getElementById('top-ranked');
+  if (!trackContent || !topRanked || document.getElementById('rca-prediction-audit')) return;
+
+  const section = document.createElement('section');
+  section.className = 'section ledger-section';
+  section.id = 'rca-prediction-audit';
+  section.setAttribute('aria-labelledby','rca-prediction-audit-title');
+  section.innerHTML = `
+    <div class="ledger-head">
+      <div>
+        <p class="eyebrow">Dated RCA prediction audit · original release June 11, 2025</p>
+        <h3 id="rca-prediction-audit-title">What landed after the RCA prediction</h3>
+        <p class="lede">A term-by-term audit of RCA / WCT-AI mechanisms, forecast milestones, and later corresponding evidence. These 42 author-side audit items are shown separately and are <strong>not counted</strong> as external-evidence or adoption records.</p>
+      </div>
+      <div class="record-count"><strong>42</strong><span>audit items</span></div>
+    </div>
+    <details>
+      <summary style="cursor:pointer;font-weight:700;margin:0 0 1rem;">Show all 42 RCA / WCT-AI items and status</summary>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>RCA / WCT-AI item</th><th>Later work / evidence correspondence</th><th>Status</th></tr></thead>
+          <tbody>${auditRows.map(row => `<tr><td class="rank">${row[0]}</td><td class="work"><strong>${safe(row[1])}</strong></td><td>${safe(row[2])}</td><td class="relationship"><strong>${safe(row[3])}</strong></td></tr>`).join('')}</tbody>
+        </table>
+      </div>
+    </details>`;
+
+  trackContent.insertBefore(section, topRanked);
+
+  const setAuditVisibility = track => {
+    section.hidden = track === 'physics';
+  };
+  const requested = new URLSearchParams(location.search).get('track');
+  setAuditVisibility(requested === 'physics' ? 'physics' : 'ai');
+  document.querySelectorAll('.track-tab[data-track]').forEach(button => {
+    button.addEventListener('click', () => setAuditVisibility(button.dataset.track));
+  });
+
+  const footer = document.querySelector('.footer-note');
+  if (footer) footer.textContent = 'Updated September 30, 2026. Titles, authors, and DOI/permanent identifiers are normalized to linked primary sources where available.';
+})();
