@@ -114,3 +114,13 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, {once:true});
   else start();
 })();
+
+(() => {
+  const path = location.pathname.replace(/index\.html$/i, '');
+  if (path !== '/priority/' || document.getElementById('wct-priority-organization-pass')) return;
+  const script = document.createElement('script');
+  script.id = 'wct-priority-organization-pass';
+  script.src = '/priority/organization-pass.js?v=20260929-org1';
+  script.defer = true;
+  document.head.appendChild(script);
+})();
