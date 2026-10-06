@@ -446,9 +446,9 @@
   "currentClaimsLedger": "https://rickyjreyes.github.io/priority/claims.json",
   "currentClaimsPage": "https://rickyjreyes.github.io/priority/#ledger",
   "summaryCounts": {
-    "doiBackedScholarlyPriorityRecords": 22,
-    "keyDatedPriorityAnchors": 5,
+    "doiBackedResearchReleases": 28,
     "validationRecords": 24,
+    "externalEvidenceConvergenceRecords": 242,
     "filedPatentFamilies": 4
   }
 }
