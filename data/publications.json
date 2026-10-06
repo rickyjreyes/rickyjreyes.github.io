@@ -649,6 +649,182 @@
           "relation": "Related computation model"
         }
       ]
+    },
+    {
+      "n": 23,
+      "slug": "gwtc-log-periodic-chirp-mass",
+      "title": "Log-Periodic Structure in the GWTC Chirp-Mass Distribution: Frozen Holdout Evidence and a Prospective Prediction",
+      "date": "2026-08-26",
+      "display_date": "August 26, 2026",
+      "doi": "10.5281/zenodo.22256802",
+      "category": "Gravitational-wave open-data analysis",
+      "status": "Open-data analysis",
+      "summary": "This open-data study tests a WCT-motivated log-periodic mode in GWTC chirp masses using a frozen holdout design, unbinned robustness checks, structured non-periodic population nulls, and a prospective prediction for future catalogs.",
+      "question": "Does a frequency selected on training data recur in held-out GWTC chirp-mass data and survive stronger non-periodic population nulls?",
+      "contributions": [
+        "Freezes a chirp-mass log-frequency before holdout evaluation and reports the resulting holdout statistic.",
+        "Adds unbinned robustness and structured non-periodic population-null tests while preserving a future-catalog prediction."
+      ],
+      "evidence": [
+        "Public-data analysis",
+        "Frozen holdout",
+        "Structured-null robustness"
+      ],
+      "limitations": "The result remains author-run and does not replace LVK hierarchical population inference with posterior propagation and injection-calibrated selection effects.",
+      "repo": "https://github.com/rickyjreyes/GWTC",
+      "related": [
+        {
+          "slug": "curvature-log-periodic-c9-deformation",
+          "relation": "Related log-periodic phenomenology"
+        }
+      ]
+    },
+    {
+      "n": 24,
+      "slug": "cms-log-periodic-dimuon-residual",
+      "title": "Log-Periodic Dimuon Residual in CMS Open Data: Cross-Period Replication and a Prospective Phase-Locked Holdout",
+      "date": "2026-08-31",
+      "display_date": "August 31, 2026",
+      "doi": "10.5281/zenodo.22257067",
+      "category": "Collider open-data analysis",
+      "status": "Open-data analysis",
+      "summary": "This CMS Run-2 open-data study follows a fixed-frequency dimuon residual through independent-file replication, cross-period replication, and a prospective phase-locked holdout, then audits the result against flexible smooth-background alternatives.",
+      "question": "Does a fixed log-periodic dimuon residual recur across independent CMS Run-2 files and periods when frequency, phase, and sign are progressively frozen?",
+      "contributions": [
+        "Reports independent-file and cross-period recurrence of a frozen dimuon log-frequency.",
+        "Tests a prospectively phase-locked holdout and documents the later background-identifiability audit."
+      ],
+      "evidence": [
+        "Public-data analysis",
+        "Prospective holdout",
+        "Adversarial background audit"
+      ],
+      "limitations": "The recurring residual is reproducible under the declared pipeline, but model-robust significance and physical attribution remain unresolved because reasonable smooth backgrounds can generate comparable scores.",
+      "repo": "https://github.com/rickyjreyes/wct-cms",
+      "related": [
+        {
+          "slug": "lhcb-log-spectral-koide-winding",
+          "relation": "Related collider analysis"
+        }
+      ]
+    },
+    {
+      "n": 25,
+      "slug": "exact-scale-winding-bijection",
+      "title": "Exact Scale-Winding Bijection Between Discrete Scale Invariance and WCT Active-Domain Phase Closure",
+      "date": "2026-09-08",
+      "display_date": "September 8, 2026",
+      "doi": "10.5281/zenodo.22665914",
+      "category": "Primary WCT foundation",
+      "status": "Mathematical derivation",
+      "summary": "This work formalizes an exact mapping between discrete scale changes in logarithmic coordinates and integer phase winding in the WCT active-domain construction, providing a mathematical bridge between log-periodicity and phase closure.",
+      "question": "Can discrete scale invariance be mapped exactly to WCT active-domain phase winding rather than treated only as a phenomenological analogy?",
+      "contributions": [
+        "Derives a scale-to-winding correspondence in logarithmic coordinates.",
+        "Connects discrete scale invariance to active-domain phase closure within the WCT mathematical framework."
+      ],
+      "evidence": [
+        "Mathematical derivation"
+      ],
+      "limitations": "The result establishes a mathematical correspondence inside the declared framework; physical realization and cross-domain universality require separate empirical tests.",
+      "related": [
+        {
+          "slug": "phase-flux-field",
+          "relation": "Foundational substrate"
+        },
+        {
+          "slug": "self-emergent-fourier-cymatics",
+          "relation": "Related spectral dynamics"
+        }
+      ]
+    },
+    {
+      "n": 26,
+      "slug": "filament-reduction-phase-quantization",
+      "title": "Filament Reduction and Phase Quantization of Curvature-Locked Modes",
+      "date": "2026-09-08",
+      "display_date": "September 8, 2026",
+      "doi": "10.5281/zenodo.22666758",
+      "category": "Spectral dynamics",
+      "status": "Mathematical derivation",
+      "summary": "This work reduces curvature-locked field structure to an effective filament description and derives phase-quantization conditions for localized modes within the WCT spectral-dynamics program.",
+      "question": "Can localized curvature-locked field configurations be reduced to filament dynamics with explicit phase-quantization conditions?",
+      "contributions": [
+        "Develops an effective filament reduction for curvature-locked modes.",
+        "Derives phase-closure and quantization relations for the reduced dynamics."
+      ],
+      "evidence": [
+        "Mathematical derivation"
+      ],
+      "limitations": "The reduced model still requires continuum-level existence and stability results and empirical identification with physical localized structures.",
+      "related": [
+        {
+          "slug": "exact-scale-winding-bijection",
+          "relation": "Companion derivation"
+        }
+      ]
+    },
+    {
+      "n": 27,
+      "slug": "geometric-turbulence-soliton-gas",
+      "title": "Geometric Turbulence in Wave Confinement Theory: Phase-Locked Curvature Filaments and the Soliton-Gas Regime",
+      "date": "2026-09-08",
+      "display_date": "September 8, 2026",
+      "doi": "10.5281/zenodo.22666935",
+      "category": "Spectral dynamics",
+      "status": "Numerical study",
+      "summary": "This numerical study examines phase-locked curvature filaments in driven nonlinear WCT-like dynamics and reports a soliton-gas regime with persistent localized structures and a characteristic filament-length distribution.",
+      "question": "Do driven nonlinear curvature dynamics self-organize into persistent phase-locked filaments with statistically stable length structure?",
+      "contributions": [
+        "Simulates phase-locked curvature-filament formation in three-dimensional nonlinear dynamics.",
+        "Compares filament-length statistics and reports a persistent soliton-gas regime."
+      ],
+      "evidence": [
+        "Numerical simulation",
+        "Statistical model comparison"
+      ],
+      "limitations": "The result is numerical and model-specific; continuum existence, unbounded-domain stability, and direct physical correspondence remain open.",
+      "related": [
+        {
+          "slug": "filament-reduction-phase-quantization",
+          "relation": "Analytical reduction"
+        },
+        {
+          "slug": "self-emergent-fourier-cymatics",
+          "relation": "Earlier spectral dynamics"
+        }
+      ]
+    },
+    {
+      "n": 28,
+      "slug": "recursive-ai-propagation-correction-criticality",
+      "title": "From Wave Confinement to Recursive AI Instability: A Propagation-Correction Criticality Law and Successful Prospective Prediction",
+      "date": "2026-09-14",
+      "display_date": "September 14, 2026",
+      "doi": "10.5281/zenodo.22757003",
+      "category": "AI architecture",
+      "status": "Mathematical derivation",
+      "summary": "This work extends the RCA program with a propagation-versus-correction criticality law for recursive AI systems and audits a prospective quantitative prediction against a later observed incident.",
+      "question": "Can recursive AI instability be characterized by a propagation-versus-correction criticality variable that supports prospective quantitative prediction?",
+      "contributions": [
+        "Defines a propagation-correction criticality law for recursive AI dynamics.",
+        "Connects the model to a prospectively stated quantitative prediction and subsequent validation audit."
+      ],
+      "evidence": [
+        "Mathematical derivation",
+        "Prospective prediction audit"
+      ],
+      "limitations": "The current evidence is limited to a small number of author-scored cases; broader preregistered benchmarks and independent evaluation are needed.",
+      "related": [
+        {
+          "slug": "resonance-confinement-architecture",
+          "relation": "Foundational AI architecture"
+        },
+        {
+          "slug": "recursive-ai-drift-audit",
+          "relation": "Earlier prediction audit"
+        }
+      ]
     }
   ]
 }
