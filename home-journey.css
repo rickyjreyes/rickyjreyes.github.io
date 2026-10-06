@@ -640,9 +640,27 @@ main [data-home-chapter],
   .equation-step{min-height:0}
 
   .visual-sequence{grid-template-columns:1fr}
-  .visual-sequence-stage{position:relative;top:auto;min-height:520px}
-  .visual-sequence-steps{gap:1rem;padding:1rem 0}
-  .visual-sequence-step{min-height:0}
+  .visual-sequence-stage{
+    position:relative;
+    top:auto;
+    min-height:0;
+    display:grid;
+    gap:1rem;
+    overflow:visible;
+    border:0;
+    background:transparent;
+  }
+  .visual-sequence-scene{
+    position:relative;
+    inset:auto;
+    min-height:420px;
+    opacity:1!important;
+    visibility:visible!important;
+    border:1px solid var(--line);
+    border-radius:18px;
+    overflow:hidden;
+  }
+  .visual-sequence-steps{display:none}
 
   .paper-journey{height:auto!important}
   .paper-journey-sticky{position:relative;top:auto;height:auto;min-height:0;overflow:visible}
@@ -725,10 +743,30 @@ main [data-home-chapter],
   .technology-edge,
   .technology-node{transition:none!important}
 
-  .equation-steps,
-  .visual-sequence-steps{gap:1rem;padding:1rem 0}
-  .equation-step,.visual-sequence-step{min-height:0}
-  .equation-diagram,.visual-sequence-stage{position:relative;top:auto}
+  .equation-steps{gap:1rem;padding:1rem 0}
+  .equation-step{min-height:0}
+  .equation-diagram{position:relative;top:auto}
+  .visual-sequence-stage{
+    position:relative;
+    top:auto;
+    min-height:0;
+    display:grid;
+    gap:1rem;
+    overflow:visible;
+    border:0;
+    background:transparent;
+  }
+  .visual-sequence-scene{
+    position:relative;
+    inset:auto;
+    min-height:420px;
+    opacity:1!important;
+    visibility:visible!important;
+    border:1px solid var(--line);
+    border-radius:18px;
+    overflow:hidden;
+  }
+  .visual-sequence-steps{display:none}
 
   .paper-journey{height:auto!important}
   .paper-journey-sticky{position:relative;top:auto;height:auto;min-height:0}
@@ -739,3 +777,5 @@ main [data-home-chapter],
   .technology-edge{stroke-dashoffset:0!important}
   .technology-node{opacity:1!important}
 }
+
+.technology-network-shell + .technology-lower{grid-template-columns:1fr}
