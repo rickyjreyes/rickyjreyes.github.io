@@ -4,6 +4,7 @@
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const desktop = window.matchMedia('(min-width: 981px)');
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const root = document.documentElement;
   const external = (href) => {
     try { return new URL(href, location.href).origin !== location.origin; }
     catch { return false; }
@@ -51,9 +52,9 @@
   const equationDiagram = equationBuild?.querySelector('.equation-diagram');
   const equationSteps = Array.from(equationBuild?.querySelectorAll('.equation-step') || []);
 
-  const segment = (p, start, end) => clamp((p - start) / (end - start));
   const updateEquation = () => {
     if (!equationBuild || !equationDiagram || !equationSteps.length) return;
+
     if (reduced.matches) {
       ['--eq-loop-offset','--eq-phase-offset','--eq-average-offset','--eq-mass-offset']
         .forEach((name) => equationDiagram.style.setProperty(name, '0'));
@@ -61,20 +62,31 @@
       return;
     }
 
-    const rect = equationBuild.getBoundingClientRect();
-    const travel = Math.max(1, rect.height - innerHeight * .45);
-    const p = clamp((innerHeight * .62 - rect.top) / travel);
-    const values = [
-      1 - segment(p, 0.00, 0.24),
-      1 - segment(p, 0.20, 0.48),
-      1 - segment(p, 0.43, 0.72),
-      1 - segment(p, 0.68, 0.98)
+    const anchor = innerHeight * .52;
+    let active = 0;
+    let distance = Infinity;
+
+    equationSteps.forEach((step, index) => {
+      const rect = step.getBoundingClientRect();
+      const current = Math.abs((rect.top + rect.height * .5) - anchor);
+      if (current < distance) {
+        distance = current;
+        active = index;
+      }
+    });
+
+    equationSteps.forEach((step, index) => {
+      step.dataset.active = String(index === active);
+    });
+
+    const offsets = [
+      active >= 0 ? 0 : 1,
+      active >= 1 ? 0 : 1,
+      active >= 2 ? 0 : 1,
+      active >= 3 ? 0 : 1
     ];
     ['--eq-loop-offset','--eq-phase-offset','--eq-average-offset','--eq-mass-offset']
-      .forEach((name, i) => equationDiagram.style.setProperty(name, values[i].toFixed(4)));
-
-    const active = Math.min(equationSteps.length - 1, Math.floor(clamp(p * 1.02) * equationSteps.length));
-    equationSteps.forEach((step, i) => step.dataset.active = String(i === active));
+      .forEach((name, index) => equationDiagram.style.setProperty(name, String(offsets[index])));
   };
   updaters.push(updateEquation);
 
@@ -108,18 +120,31 @@
   };
   updaters.push(updateVisual);
 
-  if (visualSection && 'IntersectionObserver' in window) {
-    const preload = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      visualScenes.forEach((scene) => {
-        const img = scene.querySelector('img');
-        if (!img) return;
-        if (img.dataset.src && !img.src) img.src = img.dataset.src;
-        if (typeof img.decode === 'function') img.decode().catch(() => {});
+  const imageReady = (img) => {
+    if (!img) return Promise.resolve(false);
+    if (img.complete && img.naturalWidth > 0) {
+      return typeof img.decode === 'function'
+        ? img.decode().then(() => true).catch(() => true)
+        : Promise.resolve(true);
+    }
+    return new Promise((resolve) => {
+      const done = () => {
+        if (typeof img.decode === 'function') img.decode().catch(() => {}).finally(() => resolve(img.naturalWidth > 0));
+        else resolve(img.naturalWidth > 0);
+      };
+      img.addEventListener('load', done, {once:true});
+      img.addEventListener('error', () => resolve(false), {once:true});
+    });
+  };
+
+  if (visualSection && visualScenes.length) {
+    Promise.all(visualScenes.map((scene) => imageReady(scene.querySelector('img'))))
+      .then((states) => {
+        if (states.every(Boolean)) {
+          root.classList.add('visuals-ready');
+          schedule();
+        }
       });
-      preload.disconnect();
-    }, {rootMargin:'1000px 0px'});
-    preload.observe(visualSection);
   }
 
   /* canonical wct-threejs embed ------------------------------------------ */
@@ -129,12 +154,14 @@
   const sceneFallback = canonicalScene?.querySelector('.canonical-scene-frame img');
   const sceneRole = canonicalScene?.querySelector('[data-scene-role]');
   const sceneMetric = canonicalScene?.querySelector('[data-scene-metric]');
+  const sceneLoadButton = canonicalScene?.querySelector('[data-load-wct-viewer]');
+  const sceneFrameShell = canonicalScene?.querySelector('.canonical-scene-frame');
   let sceneRegistry = null;
   let currentScene = 0;
   let viewerRequested = false;
   let loadStartedAt = 0;
 
-  const sceneUrl = (scene) => `/wct-threejs/?preset=${encodeURIComponent(scene.preset)}&embed=1`;
+  const sceneUrl = (scene) => `https://rickyjreyes.github.io/wct-threejs/?preset=${encodeURIComponent(scene.preset)}&embed=1`;
 
   const requestScene = (index, force = false) => {
     if (!sceneRegistry?.scenes?.length || !sceneFrame) return;
@@ -150,6 +177,7 @@
     if (!viewerRequested && !force) return;
     viewerRequested = true;
     loadStartedAt = performance.now();
+    if (sceneFrameShell) sceneFrameShell.dataset.viewerState = 'loading';
     sceneFrame.title = `WCT Three.js — ${scene.label}`;
     sceneFrame.src = sceneUrl(scene);
     if (sceneMetric) sceneMetric.textContent = 'Loading canonical viewer…';
@@ -169,7 +197,7 @@
           button.type = 'button';
           button.textContent = scene.label;
           button.setAttribute('aria-pressed', String(index === 0));
-          button.addEventListener('click', () => requestScene(index, true));
+          button.addEventListener('click', () => requestScene(index, false));
           sceneTabs.appendChild(button);
         });
         requestScene(0, false);
@@ -181,21 +209,14 @@
     sceneFrame.addEventListener('load', () => {
       if (!viewerRequested || !sceneMetric) return;
       const ms = Math.round(performance.now() - loadStartedAt);
-      sceneMetric.textContent = `Lazy-loaded viewer: ${ms} ms on this device`;
+      if (sceneFrameShell) sceneFrameShell.dataset.viewerState = 'live';
+      sceneMetric.textContent = `Interactive viewer loaded in ${ms} ms on this device`;
     });
 
-    if ('IntersectionObserver' in window) {
-      const loadViewer = new IntersectionObserver(([entry]) => {
-        if (!entry.isIntersecting) return;
-        viewerRequested = true;
-        requestScene(currentScene, true);
-        loadViewer.disconnect();
-      }, {rootMargin:'700px 0px'});
-      loadViewer.observe(canonicalScene);
-    } else {
+    sceneLoadButton?.addEventListener('click', () => {
       viewerRequested = true;
-      requestScene(0, true);
-    }
+      requestScene(currentScene, true);
+    });
   }
 
   /* horizontal paper journey --------------------------------------------- */
@@ -209,13 +230,15 @@
   const layoutPapers = () => {
     if (!paperJourney || !paperWindow || !paperTrack) return;
     if (!desktop.matches || reduced.matches) {
-      paperJourney.style.removeProperty('height');
-      paperTrack.style.removeProperty('transform');
+      root.classList.remove('papers-ready');
+      paperJourney.style.removeProperty('--paper-journey-height');
+      paperJourney.style.removeProperty('--paper-x');
       paperMaxShift = 0;
       return;
     }
     paperMaxShift = Math.max(0, paperTrack.scrollWidth - paperWindow.clientWidth);
-    paperJourney.style.height = `${Math.max(innerHeight * 1.35, innerHeight + paperMaxShift + 160)}px`;
+    paperJourney.style.setProperty('--paper-journey-height', `${Math.max(innerHeight * 1.35, innerHeight + paperMaxShift + 160)}px`);
+    root.classList.add('papers-ready');
   };
 
   const updatePapers = () => {
@@ -224,7 +247,7 @@
     const travel = Math.max(1, paperJourney.offsetHeight - innerHeight);
     const p = clamp(-rect.top / travel);
     const x = Math.round(-paperMaxShift * p);
-    paperTrack.style.transform = `translate3d(${x}px,0,0)`;
+    paperJourney.style.setProperty('--paper-x', `${x}px`);
     paperProgress?.style.setProperty('--paper-progress', `${(p * 100).toFixed(2)}%`);
   };
   updaters.push(updatePapers);
@@ -313,6 +336,7 @@
     });
 
     renderDetail(byId.get(selectedNodeId) || byId.get(data.root));
+    root.classList.add('network-ready');
     schedule();
   };
 
@@ -349,6 +373,8 @@
   updaters.push(updateNetwork);
 
   /* lifecycle ------------------------------------------------------------- */
+  root.classList.add('journey-ready');
+
   const relayout = () => {
     layoutPapers();
     schedule();
