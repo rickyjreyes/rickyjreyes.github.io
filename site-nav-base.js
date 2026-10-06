@@ -2,7 +2,6 @@
   const enhanceNavigation = () => {
     const currentPath = window.location.pathname.replace(/index\.html$/i, '').replace(/\/{2,}/g, '/');
     const foundationsActive = currentPath === '/foundations/' || currentPath.startsWith('/foundations/');
-    const claimsActive = currentPath === '/claims/' || currentPath.startsWith('/claims/');
     const toolsActive = currentPath === '/tools/' || currentPath.startsWith('/tools/');
     const sympyActive = currentPath === '/sympy/' || currentPath.startsWith('/sympy/');
     const leanActive = currentPath === '/lean/' || currentPath.startsWith('/lean/');
@@ -222,7 +221,7 @@
     }
 
     const standardHeaderPaths = new Set([
-      '/publications/', '/priority/', '/claims/', '/overlap/', '/patents/', '/equations/',
+      '/publications/', '/priority/', '/overlap/', '/patents/', '/equations/',
       '/sympy/', '/lean/', '/reproduce/', '/tools/', '/foundations/'
     ]);
     const standardHeaderActive = standardHeaderPaths.has(currentPath) || currentPath.startsWith('/tools/');
@@ -398,16 +397,6 @@
 
     const nav = document.querySelector('#site-nav');
     if (nav) {
-      if (!nav.querySelector('a[href="/claims/"]')) {
-        const priorityLink = [...nav.children].find((item) => item.matches?.('a[href="/priority/"]'));
-        const claimsLink = document.createElement('a');
-        claimsLink.href = '/claims/';
-        claimsLink.textContent = 'Claims';
-        if (claimsActive) claimsLink.setAttribute('aria-current', 'page');
-        if (priorityLink) priorityLink.insertAdjacentElement('afterend', claimsLink);
-        else nav.prepend(claimsLink);
-      }
-
       const toolsLink = [...nav.children].find((item) => item.matches?.('a[href="/tools/"]'));
       if (toolsLink) {
         const group = document.createElement('div');
