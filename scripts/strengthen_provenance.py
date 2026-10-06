@@ -89,6 +89,21 @@ def publication_provenance(pub: dict) -> str:
     title = esc(pub["title"])
     date = esc(pub["date"])
     display_date = esc(pub.get("display_date") or pub["date"])
+    slug = pub.get("slug", "")
+    lineage_note = ""
+    if slug == "geometry-of-resonance":
+        lineage_note = (
+            '<p class="related-note"><strong>Version-lineage note.</strong> This title has multiple Zenodo records/version DOIs. '
+            'This page uses 10.5281/zenodo.15644222 as the canonical citation target; legacy/version citations include '
+            '10.5281/zenodo.15286791. The April 22, 2025 chronology date is not a claim that record 15644222 was the '
+            'earliest-numbered same-title deposit, and record-number order is not used as priority evidence.</p>'
+        )
+    elif slug == "p-vs-np-curvature-bounded-wave-computation":
+        lineage_note = (
+            '<p class="related-note"><strong>Date-lineage note.</strong> May 7, 2025 is the research-chronology/original-manuscript '
+            'date used by this site. The linked Zenodo record was created later in 2025 as part of the archival/redeposit history. '
+            'The two dates are intentionally not treated as the same metadata field.</p>'
+        )
     return f'''{PROV_START}
 <section class="paper-section provenance-card" aria-labelledby="canonical-provenance-title">
 <p class="paper-kicker">Canonical provenance</p>
@@ -101,6 +116,7 @@ def publication_provenance(pub: dict) -> str:
 <div><dt>Zenodo record</dt><dd><a href="{zenodo}">{zenodo}</a></dd></div>
 <div><dt>Source repository</dt><dd><a href="{esc(repo)}">{esc(repo)}</a></dd></div>
 </dl>
+{lineage_note}
 </section>
 {PROV_END}'''
 
