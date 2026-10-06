@@ -11,7 +11,8 @@
       "preset": "pff-finite-band-shell-law",
       "role": "Equation-driven explanatory scene",
       "status": "equation",
-      "fallback": "assets/coherence.png"
+      "fallback": "assets/coherence.png",
+      "parameters": "source preset defaults; no homepage overrides"
     },
     {
       "id": "curvature-topology",
@@ -19,7 +20,8 @@
       "preset": "curvature-holonomy-topology-law",
       "role": "Equation-driven explanatory scene",
       "status": "equation",
-      "fallback": "assets/resonance.png"
+      "fallback": "assets/resonance.png",
+      "parameters": "source preset defaults; no homepage overrides"
     },
     {
       "id": "phase-winding",
@@ -27,7 +29,9 @@
       "preset": "pff-d4-phase-winding-law",
       "role": "Equation-driven explanatory scene",
       "status": "equation",
-      "fallback": "assets/toroid.png"
+      "fallback": "assets/toroid.png",
+      "parameters": "source preset defaults; no homepage overrides"
     }
-  ]
+  ],
+  "parameterPolicy": "Homepage embeds select only canonical preset IDs. Control values are not duplicated here; each scene uses the source preset registry defaults unless a future URL explicitly records an override."
 }
