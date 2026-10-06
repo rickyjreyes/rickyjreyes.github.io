@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "sourceRepository": "rickyjreyes/wct-threejs",
   "sourceManifest": "https://github.com/rickyjreyes/wct-threejs/blob/main/wct-manifest.json",
-  "embedContract": "https://rickyjreyes.github.io/wct-threejs/?preset=<preset>&embed=1",
+  "embedContract": "/wct-threejs/?preset=<preset>&embed=1",
   "note": "Homepage scenes reference canonical wct-threejs preset IDs. Equations and parameters remain owned by the source viewer; this file intentionally does not duplicate mathematical definitions.",
   "scenes": [
     {
@@ -11,7 +11,7 @@
       "preset": "pff-finite-band-shell-law",
       "role": "Equation-driven explanatory scene",
       "status": "equation",
-      "fallback": "assets/pff_corrected_nearonset_spectrum2d.png",
+      "fallback": "assets/coherence.png",
       "parameters": "source preset defaults; no homepage overrides"
     },
     {
@@ -20,7 +20,7 @@
       "preset": "curvature-holonomy-topology-law",
       "role": "Equation-driven explanatory scene",
       "status": "equation",
-      "fallback": "assets/wave_confinement.png",
+      "fallback": "assets/resonance.png",
       "parameters": "source preset defaults; no homepage overrides"
     },
     {
@@ -29,7 +29,7 @@
       "preset": "pff-d4-phase-winding-law",
       "role": "Equation-driven explanatory scene",
       "status": "equation",
-      "fallback": "assets/coherence.png",
+      "fallback": "assets/toroid.png",
       "parameters": "source preset defaults; no homepage overrides"
     }
   ],
