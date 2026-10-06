@@ -108,7 +108,7 @@
     const strip = $('.priority-head .audit-strip');
     if (strip) {
       strip.innerHTML = `
-        <div><strong>26</strong><span>DOI-backed research releases</span></div>
+        <div><strong>28</strong><span>DOI-backed research releases</span></div>
         <div><strong>24</strong><span>validation records</span></div>
         <div><strong>242</strong><span>external evidence / convergence records</span></div>
         <div><strong>4</strong><span>filed patent families</span></div>
