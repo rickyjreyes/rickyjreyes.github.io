@@ -10,8 +10,9 @@
 
     const details = document.createElement('details');
     details.className = 'priority-fold';
+    details.open = true;
     const summary = document.createElement('summary');
-    summary.innerHTML = `<span><strong>${summaryTitle}</strong>${summaryMeta ? `<small>${summaryMeta}</small>` : ''}</span><span class="fold-action" aria-hidden="true">View</span>`;
+    summary.innerHTML = `<span><strong>${summaryTitle}</strong>${summaryMeta ? `<small>${summaryMeta}</small>` : ''}</span><span class="fold-action" aria-hidden="true">Hide</span>`;
     details.appendChild(summary);
 
     const body = document.createElement('div');
@@ -230,8 +231,9 @@
       if (h3 && !h3.closest('details')) {
         const details = document.createElement('details');
         details.className = 'priority-fold';
+        details.open = true;
         const summary = document.createElement('summary');
-        summary.innerHTML = '<span><strong>View 4 additional high-priority comparisons</strong><small>Multi-mechanism comparisons retained for deeper normalization</small></span><span class="fold-action" aria-hidden="true">View</span>';
+        summary.innerHTML = '<span><strong>4 additional high-priority comparisons</strong><small>Multi-mechanism comparisons retained for deeper normalization</small></span><span class="fold-action" aria-hidden="true">Hide</span>';
         details.appendChild(summary);
         const body = document.createElement('div');
         body.className = 'priority-fold-body';
