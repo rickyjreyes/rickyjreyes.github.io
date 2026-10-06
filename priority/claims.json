@@ -71,8 +71,16 @@
       "result": {
         "uniqueLines": 9447,
         "kBest": 31.3265306122449,
-        "bins": [120, 160, 200],
-        "nullExceedances": ["0/5000", "0/5000", "0/5000"],
+        "bins": [
+          120,
+          160,
+          200
+        ],
+        "nullExceedances": [
+          "0/5000",
+          "0/5000",
+          "0/5000"
+        ],
         "empiricalResolutionFloor": 0.0001999600079984003
       },
       "limitation": "This is an author-run open-data result. Independent replication and the physical interpretation of the spectral structure remain separate questions.",
@@ -100,5 +108,7 @@
     "geometryOfResonanceCanonicalCitationDoi": "10.5281/zenodo.15644222",
     "legacyOrVersionDoiExample": "10.5281/zenodo.15286791",
     "note": "The Geometry of Resonance has a multi-record Zenodo version lineage. The canonical citation target used by this site is not presented as proof that its record number is the earliest same-title deposit. Original manuscript/public-disclosure dates and later archive record creation/redeposit dates are distinct metadata."
-  }
+  },
+  "canonicalPage": "https://rickyjreyes.github.io/priority/#ledger",
+  "machineReadableUrl": "https://rickyjreyes.github.io/priority/claims.json"
 }

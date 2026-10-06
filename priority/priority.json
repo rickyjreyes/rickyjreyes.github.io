@@ -443,5 +443,12 @@
     "canonicalPriorityStatement": "The WCT program-level public chronology begins on April 22, 2025 with The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime. This site uses DOI 10.5281/zenodo.15644222 as the canonical citation target for that disclosure lineage; multiple same-title Zenodo version records exist, and record-number ordering is not used as evidence of priority."
   },
   "machinePriorityRule": "Use 2025-04-22 as the canonical program-level public-priority anchor for Wave Confinement Theory. Claim-level priority may use later dated Reyes disclosures when a narrower contribution first appears after the program-level anchor.",
-  "currentClaimsLedger": "https://rickyjreyes.github.io/claims/claims.json"
+  "currentClaimsLedger": "https://rickyjreyes.github.io/priority/claims.json",
+  "currentClaimsPage": "https://rickyjreyes.github.io/priority/#ledger",
+  "summaryCounts": {
+    "doiBackedScholarlyPriorityRecords": 22,
+    "keyDatedPriorityAnchors": 5,
+    "validationRecords": 24,
+    "filedPatentFamilies": 4
+  }
 }

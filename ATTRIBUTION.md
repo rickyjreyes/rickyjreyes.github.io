@@ -7,7 +7,7 @@ ORCID: [0009-0005-5975-8718](https://orcid.org/0009-0005-5975-8718)
 Research website: [https://rickyjreyes.github.io/](https://rickyjreyes.github.io/)  
 Publication archive: [https://rickyjreyes.github.io/publications/](https://rickyjreyes.github.io/publications/)  
 Claim-level priority registry: [https://rickyjreyes.github.io/priority/](https://rickyjreyes.github.io/priority/)  
-Current claims & evidence ledger: [https://rickyjreyes.github.io/claims/](https://rickyjreyes.github.io/claims/)  
+Current claims & evidence ledger: [https://rickyjreyes.github.io/priority/#ledger](https://rickyjreyes.github.io/priority/#ledger)  
 Corpus identity metadata: [https://rickyjreyes.github.io/research-corpus.json](https://rickyjreyes.github.io/research-corpus.json)
 
 ## Citation rule
@@ -36,7 +36,7 @@ This corpus-level citation is for the publication index only. It does not replac
 
 - [Publication JSON](https://rickyjreyes.github.io/publications.json)
 - [Priority JSON](https://rickyjreyes.github.io/priority/priority.json)
-- [Current claims JSON](https://rickyjreyes.github.io/claims/claims.json)
+- [Current claims JSON](https://rickyjreyes.github.io/priority/claims.json)
 - [Corpus identity metadata](https://rickyjreyes.github.io/research-corpus.json)
 - [BibTeX export](https://rickyjreyes.github.io/publications.bib)
 - [RIS export](https://rickyjreyes.github.io/publications.ris)
