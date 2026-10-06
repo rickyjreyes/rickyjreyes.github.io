@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "1.0",
+  "root": "wct",
+  "relationshipVocabulary": [
+    "research framework",
+    "theoretical implication",
+    "mathematical derivation",
+    "architecture proposal",
+    "prototype",
+    "author experiment",
+    "patent family",
+    "open engineering problem"
+  ],
+  "nodes": [
+    {
+      "id": "wct",
+      "label": "Wave Confinement Theory",
+      "short": "WCT",
+      "x": 500,
+      "y": 300,
+      "step": 0,
+      "relationship": "research framework",
+      "status": "foundational program",
+      "description": "The mathematical and computational research program from which the listed implementation directions are explored.",
+      "href": "https://github.com/rickyjreyes/geometry_of_resonance"
+    },
+    {
+      "id": "photonics",
+      "label": "Photonics",
+      "short": "Photonics",
+      "x": 195,
+      "y": 110,
+      "step": 1,
+      "relationship": "author experiment",
+      "status": "experimental context",
+      "description": "Optical and resonant experiments investigate persistence, harmonic structure, perturbation, and relocking behavior.",
+      "href": "publications/long-lived-photon-resonance-water-cavities.html"
+    },
+    {
+      "id": "memory",
+      "label": "Persistent wave memory",
+      "short": "Wave memory",
+      "x": 500,
+      "y": 68,
+      "step": 2,
+      "relationship": "patent family",
+      "status": "filed / preliminary evidence",
+      "description": "A filed memory architecture explores addressable information states encoded in bounded persistent wave-interference configurations.",
+      "href": "patents/"
+    },
+    {
+      "id": "wavelock",
+      "label": "WaveLock",
+      "short": "WaveLock",
+      "x": 805,
+      "y": 110,
+      "step": 3,
+      "relationship": "prototype",
+      "status": "experimental prototype",
+      "description": "WaveLock explores nonlinear PDE evolution, path-dependent commitments, replay-verifiable records, and runtime drift detection.",
+      "href": "https://github.com/rickyjreyes/Wavelock"
+    },
+    {
+      "id": "ai",
+      "label": "AI / RCA",
+      "short": "AI · RCA",
+      "x": 875,
+      "y": 360,
+      "step": 4,
+      "relationship": "architecture proposal",
+      "status": "proposal / forecast audit",
+      "description": "RCA applies bounded resonance and coherence concepts to intelligent-system architecture, recursive drift, and correction limits.",
+      "href": "publications/resonance-confinement-architecture.html"
+    },
+    {
+      "id": "secure",
+      "label": "Secure computation",
+      "short": "Secure compute",
+      "x": 708,
+      "y": 545,
+      "step": 5,
+      "relationship": "open engineering problem",
+      "status": "security proof open",
+      "description": "The program explores physically constrained commitments and one-way behavior; production cryptographic security remains an explicit open validation target.",
+      "href": "publications/wavelock-curvature-locked-one-way-function.html"
+    },
+    {
+      "id": "controls",
+      "label": "Control systems",
+      "short": "Controls",
+      "x": 292,
+      "y": 545,
+      "step": 6,
+      "relationship": "theoretical implication",
+      "status": "engineering extension",
+      "description": "Feedback, bounded-state regulation, diagnostics, and relocking motivate control-oriented applications without collapsing engineering performance into theory status.",
+      "href": "publications/nuclear-fusion-tokamak-resonance.html"
+    },
+    {
+      "id": "instrumentation",
+      "label": "Scientific instrumentation",
+      "short": "Instrumentation",
+      "x": 125,
+      "y": 360,
+      "step": 7,
+      "relationship": "author experiment",
+      "status": "measurement / validation path",
+      "description": "Photodiode, spectroscopy, cavity, and public-data workflows provide instrumentation and measurement paths for testing narrower claims.",
+      "href": "https://github.com/rickyjreyes/photodiode"
+    }
+  ],
+  "edges": [
+    {
+      "from": "wct",
+      "to": "photonics",
+      "relationship": "theoretical implication"
+    },
+    {
+      "from": "wct",
+      "to": "memory",
+      "relationship": "architecture proposal"
+    },
+    {
+      "from": "wct",
+      "to": "wavelock",
+      "relationship": "architecture proposal"
+    },
+    {
+      "from": "wct",
+      "to": "ai",
+      "relationship": "architecture proposal"
+    },
+    {
+      "from": "wct",
+      "to": "secure",
+      "relationship": "open engineering problem"
+    },
+    {
+      "from": "wct",
+      "to": "controls",
+      "relationship": "theoretical implication"
+    },
+    {
+      "from": "wct",
+      "to": "instrumentation",
+      "relationship": "author experiment"
+    }
+  ]
+}
