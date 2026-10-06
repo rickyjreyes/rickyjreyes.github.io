@@ -352,10 +352,10 @@
     const auditStrip = document.querySelector('.priority-head .audit-strip');
     if (!auditStrip) return;
     auditStrip.innerHTML = `
-      <div><strong>22</strong><span>DOI-backed scholarly priority records</span></div>
-      <div><strong>24</strong><span>verified green claims</span></div>
+      <div><strong>26</strong><span>DOI-backed research releases</span></div>
+      <div><strong>24</strong><span>validation records</span></div>
+      <div><strong>242</strong><span>external evidence / convergence records</span></div>
       <div><strong>4</strong><span>filed patent families</span></div>
-      <div><strong>181</strong><span>external evidence and convergence records</span></div>
     `;
   };
 
