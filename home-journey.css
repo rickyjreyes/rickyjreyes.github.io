@@ -779,3 +779,228 @@ main [data-home-chapter],
 }
 
 .technology-network-shell + .technology-lower{grid-template-columns:1fr}
+
+
+/* -------------------------------------------------------------------------- */
+/* Content-first progressive enhancement                                      */
+/* Default state is readable and static. Desktop motion is enabled only after  */
+/* the corresponding asset/data layer reports ready.                          */
+/* -------------------------------------------------------------------------- */
+
+.eq-loop,.eq-phase,.eq-average,.eq-mass{
+  stroke-dashoffset:0;
+  transition:stroke-dashoffset 360ms cubic-bezier(.2,.8,.2,1),opacity 180ms ease;
+}
+html.journey-ready .eq-loop{stroke-dashoffset:var(--eq-loop-offset,1)}
+html.journey-ready .eq-phase{stroke-dashoffset:var(--eq-phase-offset,1)}
+html.journey-ready .eq-average{stroke-dashoffset:var(--eq-average-offset,1)}
+html.journey-ready .eq-mass{stroke-dashoffset:var(--eq-mass-offset,1)}
+
+/* Visual sequence: static, fully readable gallery until all three images decode. */
+.visual-sequence{
+  display:block;
+}
+.visual-sequence-stage{
+  position:relative;
+  top:auto;
+  min-height:0;
+  display:grid;
+  gap:1rem;
+  overflow:visible;
+  border:0;
+  background:transparent;
+}
+.visual-sequence-scene,
+.visual-sequence-scene[data-active="true"]{
+  position:relative;
+  inset:auto;
+  min-height:clamp(360px,52vw,620px);
+  opacity:1;
+  visibility:visible;
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  transition:none;
+}
+.visual-sequence-scene img{
+  aspect-ratio:4/3;
+  object-fit:contain;
+  background:#030912;
+}
+.visual-sequence-steps{display:none}
+
+@media (min-width:981px) and (prefers-reduced-motion:no-preference){
+  html.journey-ready.visuals-ready .visual-sequence{
+    display:grid;
+    grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);
+    gap:clamp(1.5rem,4vw,3.5rem);
+    align-items:start;
+  }
+  html.journey-ready.visuals-ready .visual-sequence-stage{
+    position:sticky;
+    top:126px;
+    min-height:clamp(480px,68vh,720px);
+    display:block;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:#030912;
+  }
+  html.journey-ready.visuals-ready .visual-sequence-scene{
+    position:absolute;
+    inset:0;
+    min-height:0;
+    border:0;
+    border-radius:0;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 220ms ease,visibility 220ms step-end;
+  }
+  html.journey-ready.visuals-ready .visual-sequence-scene[data-active="true"]{
+    opacity:1;
+    visibility:visible;
+    transition:opacity 220ms ease,visibility 0s;
+  }
+  html.journey-ready.visuals-ready .visual-sequence-scene img{
+    width:100%;
+    height:100%;
+    aspect-ratio:auto;
+    object-fit:contain;
+  }
+  html.journey-ready.visuals-ready .visual-sequence-steps{
+    display:grid;
+    gap:12vh;
+    padding:5vh 0 10vh;
+  }
+  html.journey-ready.visuals-ready .visual-sequence-step{
+    min-height:26vh;
+  }
+}
+
+/* Canonical viewer: static image + explicit load action until user requests it. */
+.canonical-scene-frame iframe{
+  display:none;
+  opacity:0;
+}
+.canonical-scene-frame[data-viewer-state="loading"] iframe,
+.canonical-scene-frame[data-viewer-state="live"] iframe{
+  display:block;
+}
+.canonical-scene-frame[data-viewer-state="live"] iframe{
+  opacity:1;
+}
+.canonical-scene-frame[data-viewer-state="live"]>img,
+.canonical-scene-frame[data-viewer-state="live"] .canonical-scene-placeholder{
+  display:none;
+}
+.canonical-scene-placeholder{
+  position:absolute;
+  z-index:3;
+  inset:0;
+  display:grid;
+  place-content:center;
+  justify-items:center;
+  gap:.55rem;
+  padding:2rem;
+  text-align:center;
+  background:linear-gradient(180deg,rgba(3,9,18,.18),rgba(3,9,18,.74));
+}
+.canonical-scene-placeholder strong{
+  color:var(--text);
+  font:500 1.3rem/1.2 Georgia,serif;
+}
+.canonical-scene-placeholder span{
+  max-width:45ch;
+  color:var(--muted);
+  font-size:.82rem;
+}
+.canonical-scene-placeholder .button{margin-top:.5rem}
+
+/* Paper journey: vertical cards first. Horizontal enhancement only after layout. */
+.paper-journey{height:auto!important}
+.paper-journey-sticky{
+  position:relative;
+  top:auto;
+  height:auto;
+  min-height:0;
+  overflow:visible;
+}
+.paper-journey-window{overflow:visible}
+.paper-track{
+  width:auto;
+  display:grid;
+  gap:1rem;
+  padding:0;
+  transform:none!important;
+  will-change:auto;
+}
+.paper-card{width:auto;min-height:0}
+.paper-journey-progress{display:none}
+
+@media (min-width:981px) and (prefers-reduced-motion:no-preference){
+  html.journey-ready.papers-ready .paper-journey{
+    height:var(--paper-journey-height)!important;
+  }
+  html.journey-ready.papers-ready .paper-journey-sticky{
+    position:sticky;
+    top:114px;
+    height:calc(100svh - 140px);
+    min-height:610px;
+    overflow:hidden;
+  }
+  html.journey-ready.papers-ready .paper-journey-window{overflow:hidden}
+  html.journey-ready.papers-ready .paper-track{
+    width:max-content;
+    display:flex;
+    gap:1rem;
+    padding:0 max(0px,calc((100vw - var(--max))/2));
+    transform:translate3d(var(--paper-x,0px),0,0)!important;
+    will-change:transform;
+  }
+  html.journey-ready.papers-ready .paper-card{
+    width:min(78vw,780px);
+    min-height:480px;
+    flex:0 0 auto;
+  }
+  html.journey-ready.papers-ready .paper-journey-progress{display:block}
+}
+
+/* Technology network: accessible list first; graph appears only after data renders. */
+.technology-network{display:none}
+.technology-network-detail{display:none}
+.tech-network-fallback{
+  display:grid;
+  gap:.75rem;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.tech-network-fallback li{
+  padding:1rem;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,255,255,.025);
+}
+.tech-network-fallback strong{display:block}
+.tech-network-fallback span{
+  display:block;
+  margin:.3rem 0 .5rem;
+  color:var(--accent);
+  font-size:.65rem;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.tech-network-fallback p{margin:0 0 .6rem;color:var(--muted);font-size:.84rem}
+.tech-network-fallback a{font-size:.8rem;text-decoration:none}
+
+@media (min-width:981px){
+  html.journey-ready.network-ready .technology-network{display:block}
+  html.journey-ready.network-ready .technology-network-detail{display:flex}
+  html.journey-ready.network-ready .tech-network-fallback{display:none}
+}
+
+/* If enhancement is delayed or unavailable, never hide the core content. */
+html:not(.journey-ready) .home-progress-nav{
+  position:sticky;
+  top:72px;
+}
