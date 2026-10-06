@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="home-visuals.css">
   <link rel="stylesheet" href="home-technology.css">
   <link rel="stylesheet" href="home-parallax.css">
+  <link rel="stylesheet" href="home-scrollytelling.css">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -128,11 +129,27 @@
         <p>This is the shortest status view for readers who want the empirical result before the broader theory. Statistical statements below apply to their stated analysis and null/background model; they are not presented as validation of every WCT claim.</p>
       </div>
 
-      <div class="logic-chain" aria-label="Current empirical claim status">
-        <div><span>01</span><strong>GWTC frozen holdout</strong><p>Training selected <code>k=9.6023256</code>; the 104-event holdout returned ΔD=10.0354 with Monte Carlo <code>p=0.00129987</code> under the frozen test. This is the strongest clean frozen holdout currently listed.</p></div>
-        <div><span>02</span><strong>CMS fixed-waveform residual</strong><p>The prospective G2 test returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code> under the declared background. The effect is background-model sensitive; alternative smooth backgrounds reduce it substantially.</p></div>
-        <div><span>03</span><strong>ATLAS transfer test</strong><p>No positive cross-detector replication was obtained. V6.1 closed as <code>V6_FAILED_HIERARCHICAL_ROUTE_CLOSED</code> with no qualifying nuisance dimension, before the final CMS-frequency target was evaluated.</p></div>
-        <div><span>04</span><strong>Core emergence claims</strong><p>Claims that mass, force, or effective spacetime emerge from confinement remain theory-level proposals unless a claim-specific ledger entry states a stronger empirical status.</p></div>
+      <div class="evidence-spine" aria-label="Current empirical claim status">
+        <article class="evidence-spine__item" data-evidence-status="supported" data-active="false">
+          <div class="evidence-spine__topline"><span class="evidence-spine__index">01</span><span class="evidence-status-label">Frozen positive</span></div>
+          <strong>GWTC frozen holdout</strong>
+          <p>Training selected <code>k=9.6023256</code>; the 104-event holdout returned ΔD=10.0354 with Monte Carlo <code>p=0.00129987</code> under the frozen test. This is the strongest clean frozen holdout currently listed.</p>
+        </article>
+        <article class="evidence-spine__item" data-evidence-status="conditional" data-active="false">
+          <div class="evidence-spine__topline"><span class="evidence-spine__index">02</span><span class="evidence-status-label">Conditional</span></div>
+          <strong>CMS fixed-waveform residual</strong>
+          <p>The prospective G2 test returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code> under the declared background. The effect is background-model sensitive; alternative smooth backgrounds reduce it substantially.</p>
+        </article>
+        <article class="evidence-spine__item" data-evidence-status="negative" data-active="false">
+          <div class="evidence-spine__topline"><span class="evidence-spine__index">03</span><span class="evidence-status-label">Non-replication</span></div>
+          <strong>ATLAS transfer test</strong>
+          <p>No positive cross-detector replication was obtained. V6.1 closed as <code>V6_FAILED_HIERARCHICAL_ROUTE_CLOSED</code> with no qualifying nuisance dimension, before the final CMS-frequency target was evaluated.</p>
+        </article>
+        <article class="evidence-spine__item" data-evidence-status="open" data-active="false">
+          <div class="evidence-spine__topline"><span class="evidence-spine__index">04</span><span class="evidence-status-label">Theory-level</span></div>
+          <strong>Core emergence claims</strong>
+          <p>Claims that mass, force, or effective spacetime emerge from confinement remain theory-level proposals unless a claim-specific ledger entry states a stronger empirical status.</p>
+        </article>
       </div>
 
       <div class="status-note">
@@ -148,11 +165,76 @@
         <p>Wave Confinement Theory is a proposed geometric wave framework in which localized physical structure arises from sustained oscillation, finite-wavenumber selection, phase organization, curvature feedback, and topology.</p>
       </div>
 
-      <div class="logic-chain" aria-label="Wave Confinement Theory logic chain">
-        <div><span>01</span><strong>Wave transport</strong><p>Energy and phase propagate through a field.</p></div>
-        <div><span>02</span><strong>Finite-band selection</strong><p>A preferred spectral shell suppresses unrestricted growth.</p></div>
-        <div><span>03</span><strong>Resonant confinement</strong><p>Boundary and feedback conditions organize persistent modes.</p></div>
-        <div><span>04</span><strong>Curvature locking</strong><p>Phase, geometry, and topology stabilize localized structure.</p></div>
+      <div class="wct-scrolly" aria-label="Wave Confinement Theory logic chain">
+        <div class="wct-scrolly-steps">
+          <article class="wct-scrolly-step" data-stage="wave" data-label="Wave transport" data-active="true">
+            <span class="step-index">01 · Transport</span>
+            <strong>Wave transport</strong>
+            <p>Energy and phase propagate through a field. The visual begins with an extended oscillatory state rather than a localized object.</p>
+          </article>
+          <article class="wct-scrolly-step" data-stage="shell" data-label="Finite-band selection" data-active="false">
+            <span class="step-index">02 · Selection</span>
+            <strong>Finite-band selection</strong>
+            <p>A preferred spectral shell suppresses unrestricted growth and narrows the dynamically active range of spatial frequencies.</p>
+          </article>
+          <article class="wct-scrolly-step" data-stage="loop" data-label="Resonant confinement" data-active="false">
+            <span class="step-index">03 · Confinement</span>
+            <strong>Resonant confinement</strong>
+            <p>Boundary and feedback conditions organize the selected oscillation into a persistent closed or recurrent mode.</p>
+          </article>
+          <article class="wct-scrolly-step" data-stage="curvature" data-label="Curvature locking" data-active="false">
+            <span class="step-index">04 · Locking</span>
+            <strong>Curvature locking</strong>
+            <p>Phase, geometry, and topology are represented together as the confined mode settles into a curvature-locked structure.</p>
+          </article>
+        </div>
+
+        <div class="wct-scrolly-visual" data-stage="wave" aria-hidden="true">
+          <svg viewBox="0 0 640 640" focusable="false" aria-hidden="true">
+            <defs>
+              <radialGradient id="scrolly-core-gradient">
+                <stop offset="0" stop-color="#d9f7ff" stop-opacity=".94"/>
+                <stop offset=".28" stop-color="#67d4ff" stop-opacity=".48"/>
+                <stop offset="1" stop-color="#67d4ff" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="scrolly-line-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#67d4ff" stop-opacity=".16"/>
+                <stop offset=".5" stop-color="#d5f6ff" stop-opacity=".95"/>
+                <stop offset="1" stop-color="#67d4ff" stop-opacity=".16"/>
+              </linearGradient>
+            </defs>
+
+            <g class="scene scene-wave" fill="none">
+              <path class="wave-line" d="M70 292 C110 188 150 396 190 292 S270 188 310 292 S390 396 430 292 S510 188 570 292" stroke="url(#scrolly-line-gradient)" stroke-width="5"/>
+              <path d="M70 350 C110 246 150 454 190 350 S270 246 310 350 S390 454 430 350 S510 246 570 350" stroke="#67d4ff" stroke-opacity=".20" stroke-width="2"/>
+              <circle class="phase-dot" cx="190" cy="292" r="8" fill="#d5f6ff" stroke="none"/>
+              <circle class="phase-dot" cx="430" cy="292" r="8" fill="#d5f6ff" stroke="none" style="animation-delay:.65s"/>
+            </g>
+
+            <g class="scene scene-shell" fill="none">
+              <circle cx="320" cy="320" r="200" stroke="#67d4ff" stroke-opacity=".13" stroke-width="44"/>
+              <circle cx="320" cy="320" r="200" stroke="#d5f6ff" stroke-opacity=".78" stroke-width="3" stroke-dasharray="4 18"/>
+              <circle cx="320" cy="320" r="86" fill="url(#scrolly-core-gradient)" stroke="none"/>
+              <circle cx="320" cy="320" r="126" stroke="#67d4ff" stroke-opacity=".22" stroke-width="2"/>
+            </g>
+
+            <g class="scene scene-loop" fill="none">
+              <path d="M135 320 C135 182 505 182 505 320 S135 458 135 320Z" stroke="url(#scrolly-line-gradient)" stroke-width="6"/>
+              <path d="M190 320 C190 236 450 236 450 320 S190 404 190 320Z" stroke="#67d4ff" stroke-opacity=".22" stroke-width="2"/>
+              <circle cx="135" cy="320" r="9" fill="#d5f6ff" stroke="none"/>
+              <circle cx="505" cy="320" r="9" fill="#67d4ff" stroke="none"/>
+            </g>
+
+            <g class="scene scene-curvature" fill="none">
+              <ellipse cx="320" cy="320" rx="202" ry="104" stroke="#67d4ff" stroke-opacity=".18" stroke-width="48"/>
+              <ellipse cx="320" cy="320" rx="202" ry="104" stroke="#d5f6ff" stroke-opacity=".82" stroke-width="3" stroke-dasharray="7 17"/>
+              <ellipse cx="320" cy="320" rx="92" ry="47" stroke="#67d4ff" stroke-opacity=".5" stroke-width="2"/>
+              <path d="M122 320 C166 241 228 224 320 268 C412 224 474 241 518 320 C474 399 412 416 320 372 C228 416 166 399 122 320Z" stroke="url(#scrolly-line-gradient)" stroke-width="4"/>
+              <circle cx="320" cy="320" r="72" fill="url(#scrolly-core-gradient)" stroke="none"/>
+            </g>
+          </svg>
+          <div class="scene-label"><span>Scroll-linked WCT geometry</span><strong data-scene-label>Wave transport</strong></div>
+        </div>
       </div>
 
       <div class="status-note">
@@ -477,6 +559,7 @@
   </footer>
 
   <script src="home-parallax.js" defer></script>
+  <script src="home-scrollytelling.js" defer></script>
   <script src="script.js" defer></script>
 <script src="site-nav.js" defer></script>
 </body>
