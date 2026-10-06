@@ -442,6 +442,126 @@
       "category": "Cryptographic research",
       "status": "Cryptographic prototype",
       "abstract": "WaveLock explores whether nonlinear PDE evolution and path-dependent curvature commitments can support useful one-way behavior. The current work includes adversarial tests, prototype signatures and ledger components, and a documented security-proof program."
+    },
+    {
+      "id": 23,
+      "type": "ScholarlyArticle",
+      "title": "Log-Periodic Structure in the GWTC Chirp-Mass Distribution: Frozen Holdout Evidence and a Prospective Prediction",
+      "author": [
+        {
+          "name": "Richard J. Reyes",
+          "orcid": "0009-0005-5975-8718"
+        }
+      ],
+      "datePublished": "2026-08-26",
+      "publisher": "Zenodo",
+      "doi": "10.5281/zenodo.22256802",
+      "doiUrl": "https://doi.org/10.5281/zenodo.22256802",
+      "zenodoRecord": "https://zenodo.org/records/22256802",
+      "landingPage": "https://rickyjreyes.github.io/publications/gwtc-log-periodic-chirp-mass.html",
+      "category": "Gravitational-wave open-data analysis",
+      "status": "Open-data analysis",
+      "abstract": "This open-data study tests a WCT-motivated log-periodic mode in GWTC chirp masses using a frozen holdout design, unbinned robustness checks, structured non-periodic population nulls, and a prospective prediction for future catalogs."
+    },
+    {
+      "id": 24,
+      "type": "ScholarlyArticle",
+      "title": "Log-Periodic Dimuon Residual in CMS Open Data: Cross-Period Replication and a Prospective Phase-Locked Holdout",
+      "author": [
+        {
+          "name": "Richard J. Reyes",
+          "orcid": "0009-0005-5975-8718"
+        }
+      ],
+      "datePublished": "2026-08-31",
+      "publisher": "Zenodo",
+      "doi": "10.5281/zenodo.22257067",
+      "doiUrl": "https://doi.org/10.5281/zenodo.22257067",
+      "zenodoRecord": "https://zenodo.org/records/22257067",
+      "landingPage": "https://rickyjreyes.github.io/publications/cms-log-periodic-dimuon-residual.html",
+      "category": "Collider open-data analysis",
+      "status": "Open-data analysis",
+      "abstract": "This CMS Run-2 open-data study follows a fixed-frequency dimuon residual through independent-file replication, cross-period replication, and a prospective phase-locked holdout, then audits the result against flexible smooth-background alternatives."
+    },
+    {
+      "id": 25,
+      "type": "ScholarlyArticle",
+      "title": "Exact Scale-Winding Bijection Between Discrete Scale Invariance and WCT Active-Domain Phase Closure",
+      "author": [
+        {
+          "name": "Richard J. Reyes",
+          "orcid": "0009-0005-5975-8718"
+        }
+      ],
+      "datePublished": "2026-09-08",
+      "publisher": "Zenodo",
+      "doi": "10.5281/zenodo.22665914",
+      "doiUrl": "https://doi.org/10.5281/zenodo.22665914",
+      "zenodoRecord": "https://zenodo.org/records/22665914",
+      "landingPage": "https://rickyjreyes.github.io/publications/exact-scale-winding-bijection.html",
+      "category": "Primary WCT foundation",
+      "status": "Mathematical derivation",
+      "abstract": "This work formalizes an exact mapping between discrete scale changes in logarithmic coordinates and integer phase winding in the WCT active-domain construction, providing a mathematical bridge between log-periodicity and phase closure."
+    },
+    {
+      "id": 26,
+      "type": "ScholarlyArticle",
+      "title": "Filament Reduction and Phase Quantization of Curvature-Locked Modes",
+      "author": [
+        {
+          "name": "Richard J. Reyes",
+          "orcid": "0009-0005-5975-8718"
+        }
+      ],
+      "datePublished": "2026-09-08",
+      "publisher": "Zenodo",
+      "doi": "10.5281/zenodo.22666758",
+      "doiUrl": "https://doi.org/10.5281/zenodo.22666758",
+      "zenodoRecord": "https://zenodo.org/records/22666758",
+      "landingPage": "https://rickyjreyes.github.io/publications/filament-reduction-phase-quantization.html",
+      "category": "Spectral dynamics",
+      "status": "Mathematical derivation",
+      "abstract": "This work reduces curvature-locked field structure to an effective filament description and derives phase-quantization conditions for localized modes within the WCT spectral-dynamics program."
+    },
+    {
+      "id": 27,
+      "type": "ScholarlyArticle",
+      "title": "Geometric Turbulence in Wave Confinement Theory: Phase-Locked Curvature Filaments and the Soliton-Gas Regime",
+      "author": [
+        {
+          "name": "Richard J. Reyes",
+          "orcid": "0009-0005-5975-8718"
+        }
+      ],
+      "datePublished": "2026-09-08",
+      "publisher": "Zenodo",
+      "doi": "10.5281/zenodo.22666935",
+      "doiUrl": "https://doi.org/10.5281/zenodo.22666935",
+      "zenodoRecord": "https://zenodo.org/records/22666935",
+      "landingPage": "https://rickyjreyes.github.io/publications/geometric-turbulence-soliton-gas.html",
+      "category": "Spectral dynamics",
+      "status": "Numerical study",
+      "abstract": "This numerical study examines phase-locked curvature filaments in driven nonlinear WCT-like dynamics and reports a soliton-gas regime with persistent localized structures and a characteristic filament-length distribution."
+    },
+    {
+      "id": 28,
+      "type": "ScholarlyArticle",
+      "title": "From Wave Confinement to Recursive AI Instability: A Propagation-Correction Criticality Law and Successful Prospective Prediction",
+      "author": [
+        {
+          "name": "Richard J. Reyes",
+          "orcid": "0009-0005-5975-8718"
+        }
+      ],
+      "datePublished": "2026-09-14",
+      "publisher": "Zenodo",
+      "doi": "10.5281/zenodo.22757003",
+      "doiUrl": "https://doi.org/10.5281/zenodo.22757003",
+      "zenodoRecord": "https://zenodo.org/records/22757003",
+      "landingPage": "https://rickyjreyes.github.io/publications/recursive-ai-propagation-correction-criticality.html",
+      "category": "AI architecture",
+      "status": "Mathematical derivation",
+      "abstract": "This work extends the RCA program with a propagation-versus-correction criticality law for recursive AI systems and audits a prospective quantitative prediction against a later observed incident."
     }
   ]
 }
