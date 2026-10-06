@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "sourceRepository": "rickyjreyes/wct-threejs",
+  "sourceManifest": "https://github.com/rickyjreyes/wct-threejs/blob/main/wct-manifest.json",
+  "embedContract": "/wct-threejs/?preset=<preset>&embed=1",
+  "note": "Homepage scenes reference canonical wct-threejs preset IDs. Equations and parameters remain owned by the source viewer; this file intentionally does not duplicate mathematical definitions.",
+  "scenes": [
+    {
+      "id": "finite-band-shell",
+      "label": "Finite-band shell",
+      "preset": "pff-finite-band-shell-law",
+      "role": "Equation-driven explanatory scene",
+      "status": "equation",
+      "fallback": "assets/coherence.png"
+    },
+    {
+      "id": "curvature-topology",
+      "label": "Curvature + topology",
+      "preset": "curvature-holonomy-topology-law",
+      "role": "Equation-driven explanatory scene",
+      "status": "equation",
+      "fallback": "assets/resonance.png"
+    },
+    {
+      "id": "phase-winding",
+      "label": "Phase winding",
+      "preset": "pff-d4-phase-winding-law",
+      "role": "Equation-driven explanatory scene",
+      "status": "equation",
+      "fallback": "assets/toroid.png"
+    }
+  ]
+}
