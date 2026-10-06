@@ -93,7 +93,7 @@
     if (!visualSteps.length) return;
     if (reduced.matches || !desktop.matches) {
       visualSteps.forEach((step) => step.dataset.active = 'true');
-      visualScenes.forEach((scene, i) => scene.dataset.active = String(i === 0));
+      visualScenes.forEach((scene) => scene.dataset.active = 'true');
       return;
     }
     const anchor = innerHeight * .5;
@@ -112,8 +112,10 @@
     const preload = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
       visualScenes.forEach((scene) => {
-        const img = scene.querySelector('img[data-src]');
-        if (img && !img.src) img.src = img.dataset.src;
+        const img = scene.querySelector('img');
+        if (!img) return;
+        if (img.dataset.src && !img.src) img.src = img.dataset.src;
+        if (typeof img.decode === 'function') img.decode().catch(() => {});
       });
       preload.disconnect();
     }, {rootMargin:'1000px 0px'});
