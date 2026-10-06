@@ -129,27 +129,45 @@
         <p>This is the shortest status view for readers who want the empirical result before the broader theory. Statistical statements below apply to their stated analysis and null/background model; they are not presented as validation of every WCT claim.</p>
       </div>
 
-      <div class="evidence-spine" aria-label="Current empirical claim status">
-        <article class="evidence-spine__item" data-evidence-status="supported" data-active="false">
-          <div class="evidence-spine__topline"><span class="evidence-spine__index">01</span><span class="evidence-status-label">Frozen positive</span></div>
-          <strong>GWTC frozen holdout</strong>
-          <p>Training selected <code>k=9.6023256</code>; the 104-event holdout returned ΔD=10.0354 with Monte Carlo <code>p=0.00129987</code> under the frozen test. This is the strongest clean frozen holdout currently listed.</p>
-        </article>
-        <article class="evidence-spine__item" data-evidence-status="conditional" data-active="false">
-          <div class="evidence-spine__topline"><span class="evidence-spine__index">02</span><span class="evidence-status-label">Conditional</span></div>
-          <strong>CMS fixed-waveform residual</strong>
-          <p>The prospective G2 test returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code> under the declared background. The effect is background-model sensitive; alternative smooth backgrounds reduce it substantially.</p>
-        </article>
-        <article class="evidence-spine__item" data-evidence-status="negative" data-active="false">
-          <div class="evidence-spine__topline"><span class="evidence-spine__index">03</span><span class="evidence-status-label">Non-replication</span></div>
-          <strong>ATLAS transfer test</strong>
-          <p>No positive cross-detector replication was obtained. V6.1 closed as <code>V6_FAILED_HIERARCHICAL_ROUTE_CLOSED</code> with no qualifying nuisance dimension, before the final CMS-frequency target was evaluated.</p>
-        </article>
-        <article class="evidence-spine__item" data-evidence-status="open" data-active="false">
-          <div class="evidence-spine__topline"><span class="evidence-spine__index">04</span><span class="evidence-status-label">Theory-level</span></div>
-          <strong>Core emergence claims</strong>
-          <p>Claims that mass, force, or effective spacetime emerge from confinement remain theory-level proposals unless a claim-specific ledger entry states a stronger empirical status.</p>
-        </article>
+      <div class="evidence-story">
+        <aside class="evidence-dashboard" data-evidence-stage="supported" aria-hidden="true">
+          <span class="evidence-dashboard__kicker">Evidence state</span>
+          <div class="evidence-orbit">
+            <div class="evidence-orbit__core">
+              <strong data-evidence-name>GWTC</strong>
+              <span data-evidence-state>Frozen positive</span>
+            </div>
+          </div>
+          <div class="evidence-dashboard__legend">
+            <span class="supported"><i></i>Frozen positive</span>
+            <span class="conditional"><i></i>Conditional</span>
+            <span class="negative"><i></i>Non-replication</span>
+            <span><i></i>Theory-level</span>
+          </div>
+        </aside>
+
+        <div class="evidence-spine" aria-label="Current empirical claim status">
+          <article class="evidence-spine__item" data-evidence-status="supported" data-active="false">
+            <div class="evidence-spine__topline"><span class="evidence-spine__index">01</span><span class="evidence-status-label">Frozen positive</span></div>
+            <strong>GWTC frozen holdout</strong>
+            <p>Training selected <code>k=9.6023256</code>; the 104-event holdout returned ΔD=10.0354 with Monte Carlo <code>p=0.00129987</code> under the frozen test. This is the strongest clean frozen holdout currently listed.</p>
+          </article>
+          <article class="evidence-spine__item" data-evidence-status="conditional" data-active="false">
+            <div class="evidence-spine__topline"><span class="evidence-spine__index">02</span><span class="evidence-status-label">Conditional</span></div>
+            <strong>CMS fixed-waveform residual</strong>
+            <p>The prospective G2 test returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code> under the declared background. The effect is background-model sensitive; alternative smooth backgrounds reduce it substantially.</p>
+          </article>
+          <article class="evidence-spine__item" data-evidence-status="negative" data-active="false">
+            <div class="evidence-spine__topline"><span class="evidence-spine__index">03</span><span class="evidence-status-label">Non-replication</span></div>
+            <strong>ATLAS transfer test</strong>
+            <p>No positive cross-detector replication was obtained. V6.1 closed as <code>V6_FAILED_HIERARCHICAL_ROUTE_CLOSED</code> with no qualifying nuisance dimension, before the final CMS-frequency target was evaluated.</p>
+          </article>
+          <article class="evidence-spine__item" data-evidence-status="open" data-active="false">
+            <div class="evidence-spine__topline"><span class="evidence-spine__index">04</span><span class="evidence-status-label">Theory-level</span></div>
+            <strong>Core emergence claims</strong>
+            <p>Claims that mass, force, or effective spacetime emerge from confinement remain theory-level proposals unless a claim-specific ledger entry states a stronger empirical status.</p>
+          </article>
+        </div>
       </div>
 
       <div class="status-note">
@@ -166,11 +184,85 @@
       </div>
 
       <div class="wct-scrolly" aria-label="Wave Confinement Theory logic chain">
+        <div class="wct-scrolly-visual" data-stage="wave" data-stage-index="0" aria-hidden="true">
+          <div class="story-stage-header">
+            <div>
+              <span class="story-stage-kicker">Wave Confinement Theory · mechanism</span>
+              <span class="story-stage-title" data-scene-label>Wave transport</span>
+            </div>
+            <span class="story-stage-counter"><strong data-stage-number>01</strong> / 04</span>
+          </div>
+
+          <div class="story-stage-rail"><span></span><span></span><span></span><span></span></div>
+
+          <svg viewBox="0 0 1000 800" focusable="false" aria-hidden="true">
+            <defs>
+              <radialGradient id="scrolly-core-gradient">
+                <stop offset="0" stop-color="#d9f7ff" stop-opacity=".98"/>
+                <stop offset=".22" stop-color="#67d4ff" stop-opacity=".62"/>
+                <stop offset=".55" stop-color="#67d4ff" stop-opacity=".12"/>
+                <stop offset="1" stop-color="#67d4ff" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="scrolly-line-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#67d4ff" stop-opacity=".08"/>
+                <stop offset=".5" stop-color="#d5f6ff" stop-opacity=".98"/>
+                <stop offset="1" stop-color="#9b8cff" stop-opacity=".16"/>
+              </linearGradient>
+              <filter id="scrolly-glow" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="8" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <g class="scene-grid" fill="none" stroke="#67d4ff" stroke-opacity=".09">
+              <circle cx="650" cy="400" r="110"/>
+              <circle cx="650" cy="400" r="220"/>
+              <circle cx="650" cy="400" r="330"/>
+              <path d="M210 400H980M650 35V765"/>
+              <path d="M302 160L930 640M302 640L930 160" stroke-opacity=".04"/>
+            </g>
+
+            <g class="scene scene-wave" fill="none" filter="url(#scrolly-glow)">
+              <path class="wave-line" d="M250 365 C310 210 370 520 430 365 S550 210 610 365 S730 520 790 365 S910 210 980 365" stroke="url(#scrolly-line-gradient)" stroke-width="7"/>
+              <path d="M250 455 C310 300 370 610 430 455 S550 300 610 455 S730 610 790 455 S910 300 980 455" stroke="#67d4ff" stroke-opacity=".18" stroke-width="3"/>
+              <circle class="phase-dot" cx="430" cy="365" r="11" fill="#d5f6ff" stroke="none"/>
+              <circle class="phase-dot" cx="790" cy="365" r="11" fill="#d5f6ff" stroke="none" style="animation-delay:.7s"/>
+              <circle cx="610" cy="365" r="54" fill="url(#scrolly-core-gradient)" stroke="none"/>
+            </g>
+
+            <g class="scene scene-shell" fill="none" filter="url(#scrolly-glow)">
+              <circle cx="650" cy="400" r="285" stroke="#67d4ff" stroke-opacity=".10" stroke-width="76"/>
+              <circle cx="650" cy="400" r="285" stroke="#d5f6ff" stroke-opacity=".80" stroke-width="4" stroke-dasharray="5 24"/>
+              <circle cx="650" cy="400" r="205" stroke="#9b8cff" stroke-opacity=".20" stroke-width="2"/>
+              <circle cx="650" cy="400" r="124" stroke="#67d4ff" stroke-opacity=".30" stroke-width="2"/>
+              <circle cx="650" cy="400" r="98" fill="url(#scrolly-core-gradient)" stroke="none"/>
+            </g>
+
+            <g class="scene scene-loop" fill="none" filter="url(#scrolly-glow)">
+              <path d="M335 400 C335 175 965 175 965 400 S335 625 335 400Z" stroke="url(#scrolly-line-gradient)" stroke-width="8"/>
+              <path d="M430 400 C430 270 870 270 870 400 S430 530 430 400Z" stroke="#67d4ff" stroke-opacity=".25" stroke-width="3"/>
+              <path d="M512 400 C512 325 788 325 788 400 S512 475 512 400Z" stroke="#9b8cff" stroke-opacity=".22" stroke-width="2"/>
+              <circle cx="335" cy="400" r="13" fill="#d5f6ff" stroke="none"/>
+              <circle cx="965" cy="400" r="13" fill="#67d4ff" stroke="none"/>
+              <circle cx="650" cy="400" r="78" fill="url(#scrolly-core-gradient)" stroke="none"/>
+            </g>
+
+            <g class="scene scene-curvature" fill="none" filter="url(#scrolly-glow)">
+              <ellipse cx="650" cy="400" rx="310" ry="162" stroke="#67d4ff" stroke-opacity=".13" stroke-width="78"/>
+              <ellipse cx="650" cy="400" rx="310" ry="162" stroke="#d5f6ff" stroke-opacity=".86" stroke-width="4" stroke-dasharray="9 22"/>
+              <ellipse cx="650" cy="400" rx="155" ry="80" stroke="#9b8cff" stroke-opacity=".48" stroke-width="3"/>
+              <path d="M346 400 C415 278 508 250 650 318 C792 250 885 278 954 400 C885 522 792 550 650 482 C508 550 415 522 346 400Z" stroke="url(#scrolly-line-gradient)" stroke-width="6"/>
+              <circle cx="650" cy="400" r="102" fill="url(#scrolly-core-gradient)" stroke="none"/>
+              <circle cx="650" cy="400" r="16" fill="#d5f6ff" stroke="none"/>
+            </g>
+          </svg>
+        </div>
+
         <div class="wct-scrolly-steps">
           <article class="wct-scrolly-step" data-stage="wave" data-label="Wave transport" data-active="true">
             <span class="step-index">01 · Transport</span>
             <strong>Wave transport</strong>
-            <p>Energy and phase propagate through a field. The visual begins with an extended oscillatory state rather than a localized object.</p>
+            <p>Energy and phase propagate through a field. The visual starts as an extended oscillatory state rather than a localized object.</p>
           </article>
           <article class="wct-scrolly-step" data-stage="shell" data-label="Finite-band selection" data-active="false">
             <span class="step-index">02 · Selection</span>
@@ -187,53 +279,6 @@
             <strong>Curvature locking</strong>
             <p>Phase, geometry, and topology are represented together as the confined mode settles into a curvature-locked structure.</p>
           </article>
-        </div>
-
-        <div class="wct-scrolly-visual" data-stage="wave" aria-hidden="true">
-          <svg viewBox="0 0 640 640" focusable="false" aria-hidden="true">
-            <defs>
-              <radialGradient id="scrolly-core-gradient">
-                <stop offset="0" stop-color="#d9f7ff" stop-opacity=".94"/>
-                <stop offset=".28" stop-color="#67d4ff" stop-opacity=".48"/>
-                <stop offset="1" stop-color="#67d4ff" stop-opacity="0"/>
-              </radialGradient>
-              <linearGradient id="scrolly-line-gradient" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#67d4ff" stop-opacity=".16"/>
-                <stop offset=".5" stop-color="#d5f6ff" stop-opacity=".95"/>
-                <stop offset="1" stop-color="#67d4ff" stop-opacity=".16"/>
-              </linearGradient>
-            </defs>
-
-            <g class="scene scene-wave" fill="none">
-              <path class="wave-line" d="M70 292 C110 188 150 396 190 292 S270 188 310 292 S390 396 430 292 S510 188 570 292" stroke="url(#scrolly-line-gradient)" stroke-width="5"/>
-              <path d="M70 350 C110 246 150 454 190 350 S270 246 310 350 S390 454 430 350 S510 246 570 350" stroke="#67d4ff" stroke-opacity=".20" stroke-width="2"/>
-              <circle class="phase-dot" cx="190" cy="292" r="8" fill="#d5f6ff" stroke="none"/>
-              <circle class="phase-dot" cx="430" cy="292" r="8" fill="#d5f6ff" stroke="none" style="animation-delay:.65s"/>
-            </g>
-
-            <g class="scene scene-shell" fill="none">
-              <circle cx="320" cy="320" r="200" stroke="#67d4ff" stroke-opacity=".13" stroke-width="44"/>
-              <circle cx="320" cy="320" r="200" stroke="#d5f6ff" stroke-opacity=".78" stroke-width="3" stroke-dasharray="4 18"/>
-              <circle cx="320" cy="320" r="86" fill="url(#scrolly-core-gradient)" stroke="none"/>
-              <circle cx="320" cy="320" r="126" stroke="#67d4ff" stroke-opacity=".22" stroke-width="2"/>
-            </g>
-
-            <g class="scene scene-loop" fill="none">
-              <path d="M135 320 C135 182 505 182 505 320 S135 458 135 320Z" stroke="url(#scrolly-line-gradient)" stroke-width="6"/>
-              <path d="M190 320 C190 236 450 236 450 320 S190 404 190 320Z" stroke="#67d4ff" stroke-opacity=".22" stroke-width="2"/>
-              <circle cx="135" cy="320" r="9" fill="#d5f6ff" stroke="none"/>
-              <circle cx="505" cy="320" r="9" fill="#67d4ff" stroke="none"/>
-            </g>
-
-            <g class="scene scene-curvature" fill="none">
-              <ellipse cx="320" cy="320" rx="202" ry="104" stroke="#67d4ff" stroke-opacity=".18" stroke-width="48"/>
-              <ellipse cx="320" cy="320" rx="202" ry="104" stroke="#d5f6ff" stroke-opacity=".82" stroke-width="3" stroke-dasharray="7 17"/>
-              <ellipse cx="320" cy="320" rx="92" ry="47" stroke="#67d4ff" stroke-opacity=".5" stroke-width="2"/>
-              <path d="M122 320 C166 241 228 224 320 268 C412 224 474 241 518 320 C474 399 412 416 320 372 C228 416 166 399 122 320Z" stroke="url(#scrolly-line-gradient)" stroke-width="4"/>
-              <circle cx="320" cy="320" r="72" fill="url(#scrolly-core-gradient)" stroke="none"/>
-            </g>
-          </svg>
-          <div class="scene-label"><span>Scroll-linked WCT geometry</span><strong data-scene-label>Wave transport</strong></div>
         </div>
       </div>
 
