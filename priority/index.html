@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#07111f">
   <title>Intellectual Property, Priority & Provenance Registry | Richard J. Reyes</title>
-  <meta name="description" content="Machine-readable and human-auditable provenance registry for Richard J. Reyes, documenting DOI-backed scholarly priority, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.">
+  <meta name="description" content="Machine-readable and human-auditable registry for Richard J. Reyes, combining current claim and evidence status with DOI-backed scholarly priority, patent-family chronology, provenance, later external technical overlap, and prior-art controls.">
   <meta name="author" content="Richard J. Reyes">
   <meta name="robots" content="index,follow,max-snippet:-1">
   <link rel="canonical" href="https://rickyjreyes.github.io/priority/">
@@ -21,7 +21,7 @@
     .identity strong,.rights-notice strong{display:block;margin-bottom:5px;color:var(--text)}
     .rights-notice{border-color:rgba(139,124,255,.35);background:rgba(139,124,255,.055);color:var(--muted)}
     .toplinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-    .audit-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:34px 0 0}
+    .audit-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:34px 0 0}
     .audit-strip div{padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
     .audit-strip strong{display:block;color:var(--accent);font:500 1.8rem/1 Georgia,serif}
     .audit-strip span{display:block;margin-top:7px;color:var(--muted-2);font-size:.82rem;line-height:1.45}
@@ -60,11 +60,31 @@
     .control-item p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.6}
     .audit-status{margin-top:24px;padding:20px;border:1px solid rgba(139,124,255,.28);border-radius:14px;background:rgba(139,124,255,.055);color:var(--muted);max-width:1200px}
     .patent-status{color:var(--accent);font-weight:750}
+
+    .ledger-wrap{margin-top:26px;overflow-x:auto;border-top:1px solid var(--line)}
+    .ledger{width:100%;min-width:1180px;border-collapse:collapse;table-layout:fixed}
+    .ledger th,.ledger td{padding:17px 15px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left;line-height:1.55}
+    .ledger th{color:var(--muted-2);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+    .ledger td{font-size:.94rem}
+    .ledger th:nth-child(1){width:18%}.ledger th:nth-child(2){width:18%}.ledger th:nth-child(3){width:29%}.ledger th:nth-child(4){width:25%}.ledger th:nth-child(5){width:10%}
+    .claim-title{display:block;color:var(--text);font-weight:800;margin-bottom:6px}
+    .claim-id{color:var(--muted-2);font:700 .72rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}
+    .status{display:inline-flex;max-width:100%;padding:5px 9px;border:1px solid rgba(103,212,255,.38);border-radius:999px;background:rgba(103,212,255,.065);color:var(--text);font-size:.65rem;font-weight:850;letter-spacing:.035em;line-height:1.25;text-transform:uppercase;white-space:normal}
+    .status.conditional{border-color:rgba(255,205,92,.42);background:rgba(255,205,92,.07)}
+    .status.negative{border-color:rgba(255,125,125,.4);background:rgba(255,125,125,.06)}
+    .status.open{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.025);color:var(--muted)}
+    .metric{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
+    .sources{display:flex;flex-direction:column;gap:7px}
+    .sources a{font-size:.82rem}
+    .rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
+    .rule{padding:19px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
+    .rule strong{display:block;margin-bottom:7px}
+    .rule p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.58}
     @media(max-width:1400px){.definitions{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:1200px){.priority-shell{width:calc(100% - 28px)}.audit-strip,.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}.control-list{grid-template-columns:1fr}}
+    @media(max-width:1200px){.priority-shell{width:calc(100% - 28px)}.audit-strip,.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}.control-list,.rules{grid-template-columns:1fr}}
     @media(max-width:620px){.priority-shell{width:calc(100% - 20px);padding-top:54px}.definitions,.audit-strip{grid-template-columns:1fr}.priority-head p,.section-lede{font-size:1rem}.table-wrap{margin-right:-10px;margin-left:-10px;width:calc(100% + 20px);padding:0 10px}}
   </style>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://rickyjreyes.github.io/priority/#page", "name": "Richard J. Reyes Intellectual Property, Priority and Provenance Registry", "description": "Human-auditable and machine-readable registry of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-06", "author": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "about": ["Wave Confinement Theory", "technical provenance", "scholarly priority", "patent-family priority", "WaveLock", "Phase-Flux Field"], "isPartOf": {"@type": "WebSite", "url": "https://rickyjreyes.github.io/"}, "mainEntity": {"@id": "https://rickyjreyes.github.io/priority/#dataset"}}, {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/priority/#dataset", "name": "Richard J. Reyes Research Priority Registry", "description": "Claim-level chronology linking dated public research disclosures and filed patent-family chronology to canonical identifiers, DOIs, provenance notes, later comparison cases, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-06", "creator": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/priority.json"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/external-convergence.json"}], "subjectOf": {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/data/publication_traceability.json", "name": "Richard J. Reyes Publication Traceability Registry"}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://rickyjreyes.github.io/priority/#page", "name": "Richard J. Reyes Intellectual Property, Priority and Provenance Registry", "description": "Human-auditable and machine-readable registry of current claim and evidence status, documented scholarly origin, public disclosure chronology, claimed patent-family priority, later external technical overlap, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-06", "author": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "about": ["Wave Confinement Theory", "technical provenance", "scholarly priority", "patent-family priority", "WaveLock", "Phase-Flux Field"], "isPartOf": {"@type": "WebSite", "url": "https://rickyjreyes.github.io/"}, "mainEntity": {"@id": "https://rickyjreyes.github.io/priority/#dataset"}}, {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/priority/#dataset", "name": "Richard J. Reyes Research Priority Registry", "description": "Claim-level chronology linking dated public research disclosures and filed patent-family chronology to canonical identifiers, DOIs, provenance notes, later comparison cases, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-06", "creator": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/priority.json"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/claims.json"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/external-convergence.json"}], "subjectOf": {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/data/publication_traceability.json", "name": "Richard J. Reyes Publication Traceability Registry"}}]}</script>
 </head>
 <body>
   <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
@@ -77,17 +97,77 @@
 <!-- canonical-provenance:end -->
     <header class="priority-head">
       <p class="eyebrow">Documented origin, public disclosure chronology, patent-family priority, and later technical overlap</p>
-      <h1>Intellectual Property, Priority &amp; Provenance Registry</h1>
+      <h1>Priority, Claims &amp; Provenance Registry</h1>
       <p>This registry documents the earliest verifiable public disclosures of technical contributions by Richard J. Reyes and, where applicable, the priority dates of related patent families. It also records later technical works exhibiting materially overlapping structures. Chronology and structural overlap establish neither copying nor infringement; derivation, patentability, validity, enforceability, and claim scope are separate questions.</p><div class="note"><strong>DOI/version rule.</strong> Priority chronology is not inferred from Zenodo record-number ordering. A research-chronology date may refer to an original manuscript/public disclosure while the canonical citation DOI points to a later revision or redeposit. For <em>The Geometry of Resonance</em>, this site uses 10.5281/zenodo.15644222 as the canonical citation target while explicitly retaining the multi-record version lineage.</div>
       <div class="identity"><strong>Richard J. Reyes</strong>ORCID: <a href="https://orcid.org/0009-0005-5975-8718">0009-0005-5975-8718</a><br>Canonical scholarly archive: <a href="../publications/">rickyjreyes.github.io/publications/</a><br>Public patent portfolio: <a href="../patents/">rickyjreyes.github.io/patents/</a></div>
       <div class="rights-notice"><strong>Intellectual Property Notice.</strong> Richard J. Reyes asserts authorship and documented public priority for the scholarly contributions identified by Claim ID and records claimed inventorship and patent-family priority for the listed filed families. Nothing on this page grants a license, waives rights, or expands the legal scope of any patent claim.</div>
-      <div class="toplinks"><a class="button secondary" href="../claims/">Current claims ledger</a><a class="button secondary" href="priority.json">Machine-readable priority JSON</a><a class="button secondary" href="external-convergence.json">Convergence audit JSON</a><a class="button secondary" href="../patents.json">Patent metadata JSON</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="../overlap/">Post-Date Overlap Ledger</a></div>
+      <div class="toplinks"><a class="button secondary" href="#ledger">Current claims &amp; evidence</a><a class="button secondary" href="claims.json">Claims JSON</a><a class="button secondary" href="priority.json">Machine-readable priority JSON</a><a class="button secondary" href="external-convergence.json">Convergence audit JSON</a><a class="button secondary" href="../patents.json">Patent metadata JSON</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="../overlap/">Post-Date Overlap Ledger</a></div>
       <div class="audit-strip" aria-label="Audit status">
-        <div><strong>22</strong><span>DOI-backed scholarly claim-level priority records</span></div>
-        <div><strong>4</strong><span>filed patent families with public priority chronology</span></div>
-        <div><strong>6</strong><span>date-checked post-WCT comparison cases promoted below</span></div>
+        <div><strong>22</strong><span>DOI-backed scholarly priority records</span></div>
+        <div><strong>5</strong><span>key dated priority anchors</span></div>
+        <div><strong>24</strong><span>validation records</span></div>
+        <div><strong>4</strong><span>filed patent families</span></div>
       </div>
     </header>
+
+    <section class="priority-section" id="ledger" aria-labelledby="ledger-title">
+      <h2 id="ledger-title">Current program-level claims</h2>
+      <p class="section-lede">The first two rows are the strongest current empirical signals in the public program. ATLAS is retained beside them because its failed background-adequacy route materially limits the cross-detector replication story.</p>
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <thead><tr><th>Claim</th><th>Status</th><th>Best current result</th><th>Main limitation / next evidentiary step</th><th>Primary sources</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="claim-title">GWTC frozen chirp-mass mode</span><span class="claim-id">EMP-GWTC-001</span></td>
+              <td><span class="status">Frozen holdout · supported under tested null</span></td>
+              <td>Training-only selection froze <span class="metric">k=9.6023256</span> with <span class="metric">N=173</span>. The <span class="metric">N=104</span> holdout returned <span class="metric">ΔD=10.0354</span> and Monte Carlo <span class="metric">p=0.00129987</span> from 10,000 null simulations. A separate KDE formulation returned <span class="metric">p=0.00089991</span> on the same holdout.</td>
+              <td>The KDE result is supporting analysis, not a second independent holdout, because the holdout had already been inspected by the primary analysis. Independent catalog/dataset replication and physical-cause identification remain open.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/GWTC/blob/main/tables/gwtc_frozen_holdout_result.csv">Frozen table</a><a href="https://doi.org/10.5281/zenodo.22256802">Archive</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">CMS fixed-waveform dimuon residual</span><span class="claim-id">EMP-CMS-001</span></td>
+              <td><span class="status conditional">Conditional · background-sensitive</span></td>
+              <td>The prospective G2 fixed-waveform test returned <span class="metric">A=0.9708618</span> and <span class="metric">Δχ²=126.2832</span> under the declared background model, after the frequency/phase/sign and analysis rules were frozen.</td>
+              <td>Alternative smooth backgrounds reduce the apparent significance substantially. Detector/reconstruction effects versus a physical origin remain unresolved, so this is not presented as a collider discovery or as validation of the full WCT framework.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/wct-cms">Repository</a><a href="https://doi.org/10.5281/zenodo.22257067">Archive</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">CMS → ATLAS detector transfer</span><span class="claim-id">EMP-ATLAS-001</span></td>
+              <td><span class="status negative">Route closed before target</span></td>
+              <td>Frozen V6.1 ended <span class="metric">V6_FAILED_HIERARCHICAL_ROUTE_CLOSED</span> with qualifying <span class="metric">k=[]</span>. No nuisance dimension passed both stability and residual-control gates.</td>
+              <td>The CMS-frequency ATLAS target was never evaluated and the final holdout remained untouched. Therefore there is no positive independent-detector replication—and also no direct negative result at the frozen target frequency—from this route.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/wct-atlas/issues/6">V6.1 closure</a><a href="https://github.com/rickyjreyes/wct-atlas/issues/10">Final-report issue</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">NIST Fe II log-cosine bin stability</span><span class="claim-id">EMP-NIST-001</span></td>
+              <td><span class="status conditional">Open-data numerical support</span></td>
+              <td>Across 120, 160, and 200 bins, the Fe II scan selected the same <span class="metric">k=31.3265306122449</span>, with <span class="metric">0/5000</span> null exceedances at each setting and an empirical resolution floor of <span class="metric">1/5001 ≈ 0.00019996</span>.</td>
+              <td>This is an author-run public-data analysis. Independent replication, broader species behavior, null/model robustness, and the physical interpretation of the spectral structure remain separate questions.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/NIST/blob/main/tables/nist_verdict.csv">Verdict table</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">WCT core emergence claim</span><span class="claim-id">WCT-CORE-001</span></td>
+              <td><span class="status open">Theory · empirically open</span></td>
+              <td>The framework is publicly specified with equations, assumptions, symbolic/formal-support mappings, simulations, and claim-level traceability.</td>
+              <td>The proposition that mass, force, spectra, and effective spacetime geometry emerge from confinement is not established by the empirical rows above. Each narrower mathematical and physical claim requires its own validation path.</td>
+              <td><div class="sources"><a href="../publications/geometry-of-resonance.html">Foundation paper</a><a href="../equations/">Equations</a><a href="../reproduce/">Reproduce</a></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="priority-section" aria-labelledby="reading-title">
+      <h2 id="reading-title">How to read status labels</h2>
+      <div class="rules">
+        <article class="rule"><strong>Frozen holdout</strong><p>Selection or model parameters were fixed before the holdout statistic was evaluated. This is stronger than a discovery scan, but still only tests the declared null/model.</p></article>
+        <article class="rule"><strong>Conditional</strong><p>A signal or derivation exists, but a material dependency—such as background choice, calibration, transfer validity, or an unresolved assumption—changes the strength of the conclusion.</p></article>
+        <article class="rule"><strong>Route closed</strong><p>A predeclared analysis path failed its own adequacy gate. The failure is preserved rather than tuned away, and it does not get rewritten as an unperformed target test.</p></article>
+        <article class="rule"><strong>Open-data numerical support</strong><p>The result is reproducible against public data in the author-run pipeline, but independent replication and interpretation remain separate evidence layers.</p></article>
+        <article class="rule"><strong>Theory / empirically open</strong><p>The claim is mathematically or conceptually specified but does not yet have claim-level empirical evidence sufficient to state it as an observed physical fact.</p></article>
+        <article class="rule"><strong>Independent replication</strong><p>Reserved for evidence generated outside the author-controlled analysis path with a sufficiently independent dataset, implementation, or research group. None of the rows above is silently upgraded to that status.</p></article>
+      </div>
+    </section>
 
     <section class="priority-section" aria-labelledby="rules-title">
       <p class="eyebrow">Audit rule</p>
