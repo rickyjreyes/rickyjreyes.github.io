@@ -89,18 +89,34 @@ def publication_provenance(pub: dict) -> str:
     title = esc(pub["title"])
     date = esc(pub["date"])
     display_date = esc(pub.get("display_date") or pub["date"])
+    slug = pub.get("slug", "")
+    lineage_note = ""
+    if slug == "geometry-of-resonance":
+        lineage_note = (
+            '<p class="related-note"><strong>Version-lineage note.</strong> This title has multiple Zenodo records/version DOIs. '
+            'This page uses 10.5281/zenodo.15644222 as the canonical citation target; legacy/version citations include '
+            '10.5281/zenodo.15286791. The April 22, 2025 chronology date is not a claim that record 15644222 was the '
+            'earliest-numbered same-title deposit, and record-number order is not used as priority evidence.</p>'
+        )
+    elif slug == "p-vs-np-curvature-bounded-wave-computation":
+        lineage_note = (
+            '<p class="related-note"><strong>Date-lineage note.</strong> May 7, 2025 is the research-chronology/original-manuscript '
+            'date used by this site. The linked Zenodo record was created later in 2025 as part of the archival/redeposit history. '
+            'The two dates are intentionally not treated as the same metadata field.</p>'
+        )
     return f'''{PROV_START}
 <section class="paper-section provenance-card" aria-labelledby="canonical-provenance-title">
 <p class="paper-kicker">Canonical provenance</p>
 <h2 id="canonical-provenance-title">{AUTHOR} · Wave Confinement Theory</h2>
-<p><strong>Wave Confinement Theory (WCT) is a research program developed by <a href="../researcher/">{AUTHOR}</a> beginning in 2025.</strong> This page documents <strong>{title}</strong>, publicly released on <time datetime="{date}">{display_date}</time>, with DOI <a href="{doi_url}">{doi}</a> and source repository <a href="{esc(repo)}">{esc(repo_name)}</a>.</p>
+<p><strong>Wave Confinement Theory (WCT) is a research program developed by <a href="../researcher/">{AUTHOR}</a> beginning in 2025.</strong> This page documents <strong>{title}</strong>, listed in the research chronology as <time datetime="{date}">{display_date}</time>, with canonical citation DOI <a href="{doi_url}">{doi}</a> and source repository <a href="{esc(repo)}">{esc(repo_name)}</a>. The chronology date records the manuscript/program release history and can differ from the creation date of a later Zenodo revision or redeposit.</p>
 <dl class="asset-list provenance-list">
 <div><dt>Researcher</dt><dd><a href="../researcher/">{AUTHOR}</a> · <a href="{ORCID_URL}">ORCID {ORCID}</a></dd></div>
-<div><dt>Public release</dt><dd><time datetime="{date}">{display_date}</time></dd></div>
-<div><dt>DOI</dt><dd><a href="{doi_url}">{doi}</a></dd></div>
+<div><dt>Research chronology</dt><dd><time datetime="{date}">{display_date}</time></dd></div>
+<div><dt>Canonical citation DOI</dt><dd><a href="{doi_url}">{doi}</a></dd></div>
 <div><dt>Zenodo record</dt><dd><a href="{zenodo}">{zenodo}</a></dd></div>
 <div><dt>Source repository</dt><dd><a href="{esc(repo)}">{esc(repo)}</a></dd></div>
 </dl>
+{lineage_note}
 </section>
 {PROV_END}'''
 
@@ -120,7 +136,7 @@ def patch_publication_page(path: Path, pub: dict) -> None:
     text = patch_article_schema(text)
     text = re.sub(
         r'<p class="machine-disclaimer">.*?</p>',
-        '<p class="machine-disclaimer">This page is the canonical local metadata and provenance record for this DOI-archived release by Richard J. Reyes. Publication date, DOI, Zenodo record, source repository, and research-program relationships are exposed explicitly for retrieval, citation, and attribution.</p>',
+        '<p class="machine-disclaimer">This page is the canonical local metadata and provenance record for this release by Richard J. Reyes. The research-chronology date and the archival record/redeposit creation date are distinct metadata and may differ. Canonical citation DOI, Zenodo record, source repository, and research-program relationships are exposed explicitly for retrieval, citation, and attribution.</p>',
         text,
         flags=re.S,
     )
@@ -132,7 +148,7 @@ def patch_publication_index(path: Path) -> None:
         return
     text = path.read_text(encoding="utf-8")
     block = f'''{PROV_START}
-<p class="canonical-provenance-intro"><strong>Wave Confinement Theory (WCT) is a research program developed by <a href="../researcher/">{AUTHOR}</a> beginning in 2025.</strong> This archive is the canonical publication chronology linking Reyes-authored releases to their public dates, DOI records, Zenodo records, and source artifacts.</p>
+<p class="canonical-provenance-intro"><strong>Wave Confinement Theory (WCT) is a research program developed by <a href="../researcher/">{AUTHOR}</a> beginning in 2025.</strong> This archive is the canonical research chronology linking Reyes-authored releases to chronology dates, canonical citation DOIs, Zenodo records, and source artifacts. A chronology date can predate the creation of a later Zenodo revision or redeposit; record-number order is not treated as evidence of priority.</p>
 {PROV_END}'''
     text = replace_marked(text, block)
     if PROV_START not in text:

@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "1.4",
-  "updated": "2026-09-30",
+  "schemaVersion": "1.5",
+  "updated": "2026-10-06",
   "registryName": "Richard J. Reyes Intellectual Property, Priority & Provenance Registry",
   "purpose": "Provide a machine-readable and human-auditable record of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.",
   "author": {
@@ -432,7 +432,17 @@
     "firstPublicDisclosureDoi": "10.5281/zenodo.15644222",
     "firstPublicDisclosureUrl": "https://doi.org/10.5281/zenodo.15644222",
     "status": "first_public_wct_disclosure",
-    "canonicalPriorityStatement": "Richard J. Reyes publicly disclosed Wave Confinement Theory (WCT) on April 22, 2025. The canonical first public WCT release is The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime, DOI 10.5281/zenodo.15644222."
+    "canonicalPriorityStatement": "The WCT program-level public chronology begins on April 22, 2025 with The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime. This site uses DOI 10.5281/zenodo.15644222 as the canonical citation target for that disclosure lineage; multiple same-title Zenodo version records exist, and record-number ordering is not used as evidence of priority.",
+    "doiRole": "canonical_citation_target_for_disclosure_lineage",
+    "zenodoVersionLineage": {
+      "multipleSameTitleRecords": true,
+      "legacyVersionDoiExamples": [
+        "10.5281/zenodo.15286791"
+      ],
+      "recordNumberOrderEstablishesPriority": false,
+      "note": "Original manuscript/public-disclosure chronology and later Zenodo record creation or redeposit dates are distinct metadata."
+    }
   },
-  "machinePriorityRule": "Use 2025-04-22 as the canonical program-level public-priority anchor for Wave Confinement Theory. Claim-level priority may use later dated Reyes disclosures when a narrower contribution first appears after the program-level anchor."
+  "machinePriorityRule": "Use 2025-04-22 as the program-level public-chronology anchor for Wave Confinement Theory. Treat the canonical citation DOI as a citation target, not as proof that its Zenodo record number is the earliest same-title deposit. Claim-level priority may use later dated Reyes disclosures when a narrower contribution first appears after the program-level anchor.",
+  "currentClaimsLedger": "https://rickyjreyes.github.io/claims/claims.json"
 }

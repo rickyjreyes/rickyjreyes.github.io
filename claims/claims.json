@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0",
+  "updated": "2026-10-06",
+  "title": "Richard J. Reyes / WCT Current Claims and Evidence Ledger",
+  "scope": "Program-level status summary. Statistical results apply only to their stated datasets, analysis choices, nulls, and background models.",
+  "interpretationRules": [
+    "A symbolic or formal proof is not by itself empirical validation.",
+    "An author-run holdout or replication is not independent replication.",
+    "A p-value applies to the specified test and null/background model; it does not validate the full WCT framework.",
+    "Negative and route-closed results are retained alongside positive results.",
+    "Zenodo record-number ordering is not used as evidence of scholarly priority."
+  ],
+  "claims": [
+    {
+      "id": "EMP-GWTC-001",
+      "claim": "A training-selected log-periodic chirp-mass mode predicts the frozen GWTC-5 holdout better than the frozen smooth baseline under the declared test.",
+      "status": "FROZEN_HOLDOUT_SUPPORTED_UNDER_TESTED_NULL",
+      "evidenceLevel": "frozen holdout",
+      "result": {
+        "trainingN": 173,
+        "holdoutN": 104,
+        "kFrozen": 9.602325620315224,
+        "deltaDeviance": 10.035425115602617,
+        "nullSimulations": 10000,
+        "p": 0.0012998700129987
+      },
+      "supportingResult": "A separately formulated KDE analysis selected k=9.7941176 and returned p=0.00089991 on the same holdout; because the holdout had already been inspected by the primary analysis, this is supporting analysis rather than an independent holdout.",
+      "limitation": "No independent catalog/dataset replication is recorded here; this result does not by itself establish WCT as the physical cause.",
+      "sources": [
+        "https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md",
+        "https://github.com/rickyjreyes/GWTC/blob/main/tables/gwtc_frozen_holdout_result.csv",
+        "https://doi.org/10.5281/zenodo.22256802"
+      ]
+    },
+    {
+      "id": "EMP-CMS-001",
+      "claim": "A frozen CMS dimuon waveform remains strong under the declared prospective G2 analysis.",
+      "status": "CONDITIONAL_BACKGROUND_SENSITIVE",
+      "evidenceLevel": "prospective fixed-waveform holdout",
+      "result": {
+        "amplitude": 0.9708618,
+        "deltaChi2": 126.2832
+      },
+      "limitation": "The apparent significance is strongly background-model dependent; alternative smooth backgrounds reduce it substantially, and detector/reconstruction versus physical origin remains unresolved.",
+      "sources": [
+        "https://github.com/rickyjreyes/wct-cms",
+        "https://doi.org/10.5281/zenodo.22257067"
+      ]
+    },
+    {
+      "id": "EMP-ATLAS-001",
+      "claim": "The planned CMS-frequency transfer to ATLAS produced a positive independent-detector replication.",
+      "status": "ROUTE_CLOSED_BEFORE_TARGET",
+      "evidenceLevel": "negative development/background adequacy result",
+      "result": {
+        "classification": "V6_FAILED_HIERARCHICAL_ROUTE_CLOSED",
+        "qualifyingK": [],
+        "finalTargetEvaluated": false
+      },
+      "limitation": "The hierarchical ATLAS background route failed its frozen stability/residual-control gates before target evaluation. The untouched final CMS-frequency holdout was not run, so there is no positive or negative target-frequency replication result.",
+      "sources": [
+        "https://github.com/rickyjreyes/wct-atlas/issues/6",
+        "https://github.com/rickyjreyes/wct-atlas/issues/10"
+      ]
+    },
+    {
+      "id": "EMP-NIST-001",
+      "claim": "The Fe II log-cosine scan has a bin-stable best frequency across 120, 160, and 200 bins under the repository's declared null procedure.",
+      "status": "OPEN_DATA_NUMERICAL_SUPPORT",
+      "evidenceLevel": "author-run public-data analysis",
+      "result": {
+        "uniqueLines": 9447,
+        "kBest": 31.3265306122449,
+        "bins": [120, 160, 200],
+        "nullExceedances": ["0/5000", "0/5000", "0/5000"],
+        "empiricalResolutionFloor": 0.0001999600079984003
+      },
+      "limitation": "This is an author-run open-data result. Independent replication and the physical interpretation of the spectral structure remain separate questions.",
+      "sources": [
+        "https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md",
+        "https://github.com/rickyjreyes/NIST/blob/main/tables/nist_verdict.csv"
+      ]
+    },
+    {
+      "id": "WCT-CORE-001",
+      "claim": "Mass, force, spectra, and effective spacetime geometry emerge from confined oscillatory fields in the WCT framework.",
+      "status": "THEORY_OPEN_EMPIRICAL_CLAIM",
+      "evidenceLevel": "foundational proposal with mathematical, symbolic, numerical, and traceability assets",
+      "result": "The framework is publicly specified and has claim/equation-level audit infrastructure.",
+      "limitation": "The full emergence claim has not been independently established by the empirical results above. Claim-specific mathematical results and empirical tests must be evaluated separately.",
+      "sources": [
+        "https://rickyjreyes.github.io/publications/geometry-of-resonance.html",
+        "https://rickyjreyes.github.io/equations/",
+        "https://rickyjreyes.github.io/reproduce/"
+      ]
+    }
+  ],
+  "provenance": {
+    "programChronologyDate": "2025-04-22",
+    "geometryOfResonanceCanonicalCitationDoi": "10.5281/zenodo.15644222",
+    "legacyOrVersionDoiExample": "10.5281/zenodo.15286791",
+    "note": "The Geometry of Resonance has a multi-record Zenodo version lineage. The canonical citation target used by this site is not presented as proof that its record number is the earliest same-title deposit. Original manuscript/public-disclosure dates and later archive record creation/redeposit dates are distinct metadata."
+  }
+}
