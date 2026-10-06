@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="home-visuals.css">
   <link rel="stylesheet" href="home-technology.css">
   <link rel="stylesheet" href="home-parallax.css">
+  <link rel="stylesheet" href="home-journey.css">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -79,8 +80,19 @@
     </div>
   </header>
 
+  <nav class="home-progress-nav" aria-label="Homepage research chapters">
+    <div class="home-progress-inner">
+      <a href="#intro" data-short="Intro" aria-current="step">Intro</a>
+      <a href="#current-evidence" data-short="Evidence">Evidence</a>
+      <a href="#idea" data-short="Theory">Theory</a>
+      <a href="#start" data-short="Papers">Papers</a>
+      <a href="#technology" data-short="Tech">Technology</a>
+      <a href="#reproduce-chapter" data-short="Verify">Reproduce</a>
+    </div>
+  </nav>
+
   <main id="main">
-    <section class="hero section-shell" aria-labelledby="hero-title">
+    <section class="hero section-shell" id="intro" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">Controls Engineer · Independent Researcher · Software Developer</p>
         <h1 id="hero-title">A direct entry point to the <span>Wave Confinement Theory</span> research program.</h1>
@@ -155,31 +167,128 @@
         <div><span>04</span><strong>Curvature locking</strong><p>Phase, geometry, and topology stabilize localized structure.</p></div>
       </div>
 
+      <section class="equation-build" aria-labelledby="equation-build-title">
+        <div class="equation-build-header">
+          <div>
+            <p class="eyebrow">Canonical equation build · E1B → E5 → E6</p>
+            <h3 id="equation-build-title">From loop geometry to the mass-curvature relation.</h3>
+          </div>
+          <p>The diagram reveals the registered chain progressively while the canonical equations remain static, selectable, and linked to the equation registry.</p>
+        </div>
+
+        <div class="equation-build-grid">
+          <div class="equation-diagram" aria-hidden="true">
+            <svg viewBox="0 0 560 520" focusable="false">
+              <circle class="eq-guide" cx="280" cy="255" r="174"></circle>
+              <circle class="eq-guide" cx="280" cy="255" r="112"></circle>
+              <path class="eq-loop" pathLength="1" d="M111 255 C111 126 449 126 449 255 S111 384 111 255Z"></path>
+              <path class="eq-phase" pathLength="1" d="M145 255 C145 165 415 165 415 255 S145 345 145 255Z"></path>
+              <path class="eq-average" pathLength="1" d="M180 400 C228 438 332 438 380 400 M188 408 L180 400 L190 394 M370 394 L380 400 L372 408"></path>
+              <path class="eq-mass" pathLength="1" d="M280 88 L280 36 M272 48 L280 36 L288 48"></path>
+              <circle class="eq-node" cx="111" cy="255" r="7"></circle>
+              <circle class="eq-node" cx="449" cy="255" r="7"></circle>
+              <text class="eq-label accent" x="280" y="270" text-anchor="middle">Γ</text>
+              <text class="eq-label" x="96" y="237">κ, τ</text>
+              <text class="eq-label" x="388" y="237">phase</text>
+              <text class="eq-label" x="280" y="465" text-anchor="middle">⟨σ⟩w</text>
+              <text class="eq-label accent" x="280" y="24" text-anchor="middle">m</text>
+            </svg>
+          </div>
+
+          <div class="equation-steps">
+            <article class="equation-step" data-active="true">
+              <span class="equation-step-index">01 · E1B · geometry</span>
+              <h4>Combine curvature and torsion into a spectral rate.</h4>
+              <div class="equation-formula-static">σ(s) = √(κ(s)² + τ(s)²)</div>
+              <p>E1B registers σ as an inverse-length curvature spectral rate. This is a geometric definition, not a particle-mass measurement.</p>
+            </article>
+            <article class="equation-step" data-active="false">
+              <span class="equation-step-index">02 · E5 · loop closure</span>
+              <h4>Relate winding to the loop-averaged curvature rate.</h4>
+              <div class="equation-formula-static">k<sub>wind</sub> = k<sub>σ</sub> = ⟨σ⟩<sub>w</sub></div>
+              <p>The registered E5 chain is model-conditional on compatible orientation, exact integrated locking, and a positive constant-weight condition.</p>
+            </article>
+            <article class="equation-step" data-active="false">
+              <span class="equation-step-index">03 · E6 · dimensional map</span>
+              <h4>Map the effective inverse-length scale to rest mass.</h4>
+              <div class="equation-formula-static">m = (ℏ / c) k<sub>eff</sub></div>
+              <p>E6 passes dimensional closure. That status does not establish that WCT dynamics generates observed particle masses.</p>
+            </article>
+            <article class="equation-step" data-active="false">
+              <span class="equation-step-index">04 · composed relation</span>
+              <h4>Under the E5 assumptions, substitute the curvature average.</h4>
+              <div class="equation-formula-static">m = (ℏ / c) ⟨σ⟩<sub>w</sub></div>
+              <p>The homepage visualization explains the dependency chain; the equation registry remains the canonical source for verification status, assumptions, Lean coverage, and limitations.</p>
+            </article>
+          </div>
+        </div>
+
+        <p class="equation-boundary"><strong>Boundary:</strong> visual assembly is explanatory. See <a href="equations/#E1B">E1B</a>, <a href="equations/#E5">E5</a>, and <a href="equations/#E6">E6</a> for canonical status and provenance.</p>
+      </section>
+
       <div class="status-note">
         <strong>Research status.</strong> WCT is an independently developed research program spanning mathematical formulation, numerical simulation, experiment, and open-data analysis. Definitions, derivations, computational results, empirical findings, phenomenology, and conjectures are explicitly distinguished so that individual claims can be evaluated on their own evidence.
       </div>
 
-      <section class="home-visuals" aria-labelledby="home-visuals-title">
+      <section class="home-visuals cinematic-visuals" aria-labelledby="home-visuals-title">
         <div class="home-visuals-header">
-          <div><p class="eyebrow">Visual guide</p><h3 id="home-visuals-title">See the geometry before entering the registry.</h3></div>
-          <p>The strongest visuals are used as orientation or technical figures, with their evidentiary role stated explicitly.</p>
+          <div><p class="eyebrow">Visual guide</p><h3 id="home-visuals-title">Three views of the intended geometry.</h3></div>
+          <p>These are conceptual and technical orientation figures. Their role is kept separate from numerical or empirical evidence.</p>
         </div>
-        <div class="home-visual-grid">
-          <figure class="home-visual-card">
-            <a href="publications/geometry-of-resonance.html"><img src="assets/resonance.png" alt="Publication illustration for The Geometry of Resonance showing closed resonant geometry" loading="lazy"></a>
-            <figcaption><strong>The Geometry of Resonance</strong><span>Publication illustration · conceptual orientation to closed resonant geometry.</span></figcaption>
-          </figure>
-          <figure class="home-visual-card">
-            <a href="equations/"><img src="assets/coherence.png" alt="Technical visualization relating energy density, phase coherence, and confinement potential" loading="lazy"></a>
-            <figcaption><strong>Coherence and confinement</strong><span>Technical visualization · use the equation registry for the canonical mathematical definitions.</span></figcaption>
-          </figure>
-          <figure class="home-visual-card">
-            <a href="tools/"><img src="assets/toroid.png" alt="Concept illustration of a toroidal confined wave structure" loading="lazy"></a>
-            <figcaption><strong>Toroidal confinement</strong><span>Concept illustration · a visual model of closed-path confinement, not experimental evidence.</span></figcaption>
-          </figure>
+
+        <div class="visual-sequence">
+          <div class="visual-sequence-stage" aria-live="polite">
+            <a class="visual-sequence-scene" data-active="true" href="publications/geometry-of-resonance.html">
+              <img src="assets/resonance.png" alt="Publication illustration for The Geometry of Resonance showing closed resonant geometry" loading="lazy">
+              <span class="visual-sequence-overlay"><strong>The Geometry of Resonance</strong><span>Conceptual orientation · closed resonant geometry</span></span>
+            </a>
+            <a class="visual-sequence-scene" data-active="false" href="equations/">
+              <img src="assets/coherence.png" alt="Technical visualization relating energy density, phase coherence, and confinement potential" loading="lazy">
+              <span class="visual-sequence-overlay"><strong>Coherence and confinement</strong><span>Technical visualization · canonical definitions remain in the equation registry</span></span>
+            </a>
+            <a class="visual-sequence-scene" data-active="false" href="tools/">
+              <img src="assets/toroid.png" alt="Concept illustration of a toroidal confined wave structure" loading="lazy">
+              <span class="visual-sequence-overlay"><strong>Toroidal confinement</strong><span>Concept illustration · not experimental evidence</span></span>
+            </a>
+          </div>
+
+          <div class="visual-sequence-steps">
+            <article class="visual-sequence-step" data-active="true">
+              <span>01 · Resonance</span><strong>Start with closed resonant geometry.</strong>
+              <p>The first view establishes the spatial idea before introducing field and coherence structure.</p>
+            </article>
+            <article class="visual-sequence-step" data-active="false">
+              <span>02 · Coherence</span><strong>Move from geometry to field organization.</strong>
+              <p>The second view emphasizes energy density, phase coherence, and confinement as technical concepts.</p>
+            </article>
+            <article class="visual-sequence-step" data-active="false">
+              <span>03 · Topology</span><strong>Resolve the sequence into a closed-path confinement picture.</strong>
+              <p>The toroidal image is an explanatory geometry, not a claim that this exact object has been observed.</p>
+            </article>
+          </div>
         </div>
-        <p class="home-visual-boundary"><strong>Boundary:</strong> illustrations explain the intended geometry; numerical and empirical claims are evaluated separately.</p>
+        <p class="visual-sequence-boundary"><strong>Evidence boundary:</strong> artwork and explanatory scenes orient the reader; empirical status is evaluated independently.</p>
       </section>
+
+      <section class="canonical-scene" aria-labelledby="canonical-scene-title">
+        <div class="canonical-scene-header">
+          <div>
+            <p class="eyebrow">Canonical interactive scene</p>
+            <h3 id="canonical-scene-title">The homepage now consumes <code>wct-threejs</code> by preset ID.</h3>
+          </div>
+          <p>The heavy viewer is lazy-loaded only when this section approaches the viewport. Mathematical definitions and parameters remain owned by <code>wct-threejs</code>.</p>
+        </div>
+        <div class="canonical-scene-tabs" aria-label="Canonical WCT scenes"></div>
+        <div class="canonical-scene-frame">
+          <img src="assets/coherence.png" alt="" aria-hidden="true">
+          <iframe src="about:blank" loading="lazy" title="WCT Three.js canonical scene"></iframe>
+        </div>
+        <div class="canonical-scene-meta">
+          <span data-scene-role>Loading scene registry…</span>
+          <span data-scene-metric>Viewer deferred until near viewport</span>
+          <a href="https://github.com/rickyjreyes/wct-threejs">Open full WCT Three.js explorer →</a>
+        </div>
+      </section>>
 
       <div class="orientation" aria-label="Where to go">
         <h3 class="orientation-title">Where to go</h3>
@@ -212,46 +321,62 @@
       <div class="section-heading">
         <p class="eyebrow">Start here</p>
         <h2 id="start-title">Four papers define the shortest path into the program.</h2>
+        <p>On desktop, vertical scroll advances the research path horizontally. Mobile and reduced-motion layouts remain an ordinary vertical reading sequence.</p>
       </div>
 
-      <ol class="reading-path">
-        <li>
-          <div class="step">01</div>
-          <div>
-            <p class="paper-type">Core overview · Foundational proposal</p>
-            <h3><a href="publications/geometry-of-resonance.html">The Geometry of Resonance</a></h3>
-            <p>The main statement of WCT and its proposed emergence of mass, force, and effective spacetime geometry.</p>
-            <p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.15644222">DOI: 10.5281/zenodo.15644222</a></p>
+      <div class="paper-journey">
+        <div class="paper-journey-sticky">
+          <div class="paper-journey-progress" aria-hidden="true"><span></span></div>
+          <div class="paper-journey-window">
+            <ol class="paper-track">
+              <li class="paper-card">
+                <div class="paper-card-visual" aria-hidden="true">
+                  <svg viewBox="0 0 600 130"><path d="M80 65 C80 10 520 10 520 65 S80 120 80 65Z" fill="none" stroke="#67d4ff" stroke-opacity=".7" stroke-width="2"/><circle cx="300" cy="65" r="28" fill="none" stroke="#9b8cff" stroke-opacity=".65"/><circle cx="300" cy="65" r="5" fill="#bfeeff"/></svg>
+                </div>
+                <div>
+                  <p class="paper-type">01 · Core overview · Foundational proposal</p>
+                  <h3><a href="publications/geometry-of-resonance.html">The Geometry of Resonance</a></h3>
+                  <p>The main statement of WCT and its proposed emergence of mass, force, and effective spacetime geometry.</p>
+                </div>
+                <div class="paper-card-footer"><span class="paper-card-status">Foundational proposal</span><p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.15644222">10.5281/zenodo.15644222</a></p></div>
+              </li>
+              <li class="paper-card">
+                <div class="paper-card-visual" aria-hidden="true">
+                  <svg viewBox="0 0 600 130"><circle cx="300" cy="65" r="18" fill="#67d4ff" fill-opacity=".22"/><circle cx="300" cy="65" r="38" fill="none" stroke="#67d4ff" stroke-opacity=".35"/><circle cx="300" cy="65" r="60" fill="none" stroke="#bfeeff" stroke-opacity=".72" stroke-dasharray="4 9"/><circle cx="300" cy="65" r="82" fill="none" stroke="#9b8cff" stroke-opacity=".24"/></svg>
+                </div>
+                <div>
+                  <p class="paper-type">02 · Axiomatic substrate · Foundational proposal</p>
+                  <h3><a href="publications/phase-flux-field.html">Phase–Flux Field</a></h3>
+                  <p>Observable energy density, flux, phase, conservation, finite-wavenumber selection, and shell formation.</p>
+                </div>
+                <div class="paper-card-footer"><span class="paper-card-status">Foundational proposal</span><p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.17578766">10.5281/zenodo.17578766</a></p></div>
+              </li>
+              <li class="paper-card">
+                <div class="paper-card-visual" aria-hidden="true">
+                  <svg viewBox="0 0 600 130"><path d="M110 65 C110 15 490 15 490 65 S110 115 110 65Z" fill="none" stroke="#67d4ff" stroke-width="2"/><path d="M170 65 C170 36 430 36 430 65 S170 94 170 65Z" fill="none" stroke="#9b8cff" stroke-opacity=".6"/><path d="M300 22V108" stroke="#bfeeff" stroke-opacity=".6" stroke-dasharray="3 6"/></svg>
+                </div>
+                <div>
+                  <p class="paper-type">03 · Mass-locking proposal · Mathematical derivation</p>
+                  <h3><a href="publications/rest-energy-density-weighted-loop-curvature.html">Rest Energy from Density-Weighted Loop Curvature</a></h3>
+                  <p>The cleanest formulation of the loop-curvature rest-energy ansatz and its declared locking assumptions.</p>
+                </div>
+                <div class="paper-card-footer"><span class="paper-card-status">Mathematical derivation</span><p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.20533537">10.5281/zenodo.20533537</a></p></div>
+              </li>
+              <li class="paper-card">
+                <div class="paper-card-visual" aria-hidden="true">
+                  <svg viewBox="0 0 600 130"><line x1="120" y1="100" x2="480" y2="100" stroke="#67d4ff" stroke-opacity=".4"/><rect x="165" y="68" width="42" height="32" fill="#67d4ff" fill-opacity=".18" stroke="#67d4ff"/><rect x="279" y="48" width="42" height="52" fill="#67d4ff" fill-opacity=".18" stroke="#67d4ff"/><rect x="393" y="28" width="42" height="72" fill="#67d4ff" fill-opacity=".18" stroke="#67d4ff"/><text x="186" y="121" fill="#8fa3b7" text-anchor="middle">1D</text><text x="300" y="121" fill="#8fa3b7" text-anchor="middle">2D</text><text x="414" y="121" fill="#bfeeff" text-anchor="middle">3D</text></svg>
+                </div>
+                <div>
+                  <p class="paper-type">04 · Mathematical stability · Mathematical derivation</p>
+                  <h3><a href="publications/hard-upper-bound-spatial-dimensionality.html">Hard Upper Bound on Spatial Dimensionality</a></h3>
+                  <p>The argument that stable curvature-locked confinement is restricted to at most three spatial dimensions under the stated regularity route.</p>
+                </div>
+                <div class="paper-card-footer"><span class="paper-card-status">Mathematical derivation</span><p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.17081283">10.5281/zenodo.17081283</a></p></div>
+              </li>
+            </ol>
           </div>
-        </li>
-        <li>
-          <div class="step">02</div>
-          <div>
-            <p class="paper-type">Axiomatic substrate · Foundational proposal</p>
-            <h3><a href="publications/phase-flux-field.html">Phase–Flux Field</a></h3>
-            <p>Observable energy density, flux, phase, conservation, finite-wavenumber selection, and shell formation.</p>
-            <p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.17578766">DOI: 10.5281/zenodo.17578766</a></p>
-          </div>
-        </li>
-        <li>
-          <div class="step">03</div>
-          <div>
-            <p class="paper-type">Mass-locking proposal · Mathematical derivation</p>
-            <h3><a href="publications/rest-energy-density-weighted-loop-curvature.html">Rest Energy from Density-Weighted Loop Curvature</a></h3>
-            <p>The cleanest formulation of the loop-curvature rest-energy ansatz.</p>
-            <p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.20533537">DOI: 10.5281/zenodo.20533537</a></p>
-          </div>
-        </li>
-        <li>
-          <div class="step">04</div>
-          <div>
-            <p class="paper-type">Mathematical stability · Mathematical derivation</p>
-            <h3><a href="publications/hard-upper-bound-spatial-dimensionality.html">Hard Upper Bound on Spatial Dimensionality</a></h3>
-            <p>The argument that stable curvature-locked confinement is restricted to at most three spatial dimensions.</p>
-            <p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.17081283">DOI: 10.5281/zenodo.17081283</a></p>
-          </div>
-        </li>
-      </ol>
+        </div>
+      </div>
 
       <a class="text-link" href="https://github.com/rickyjreyes/geometry_of_resonance">Open the complete research hub <span aria-hidden="true">→</span></a>
     </section>
@@ -260,47 +385,27 @@
       <div class="technology-heading">
         <div>
           <p class="eyebrow">From theory to technology</p>
-          <h2 id="technology-title">A research program with implementation paths.</h2>
+          <h2 id="technology-title">A branching program, not a single evidence category.</h2>
         </div>
-        <p>WCT begins as a mathematical framework and extends into computational, photonic, memory, security, and control architectures. Implementation status is tracked at the project level so theoretical claims, prototypes, experiments, and engineering milestones remain distinct.</p>
+        <p>The network distinguishes framework, architecture, prototype, experiment, patent, and open engineering relationships so implementation directions are not visually promoted to the same scientific status.</p>
       </div>
 
-      <div class="technology-path" aria-label="Research to technology path">
-        <article class="technology-step">
-          <span class="technology-step-index">01 · Framework</span>
-          <h3>Mathematical structure</h3>
-          <p>Canonical equations, explicit assumptions, status labels, symbolic checks, and formal-support mappings define what the theory actually claims.</p>
-        </article>
-        <article class="technology-step">
-          <span class="technology-step-index">02 · Computation</span>
-          <h3>Numerical models</h3>
-          <p>Simulations and diagnostics test finite-band selection, localization, phase organization, persistence, and failure modes.</p>
-        </article>
-        <article class="technology-step">
-          <span class="technology-step-index">03 · Architecture</span>
-          <h3>Implementation concepts</h3>
-          <p>Research branches explore persistent wave memory, drift detection, resonant references, coherent field generation, and related computational structures.</p>
-        </article>
-        <article class="technology-step">
-          <span class="technology-step-index">04 · Diligence</span>
-          <h3>Evidence and IP</h3>
-          <p>Reproducible source, experiments, public-data studies, patent filings, and open technical gaps provide separate paths for evaluation.</p>
-        </article>
+      <div class="technology-network-shell">
+        <div class="technology-network" aria-label="Interactive WCT technology dependency network">
+          <svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+          <div class="technology-node-layer"></div>
+        </div>
+        <aside class="technology-network-detail" aria-live="polite">
+          <span class="network-detail-kicker" data-network-kicker>research framework</span>
+          <h3 data-network-title>Wave Confinement Theory</h3>
+          <p data-network-copy>Select a branch to inspect its relationship to WCT and its current engineering/evidence status.</p>
+          <div class="network-detail-status" data-network-status>Current status: foundational program</div>
+          <a class="text-link" data-network-link href="https://github.com/rickyjreyes/geometry_of_resonance">Open canonical source →</a>
+        </aside>
+        <ul class="tech-network-fallback" aria-label="WCT technology branches"></ul>
       </div>
 
       <div class="technology-lower">
-        <div class="technology-panel">
-          <h3>Potential application directions</h3>
-          <p>These areas are being investigated as consequences or engineering extensions of the underlying confinement and coherence ideas.</p>
-          <div class="technology-tags" aria-label="Potential application directions">
-            <span>Photonics</span>
-            <span>Resonant computing</span>
-            <span>Persistent wave memory</span>
-            <span>AI drift &amp; coherence architectures</span>
-            <span>Control systems</span>
-            <span>Secure computation</span>
-          </div>
-        </div>
         <aside class="technology-panel" aria-label="Technical diligence paths">
           <h3>What can be inspected now</h3>
           <ul class="technology-evidence-list">
@@ -317,7 +422,23 @@
           </div>
         </aside>
       </div>
-      <p class="technology-boundary"><strong>Engineering evaluation:</strong> commercial performance, scaling behavior, production-scale hardware feasibility, and independent replication are tracked as separate validation milestones.</p>
+      <p class="technology-boundary"><strong>Engineering evaluation:</strong> commercial performance, scaling behavior, production-scale hardware feasibility, security proof, and independent replication remain separate validation milestones.</p>
+    </section>
+
+    <section class="home-reproduce-chapter section-shell" id="reproduce-chapter" aria-labelledby="reproduce-chapter-title">
+      <div class="reproduce-journey">
+        <div>
+          <p class="eyebrow">Inspect it yourself</p>
+          <h2 id="reproduce-chapter-title">Move from explanation to equations, formal checks, and reproducible code.</h2>
+          <p>The visual layer is a map into the technical surfaces, not a substitute for them. Equation IDs, symbolic checks, Lean coverage, and reproducibility instructions remain independently inspectable.</p>
+        </div>
+        <div class="reproduce-journey-actions">
+          <a class="button secondary" href="equations/">Equations</a>
+          <a class="button secondary" href="sympy/">SymPy</a>
+          <a class="button secondary" href="lean/">Lean</a>
+          <a class="button primary" href="reproduce/">Reproduce</a>
+        </div>
+      </div>
     </section>
 
     <section class="section section-shell" id="branches" aria-labelledby="branches-title">
@@ -411,7 +532,7 @@
         </div>
 
         <div class="archive-cta">
-          <p>The complete, searchable archive holds 24 research releases with research-status labels, category and year filters, DOI links where available, source repositories, and citation exports.</p>
+          <p>The complete, searchable archive holds 28 research releases with research-status labels, category and year filters, DOI links where available, source repositories, and citation exports.</p>
           <div class="archive-cta-actions">
             <a class="button primary" href="publications/">Open machine-readable publication archive</a>
             <a class="button secondary" href="research-corpus/">Open WCT research corpus</a>
@@ -477,6 +598,7 @@
   </footer>
 
   <script src="home-parallax.js" defer></script>
+  <script src="home-journey.js" defer></script>
   <script src="script.js" defer></script>
 <script src="site-nav.js" defer></script>
 </body>
