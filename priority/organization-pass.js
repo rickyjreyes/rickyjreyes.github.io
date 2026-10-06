@@ -108,9 +108,9 @@
     const strip = $('.priority-head .audit-strip');
     if (strip) {
       strip.innerHTML = `
-        <div><strong>28</strong><span>DOI-backed research releases</span></div>
+        <div><strong>22</strong><span>DOI-backed scholarly priority records</span></div>
+        <div><strong>5</strong><span>key dated priority anchors</span></div>
         <div><strong>24</strong><span>validation records</span></div>
-        <div><strong>242</strong><span>external evidence / convergence records</span></div>
         <div><strong>4</strong><span>filed patent families</span></div>
       `;
     }
@@ -125,8 +125,9 @@
 
     const details = document.createElement('details');
     details.className = 'priority-fold compact-definitions';
+    details.open = true;
     const summary = document.createElement('summary');
-    summary.innerHTML = '<span><strong>Methods and classification rules</strong><small>Dated origin, earliest public record, patent priority, post-date convergence, and provenance indicators</small></span><span class="fold-action" aria-hidden="true">View</span>';
+    summary.innerHTML = '<span><strong>Methods and classification rules</strong><small>Dated origin, earliest public record, patent priority, post-date convergence, and provenance indicators</small></span><span class="fold-action" aria-hidden="true">Hide</span>';
     details.appendChild(summary);
     const body = document.createElement('div');
     body.className = 'priority-fold-body';
@@ -190,8 +191,9 @@
     if (!grid) return;
     const details = document.createElement('details');
     details.className = 'report-details prediction-detail';
+    details.open = true;
     const summary = document.createElement('summary');
-    summary.innerHTML = '<span><strong>View the 24 validation records</strong><small>AI and agent safety, physical computation, wave dynamics, collider tests, GWTC, and quantitative results</small></span><span class="report-action">Open record</span>';
+    summary.innerHTML = '<span><strong>24 validation records</strong><small>AI and agent safety, physical computation, wave dynamics, collider tests, GWTC, and quantitative results</small></span><span class="report-action">Collapse</span>';
     const body = document.createElement('div');
     body.className = 'report-details-body';
     grid.parentNode.insertBefore(details, grid);
@@ -254,7 +256,7 @@
     }
 
     if ($('.rca-audit-groups', section)) {
-      $$('.rca-group', section).forEach(details => details.removeAttribute('open'));
+      $('.rca-group', section).forEach(details => { if (!details.hasAttribute('data-user-toggled')) details.open = true; });
       return;
     }
 
@@ -278,6 +280,7 @@
     groups.forEach(group => {
       const details = document.createElement('details');
       details.className = 'rca-group';
+      details.open = true;
       const summary = document.createElement('summary');
       summary.innerHTML = `<span><span class="rca-group-title">${group.title}</span><span class="rca-group-note">${group.note}</span></span><span class="rca-group-count">${group.items.length} items</span>`;
       details.appendChild(summary);
@@ -309,6 +312,30 @@
     const h2 = $('#convergence-title', section) || $('h2', section);
     if (eyebrow) eyebrow.textContent = 'Date-checked comparison layer';
     if (h2) h2.textContent = 'Verified Post-Date Comparisons';
+  };
+
+
+  const defaultExpandEvidence = () => {
+    [
+      '.priority-fold',
+      '.report-details',
+      '#rca-prediction-audit .rca-group'
+    ].forEach(selector => {
+      $(selector).forEach(details => {
+        if (details.tagName === 'DETAILS' && !details.hasAttribute('data-user-toggled')) details.open = true;
+      });
+    });
+
+    $('.priority-fold, .report-details, #rca-prediction-audit .rca-group').forEach(details => {
+      if (details.dataset.toggleTracking === 'true') return;
+      details.dataset.toggleTracking = 'true';
+      details.addEventListener('toggle', event => {
+        if (event.isTrusted) details.setAttribute('data-user-toggled','true');
+      });
+    });
+
+    $('.priority-fold[open] .fold-action').forEach(action => action.textContent = 'Hide');
+    $('.report-details[open] .report-action').forEach(action => action.textContent = 'Collapse');
   };
 
   const reorderJumpNav = () => {
@@ -360,6 +387,7 @@
     groupRcaAudit();
     updateEvidenceHighlights();
     renameConvergence();
+    defaultExpandEvidence();
     reorderJumpNav();
     reorderSections();
 
