@@ -238,36 +238,36 @@
 
         <div class="visual-sequence">
           <div class="visual-sequence-stage" aria-live="polite">
-            <a class="visual-sequence-scene" data-active="true" href="publications/geometry-of-resonance.html">
-              <img src="assets/resonance.png" alt="Publication illustration for The Geometry of Resonance showing closed resonant geometry" loading="lazy">
-              <span class="visual-sequence-overlay"><strong>The Geometry of Resonance</strong><span>Conceptual orientation · closed resonant geometry</span></span>
+            <a class="visual-sequence-scene" data-active="true" href="reproduce/">
+              <img src="assets/pff_corrected_nearonset_spectrum2d.png" width="1200" height="900" alt="Corrected near-onset two-dimensional Phase-Flux Field spectrum diagnostic showing finite-wavenumber selection" loading="eager" decoding="async">
+              <span class="visual-sequence-overlay"><strong>Finite-wavenumber selection</strong><span>Simulation diagnostic · selected two-dimensional spectrum</span></span>
             </a>
-            <a class="visual-sequence-scene" data-active="false" href="equations/">
-              <img src="assets/coherence.png" alt="Technical visualization relating energy density, phase coherence, and confinement potential" loading="lazy">
-              <span class="visual-sequence-overlay"><strong>Coherence and confinement</strong><span>Technical visualization · canonical definitions remain in the equation registry</span></span>
+            <a class="visual-sequence-scene" data-active="false" href="reproduce/">
+              <img src="assets/pff_corrected_nearonset_amplitude.png" width="1200" height="900" alt="Corrected near-onset Phase-Flux Field amplitude diagnostic" loading="eager" decoding="async">
+              <span class="visual-sequence-overlay"><strong>Localized field amplitude</strong><span>Simulation diagnostic · corrected near-onset amplitude</span></span>
             </a>
-            <a class="visual-sequence-scene" data-active="false" href="tools/">
-              <img src="assets/toroid.png" alt="Concept illustration of a toroidal confined wave structure" loading="lazy">
-              <span class="visual-sequence-overlay"><strong>Toroidal confinement</strong><span>Concept illustration · not experimental evidence</span></span>
+            <a class="visual-sequence-scene" data-active="false" href="reproduce/">
+              <img src="assets/pff_corrected_nearonset_phase.png" width="1200" height="900" alt="Corrected near-onset Phase-Flux Field phase diagnostic showing phase organization" loading="eager" decoding="async">
+              <span class="visual-sequence-overlay"><strong>Phase organization</strong><span>Simulation diagnostic · corresponding phase field</span></span>
             </a>
           </div>
 
           <div class="visual-sequence-steps">
             <article class="visual-sequence-step" data-active="true">
-              <span>01 · Resonance</span><strong>Start with closed resonant geometry.</strong>
-              <p>The first view establishes the spatial idea before introducing field and coherence structure.</p>
+              <span>01 · Spectrum</span><strong>Finite-band selection appears in the computed spectrum.</strong>
+              <p>This is a corrected near-onset Phase-Flux Field simulation diagnostic used to inspect finite-wavenumber selection.</p>
             </article>
             <article class="visual-sequence-step" data-active="false">
-              <span>02 · Coherence</span><strong>Move from geometry to field organization.</strong>
-              <p>The second view emphasizes energy density, phase coherence, and confinement as technical concepts.</p>
+              <span>02 · Amplitude</span><strong>Inspect the corresponding field-amplitude organization.</strong>
+              <p>The second panel uses the amplitude output from the same corrected simulation family rather than conceptual artwork.</p>
             </article>
             <article class="visual-sequence-step" data-active="false">
-              <span>03 · Topology</span><strong>Resolve the sequence into a closed-path confinement picture.</strong>
-              <p>The toroidal image is an explanatory geometry, not a claim that this exact object has been observed.</p>
+              <span>03 · Phase</span><strong>Compare the phase organization from the same run family.</strong>
+              <p>The sequence now stays within one computational context so the visuals explain a coherent technical story.</p>
             </article>
           </div>
         </div>
-        <p class="visual-sequence-boundary"><strong>Evidence boundary:</strong> artwork and explanatory scenes orient the reader; empirical status is evaluated independently.</p>
+        <p class="visual-sequence-boundary"><strong>Evidence boundary:</strong> these are computational diagnostics, not experimental confirmation. Reproduction details and run provenance remain on the <a href="reproduce/">Reproduce</a> surface.</p>
       </section>
 
       <section class="canonical-scene" aria-labelledby="canonical-scene-title">
@@ -279,16 +279,21 @@
           <p>The heavy viewer is lazy-loaded only when this section approaches the viewport. Mathematical definitions and parameters remain owned by <code>wct-threejs</code>.</p>
         </div>
         <div class="canonical-scene-tabs" aria-label="Canonical WCT scenes"></div>
-        <div class="canonical-scene-frame">
-          <img src="assets/coherence.png" alt="" aria-hidden="true">
+        <div class="canonical-scene-frame" data-viewer-state="static">
+          <img src="assets/pff_corrected_nearonset_spectrum2d.png" width="1200" height="900" alt="" aria-hidden="true" decoding="async">
+          <div class="canonical-scene-placeholder">
+            <strong>Static fallback is ready.</strong>
+            <span>The interactive Three.js viewer stays unloaded until you request it.</span>
+            <button class="button secondary" type="button" data-load-wct-viewer>Load interactive scene</button>
+          </div>
           <iframe src="about:blank" loading="lazy" title="WCT Three.js canonical scene"></iframe>
         </div>
         <div class="canonical-scene-meta">
           <span data-scene-role>Loading scene registry…</span>
-          <span data-scene-metric>Viewer deferred until near viewport</span>
+          <span data-scene-metric>Interactive viewer not loaded</span>
           <a href="https://github.com/rickyjreyes/wct-threejs">Open full WCT Three.js explorer →</a>
         </div>
-      </section>>
+      </section>
 
       <div class="orientation" aria-label="Where to go">
         <h3 class="orientation-title">Where to go</h3>
