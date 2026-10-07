@@ -265,53 +265,6 @@
       </div>
     </header>
 
-    <section class="priority-section" id="ledger" aria-labelledby="ledger-title">
-      <h2 id="ledger-title">Current program-level claims</h2>
-      <p class="section-lede">The first two rows are the strongest current empirical signals in the public program. ATLAS is retained beside them because its failed background-adequacy route materially limits the cross-detector replication story.</p>
-      <div class="ledger-wrap">
-        <table class="ledger">
-          <thead><tr><th>Claim</th><th>Status</th><th>Best current result</th><th>Main limitation / next evidentiary step</th><th>Primary sources</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><span class="claim-title">GWTC frozen chirp-mass mode</span><span class="claim-id">EMP-GWTC-001</span></td>
-              <td><span class="status supported">Frozen holdout · supported under tested null</span></td>
-              <td>Training-only selection froze <span class="metric">k=9.6023256</span> with <span class="metric">N=173</span>. The <span class="metric">N=104</span> holdout returned <span class="metric">ΔD=10.0354</span> and Monte Carlo <span class="metric">p=0.00129987</span> from 10,000 null simulations. A separate KDE formulation returned <span class="metric">p=0.00089991</span> on the same holdout.</td>
-              <td>The KDE result is supporting analysis, not a second independent holdout, because the holdout had already been inspected by the primary analysis. Independent catalog/dataset replication and physical-cause identification remain open.</td>
-              <td><div class="sources"><a href="https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/GWTC/blob/main/tables/gwtc_frozen_holdout_result.csv">Frozen table</a><a href="https://doi.org/10.5281/zenodo.22256802">Archive</a></div></td>
-            </tr>
-            <tr>
-              <td><span class="claim-title">CMS fixed-waveform dimuon residual</span><span class="claim-id">EMP-CMS-001</span></td>
-              <td><span class="status conditional">Conditional · background-sensitive</span></td>
-              <td>The prospective G2 fixed-waveform test returned <span class="metric">A=0.9708618</span> and <span class="metric">Δχ²=126.2832</span> under the declared background model, after the frequency/phase/sign and analysis rules were frozen.</td>
-              <td>Alternative smooth backgrounds reduce the apparent significance substantially. Detector/reconstruction effects versus a physical origin remain unresolved, so this is not presented as a collider discovery or as validation of the full WCT framework.</td>
-              <td><div class="sources"><a href="https://github.com/rickyjreyes/wct-cms">Repository</a><a href="https://doi.org/10.5281/zenodo.22257067">Archive</a></div></td>
-            </tr>
-            <tr>
-              <td><span class="claim-title">CMS → ATLAS detector transfer</span><span class="claim-id">EMP-ATLAS-001</span></td>
-              <td><span class="status negative">Route closed before target</span></td>
-              <td>Frozen V6.1 ended <span class="metric">V6_FAILED_HIERARCHICAL_ROUTE_CLOSED</span> with qualifying <span class="metric">k=[]</span>. No nuisance dimension passed both stability and residual-control gates.</td>
-              <td>The CMS-frequency ATLAS target was never evaluated and the final holdout remained untouched. Therefore there is no positive independent-detector replication—and also no direct negative result at the frozen target frequency—from this route.</td>
-              <td><div class="sources"><a href="https://github.com/rickyjreyes/wct-atlas/issues/6">V6.1 closure</a><a href="https://github.com/rickyjreyes/wct-atlas/issues/10">Final-report issue</a></div></td>
-            </tr>
-            <tr>
-              <td><span class="claim-title">NIST Fe II log-cosine bin stability</span><span class="claim-id">EMP-NIST-001</span></td>
-              <td><span class="status convergence">Open-data numerical support</span></td>
-              <td>Across 120, 160, and 200 bins, the Fe II scan selected the same <span class="metric">k=31.3265306122449</span>, with <span class="metric">0/5000</span> null exceedances at each setting and an empirical resolution floor of <span class="metric">1/5001 ≈ 0.00019996</span>.</td>
-              <td>This is an author-run public-data analysis. Independent replication, broader species behavior, null/model robustness, and the physical interpretation of the spectral structure remain separate questions.</td>
-              <td><div class="sources"><a href="https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/NIST/blob/main/tables/nist_verdict.csv">Verdict table</a></div></td>
-            </tr>
-            <tr>
-              <td><span class="claim-title">WCT core emergence claim</span><span class="claim-id">WCT-CORE-001</span></td>
-              <td><span class="status open">Theory · empirically open</span></td>
-              <td>The framework is publicly specified with equations, assumptions, symbolic/formal-support mappings, simulations, and claim-level traceability.</td>
-              <td>The proposition that mass, force, spectra, and effective spacetime geometry emerge from confinement is not established by the empirical rows above. Each narrower mathematical and physical claim requires its own validation path.</td>
-              <td><div class="sources"><a href="../publications/geometry-of-resonance.html">Foundation paper</a><a href="../equations/">Equations</a><a href="../reproduce/">Reproduce</a></div></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
     <section class="priority-section evidence-story-section" id="evidence-story" aria-labelledby="evidence-story-title">
       <p class="eyebrow">Evidence story</p>
       <h2 id="evidence-story-title">What happened when the claims met data.</h2>
@@ -415,6 +368,53 @@
             <a href="#claims" class="text-link">Continue to the full provenance registry →</a>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="priority-section" id="ledger" aria-labelledby="ledger-title">
+      <h2 id="ledger-title">Current program-level claims</h2>
+      <p class="section-lede">The first two rows are the strongest current empirical signals in the public program. ATLAS is retained beside them because its failed background-adequacy route materially limits the cross-detector replication story.</p>
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <thead><tr><th>Claim</th><th>Status</th><th>Best current result</th><th>Main limitation / next evidentiary step</th><th>Primary sources</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="claim-title">GWTC frozen chirp-mass mode</span><span class="claim-id">EMP-GWTC-001</span></td>
+              <td><span class="status supported">Frozen holdout · supported under tested null</span></td>
+              <td>Training-only selection froze <span class="metric">k=9.6023256</span> with <span class="metric">N=173</span>. The <span class="metric">N=104</span> holdout returned <span class="metric">ΔD=10.0354</span> and Monte Carlo <span class="metric">p=0.00129987</span> from 10,000 null simulations. A separate KDE formulation returned <span class="metric">p=0.00089991</span> on the same holdout.</td>
+              <td>The KDE result is supporting analysis, not a second independent holdout, because the holdout had already been inspected by the primary analysis. Independent catalog/dataset replication and physical-cause identification remain open.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/GWTC/blob/main/tables/gwtc_frozen_holdout_result.csv">Frozen table</a><a href="https://doi.org/10.5281/zenodo.22256802">Archive</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">CMS fixed-waveform dimuon residual</span><span class="claim-id">EMP-CMS-001</span></td>
+              <td><span class="status conditional">Conditional · background-sensitive</span></td>
+              <td>The prospective G2 fixed-waveform test returned <span class="metric">A=0.9708618</span> and <span class="metric">Δχ²=126.2832</span> under the declared background model, after the frequency/phase/sign and analysis rules were frozen.</td>
+              <td>Alternative smooth backgrounds reduce the apparent significance substantially. Detector/reconstruction effects versus a physical origin remain unresolved, so this is not presented as a collider discovery or as validation of the full WCT framework.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/wct-cms">Repository</a><a href="https://doi.org/10.5281/zenodo.22257067">Archive</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">CMS → ATLAS detector transfer</span><span class="claim-id">EMP-ATLAS-001</span></td>
+              <td><span class="status negative">Route closed before target</span></td>
+              <td>Frozen V6.1 ended <span class="metric">V6_FAILED_HIERARCHICAL_ROUTE_CLOSED</span> with qualifying <span class="metric">k=[]</span>. No nuisance dimension passed both stability and residual-control gates.</td>
+              <td>The CMS-frequency ATLAS target was never evaluated and the final holdout remained untouched. Therefore there is no positive independent-detector replication—and also no direct negative result at the frozen target frequency—from this route.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/wct-atlas/issues/6">V6.1 closure</a><a href="https://github.com/rickyjreyes/wct-atlas/issues/10">Final-report issue</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">NIST Fe II log-cosine bin stability</span><span class="claim-id">EMP-NIST-001</span></td>
+              <td><span class="status convergence">Open-data numerical support</span></td>
+              <td>Across 120, 160, and 200 bins, the Fe II scan selected the same <span class="metric">k=31.3265306122449</span>, with <span class="metric">0/5000</span> null exceedances at each setting and an empirical resolution floor of <span class="metric">1/5001 ≈ 0.00019996</span>.</td>
+              <td>This is an author-run public-data analysis. Independent replication, broader species behavior, null/model robustness, and the physical interpretation of the spectral structure remain separate questions.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/NIST/blob/main/tables/nist_verdict.csv">Verdict table</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">WCT core emergence claim</span><span class="claim-id">WCT-CORE-001</span></td>
+              <td><span class="status open">Theory · empirically open</span></td>
+              <td>The framework is publicly specified with equations, assumptions, symbolic/formal-support mappings, simulations, and claim-level traceability.</td>
+              <td>The proposition that mass, force, spectra, and effective spacetime geometry emerge from confinement is not established by the empirical rows above. Each narrower mathematical and physical claim requires its own validation path.</td>
+              <td><div class="sources"><a href="../publications/geometry-of-resonance.html">Foundation paper</a><a href="../equations/">Equations</a><a href="../reproduce/">Reproduce</a></div></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -549,9 +549,7 @@
         node.classList.toggle('reached',i<=idx);
         node.classList.toggle('current',i===idx);
       });
-      if(line)line.style.strokeDashoffset=String(1-(idx/(steps.length-1)));
       if(kicker)kicker.textContent=labels[idx];
-      if(progress)progress.textContent=Math.round(idx/(steps.length-1)*100)+'%';
       if(caption)caption.textContent=captions[idx];
     };
     const measure=()=>{
@@ -565,6 +563,12 @@
         if(d<bestDist){bestDist=d;best=i}
       });
       if(best!==active)render(best);
+      const sr=story.getBoundingClientRect();
+      const start=innerHeight*.55;
+      const span=Math.max(1,sr.height-innerHeight*.32);
+      const storyProgress=Math.max(0,Math.min(1,(start-sr.top)/span));
+      if(line)line.style.strokeDashoffset=String(1-storyProgress);
+      if(progress)progress.textContent=Math.round(storyProgress*100)+'%';
     };
     const onScroll=()=>{
       if(ticking)return;
