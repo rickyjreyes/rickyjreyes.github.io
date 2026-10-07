@@ -114,7 +114,7 @@
       .claim-table td:nth-child(3)::before{content:"Earliest public record"}
       .claim-table td:nth-child(4)::before{content:"Chronology"}
       .claim-table td:nth-child(5)::before{content:"Canonical DOI"}
-      .sources{flex-direction:row;flex-wrap:wrap;gap:7px 12px}
+      .sources{flex-direction:row!important;flex-wrap:wrap;gap:7px 12px}
     }
     @media(max-width:520px){
       .ledger td,.claim-table td{grid-template-columns:1fr;gap:6px}
@@ -131,6 +131,7 @@
     @media(max-width:1400px){.definitions{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:1200px){.priority-shell{width:calc(100% - 28px)}.audit-strip,.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}.control-list,.rules{grid-template-columns:1fr}}
     @media(max-width:620px){.priority-shell{width:calc(100% - 20px);padding-top:54px}.definitions,.audit-strip{grid-template-columns:1fr}.priority-head p,.section-lede{font-size:1rem}.table-wrap{margin-right:-10px;margin-left:-10px;width:calc(100% + 20px);padding:0 10px}}
+    @media(max-width:620px){.claim-registry-wrap{margin-left:0;margin-right:0;width:100%;padding:0}}
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://rickyjreyes.github.io/priority/#page", "name": "Richard J. Reyes Intellectual Property, Priority and Provenance Registry", "description": "Human-auditable and machine-readable registry of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-06", "author": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "about": ["Wave Confinement Theory", "technical provenance", "scholarly priority", "patent-family priority", "WaveLock", "Phase-Flux Field"], "isPartOf": {"@type": "WebSite", "url": "https://rickyjreyes.github.io/"}, "mainEntity": {"@id": "https://rickyjreyes.github.io/priority/#dataset"}}, {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/priority/#dataset", "name": "Richard J. Reyes Research Priority Registry", "description": "Claim-level chronology linking dated public research disclosures and filed patent-family chronology to canonical identifiers, DOIs, provenance notes, later comparison cases, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-06", "creator": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/priority.json"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/external-convergence.json"}], "subjectOf": {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/data/publication_traceability.json", "name": "Richard J. Reyes Publication Traceability Registry"}}]}</script>
 </head>
