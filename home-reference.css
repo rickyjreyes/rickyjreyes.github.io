@@ -583,9 +583,31 @@
 .sobolev-peak-fill.critical{fill:rgba(103,212,255,.08)}
 .sobolev-supercritical-ray{pointer-events:none}
 
-/* Stage 04 returns to the original static shell as broadband modes fade. */
-[data-shell-broadband]{pointer-events:none}
-[data-shell-broadband] circle{vector-effect:non-scaling-stroke}
+/* Stage 04: preserve the original finite-k diagram while its broadband
+   cloud fades. Subtle motion continues along the fixed selected shell. */
+[data-shell-broadband],
+[data-shell-dots],
+[data-shell-phase-tracers]{pointer-events:none}
+[data-shell-broadband] circle,
+[data-shell-dots] circle,
+[data-shell-phase-tracers] circle{vector-effect:non-scaling-stroke}
+.shell-pulse-ring{
+  fill:none;
+  stroke:var(--accent-3);
+  stroke-width:10;
+  opacity:0;
+  filter:blur(5px);
+  pointer-events:none;
+}
+.shell-phase-tracer{
+  stroke:rgba(4,10,18,.84);
+  stroke-width:.9;
+  filter:drop-shadow(0 0 5px rgba(182,255,218,.36));
+}
+.shell-phase-tracer.cyan{fill:var(--accent)}
+.shell-phase-tracer.green{fill:var(--accent-3)}
+.shell-phase-tracer.violet{fill:var(--accent-2)}
+
 
 /* Stage 08: a phase-colored loop. Local curvature is analytical, but the
    residual-decay controller is deliberately illustrative. */
