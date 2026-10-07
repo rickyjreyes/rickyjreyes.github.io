@@ -314,7 +314,7 @@
     const cos=Math.cos(rotate),sin=Math.sin(rotate);
     const project=(x,y,z,extra=0)=>{
       const X=x*cos+z*sin,Z=z*cos-x*sin;
-      return [198+69*X+30*Z+extra*12,274+15*X-59*y+28*Z-extra*14];
+      return [198+68*X+29*Z+extra*11,274+15*X-59*y+28*Z-extra*14];
     };
     const dLine=(a,b)=>'M'+a[0].toFixed(1)+' '+a[1].toFixed(1)+'L'+b[0].toFixed(1)+' '+b[1].toFixed(1);
     const lines=[];
