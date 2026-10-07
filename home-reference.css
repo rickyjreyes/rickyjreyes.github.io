@@ -583,84 +583,9 @@
 .sobolev-peak-fill.critical{fill:rgba(103,212,255,.08)}
 .sobolev-supercritical-ray{pointer-events:none}
 
-/* Stage 04: fixed broadband Fourier support with a quartic band-pass.
-   Opacity follows the selected radial weighting; no PDE is integrated. */
-.shell-backdrop{
-  fill:rgba(7,18,31,.51);stroke:var(--line-strong);stroke-width:1
-}
-.shell-crosshair{
-  fill:none;stroke:var(--muted-2);stroke-width:.7;stroke-dasharray:3 8;opacity:.26
-}
-.shell-guide{
-  fill:none;stroke:var(--accent-2);stroke-width:1;stroke-dasharray:5 9;opacity:.2
-}
-.shell-target{
-  fill:none;stroke:var(--accent-3);stroke-width:2.4;
-  filter:drop-shadow(0 0 8px rgba(182,255,218,.30));
-  stroke-dasharray:7 5;
-}
-.shell-spectral-mode{fill:var(--accent);pointer-events:none}
-.shell-selection-state{
-  fill:var(--accent-3);
-  font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  letter-spacing:.08em;
-}
-.shell-spectrum-panel{
-  fill:rgba(7,17,31,.93);
-  stroke:var(--line-strong);stroke-width:1;
-}
-.shell-spectrum-axis,.shell-spectrum-guide{
-  fill:none;stroke:var(--muted-2);stroke-width:1;opacity:.48
-}
-.shell-spectrum-guide{stroke:var(--accent-3);stroke-dasharray:3 5;opacity:.8}
-.shell-spectrum-line{
-  fill:none;stroke:var(--accent-3);stroke-width:2.1;
-  stroke-linecap:round;stroke-linejoin:round;
-  filter:drop-shadow(0 0 4px rgba(182,255,218,.25));
-}
-
-/* Stage 07: an ideal reflecting cavity, with true standing-wave nodes and
-   antinodes produced from opposite traveling components. */
-.resonance-cavity{fill:rgba(7,18,31,.50);stroke:var(--line-strong);stroke-width:1}
-.resonance-wall{
-  fill:none;stroke:var(--accent-3);stroke-width:3.4;
-  stroke-linecap:round;opacity:.83;
-}
-.resonance-zero{
-  fill:none;stroke:var(--line-strong);stroke-width:1;
-  stroke-dasharray:4 7;opacity:.69;
-}
-.resonance-track-label{
-  fill:var(--accent);
-  font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-}
-.resonance-track-label.violet{fill:var(--accent-2)}
-.resonance-track-label.green{fill:var(--accent-3)}
-.resonance-forward,.resonance-backward,.resonance-standing,.resonance-envelope{
-  fill:none;stroke-linecap:round;stroke-linejoin:round;
-  vector-effect:non-scaling-stroke;
-}
-.resonance-forward{stroke:var(--accent);stroke-width:2;opacity:.83}
-.resonance-backward{stroke:var(--accent-2);stroke-width:2;opacity:.83}
-.resonance-standing{
-  stroke:var(--accent-3);stroke-width:2.8;
-  filter:drop-shadow(0 0 7px rgba(182,255,218,.37));
-}
-.resonance-envelope{
-  stroke:var(--accent-3);stroke-width:1;
-  stroke-dasharray:4 6;opacity:.37
-}
-.resonance-node{
-  fill:var(--accent);stroke:rgba(5,11,20,.8);stroke-width:1.2
-}
-.resonance-antinode{
-  fill:var(--accent-3);
-  filter:drop-shadow(0 0 6px rgba(182,255,218,.68))
-}
-.resonance-reflection-marker{
-  fill:var(--accent-2);
-  filter:drop-shadow(0 0 5px rgba(139,124,255,.54));
-}
+/* Stage 04 returns to the original static shell as broadband modes fade. */
+[data-shell-broadband]{pointer-events:none}
+[data-shell-broadband] circle{vector-effect:non-scaling-stroke}
 
 /* Stage 08: a phase-colored loop. Local curvature is analytical, but the
    residual-decay controller is deliberately illustrative. */

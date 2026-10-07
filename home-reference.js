@@ -62,16 +62,7 @@
   const basinParticlesGroup=document.querySelector('[data-basin-particles]');
   const basinFlows=[...document.querySelectorAll('.basin-flow')];
   const shellDots=document.querySelector('[data-shell-dots]');
-  const shellSpectrum=document.querySelector('[data-shell-spectrum]');
-  const shellStatus=document.querySelector('[data-shell-status]');
-  const resonanceForward=document.querySelector('[data-resonance-forward]');
-  const resonanceBackward=document.querySelector('[data-resonance-backward]');
-  const resonanceStanding=document.querySelector('[data-resonance-standing]');
-  const resonanceEnvelopeUpper=document.querySelector('[data-resonance-envelope-upper]');
-  const resonanceEnvelopeLower=document.querySelector('[data-resonance-envelope-lower]');
-  const resonanceNodesGroup=document.querySelector('[data-resonance-nodes]');
-  const resonanceAntinodesGroup=document.querySelector('[data-resonance-antinodes]');
-  const resonanceReflection=document.querySelector('[data-resonance-reflection]');
+  const shellBroadband=document.querySelector('[data-shell-broadband]');
   const phaseSegmentsGroup=document.querySelector('[data-curvature-phase-segments]');
   const phaseDotsGroup=document.querySelector('[data-curvature-phase-dots]');
   const phaseSeam=document.querySelector('[data-curvature-seam]');
@@ -102,21 +93,38 @@
   const basinParticles=makeParticles(basinParticlesGroup,14,['fill-accent','fill-accent2','fill-accent3']);
   const eigenParticles=makeParticles(eigenParticlesGroup,24,['fill-accent','fill-accent2','fill-accent3']);
 
-  // Stage 04: deterministic broadband Fourier samples.
-  // Quartic weighting is a spectral filter visualization, not a PDE solve.
-  const spectralSamples=[];
+  // Stage 04 restores the original diagram intact as its final frame.
+  // Broadband modes fade via a quartic radial filter; wavelengths do not move.
+  const shellOriginalDots=[];
   if(shellDots){
-    for(let i=0;i<210;i++){
-      const q=.13+(i+.5)/210*1.49;
-      const phi=i*2.399963229728653;
-      const x=280+119*q*Math.cos(phi),y=222+119*q*Math.sin(phi);
+    const classes=['fill-accent3','fill-accent2','fill-accent'];
+    for(let i=0;i<84;i++){
+      const a=i*2.399963229728653,rr=116+(i%3)*20;
+      const x=280+rr*Math.cos(a),y=240+rr*Math.sin(a);
       const el=document.createElementNS('http://www.w3.org/2000/svg','circle');
-      el.setAttribute('cx',x.toFixed(2));
-      el.setAttribute('cy',y.toFixed(2));
-      el.setAttribute('r',i%7===0?'2.65':'1.95');
-      el.setAttribute('class','shell-spectral-mode');
+      el.setAttribute('cx',x.toFixed(1));
+      el.setAttribute('cy',y.toFixed(1));
+      el.setAttribute('r',i%5===0?'3.1':'2');
+      el.setAttribute('class',classes[i%3]);
+      const baseOpacity=i%5===0?.82:.36;
+      el.setAttribute('opacity',String(baseOpacity));
       shellDots.appendChild(el);
-      spectralSamples.push({el,q});
+      shellOriginalDots.push({el,baseOpacity});
+    }
+  }
+  const shellBroadbandSamples=[];
+  if(shellBroadband){
+    for(let i=0;i<184;i++){
+      const theta=i*2.399963229728653;
+      const rr=29+(i+.5)/184*183;
+      const el=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      el.setAttribute('cx',(280+rr*Math.cos(theta)).toFixed(2));
+      el.setAttribute('cy',(240+rr*Math.sin(theta)).toFixed(2));
+      el.setAttribute('r',i%7===0?'2.4':'1.65');
+      el.setAttribute('class',i%3===0?'fill-accent2':'fill-accent');
+      el.setAttribute('opacity','.55');
+      shellBroadband.appendChild(el);
+      shellBroadbandSamples.push({el,q:rr/136});
     }
   }
   let shellStart=performance.now()/1000;
@@ -509,50 +517,22 @@
     });
   });
 
-  // Stage 07: ideal cavity boundary nodes and oscillating antinodes.
-  const resonanceNodes=[];
-  const resonanceAntinodes=[];
-  const cavityStart=110,cavityEnd=450,cavityMode=3,cavityLength=cavityEnd-cavityStart;
-  if(resonanceNodesGroup){
-    for(let m=0;m<=cavityMode;m++){
-      const x=cavityStart+m*cavityLength/cavityMode;
-      resonanceNodes.push(svgEl('circle',{
-        class:'resonance-node',cx:x.toFixed(2),cy:333,r:m===0||m===cavityMode?4.4:3.6
-      },resonanceNodesGroup));
-    }
-  }
-  if(resonanceAntinodesGroup){
-    for(let m=0;m<cavityMode;m++){
-      const x=cavityStart+(m+.5)*cavityLength/cavityMode;
-      resonanceAntinodes.push(svgEl('circle',{
-        class:'resonance-antinode',cx:x.toFixed(2),cy:333,r:4.1
-      },resonanceAntinodesGroup));
-    }
-  }
-
   const drawShell=t=>{
-    if(!shellDots||!shellSpectrum)return;
-    const time=Math.max(0,t-shellStart);
-    const cycle=time%9.3;
-    const selection=reduced.matches?1:clamp((cycle-.7)/4.5);
-    const normalized=selection*selection*(3-2*selection);
-    // P(|k|,s)=P0 exp[-10s (|k|²-k*²)²] with |k*|=1.
-    const response=q=>Math.exp(-10*normalized*Math.pow(q*q-1,2));
-    spectralSamples.forEach(({el,q})=>{
-      const power=response(q);
-      el.setAttribute('opacity',(.025+.89*power).toFixed(3));
-      el.setAttribute('r',(1.35+1.0*Math.sqrt(power)).toFixed(2));
-    });
-    let curve='';
-    for(let i=0;i<=110;i++){
-      const q=1.62*i/110;
-      const x=108+347*i/110,y=432-43*response(q);
-      curve+=(i?'L':'M')+x.toFixed(2)+' '+y.toFixed(2);
+    if(!shellDots)return;
+    // Animate only into the original finite-shell graphic, then hold it.
+    // An off-shell Fourier component is attenuated in place rather than
+    // incorrectly drifting toward k*. The final dots and rings are identical
+    // to the prior static visual.
+    const progress=reduced.matches?1:clamp((t-shellStart-.35)/5.2);
+    const s=progress*progress*(3-2*progress);
+    const finish=clamp((s-.63)/.37);
+    const cloudFade=1-finish*finish*(3-2*finish);
+    for(const {el,q} of shellBroadbandSamples){
+      const response=Math.exp(-11*s*Math.pow(q*q-1,2));
+      el.setAttribute('opacity',(.55*response*cloudFade).toFixed(3));
     }
-    shellSpectrum.setAttribute('d',curve);
-    if(shellStatus){
-      shellStatus.textContent=normalized<.06?'BROADBAND':
-        normalized>.94?'FINITE-k SELECTED':'QUARTIC FILTERING';
+    for(const {el,baseOpacity} of shellOriginalDots){
+      el.setAttribute('opacity',(baseOpacity*(.12+.88*s)).toFixed(3));
     }
   };
 
@@ -724,41 +704,19 @@
     });
   };
 
-  const drawResonance=t=>{
-    if(!resonanceStanding||!resonanceForward||!resonanceBackward)return;
-    const wavePhase=t*1.65,k=Math.PI*cavityMode,componentAmplitude=19.5;
-    const plot=(y,fn)=>{
+  const drawResonance=(t)=>{
+    const ring=(el,r0,amp,m,ph)=>{
+      if(!el)return;
       let d='';
-      for(let i=0;i<=168;i++){
-        const x=cavityStart+cavityLength*i/168,u=i/168;
-        d+=(i?'L':'M')+x.toFixed(2)+' '+(y+fn(u)).toFixed(2);
+      for(let k=0;k<=140;k++){
+        const a=k/140*Math.PI*2;
+        const r=r0+amp*Math.sin(m*a)*Math.cos(1.45*t+ph);
+        d+=(k?'L':'M')+(280+r*Math.cos(a)).toFixed(1)+' '+(240+r*Math.sin(a)).toFixed(1);
       }
-      return d;
+      el.setAttribute('d',d+'Z');
     };
-    resonanceForward.setAttribute('d',plot(165,u=>
-      -componentAmplitude*Math.sin(k*u-wavePhase)));
-    resonanceBackward.setAttribute('d',plot(237,u=>
-      -componentAmplitude*Math.sin(k*u+wavePhase)));
-    // sin(ku-wt)+sin(ku+wt)=2 sin(ku) cos(wt); fixed nodes for kL=3π.
-    const envelope=2*componentAmplitude;
-    const stand=u=>-envelope*Math.sin(k*u)*Math.cos(wavePhase);
-    resonanceStanding.setAttribute('d',plot(333,stand));
-    if(resonanceEnvelopeUpper)resonanceEnvelopeUpper.setAttribute('d',plot(333,u=>
-      -envelope*Math.abs(Math.sin(k*u))));
-    if(resonanceEnvelopeLower)resonanceEnvelopeLower.setAttribute('d',plot(333,u=>
-      envelope*Math.abs(Math.sin(k*u))));
-    resonanceAntinodes.forEach((el,m)=>{
-      const u=(m+.5)/cavityMode;
-      el.setAttribute('cy',(333+stand(u)).toFixed(2));
-      el.setAttribute('opacity',(.58+.35*Math.abs(Math.cos(wavePhase))).toFixed(2));
-    });
-    if(resonanceReflection){
-      // One reflected tracer, purely illustrative; the waveforms above
-      // are the exact analytic equal-amplitude counterpropagating pair.
-      const f=((t*.13)%2+2)%2,u=f<=1?f:2-f;
-      resonanceReflection.setAttribute('cx',(cavityStart+cavityLength*u).toFixed(2));
-      resonanceReflection.setAttribute('opacity','0.84');
-    }
+    ring(mode1,110,21,4,0);
+    ring(mode2,158,12,6,1);
   };
 
   const drawCurvature=t=>{
