@@ -274,41 +274,47 @@
               <g class="theory-scene scene-2">
                 <defs>
                   <linearGradient id="sobolev-spike-glow" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="var(--accent-2)" stop-opacity=".32"></stop>
+                    <stop offset="0" stop-color="var(--accent-2)" stop-opacity=".35"></stop>
                     <stop offset="1" stop-color="var(--accent-2)" stop-opacity="0"></stop>
                   </linearGradient>
                 </defs>
                 <rect class="sobolev-field-panel" x="48" y="105" width="337" height="295" rx="16"></rect>
                 <rect class="sobolev-scaling-panel" x="402" y="105" width="130" height="295" rx="16"></rect>
 
-                <text class="sobolev-title" x="57" y="78">H² → L∞</text>
+                <text class="sobolev-title" x="57" y="77">H² → L∞</text>
                 <text class="sobolev-regime-key" x="225" y="77">1–3D</text>
                 <text class="sobolev-regime-key critical" x="322" y="77">4D</text>
                 <text class="sobolev-regime-key supercritical" x="413" y="77">5D+</text>
 
-                <text class="sobolev-dimension-big" x="65" y="151" data-sobolev-dimension-label>3D</text>
-                <text class="sobolev-state supported" x="283" y="151" data-sobolev-state>SUBCRITICAL</text>
-                <path class="sobolev-baseline" d="M69 342H369"></path>
-                <g class="sobolev-dimensional-lattice" data-sobolev-lattice></g>
+                <text class="sobolev-dimension-big" x="64" y="152" data-sobolev-dimension-label>3D</text>
+                <text class="sobolev-state supported" x="139" y="151" data-sobolev-state>SUBCRITICAL</text>
+
+                <path class="sobolev-baseline" d="M67 341H244"></path>
                 <g class="sobolev-packet-contours" data-sobolev-contours></g>
                 <g class="sobolev-packet-particles" data-sobolev-particles></g>
                 <g class="sobolev-spike-rays" data-sobolev-rays></g>
                 <path class="sobolev-peak-fill" data-sobolev-peak-fill></path>
                 <path class="sobolev-peak" data-sobolev-peak></path>
-                <circle class="sobolev-peak-node" data-sobolev-peak-node cx="215" cy="260" r="4"></circle>
-                <text class="svg-muted" x="66" y="383">concentration →</text>
-                <text class="sobolev-focus-readout" x="365" y="383" text-anchor="end" data-sobolev-lambda>λ ×1.0</text>
+                <circle class="sobolev-peak-node" data-sobolev-peak-node cx="159" cy="260" r="4"></circle>
 
-                <text class="svg-muted" x="417" y="128">PEAK · ∥Δψ∥₂ FIXED</text>
-                <text class="sobolev-gain" x="417" y="167" data-sobolev-peak-value>×1.00</text>
-                <text class="sobolev-exponent" x="417" y="189" data-sobolev-slope>α = −0.5</text>
-                <path class="sobolev-graph-axis" d="M416 223V374H522"></path>
-                <path class="sobolev-graph-grid" d="M416 292H522M416 235H522M416 350H522"></path>
-                <g class="sobolev-guide-lines" data-sobolev-guides></g>
+                <text class="sobolev-geometry-caption" x="297" y="177" text-anchor="middle">n-CUBE PROJECTION</text>
+                <g class="sobolev-topology-edges" data-sobolev-topology-edges></g>
+                <g class="sobolev-topology-vertices" data-sobolev-topology-vertices></g>
+                <text class="sobolev-topology-count" data-sobolev-topology-count x="298" y="378" text-anchor="middle">8 V · 12 E</text>
+                <text class="svg-muted" x="67" y="381">focus →</text>
+                <text class="sobolev-focus-readout" x="235" y="381" text-anchor="end" data-sobolev-lambda>λ ×1.0</text>
+
+                <text class="svg-muted" x="414" y="129">PEAK · Δ FIXED</text>
+                <text class="sobolev-gain" x="414" y="168" data-sobolev-peak-value>×1.00</text>
+                <text class="sobolev-exponent" x="414" y="189" data-sobolev-slope>α = −0.5</text>
+                <text class="svg-muted" x="414" y="214">LOG₂ PEAK</text>
+                <path class="sobolev-graph-axis" d="M416 224V374H522"></path>
+                <path class="sobolev-graph-grid" d="M416 292H522M416 241H522M416 342H522"></path>
                 <path class="sobolev-scaling-line" data-sobolev-scaling-line></path>
                 <circle class="sobolev-scaling-marker" data-sobolev-scaling-marker cx="416" cy="292" r="4"></circle>
-                <text class="svg-muted" x="420" y="393">λ 1 → 8</text>
+                <text class="svg-muted" x="420" y="391">focus ↗</text>
 
+                <text class="svg-muted" x="280" y="426" text-anchor="middle">Dimension graph + analytic concentration · not a WCT PDE simulation</text>
               </g>
 
               <g class="theory-scene scene-3">
@@ -414,7 +420,7 @@
           </li>
           <li class="wct-theory-step">
             <span>03</span><h3>Sobolev three-dimensional bound</h3>
-            <p><strong>1–3D:</strong> subcritical H² → L∞ control. <strong>4D:</strong> critical threshold. <strong>5D+:</strong> a narrowing Gaussian can develop a growing peak while its H² norm stays bounded. This illustrates the limit of the embedding argument—not universal instability.</p>
+            <p><strong>1–3D:</strong> the H² embedding controls peaks. <strong>4D:</strong> a critical multiscale sequence develops a growing peak despite a bounded H² norm. <strong>5–6D:</strong> Gaussian concentration grows supercritical. The n-cube projection shows dimensional geometry, not physical confinement failure.</p>
             <p class="sobolev-source-links"><a href="publications/hard-upper-bound-spatial-dimensionality.html">Dimensional-bound derivation ↗</a> · <a href="publications/self-emergent-fourier-cymatics.html">Related eigenmode study ↗</a></p>
           </li>
           <li class="wct-theory-step">
