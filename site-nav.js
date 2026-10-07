@@ -114,7 +114,7 @@
     if (path !== '/priority/' || document.getElementById('wct-priority-evidence')) return;
     const script = document.createElement('script');
     script.id = 'wct-priority-evidence';
-    script.src = '/priority/evidence-panel.js?v=20261007-rcamount1';
+    script.src = '/priority/evidence-panel.js?v=20261007-strength1';
     script.defer = true;
     document.head.appendChild(script);
   };
@@ -124,7 +124,7 @@
     if (path !== '/priority/' || document.getElementById('wct-priority-rca-audit-42')) return;
     const script = document.createElement('script');
     script.id = 'wct-priority-rca-audit-42';
-    script.src = '/priority/rca-audit-42.js?v=20261007-rcamount1';
+    script.src = '/priority/rca-audit-42.js?v=20261007-strength1';
     script.defer = true;
     document.head.appendChild(script);
   };
@@ -134,7 +134,7 @@
     if (path !== '/priority/' || document.getElementById('wct-priority-table-polish')) return;
     const script = document.createElement('script');
     script.id = 'wct-priority-table-polish';
-    script.src = '/priority/table-polish.js?v=20261007-rcamount1';
+    script.src = '/priority/table-polish.js?v=20261007-strength1';
     script.defer = true;
     document.head.appendChild(script);
   };

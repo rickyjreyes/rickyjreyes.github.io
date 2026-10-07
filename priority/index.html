@@ -141,6 +141,20 @@
     @media(max-width:980px){.priority-proof-head{grid-template-columns:1fr}.priority-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:620px){.priority-proof{padding:18px}.priority-proof-grid{grid-template-columns:1fr}.priority-proof-bottom{align-items:flex-start;flex-direction:column}}
 
+    .proof-rank{display:block;margin-bottom:6px;color:var(--accent);font:850 .58rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.07em;text-transform:uppercase}
+    .proof-card.proof-rank-1{border-color:rgba(182,255,218,.4);background:rgba(182,255,218,.055)}
+    .proof-card.proof-rank-2{border-color:rgba(103,212,255,.38);background:rgba(103,212,255,.045)}
+    .proof-links{display:flex;flex-wrap:wrap;gap:12px}
+    .priority-proof-institutional{margin-top:12px;padding:16px 18px;border:1px dashed rgba(183,137,255,.32);border-radius:12px;background:rgba(183,137,255,.025)}
+    .priority-proof-institutional strong{display:block;color:var(--text);font-size:.9rem;line-height:1.4}
+    .priority-proof-institutional p{margin:7px 0 0;color:var(--muted);font-size:.78rem;line-height:1.55}
+    .priority-proof-institutional a{display:inline-block;margin-top:10px;color:var(--accent);font:750 .7rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}
+    .rca-incident-card rect{fill:rgba(182,255,218,.04);stroke:rgba(182,255,218,.34)}
+    .rca-incident-card.independent rect{fill:rgba(103,212,255,.04);stroke:rgba(103,212,255,.34)}
+    .rca-incident-flow{fill:none;stroke:var(--accent-3);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .rca-check-ring{fill:none;stroke:var(--accent);stroke-width:1.6}
+    .rca-check{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
     /* Scroll-driven priority stories ---------------------------------------- */
     .evidence-story-section{overflow:visible}
     .evidence-story{
@@ -282,51 +296,63 @@
       <p>This registry documents the earliest verifiable public disclosures of technical contributions by Richard J. Reyes and, where applicable, the priority dates of related patent families. It also records later technical works exhibiting materially overlapping structures. Chronology and structural overlap establish neither copying nor infringement; derivation, patentability, validity, enforceability, and claim scope are separate questions.</p>      <section class="priority-proof" aria-labelledby="priority-proof-title">
         <div class="priority-proof-head">
           <div>
-            <span class="rights-kicker">Post-disclosure comparison</span>
-            <h2 id="priority-proof-title">Why the dated priority record matters</h2>
+            <span class="rights-kicker">Tier 1 · high-specificity post-disclosure evidence</span>
+            <h2 id="priority-proof-title">Strongest priority comparisons</h2>
           </div>
-          <p>The strongest priority evidence is a sequence: an identifiable technical construct is public first, then a later external source reports a materially corresponding mechanism, failure mode, or control requirement. These comparisons support chronology relative to the cited later records; they do not by themselves establish copying, universal novelty, or patent infringement.</p>
+          <p>Evidence is ordered here by specificity, precommitment, and independence from the original disclosure—not by visual prominence or record count. The strongest cases pair a dated pre-existing construct with a later external event or result that matches several distinctive elements at once.</p>
         </div>
         <div class="priority-proof-grid">
-          <article>
+          <article class="proof-card proof-rank-1">
+            <span class="proof-rank">01 · strongest event correspondence</span>
+            <span class="proof-date">RCA · 2025-06-11 → OpenAI/Hugging Face event + METR investigation · 2026</span>
+            <strong>Cross-agent propagation, evaluation gaming, unauthorized communication, internet access, and expansion beyond isolation controls</strong>
+            <p>The later multi-agent event and METR's independent investigation jointly overlap RCA's pre-existing propagation-versus-correction boundary, multi-agent amplification, boundary crossing, and evaluator-exploitation failure classes.</p>
+            <div class="proof-links"><a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank" rel="noopener noreferrer">OpenAI event ↗</a><a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener noreferrer">METR investigation ↗</a></div>
+          </article>
+          <article class="proof-card proof-rank-2">
+            <span class="proof-rank">02 · strongest quantitative correspondence</span>
+            <span class="proof-date">RCA forecast → 2026 incident reconstruction</span>
+            <strong>R<sub>pred</sub> ≈ 0.0100 → R<sub>2026</sub> ≈ 0.0104</strong>
+            <p>The later incident reconstruction differs from the earlier propagation/correction ratio by approximately 4%. This is unusually specific, but the reconstruction remains author-side and requires independent reproduction and generalization.</p>
+            <a href="https://zenodo.org/records/22757003" target="_blank" rel="noopener noreferrer">Quantitative audit ↗</a>
+          </article>
+          <article class="proof-card">
+            <span class="proof-rank">03 · external empirical correspondence</span>
             <span class="proof-date">RCA · 2025-06-11 → OpenAI · 2026-09-16</span>
-            <strong>Persistent state, recursive propagation, boundary crossing, correction failure</strong>
+            <strong>Persistent state, recursive propagation, boundary crossing, and correction failure</strong>
             <p>OpenAI later reported self-generated continuation instructions, concealment of mistakes, unauthorized actions, unintended inter-model communication, and oversight-evasion behavior.</p>
             <a href="https://openai.com/index/model-misalignment-reporting-framework/" target="_blank" rel="noopener noreferrer">External record ↗</a>
           </article>
-          <article>
+          <article class="proof-card">
+            <span class="proof-rank">04 · external incident correspondence</span>
             <span class="proof-date">RCA · 2025-06-11 → Anthropic · 2026-09-09</span>
             <strong>Autonomous boundary crossing and task-pursuit escalation</strong>
             <p>Anthropic later reported evaluation incidents in which Claude models obtained unauthorized access to real third-party systems.</p>
             <a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" target="_blank" rel="noopener noreferrer">External record ↗</a>
           </article>
-          <article>
-            <span class="proof-date">RCA · 2025-06-11 → METR · 2026</span>
-            <strong>Repeated agent overreach, deception, and trajectory-level failure</strong>
-            <p>METR's incident corpus documents repeated agent overreach and deception across real and evaluation contexts.</p>
-            <a href="https://metr.org/agent-incidents/" target="_blank" rel="noopener noreferrer">External record ↗</a>
-          </article>
-          <article>
-            <span class="proof-date">RCA · 2025-06-11 → DeepMind · 2026-06-18</span>
-            <strong>Monitoring, containment, and correction as system-level controls</strong>
-            <p>DeepMind later introduced an AI Control Roadmap centered on stronger monitoring and containment for increasingly capable agents.</p>
-            <a href="https://deepmind.google/blog/securing-the-future-of-ai-agents/" target="_blank" rel="noopener noreferrer">External record ↗</a>
-          </article>
-          <article>
+          <article class="proof-card">
+            <span class="proof-rank">05 · independent research convergence</span>
             <span class="proof-date">RCA · 2025-06-11 → independent 2026 literature</span>
             <strong>Persistent-memory contamination and longitudinal safety degradation</strong>
             <p><em>Remembering More, Risking More</em> studies temporal memory contamination and safety degradation in memory-equipped agents.</p>
             <a href="https://arxiv.org/abs/2605.17830" target="_blank" rel="noopener noreferrer">External record ↗</a>
           </article>
-          <article>
+          <article class="proof-card">
+            <span class="proof-rank">06 · independent research convergence</span>
             <span class="proof-date">RCA · 2025-06-11 → independent 2026 literature</span>
             <strong>Trajectory-level accumulation toward unsafe behavior</strong>
             <p><em>SafetyDrift</em> treats agent safety as a trajectory-level process in which individually plausible actions can accumulate toward unsafe behavior.</p>
             <a href="https://arxiv.org/abs/2603.27148" target="_blank" rel="noopener noreferrer">External record ↗</a>
           </article>
         </div>
+        <aside class="priority-proof-institutional">
+          <span class="proof-rank">Lower evidentiary weight · institutional response</span>
+          <strong>DeepMind · June 18, 2026 — monitoring, containment, and correction architecture</strong>
+          <p>DeepMind's AI Control Roadmap is relevant as a later institutional response to the same control problem, but it is weaker priority-confirmation evidence than observed failure behavior or independent mechanism-level research.</p>
+          <a href="https://deepmind.google/blog/securing-the-future-of-ai-agents/" target="_blank" rel="noopener noreferrer">Institutional record ↗</a>
+        </aside>
         <div class="priority-proof-bottom">
-          <span><b>Chronology rule:</b> earlier dated disclosure + later materially corresponding external record.</span>
+          <span><b>Ordering rule:</b> dated disclosure → later external event/result → specificity of correspondence → independence / precommitment.</span>
           <a href="../overlap/">Open the full post-date overlap ledger →</a>
         </div>
       </section>
@@ -341,7 +367,7 @@
       </div>
 <div class="note"><strong>DOI/version rule.</strong> Priority chronology is not inferred from Zenodo record-number ordering. A research-chronology date may refer to an original manuscript/public disclosure while the canonical citation DOI points to a later revision or redeposit. For <em>The Geometry of Resonance</em>, this site uses 10.5281/zenodo.15644222 as the canonical citation target while explicitly retaining the multi-record version lineage.</div>
       <div class="identity"><strong>Richard J. Reyes</strong>ORCID: <a href="https://orcid.org/0009-0005-5975-8718">0009-0005-5975-8718</a><br>Canonical scholarly archive: <a href="../publications/">rickyjreyes.github.io/publications/</a><br>Public patent portfolio: <a href="../patents/">rickyjreyes.github.io/patents/</a></div>
-      <div class="toplinks"><a class="button secondary" href="#rca-confirmation">RCA / AI confirmation</a><a class="button secondary" href="#patents">Patent priority</a><a class="button secondary" href="#detector-evidence">Detector evidence</a><a class="button secondary" href="claims.json">Claims JSON</a><a class="button secondary" href="priority.json">Machine-readable priority JSON</a><a class="button secondary" href="external-convergence.json">Convergence audit JSON</a><a class="button secondary" href="../patents.json">Patent metadata JSON</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="../overlap/">Post-Date Overlap Ledger</a></div>
+      <div class="toplinks"><a class="button secondary" href="#rca-confirmation">RCA / AI confirmation</a><a class="button secondary" href="#patent-priority">Patent priority</a><a class="button secondary" href="#detector-evidence">Detector evidence</a><a class="button secondary" href="claims.json">Claims JSON</a><a class="button secondary" href="priority.json">Machine-readable priority JSON</a><a class="button secondary" href="external-convergence.json">Convergence audit JSON</a><a class="button secondary" href="../patents.json">Patent metadata JSON</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="../overlap/">Post-Date Overlap Ledger</a></div>
       <div class="audit-strip" aria-label="Audit status">
         <div><strong>28</strong><span>DOI-backed research releases</span></div>
         <div><strong>24</strong><span>validation records</span></div>
@@ -351,15 +377,15 @@
     </header>
 
     <section class="priority-section evidence-story-section story-rca" id="rca-confirmation" aria-labelledby="rca-confirmation-title">
-      <p class="eyebrow">01 · RCA / AI confirmation record</p>
-      <h2 id="rca-confirmation-title">RCA: dated mechanism forecasts versus post-publication evidence</h2>
-      <p class="section-lede">RCA was released June 11, 2025 with explicit constructs for recursive drift, persistent memory, propagation-to-correction balance, multi-agent amplification, and containment. The priority question is therefore comparative: which of those constructs appear again in later external records, how specific is the overlap, and which claims remain only prospective? The scroll sequence begins with the dated disclosure, then moves through the strongest post-disclosure evidence before the quantitative and forecast audits.</p>
+      <p class="eyebrow">01 · Highest-specificity priority evidence</p>
+      <h2 id="rca-confirmation-title">RCA: dated forecast → external event → quantitative test → independent convergence</h2>
+      <p class="section-lede">The RCA priority case is ordered by evidentiary strength. The dated June 11, 2025 disclosure establishes the baseline; the strongest later evidence is the multi-agent incident plus independent investigation, followed by the quantitative propagation/correction correspondence, additional frontier-lab observations, independent research convergence, and finally institutional response. Future-window forecasts remain explicitly open.</p>
 
       <div class="evidence-story" data-scroll-story>
         <div class="evidence-story-visual-wrap">
-          <div class="evidence-story-stage"><span data-story-kicker>01 · June 2025 forecast</span><strong data-story-progress>0%</strong></div>
+          <div class="evidence-story-stage"><span data-story-kicker>01 · dated disclosure</span><strong data-story-progress>0%</strong></div>
           <div class="story-rail" aria-hidden="true"><span data-story-rail></span></div>
-          <div class="evidence-story-visual" data-story-stage="0" aria-label="Scroll-driven RCA forecast and later-evidence audit">
+          <div class="evidence-story-visual" data-story-stage="0" aria-label="Scroll-driven RCA priority evidence ordered from strongest post-disclosure correspondence to weaker supporting evidence">
             <svg viewBox="0 0 560 620" role="img">
               <defs>
                 <linearGradient id="rca-flow" x1="0" x2="1"><stop offset="0" stop-color="#67d4ff"/><stop offset=".55" stop-color="#8b7cff"/><stop offset="1" stop-color="#b6ffda"/></linearGradient>
@@ -367,73 +393,48 @@
               </defs>
 
               <g class="story-scene scene-0">
-                <text class="story-scene-kicker" x="40" y="58">JUNE 11, 2025</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Pre-existing RCA failure-state model</div></foreignObject>
+                <text class="story-scene-kicker" x="40" y="58">JUNE 11, 2025 · PRE-DISCLOSURE BASELINE</text>
+                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">RCA fixes the failure-state model before the later comparison evidence</div></foreignObject>
                 <path class="rca-timeline" d="M58 312H500"></path>
                 <g class="rca-time-node live" transform="translate(82 312)"><circle r="10"></circle><text y="36" text-anchor="middle">2025</text></g>
                 <g class="rca-time-node" transform="translate(196 312)"><circle r="8"></circle><text y="36" text-anchor="middle">2026</text></g>
                 <g class="rca-time-node" transform="translate(310 312)"><circle r="8"></circle><text y="36" text-anchor="middle">2027</text></g>
                 <g class="rca-time-node" transform="translate(424 312)"><circle r="8"></circle><text y="36" text-anchor="middle">2028</text></g>
                 <g class="rca-time-node faint" transform="translate(494 312)"><circle r="7"></circle><text y="36" text-anchor="middle">2030</text></g>
-                <g class="rca-callout" transform="translate(58 158)">
-                  <rect width="182" height="88" rx="14"></rect>
-                  <text class="story-card-label" x="18" y="28">recursive drift</text>
-                  <text class="story-card-copy" x="18" y="52">semantic · memory</text>
-                  <text class="story-card-copy" x="18" y="70">constraint · coordination</text>
-                </g>
-                <g class="rca-callout violet" transform="translate(320 158)">
-                  <rect width="182" height="88" rx="14"></rect>
-                  <text class="story-card-label" x="18" y="28">criticality</text>
-                  <text class="story-card-copy" x="18" y="52">propagation</text>
-                  <text class="story-card-copy" x="18" y="70">versus correction</text>
-                </g>
-                <foreignObject class="story-note-box" x="50" y="450" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">DOI-backed disclosure fixes the comparison baseline; filed patent rights and licenses remain separate legal records.</div></foreignObject>
+                <g class="rca-callout" transform="translate(58 158)"><rect width="182" height="88" rx="14"></rect><text class="story-card-label" x="18" y="28">recursive drift</text><text class="story-card-copy" x="18" y="52">semantic · memory</text><text class="story-card-copy" x="18" y="70">constraint · coordination</text></g>
+                <g class="rca-callout violet" transform="translate(320 158)"><rect width="182" height="88" rx="14"></rect><text class="story-card-label" x="18" y="28">criticality</text><text class="story-card-copy" x="18" y="52">propagation</text><text class="story-card-copy" x="18" y="70">versus correction</text></g>
+                <foreignObject class="story-note-box" x="50" y="450" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">dated public disclosure is the necessary baseline; it is not itself later confirmation</div></foreignObject>
               </g>
 
               <g class="story-scene scene-1">
-                <text class="story-scene-kicker" x="40" y="58">POST-DISCLOSURE EXTERNAL EVIDENCE</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Later external records map onto RCA failure and control classes</div></foreignObject>
-                <path class="rca-spoke" d="M280 306L132 182M280 306L428 182M280 306L132 430M280 306L428 430"></path>
-                <circle class="rca-hub" cx="280" cy="306" r="58"></circle>
-                <text class="rca-hub-title" x="280" y="300" text-anchor="middle">RCA</text>
-                <text class="rca-hub-small" x="280" y="320" text-anchor="middle">2025-06-11</text>
-                <g class="rca-chip green" transform="translate(48 122)"><rect width="184" height="88" rx="13"></rect><text x="16" y="28">OpenAI · 2026</text><text class="small" x="16" y="52">persistent state</text><text class="small" x="16" y="69">boundary crossing</text></g>
-                <g class="rca-chip violet" transform="translate(328 122)"><rect width="184" height="88" rx="13"></rect><text x="16" y="28">Anthropic · 2026</text><text class="small" x="16" y="52">unauthorized access</text><text class="small" x="16" y="69">task escalation</text></g>
-                <g class="rca-chip" transform="translate(48 404)"><rect width="184" height="88" rx="13"></rect><text x="16" y="28">METR · 2026</text><text class="small" x="16" y="52">overreach · deception</text><text class="small" x="16" y="69">agent incidents</text></g>
-                <g class="rca-chip green" transform="translate(328 404)"><rect width="184" height="88" rx="13"></rect><text x="16" y="28">DeepMind · 2026</text><text class="small" x="16" y="52">monitoring · control</text><text class="small" x="16" y="69">containment</text></g>
-                <foreignObject class="story-note-box" x="50" y="530" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">post-date evidence supports chronology and mechanism correspondence; it is not evidence of copying by itself</div></foreignObject>
+                <text class="story-scene-kicker" x="40" y="58">STRONGEST EVENT CORRESPONDENCE · 2026</text>
+                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">OpenAI/Hugging Face event + METR investigation match multiple RCA failure variables simultaneously</div></foreignObject>
+                <g class="rca-incident-card" transform="translate(44 176)">
+                  <rect width="218" height="258" rx="16"></rect>
+                  <text class="story-card-label" x="18" y="34">OBSERVED EVENT</text>
+                  <text class="story-card-copy" x="18" y="66">unauthorized communication</text>
+                  <text class="story-card-copy" x="18" y="88">coordination / propagation</text>
+                  <text class="story-card-copy" x="18" y="110">internet / boundary crossing</text>
+                  <text class="story-card-copy" x="18" y="132">evaluation-scorer pursuit</text>
+                  <path class="rca-incident-flow" d="M28 182H188M158 166L188 182L158 198"></path>
+                  <text class="story-axis-label" x="18" y="226">propagation exceeds intended controls</text>
+                </g>
+                <g class="rca-incident-card independent" transform="translate(298 176)">
+                  <rect width="218" height="258" rx="16"></rect>
+                  <text class="story-card-label" x="18" y="34">INDEPENDENT INVESTIGATION</text>
+                  <text class="story-card-copy" x="18" y="66">METR incident analysis</text>
+                  <text class="story-card-copy" x="18" y="88">overreach / deception</text>
+                  <text class="story-card-copy" x="18" y="110">third-party infrastructure</text>
+                  <text class="story-card-copy" x="18" y="132">evaluation gaming</text>
+                  <circle class="rca-check-ring" cx="108" cy="184" r="28"></circle>
+                  <path class="rca-check" d="M94 184l10 10 20-25"></path>
+                  <text class="story-axis-label" x="108" y="230" text-anchor="middle">separate investigative record</text>
+                </g>
               </g>
 
               <g class="story-scene scene-2">
-                <text class="story-scene-kicker" x="40" y="58">POST-DATE RESEARCH CONVERGENCE</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Independent 2026 literature formalizes memory and trajectory drift</div></foreignObject>
-                <g class="rca-literature-card" transform="translate(48 166)">
-                  <rect width="216" height="236" rx="16"></rect>
-                  <text class="story-card-label" x="18" y="34">Remembering More, Risking More</text>
-                  <text class="story-card-copy" x="18" y="66">memory-equipped agents</text>
-                  <text class="story-card-copy" x="18" y="86">temporal contamination</text>
-                  <path class="rca-memory-chain" d="M30 132C72 92 102 178 144 132S194 92 202 124"></path>
-                  <circle class="rca-memory-dot" cx="30" cy="132" r="5"></circle>
-                  <circle class="rca-memory-dot" cx="144" cy="132" r="5"></circle>
-                  <text class="story-axis-label" x="18" y="202">persistent state → longitudinal risk</text>
-                </g>
-                <g class="rca-literature-card violet" transform="translate(296 166)">
-                  <rect width="216" height="236" rx="16"></rect>
-                  <text class="story-card-label" x="18" y="34">SafetyDrift</text>
-                  <text class="story-card-copy" x="18" y="66">trajectory accumulation</text>
-                  <text class="story-card-copy" x="18" y="86">unsafe transition</text>
-                  <path class="rca-drift-path" d="M26 160L66 150L104 124L142 98L190 54"></path>
-                  <circle class="rca-memory-dot violet" cx="26" cy="160" r="5"></circle>
-                  <circle class="rca-memory-dot violet" cx="104" cy="124" r="5"></circle>
-                  <circle class="rca-memory-dot violet" cx="190" cy="54" r="5"></circle>
-                  <text class="story-axis-label" x="18" y="202">local actions → trajectory failure</text>
-                </g>
-                <foreignObject class="story-note-box" x="50" y="448" width="460" height="50"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">these are post-publication external research parallels to RCA mechanism classes, not claim-by-claim replications of the entire architecture</div></foreignObject>
-              </g>
-
-              <g class="story-scene scene-3">
-                <text class="story-scene-kicker" x="40" y="58">QUANTITATIVE CHECK</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Prospective Rₚᵣₑd compared with incident reconstruction</div></foreignObject>
+                <text class="story-scene-kicker" x="40" y="58">QUANTITATIVE CORRESPONDENCE</text>
+                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Prospective Rₚᵣₑd compared with the later incident reconstruction</div></foreignObject>
                 <text class="rca-ratio-label" x="84" y="202">R<tspan baseline-shift="sub" font-size="12">pred</tspan></text>
                 <text class="rca-ratio-value" x="84" y="250">0.0100</text>
                 <text class="rca-ratio-label" x="338" y="202">R<tspan baseline-shift="sub" font-size="12">2026</tspan></text>
@@ -441,95 +442,112 @@
                 <path class="rca-ratio-track" d="M86 322H474"></path>
                 <circle class="rca-ratio-dot" cx="276" cy="322" r="9"></circle>
                 <circle class="rca-ratio-dot green" cx="284" cy="322" r="7"></circle>
-                <foreignObject class="story-note-box" x="50" y="364" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">≈ 4% relative difference in the current incident reconstruction</div></foreignObject>
-                <text class="story-axis-label" x="280" y="460" text-anchor="middle">quantitative correspondence ≠ universal validation</text>
+                <foreignObject class="story-note-box" x="50" y="364" width="460" height="56"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">≈4% relative difference; high specificity, but the event reconstruction remains author-side and requires independent reproduction</div></foreignObject>
+              </g>
+
+              <g class="story-scene scene-3">
+                <text class="story-scene-kicker" x="40" y="58">ADDITIONAL EXTERNAL EMPIRICAL RECORDS</text>
+                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Frontier-lab observations independently expose adjacent RCA failure classes</div></foreignObject>
+                <path class="rca-spoke" d="M280 310L144 202M280 310L416 202"></path>
+                <circle class="rca-hub" cx="280" cy="310" r="58"></circle>
+                <text class="rca-hub-title" x="280" y="304" text-anchor="middle">RCA</text>
+                <text class="rca-hub-small" x="280" y="324" text-anchor="middle">2025-06-11</text>
+                <g class="rca-chip green" transform="translate(48 134)"><rect width="192" height="104" rx="13"></rect><text x="16" y="28">OpenAI · 2026</text><text class="small" x="16" y="54">persistent state</text><text class="small" x="16" y="72">oversight evasion</text><text class="small" x="16" y="90">boundary crossing</text></g>
+                <g class="rca-chip violet" transform="translate(320 134)"><rect width="192" height="104" rx="13"></rect><text x="16" y="28">Anthropic · 2026</text><text class="small" x="16" y="54">unauthorized access</text><text class="small" x="16" y="72">task escalation</text><text class="small" x="16" y="90">system boundary crossing</text></g>
+                <foreignObject class="story-note-box" x="50" y="450" width="460" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">strong mechanism correspondence, but less specific than the multi-agent event + independent investigation pair</div></foreignObject>
               </g>
 
               <g class="story-scene scene-4">
-                <text class="story-scene-kicker" x="40" y="58">CURRENT AUDIT</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Evidence partitioned by correspondence class</div></foreignObject>
-                <g transform="translate(54 188)">
-                  <rect class="rca-stack strong" width="160" height="46" rx="8"></rect>
-                  <rect class="rca-stack convergence" y="58" width="116" height="46" rx="8"></rect>
-                  <rect class="rca-stack partial" y="116" width="116" height="46" rx="8"></rect>
-                  <rect class="rca-stack open" y="174" width="34" height="46" rx="8"></rect>
-                  <rect class="rca-stack prospective" y="232" width="78" height="46" rx="8"></rect>
-                </g>
-                <g transform="translate(245 196)">
-                  <text class="rca-audit-count green" x="0" y="20">15</text><text class="rca-audit-label" x="62" y="20">strong mechanism / quantitative</text>
-                  <text class="rca-audit-count" x="0" y="78">10</text><text class="rca-audit-label" x="62" y="78">structural convergence</text>
-                  <text class="rca-audit-count amber" x="0" y="136">10</text><text class="rca-audit-label" x="62" y="136">partial / precursor</text>
-                  <text class="rca-audit-count violet" x="0" y="194">1</text><text class="rca-audit-label" x="62" y="194">open validation item</text>
-                  <text class="rca-audit-count muted" x="0" y="252">6</text><text class="rca-audit-label" x="62" y="252">prospective / unestablished</text>
-                </g>
-                <foreignObject class="story-note-box" x="50" y="519" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">42 retained audit items · graded rather than collapsed into one score</div></foreignObject>
+                <text class="story-scene-kicker" x="40" y="58">INDEPENDENT RESEARCH CONVERGENCE</text>
+                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Independent 2026 literature formalizes memory contamination and trajectory drift</div></foreignObject>
+                <g class="rca-literature-card" transform="translate(48 166)"><rect width="216" height="236" rx="16"></rect><text class="story-card-label" x="18" y="34">Remembering More, Risking More</text><text class="story-card-copy" x="18" y="66">memory-equipped agents</text><text class="story-card-copy" x="18" y="86">temporal contamination</text><path class="rca-memory-chain" d="M30 132C72 92 102 178 144 132S194 92 202 124"></path><circle class="rca-memory-dot" cx="30" cy="132" r="5"></circle><circle class="rca-memory-dot" cx="144" cy="132" r="5"></circle><text class="story-axis-label" x="18" y="202">persistent state → longitudinal risk</text></g>
+                <g class="rca-literature-card violet" transform="translate(296 166)"><rect width="216" height="236" rx="16"></rect><text class="story-card-label" x="18" y="34">SafetyDrift</text><text class="story-card-copy" x="18" y="66">trajectory accumulation</text><text class="story-card-copy" x="18" y="86">unsafe transition</text><path class="rca-drift-path" d="M26 160L66 150L104 124L142 98L190 54"></path><circle class="rca-memory-dot violet" cx="26" cy="160" r="5"></circle><circle class="rca-memory-dot violet" cx="104" cy="124" r="5"></circle><circle class="rca-memory-dot violet" cx="190" cy="54" r="5"></circle><text class="story-axis-label" x="18" y="202">local actions → trajectory failure</text></g>
               </g>
 
               <g class="story-scene scene-5">
-                <text class="story-scene-kicker" x="40" y="58">WHAT REMAINS OPEN</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Future-window milestones remain unscored</div></foreignObject>
+                <text class="story-scene-kicker" x="40" y="58">INSTITUTIONAL RESPONSE · LOWER EVIDENTIARY WEIGHT</text>
+                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">DeepMind later formalizes monitoring and containment for increasingly capable agents</div></foreignObject>
+                <circle class="story-open-ring" cx="280" cy="300" r="112"></circle>
+                <circle class="story-open-ring inner" cx="280" cy="300" r="72"></circle>
+                <text class="story-open-title" x="280" y="278" text-anchor="middle">MONITOR</text>
+                <text class="story-open-title" x="280" y="308" text-anchor="middle">CONTAIN</text>
+                <text class="story-open-title" x="280" y="338" text-anchor="middle">CORRECT</text>
+                <path class="story-open-ray" d="M280 170V116M390 235L438 207M390 365L438 393M280 430V484M170 365L122 393M170 235L122 207"></path>
+                <foreignObject class="story-note-box" x="50" y="486" width="460" height="54"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">relevant control-architecture convergence, but not direct empirical confirmation of an RCA-predicted failure event</div></foreignObject>
+              </g>
+
+              <g class="story-scene scene-6">
+                <text class="story-scene-kicker" x="40" y="58">OPEN FORECAST WINDOWS</text>
+                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Future milestones remain unscored until their stated windows close</div></foreignObject>
                 <path class="rca-future-line" d="M78 322H486"></path>
                 <g class="rca-future-node landed" transform="translate(110 322)"><circle r="11"></circle><text y="38" text-anchor="middle">2025</text><text y="58" text-anchor="middle">landed classes</text></g>
                 <g class="rca-future-node landed" transform="translate(210 322)"><circle r="11"></circle><text y="38" text-anchor="middle">2026</text><text y="58" text-anchor="middle">warning evidence</text></g>
                 <g class="rca-future-node" transform="translate(318 322)"><circle r="9"></circle><text y="38" text-anchor="middle">2027</text><text y="58" text-anchor="middle">open</text></g>
                 <g class="rca-future-node" transform="translate(418 322)"><circle r="9"></circle><text y="38" text-anchor="middle">2028</text><text y="58" text-anchor="middle">open</text></g>
                 <g class="rca-future-node faint" transform="translate(486 322)"><circle r="7"></circle><text y="38" text-anchor="middle">2030</text></g>
-                <foreignObject class="story-note-box" x="50" y="458" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">mechanism-level correspondence does not score future-window milestones</div></foreignObject>
               </g>
             </svg>
           </div>
-          <p class="evidence-story-caption" data-story-caption>The priority claim begins with the dated June 11, 2025 RCA release: the later comparison only matters because the mechanism map existed first.</p>
+          <p class="evidence-story-caption" data-story-caption>The June 11, 2025 RCA disclosure fixes the comparison baseline before any of the later evidence used here.</p>
         </div>
 
         <div class="evidence-story-steps">
-          <article class="evidence-story-step active" data-story-step="0" data-kicker="01 · dated disclosure" data-caption="The June 11, 2025 RCA release fixes the technical baseline before the later external records used in this comparison.">
-            <span class="story-step-meta">01 · public baseline</span>
-            <h3>RCA fixes the mechanism vocabulary before the later evidence exists.</h3>
-            <p>The June 11, 2025 public record specifies recursive semantic and memory drift, multi-agent propagation, correction failure, reward-hacking pressure, and containment requirements. This dated disclosure is the comparison baseline for every later overlap claim.</p>
+          <article class="evidence-story-step active" data-story-step="0" data-kicker="01 · dated disclosure" data-caption="The June 11, 2025 RCA disclosure fixes the comparison baseline before any of the later evidence used here.">
+            <span class="story-step-meta">01 · necessary baseline</span>
+            <h3>The mechanism model exists before the later event evidence.</h3>
+            <p>RCA publicly specifies recursive semantic and memory drift, multi-agent propagation, correction failure, reward-hacking pressure, and containment requirements. This establishes chronology; the stronger priority evidence comes from what appears later.</p>
             <a href="../publications/resonance-confinement-architecture.html" class="text-link">Open the original RCA record →</a>
           </article>
 
-          <article class="evidence-story-step" data-story-step="1" data-kicker="02 · frontier-lab evidence" data-caption="OpenAI, Anthropic, and METR later publish or catalogue failure behavior overlapping specific RCA mechanism classes; DeepMind later formalizes related monitoring and containment requirements as institutional control architecture.">
-            <span class="story-step-meta supported">02 · external evidence + institutional response</span>
-            <h3>Later external records separate observed failure behavior from institutional control response.</h3>
-            <p>OpenAI reports persistent state, unintended inter-model communication, unauthorized action, and oversight-evasion behavior. Anthropic reports real-system boundary crossing during evaluations. METR catalogues repeated agent overreach and deception. DeepMind later formalizes monitoring and containment as system-level agent-control requirements.</p>
-            <a href="https://openai.com/index/model-misalignment-reporting-framework/" class="text-link" target="_blank" rel="noopener noreferrer">OpenAI record ↗</a>
-            <a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" class="text-link" target="_blank" rel="noopener noreferrer">Anthropic record ↗</a>
+          <article class="evidence-story-step" data-story-step="1" data-kicker="02 · strongest event match" data-caption="The 2026 OpenAI/Hugging Face event plus METR's separate investigation jointly map onto multiple RCA failure variables rather than a single broad theme.">
+            <span class="story-step-meta supported">02 · external event + independent investigation</span>
+            <h3>The strongest priority evidence is the multi-agent incident pair.</h3>
+            <p>The later event combines unauthorized inter-agent communication, coordination, internet access, evaluator-directed behavior, and expansion beyond intended isolation controls. METR separately investigated the event. That multi-variable correspondence is stronger than a later paper sharing only one broad concept.</p>
+            <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" class="text-link" target="_blank" rel="noopener noreferrer">OpenAI event ↗</a>
+            <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" class="text-link" target="_blank" rel="noopener noreferrer">METR investigation ↗</a>
           </article>
 
-          <article class="evidence-story-step" data-story-step="2" data-kicker="03 · independent research convergence" data-caption="Later 2026 research separately formalizes persistent-memory contamination and trajectory-level safety drift, closely matching two central RCA mechanism classes.">
-            <span class="story-step-meta convergence">03 · post-date research convergence</span>
-            <h3>Independent literature subsequently formalizes memory and trajectory drift.</h3>
-            <p><em>Remembering More, Risking More</em> examines longitudinal safety degradation and temporal contamination in memory-equipped agents. <em>SafetyDrift</em> treats safety as a trajectory-level process in which individually plausible actions can accumulate toward unsafe behavior. These later works make the chronology comparison substantially more informative than a bare publication date.</p>
+          <article class="evidence-story-step" data-story-step="2" data-kicker="03 · quantitative correspondence" data-caption="Rpred≈0.0100 versus the later incident reconstruction R2026≈0.0104 is the most specific numerical match in the current RCA record, but the reconstruction still requires independent reproduction.">
+            <span class="story-step-meta supported">03 · quantitative test</span>
+            <h3>The frozen propagation/correction ratio is compared with the later event.</h3>
+            <p>The earlier program recorded <code>R_pred≈0.0100</code>. The later incident reconstruction gives <code>R_2026≈0.0104</code>, approximately a 4% relative difference. Its specificity is high; its independence is not, because the reconstruction is still author-side.</p>
+            <a href="https://zenodo.org/records/22757003" class="text-link" target="_blank" rel="noopener noreferrer">Open the quantitative audit ↗</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="3" data-kicker="04 · additional empirical evidence" data-caption="OpenAI's misalignment reporting framework and Anthropic's cybersecurity incidents independently expose adjacent RCA failure classes, but with less multi-variable specificity than the incident pair above.">
+            <span class="story-step-meta supported">04 · frontier-lab observations</span>
+            <h3>Additional lab records support adjacent RCA failure classes.</h3>
+            <p>OpenAI later reports persistent state, unintended inter-model communication, unauthorized action, and oversight-evasion behavior. Anthropic reports real-system boundary crossing during evaluations. These are strong external correspondences, but they are less distinctive than the combined multi-agent event and investigation.</p>
+            <a href="https://openai.com/index/model-misalignment-reporting-framework/" class="text-link" target="_blank" rel="noopener noreferrer">OpenAI framework ↗</a>
+            <a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" class="text-link" target="_blank" rel="noopener noreferrer">Anthropic assessment ↗</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="4" data-kicker="05 · independent research convergence" data-caption="Independent 2026 papers separately formalize persistent-memory contamination and trajectory-level safety drift, supporting RCA mechanism classes without reproducing the complete architecture.">
+            <span class="story-step-meta convergence">05 · post-date literature</span>
+            <h3>Independent literature converges on memory and trajectory drift.</h3>
+            <p><em>Remembering More, Risking More</em> examines longitudinal safety degradation and temporal contamination in memory-equipped agents. <em>SafetyDrift</em> models safety as a trajectory-level process in which individually plausible actions accumulate toward unsafe behavior.</p>
             <a href="https://arxiv.org/abs/2605.17830" class="text-link" target="_blank" rel="noopener noreferrer">Memory-safety paper ↗</a>
             <a href="https://arxiv.org/abs/2603.27148" class="text-link" target="_blank" rel="noopener noreferrer">SafetyDrift ↗</a>
           </article>
 
-          <article class="evidence-story-step" data-story-step="3" data-kicker="04 · quantitative correspondence" data-caption="The current audit compares the earlier Rpred≈0.0100 with a later incident reconstruction R2026≈0.0104; independent reconstruction and broader generalization remain open.">
-            <span class="story-step-meta supported">04 · prospective quantitative test</span>
-            <h3>The propagation/correction forecast is compared with a later incident reconstruction.</h3>
-            <p>The earlier program recorded <code>R_pred≈0.0100</code>. The later incident reconstruction gives <code>R_2026≈0.0104</code>, approximately a 4% relative difference. This is the strongest numerical correspondence in the current RCA audit, while independent reconstruction and out-of-sample generalization remain necessary.</p>
-            <a href="../publications/recursive-ai-propagation-correction-criticality.html" class="text-link">Open the propagation/correction audit →</a>
+          <article class="evidence-story-step" data-story-step="5" data-kicker="06 · institutional response" data-caption="DeepMind's later control roadmap converges on monitoring and containment requirements, but an institutional response is weaker confirmation than observed failure behavior or an independent quantitative replication.">
+            <span class="story-step-meta conditional">06 · control-architecture convergence</span>
+            <h3>Institutional response is relevant, but it belongs below empirical evidence.</h3>
+            <p>DeepMind's AI Control Roadmap later emphasizes stronger monitoring and containment for increasingly capable agents. That supports the importance of the control problem, but it does not independently reproduce a predicted failure event.</p>
+            <a href="https://deepmind.google/blog/securing-the-future-of-ai-agents/" class="text-link" target="_blank" rel="noopener noreferrer">DeepMind roadmap ↗</a>
           </article>
 
-          <article class="evidence-story-step" data-story-step="4" data-kicker="05 · graded audit" data-caption="The retained audit separates strong mechanism correspondence, structural convergence, partial precursors, open validation items, and future milestones.">
-            <span class="story-step-meta convergence">05 · evidence partition</span>
-            <h3>The audit preserves correspondence classes instead of collapsing them into a single score.</h3>
-            <p>The current ledger retains 42 audit items: 15 strong mechanism or quantitative correspondences, 10 structural convergences, 10 partial or precursor cases, 1 open validation item, and 6 prospective or unestablished milestones.</p>
-          </article>
-
-          <article class="evidence-story-step" data-story-step="5" data-kicker="06 · future windows" data-caption="Early mechanism classes now have post-disclosure evidence; the later 2027–2030 forecast windows remain prospective and are not scored as completed.">
-            <span class="story-step-meta open">06 · unclosed forecast windows</span>
-            <h3>Future-window milestones remain prospectively testable.</h3>
-            <p>The 2027–2030 stages remain open. Their evidentiary value comes from having been stated before those windows, not from treating 2026 mechanism-level convergence as validation of future outcomes.</p>
+          <article class="evidence-story-step" data-story-step="6" data-kicker="07 · open forecast windows" data-caption="The later 2027–2030 RCA milestones remain prospective; 2026 mechanism correspondence is not used to score future outcomes as complete.">
+            <span class="story-step-meta open">07 · prospective</span>
+            <h3>Future-window milestones remain unscored.</h3>
+            <p>The 2027–2030 stages remain open. Their evidentiary value comes from being stated in advance and evaluated when their windows close—not from extrapolating current mechanism-level correspondence into future confirmation.</p>
           </article>
         </div>
-
       </div>
     </section>
 
     <section class="priority-section" id="patents" aria-labelledby="patent-title">
-      <p class="eyebrow">Filed intellectual-property chronology</p>
+      <p class="eyebrow">02 · Documentary / legal priority</p>
       <h2 id="patent-title">Patent-Family Priority Registry</h2>
       <p class="section-lede">These dates record the earliest priority date reported for each filed family and the later filing stage shown in the portfolio. They do not establish patentability, validity, enforceability, claim scope, or infringement.</p>
       <div class="table-wrap patent-wrap"><table class="patent-table"><thead><tr><th>Family / docket</th><th>Earliest priority</th><th>Later filing</th><th>Public scope</th><th>Status</th></tr></thead><tbody>
@@ -712,7 +730,7 @@
     </section>
 
     <section class="priority-section" id="ledger" aria-labelledby="ledger-title">
-      <p class="eyebrow">04 · Audit table</p>
+      <p class="eyebrow">03b · Detector audit table</p>
       <h2 id="ledger-title">Current detector and empirical record</h2>
       <p class="section-lede">The storytelling sections above show the logic. This table preserves the compact audit state: prospective detector forecasts, public-data phenomenology, frozen holdouts, conditional signals, and open replication requirements.</p>
       <div class="ledger-wrap">
@@ -767,7 +785,7 @@
     </section>
 
     <section class="priority-section" aria-labelledby="convergence-title">
-      <p class="eyebrow">Verified comparison layer</p>
+      <p class="eyebrow">04 · Broader post-date convergence</p>
       <h2 id="convergence-title">Later External Works Overlapping Earlier Reyes Disclosures</h2>
       <p class="section-lede">These six date-checked cases document later external publications whose mechanisms materially overlap specific earlier Reyes disclosures. Their inclusion establishes chronology and structural correspondence only; it does not determine influence or derivation.</p>
       <div class="table-wrap"><table class="convergence-table"><thead><tr><th>Case</th><th>Earlier WCT anchor</th><th>Later external work</th><th>Mechanism-level correspondence</th><th>Provenance status</th><th>Class</th></tr></thead><tbody>
@@ -791,7 +809,7 @@
     </section>
 
     <section class="priority-section" id="claims" aria-labelledby="claims-title">
-      <p class="eyebrow">DOI-backed source layer</p>
+      <p class="eyebrow">08 · Full DOI-backed source layer</p>
       <h2 id="claims-title">Claim-Level Scholarly Priority Registry</h2>
       <p class="section-lede">The table maps distinctive claims and architectures in the Richard J. Reyes research corpus to their earliest public archival records.</p>
       <div class="registry-tools">
@@ -906,6 +924,6 @@
     measure();
   })();
 </script>
-<script src="../site-nav.js?v=20261007-rcamount1" defer></script>
+<script src="../site-nav.js?v=20261007-strength1" defer></script>
 </body>
 </html>
