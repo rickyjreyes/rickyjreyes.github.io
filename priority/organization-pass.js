@@ -84,6 +84,31 @@
         #key-priority-anchors .priority-anchor-id{grid-column:2;text-align:left;margin-top:-8px}
         #rca-prediction-audit .rca-group-grid{grid-template-columns:1fr}
       }
+      .rca-validation-record{
+        margin-top:48px;
+        padding-top:10px;
+        border-top:1px solid rgba(103,212,255,.22);
+      }
+      .rca-validation-record>.priority-section{
+        padding:38px 0!important;
+        border-top:1px solid var(--line)!important;
+      }
+      .rca-validation-record>.priority-section:first-child{
+        border-top:0!important;
+        padding-top:28px!important;
+      }
+      .rca-validation-record #expanded-evidence{
+        border-top:0!important;
+      }
+      .rca-validation-record #verified-predictions,
+      .rca-validation-record #rca-prediction-audit{
+        max-width:none;
+      }
+      .rca-validation-record .prediction-grid,
+      .rca-validation-record .evidence-grid{
+        max-width:none;
+      }
+
       @media(max-width:620px){
         .priority-head .audit-strip>div{border-right:0!important;border-bottom:1px solid var(--line)!important}
         .priority-head .audit-strip>div:last-child{border-bottom:0!important}
@@ -362,20 +387,34 @@
 
   const reorderSections = () => {
     const main = $('.priority-shell');
-    if (!main) return;
-    const rights = $('[aria-labelledby="rights-title"]', main);
-    if (!rights) return;
-    const order = [
-      $('#key-priority-anchors'),
-      $('#scholarly-priority') || $('[aria-labelledby="claims-title"]'),
-      $('#patent-priority') || $('[aria-labelledby="patent-title"]'),
-      $('#verified-predictions'),
-      $('#rca-prediction-audit'),
-      $('#expanded-evidence'),
-      $('#verified-convergence') || $('[aria-labelledby="convergence-title"]'),
-      $('#historical-controls') || $('[aria-labelledby="controls-title"]')
-    ].filter(Boolean);
-    order.forEach(section => main.insertBefore(section, rights));
+    const rca = $('#rca-confirmation');
+    if (!main || !rca) return;
+
+    let mount = $('#rca-validation-record', rca);
+    if (!mount) {
+      mount = document.createElement('div');
+      mount.id = 'rca-validation-record';
+      mount.className = 'rca-validation-record';
+      mount.setAttribute('aria-label', 'RCA validation and external evidence record');
+      rca.appendChild(mount);
+    }
+
+    const external = $('#expanded-evidence');
+    const verified = $('#verified-predictions');
+    const audit = $('#rca-prediction-audit');
+
+    // These are the actual runtime-generated sections. Move them into the RCA
+    // narrative instead of leaving duplicated summaries near the top while the
+    // real validation record is appended to the bottom of <main>.
+    [external, verified, audit].filter(Boolean).forEach(section => {
+      section.classList.add('rca-validation-detail');
+      mount.appendChild(section);
+    });
+
+    // Keep the general WCT chronology outside the RCA evidence stack.
+    const anchors = $('#key-priority-anchors');
+    const claims = $('#scholarly-priority') || $('[aria-labelledby="claims-title"]');
+    if (anchors && claims && anchors.parentNode === main) main.insertBefore(anchors, claims);
   };
 
   const run = () => {

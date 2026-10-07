@@ -2,6 +2,20 @@
   const path = location.pathname.replace(/index\.html$/i, '');
   if (path !== '/priority/') return;
 
+  const getRcaValidationMount = (main) => {
+    const rca = document.getElementById('rca-confirmation');
+    if (!rca) return main;
+    let mount = document.getElementById('rca-validation-record');
+    if (!mount) {
+      mount = document.createElement('div');
+      mount.id = 'rca-validation-record';
+      mount.className = 'rca-validation-record';
+      mount.setAttribute('aria-label', 'RCA validation and external evidence record');
+      rca.appendChild(mount);
+    }
+    return mount;
+  };
+
   const makeDetails = (section, summaryTitle, summaryMeta) => {
     if (!section || section.querySelector(':scope > details.priority-fold')) return;
     const h2 = section.querySelector(':scope > h2');
@@ -307,9 +321,8 @@
       </div>
     `;
 
-    const rules = document.querySelector('[aria-labelledby="rules-title"]');
-    if (rules && rules.nextSibling) rules.parentNode.insertBefore(section, rules.nextSibling);
-    else main.appendChild(section);
+    const mount = getRcaValidationMount(main);
+    mount.appendChild(section);
   };
 
   const buildEvidence = (main) => {
@@ -341,13 +354,10 @@
       <div class="evidence-actions"><a class="button primary" href="../overlap/?track=ai">Open the 39-record AI evidence ledger</a><a class="button secondary" href="external-convergence.json">Convergence evidence JSON</a><a class="button secondary" href="../publications/recursive-ai-drift-audit.html">Recursive AI Drift audit</a></div>
     `;
 
+    const mount = getRcaValidationMount(main);
     const verified = document.getElementById('verified-predictions');
-    if (verified && verified.nextSibling) verified.parentNode.insertBefore(section, verified.nextSibling);
-    else {
-      const rules = document.querySelector('[aria-labelledby="rules-title"]');
-      if (rules && rules.nextSibling) rules.parentNode.insertBefore(section, rules.nextSibling);
-      else main.appendChild(section);
-    }
+    if (verified && verified.parentNode === mount) mount.insertBefore(section, verified);
+    else mount.appendChild(section);
   };
 
   const simplifyAuditStrip = () => {
