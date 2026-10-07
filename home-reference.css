@@ -411,6 +411,11 @@
   fill:var(--text);
   font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
+.sobolev-scaling-panel [data-sobolev-norm]{
+  font-size:9.4px;
+  letter-spacing:-.02em;
+}
+
 .sobolev-controls{
   display:none;
   position:absolute;
