@@ -140,9 +140,9 @@
       </div>
     `;
 
-    const expandedEvidence = document.getElementById('expanded-evidence');
-    if (expandedEvidence && expandedEvidence.parentNode) {
-      expandedEvidence.parentNode.insertBefore(section, expandedEvidence);
+    const mount = document.getElementById('rca-validation-record');
+    if (mount) {
+      mount.appendChild(section);
     } else if (verified.nextSibling) {
       verified.parentNode.insertBefore(section, verified.nextSibling);
     } else {
