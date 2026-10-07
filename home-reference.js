@@ -114,10 +114,11 @@
       bctx.putImageData(img,0,0);ctx.drawImage(buf,0,0,canvas.width,canvas.height);
     };
     render(.8);
-    const start=performance.now();
+    const start=performance.now();let lastHero=0;
     const loop=(ts)=>{
       if(!heroVisible||reduced.matches){heroRaf=0;return}
-      render((ts-start)/1000);heroRaf=requestAnimationFrame(loop);
+      if(ts-lastHero>40){render((ts-start)/1000);lastHero=ts}
+      heroRaf=requestAnimationFrame(loop);
     };
     if('IntersectionObserver'in window){
       const io=new IntersectionObserver(([entry])=>{
@@ -168,9 +169,11 @@
     const uy=(aa*(c[0]-b[0])+bb*(a[0]-c[0])+cc*(b[0]-a[0]))/d;
     return [ux,uy,Math.hypot(ux-b[0],uy-b[1])];
   };
-  let theoryRaf=0;
+  let theoryRaf=0,theoryVisible=true,lastTheory=0;
   const theoryLoop=(ts)=>{
-    if(reduced.matches){theoryRaf=0;return}
+    if(reduced.matches||!theoryVisible||innerWidth<=1050){theoryRaf=0;return}
+    if(ts-lastTheory<32){theoryRaf=requestAnimationFrame(theoryLoop);return}
+    lastTheory=ts;
     const t=ts/1000;
     if(activeStage===0){
       waves.forEach((path,i)=>{
@@ -201,7 +204,17 @@
     }
     theoryRaf=requestAnimationFrame(theoryLoop);
   };
-  if(theoryVisual && !reduced.matches) theoryRaf=requestAnimationFrame(theoryLoop);
+  if(theoryVisual){
+    if('IntersectionObserver'in window){
+      const theoryIo=new IntersectionObserver(([entry])=>{
+        theoryVisible=entry.isIntersecting;
+        if(theoryVisible&&!reduced.matches&&innerWidth>1050&&!theoryRaf)theoryRaf=requestAnimationFrame(theoryLoop);
+      },{rootMargin:'120px'});
+      theoryIo.observe(theoryVisual);
+    }else if(!reduced.matches&&innerWidth>1050){
+      theoryRaf=requestAnimationFrame(theoryLoop);
+    }
+  }
 
   // Equation: numerical (2,3) torus knot, curvature/torsion spectral rate.
   const buildEquation=()=>{
@@ -273,8 +286,15 @@
   buildEquation();
 
   addEventListener('scroll',schedule,{passive:true});
-  addEventListener('resize',schedule,{passive:true});
-  reduced.addEventListener?.('change',()=>{ if(reduced.matches){setStage(3);renderEquationProgress(1)} schedule(); });
+  addEventListener('resize',()=>{
+    schedule();
+    if(theoryVisible&&!reduced.matches&&innerWidth>1050&&!theoryRaf)theoryRaf=requestAnimationFrame(theoryLoop);
+  },{passive:true});
+  reduced.addEventListener?.('change',()=>{
+    if(reduced.matches){setStage(3);renderEquationProgress(1)}
+    else if(theoryVisible&&innerWidth>1050&&!theoryRaf)theoryRaf=requestAnimationFrame(theoryLoop);
+    schedule();
+  });
   setStage(innerWidth<=1050||reduced.matches?3:0);
   root.classList.add('reference-ready');
   updateScroll();
