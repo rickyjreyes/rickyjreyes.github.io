@@ -61,7 +61,8 @@
     "ledgerRank": "Sequential display rank derived from domain ordering and descending Post-Date Overlap Score; it is not a stable research identifier.",
     "overlapScore": "Heuristic 0-10 comparison score for density and specificity of technical correspondence; it is not a probability.",
     "wctAnchors": "Exact dated WCT claim anchors only when chronology normalization has recorded them; an empty array means not yet normalized.",
-    "verificationStatus": "Machine-readable audit state for this record."
+    "verificationStatus": "Machine-readable audit state for this record.",
+    "displayRelationship": "Public evidence-category label used by the /overlap interface; separate from the stricter audit relationship field and does not by itself establish derivation, influence, or completion of prior-art normalization."
   },
   "records": [
     {
@@ -5736,7 +5737,10 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "displayRelationship": "EMPIRICAL CONVERGENCE",
+      "relationshipRationale": "Long-horizon threat evaluation with persistent shadow memory and experimentally evaluated detection/mitigation.",
+      "relationshipLastReviewed": "2026-10-07"
     },
     {
       "ledgerRank": 199,
@@ -5760,7 +5764,10 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "displayRelationship": "POST-DATE CONVERGENCE",
+      "relationshipRationale": "Closed-loop recursive self-improvement and autonomous research loops materially correspond to the RCA recursive-agent mechanism class.",
+      "relationshipLastReviewed": "2026-10-07"
     },
     {
       "ledgerRank": 200,
@@ -5846,7 +5853,10 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "displayRelationship": "POST-DATE CONVERGENCE",
+      "relationshipRationale": "Later synthesis explicitly covers persistent state corruption, multi-agent propagation, tool-mediated control, and long-horizon agent risks.",
+      "relationshipLastReviewed": "2026-10-07"
     },
     {
       "ledgerRank": 203,
@@ -5922,7 +5932,10 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "displayRelationship": "POST-DATE CONVERGENCE",
+      "relationshipRationale": "Later survey centers persistence, statefulness, propagation, rollback, provenance, and governance across agent memory lifecycles.",
+      "relationshipLastReviewed": "2026-10-07"
     },
     {
       "ledgerRank": 206,
@@ -6004,7 +6017,10 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "displayRelationship": "POST-DATE CONVERGENCE",
+      "relationshipRationale": "Later work explicitly connects memory poisoning with persistent memory and risks arising from interactions between agents.",
+      "relationshipLastReviewed": "2026-10-07"
     },
     {
       "ledgerRank": 209,
@@ -6026,7 +6042,10 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "displayRelationship": "POST-DATE CONVERGENCE",
+      "relationshipRationale": "Later system implements a closed-loop self-evolving multi-agent protocol with persistent/versioned state, assessment, and rollback.",
+      "relationshipLastReviewed": "2026-10-07"
     },
     {
       "ledgerRank": 210,
