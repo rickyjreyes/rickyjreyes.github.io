@@ -103,6 +103,7 @@
           <div class="timeline-shell">
             <div id="timeline-bars" class="timeline-bars" aria-label="Monthly evidence chronology"></div>
             <div id="timeline-anchor" class="timeline-anchor" aria-hidden="true"><span></span></div>
+            <div id="timeline-tooltip" class="timeline-tooltip" role="tooltip" hidden></div>
           </div>
           <div id="timeline-axis" class="timeline-axis" aria-hidden="true"></div>
           <div class="timeline-legend" aria-label="Timeline relationship legend">
@@ -342,17 +343,43 @@
       data.forEach(r=>{const ym=recordYm(r);if(byMonth.has(ym))byMonth.get(ym).push(r);});
       const max=Math.max(1,...[...byMonth.values()].map(v=>v.length));
       const relOrder=['STRUCTURAL OVERLAP','INSTITUTIONAL RESPONSE','EMPIRICAL CONVERGENCE','POST-DATE CONVERGENCE','DIRECT ADOPTION'];
-      document.getElementById('timeline-bars').innerHTML=timelineMonths.map(ym=>{
+      const bars=document.getElementById('timeline-bars');
+      bars.innerHTML=timelineMonths.map(ym=>{
         const items=byMonth.get(ym)||[];
         const counts={};items.forEach(r=>{const label=relationship(r);counts[label]=(counts[label]||0)+1;});
         const total=items.length;
         const stack=relOrder.map(label=>{
           const count=counts[label]||0;if(!count)return '';
           const h=Math.max(3,(count/max)*100);
-          return `<span class="timeline-segment ${relationClass(label)}" style="height:${h}%" title="${esc(label)}: ${count}"></span>`;
+          return `<span class="timeline-segment ${relationClass(label)}" style="height:${h}%" aria-hidden="true"></span>`;
         }).join('');
-        return `<div class="timeline-month" title="${esc(monthLabel(ym))}: ${total} dated record${total===1?'':'s'}"><div class="timeline-stack">${stack}</div></div>`;
+        return `<div class="timeline-month" data-month="${ym}" tabindex="0" aria-label="${esc(monthLabel(ym))}: ${total} dated record${total===1?'':'s'}"><div class="timeline-stack">${stack}</div></div>`;
       }).join('');
+
+      const tooltip=document.getElementById('timeline-tooltip');
+      const showTooltip=(el)=>{
+        const ym=el.dataset.month;
+        const items=byMonth.get(ym)||[];
+        const counts={};items.forEach(r=>{const label=relationship(r);counts[label]=(counts[label]||0)+1;});
+        const rows=relOrder.filter(label=>counts[label]).reverse().map(label=>`<span class="timeline-tip-row"><i class="${relationClass(label)}"></i><span>${esc(label)}</span><strong>${counts[label]}</strong></span>`).join('');
+        tooltip.innerHTML=`<strong class="timeline-tip-month">${esc(monthLabel(ym))}</strong><span class="timeline-tip-total">${items.length} dated record${items.length===1?'':'s'}</span>${rows||'<span class="timeline-tip-empty">No dated records</span>'}`;
+        const index=timelineMonths.indexOf(ym);
+        const pct=((index+.5)/timelineMonths.length)*100;
+        tooltip.style.left=`${Math.min(88,Math.max(12,pct))}%`;
+        tooltip.hidden=false;
+        bars.querySelectorAll('.timeline-month').forEach(node=>node.classList.toggle('is-hovered',node===el));
+      };
+      const hideTooltip=()=>{
+        tooltip.hidden=true;
+        bars.querySelectorAll('.timeline-month.is-hovered').forEach(node=>node.classList.remove('is-hovered'));
+      };
+      bars.querySelectorAll('.timeline-month').forEach(el=>{
+        el.addEventListener('pointerenter',()=>showTooltip(el));
+        el.addEventListener('pointerleave',hideTooltip);
+        el.addEventListener('focus',()=>showTooltip(el));
+        el.addEventListener('blur',hideTooltip);
+      });
+
       document.getElementById('timeline-axis').innerHTML=timelineMonths.map((ym,i)=>i%3===0||i===timelineMonths.length-1?`<span style="grid-column:${i+1}">${esc(monthLabel(ym).replace(' 20',' ’'))}</span>`:'').join('');
       const anchorIndex=timelineMonths.indexOf(anchorYm[activeTrack]);
       const anchor=document.getElementById('timeline-anchor');
