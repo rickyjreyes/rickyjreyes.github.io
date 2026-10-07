@@ -188,12 +188,6 @@ window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
     "source": "University of Southampton",
     "note": "The live project page gives a closing date but no publication/posting date."
   },
-  "10.1364/OE.550102": {
-    "date": "2025-02-07",
-    "precision": "day",
-    "status": "verified",
-    "source": "Optics Express"
-  },
   "10.1016/j.optlastec.2026.115113": {
     "date": "2026-08",
     "precision": "month",
@@ -260,12 +254,6 @@ window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
     "status": "verified",
     "source": "Physical Review A"
   },
-  "10.3390/jmmp9030085": {
-    "date": "2025-03-06",
-    "precision": "day",
-    "status": "verified",
-    "source": "Journal of Manufacturing and Materials Processing / MDPI"
-  },
   "10.1038/s41467-025-63850-z": {
     "date": "2025-09-19",
     "precision": "day",
@@ -289,12 +277,6 @@ window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
     "precision": "month",
     "status": "verified-month",
     "source": "Chaos, Solitons & Fractals / ScienceDirect"
-  },
-  "10.1038/s42005-025-01934-4": {
-    "date": "2025-01-25",
-    "precision": "day",
-    "status": "verified",
-    "source": "Communications Physics"
   },
   "10.1038/s41566-025-01840-9": {
     "date": "2026-02-02",
