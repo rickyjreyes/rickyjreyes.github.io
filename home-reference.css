@@ -336,90 +336,142 @@
   filter:drop-shadow(0 0 6px rgba(182,255,218,.45));
 }
 
-/* Sobolev stage 03: dimension-dependent projected packet and exact
-   Gaussian Laplacian norm exponent. This is not a PDE solution. */
+/* Stage 03: a nearly text-free, dimension-driven concentration comparison.
+   The diverging 5D/6D peak represents analytic Gaussian H² scaling, not WCT
+   numerical dynamics or an empirical statement. */
 .sobolev-field-panel,.sobolev-scaling-panel{
-  fill:rgba(8,19,33,.65);
+  fill:rgba(8,19,33,.57);
   stroke:var(--line-strong);
   stroke-width:1;
 }
-.sobolev-scaling-panel{fill:rgba(12,25,43,.58)}
+.sobolev-scaling-panel{fill:rgba(12,25,43,.63)}
+.sobolev-title{
+  fill:var(--text);
+  font:600 22px/1 Georgia,"Times New Roman",serif;
+}
+.sobolev-regime-key{
+  fill:var(--accent-3);
+  font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+.sobolev-regime-key.critical{fill:var(--accent)}
+.sobolev-regime-key.supercritical{fill:var(--accent-2)}
+.sobolev-dimension-big{
+  fill:var(--text);
+  font:700 33px/1 Georgia,"Times New Roman",serif;
+}
+.sobolev-state{
+  fill:var(--accent-3);
+  font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+.sobolev-state.critical{fill:var(--accent)}
+.sobolev-state.supercritical{fill:var(--accent-2)}
 .sobolev-dimensional-lattice,.sobolev-packet-contours,
-.sobolev-packet-particles{pointer-events:none}
-.sobolev-lattice-line{
+.sobolev-packet-particles,.sobolev-spike-rays{pointer-events:none}
+.sobolev-lattice-line,.sobolev-ghost-line{
   fill:none;
   stroke:var(--accent);
   stroke-width:1;
   stroke-linecap:round;
-  stroke-linejoin:round;
-  opacity:.45;
+  opacity:.35;
   vector-effect:non-scaling-stroke;
 }
 .sobolev-ghost-line{
-  fill:none;
   stroke:var(--accent-2);
-  stroke-width:1;
-  stroke-dasharray:4 5;
-  opacity:.55;
-  vector-effect:non-scaling-stroke;
+  stroke-dasharray:3 6;
+  opacity:.28;
 }
-.sobolev-ghost-line.critical{opacity:.78}
+.sobolev-ghost-line.supercritical{opacity:.46}
 .sobolev-contour{
   fill:none;
   stroke:var(--accent-3);
-  stroke-width:1.15;
-  stroke-linecap:round;
-  opacity:.42;
+  stroke-width:1.1;
+  opacity:.32;
   vector-effect:non-scaling-stroke;
 }
-.sobolev-contour.violet{stroke:var(--accent-2);opacity:.47}
+.sobolev-contour.violet{stroke:var(--accent-2)}
+.sobolev-baseline{
+  fill:none;
+  stroke:var(--line-strong);
+  stroke-width:1;
+  stroke-dasharray:3 6;
+}
 .sobolev-peak{
   fill:none;
   stroke:var(--accent-3);
-  stroke-width:2.1;
+  stroke-width:2.4;
   stroke-linecap:round;
   stroke-linejoin:round;
-  filter:drop-shadow(0 0 5px rgba(182,255,218,.22));
+  filter:drop-shadow(0 0 6px rgba(182,255,218,.24));
   vector-effect:non-scaling-stroke;
 }
-.sobolev-peak.critical{
+.sobolev-peak.critical{stroke:var(--accent)}
+.sobolev-peak.supercritical{
   stroke:var(--accent-2);
-  filter:drop-shadow(0 0 5px rgba(139,124,255,.25));
+  stroke-width:3;
+  filter:drop-shadow(0 0 9px rgba(139,124,255,.48));
 }
-.sobolev-graph-axis,.sobolev-graph-grid{
-  fill:none;stroke:var(--line-strong);stroke-width:1;vector-effect:non-scaling-stroke
+.sobolev-peak-fill{fill:rgba(182,255,218,.06)}
+.sobolev-peak-fill.critical{fill:rgba(103,212,255,.07)}
+.sobolev-peak-fill.supercritical{fill:url(#sobolev-spike-glow)}
+.sobolev-peak-node{fill:var(--accent-3)}
+.sobolev-peak-node.critical{fill:var(--accent)}
+.sobolev-peak-node.supercritical{
+  fill:var(--accent-2);
+  filter:drop-shadow(0 0 8px rgba(139,124,255,.7));
 }
-.sobolev-graph-grid{stroke-dasharray:3 6;opacity:.6}
-.sobolev-scaling-line{
-  fill:none;stroke:var(--accent-3);stroke-width:2;
-  stroke-linecap:round;stroke-linejoin:round;
+.sobolev-supercritical-ray{
+  stroke:var(--accent-2);
+  stroke-width:1.1;
+  stroke-linecap:round;
   vector-effect:non-scaling-stroke;
 }
-.sobolev-scaling-line.critical{stroke:var(--accent-2)}
-.sobolev-scaling-marker{
-  fill:var(--accent-3);
-  stroke:var(--bg-deep);
-  stroke-width:1.4;
+.sobolev-focus-readout{
+  fill:var(--muted);
+  font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
-.sobolev-scaling-marker.critical{fill:var(--accent-2)}
-.sobolev-state{
-  fill:var(--accent-3);
-  font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-}
-.sobolev-state.critical{fill:var(--accent-2)}
-.sobolev-scaling-slope{
+.sobolev-gain{
   fill:var(--text);
+  font:600 24px/1 Georgia,"Times New Roman",serif;
+}
+.sobolev-exponent{
+  fill:var(--muted);
   font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
-.sobolev-scaling-panel [data-sobolev-norm]{
-  font-size:9.4px;
-  letter-spacing:-.02em;
+.sobolev-graph-axis,.sobolev-graph-grid{
+  fill:none;
+  stroke:var(--line-strong);
+  stroke-width:1;
+  vector-effect:non-scaling-stroke;
 }
-
+.sobolev-graph-grid{stroke-dasharray:3 6;opacity:.55}
+.sobolev-reference-curve{
+  fill:none;
+  stroke-width:1;
+  vector-effect:non-scaling-stroke;
+  opacity:.26;
+}
+.sobolev-reference-curve.subcritical{stroke:var(--accent-3)}
+.sobolev-reference-curve.critical{stroke:var(--accent)}
+.sobolev-reference-curve.supercritical{stroke:var(--accent-2)}
+.sobolev-scaling-line{
+  fill:none;
+  stroke:var(--accent-3);
+  stroke-width:2.4;
+  stroke-linecap:round;
+  vector-effect:non-scaling-stroke;
+}
+.sobolev-scaling-line.critical{stroke:var(--accent)}
+.sobolev-scaling-line.supercritical{
+  stroke:var(--accent-2);
+  stroke-width:2.8;
+}
+.sobolev-scaling-marker{fill:var(--accent-3);stroke:var(--bg-deep);stroke-width:1.5}
+.sobolev-scaling-marker.critical{fill:var(--accent)}
+.sobolev-scaling-marker.supercritical{fill:var(--accent-2)}
 .sobolev-controls{
   display:none;
   position:absolute;
-  bottom:10px;
+  bottom:8px;
   left:50%;
   transform:translateX(-50%);
   width:max-content;
@@ -431,22 +483,21 @@
   padding:6px 9px;
   z-index:3;
   border:1px solid var(--line-strong);
-  border-radius:12px;
-  background:rgba(4,10,18,.92);
+  border-radius:11px;
+  background:rgba(4,10,18,.94);
   box-shadow:0 8px 24px rgba(0,0,0,.24);
 }
 .wct-theory-visual[data-stage="2"] .sobolev-controls{display:flex}
 .sobolev-controls button{
   cursor:pointer;
-  min-width:34px;
+  min-width:32px;
   min-height:28px;
-  padding:3px 8px;
+  padding:4px 6px;
   color:var(--muted);
   background:rgba(14,29,48,.8);
   border:1px solid var(--line);
   border-radius:7px;
-  font:700 .65rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  transition:color .12s ease,border-color .12s ease,background-color .12s ease;
+  font:700 .64rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 .sobolev-controls button[aria-pressed="true"]{
   color:var(--bg-deep);
@@ -454,28 +505,23 @@
   border-color:var(--accent-3);
 }
 .sobolev-controls button.critical[aria-pressed="true"]{
-  color:var(--bg-deep);
-  background:var(--accent-2);
-  border-color:var(--accent-2);
+  color:var(--bg-deep);background:var(--accent);border-color:var(--accent)
 }
-.sobolev-controls button:focus-visible{
-  outline:2px solid var(--accent);outline-offset:2px;
+.sobolev-controls button.supercritical[aria-pressed="true"]{
+  color:var(--bg-deep);background:var(--accent-2);border-color:var(--accent-2)
 }
-.sobolev-control-caption{
-  color:var(--text);
-  font-size:.61rem;font-weight:800;
-  letter-spacing:.07em;text-transform:uppercase;
-  margin-right:4px;
-}
-.sobolev-control-note{
+.sobolev-controls button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sobolev-control-caption,.sobolev-control-note{
   color:var(--muted-2);
-  font-size:.58rem;white-space:nowrap;
-  margin-left:5px;
+  font:700 .61rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing:.05em;
 }
+.sobolev-control-caption{margin-right:4px}
+.sobolev-control-note{margin-left:4px}
 .wct-theory-step .sobolev-source-links{
   margin-top:13px;
-  font-size:.73rem;
-  line-height:1.55;
+  font-size:.72rem;
+  line-height:1.5;
   color:var(--muted-2);
 }
 .sobolev-source-links a{color:var(--accent);text-underline-offset:3px}
