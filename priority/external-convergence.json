@@ -5059,7 +5059,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08-26",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "METR / Redwood Research"
+      }
     },
     {
       "ledgerRank": 175,
@@ -5104,7 +5111,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08-26",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "OpenAI"
+      }
     },
     {
       "ledgerRank": 177,
@@ -5162,7 +5176,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-09-16",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "OpenAI"
+      }
     },
     {
       "ledgerRank": 179,
@@ -5215,7 +5236,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-07-21",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "OpenAI"
+      }
     },
     {
       "ledgerRank": 181,
@@ -5342,7 +5370,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2025-12-09",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "OWASP GenAI Security Project"
+      }
     },
     {
       "ledgerRank": 186,
@@ -5473,7 +5508,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-09-09",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Anthropic"
+      }
     },
     {
       "ledgerRank": 191,
@@ -5547,7 +5589,15 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-05-19",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "last-updated",
+        "dateSource": "METR",
+        "dateNote": "Maintained catalogue; source states LAST UPDATED May 19, 2026."
+      }
     },
     {
       "ledgerRank": 194,
@@ -5764,7 +5814,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-07-13",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Anthropic Alignment Science"
+      }
     },
     {
       "ledgerRank": 202,
@@ -5812,7 +5869,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-18",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Google DeepMind"
+      }
     },
     {
       "ledgerRank": 204,
@@ -5881,7 +5945,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-03-16",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Apollo Research"
+      }
     },
     {
       "ledgerRank": 207,
@@ -6095,7 +6166,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-03-19",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "OpenAI"
+      }
     },
     {
       "ledgerRank": 215,
@@ -6329,7 +6407,15 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08-28",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "first-public-version",
+        "dateSource": "arXiv first public version / Anthropic Alignment Science",
+        "dateNote": "First public version of arXiv:2608.28945 dated August 28, 2026."
+      }
     },
     {
       "ledgerRank": 224,
@@ -6355,7 +6441,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-11",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Google DeepMind"
+      }
     },
     {
       "ledgerRank": 225,
@@ -6404,7 +6497,15 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2025-09-22",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "first-publication",
+        "dateSource": "Google DeepMind",
+        "dateNote": "Original publication September 22, 2025; page updated April 17, 2026."
+      }
     },
     {
       "ledgerRank": 227,
@@ -6501,7 +6602,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-03-05",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "OpenAI"
+      }
     },
     {
       "ledgerRank": 231,
@@ -6523,7 +6631,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-07-05",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Apollo Research"
+      }
     },
     {
       "ledgerRank": 232,
@@ -6768,7 +6883,15 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2025-07",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "MIT Project NANDA report",
+        "dateNote": "Report is dated July 2025; no day is stated in the report date."
+      }
     },
     {
       "ledgerRank": 241,
@@ -6790,7 +6913,15 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-04",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "Technical Disclosure Commons / Digital Commons Network",
+        "dateNote": "The indexed defensive-publication record is dated April 2026; no day was established."
+      }
     }
   ],
   "verifiedCases": [
