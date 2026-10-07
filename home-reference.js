@@ -63,8 +63,6 @@
   const basinFlows=[...document.querySelectorAll('.basin-flow')];
   const shellDots=document.querySelector('[data-shell-dots]');
   const shellBroadband=document.querySelector('[data-shell-broadband]');
-  const shellPulseRing=document.querySelector('[data-shell-pulse-ring]');
-  const shellPhaseTracersGroup=document.querySelector('[data-shell-phase-tracers]');
   const phaseSegmentsGroup=document.querySelector('[data-curvature-phase-segments]');
   const phaseDotsGroup=document.querySelector('[data-curvature-phase-dots]');
   const phaseSeam=document.querySelector('[data-curvature-seam]');
@@ -112,7 +110,8 @@
       el.setAttribute('opacity',String(baseOpacity));
       shellDots.appendChild(el);
       shellOriginalDots.push({
-        el,baseOpacity,baseRadius:i%5===0?3.1:2,phase:i*.73
+        el,baseOpacity,baseRadius:i%5===0?3.1:2,
+        angle:a,orbitRadius:rr,ring:i%3,phase:i*.73
       });
     }
   }
@@ -128,22 +127,9 @@
       el.setAttribute('class',i%3===0?'fill-accent2':'fill-accent');
       el.setAttribute('opacity','.55');
       shellBroadband.appendChild(el);
-      shellBroadbandSamples.push({el,q:rr/136,phase:i*.41});
-    }
-  }
-  // Moving markers trace angular phase on the already-selected k★ circle.
-  // Their fixed radius cannot be confused with migration of Fourier modes.
-  const shellPhaseTracers=[];
-  if(shellPhaseTracersGroup){
-    for(let i=0;i<6;i++){
-      const el=document.createElementNS('http://www.w3.org/2000/svg','circle');
-      el.setAttribute('class','shell-phase-tracer '+(i%3===0?'cyan':i%3===1?'green':'violet'));
-      el.setAttribute('cx','280');
-      el.setAttribute('cy','240');
-      el.setAttribute('r',i%3===0?'2.9':'2.4');
-      el.setAttribute('opacity','0');
-      shellPhaseTracersGroup.appendChild(el);
-      shellPhaseTracers.push({el,theta:i*Math.PI/3,phase:i*1.37});
+      shellBroadbandSamples.push({
+        el,q:rr/136,phase:i*.41,angle:theta,orbitRadius:rr
+      });
     }
   }
   let shellStart=performance.now()/1000;
@@ -538,39 +524,37 @@
 
   const drawShell=t=>{
     if(!shellDots)return;
-    // Preserve every original dot's x/y and the original ring geometry.
-    // Only intensity and subtle marker size change; optional phase tracers
-    // orbit tangentially at a fixed |k|=k★. No wavevectors move radially.
+    // The *original 84 points* now orbit their three unmodified shells.
+    // Their radii (|k|) never change: this is illustrative angular/phase
+    // motion, not a PDE result or wavenumber transfer. The original rings
+    // remain static, and there are no separate orbiting tracer particles.
     const elapsed=Math.max(0,t-shellStart);
     const progress=reduced.matches?1:clamp((elapsed-.35)/5.2);
     const s=progress*progress*(3-2*progress);
     const finish=clamp((s-.63)/.37);
     const cloudFade=1-finish*finish*(3-2*finish);
 
-    for(const {el,q,phase} of shellBroadbandSamples){
+    for(const {el,q,phase,angle,orbitRadius} of shellBroadbandSamples){
       const response=Math.exp(-11*s*Math.pow(q*q-1,2));
       const shimmer=reduced.matches?1:.85+.15*Math.sin(elapsed*1.35+phase);
       el.setAttribute('opacity',(.55*response*cloudFade*shimmer).toFixed(3));
+      // Broadband points swirl tangentially as they attenuate, not radially.
+      const orbit=angle+(reduced.matches?0:.12*elapsed+.07*Math.sin(elapsed*1.2+phase));
+      el.setAttribute('cx',(280+orbitRadius*Math.cos(orbit)).toFixed(2));
+      el.setAttribute('cy',(240+orbitRadius*Math.sin(orbit)).toFixed(2));
     }
-    for(const {el,baseOpacity,baseRadius,phase} of shellOriginalDots){
-      const glow=reduced.matches?1:1+.075*s*Math.sin(elapsed*1.25+phase);
-      const breathe=reduced.matches?1:1+.07*s*Math.sin(elapsed*1.6+phase);
+    // Each of the three existing dotted bands turns at its own rate.
+    // This visibly animates the actual shells' point cloud, not a ring halo.
+    const speeds=[.26,-.20,.15];
+    for(const {el,baseOpacity,baseRadius,angle,orbitRadius,ring,phase} of shellOriginalDots){
+      const drift=speeds[ring]*elapsed;
+      const ripple=.045*(Math.sin(elapsed*1.65+phase)-Math.sin(phase));
+      const theta=angle+(reduced.matches?0:s*(drift+ripple));
+      el.setAttribute('cx',(280+orbitRadius*Math.cos(theta)).toFixed(2));
+      el.setAttribute('cy',(240+orbitRadius*Math.sin(theta)).toFixed(2));
+      const glow=reduced.matches?1:1+.07*s*Math.sin(elapsed*1.3+phase);
       el.setAttribute('opacity',(baseOpacity*(.12+.88*s)*glow).toFixed(3));
-      el.setAttribute('r',(baseRadius*breathe).toFixed(2));
-    }
-    if(shellPulseRing){
-      // Fixed-radius halo: the shell remains in the original location.
-      const pulse=.5+.5*Math.sin(elapsed*1.45);
-      shellPulseRing.setAttribute('opacity',
-        (reduced.matches?0:s*(.055+.12*pulse)).toFixed(3));
-    }
-    for(const {el,theta,phase} of shellPhaseTracers){
-      const angle=theta+elapsed*.22;
-      el.setAttribute('cx',(280+136*Math.cos(angle)).toFixed(2));
-      el.setAttribute('cy',(240+136*Math.sin(angle)).toFixed(2));
-      const twinkle=.55+.45*Math.sin(elapsed*1.4+phase)**2;
-      el.setAttribute('opacity',
-        (reduced.matches?0:s*(.18+.42*twinkle)).toFixed(3));
+      el.setAttribute('r',(baseRadius*(reduced.matches?1:1+.035*s*Math.sin(elapsed*1.6+phase))).toFixed(2));
     }
   };
 
