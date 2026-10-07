@@ -266,8 +266,10 @@
 
     const h2 = $('#rca-prediction-audit-title', section);
     const lede = $('.section-lede', section);
+    const eyebrow = $('.eyebrow', section);
+    if (eyebrow) eyebrow.textContent = '06C · Detailed author-side mechanism and forecast audit';
     if (h2) h2.textContent = 'RCA Mechanism & Forecast Audit';
-    if (lede) lede.textContent = '06 · Author-side reference audit of RCA mechanisms, diagnostics, containment architecture, and frozen forecast milestones. These classifications are supporting audit material, not stronger evidence than the external records and frozen tests above.';
+    if (lede) lede.textContent = '06C · Detailed author-side reference audit of RCA mechanisms, diagnostics, containment architecture, and frozen forecast milestones. These classifications remain supporting audit material, not stronger evidence than the external records and frozen tests above.';
 
     if (!$('.rca-model-summary', section)) {
       const block = document.createElement('div');
@@ -412,10 +414,19 @@
 
     const verified = $('#verified-predictions');
     const audit = $('#rca-prediction-audit');
-    [verified, audit].filter(Boolean).forEach(section => {
-      section.classList.add('supporting-audit-detail');
-      mount.appendChild(section);
-    });
+    if (verified) {
+      verified.classList.add('supporting-audit-detail');
+      mount.appendChild(verified);
+    }
+    if (audit) {
+      audit.classList.add('supporting-audit-detail');
+      const redesignedAudit = $('#rca-audit');
+      if (redesignedAudit && redesignedAudit.parentNode) {
+        redesignedAudit.parentNode.insertBefore(audit, redesignedAudit.nextSibling);
+      } else {
+        mount.appendChild(audit);
+      }
+    }
 
     const anchors = $('#key-priority-anchors');
     if (anchors && claims && claims.parentNode === main) {
