@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.6",
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "title": "WCT External Literature Convergence Audit and Full Post-Date Overlap Ledger",
   "canonical": "https://rickyjreyes.github.io/priority/#convergence-title",
   "registry": "https://rickyjreyes.github.io/priority/",
@@ -169,7 +169,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08-29",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Nature Communications"
+      }
     },
     {
       "ledgerRank": 4,
@@ -191,7 +198,15 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-07-04",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "secondary-date",
+        "dateSource": "ResearchGate author-upload mirror",
+        "dateNote": "Exact Zenodo record metadata was not retrievable during this audit; this is the dated author-upload copy."
+      }
     },
     {
       "ledgerRank": 5,
@@ -283,7 +298,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08-24",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review A"
+      }
     },
     {
       "ledgerRank": 8,
@@ -329,7 +351,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08-25",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review Research"
+      }
     },
     {
       "ledgerRank": 10,
@@ -487,7 +516,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-07",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
+      }
     },
     {
       "ledgerRank": 15,
@@ -513,7 +549,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-05",
+        "dateLabel": "May 2–6, 2026",
+        "datePrecision": "month",
+        "dateStatus": "conference-date",
+        "dateSource": "CLEO 2026 / Optica"
+      }
     },
     {
       "ledgerRank": 16,
@@ -627,7 +670,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-07-17",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Chaos / AIP"
+      }
     },
     {
       "ledgerRank": 20,
@@ -649,7 +699,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-09-18",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "European Physical Journal D / Springer"
+      }
     },
     {
       "ledgerRank": 21,
@@ -675,7 +732,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-05",
+        "dateLabel": "May 2–6, 2026",
+        "datePrecision": "month",
+        "dateStatus": "conference-date",
+        "dateSource": "CLEO 2026 / Optica"
+      }
     },
     {
       "ledgerRank": 22,
@@ -699,7 +763,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-25",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review Letters"
+      }
     },
     {
       "ledgerRank": 23,
@@ -804,7 +875,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-07-29",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Nature"
+      }
     },
     {
       "ledgerRank": 26,
@@ -826,7 +904,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-05-15",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physics Letters A / ScienceDirect"
+      }
     },
     {
       "ledgerRank": 27,
@@ -871,7 +956,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-16",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review E"
+      }
     },
     {
       "ledgerRank": 29,
@@ -922,7 +1014,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-09-23",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Nonlinear Dynamics / Springer"
+      }
     },
     {
       "ledgerRank": 31,
@@ -976,7 +1075,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-07-29",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "CEA IRAMIS"
+      }
     },
     {
       "ledgerRank": 33,
@@ -1100,7 +1206,11 @@
       "externalChronology": {
         "manuscriptDate": "2026-04-22",
         "publicationDate": "2026-07-13",
-        "doi": "10.1364/OL.603068"
+        "doi": "10.1364/OL.603068",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Optics Letters"
       },
       "priorityDirection": "REYES_WCT_BEFORE_EXTERNAL",
       "chronologyAssertion": "A cited Richard J. Reyes / WCT public disclosure predates this external work."
@@ -1176,7 +1286,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-04-01",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Chinese Physics Letters"
+      }
     },
     {
       "ledgerRank": 40,
@@ -1198,7 +1315,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-17",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Zenodo"
+      }
     },
     {
       "ledgerRank": 41,
@@ -1284,7 +1408,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-03-25",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Nature"
+      }
     },
     {
       "ledgerRank": 44,
@@ -1308,7 +1439,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-08",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Preprints.org"
+      }
     },
     {
       "ledgerRank": 45,
@@ -1340,7 +1478,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08-25",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review Letters"
+      }
     },
     {
       "ledgerRank": 46,
@@ -1600,7 +1745,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-09-01",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review Letters"
+      }
     },
     {
       "ledgerRank": 56,
@@ -1624,7 +1776,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-09-01",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Optics Letters"
+      }
     },
     {
       "ledgerRank": 57,
@@ -1647,7 +1806,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-09",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "Physica D / ScienceDirect"
+      }
     },
     {
       "ledgerRank": 58,
@@ -1669,7 +1835,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-05-08",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Zenodo"
+      }
     },
     {
       "ledgerRank": 59,
@@ -1790,7 +1963,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-05-21",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review A"
+      }
     },
     {
       "ledgerRank": 63,
@@ -1842,7 +2022,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-04-15",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Communications Physics"
+      }
     },
     {
       "ledgerRank": 65,
@@ -1865,7 +2052,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-09-03",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review Research"
+      }
     },
     {
       "ledgerRank": 66,
@@ -1891,7 +2085,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-09-30",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review A"
+      }
     },
     {
       "ledgerRank": 67,
@@ -1994,7 +2195,15 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": null,
+        "dateLabel": "Source undated",
+        "datePrecision": "none",
+        "dateStatus": "source-undated",
+        "dateSource": "University of Southampton",
+        "dateNote": "The live project page gives a closing date but no publication/posting date."
+      }
     },
     {
       "ledgerRank": 71,
@@ -2041,7 +2250,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2025-02-07",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Optics Express"
+      }
     },
     {
       "ledgerRank": 73,
@@ -2093,7 +2309,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "Optics & Laser Technology / ScienceDirect"
+      }
     },
     {
       "ledgerRank": 75,
@@ -2120,7 +2343,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "Optics & Laser Technology / ScienceDirect"
+      }
     },
     {
       "ledgerRank": 76,
@@ -2170,7 +2400,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08-28",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review D"
+      }
     },
     {
       "ledgerRank": 78,
@@ -2346,7 +2583,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-05",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review Research"
+      }
     },
     {
       "ledgerRank": 85,
@@ -2371,7 +2615,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-05-20",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review Research"
+      }
     },
     {
       "ledgerRank": 86,
@@ -2553,7 +2804,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2025-04-06",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Scientific Reports"
+      }
     },
     {
       "ledgerRank": 92,
@@ -2643,7 +2901,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-04-29",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review Letters"
+      }
     },
     {
       "ledgerRank": 95,
@@ -2674,7 +2939,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-04",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review A"
+      }
     },
     {
       "ledgerRank": 96,
@@ -2697,7 +2969,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-07-08",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review B"
+      }
     },
     {
       "ledgerRank": 97,
@@ -2799,7 +3078,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-02-18",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Light: Science & Applications"
+      }
     },
     {
       "ledgerRank": 101,
@@ -2901,7 +3187,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-04-29",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physical Review A"
+      }
     },
     {
       "ledgerRank": 105,
@@ -2930,7 +3223,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2025-03-06",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Journal of Manufacturing and Materials Processing / MDPI"
+      }
     },
     {
       "ledgerRank": 106,
@@ -3139,7 +3439,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-04",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Nature Photonics"
+      }
     },
     {
       "ledgerRank": 114,
@@ -3169,7 +3476,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2025-09-19",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Nature Communications"
+      }
     },
     {
       "ledgerRank": 115,
@@ -3374,7 +3688,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
+      }
     },
     {
       "ledgerRank": 122,
@@ -3425,7 +3746,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
+      }
     },
     {
       "ledgerRank": 124,
@@ -3568,7 +3896,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2025-01-25",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Communications Physics"
+      }
     },
     {
       "ledgerRank": 129,
@@ -3592,7 +3927,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-02-02",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Nature Photonics"
+      }
     },
     {
       "ledgerRank": 130,
@@ -3716,7 +4058,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
+      }
     },
     {
       "ledgerRank": 135,
@@ -3763,7 +4112,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-03-24",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Nature Communications"
+      }
     },
     {
       "ledgerRank": 137,
@@ -3785,7 +4141,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-03-18",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Communications Physics"
+      }
     },
     {
       "ledgerRank": 138,
@@ -3840,7 +4203,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
+      }
     },
     {
       "ledgerRank": 140,
@@ -4052,7 +4422,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-08",
+        "dateLabel": null,
+        "datePrecision": "month",
+        "dateStatus": "verified-month",
+        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
+      }
     },
     {
       "ledgerRank": 148,
@@ -4330,7 +4707,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-21",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "npj Nanophotonics"
+      }
     },
     {
       "ledgerRank": 159,
@@ -4384,7 +4768,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-05-22",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Chaos / AIP"
+      }
     },
     {
       "ledgerRank": 161,
@@ -4408,7 +4799,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-02-23",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Physica Scripta / IOP"
+      }
     },
     {
       "ledgerRank": 162,
@@ -4479,7 +4877,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-16",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Archive for Rational Mechanics and Analysis / Springer"
+      }
     },
     {
       "ledgerRank": 165,
@@ -4506,7 +4911,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-03-30",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Journal of Plasma Physics / Cambridge"
+      }
     },
     {
       "ledgerRank": 166,
@@ -4555,7 +4967,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-16",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "European Physical Journal C / Springer"
+      }
     },
     {
       "ledgerRank": 168,
@@ -4578,7 +4997,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-06-15",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Computational and Applied Mathematics / Springer"
+      }
     },
     {
       "ledgerRank": 169,
@@ -4682,7 +5108,14 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "externalChronology": {
+        "publicationDate": "2026-03-18",
+        "dateLabel": null,
+        "datePrecision": "day",
+        "dateStatus": "verified",
+        "dateSource": "Journal of Scientific Computing / Springer"
+      }
     },
     {
       "ledgerRank": 173,
