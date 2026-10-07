@@ -309,21 +309,31 @@ PUB_INDEX_CSS = """
 .year-buttons button{padding:9px 14px;color:var(--muted);border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.018);cursor:pointer;font-size:.78rem;font-weight:700}
 .year-buttons button[aria-pressed=true],.year-buttons button:hover{color:var(--text);border-color:rgba(103,212,255,.45);background:rgba(103,212,255,.08)}
 .pub-count{margin:30px 0 0;color:var(--muted-2);font-size:.82rem}
-.pub-index-list{border-top:1px solid var(--line);margin-top:16px}
-.pub-index-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+.pub-index-list{--pub-line-x:36px;--pub-line-start:0px;--pub-line-span:0px;--pub-fill-height:0px;--pub-cursor-y:0px;position:relative;border-top:1px solid var(--line);margin-top:16px}
+.pub-index-list::before,.pub-index-list::after{content:"";position:absolute;z-index:0;left:var(--pub-line-x);top:var(--pub-line-start);width:2px;transform:translateX(-50%);border-radius:999px;pointer-events:none}
+.pub-index-list::before{height:var(--pub-line-span);background:linear-gradient(to bottom,rgba(103,212,255,.16),rgba(139,124,255,.14) 52%,rgba(182,255,218,.16))}
+.pub-index-list::after{height:var(--pub-fill-height);background:linear-gradient(to bottom,var(--accent),var(--accent-2) 54%,var(--accent-3));box-shadow:0 0 10px rgba(103,212,255,.2),0 0 20px rgba(139,124,255,.12);transition:height 120ms cubic-bezier(.22,.7,.24,1)}
+.pub-timeline-cursor{position:absolute;z-index:4;left:var(--pub-line-x);top:var(--pub-cursor-y);width:12px;height:12px;transform:translate(-50%,-50%);border:2px solid var(--bg-deep);border-radius:50%;background:var(--accent);box-shadow:0 0 0 1px var(--accent),0 0 20px rgba(103,212,255,.5);opacity:0;pointer-events:none;transition:top 120ms cubic-bezier(.22,.7,.24,1),opacity .16s ease}
+.pub-index-list.timeline-active .pub-timeline-cursor{opacity:1}
+.pub-index-item{position:relative;z-index:1;display:grid;grid-template-columns:72px minmax(0,1fr);gap:22px;padding:24px 0 0;border:0}
+.pub-index-item>div{min-width:0;padding:0 0 25px;border-bottom:1px solid var(--line);transition:border-color .2s ease,background .2s ease}
 .pub-index-item[hidden]{display:none}
-.pub-index-item>span{color:var(--muted-2);font-family:Georgia,serif}
-.pub-index-meta{margin:0 0 9px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.pub-index-item>span{position:relative;z-index:3;justify-self:center;display:grid;place-items:center;width:42px;height:28px;margin-top:1px;border:1px solid var(--line-strong);border-radius:999px;background:var(--bg-deep);color:var(--muted-2);font:700 .68rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.05em;font-variant-numeric:tabular-nums;transition:border-color .18s ease,color .18s ease,background .18s ease,box-shadow .18s ease,transform .18s ease}
+.pub-index-item.pub-past>span{border-color:rgba(182,255,218,.45);color:var(--accent-3);background:color-mix(in srgb,var(--bg-deep) 92%,var(--accent-3));box-shadow:0 0 12px rgba(182,255,218,.08)}
+.pub-index-item.pub-current>span{border-color:var(--accent);color:var(--text);background:color-mix(in srgb,var(--bg-deep) 84%,var(--accent));box-shadow:0 0 0 3px rgba(103,212,255,.07),0 0 20px rgba(103,212,255,.22);transform:scale(1.07)}
+.pub-index-item.pub-current>div{border-bottom-color:rgba(103,212,255,.28);background:linear-gradient(90deg,rgba(103,212,255,.035),transparent 68%)}
+.pub-index-meta{margin:0 0 10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
 .pub-index-cat{color:var(--accent);font-size:.69rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.pub-index-date{color:var(--muted-2);font-size:.74rem}
+.pub-index-date{order:-1;display:inline-flex;align-items:center;padding:3px 7px;border:1px solid rgba(182,255,218,.16);border-radius:999px;background:rgba(182,255,218,.035);color:var(--muted);font:700 .68rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;transition:color .18s ease,border-color .18s ease,background .18s ease}
+.pub-index-item.pub-current .pub-index-date{color:var(--accent-3);border-color:rgba(182,255,218,.38);background:rgba(182,255,218,.07)}
 .pub-status{padding:4px 10px;border:1px solid rgba(103,212,255,.4);border-radius:999px;background:rgba(103,212,255,.07);font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
 .pub-index-item h2{margin:0;font:500 clamp(1.15rem,2.4vw,1.55rem)/1.25 Georgia,serif}
 .pub-index-item h2 a{text-decoration:none}
 .pub-index-item code{display:inline-block;margin-top:10px;color:var(--muted-2);font-size:.72rem}
 .pub-empty{padding:40px 0;color:var(--muted)}
-@media(max-width:600px){.pub-index-item{grid-template-columns:40px 1fr}}
+@media(max-width:600px){.pub-index-list{--pub-line-x:26px}.pub-index-item{grid-template-columns:52px minmax(0,1fr);gap:14px;padding-top:21px}.pub-index-item>span{width:38px;height:26px;font-size:.64rem}.pub-index-item>div{padding-bottom:22px}}
+@media(prefers-reduced-motion:reduce){.pub-index-list::after,.pub-timeline-cursor,.pub-index-item>span,.pub-index-item>div,.pub-index-date{transition:none}}
 """.strip()
-
 
 def publications_index(pubs: list[dict]) -> str:
     categories = sorted({p["category"] for p in pubs})
@@ -399,8 +409,67 @@ def publications_index(pubs: list[dict]) -> str:
   var yearWrap=document.querySelector('[data-year-buttons]');
   var count=document.querySelector('[data-pub-count]');
   var empty=document.querySelector('[data-pub-empty]');
+  var archive=document.getElementById('archive');
   var total=items.length;
   var year='';
+  var railRaf=0;
+  var cursor=null;
+  if(archive){{
+    cursor=document.createElement('span');
+    cursor.className='pub-timeline-cursor';
+    cursor.setAttribute('aria-hidden','true');
+    archive.prepend(cursor);
+  }}
+  function clamp(v,a,b){{return Math.max(a,Math.min(b,v));}}
+  function nodeCenter(item,archiveRect){{
+    var node=item.querySelector(':scope > span');
+    var r=(node||item).getBoundingClientRect();
+    return r.top+r.height*.5-archiveRect.top;
+  }}
+  function updateDateRail(){{
+    if(!archive)return;
+    var shown=items.filter(function(it){{return !it.hidden;}});
+    items.forEach(function(it){{it.classList.remove('pub-past','pub-current');}});
+    if(!shown.length){{
+      archive.classList.remove('timeline-active');
+      archive.style.setProperty('--pub-line-span','0px');
+      archive.style.setProperty('--pub-fill-height','0px');
+      return;
+    }}
+    var ar=archive.getBoundingClientRect();
+    var firstY=nodeCenter(shown[0],ar);
+    var lastY=nodeCenter(shown[shown.length-1],ar);
+    var span=Math.max(0,lastY-firstY);
+    archive.style.setProperty('--pub-line-start',firstY.toFixed(2)+'px');
+    archive.style.setProperty('--pub-line-span',span.toFixed(2)+'px');
+
+    var vh=window.innerHeight||1;
+    var doc=document.documentElement;
+    var maxScroll=Math.max(1,doc.scrollHeight-vh);
+    var remaining=Math.max(0,maxScroll-window.scrollY);
+    var bottomEase=clamp(1-remaining/(vh*.9),0,1);
+    var anchor=vh*(.52+.38*bottomEase);
+    var cursorY=clamp(anchor-ar.top,firstY,lastY);
+    if(remaining<3)cursorY=lastY;
+
+    archive.style.setProperty('--pub-cursor-y',cursorY.toFixed(2)+'px');
+    archive.style.setProperty('--pub-fill-height',Math.max(0,cursorY-firstY).toFixed(2)+'px');
+    archive.classList.toggle('timeline-active',cursorY>firstY+1||ar.top<anchor);
+
+    var current=0,dist=Infinity;
+    shown.forEach(function(it,i){{
+      var y=nodeCenter(it,ar);
+      if(y<=cursorY+.5)it.classList.add('pub-past');
+      var d=Math.abs(y-cursorY);
+      if(d<dist){{dist=d;current=i;}}
+    }});
+    if(remaining<3)current=shown.length-1;
+    shown[current].classList.add('pub-current','pub-past');
+  }}
+  function scheduleDateRail(){{
+    if(railRaf)return;
+    railRaf=requestAnimationFrame(function(){{railRaf=0;updateDateRail();}});
+  }}
   function apply(){{
     var term=(q.value||'').trim().toLowerCase();
     var c=cat.value, s=status.value, shown=0;
@@ -409,16 +478,17 @@ def publications_index(pubs: list[dict]) -> str:
         &&(!c||it.dataset.category===c)
         &&(!s||it.dataset.status===s)
         &&(!year||it.dataset.year===year);
-      it.hidden=!ok; if(ok)shown++;
+      it.hidden=!ok;if(ok)shown++;
     }});
     if(empty)empty.hidden=shown!==0;
     if(count)count.textContent=shown===total?('Showing all '+total+' releases.'):('Showing '+shown+' of '+total+' releases.');
+    scheduleDateRail();
   }}
   q&&q.addEventListener('input',apply);
   cat&&cat.addEventListener('change',apply);
   status&&status.addEventListener('change',apply);
   yearWrap&&yearWrap.addEventListener('click',function(e){{
-    var b=e.target.closest('button[data-year]'); if(!b)return;
+    var b=e.target.closest('button[data-year]');if(!b)return;
     year=b.dataset.year;
     yearWrap.querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',String(x===b));}});
     apply();
@@ -429,6 +499,9 @@ def publications_index(pubs: list[dict]) -> str:
     yearWrap.querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',String(x.dataset.year===''));}});
     apply();
   }});
+  window.addEventListener('scroll',scheduleDateRail,{{passive:true}});
+  window.addEventListener('resize',scheduleDateRail,{{passive:true}});
+  updateDateRail();
 }})();
 </script>
 </body></html>"""
