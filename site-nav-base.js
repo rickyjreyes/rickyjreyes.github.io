@@ -408,7 +408,6 @@
           <div class="nav-dropdown" id="nav-menu-tools" role="group" aria-label="Tools">
             <div class="nav-dropdown-shell">
               <a href="/tools/glossary/" class="nav-dropdown-link"><span class="nav-item-label">Glossary</span><span class="nav-item-desc">Alphabetical concepts, definitions, and notation</span></a>
-              <a href="/tools/equations/" class="nav-dropdown-link"><span class="nav-item-label">Equations</span><span class="nav-item-desc">Interactive canonical equation explorer</span></a>
               <a href="/tools/timeline/" class="nav-dropdown-link"><span class="nav-item-label">Timeline</span><span class="nav-item-desc">Dated research chronology and releases</span></a>
               <a href="/tools/graph/" class="nav-dropdown-link"><span class="nav-item-label">Graph</span><span class="nav-item-desc">Interactive concept and corpus connections</span></a>
               <a href="/tools/videos/" class="nav-dropdown-link"><span class="nav-item-label">Videos</span><span class="nav-item-desc">Playlist videos with individual descriptions</span></a>
