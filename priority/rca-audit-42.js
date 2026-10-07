@@ -116,7 +116,7 @@
     section.id = 'rca-prediction-audit';
     section.setAttribute('aria-labelledby', 'rca-prediction-audit-title');
     section.innerHTML = `
-      <p class="eyebrow">RCA / WCT-AI mechanism and forecast audit · original release June 11, 2025</p>
+      <p class="eyebrow">06 · Author-side mechanism and forecast audit</p>
       <h2 id="rca-prediction-audit-title">42 RCA / WCT-AI items and their current evidence status</h2>
       <p class="section-lede">A separate term-by-term audit of RCA mechanisms, diagnostics, forecast milestones, and later corresponding evidence. These 42 author-side audit items are not counted as external-evidence or adoption records and do not replace the verified-predictions section above.</p>
 
@@ -140,7 +140,7 @@
       </div>
     `;
 
-    const mount = document.getElementById('rca-validation-record');
+    const mount = document.getElementById('supporting-audit-record');
     if (mount) {
       mount.appendChild(section);
     } else if (verified.nextSibling) {
