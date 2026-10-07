@@ -51,6 +51,7 @@
   const sobolevStatus=document.querySelector('[data-sobolev-state]');
   const sobolevSlope=document.querySelector('[data-sobolev-slope]');
   const sobolevControls=[...document.querySelectorAll('[data-sobolev-dim]')];
+  const sobolevControlNote=document.querySelector('[data-sobolev-control-note]');
   const basinParticlesGroup=document.querySelector('[data-basin-particles]');
   const basinFlows=[...document.querySelectorAll('.basin-flow')];
   const shellDots=document.querySelector('[data-shell-dots]');
@@ -387,6 +388,8 @@
       const dim=Number(button.dataset.sobolevDim);
       sobolevPinned=sobolevPinned===dim?null:dim;
       sobolevStart=performance.now()/1000;
+      if(sobolevControlNote)sobolevControlNote.textContent=
+        sobolevPinned===null?'Auto · select a dimension to hold':'Held on '+dim+'D · click again to resume';
       drawSobolev(performance.now()/1000);
     });
   });
@@ -558,6 +561,7 @@
     if(previous!==activeStage && activeStage===2){
       sobolevStart=performance.now()/1000;
       sobolevPinned=null; // Re-entering the chapter restarts the comparison.
+      if(sobolevControlNote)sobolevControlNote.textContent='Auto · select a dimension to hold';
     }
     if(theoryVisual)theoryVisual.dataset.stage=String(activeStage);
     steps.forEach((step,i)=>step.classList.toggle('active',i===activeStage));
