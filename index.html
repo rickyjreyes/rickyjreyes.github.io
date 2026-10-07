@@ -318,23 +318,14 @@
               </g>
 
               <g class="theory-scene scene-3">
-                <circle class="shell-backdrop" cx="280" cy="222" r="172"></circle>
-                <path class="shell-crosshair" d="M94 222H466M280 48V394"></path>
-                <circle class="shell-target" cx="280" cy="222" r="119"></circle>
-                <circle class="shell-guide" cx="280" cy="222" r="73"></circle>
-                <circle class="shell-guide" cx="280" cy="222" r="159"></circle>
+                <path class="stroke-muted faint" d="M280 38V442M78 240H482"></path>
+                <circle class="stroke-accent2 dashed" cx="280" cy="240" r="156"></circle>
+                <circle class="stroke-accent2 dashed" cx="280" cy="240" r="116"></circle>
+                <g data-shell-broadband aria-hidden="true"></g>
                 <g data-shell-dots></g>
-                <text class="svg-accent3" x="417" y="132">k★</text>
-                <text class="shell-selection-state" x="85" y="97" data-shell-status>BROADBAND</text>
-                <text class="svg-text" x="280" y="70" text-anchor="middle">Broadband → finite-|k| spectral selection</text>
-
-                <rect class="shell-spectrum-panel" x="89" y="368" width="384" height="80" rx="8"></rect>
-                <path class="shell-spectrum-axis" d="M108 384V432H455"></path>
-                <path class="shell-spectrum-guide" d="M322 384V432"></path>
-                <path class="shell-spectrum-line" data-shell-spectrum></path>
-                <text class="svg-muted" x="110" y="443">0</text>
-                <text class="svg-accent3" x="322" y="443" text-anchor="middle">k★</text>
-                <text class="svg-muted" x="457" y="443" text-anchor="end">|k|</text>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="136"></circle>
+                <text class="svg-accent2 large" x="414" y="84">|k| ≈ k*</text>
+                <text class="svg-muted" x="280" y="432" text-anchor="middle">quartic band-pass concentrates support on a finite shell</text>
               </g>
 
               <g class="theory-scene scene-4">
@@ -382,25 +373,12 @@
               </g>
 
               <g class="theory-scene scene-6">
-                <text class="svg-text" x="280" y="70" text-anchor="middle">Reflected waves → fixed standing-wave nodes</text>
-                <rect class="resonance-cavity" x="74" y="96" width="412" height="309" rx="14"></rect>
-                <path class="resonance-wall" d="M110 110V379M450 110V379"></path>
-                <path class="resonance-zero" d="M110 165H450M110 237H450M110 333H450"></path>
-
-                <text class="resonance-track-label" x="123" y="126">ψ+ →</text>
-                <text class="resonance-track-label violet" x="123" y="199">← ψ−</text>
-                <text class="resonance-track-label green" x="123" y="285">ψ+ + ψ− = ψ</text>
-                <path class="resonance-forward" data-resonance-forward></path>
-                <path class="resonance-backward" data-resonance-backward></path>
-                <path class="resonance-envelope" data-resonance-envelope-upper></path>
-                <path class="resonance-envelope" data-resonance-envelope-lower></path>
-                <path class="resonance-standing" data-resonance-standing></path>
-                <g data-resonance-nodes></g>
-                <g data-resonance-antinodes></g>
-                <circle class="resonance-reflection-marker" data-resonance-reflection cx="110" cy="107" r="4"></circle>
-
-                <text class="svg-muted" x="280" y="391" text-anchor="middle">boundary nodes fixed · antinodes oscillate</text>
-                <text class="svg-accent3" x="280" y="427" text-anchor="middle">⟨Sₒᵤₜ⟩ = 0 in an ideal reflecting cavity</text>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="62"></circle>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="110"></circle>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="158"></circle>
+                <path class="stroke-accent3 strong mode-line" data-mode-one></path>
+                <path class="stroke-accent3 faint mode-line" data-mode-two></path>
+                <text class="svg-muted" x="280" y="430" text-anchor="middle">standing structure persists instead of radiating away</text>
               </g>
 
               <g class="theory-scene scene-7">
@@ -458,7 +436,7 @@
           </li>
           <li class="wct-theory-step">
             <span>04</span><h3>Finite-k shell selection</h3>
-            <p>Watch broadband Fourier modes outside the preferred nonzero wavenumber fade under a quartic spectral filter. The radial-power curve sharpens around k★; this is an illustrative filter response, not a WCT PDE integration.</p>
+            <p>Broadband Fourier support fades outside the preferred nonzero wavenumber k★, revealing the finite-shell diagram. Quartic selection is illustrated by off-shell attenuation—not by moving wavelengths or integrating the WCT PDE.</p>
           </li>
           <li class="wct-theory-step">
             <span>05</span><h3>Phase–Flux organization</h3>
@@ -470,7 +448,7 @@
           </li>
           <li class="wct-theory-step">
             <span>07</span><h3>Resonant confinement</h3>
-            <p>Counterpropagating waves reflect at idealized boundaries and interfere into a standing mode. Nodes stay fixed as antinodes oscillate; zero average outward flux applies to the ideal cavity shown, not a proven WCT confinement solution.</p>
+            <p>Boundary and feedback conditions organize those selected modes into persistent standing structures rather than freely propagating content.</p>
           </li>
           <li class="wct-theory-step">
             <span>08</span><h3>Curvature locking</h3>
