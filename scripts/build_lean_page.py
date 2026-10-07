@@ -80,6 +80,12 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 .lean-browser-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;margin-bottom:14px}
 .lean-browser-head h2{margin:0;font:500 1.55rem/1.2 Georgia,serif}
 .lean-count{color:var(--muted-2);font:600 .68rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}
+.lean-quick-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.lean-quick-filters button{display:inline-flex;align-items:center;gap:7px;min-height:34px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.012);color:var(--muted);font:700 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;cursor:pointer}
+.lean-quick-filters button span{color:var(--muted-2);font-size:.66rem}
+.lean-quick-filters button:hover,.lean-quick-filters button:focus-visible{border-color:var(--line-strong);color:var(--text);outline:none}
+.lean-quick-filters button[aria-pressed=true]{border-color:rgba(103,212,255,.46);background:rgba(103,212,255,.075);color:var(--text)}
+.lean-quick-filters button[aria-pressed=true] span{color:var(--accent-3)}
 .lean-search-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;margin-bottom:15px}
 .lean-search-row input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:7px;background:#081522;color:var(--text);font:inherit}
 .lean-search-row input::placeholder{color:var(--muted-2)}
@@ -98,7 +104,7 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 .lean-list-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.8rem}
 .lean-list-mark{width:8px;height:8px;border:1.5px solid var(--row-color);border-radius:2px}
 .lean-list-empty{padding:28px 8px;color:var(--muted);font-size:.86rem}
-.lean-detail{min-width:0}
+.lean-detail{position:sticky;top:148px;min-width:0;max-height:calc(100vh - 172px);overflow:auto;padding-right:8px;scrollbar-width:thin;scrollbar-color:rgba(150,180,205,.35) transparent;scrollbar-gutter:stable}
 .lean-detail-top{display:flex;justify-content:space-between;gap:18px;align-items:start;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .lean-detail-id{margin:0;color:var(--accent);font:700 .67rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase}
 .lean-detail h2{margin:7px 0 0;font:500 clamp(1.8rem,3.4vw,3rem)/1.06 Georgia,serif;letter-spacing:-.025em}
@@ -108,6 +114,10 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 .lean-detail-stat:last-child{border-right:0}
 .lean-detail-stat span{display:block;color:var(--muted-2);font:700 .59rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase}
 .lean-detail-stat strong{display:block;margin-top:4px;color:var(--text);font-size:.78rem;font-weight:600;line-height:1.35}
+.lean-status-line{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:12px}
+.lean-status-chip{display:inline-flex;align-items:baseline;gap:7px;padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:rgba(255,255,255,.012)}
+.lean-status-chip small{color:var(--muted-2);font:700 .58rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.065em;text-transform:uppercase}
+.lean-status-chip strong{color:var(--text);font-size:.73rem;font-weight:700}
 .lean-definition-text{max-width:92ch;margin:17px 0 0;color:var(--muted);font-size:.92rem;line-height:1.62}
 .lean-equation{overflow:auto;margin:16px 0 0;padding:12px 16px;border-left:2px solid var(--badge-color,var(--accent));background:rgba(255,255,255,.018)}
 .lean-equation>div{min-width:max-content;padding:4px 0}
@@ -130,6 +140,7 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 @media(max-width:980px){
   .lean-hero-grid,.lean-cross,.lean-browser{grid-template-columns:1fr}
   .lean-index{position:static;max-height:360px;padding-right:8px}
+  .lean-detail{position:static;max-height:none;overflow:visible;padding-right:0;scrollbar-gutter:auto}
   .lean-family-title{position:static}
 }
 @media(max-width:700px){
@@ -180,6 +191,11 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 
 <section class="lean-shell lean-browser-section" id="browser" aria-labelledby="lean-browser-title">
 <div class="lean-browser-head"><h2 id="lean-browser-title">Object browser</h2><span class="lean-count" id="lean-count">All __TOTAL__ objects</span></div>
+<div class="lean-quick-filters" id="lean-quick-filters" aria-label="Coverage shortcuts">
+<button type="button" data-quick="" aria-pressed="true">All <span>__TOTAL__</span></button>
+<button type="button" data-quick="mapped" aria-pressed="false">Mapped <span>__MAPPED__</span></button>
+<button type="button" data-quick="unmapped" aria-pressed="false">Unmapped <span>__UNMAPPED__</span></button>
+</div>
 <div class="lean-search-row"><input id="lean-search" type="search" placeholder="Search ID, title, declaration, or family" autocomplete="off"><button class="lean-clear" id="lean-clear" type="button" hidden>Clear filters</button></div>
 <p class="lean-filter-note" id="lean-filter-note" hidden></p>
 <div class="lean-browser">
@@ -191,6 +207,10 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 <div class="lean-detail-stat"><span>SymPy</span><strong id="lean-stat-sympy">—</strong></div>
 <div class="lean-detail-stat"><span>Scope</span><strong id="lean-stat-scope">—</strong></div>
 <div class="lean-detail-stat"><span>Empirical</span><strong id="lean-stat-emp">—</strong></div>
+</div>
+<div class="lean-status-line" aria-label="Canonical status comparison">
+<span class="lean-status-chip"><small>Current effective status</small><strong id="lean-current-status">—</strong></span>
+<span class="lean-status-chip"><small>Baseline status</small><strong id="lean-baseline-status">—</strong></span>
 </div>
 <p class="lean-definition-text" id="lean-definition"></p>
 <div class="lean-equation" id="lean-equation"></div>
@@ -217,7 +237,7 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
     {key:'unmapped',classes:['unmapped'],label:'Unmapped',kicker:'No maintained direct coverage',color:'#7a8b9b',mark:'dots',desc:'No maintained direct Lean declaration currently closes the object. Missing formal coverage is not evidence of falsity.'}
   ];
   const SYM=['PASS','CONDITIONAL','DEFINITION','OPEN'];
-  const state={q:'',tier:'',cell:null,sel:(data[decodeURIComponent(location.hash.slice(1))]?decodeURIComponent(location.hash.slice(1)):'E1A')};
+  const state={q:'',quick:'',tier:'',cell:null,sel:(data[decodeURIComponent(location.hash.slice(1))]?decodeURIComponent(location.hash.slice(1)):'E1A')};
   const $=s=>document.querySelector(s);
   const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const tierOf=e=>TIERS.find(t=>t.classes.includes(e.coverageClass))||TIERS[5];
@@ -235,6 +255,8 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
   const searchBlob=e=>[e.id,e.title,e.family,e.coverage,e.symbolicStatus,(e.declarations||[]).join(' ')].join(' ').toLowerCase();
   const passes=e=>{
     const t=tierOf(e);
+    if(state.quick==='mapped'&&e.coverageClass==='unmapped')return false;
+    if(state.quick==='unmapped'&&e.coverageClass!=='unmapped')return false;
     if(state.tier&&t.key!==state.tier)return false;
     if(state.cell&&(t.key!==state.cell[0]||e.symbolicStatus!==state.cell[1]))return false;
     return !state.q||searchBlob(e).includes(state.q);
@@ -258,7 +280,7 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
       b.style.setProperty('--tier-color',t.color);
       b.style.setProperty('--tier-border',active?t.color:(n?rgba(t.color,.42):'var(--line)'));
       b.innerHTML='<span class="lean-tier-title"><span class="lean-tier-name"><i class="lean-tier-mark" style="'+markStyle(t)+'"></i>'+esc(t.label)+'</span><span class="lean-tier-count">'+n+'</span></span><span class="lean-tier-kicker">'+esc(t.kicker)+'</span><span class="lean-tier-desc">'+esc(t.desc)+'</span>';
-      b.addEventListener('click',()=>{state.tier=active?'':t.key;state.cell=null;render();});
+      b.addEventListener('click',()=>{state.tier=active?'':t.key;state.quick='';state.cell=null;render();});
       grid.appendChild(b);
     });
     const mapped=all.filter(e=>e.coverageClass!=='unmapped').length;
@@ -283,7 +305,7 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
         b.style.setProperty('--cell-border',active?'var(--text)':n?rgba(t.color,.34):'rgba(150,180,205,.08)');
         b.style.setProperty('--cell-fg',n&&a>.4?'#04111a':n?'var(--text)':'#3c4e5f');
         b.textContent=n||'·';
-        if(n)b.addEventListener('click',()=>{state.cell=active?null:[t.key,s];state.tier='';render();if(!active)setTimeout(()=>document.getElementById('browser')?.scrollIntoView({behavior:'smooth',block:'start'}),20);});
+        if(n)b.addEventListener('click',()=>{state.cell=active?null:[t.key,s];state.quick='';state.tier='';render();if(!active)setTimeout(()=>document.getElementById('browser')?.scrollIntoView({behavior:'smooth',block:'start'}),20);});
         grid.appendChild(b);
       });
     });
@@ -295,14 +317,23 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
       note.querySelector('button').addEventListener('click',()=>{state.cell=null;render();});
     }else note.hidden=true;
   }
+  function buildQuick(){
+    document.querySelectorAll('[data-quick]').forEach(b=>{
+      const key=b.dataset.quick;
+      const active=key ? state.quick===key : !state.quick&&!state.tier&&!state.cell;
+      b.setAttribute('aria-pressed',String(active));
+    });
+  }
   function buildList(){
     const shown=filtered(),wrap=$('#lean-list');
     $('#lean-count').textContent=shown.length===all.length?'All '+all.length+' objects':shown.length+' of '+all.length+' objects';
-    const any=!!(state.q||state.tier||state.cell);
+    const any=!!(state.q||state.quick||state.tier||state.cell);
     $('#lean-clear').hidden=!any;
     const note=$('#lean-filter-note');
     if(state.tier){const t=TIERS.find(x=>x.key===state.tier);note.hidden=false;note.textContent=t.label+' — '+t.desc;}
     else if(state.cell){const t=TIERS.find(x=>x.key===state.cell[0]);note.hidden=false;note.textContent=t.label+' × SymPy '+state.cell[1];}
+    else if(state.quick==='mapped'){note.hidden=false;note.textContent='Mapped — objects with maintained Lean definitions or declarations.';}
+    else if(state.quick==='unmapped'){note.hidden=false;note.textContent='Unmapped — no maintained direct Lean declaration currently closes the object.';}
     else note.hidden=true;
     const families=[...new Set(all.map(e=>e.family))];
     wrap.innerHTML='';
@@ -343,6 +374,9 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
     $('#lean-stat-sympy').textContent=e.symbolicStatus+' · '+human(e.verificationKind);
     $('#lean-stat-scope').textContent=human(e.verificationScope);
     $('#lean-stat-emp').textContent=human(e.empiricalStatus);
+    const statusIcon=s=>s==='PASS'?'✅ ':s==='CONDITIONAL'?'⚠️ ':s==='DEFINITION'?'◇ ':s==='OPEN'?'○ ':'';
+    $('#lean-current-status').textContent=statusIcon(e.symbolicStatus)+e.symbolicStatus;
+    $('#lean-baseline-status').textContent=statusIcon(e.baselineStatus)+e.baselineStatus;
     $('#lean-definition').textContent=e.definition||'No canonical definition text recorded.';
     typeset(e);
     const dec=e.declarations||[],declWrap=$('#lean-decl-list');
@@ -364,13 +398,19 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
     if(scroll&&innerWidth<980)setTimeout(()=>document.getElementById('lean-detail')?.scrollIntoView({behavior:'smooth',block:'start'}),20);
   }
   function render(rebuild=true){
-    buildTiers();buildCross();buildList();detail();
+    buildTiers();buildCross();buildQuick();buildList();detail();
     if(rebuild){
       document.querySelectorAll('.lean-list-row').forEach(b=>b.setAttribute('aria-pressed',String(b.querySelector('.lean-list-id')?.textContent===state.sel)));
     }
   }
   $('#lean-search').addEventListener('input',e=>{state.q=e.target.value.trim().toLowerCase();render();});
-  $('#lean-clear').addEventListener('click',()=>{state.q='';state.tier='';state.cell=null;$('#lean-search').value='';render();});
+  document.querySelectorAll('[data-quick]').forEach(b=>b.addEventListener('click',()=>{
+    state.quick=b.dataset.quick;
+    state.tier='';
+    state.cell=null;
+    render();
+  }));
+  $('#lean-clear').addEventListener('click',()=>{state.q='';state.quick='';state.tier='';state.cell=null;$('#lean-search').value='';render();});
   render();
 })();
 </script>
