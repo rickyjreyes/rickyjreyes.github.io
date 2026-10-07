@@ -556,26 +556,69 @@
     }
   };
 
-  const gammaPt=(t)=>{
-    const r=128+28*Math.cos(3*t);
-    return [280+r*Math.cos(t),240+.82*r*Math.sin(t)];
+  // Stage 08: planar closed curve, exact local curvature and a prescribed
+  // phase correction. Curvature weights shape the illustrative phase gradient;
+  // the decay of the seam mismatch is NOT a solved WCT feedback law.
+  const gammaGeometry=a=>{
+    const ca=Math.cos(a),sa=Math.sin(a);
+    const r=128+28*Math.cos(3*a);
+    const dr=-84*Math.sin(3*a),ddr=-252*Math.cos(3*a);
+    const x=280+r*ca,y=240+.82*r*sa;
+    const dx=dr*ca-r*sa,dy=.82*(dr*sa+r*ca);
+    const ddx=(ddr-r)*ca-2*dr*sa;
+    const ddy=.82*((ddr-r)*sa+2*dr*ca);
+    const speed=Math.hypot(dx,dy)||1;
+    const kappa=(dx*ddy-dy*ddx)/Math.pow(speed,3);
+    return {x,y,dx,dy,kappa,speed};
   };
-  if(gamma){
-    let d='';
-    for(let i=0;i<=180;i++){
-      const p=gammaPt(i/180*Math.PI*2);
-      d+=(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);
-    }
-    gamma.setAttribute('d',d+'Z');
+  const gammaPt=a=>{
+    const {x,y}=gammaGeometry(a);
+    return [x,y];
+  };
+  const phaseN=144;
+  const pathGeometry=Array.from({length:phaseN+1},(_,i)=>
+    gammaGeometry(i/phaseN*Math.PI*2));
+  const phaseFractions=[0];
+  let totalPhaseWeight=0;
+  for(let i=0;i<phaseN;i++){
+    const a=pathGeometry[i],b=pathGeometry[i+1];
+    const weight=.5*(Math.abs(a.kappa)*a.speed+
+      Math.abs(b.kappa)*b.speed)*(Math.PI*2/phaseN);
+    totalPhaseWeight+=weight;
+    phaseFractions.push(totalPhaseWeight);
   }
-
-  const circum=(a,b,c)=>{
-    const d=2*(a[0]*(b[1]-c[1])+b[0]*(c[1]-a[1])+c[0]*(a[1]-b[1]));
-    if(Math.abs(d)<1e-6)return null;
-    const aa=a[0]*a[0]+a[1]*a[1],bb=b[0]*b[0]+b[1]*b[1],cc=c[0]*c[0]+c[1]*c[1];
-    const ux=(aa*(b[1]-c[1])+bb*(c[1]-a[1])+cc*(a[1]-b[1]))/d;
-    const uy=(aa*(c[0]-b[0])+bb*(a[0]-c[0])+cc*(b[0]-a[0]))/d;
-    return [ux,uy,Math.hypot(ux-b[0],uy-b[1])];
+  for(let i=0;i<=phaseN;i++)phaseFractions[i]/=totalPhaseWeight||1;
+  if(gamma){
+    const d=pathGeometry.map((p,i)=>
+      (i?'L':'M')+p.x.toFixed(2)+' '+p.y.toFixed(2)).join('')+'Z';
+    gamma.setAttribute('d',d);
+  }
+  const phaseSegments=[];
+  if(phaseSegmentsGroup)for(let i=0;i<phaseN;i++){
+    const a=pathGeometry[i],b=pathGeometry[i+1];
+    phaseSegments.push(svgEl('path',{
+      class:'curvature-phase-segment',
+      d:'M'+a.x.toFixed(2)+' '+a.y.toFixed(2)+
+        'L'+b.x.toFixed(2)+' '+b.y.toFixed(2)
+    },phaseSegmentsGroup));
+  }
+  const phaseDots=[];
+  if(phaseDotsGroup)for(let i=0;i<8;i++){
+    phaseDots.push(svgEl('circle',{
+      class:i%3===0?'curvature-phase-dot green':i%3===1?
+        'curvature-phase-dot cyan':'curvature-phase-dot violet',
+      r:i%4===0?4.2:2.9
+    },phaseDotsGroup));
+  }
+  let lockStart=performance.now()/1000;
+  const locatePhaseFraction=target=>{
+    let low=0,high=phaseN;
+    while(high-low>1){
+      const mid=(low+high)>>1;
+      if(phaseFractions[mid]<target)low=mid;else high=mid;
+    }
+    const a=phaseFractions[low],b=phaseFractions[high];
+    return (low+(target-a)/Math.max(1e-12,b-a))/phaseN;
   };
 
   const drawFold=(t)=>{
@@ -705,17 +748,71 @@
     }
   };
 
-  const drawCurvature=(t)=>{
+  const drawCurvature=t=>{
     if(!marker||!tangent||!osc)return;
-    const th=(t*.42)%(Math.PI*2),p=gammaPt(th),a=gammaPt(th-.05),b=gammaPt(th+.05);
-    const dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1;
-    const c=circum(gammaPt(th-.18),p,gammaPt(th+.18));
-    marker.setAttribute('cx',p[0].toFixed(1));marker.setAttribute('cy',p[1].toFixed(1));
-    tangent.setAttribute('x1',(p[0]-dx/l*44).toFixed(1));tangent.setAttribute('y1',(p[1]-dy/l*44).toFixed(1));
-    tangent.setAttribute('x2',(p[0]+dx/l*44).toFixed(1));tangent.setAttribute('y2',(p[1]+dy/l*44).toFixed(1));
-    if(c){
-      osc.setAttribute('cx',c[0].toFixed(1));osc.setAttribute('cy',c[1].toFixed(1));
-      osc.setAttribute('r',Math.min(c[2],210).toFixed(1));
+    const cycle=Math.max(0,t-lockStart)%11;
+    const mismatch=reduced.matches?0:2.4*Math.exp(-.74*cycle);
+    const phaseRotation=t*.50;
+    const winding=3;
+    const twopi=Math.PI*2;
+
+    phaseSegments.forEach((el,i)=>{
+      // The closed-loop phase advance is 2πm+Δφ.
+      // Spatial phase density is curvature-magnitude weighted.
+      const u=(i+.5)/phaseN;
+      const phase=twopi*winding*(phaseFractions[i]+phaseFractions[i+1])*.5+
+        mismatch*u-phaseRotation;
+      const mod=((phase%twopi)+twopi)%twopi;
+      const color=['cyan','green','violet'][Math.floor(mod/(twopi/3))%3];
+      el.setAttribute('class','curvature-phase-segment '+color);
+      el.setAttribute('opacity',(.35+.6*(.5+.5*Math.cos(phase))).toFixed(2));
+    });
+
+    phaseDots.forEach((el,i)=>{
+      const target=((i/8+t*.041)%1+1)%1;
+      const u=locatePhaseFraction(target);
+      const p=gammaGeometry(twopi*u);
+      el.setAttribute('cx',p.x.toFixed(2));
+      el.setAttribute('cy',p.y.toFixed(2));
+      el.setAttribute('opacity',(.56+.35*Math.sin(Math.PI*target)).toFixed(2));
+    });
+
+    const a=t*.40,g=gammaGeometry(a);
+    marker.setAttribute('cx',g.x.toFixed(2));
+    marker.setAttribute('cy',g.y.toFixed(2));
+    const tx=g.dx/g.speed,ty=g.dy/g.speed;
+    tangent.setAttribute('x1',(g.x-39*tx).toFixed(2));
+    tangent.setAttribute('y1',(g.y-39*ty).toFixed(2));
+    tangent.setAttribute('x2',(g.x+39*tx).toFixed(2));
+    tangent.setAttribute('y2',(g.y+39*ty).toFixed(2));
+    // Signed normal produces the osculating-circle center for a planar path.
+    const radius=Math.abs(1/g.kappa);
+    if(Number.isFinite(radius)&&radius<190){
+      const signedRadius=1/g.kappa;
+      const cx=g.x-g.dy/g.speed*signedRadius;
+      const cy=g.y+g.dx/g.speed*signedRadius;
+      osc.setAttribute('cx',cx.toFixed(2));
+      osc.setAttribute('cy',cy.toFixed(2));
+      osc.setAttribute('r',radius.toFixed(2));
+      osc.setAttribute('opacity','.48');
+    }else osc.setAttribute('opacity','0');
+
+    const seam=pathGeometry[0];
+    if(phaseSeam){
+      phaseSeam.setAttribute('cx',seam.x.toFixed(2));
+      phaseSeam.setAttribute('cy',seam.y.toFixed(2));
+    }
+    if(phaseSeamError){
+      const ex=seam.x-26*Math.sin(mismatch);
+      const ey=seam.y-22*(1-Math.cos(mismatch));
+      phaseSeamError.setAttribute('d',
+        'M'+seam.x.toFixed(2)+' '+seam.y.toFixed(2)+
+        'L'+ex.toFixed(2)+' '+ey.toFixed(2));
+      phaseSeamError.setAttribute('opacity',Math.min(1,mismatch*1.2).toFixed(2));
+    }
+    if(phaseErrorValue)phaseErrorValue.textContent=mismatch.toFixed(2)+' rad';
+    if(phaseErrorFill){
+      phaseErrorFill.setAttribute('width',(375*(1-mismatch/2.4)).toFixed(2));
     }
   };
 
@@ -749,6 +846,9 @@
     }
     if(previous!==activeStage && activeStage===3){
       shellStart=performance.now()/1000;
+    }
+    if(previous!==activeStage && activeStage===7){
+      lockStart=performance.now()/1000;
     }
     if(theoryVisual)theoryVisual.dataset.stage=String(activeStage);
     steps.forEach((step,i)=>step.classList.toggle('active',i===activeStage));
