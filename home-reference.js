@@ -50,6 +50,8 @@
   const sobolevDimensionLabel=document.querySelector('[data-sobolev-dimension-label]');
   const sobolevStatus=document.querySelector('[data-sobolev-state]');
   const sobolevSlope=document.querySelector('[data-sobolev-slope]');
+  const sobolevLambdaLabel=document.querySelector('[data-sobolev-lambda]');
+  const sobolevNormLabel=document.querySelector('[data-sobolev-norm]');
   const sobolevControls=[...document.querySelectorAll('[data-sobolev-dim]')];
   const sobolevControlNote=document.querySelector('[data-sobolev-control-note]');
   const basinParticlesGroup=document.querySelector('[data-basin-particles]');
@@ -288,6 +290,9 @@
     selectSobolevDimension(n);
     const pulse=.5+.5*Math.sin(t*.81);
     const lambda=.25+.75*pulse;
+    if(sobolevLambdaLabel)sobolevLambdaLabel.textContent='λ = '+lambda.toFixed(2);
+    if(sobolevNormLabel)sobolevNormLabel.textContent=
+      '∥Δψλ∥² / Cₙ = '+Math.pow(lambda,4-n).toFixed(3);
     // Draw the same test packet across 1D, 2D, projected 3D and a
     // schematic 4D slice: geometry changes, not the underlying theorem.
     const width=32+22*lambda;
