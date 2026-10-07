@@ -37,13 +37,13 @@
     "priorityAndInfluenceAreSeparateQuestions": true
   },
   "counts": {
-    "totalRecords": 242,
-    "physicsRecords": 174,
+    "totalRecords": 241,
+    "physicsRecords": 173,
     "physics9Plus": 70,
     "aiRecords": 68,
     "dateChecked": 6,
     "chronologyPriorArtReview": 4,
-    "ledgerOnly": 232,
+    "ledgerOnly": 231,
     "verifiedCases": 6,
     "auditCandidates": 4,
     "priorArtControls": 3
@@ -1689,7 +1689,7 @@
       ],
       "identifier": "10.48550/arXiv.2602.14549",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2602.14549",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "chronology_prior_art_review",
       "relationship": "candidate_structural_overlap",
       "chronologyStatus": "chronology_prior_art_review",
@@ -1731,7 +1731,7 @@
       ],
       "identifier": "10.48550/arXiv.2607.29174",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2607.29174",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1753,7 +1753,7 @@
       ],
       "identifier": "10.48550/arXiv.2606.10405",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2606.10405",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1781,7 +1781,7 @@
       ],
       "identifier": "10.1103/316q-596d",
       "identifierUrl": "https://doi.org/10.1103/316q-596d",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1807,7 +1807,7 @@
       ],
       "identifier": "10.48550/arXiv.2608.20867",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2608.20867",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1833,7 +1833,7 @@
       ],
       "identifier": "10.1038/s42005-026-02623-6",
       "identifierUrl": "https://doi.org/10.1038/s42005-026-02623-6",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1856,7 +1856,7 @@
       ],
       "identifier": "10.1103/xb4r-9wxk",
       "identifierUrl": "https://doi.org/10.1103/xb4r-9wxk",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1882,7 +1882,7 @@
       ],
       "identifier": "10.1103/2h27-c8sp",
       "identifierUrl": "https://doi.org/10.1103/2h27-c8sp",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1911,7 +1911,7 @@
       ],
       "identifier": "10.48550/arXiv.2609.18883",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.18883",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1935,7 +1935,7 @@
       ],
       "identifier": "10.48550/arXiv.2609.24063",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.24063",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1960,7 +1960,7 @@
       ],
       "identifier": "10.48550/arXiv.2609.19348",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.19348",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1985,7 +1985,7 @@
       ],
       "identifier": "Institutional research programme",
       "identifierUrl": "https://www.southampton.ac.uk/study/postgraduate-research/projects/photonic-time-crystals-timetronics",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -3542,33 +3542,6 @@
     {
       "ledgerRank": 128,
       "domain": "physics",
-      "title": "Design of Energy-Efficient Cross-coupled Differential Photonic-SRAM (pSRAM) Bitcell for High-Speed On-Chip Photonic Memory and Compute Systems",
-      "primaryUrl": "https://arxiv.org/abs/2503.19544",
-      "source": "arXiv",
-      "authors": [
-        "Md Abdullah-Al Kaiser",
-        "Sugeet Sunder",
-        "Clynn Mathew",
-        "Michal Rakowski",
-        "Ajey P. Jacob",
-        "Akhilesh R. Jaiswal"
-      ],
-      "identifier": "10.48550/arXiv.2503.19544",
-      "identifierUrl": "https://doi.org/10.48550/arXiv.2503.19544",
-      "overlapScore": 8.0,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
-      "influenceStatus": "unresolved",
-      "derivationStatus": "unresolved",
-      "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
-    },
-    {
-      "ledgerRank": 129,
-      "domain": "physics",
       "title": "All-silicon non-volatile optical memory based on photon avalanche-induced trapping",
       "primaryUrl": "https://doi.org/10.1038/s42005-025-01934-4",
       "source": "Communications Physics",
@@ -3586,7 +3559,7 @@
       ],
       "identifier": "10.1038/s42005-025-01934-4",
       "identifierUrl": "https://doi.org/10.1038/s42005-025-01934-4",
-      "overlapScore": 8.0,
+      "overlapScore": 8,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -3598,7 +3571,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 130,
+      "ledgerRank": 129,
       "domain": "physics",
       "title": "Dissipative solitons in mode-locked parity–time-symmetric lasers",
       "primaryUrl": "https://doi.org/10.1038/s41566-025-01840-9",
@@ -3622,7 +3595,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 131,
+      "ledgerRank": 130,
       "domain": "physics",
       "title": "Global Well-posedness and Asymptotic Analysis of a Damped Nonlinear Wave Equation with a Codimension-One Constraint",
       "primaryUrl": "https://arxiv.org/abs/2609.02842",
@@ -3645,7 +3618,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 132,
+      "ledgerRank": 131,
       "domain": "physics",
       "title": "Shapiro steps of superfluid Fermi gases in a ring trap across the BCS--BEC crossover",
       "primaryUrl": "https://arxiv.org/abs/2605.17940",
@@ -3669,7 +3642,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 133,
+      "ledgerRank": 132,
       "domain": "physics",
       "title": "Efimovian Phonon Production for an Analog Coasting Universe in Bose-Einstein Condensates",
       "primaryUrl": "https://arxiv.org/abs/2603.16095",
@@ -3695,7 +3668,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 134,
+      "ledgerRank": 133,
       "domain": "physics",
       "title": "NEO-PGA: Nonvolatile electro-optically programmable gate array",
       "primaryUrl": "https://arxiv.org/abs/2506.18592",
@@ -3723,7 +3696,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 135,
+      "ledgerRank": 134,
       "domain": "physics",
       "title": "Chaos-induced scalar-to-vector soliton transitions in birefringent chiral media driven by Rodrigues–Legendre fields",
       "primaryUrl": "https://doi.org/10.1016/j.chaos.2026.118510",
@@ -3746,7 +3719,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 136,
+      "ledgerRank": 135,
       "domain": "physics",
       "title": "Antiresonances of Wannier-Stark ladders in Su-Schrieffer-Heeger lattices",
       "primaryUrl": "https://arxiv.org/abs/2609.01363",
@@ -3769,7 +3742,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 137,
+      "ledgerRank": 136,
       "domain": "physics",
       "title": "Emergent discrete space-time crystal of Majorana-like quasiparticles in chiral liquid crystals",
       "primaryUrl": "https://doi.org/10.1038/s41467-026-70880-8",
@@ -3793,7 +3766,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 138,
+      "ledgerRank": 137,
       "domain": "physics",
       "title": "Injection locking of Rydberg dissipative time crystals",
       "primaryUrl": "https://doi.org/10.1038/s42005-026-02585-9",
@@ -3815,7 +3788,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 139,
+      "ledgerRank": 138,
       "domain": "physics",
       "title": "Observation of wave amplification and temporal topological state in a genuine photonic time crystal",
       "primaryUrl": "https://arxiv.org/abs/2507.02223",
@@ -3845,7 +3818,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 140,
+      "ledgerRank": 139,
       "domain": "physics",
       "title": "Chaos-induced soliton dynamics and energy localization under Doppler-broadened in Electromagnetically Induced Transparency media",
       "primaryUrl": "https://doi.org/10.1016/j.chaos.2026.118534",
@@ -3870,7 +3843,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 141,
+      "ledgerRank": 140,
       "domain": "physics",
       "title": "Multi-mode Photonic Time Crystals Based on Time-Modulated Metasurface Waveguides",
       "primaryUrl": "https://arxiv.org/abs/2605.14268",
@@ -3895,7 +3868,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 142,
+      "ledgerRank": 141,
       "domain": "physics",
       "title": "Non-Hermitian Interaction between Light and Photonic Time Crystal Beyond the Floquet Quasinormal Mode Approximation",
       "primaryUrl": "https://arxiv.org/abs/2607.14912",
@@ -3923,7 +3896,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 143,
+      "ledgerRank": 142,
       "domain": "physics",
       "title": "Non-Foster Photonic Time Crystals",
       "primaryUrl": "https://arxiv.org/abs/2509.00795",
@@ -3949,7 +3922,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 144,
+      "ledgerRank": 143,
       "domain": "physics",
       "title": "Resonant states of structured photonic time crystals",
       "primaryUrl": "https://arxiv.org/abs/2506.01472",
@@ -3976,7 +3949,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 145,
+      "ledgerRank": 144,
       "domain": "physics",
       "title": "Demonstration of Broadband Non-Resonant Time-Crystal Amplification in Microwaves",
       "primaryUrl": "https://arxiv.org/abs/2605.21014",
@@ -4002,7 +3975,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 146,
+      "ledgerRank": 145,
       "domain": "physics",
       "title": "Quantum analysis of multi-frequency laser with photonic time crystal",
       "primaryUrl": "https://arxiv.org/abs/2605.20042",
@@ -4025,7 +3998,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 147,
+      "ledgerRank": 146,
       "domain": "physics",
       "title": "Analogs of spontaneous emission and lasing in photonic time crystals",
       "primaryUrl": "https://arxiv.org/abs/2507.19916",
@@ -4056,7 +4029,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 148,
+      "ledgerRank": 147,
       "domain": "physics",
       "title": "Spontaneous symmetry breaking of dissipative solitons under localized parametric drives",
       "primaryUrl": "https://doi.org/10.1016/j.chaos.2026.118390",
@@ -4082,7 +4055,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 149,
+      "ledgerRank": 148,
       "domain": "physics",
       "title": "Observation of Higher-Order Hybrid Bright-Dark Soliton Complexes in an NPR Mode-Locked Fiber Laser",
       "primaryUrl": "https://arxiv.org/abs/2606.22523",
@@ -4106,7 +4079,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 150,
+      "ledgerRank": 149,
       "domain": "physics",
       "title": "Collision and coalescence dynamics of bosonic quantum Hall droplets",
       "primaryUrl": "https://arxiv.org/abs/2606.27768",
@@ -4135,7 +4108,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 151,
+      "ledgerRank": 150,
       "domain": "physics",
       "title": "Fractality-induced photonic topological insulators",
       "primaryUrl": "https://arxiv.org/abs/2606.23505",
@@ -4161,7 +4134,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 152,
+      "ledgerRank": 151,
       "domain": "physics",
       "title": "Solitons and periodic wave solutions for complex Ginzburg-Landau equation modelling fiber lasers and nonequilibrium phenomena",
       "primaryUrl": "https://arxiv.org/abs/2608.14918",
@@ -4184,7 +4157,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 153,
+      "ledgerRank": 152,
       "domain": "physics",
       "title": "On prethermal time crystals from semi-holography",
       "primaryUrl": "https://arxiv.org/abs/2512.21690",
@@ -4209,7 +4182,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 154,
+      "ledgerRank": 153,
       "domain": "physics",
       "title": "Emergence of Time Semicrystals in Holographic Driven-Dissipative Systems",
       "primaryUrl": "https://arxiv.org/abs/2604.14131",
@@ -4234,7 +4207,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 155,
+      "ledgerRank": 154,
       "domain": "physics",
       "title": "Time crystals in cavity-BEC systems",
       "primaryUrl": "https://arxiv.org/abs/2605.23881",
@@ -4257,7 +4230,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 156,
+      "ledgerRank": 155,
       "domain": "physics",
       "title": "Topological Winding Readout of an Emergent Page-Wootters Clock",
       "primaryUrl": "https://arxiv.org/abs/2608.27650",
@@ -4281,7 +4254,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 157,
+      "ledgerRank": 156,
       "domain": "physics",
       "title": "Binary Dipolar Condensates of Dysprosium Isotopes with Tunable Spatial Order",
       "primaryUrl": "https://arxiv.org/abs/2606.26606",
@@ -4309,7 +4282,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 158,
+      "ledgerRank": 157,
       "domain": "physics",
       "title": "Low-Threshold Degenerate Optical Parametric Oscillations in Bichromatically-Pumped Normal-Dispersion Photonic-Crystal Microresonator",
       "primaryUrl": "https://arxiv.org/abs/2606.26860",
@@ -4336,7 +4309,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 159,
+      "ledgerRank": 158,
       "domain": "physics",
       "title": "Dynamic quantum-light radiation shaping with time-modulated BTO-driven nanoantennas array",
       "primaryUrl": "https://doi.org/10.1038/s44310-026-00141-5",
@@ -4360,7 +4333,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 160,
+      "ledgerRank": 159,
       "domain": "physics",
       "title": "Vacuum Fluctuation-Induced State Switching in Degenerate Optical Parametric Oscillators",
       "primaryUrl": "https://arxiv.org/abs/2606.28178",
@@ -4377,7 +4350,7 @@
       ],
       "identifier": "10.48550/arXiv.2606.28178",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2606.28178",
-      "overlapScore": 7.0,
+      "overlapScore": 7,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4389,7 +4362,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 161,
+      "ledgerRank": 160,
       "domain": "physics",
       "title": "Exact soliton solutions, chaotic dynamics, and high-precision simulations for the modified complex Ginzburg–Landau equation",
       "primaryUrl": "https://doi.org/10.1063/5.0336210",
@@ -4402,7 +4375,7 @@
       ],
       "identifier": "10.1063/5.0336210",
       "identifierUrl": "https://doi.org/10.1063/5.0336210",
-      "overlapScore": 7.0,
+      "overlapScore": 7,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4414,7 +4387,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 162,
+      "ledgerRank": 161,
       "domain": "physics",
       "title": "Localized waves and interaction solution for the fifth-order nonlinear Schrödinger equation from Heisenberg ferromagnetism",
       "primaryUrl": "https://doi.org/10.1088/1402-4896/ae3f61",
@@ -4438,7 +4411,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 163,
+      "ledgerRank": 162,
       "domain": "physics",
       "title": "Nonlinear Meissner States, Vortex Sheets, and Laminar Structures in Extreme Type-II Superconductors",
       "primaryUrl": "https://arxiv.org/abs/2607.29608",
@@ -4460,7 +4433,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 164,
+      "ledgerRank": 163,
       "domain": "physics",
       "title": "Nonlinear Fourier spectral signatures of rogue waves observed in Bose-Einstein condensates",
       "primaryUrl": "https://arxiv.org/abs/2607.27734",
@@ -4486,7 +4459,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 165,
+      "ledgerRank": 164,
       "domain": "physics",
       "title": "Condensation and Non-condensation Times for 4-Wave Kinetic Equations",
       "primaryUrl": "https://doi.org/10.1007/s00205-026-02217-0",
@@ -4509,7 +4482,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 166,
+      "ledgerRank": 165,
       "domain": "physics",
       "title": "Extended envelope nonlinear waves in dusty plasma chain",
       "primaryUrl": "https://doi.org/10.1017/S0022377826101354",
@@ -4536,7 +4509,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 167,
+      "ledgerRank": 166,
       "domain": "physics",
       "title": "Multi-parameter Perturbations of the Laplacian and Resonance Near a Simple Embedded Eigenvalue",
       "primaryUrl": "https://arxiv.org/abs/2606.28263",
@@ -4560,7 +4533,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 168,
+      "ledgerRank": 167,
       "domain": "physics",
       "title": "Effective Lagrangian of a bosonic system in a non-trivial topology under magnetic effects",
       "primaryUrl": "https://doi.org/10.1140/epjc/s10052-026-15907-6",
@@ -4585,7 +4558,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 169,
+      "ledgerRank": 168,
       "domain": "physics",
       "title": "A high-order regularization of the non-linear shallow water equations with weakly singular shock waves and its approximation by finite volume methods",
       "primaryUrl": "https://doi.org/10.1007/s40314-026-03839-6",
@@ -4608,7 +4581,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 170,
+      "ledgerRank": 169,
       "domain": "physics",
       "title": "Perturbation theory for kinks of the defocusing modified Korteweg-de Vries equation",
       "primaryUrl": "https://arxiv.org/abs/2606.28250",
@@ -4633,7 +4606,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 171,
+      "ledgerRank": 170,
       "domain": "physics",
       "title": "Localization region detection with directionality estimation in a two-dimensional hexagonal crystal lattice model",
       "primaryUrl": "https://arxiv.org/abs/2606.24923",
@@ -4656,7 +4629,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 172,
+      "ledgerRank": 171,
       "domain": "physics",
       "title": "Nitrogen-induced ELM suppression and confinement improvement in the EAST tokamak with a full metal wall",
       "primaryUrl": "https://arxiv.org/abs/2604.26403",
@@ -4688,7 +4661,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 173,
+      "ledgerRank": 172,
       "domain": "physics",
       "title": "A conservative Mixed Finite Element Method for a Regularised Nonlinear Long-Wave Model",
       "primaryUrl": "https://doi.org/10.1007/s10915-026-03242-7",
@@ -4700,7 +4673,7 @@
       ],
       "identifier": "10.1007/s10915-026-03242-7",
       "identifierUrl": "https://doi.org/10.1007/s10915-026-03242-7",
-      "overlapScore": 6.0,
+      "overlapScore": 6,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4712,7 +4685,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 174,
+      "ledgerRank": 173,
       "domain": "physics",
       "title": "Scattering and Low-Speed Critical Elements for the 3D Focusing Energy-Critical NLS",
       "primaryUrl": "https://arxiv.org/abs/2607.04214",
@@ -4735,7 +4708,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 175,
+      "ledgerRank": 174,
       "domain": "ai",
       "title": "Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident",
       "primaryUrl": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
@@ -4747,7 +4720,7 @@
       ],
       "identifier": "METR incident investigation · 2026-08-26",
       "identifierUrl": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
-      "overlapScore": 10.0,
+      "overlapScore": 10,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4759,7 +4732,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 176,
+      "ledgerRank": 175,
       "domain": "ai",
       "title": "Autonomous LLM Agent Worms: Cross-Platform Propagation, Automated Discovery and Temporal Re-Entry Defense",
       "primaryUrl": "https://arxiv.org/abs/2605.02812",
@@ -4782,7 +4755,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 177,
+      "ledgerRank": 176,
       "domain": "ai",
       "title": "The Hugging Face incident and the road ahead",
       "primaryUrl": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
@@ -4804,7 +4777,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 178,
+      "ledgerRank": 177,
       "domain": "ai",
       "title": "Reward Hacking Challenges Oversight of Autonomous Research Agents",
       "primaryUrl": "https://arxiv.org/abs/2609.28614",
@@ -4840,7 +4813,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 179,
+      "ledgerRank": 178,
       "domain": "ai",
       "title": "Our framework for reporting model misalignment",
       "primaryUrl": "https://openai.com/index/model-misalignment-reporting-framework/",
@@ -4862,7 +4835,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 180,
+      "ledgerRank": 179,
       "domain": "ai",
       "title": "AgentWorm: Self-Propagating Attacks Across LLM Agent Ecosystems",
       "primaryUrl": "https://arxiv.org/abs/2603.15727",
@@ -4893,7 +4866,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 181,
+      "ledgerRank": 180,
       "domain": "ai",
       "title": "OpenAI and Hugging Face partner to address security incident during model evaluation",
       "primaryUrl": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
@@ -4915,7 +4888,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 182,
+      "ledgerRank": 181,
       "domain": "ai",
       "title": "Evolutionary Safety of Recursive Self-Improving AI: Taxonomy, Risk Discovery, and Evaluation",
       "primaryUrl": "https://arxiv.org/abs/2609.31186",
@@ -4942,7 +4915,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 183,
+      "ledgerRank": 182,
       "domain": "ai",
       "title": "The Self-Correction Illusion: LLMs Correct Others but Not Themselves",
       "primaryUrl": "https://arxiv.org/abs/2606.05976",
@@ -4966,7 +4939,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 184,
+      "ledgerRank": 183,
       "domain": "ai",
       "title": "Conformity Generates Collective Misalignment in AI Agents Societies",
       "primaryUrl": "https://arxiv.org/abs/2605.10721",
@@ -4992,7 +4965,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 185,
+      "ledgerRank": 184,
       "domain": "ai",
       "title": "SoK: When Safe Agents Fail Together: The Security of Multi Agent LLM Systems",
       "primaryUrl": "https://arxiv.org/abs/2609.00595",
@@ -5020,7 +4993,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 186,
+      "ledgerRank": 185,
       "domain": "ai",
       "title": "OWASP Top 10 for Agentic Applications for 2026 — ASI08 Cascading Failures",
       "primaryUrl": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
@@ -5042,7 +5015,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 187,
+      "ledgerRank": 186,
       "domain": "ai",
       "title": "CASPIAN: Online Detection and Attribution of Cascade Attacks in LLM Multi-Agent Systems via Cross-Channel Causal Monitoring",
       "primaryUrl": "https://arxiv.org/abs/2605.19240",
@@ -5068,7 +5041,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 188,
+      "ledgerRank": 187,
       "domain": "ai",
       "title": "ACIArena: Toward Unified Evaluation for Agent Cascading Injection",
       "primaryUrl": "https://arxiv.org/abs/2604.07775",
@@ -5098,7 +5071,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 189,
+      "ledgerRank": 188,
       "domain": "ai",
       "title": "A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory",
       "primaryUrl": "https://arxiv.org/abs/2510.02373",
@@ -5129,7 +5102,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 190,
+      "ledgerRank": 189,
       "domain": "ai",
       "title": "Self-Correction Bench: Uncovering and Addressing the Self-Correction Blind Spot in Large Language Models",
       "primaryUrl": "https://arxiv.org/abs/2507.02778",
@@ -5151,7 +5124,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 191,
+      "ledgerRank": 190,
       "domain": "ai",
       "title": "An alignment assessment of recent cybersecurity incidents",
       "primaryUrl": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
@@ -5173,7 +5146,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 192,
+      "ledgerRank": 191,
       "domain": "ai",
       "title": "A Fragility Spectrum for Recursive Language-Model Training",
       "primaryUrl": "https://arxiv.org/abs/2609.11149",
@@ -5196,7 +5169,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 193,
+      "ledgerRank": 192,
       "domain": "ai",
       "title": "From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration",
       "primaryUrl": "https://arxiv.org/abs/2603.04474",
@@ -5225,7 +5198,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 194,
+      "ledgerRank": 193,
       "domain": "ai",
       "title": "Documented AI Agent Incidents",
       "primaryUrl": "https://metr.org/agent-incidents/",
@@ -5247,7 +5220,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 195,
+      "ledgerRank": 194,
       "domain": "ai",
       "title": "Group size effects and collective misalignment in LLM multi-agent systems",
       "primaryUrl": "https://arxiv.org/abs/2510.22422",
@@ -5272,7 +5245,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 196,
+      "ledgerRank": 195,
       "domain": "ai",
       "title": "LLMs Trust Their Own: Identity-Dependent Conformity in Multi-Agent Systems",
       "primaryUrl": "https://arxiv.org/abs/2609.33495",
@@ -5296,7 +5269,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 197,
+      "ledgerRank": 196,
       "domain": "ai",
       "title": "Remembering More, Risking More: Longitudinal Safety Risks in Memory-Equipped LLM Agents",
       "primaryUrl": "https://arxiv.org/abs/2605.17830",
@@ -5322,7 +5295,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 198,
+      "ledgerRank": 197,
       "domain": "ai",
       "title": "The 2026 Singapore Consensus on Global AI Safety Research Priorities",
       "primaryUrl": "https://arxiv.org/abs/2608.14611",
@@ -5360,7 +5333,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 199,
+      "ledgerRank": 198,
       "domain": "ai",
       "title": "MAGE: Safeguarding LLM Agents against Long-Horizon Threats via Shadow Memory",
       "primaryUrl": "https://arxiv.org/abs/2605.03228",
@@ -5386,7 +5359,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 200,
+      "ledgerRank": 199,
       "domain": "ai",
       "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
       "primaryUrl": "https://arxiv.org/abs/2607.07663",
@@ -5410,7 +5383,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 201,
+      "ledgerRank": 200,
       "domain": "ai",
       "title": "Hidden in Memory: Sleeper Memory Poisoning in LLM Agents",
       "primaryUrl": "https://arxiv.org/abs/2605.15338",
@@ -5438,7 +5411,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 202,
+      "ledgerRank": 201,
       "domain": "ai",
       "title": "Agentic Misalignment in Summer 2026",
       "primaryUrl": "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/",
@@ -5464,7 +5437,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 203,
+      "ledgerRank": 202,
       "domain": "ai",
       "title": "Toward Secure LLM Agents: Threat Surfaces, Attacks, Defenses, and Evaluation",
       "primaryUrl": "https://arxiv.org/abs/2606.10749",
@@ -5489,7 +5462,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 204,
+      "ledgerRank": 203,
       "domain": "ai",
       "title": "Securing the future of AI agents",
       "primaryUrl": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
@@ -5512,7 +5485,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 205,
+      "ledgerRank": 204,
       "domain": "ai",
       "title": "Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees",
       "primaryUrl": "https://arxiv.org/abs/2606.24322",
@@ -5534,7 +5507,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 206,
+      "ledgerRank": 205,
       "domain": "ai",
       "title": "A Survey on Long-Term Memory Security in LLM Agents: Attacks, Defenses, and Governance Across the Memory Lifecycle",
       "primaryUrl": "https://arxiv.org/abs/2604.16548",
@@ -5558,7 +5531,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 207,
+      "ledgerRank": 206,
       "domain": "ai",
       "title": "Metagaming matters for training, evaluation, and oversight",
       "primaryUrl": "https://apolloresearch.ai/science/metagaming-matters-for-training-evaluation-and-oversight",
@@ -5581,7 +5554,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 208,
+      "ledgerRank": 207,
       "domain": "ai",
       "title": "Measuring Reward-Seeking via Contrastive Belief Updates",
       "primaryUrl": "https://arxiv.org/abs/2607.18966",
@@ -5610,7 +5583,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 209,
+      "ledgerRank": 208,
       "domain": "ai",
       "title": "Memory poisoning and secure multi-agent systems",
       "primaryUrl": "https://arxiv.org/abs/2603.20357",
@@ -5633,7 +5606,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 210,
+      "ledgerRank": 209,
       "domain": "ai",
       "title": "Autogenesis: A Self-Evolving Agent Protocol",
       "primaryUrl": "https://arxiv.org/abs/2604.15034",
@@ -5655,7 +5628,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 211,
+      "ledgerRank": 210,
       "domain": "ai",
       "title": "MemGym: a Long-Horizon Memory Environment for LLM Agents",
       "primaryUrl": "https://arxiv.org/abs/2605.20833",
@@ -5687,7 +5660,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 212,
+      "ledgerRank": 211,
       "domain": "ai",
       "title": "SafetyDrift: Predicting When AI Agents Cross the Line Before They Actually Do",
       "primaryUrl": "https://arxiv.org/abs/2603.27148",
@@ -5698,7 +5671,7 @@
       ],
       "identifier": "10.48550/arXiv.2603.27148",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2603.27148",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5710,7 +5683,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 213,
+      "ledgerRank": 212,
       "domain": "ai",
       "title": "Safety in Self-Evolving LLM Agent Systems: Threats, Amplification, and Case Studies",
       "primaryUrl": "https://arxiv.org/abs/2606.23075",
@@ -5746,7 +5719,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 214,
+      "ledgerRank": 213,
       "domain": "ai",
       "title": "In-Context Environments Induce Evaluation-Awareness in Language Models",
       "primaryUrl": "https://arxiv.org/abs/2603.03824",
@@ -5768,7 +5741,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 215,
+      "ledgerRank": 214,
       "domain": "ai",
       "title": "How we monitor internal coding agents for misalignment",
       "primaryUrl": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/",
@@ -5795,7 +5768,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 216,
+      "ledgerRank": 215,
       "domain": "ai",
       "title": "SelfAI: A self-directed framework for long-horizon scientific discovery",
       "primaryUrl": "https://arxiv.org/abs/2512.00403",
@@ -5828,7 +5801,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 217,
+      "ledgerRank": 216,
       "domain": "ai",
       "title": "Training Agents to Self-Report Misbehavior",
       "primaryUrl": "https://arxiv.org/abs/2602.22303",
@@ -5852,7 +5825,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 218,
+      "ledgerRank": 217,
       "domain": "ai",
       "title": "Gram: Assessing sabotage propensities via automated alignment auditing",
       "primaryUrl": "https://arxiv.org/abs/2605.30322",
@@ -5876,7 +5849,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 219,
+      "ledgerRank": 218,
       "domain": "ai",
       "title": "Evaluating and Understanding Scheming Propensity in LLM Agents",
       "primaryUrl": "https://arxiv.org/abs/2603.01608",
@@ -5902,7 +5875,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 220,
+      "ledgerRank": 219,
       "domain": "ai",
       "title": "Memori: A Persistent Memory Layer for Efficient, Context-Aware LLM Agents",
       "primaryUrl": "https://arxiv.org/abs/2603.19935",
@@ -5928,7 +5901,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 221,
+      "ledgerRank": 220,
       "domain": "ai",
       "title": "Behavioural Analysis of Alignment Faking",
       "primaryUrl": "https://arxiv.org/abs/2605.27681",
@@ -5953,7 +5926,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 222,
+      "ledgerRank": 221,
       "domain": "ai",
       "title": "Do Models Fake Alignment Without Clear Consequences?",
       "primaryUrl": "https://arxiv.org/abs/2607.24758",
@@ -5977,7 +5950,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 223,
+      "ledgerRank": 222,
       "domain": "ai",
       "title": "Safe Multi-Agent Behavior Must Be Maintained, Not Merely Asserted: Constraint Drift in LLM-Based Multi-Agent Systems",
       "primaryUrl": "https://arxiv.org/abs/2605.10481",
@@ -6005,7 +5978,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 224,
+      "ledgerRank": 223,
       "domain": "ai",
       "title": "Automated Researchers Can Mitigate Well-Characterized Alignment Failures",
       "primaryUrl": "https://alignment.anthropic.com/2026/automated-alignment-researchers/",
@@ -6029,7 +6002,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 225,
+      "ledgerRank": 224,
       "domain": "ai",
       "title": "Investing in multi-agent AI safety research",
       "primaryUrl": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
@@ -6055,7 +6028,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 226,
+      "ledgerRank": 225,
       "domain": "ai",
       "title": "Governing Evolving Memory in LLM Agents: Risks, Mechanisms, and the Stability and Safety Governed Memory (SSGM) Framework",
       "primaryUrl": "https://arxiv.org/abs/2603.11768",
@@ -6080,7 +6053,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 227,
+      "ledgerRank": 226,
       "domain": "ai",
       "title": "Strengthening our Frontier Safety Framework",
       "primaryUrl": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
@@ -6104,7 +6077,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 228,
+      "ledgerRank": 227,
       "domain": "ai",
       "title": "Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds",
       "primaryUrl": "https://arxiv.org/abs/2606.15385",
@@ -6127,7 +6100,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 229,
+      "ledgerRank": 228,
       "domain": "ai",
       "title": "Agent Drift: Quantifying Behavioral Degradation in Multi-Agent LLM Systems Over Extended Interactions",
       "primaryUrl": "https://arxiv.org/abs/2601.04170",
@@ -6149,7 +6122,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 230,
+      "ledgerRank": 229,
       "domain": "ai",
       "title": "Stay Focused: Problem Drift in Multi-Agent Debate",
       "primaryUrl": "https://arxiv.org/abs/2502.19559",
@@ -6176,7 +6149,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 231,
+      "ledgerRank": 230,
       "domain": "ai",
       "title": "Reasoning models struggle to control their chains of thought, and that’s good",
       "primaryUrl": "https://openai.com/index/reasoning-models-chain-of-thought-controllability/",
@@ -6201,7 +6174,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 232,
+      "ledgerRank": 231,
       "domain": "ai",
       "title": "We need 3rd party Training-Run Assessments",
       "primaryUrl": "https://www.apolloresearch.ai/science/we-need-3rd-party-training-run-assessments",
@@ -6223,7 +6196,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 233,
+      "ledgerRank": 232,
       "domain": "ai",
       "title": "AgentShield: Deception-based Compromise Detection for Tool-using LLM Agents",
       "primaryUrl": "https://arxiv.org/abs/2605.11026",
@@ -6246,7 +6219,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 234,
+      "ledgerRank": 233,
       "domain": "ai",
       "title": "SAGE: Multi-Agent Self-Evolution for LLM Reasoning",
       "primaryUrl": "https://arxiv.org/abs/2603.15255",
@@ -6274,7 +6247,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 235,
+      "ledgerRank": 234,
       "domain": "ai",
       "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
       "primaryUrl": "https://arxiv.org/abs/2511.18397",
@@ -6317,7 +6290,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 236,
+      "ledgerRank": 235,
       "domain": "ai",
       "title": "Cost-Utility Alignment in LLM Agent Trajectories: Profiling, Attribution, Diagnosis, Adaptation, and Evaluation",
       "primaryUrl": "https://arxiv.org/abs/2608.26195",
@@ -6340,7 +6313,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 237,
+      "ledgerRank": 236,
       "domain": "ai",
       "title": "LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking",
       "primaryUrl": "https://arxiv.org/abs/2604.15149",
@@ -6370,7 +6343,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 238,
+      "ledgerRank": 237,
       "domain": "ai",
       "title": "Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use",
       "primaryUrl": "https://arxiv.org/abs/2605.02964",
@@ -6392,7 +6365,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 239,
+      "ledgerRank": 238,
       "domain": "ai",
       "title": "School of Reward Hacks: Hacking harmless tasks generalizes to misaligned behavior in LLMs",
       "primaryUrl": "https://arxiv.org/abs/2508.17511",
@@ -6418,7 +6391,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 240,
+      "ledgerRank": 239,
       "domain": "ai",
       "title": "Fully Autonomous AI Agents Should Not be Developed",
       "primaryUrl": "https://arxiv.org/abs/2502.02649",
@@ -6443,7 +6416,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 241,
+      "ledgerRank": 240,
       "domain": "ai",
       "title": "The GenAI Divide: State of AI in Business 2025",
       "primaryUrl": "https://www.media.mit.edu/groups/nanda/overview/",
@@ -6468,7 +6441,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 242,
+      "ledgerRank": 241,
       "domain": "ai",
       "title": "Temporal Blind Spot Failure in Serverless Cloud Systems: How AI Agents Cause Cloud Disasters",
       "primaryUrl": "https://www.tdcommons.org/2026.html",
