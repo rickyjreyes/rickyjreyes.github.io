@@ -621,6 +621,19 @@
     return (low+(target-a)/Math.max(1e-12,b-a))/phaseN;
   };
 
+  // Shared three-point circumcircle helper for the independent equation story.
+  // Stage 08 uses exact analytical curvature instead.
+  const circum=(a,b,c)=>{
+    const d=2*(a[0]*(b[1]-c[1])+b[0]*(c[1]-a[1])+c[0]*(a[1]-b[1]));
+    if(Math.abs(d)<1e-6)return null;
+    const aa=a[0]*a[0]+a[1]*a[1];
+    const bb=b[0]*b[0]+b[1]*b[1];
+    const cc=c[0]*c[0]+c[1]*c[1];
+    const ux=(aa*(b[1]-c[1])+bb*(c[1]-a[1])+cc*(a[1]-b[1]))/d;
+    const uy=(aa*(c[0]-b[0])+bb*(a[0]-c[0])+cc*(b[0]-a[0]))/d;
+    return [ux,uy,Math.hypot(ux-b[0],uy-b[1])];
+  };
+
   const drawFold=(t)=>{
     if(!zwFold||!zwFoldInner)return;
     // One repeating passage from broadband disorder to a coherent folded mode.
