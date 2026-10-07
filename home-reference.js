@@ -9,6 +9,8 @@
   const pips=[...document.querySelectorAll('.wct-theory-pips i')];
   const caption=document.querySelector('[data-theory-caption]');
   const theoryProgress=document.querySelector('[data-theory-progress]');
+  const prioritySpine=document.querySelector('[data-priority-spine]');
+  const priorityItems=[...document.querySelectorAll('[data-priority-spine] .priority-highlight')];
 
   const labels=[
     'Zero-wave → ZW1 fold',
@@ -345,8 +347,44 @@
 
   buildEquation();
 
+  const updatePrioritySpine=()=>{
+    if(!prioritySpine||!priorityItems.length)return;
+    if(reduced.matches){
+      prioritySpine.style.setProperty('--spine-progress','1');
+      priorityItems.forEach((item,i)=>{
+        item.classList.add('spine-reached');
+        item.classList.toggle('spine-current',i===priorityItems.length-1);
+      });
+      return;
+    }
+
+    const vh=innerHeight||1;
+    const anchor=vh*.58;
+    const spineRect=prioritySpine.getBoundingClientRect();
+    const firstRect=priorityItems[0].getBoundingClientRect();
+    const lastRect=priorityItems[priorityItems.length-1].getBoundingClientRect();
+    const firstY=firstRect.top+firstRect.height*.5;
+    const lastY=lastRect.top+lastRect.height*.5;
+    const span=Math.max(1,lastY-firstY);
+    const progress=clamp((anchor-firstY)/span);
+    prioritySpine.style.setProperty('--spine-progress',progress.toFixed(4));
+
+    let current=0;
+    let currentDist=Infinity;
+    priorityItems.forEach((item,i)=>{
+      const r=item.getBoundingClientRect();
+      const center=r.top+r.height*.5;
+      const reached=center<=anchor+1;
+      item.classList.toggle('spine-reached',reached);
+      const d=Math.abs(center-anchor);
+      if(d<currentDist){currentDist=d;current=i}
+    });
+    priorityItems.forEach((item,i)=>item.classList.toggle('spine-current',i===current));
+  };
+
   const updateScroll=()=>{
     scrollRaf=0;
+    updatePrioritySpine();
     if(theoryVisual&&steps.length&&innerWidth>980&&!reduced.matches)setStage(nearestStage());
 
     if(eqBuild&&eqData){
@@ -379,6 +417,7 @@
     if(reduced.matches){
       setStage(0);
       renderEquationProgress(1);
+      updatePrioritySpine();
     }else{
       schedule();
       if(theoryVisible&&!theoryRaf)theoryRaf=requestAnimationFrame(theoryLoop);
