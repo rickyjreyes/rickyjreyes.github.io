@@ -875,12 +875,28 @@
   // Scroll-built registered equation chain.
   const eqBuild=document.querySelector('[data-equation-build]');
   const eqKnot=document.querySelector('.eq-knot');
+  const eqWeightSegments=document.querySelector('.eq-weight-segments');
   const eqSigma=document.querySelector('.eq-sigma');
+  const eqPhaseGradient=document.querySelector('.eq-phase-gradient');
+  const eqWeight=document.querySelector('.eq-weight');
+  const eqWeighted=document.querySelector('.eq-weighted');
   const eqPhase=document.querySelector('.eq-phase');
   const eqTangent=document.querySelector('.eq-tangent');
+  const eqNormal=document.querySelector('.eq-normal');
+  const eqBinormal=document.querySelector('.eq-binormal');
+  const eqTLabel=document.querySelector('[data-eq-t-label]');
+  const eqNLabel=document.querySelector('[data-eq-n-label]');
+  const eqBLabel=document.querySelector('[data-eq-b-label]');
   const eqOsc=document.querySelector('.eq-osc');
   const eqMean=document.querySelector('[data-eq-mean]');
   const eqMeanLabel=document.querySelector('[data-eq-mean-label]');
+  const eqSigmaMarker=document.querySelector('[data-eq-sigma-marker]');
+  const eqWeightMarker=document.querySelector('[data-eq-weight-marker]');
+  const eqCursor=document.querySelector('[data-eq-cursor]');
+  const eqLocalReadout=document.querySelector('[data-eq-local-readout]');
+  const eqLockStatus=document.querySelector('[data-eq-lock-status]');
+  const eqIntegralReadout=document.querySelector('[data-eq-integral-readout]');
+  const eqMassReadout=document.querySelector('[data-eq-mass-readout]');
   const eqStage=document.querySelector('[data-eq-stage]');
   const eqProgress=document.querySelector('[data-eq-progress]');
   const eqCards=[...document.querySelectorAll('[data-eq-card]')];
@@ -888,95 +904,255 @@
 
   const buildEquation=()=>{
     if(!eqKnot||!eqSigma)return;
-    const N=300,R=2,r=.72,p=2,q=3,pts=[];
+    const N=300,R=2,r=.72,torusP=2,torusQ=3,TAU=Math.PI*2,pts=[];
     const f=(t)=>{
-      const cq=Math.cos(q*t),sq=Math.sin(q*t),cp=Math.cos(p*t),sp=Math.sin(p*t);
+      const cq=Math.cos(torusQ*t),sq=Math.sin(torusQ*t),cp=Math.cos(torusP*t),sp=Math.sin(torusP*t);
       return [(R+r*cq)*cp,(R+r*cq)*sp,r*sq];
     };
-    for(let i=0;i<N;i++)pts.push(f(i/N*Math.PI*2));
+    for(let i=0;i<N;i++)pts.push(f(i/N*TAU));
+
     const sub=(a,b)=>a.map((v,i)=>v-b[i]);
     const add=(a,b)=>a.map((v,i)=>v+b[i]);
     const mul=(a,s)=>a.map(v=>v*s);
     const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
     const dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0);
     const norm=a=>Math.hypot(...a);
-    const sig=[];
+    const unit=a=>{const n=norm(a)||1;return a.map(v=>v/n)};
+    const project=v=>[260+72*v[0]+22*v[2],210+72*v[1]-18*v[2]];
+    const projectVector=v=>[72*v[0]+22*v[2],72*v[1]-18*v[2]];
 
+    const ds=pts.map((v,i)=>norm(sub(pts[(i+1)%N],v)));
+    const totalLength=ds.reduce((sum,v)=>sum+v,0);
+    const sAt=[];
+    let running=0;
+    for(let i=0;i<N;i++){sAt.push(running);running+=ds[i]}
+    const arcFrac=sAt.map(s=>s/Math.max(totalLength,1e-12));
+
+    const kappa=[],tau=[],sig=[],tangent=[],normal=[],binormal=[];
     for(let i=0;i<N;i++){
       const m2=pts[(i-2+N)%N],m1=pts[(i-1+N)%N],p1=pts[(i+1)%N],p2=pts[(i+2)%N];
       const d1=mul(sub(p1,m1),.5);
       const d2=add(sub(p1,mul(pts[i],2)),m1);
       const d3=mul(add(sub(p2,mul(p1,2)),sub(mul(m1,2),m2)),.5);
       const cr=cross(d1,d2),crn=norm(cr),d1n=norm(d1);
-      const k=crn/Math.max(1e-9,d1n*d1n*d1n);
-      const tau=dot(cr,d3)/Math.max(1e-9,crn*crn);
-      sig.push(Math.sqrt(k*k+tau*tau));
+      const k=crn/Math.max(1e-12,d1n*d1n*d1n);
+      const t=dot(cr,d3)/Math.max(1e-12,crn*crn);
+      const T=unit(d1);
+      const B=unit(cr);
+      const NN=unit(cross(B,T));
+      kappa.push(k);tau.push(t);sig.push(Math.sqrt(k*k+t*t));
+      tangent.push(T);normal.push(NN);binormal.push(B);
     }
 
-    const proj=pts.map(v=>[260+72*v[0]+22*v[2],210+72*v[1]-18*v[2]]);
+    // Declared positive demonstration density: independent of the local sigma peaks.
+    const weight=arcFrac.map(s=>1+.35*Math.cos(4*TAU*s));
+    const weighted=sig.map((v,i)=>v*weight[i]);
+    const integrate=values=>values.reduce((sum,v,i)=>sum+v*ds[i],0);
+    const sigmaIntegral=integrate(sig);
+    const weightIntegral=integrate(weight);
+    const weightedSigmaIntegral=integrate(weighted);
+    const invWeightIntegral=integrate(weight.map(v=>1/v));
+    const weightedMean=weightedSigmaIntegral/Math.max(weightIntegral,1e-12);
+    const arcMean=sigmaIntegral/Math.max(totalLength,1e-12);
+
+    // Constrained minimizer from the paper: k_parallel = sigma + alpha / w.
+    const winding=Math.max(1,Math.round(sigmaIntegral/TAU));
+    const alpha=(TAU*winding-sigmaIntegral)/Math.max(invWeightIntegral,1e-12);
+    const kParallel=sig.map((v,i)=>v+alpha/weight[i]);
+    const phaseWeightedMean=integrate(kParallel.map((v,i)=>v*weight[i]))/Math.max(weightIntegral,1e-12);
+    const windingCheck=integrate(kParallel)/TAU;
+
+    const proj=pts.map(project);
     let kd='';
     proj.forEach((v,i)=>kd+=(i?'L':'M')+v[0].toFixed(1)+' '+v[1].toFixed(1));
     eqKnot.setAttribute('d',kd+'Z');
     eqKnot.setAttribute('pathLength','1');
 
-    const max=Math.max(...sig),min=Math.min(...sig),base=490,amp=88;
-    let sd='';
-    sig.forEach((v,i)=>{
-      const x=38+i/(N-1)*444,y=base-(v-min)/Math.max(1e-9,max-min)*amp;
-      sd+=(i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);
-    });
-    eqSigma.setAttribute('d',sd);
-    eqSigma.setAttribute('pathLength','1');
+    const pathFor=(values,yBottom,amp,min,max)=>{
+      let d='';
+      for(let i=0;i<=N;i++){
+        const j=i%N;
+        const x=38+(i===N?1:arcFrac[j])*444;
+        const y=yBottom-(values[j]-min)/Math.max(1e-12,max-min)*amp;
+        d+=(i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);
+      }
+      return d;
+    };
 
-    const mean=sig.reduce((a,b)=>a+b,0)/N;
-    const meanY=base-(mean-min)/Math.max(1e-9,max-min)*amp;
+    const railMin=Math.min(...sig,...kParallel),railMax=Math.max(...sig,...kParallel);
+    const sigmaBottom=438,sigmaAmp=58;
+    eqSigma.setAttribute('d',pathFor(sig,sigmaBottom,sigmaAmp,railMin,railMax));
+    eqSigma.setAttribute('pathLength','1');
+    if(eqPhaseGradient){
+      eqPhaseGradient.setAttribute('d',pathFor(kParallel,sigmaBottom,sigmaAmp,railMin,railMax));
+      eqPhaseGradient.setAttribute('pathLength','1');
+    }
+
+    const wMin=Math.min(...weight),wMax=Math.max(...weight);
+    const wsMin=Math.min(...weighted),wsMax=Math.max(...weighted);
+    const weightBottom=542,weightAmp=36;
+    if(eqWeight){
+      eqWeight.setAttribute('d',pathFor(weight,weightBottom,weightAmp,wMin,wMax));
+      eqWeight.setAttribute('pathLength','1');
+    }
+    if(eqWeighted){
+      eqWeighted.setAttribute('d',pathFor(weighted,weightBottom,weightAmp,wsMin,wsMax));
+      eqWeighted.setAttribute('pathLength','1');
+    }
+
+    const meanY=sigmaBottom-(weightedMean-railMin)/Math.max(1e-12,railMax-railMin)*sigmaAmp;
     if(eqMean){eqMean.setAttribute('y1',meanY.toFixed(1));eqMean.setAttribute('y2',meanY.toFixed(1))}
-    if(eqMeanLabel)eqMeanLabel.setAttribute('y',(meanY-8).toFixed(1));
-    eqData={proj,sig,mean,min,max};
+    if(eqMeanLabel){
+      eqMeanLabel.setAttribute('y',(meanY-7).toFixed(1));
+      eqMeanLabel.textContent='⟨σ⟩w = '+weightedMean.toFixed(3)+' model⁻¹';
+    }
+
+    if(eqWeightSegments){
+      eqWeightSegments.replaceChildren();
+      const svgNS='http://www.w3.org/2000/svg';
+      for(let i=0;i<N;i++){
+        const a=proj[i],b=proj[(i+1)%N];
+        const line=document.createElementNS(svgNS,'line');
+        const u=(weight[i]-wMin)/Math.max(1e-12,wMax-wMin);
+        line.setAttribute('x1',a[0].toFixed(1));line.setAttribute('y1',a[1].toFixed(1));
+        line.setAttribute('x2',b[0].toFixed(1));line.setAttribute('y2',b[1].toFixed(1));
+        line.setAttribute('class','eq-weight-segment');
+        line.style.strokeWidth=(1.4+3.8*u).toFixed(2);
+        line.style.opacity=(.3+.7*u).toFixed(2);
+        eqWeightSegments.appendChild(line);
+      }
+    }
+
+    eqData={
+      proj,arcFrac,ds,totalLength,kappa,tau,sig,weight,weighted,kParallel,
+      tangent,normal,binormal,projectVector,
+      weightedMean,arcMean,weightIntegral,weightedSigmaIntegral,
+      sigmaIntegral,alpha,winding,windingCheck,phaseWeightedMean,
+      railMin,railMax,sigmaBottom,sigmaAmp,wMin,wMax,wsMin,wsMax,weightBottom,weightAmp
+    };
   };
 
   const renderEquationProgress=(p)=>{
     if(!eqData||!eqKnot||!eqSigma)return;
-    const knotP=clamp(p/.28);
-    const phaseP=clamp((p-.22)/.22);
-    const sigP=clamp((p-.48)/.28);
-    const meanP=clamp((p-.79)/.14);
+    const knotP=clamp(p/.17);
+    const frameP=clamp((p-.14)/.16);
+    const sigP=clamp((p-.29)/.17);
+    const weightP=clamp((p-.45)/.16);
+    const lockP=clamp((p-.60)/.16);
+    const meanP=clamp((p-.75)/.14);
+    const massP=clamp((p-.89)/.09);
 
     eqKnot.style.strokeDasharray='1';
     eqKnot.style.strokeDashoffset=String(1-knotP);
     eqSigma.style.strokeDasharray='1';
     eqSigma.style.strokeDashoffset=String(1-sigP);
+    if(eqPhaseGradient){
+      eqPhaseGradient.style.strokeDasharray='1';
+      eqPhaseGradient.style.strokeDashoffset=String(1-lockP);
+      eqPhaseGradient.style.opacity=String(lockP);
+    }
+    [eqWeight,eqWeighted].forEach(path=>{
+      if(!path)return;
+      path.style.strokeDasharray='1';
+      path.style.strokeDashoffset=String(1-weightP);
+      path.style.opacity=String(weightP);
+    });
+    if(eqWeightSegments)eqWeightSegments.style.opacity=String(weightP*.9);
     if(eqMean)eqMean.style.opacity=String(meanP);
     if(eqMeanLabel)eqMeanLabel.style.opacity=String(meanP);
+    if(eqIntegralReadout)eqIntegralReadout.style.opacity=String(meanP);
+    if(eqMassReadout)eqMassReadout.style.opacity=String(massP);
+    if(eqLockStatus)eqLockStatus.style.opacity=String(lockP);
+    if(eqCursor)eqCursor.style.opacity=String(Math.max(sigP*.55,weightP*.7,lockP*.8));
 
-    const idx=Math.min(eqData.proj.length-1,Math.floor(phaseP*(eqData.proj.length-1)));
+    const travelP=clamp((p-.13)/.65);
+    let idx=0;
+    while(idx<eqData.arcFrac.length-1&&eqData.arcFrac[idx]<travelP)idx++;
     const pt=eqData.proj[idx]||eqData.proj[0];
+
     if(eqPhase){
       eqPhase.setAttribute('cx',pt[0].toFixed(1));eqPhase.setAttribute('cy',pt[1].toFixed(1));
-      eqPhase.style.opacity=String(phaseP);
+      eqPhase.style.opacity=String(frameP);
     }
+
+    const frameLine=(line,label,vec,length,twoSided=false)=>{
+      if(!line)return;
+      const v=eqData.projectVector(vec),l=Math.hypot(...v)||1;
+      const ux=v[0]/l,uy=v[1]/l;
+      const x1=twoSided?pt[0]-ux*length*.55:pt[0],y1=twoSided?pt[1]-uy*length*.55:pt[1];
+      const x2=pt[0]+ux*length,y2=pt[1]+uy*length;
+      line.setAttribute('x1',x1.toFixed(1));line.setAttribute('y1',y1.toFixed(1));
+      line.setAttribute('x2',x2.toFixed(1));line.setAttribute('y2',y2.toFixed(1));
+      line.style.opacity=String(frameP);
+      if(label){
+        label.setAttribute('x',(x2+ux*8).toFixed(1));label.setAttribute('y',(y2+uy*8).toFixed(1));
+        label.style.opacity=String(frameP);
+      }
+    };
+    frameLine(eqTangent,eqTLabel,eqData.tangent[idx],31,true);
+    frameLine(eqNormal,eqNLabel,eqData.normal[idx],28,false);
+    frameLine(eqBinormal,eqBLabel,eqData.binormal[idx],25,false);
+
     const a=eqData.proj[(idx-2+eqData.proj.length)%eqData.proj.length],b=eqData.proj[(idx+2)%eqData.proj.length];
-    if(eqTangent&&a&&b){
-      const dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1;
-      eqTangent.setAttribute('x1',(pt[0]-dx/l*34).toFixed(1));eqTangent.setAttribute('y1',(pt[1]-dy/l*34).toFixed(1));
-      eqTangent.setAttribute('x2',(pt[0]+dx/l*34).toFixed(1));eqTangent.setAttribute('y2',(pt[1]+dy/l*34).toFixed(1));
-      eqTangent.style.opacity=String(phaseP);
-    }
     if(eqOsc&&a&&b){
-      const c=circum(a,pt,b);
-      if(c){
-        eqOsc.setAttribute('cx',c[0].toFixed(1));eqOsc.setAttribute('cy',c[1].toFixed(1));
-        eqOsc.setAttribute('r',Math.min(c[2],100).toFixed(1));eqOsc.style.opacity=String(phaseP);
+      const cc=circum(a,pt,b);
+      if(cc){
+        eqOsc.setAttribute('cx',cc[0].toFixed(1));eqOsc.setAttribute('cy',cc[1].toFixed(1));
+        eqOsc.setAttribute('r',Math.min(cc[2],92).toFixed(1));eqOsc.style.opacity=String(frameP*.78);
       }
     }
 
-    const thresholds=[.16,.53,.81];
+    if(eqLocalReadout){
+      eqLocalReadout.textContent=
+        'κ='+eqData.kappa[idx].toFixed(3)+' · τ='+eqData.tau[idx].toFixed(3)+
+        ' · σ='+eqData.sig[idx].toFixed(3)+' · w='+eqData.weight[idx].toFixed(3);
+      eqLocalReadout.style.opacity=String(frameP);
+    }
+
+    const plotX=38+eqData.arcFrac[idx]*444;
+    const sigmaY=eqData.sigmaBottom-(eqData.sig[idx]-eqData.railMin)/
+      Math.max(1e-12,eqData.railMax-eqData.railMin)*eqData.sigmaAmp;
+    const weightY=eqData.weightBottom-(eqData.weight[idx]-eqData.wMin)/
+      Math.max(1e-12,eqData.wMax-eqData.wMin)*eqData.weightAmp;
+    if(eqSigmaMarker){
+      eqSigmaMarker.setAttribute('cx',plotX.toFixed(1));eqSigmaMarker.setAttribute('cy',sigmaY.toFixed(1));
+      eqSigmaMarker.style.opacity=String(sigP);
+    }
+    if(eqWeightMarker){
+      eqWeightMarker.setAttribute('cx',plotX.toFixed(1));eqWeightMarker.setAttribute('cy',weightY.toFixed(1));
+      eqWeightMarker.style.opacity=String(weightP);
+    }
+    if(eqCursor){
+      eqCursor.setAttribute('x1',plotX.toFixed(1));eqCursor.setAttribute('x2',plotX.toFixed(1));
+    }
+
+    if(eqLockStatus){
+      const locked=Math.abs(eqData.alpha)<1e-4;
+      eqLockStatus.classList.toggle('locked',locked);
+      eqLockStatus.textContent=
+        (locked?'LOCKED':'MISLOCK')+' · α='+eqData.alpha.toExponential(2)+
+        ' · n='+eqData.winding+' · ∮k∥ds/2π='+eqData.windingCheck.toFixed(5)+
+        ' · perfect lock iff α=0';
+    }
+    if(eqIntegralReadout){
+      eqIntegralReadout.textContent=
+        '∮wσ ds / ∮w ds = '+eqData.weightedSigmaIntegral.toFixed(3)+' / '+
+        eqData.weightIntegral.toFixed(3)+' = ⟨σ⟩w '+eqData.weightedMean.toFixed(3)+' model⁻¹';
+    }
+    if(eqMassReadout){
+      eqMassReadout.textContent='α=0 limit: k_eff=⟨σ⟩w → m=(ħ/c)k_eff → E_rest=ħc k_eff';
+    }
+
+    const thresholds=[.27,.60,.89];
     eqCards.forEach((card,i)=>card.classList.toggle('active',p>=thresholds[i]));
 
     let stage='01 · closed curve Γ';
-    if(p>=.28)stage='02 · tangent + osculating geometry';
-    if(p>=.48)stage='03 · σ(s) along arc length';
-    if(p>=.79)stage='04 · ⟨σ⟩ → k_eff';
+    if(p>=.17)stage='02 · Frenet frame: κ(s), τ(s)';
+    if(p>=.31)stage='03 · σ(s) along true arc length';
+    if(p>=.47)stage='04 · density weight w(s)';
+    if(p>=.62)stage='05 · constrained phase rail / mislock';
+    if(p>=.77)stage='06 · weighted mean ⟨σ⟩w';
+    if(p>=.90)stage='07 · α=0 rest-scale mapping';
     if(eqStage)eqStage.textContent=stage;
     if(eqProgress)eqProgress.textContent=Math.round(p*100)+'%';
   };

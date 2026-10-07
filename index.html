@@ -465,22 +465,23 @@
         <div class="wct-equation-sticky">
           <div class="wct-equation-copy">
             <p class="eyebrow">Equation build-up · registered chain</p>
-            <h2 id="equation-build-title">From a closed curve to an inverse-length scale.</h2>
-            <p class="wct-equation-lede">Scroll through the chain: first the closed curve is drawn, then the local phase/tangent/osculating geometry moves along it, then (sigma(s)) is revealed, and finally its weighted mean appears as the effective inverse-length scale.</p>
+            <h2 id="equation-build-title">From a closed curve to a density-weighted rest scale.</h2>
+            <p class="wct-equation-lede">Scroll through the registered chain. The calculation follows the curve by segment arc length, its Frenet geometry produces \(\sigma(s)\), a declared positive density weight \(w(s)\) changes the measured average, and the constrained phase rail shows whether the displayed loop is perfectly locked or mislocked before the conditional mass map is revealed.</p>
 
             <div class="wct-equation-chain">
               <article data-eq-card="0">
-                <span>Curvature spectral rate · E1B</span>
+                <span>Geometric rate · E1B</span>
                 <div class="equation-math">\[\sigma(s)=\sqrt{\kappa(s)^2+\tau(s)^2}\]</div>
               </article>
               <article data-eq-card="1">
-                <span>Effective-wavenumber chain · E5 assumptions</span>
-                <div class="equation-math">\[k_{\mathrm{wind}}=k_{\sigma}=\langle\sigma\rangle_w\]</div>
+                <span>Density-weighted phase lock · E5 assumptions</span>
+                <div class="equation-math">\[k_{\parallel}(s)=\partial_s\phi=\sigma(s)+\frac{\alpha}{w(s)}\]</div>
+                <div class="equation-math equation-math-secondary">\[\alpha=0\Rightarrow k_{\mathrm{eff}}=\langle\sigma\rangle_w=\frac{\oint w\sigma\,ds}{\oint w\,ds}\]</div>
               </article>
               <article data-eq-card="2">
-                <span>Mass–curvature dimensional mapping · E6</span>
-                <div class="equation-math">\[m=\frac{\hbar}{c}\,k_{\mathrm{eff}}\]</div>
-                <div class="equation-math equation-math-secondary">\[\text{under E5:}\quad m=\frac{\hbar}{c}\,\langle\sigma\rangle_w\]</div>
+                <span>Rest-scale mapping · E6</span>
+                <div class="equation-math">\[m=\frac{\hbar}{c}\,k_{\mathrm{eff}},\qquad E_{\mathrm{rest}}=\hbar c\,k_{\mathrm{eff}}\]</div>
+                <div class="equation-math equation-math-secondary">\[\text{perfect-lock limit:}\quad k_{\mathrm{eff}}=\langle\sigma\rangle_w\]</div>
               </article>
             </div>
             <a class="text-link" href="equations/#E5">Assumptions, status, Lean &amp; SymPy in the equation registry <span aria-hidden="true">→</span></a>
@@ -488,21 +489,39 @@
 
           <div class="wct-equation-visual">
             <div class="wct-equation-stage-label"><span data-eq-stage>01 · closed curve Γ</span><strong data-eq-progress>0%</strong></div>
-            <svg viewBox="0 0 520 560" role="img" aria-label="Scroll-built torus-knot geometry with curvature spectral rate">
-              <path class="eq-guide" d="M28 345H492M28 490H492"></path>
+            <svg viewBox="0 0 520 640" role="img" aria-label="Scroll-built density-weighted loop-curvature and phase-lock calculation">
+              <g class="eq-weight-segments" aria-hidden="true"></g>
               <path class="eq-knot"></path>
               <circle class="eq-phase" cx="260" cy="210" r="5"></circle>
-              <line class="eq-tangent" x1="0" y1="0" x2="0" y2="0"></line>
               <circle class="eq-osc" cx="260" cy="210" r="34"></circle>
-              <text class="eq-label accent" x="260" y="32" text-anchor="middle">phase direction along Γ · winding</text>
-              <text class="eq-label" x="390" y="108">τ</text>
-              <text class="eq-label" x="350" y="128">κ</text>
-              <text class="eq-label" x="34" y="386">σ(s) along arc length s</text>
+              <line class="eq-tangent" x1="0" y1="0" x2="0" y2="0"></line>
+              <line class="eq-normal" x1="0" y1="0" x2="0" y2="0"></line>
+              <line class="eq-binormal" x1="0" y1="0" x2="0" y2="0"></line>
+              <text class="eq-frame-label tangent" data-eq-t-label x="0" y="0">T</text>
+              <text class="eq-frame-label normal" data-eq-n-label x="0" y="0">N</text>
+              <text class="eq-frame-label binormal" data-eq-b-label x="0" y="0">B</text>
+              <text class="eq-label accent" x="260" y="30" text-anchor="middle">move along Γ by arc length s</text>
+              <text class="eq-label eq-local-readout" data-eq-local-readout x="34" y="318">κ(s) · τ(s) · σ(s) · w(s)</text>
+
+              <path class="eq-guide" d="M38 350H482M38 444H482M38 478H482M38 548H482"></path>
+              <text class="eq-label" x="38" y="368">geometric / phase rails: σ(s), k∥(s)</text>
               <path class="eq-sigma"></path>
-              <line class="eq-mean" data-eq-mean x1="38" y1="440" x2="482" y2="440"></line>
-              <text class="eq-label accent" data-eq-mean-label x="482" y="432" text-anchor="end">⟨σ⟩ = k_eff</text>
+              <path class="eq-phase-gradient"></path>
+              <line class="eq-mean" data-eq-mean x1="38" y1="420" x2="482" y2="420"></line>
+              <text class="eq-label accent" data-eq-mean-label x="482" y="412" text-anchor="end">⟨σ⟩w</text>
+              <circle class="eq-plot-marker sigma" data-eq-sigma-marker cx="38" cy="444" r="3.6"></circle>
+
+              <text class="eq-label" x="38" y="496">declared density weight / contribution: w(s), w(s)σ(s) · normalized</text>
+              <path class="eq-weight"></path>
+              <path class="eq-weighted"></path>
+              <circle class="eq-plot-marker weight" data-eq-weight-marker cx="38" cy="548" r="3.6"></circle>
+              <line class="eq-plot-cursor" data-eq-cursor x1="38" y1="350" x2="38" y2="548"></line>
+
+              <text class="eq-result eq-lock-status" data-eq-lock-status x="38" y="578">constrained phase rail</text>
+              <text class="eq-result" data-eq-integral-readout x="38" y="600">∮wσ ds / ∮w ds → ⟨σ⟩w</text>
+              <text class="eq-result mass" data-eq-mass-readout x="38" y="623">α=0: k_eff=⟨σ⟩w → m=(ħ/c)k_eff → E_rest=ħc k_eff</text>
             </svg>
-            <p>Illustrative computation on a (2,3) torus knot with uniform weight <code>w</code>; κ, τ, and σ are computed numerically from that curve. It demonstrates the registered geometry chain, not an empirical result.</p>
+            <p>Illustrative computation on a (2,3) torus knot. κ, τ, arc length, σ, the weighted integrals, and the constrained phase rail are computed from the displayed curve. <code>w(s)</code> is an explicitly declared positive demonstration weight, not measured data. The visual reports the resulting mislock <code>α</code>; the mass relation is shown only as the perfect-lock <code>α=0</code> limit.</p>
           </div>
         </div>
       </section>
