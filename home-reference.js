@@ -44,8 +44,6 @@
   const basinParticlesGroup=document.querySelector('[data-basin-particles]');
   const basinFlows=[...document.querySelectorAll('.basin-flow')];
   const shellDots=document.querySelector('[data-shell-dots]');
-  const fluxOne=document.querySelector('[data-flux-one]');
-  const fluxTwo=document.querySelector('[data-flux-two]');
   const eigenParticlesGroup=document.querySelector('[data-eigen-particles]');
   const mode1=document.querySelector('[data-mode-one]');
   const mode2=document.querySelector('[data-mode-two]');
@@ -84,8 +82,6 @@
       shellDots.appendChild(el);
     }
   }
-  if(fluxOne)fluxOne.style.strokeDasharray='8 10';
-  if(fluxTwo)fluxTwo.style.strokeDasharray='5 12';
 
   // Stage 01: deterministic broadband strands around the zero-wave reference.
   // Animated folding is explanatory; no turbulent PDE is being integrated.
@@ -198,9 +194,9 @@
       el.setAttribute('opacity',(.45+.5*Math.sin(u*Math.PI)).toFixed(2));
     });
     if(pffCapacity){
-      // Schematic only: oscillation is not a fitted physical flux ratio.
-      const proportion=.72+.18*Math.sin(t*.64);
-      pffCapacity.setAttribute('width',(384*proportion).toFixed(1));
+      // Null-flow normalization: full capacity. Pulse is decorative, not a measured ratio.
+      pffCapacity.setAttribute('width','384');
+      pffCapacity.style.opacity=(.76+.18*Math.sin(t*.72)).toFixed(2);
     }
   };
 
