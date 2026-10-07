@@ -509,6 +509,53 @@
     });
   });
 
+  // Stage 07: ideal cavity boundary nodes and oscillating antinodes.
+  const resonanceNodes=[];
+  const resonanceAntinodes=[];
+  const cavityStart=110,cavityEnd=450,cavityMode=3,cavityLength=cavityEnd-cavityStart;
+  if(resonanceNodesGroup){
+    for(let m=0;m<=cavityMode;m++){
+      const x=cavityStart+m*cavityLength/cavityMode;
+      resonanceNodes.push(svgEl('circle',{
+        class:'resonance-node',cx:x.toFixed(2),cy:333,r:m===0||m===cavityMode?4.4:3.6
+      },resonanceNodesGroup));
+    }
+  }
+  if(resonanceAntinodesGroup){
+    for(let m=0;m<cavityMode;m++){
+      const x=cavityStart+(m+.5)*cavityLength/cavityMode;
+      resonanceAntinodes.push(svgEl('circle',{
+        class:'resonance-antinode',cx:x.toFixed(2),cy:333,r:4.1
+      },resonanceAntinodesGroup));
+    }
+  }
+
+  const drawShell=t=>{
+    if(!shellDots||!shellSpectrum)return;
+    const time=Math.max(0,t-shellStart);
+    const cycle=time%9.3;
+    const selection=reduced.matches?1:clamp((cycle-.7)/4.5);
+    const normalized=selection*selection*(3-2*selection);
+    // P(|k|,s)=P0 exp[-10s (|k|²-k*²)²] with |k*|=1.
+    const response=q=>Math.exp(-10*normalized*Math.pow(q*q-1,2));
+    spectralSamples.forEach(({el,q})=>{
+      const power=response(q);
+      el.setAttribute('opacity',(.025+.89*power).toFixed(3));
+      el.setAttribute('r',(1.35+1.0*Math.sqrt(power)).toFixed(2));
+    });
+    let curve='';
+    for(let i=0;i<=110;i++){
+      const q=1.62*i/110;
+      const x=108+347*i/110,y=432-43*response(q);
+      curve+=(i?'L':'M')+x.toFixed(2)+' '+y.toFixed(2);
+    }
+    shellSpectrum.setAttribute('d',curve);
+    if(shellStatus){
+      shellStatus.textContent=normalized<.06?'BROADBAND':
+        normalized>.94?'FINITE-k SELECTED':'QUARTIC FILTERING';
+    }
+  };
+
   const gammaPt=(t)=>{
     const r=128+28*Math.cos(3*t);
     return [280+r*Math.cos(t),240+.82*r*Math.sin(t)];
@@ -621,19 +668,41 @@
     });
   };
 
-  const drawResonance=(t)=>{
-    const ring=(el,r0,amp,m,ph)=>{
-      if(!el)return;
+  const drawResonance=t=>{
+    if(!resonanceStanding||!resonanceForward||!resonanceBackward)return;
+    const wavePhase=t*1.65,k=Math.PI*cavityMode,componentAmplitude=19.5;
+    const plot=(y,fn)=>{
       let d='';
-      for(let k=0;k<=140;k++){
-        const a=k/140*Math.PI*2;
-        const r=r0+amp*Math.sin(m*a)*Math.cos(1.45*t+ph);
-        d+=(k?'L':'M')+(280+r*Math.cos(a)).toFixed(1)+' '+(240+r*Math.sin(a)).toFixed(1);
+      for(let i=0;i<=168;i++){
+        const x=cavityStart+cavityLength*i/168,u=i/168;
+        d+=(i?'L':'M')+x.toFixed(2)+' '+(y+fn(u)).toFixed(2);
       }
-      el.setAttribute('d',d+'Z');
+      return d;
     };
-    ring(mode1,110,21,4,0);
-    ring(mode2,158,12,6,1);
+    resonanceForward.setAttribute('d',plot(165,u=>
+      -componentAmplitude*Math.sin(k*u-wavePhase)));
+    resonanceBackward.setAttribute('d',plot(237,u=>
+      -componentAmplitude*Math.sin(k*u+wavePhase)));
+    // sin(ku-wt)+sin(ku+wt)=2 sin(ku) cos(wt); fixed nodes for kL=3π.
+    const envelope=2*componentAmplitude;
+    const stand=u=>-envelope*Math.sin(k*u)*Math.cos(wavePhase);
+    resonanceStanding.setAttribute('d',plot(333,stand));
+    if(resonanceEnvelopeUpper)resonanceEnvelopeUpper.setAttribute('d',plot(333,u=>
+      -envelope*Math.abs(Math.sin(k*u))));
+    if(resonanceEnvelopeLower)resonanceEnvelopeLower.setAttribute('d',plot(333,u=>
+      envelope*Math.abs(Math.sin(k*u))));
+    resonanceAntinodes.forEach((el,m)=>{
+      const u=(m+.5)/cavityMode;
+      el.setAttribute('cy',(333+stand(u)).toFixed(2));
+      el.setAttribute('opacity',(.58+.35*Math.abs(Math.cos(wavePhase))).toFixed(2));
+    });
+    if(resonanceReflection){
+      // One reflected tracer, purely illustrative; the waveforms above
+      // are the exact analytic equal-amplitude counterpropagating pair.
+      const f=((t*.13)%2+2)%2,u=f<=1?f:2-f;
+      resonanceReflection.setAttribute('cx',(cavityStart+cavityLength*u).toFixed(2));
+      resonanceReflection.setAttribute('opacity','0.84');
+    }
   };
 
   const drawCurvature=(t)=>{
@@ -654,7 +723,7 @@
     if(activeStage===0)drawFold(t);
     else if(activeStage===1)drawBasin(t);
     else if(activeStage===2)drawSobolev(t);
-    else if(activeStage===3&&shellDots)shellDots.setAttribute('transform','rotate('+((t*4)%360).toFixed(2)+' 280 240)');
+    else if(activeStage===3)drawShell(t);
     else if(activeStage===4)drawPffTorus(t);
     else if(activeStage===5)drawEigenSinks(t);
     else if(activeStage===6)drawResonance(t);
@@ -677,6 +746,9 @@
       sobolevStart=performance.now()/1000;
       sobolevPinned=null; // Re-entering the chapter restarts the comparison.
       if(sobolevControlNote)sobolevControlNote.textContent='AUTO';
+    }
+    if(previous!==activeStage && activeStage===3){
+      shellStart=performance.now()/1000;
     }
     if(theoryVisual)theoryVisual.dataset.stage=String(activeStage);
     steps.forEach((step,i)=>step.classList.toggle('active',i===activeStage));
@@ -900,6 +972,7 @@
   drawBasin(.8);
   drawSobolev(performance.now()/1000);
   drawEigenSinks(.8);
+  drawShell(performance.now()/1000);
   drawResonance(.8);
   drawCurvature(.8);
   setStage(0);
