@@ -324,14 +324,14 @@ PUB_INDEX_CSS = """
 .pub-index-item.pub-current>div{border-bottom-color:rgba(103,212,255,.28);background:linear-gradient(90deg,rgba(103,212,255,.035),transparent 68%)}
 .pub-index-meta{margin:0 0 10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
 .pub-index-cat{color:var(--accent);font-size:.69rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.pub-index-date{order:-1;display:inline-flex;align-items:center;padding:3px 7px;border:1px solid rgba(182,255,218,.16);border-radius:999px;background:rgba(182,255,218,.035);color:var(--muted);font:700 .68rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;transition:color .18s ease,border-color .18s ease,background .18s ease}
+.pub-index-date{order:-1;display:inline-flex;align-items:center;padding:5px 9px;border:1px solid rgba(182,255,218,.2);border-radius:999px;background:rgba(182,255,218,.045);color:var(--text);font:800 .82rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;transition:color .18s ease,border-color .18s ease,background .18s ease}
 .pub-index-item.pub-current .pub-index-date{color:var(--accent-3);border-color:rgba(182,255,218,.38);background:rgba(182,255,218,.07)}
 .pub-status{padding:4px 10px;border:1px solid rgba(103,212,255,.4);border-radius:999px;background:rgba(103,212,255,.07);font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
 .pub-index-item h2{margin:0;font:500 clamp(1.15rem,2.4vw,1.55rem)/1.25 Georgia,serif}
 .pub-index-item h2 a{text-decoration:none}
 .pub-index-item code{display:inline-block;margin-top:10px;color:var(--muted-2);font-size:.72rem}
 .pub-empty{padding:40px 0;color:var(--muted)}
-@media(max-width:600px){.pub-index-list{--pub-line-x:26px}.pub-index-item{grid-template-columns:52px minmax(0,1fr);gap:14px;padding-top:21px}.pub-index-item>span{width:38px;height:26px;font-size:.64rem}.pub-index-item>div{padding-bottom:22px}}
+@media(max-width:600px){.pub-index-date{font-size:.76rem;padding:4px 8px}.pub-index-list{--pub-line-x:26px}.pub-index-item{grid-template-columns:52px minmax(0,1fr);gap:14px;padding-top:21px}.pub-index-item>span{width:38px;height:26px;font-size:.64rem}.pub-index-item>div{padding-bottom:22px}}
 @media(prefers-reduced-motion:reduce){.pub-index-list::after,.pub-timeline-cursor,.pub-index-item>span,.pub-index-item>div,.pub-index-date{transition:none}}
 """.strip()
 
