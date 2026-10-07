@@ -62,6 +62,22 @@
   const basinParticlesGroup=document.querySelector('[data-basin-particles]');
   const basinFlows=[...document.querySelectorAll('.basin-flow')];
   const shellDots=document.querySelector('[data-shell-dots]');
+  const shellSpectrum=document.querySelector('[data-shell-spectrum]');
+  const shellStatus=document.querySelector('[data-shell-status]');
+  const resonanceForward=document.querySelector('[data-resonance-forward]');
+  const resonanceBackward=document.querySelector('[data-resonance-backward]');
+  const resonanceStanding=document.querySelector('[data-resonance-standing]');
+  const resonanceEnvelopeUpper=document.querySelector('[data-resonance-envelope-upper]');
+  const resonanceEnvelopeLower=document.querySelector('[data-resonance-envelope-lower]');
+  const resonanceNodesGroup=document.querySelector('[data-resonance-nodes]');
+  const resonanceAntinodesGroup=document.querySelector('[data-resonance-antinodes]');
+  const resonanceReflection=document.querySelector('[data-resonance-reflection]');
+  const phaseSegmentsGroup=document.querySelector('[data-curvature-phase-segments]');
+  const phaseDotsGroup=document.querySelector('[data-curvature-phase-dots]');
+  const phaseSeam=document.querySelector('[data-curvature-seam]');
+  const phaseSeamError=document.querySelector('[data-curvature-seam-error]');
+  const phaseErrorValue=document.querySelector('[data-curvature-error-value]');
+  const phaseErrorFill=document.querySelector('[data-curvature-error-fill]');
   const eigenParticlesGroup=document.querySelector('[data-eigen-particles]');
   const mode1=document.querySelector('[data-mode-one]');
   const mode2=document.querySelector('[data-mode-two]');
@@ -86,20 +102,24 @@
   const basinParticles=makeParticles(basinParticlesGroup,14,['fill-accent','fill-accent2','fill-accent3']);
   const eigenParticles=makeParticles(eigenParticlesGroup,24,['fill-accent','fill-accent2','fill-accent3']);
 
+  // Stage 04: deterministic broadband Fourier samples.
+  // Quartic weighting is a spectral filter visualization, not a PDE solve.
+  const spectralSamples=[];
   if(shellDots){
-    const classes=['fill-accent3','fill-accent2','fill-accent'];
-    for(let i=0;i<84;i++){
-      const a=i*2.399963229728653,rr=116+(i%3)*20;
-      const x=280+rr*Math.cos(a),y=240+rr*Math.sin(a);
+    for(let i=0;i<210;i++){
+      const q=.13+(i+.5)/210*1.49;
+      const phi=i*2.399963229728653;
+      const x=280+119*q*Math.cos(phi),y=222+119*q*Math.sin(phi);
       const el=document.createElementNS('http://www.w3.org/2000/svg','circle');
-      el.setAttribute('cx',x.toFixed(1));
-      el.setAttribute('cy',y.toFixed(1));
-      el.setAttribute('r',i%5===0?'3.1':'2');
-      el.setAttribute('class',classes[i%3]);
-      el.setAttribute('opacity',i%5===0?'.82':'.36');
+      el.setAttribute('cx',x.toFixed(2));
+      el.setAttribute('cy',y.toFixed(2));
+      el.setAttribute('r',i%7===0?'2.65':'1.95');
+      el.setAttribute('class','shell-spectral-mode');
       shellDots.appendChild(el);
+      spectralSamples.push({el,q});
     }
   }
+  let shellStart=performance.now()/1000;
 
   // Stage 01: deterministic broadband strands around the zero-wave reference.
   // Animated folding is explanatory; no turbulent PDE is being integrated.
@@ -489,23 +509,126 @@
     });
   });
 
-  const gammaPt=(t)=>{
-    const r=128+28*Math.cos(3*t);
-    return [280+r*Math.cos(t),240+.82*r*Math.sin(t)];
-  };
-  if(gamma){
-    let d='';
-    for(let i=0;i<=180;i++){
-      const p=gammaPt(i/180*Math.PI*2);
-      d+=(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);
+  // Stage 07: ideal cavity boundary nodes and oscillating antinodes.
+  const resonanceNodes=[];
+  const resonanceAntinodes=[];
+  const cavityStart=110,cavityEnd=450,cavityMode=3,cavityLength=cavityEnd-cavityStart;
+  if(resonanceNodesGroup){
+    for(let m=0;m<=cavityMode;m++){
+      const x=cavityStart+m*cavityLength/cavityMode;
+      resonanceNodes.push(svgEl('circle',{
+        class:'resonance-node',cx:x.toFixed(2),cy:333,r:m===0||m===cavityMode?4.4:3.6
+      },resonanceNodesGroup));
     }
-    gamma.setAttribute('d',d+'Z');
+  }
+  if(resonanceAntinodesGroup){
+    for(let m=0;m<cavityMode;m++){
+      const x=cavityStart+(m+.5)*cavityLength/cavityMode;
+      resonanceAntinodes.push(svgEl('circle',{
+        class:'resonance-antinode',cx:x.toFixed(2),cy:333,r:4.1
+      },resonanceAntinodesGroup));
+    }
   }
 
+  const drawShell=t=>{
+    if(!shellDots||!shellSpectrum)return;
+    const time=Math.max(0,t-shellStart);
+    const cycle=time%9.3;
+    const selection=reduced.matches?1:clamp((cycle-.7)/4.5);
+    const normalized=selection*selection*(3-2*selection);
+    // P(|k|,s)=P0 exp[-10s (|k|²-k*²)²] with |k*|=1.
+    const response=q=>Math.exp(-10*normalized*Math.pow(q*q-1,2));
+    spectralSamples.forEach(({el,q})=>{
+      const power=response(q);
+      el.setAttribute('opacity',(.025+.89*power).toFixed(3));
+      el.setAttribute('r',(1.35+1.0*Math.sqrt(power)).toFixed(2));
+    });
+    let curve='';
+    for(let i=0;i<=110;i++){
+      const q=1.62*i/110;
+      const x=108+347*i/110,y=432-43*response(q);
+      curve+=(i?'L':'M')+x.toFixed(2)+' '+y.toFixed(2);
+    }
+    shellSpectrum.setAttribute('d',curve);
+    if(shellStatus){
+      shellStatus.textContent=normalized<.06?'BROADBAND':
+        normalized>.94?'FINITE-k SELECTED':'QUARTIC FILTERING';
+    }
+  };
+
+  // Stage 08: planar closed curve, exact local curvature and a prescribed
+  // phase correction. Curvature weights shape the illustrative phase gradient;
+  // the decay of the seam mismatch is NOT a solved WCT feedback law.
+  const gammaGeometry=a=>{
+    const ca=Math.cos(a),sa=Math.sin(a);
+    const r=128+28*Math.cos(3*a);
+    const dr=-84*Math.sin(3*a),ddr=-252*Math.cos(3*a);
+    const x=280+r*ca,y=240+.82*r*sa;
+    const dx=dr*ca-r*sa,dy=.82*(dr*sa+r*ca);
+    const ddx=(ddr-r)*ca-2*dr*sa;
+    const ddy=.82*((ddr-r)*sa+2*dr*ca);
+    const speed=Math.hypot(dx,dy)||1;
+    const kappa=(dx*ddy-dy*ddx)/Math.pow(speed,3);
+    return {x,y,dx,dy,kappa,speed};
+  };
+  const gammaPt=a=>{
+    const {x,y}=gammaGeometry(a);
+    return [x,y];
+  };
+  const phaseN=144;
+  const pathGeometry=Array.from({length:phaseN+1},(_,i)=>
+    gammaGeometry(i/phaseN*Math.PI*2));
+  const phaseFractions=[0];
+  let totalPhaseWeight=0;
+  for(let i=0;i<phaseN;i++){
+    const a=pathGeometry[i],b=pathGeometry[i+1];
+    const weight=.5*(Math.abs(a.kappa)*a.speed+
+      Math.abs(b.kappa)*b.speed)*(Math.PI*2/phaseN);
+    totalPhaseWeight+=weight;
+    phaseFractions.push(totalPhaseWeight);
+  }
+  for(let i=0;i<=phaseN;i++)phaseFractions[i]/=totalPhaseWeight||1;
+  if(gamma){
+    const d=pathGeometry.map((p,i)=>
+      (i?'L':'M')+p.x.toFixed(2)+' '+p.y.toFixed(2)).join('')+'Z';
+    gamma.setAttribute('d',d);
+  }
+  const phaseSegments=[];
+  if(phaseSegmentsGroup)for(let i=0;i<phaseN;i++){
+    const a=pathGeometry[i],b=pathGeometry[i+1];
+    phaseSegments.push(svgEl('path',{
+      class:'curvature-phase-segment',
+      d:'M'+a.x.toFixed(2)+' '+a.y.toFixed(2)+
+        'L'+b.x.toFixed(2)+' '+b.y.toFixed(2)
+    },phaseSegmentsGroup));
+  }
+  const phaseDots=[];
+  if(phaseDotsGroup)for(let i=0;i<8;i++){
+    phaseDots.push(svgEl('circle',{
+      class:i%3===0?'curvature-phase-dot green':i%3===1?
+        'curvature-phase-dot cyan':'curvature-phase-dot violet',
+      r:i%4===0?4.2:2.9
+    },phaseDotsGroup));
+  }
+  let lockStart=performance.now()/1000;
+  const locatePhaseFraction=target=>{
+    let low=0,high=phaseN;
+    while(high-low>1){
+      const mid=(low+high)>>1;
+      if(phaseFractions[mid]<target)low=mid;else high=mid;
+    }
+    const a=phaseFractions[low],b=phaseFractions[high];
+    return (low+(target-a)/Math.max(1e-12,b-a))/phaseN;
+  };
+
+  // Shared three-point circumcircle helper for the independent equation story.
+  // Stage 08 uses exact analytical curvature instead.
   const circum=(a,b,c)=>{
     const d=2*(a[0]*(b[1]-c[1])+b[0]*(c[1]-a[1])+c[0]*(a[1]-b[1]));
     if(Math.abs(d)<1e-6)return null;
-    const aa=a[0]*a[0]+a[1]*a[1],bb=b[0]*b[0]+b[1]*b[1],cc=c[0]*c[0]+c[1]*c[1];
+    const aa=a[0]*a[0]+a[1]*a[1];
+    const bb=b[0]*b[0]+b[1]*b[1];
+    const cc=c[0]*c[0]+c[1]*c[1];
     const ux=(aa*(b[1]-c[1])+bb*(c[1]-a[1])+cc*(a[1]-b[1]))/d;
     const uy=(aa*(c[0]-b[0])+bb*(a[0]-c[0])+cc*(b[0]-a[0]))/d;
     return [ux,uy,Math.hypot(ux-b[0],uy-b[1])];
@@ -601,32 +724,108 @@
     });
   };
 
-  const drawResonance=(t)=>{
-    const ring=(el,r0,amp,m,ph)=>{
-      if(!el)return;
+  const drawResonance=t=>{
+    if(!resonanceStanding||!resonanceForward||!resonanceBackward)return;
+    const wavePhase=t*1.65,k=Math.PI*cavityMode,componentAmplitude=19.5;
+    const plot=(y,fn)=>{
       let d='';
-      for(let k=0;k<=140;k++){
-        const a=k/140*Math.PI*2;
-        const r=r0+amp*Math.sin(m*a)*Math.cos(1.45*t+ph);
-        d+=(k?'L':'M')+(280+r*Math.cos(a)).toFixed(1)+' '+(240+r*Math.sin(a)).toFixed(1);
+      for(let i=0;i<=168;i++){
+        const x=cavityStart+cavityLength*i/168,u=i/168;
+        d+=(i?'L':'M')+x.toFixed(2)+' '+(y+fn(u)).toFixed(2);
       }
-      el.setAttribute('d',d+'Z');
+      return d;
     };
-    ring(mode1,110,21,4,0);
-    ring(mode2,158,12,6,1);
+    resonanceForward.setAttribute('d',plot(165,u=>
+      -componentAmplitude*Math.sin(k*u-wavePhase)));
+    resonanceBackward.setAttribute('d',plot(237,u=>
+      -componentAmplitude*Math.sin(k*u+wavePhase)));
+    // sin(ku-wt)+sin(ku+wt)=2 sin(ku) cos(wt); fixed nodes for kL=3π.
+    const envelope=2*componentAmplitude;
+    const stand=u=>-envelope*Math.sin(k*u)*Math.cos(wavePhase);
+    resonanceStanding.setAttribute('d',plot(333,stand));
+    if(resonanceEnvelopeUpper)resonanceEnvelopeUpper.setAttribute('d',plot(333,u=>
+      -envelope*Math.abs(Math.sin(k*u))));
+    if(resonanceEnvelopeLower)resonanceEnvelopeLower.setAttribute('d',plot(333,u=>
+      envelope*Math.abs(Math.sin(k*u))));
+    resonanceAntinodes.forEach((el,m)=>{
+      const u=(m+.5)/cavityMode;
+      el.setAttribute('cy',(333+stand(u)).toFixed(2));
+      el.setAttribute('opacity',(.58+.35*Math.abs(Math.cos(wavePhase))).toFixed(2));
+    });
+    if(resonanceReflection){
+      // One reflected tracer, purely illustrative; the waveforms above
+      // are the exact analytic equal-amplitude counterpropagating pair.
+      const f=((t*.13)%2+2)%2,u=f<=1?f:2-f;
+      resonanceReflection.setAttribute('cx',(cavityStart+cavityLength*u).toFixed(2));
+      resonanceReflection.setAttribute('opacity','0.84');
+    }
   };
 
-  const drawCurvature=(t)=>{
+  const drawCurvature=t=>{
     if(!marker||!tangent||!osc)return;
-    const th=(t*.42)%(Math.PI*2),p=gammaPt(th),a=gammaPt(th-.05),b=gammaPt(th+.05);
-    const dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1;
-    const c=circum(gammaPt(th-.18),p,gammaPt(th+.18));
-    marker.setAttribute('cx',p[0].toFixed(1));marker.setAttribute('cy',p[1].toFixed(1));
-    tangent.setAttribute('x1',(p[0]-dx/l*44).toFixed(1));tangent.setAttribute('y1',(p[1]-dy/l*44).toFixed(1));
-    tangent.setAttribute('x2',(p[0]+dx/l*44).toFixed(1));tangent.setAttribute('y2',(p[1]+dy/l*44).toFixed(1));
-    if(c){
-      osc.setAttribute('cx',c[0].toFixed(1));osc.setAttribute('cy',c[1].toFixed(1));
-      osc.setAttribute('r',Math.min(c[2],210).toFixed(1));
+    const cycle=Math.max(0,t-lockStart)%11;
+    const mismatch=reduced.matches?0:2.4*Math.exp(-.74*cycle);
+    const phaseRotation=t*.50;
+    const winding=3;
+    const twopi=Math.PI*2;
+
+    phaseSegments.forEach((el,i)=>{
+      // The closed-loop phase advance is 2πm+Δφ.
+      // Spatial phase density is curvature-magnitude weighted.
+      const u=(i+.5)/phaseN;
+      const phase=twopi*winding*(phaseFractions[i]+phaseFractions[i+1])*.5+
+        mismatch*u-phaseRotation;
+      const mod=((phase%twopi)+twopi)%twopi;
+      const color=['cyan','green','violet'][Math.floor(mod/(twopi/3))%3];
+      el.setAttribute('class','curvature-phase-segment '+color);
+      el.setAttribute('opacity',(.35+.6*(.5+.5*Math.cos(phase))).toFixed(2));
+    });
+
+    phaseDots.forEach((el,i)=>{
+      const target=((i/8+t*.041)%1+1)%1;
+      const u=locatePhaseFraction(target);
+      const p=gammaGeometry(twopi*u);
+      el.setAttribute('cx',p.x.toFixed(2));
+      el.setAttribute('cy',p.y.toFixed(2));
+      el.setAttribute('opacity',(.56+.35*Math.sin(Math.PI*target)).toFixed(2));
+    });
+
+    const a=t*.40,g=gammaGeometry(a);
+    marker.setAttribute('cx',g.x.toFixed(2));
+    marker.setAttribute('cy',g.y.toFixed(2));
+    const tx=g.dx/g.speed,ty=g.dy/g.speed;
+    tangent.setAttribute('x1',(g.x-39*tx).toFixed(2));
+    tangent.setAttribute('y1',(g.y-39*ty).toFixed(2));
+    tangent.setAttribute('x2',(g.x+39*tx).toFixed(2));
+    tangent.setAttribute('y2',(g.y+39*ty).toFixed(2));
+    // Signed normal produces the osculating-circle center for a planar path.
+    const radius=Math.abs(1/g.kappa);
+    if(Number.isFinite(radius)&&radius<190){
+      const signedRadius=1/g.kappa;
+      const cx=g.x-g.dy/g.speed*signedRadius;
+      const cy=g.y+g.dx/g.speed*signedRadius;
+      osc.setAttribute('cx',cx.toFixed(2));
+      osc.setAttribute('cy',cy.toFixed(2));
+      osc.setAttribute('r',radius.toFixed(2));
+      osc.setAttribute('opacity','.48');
+    }else osc.setAttribute('opacity','0');
+
+    const seam=pathGeometry[0];
+    if(phaseSeam){
+      phaseSeam.setAttribute('cx',seam.x.toFixed(2));
+      phaseSeam.setAttribute('cy',seam.y.toFixed(2));
+    }
+    if(phaseSeamError){
+      const ex=seam.x-26*Math.sin(mismatch);
+      const ey=seam.y-22*(1-Math.cos(mismatch));
+      phaseSeamError.setAttribute('d',
+        'M'+seam.x.toFixed(2)+' '+seam.y.toFixed(2)+
+        'L'+ex.toFixed(2)+' '+ey.toFixed(2));
+      phaseSeamError.setAttribute('opacity',Math.min(1,mismatch*1.2).toFixed(2));
+    }
+    if(phaseErrorValue)phaseErrorValue.textContent=mismatch.toFixed(2)+' rad';
+    if(phaseErrorFill){
+      phaseErrorFill.setAttribute('width',(375*(1-mismatch/2.4)).toFixed(2));
     }
   };
 
@@ -634,7 +833,7 @@
     if(activeStage===0)drawFold(t);
     else if(activeStage===1)drawBasin(t);
     else if(activeStage===2)drawSobolev(t);
-    else if(activeStage===3&&shellDots)shellDots.setAttribute('transform','rotate('+((t*4)%360).toFixed(2)+' 280 240)');
+    else if(activeStage===3)drawShell(t);
     else if(activeStage===4)drawPffTorus(t);
     else if(activeStage===5)drawEigenSinks(t);
     else if(activeStage===6)drawResonance(t);
@@ -657,6 +856,12 @@
       sobolevStart=performance.now()/1000;
       sobolevPinned=null; // Re-entering the chapter restarts the comparison.
       if(sobolevControlNote)sobolevControlNote.textContent='AUTO';
+    }
+    if(previous!==activeStage && activeStage===3){
+      shellStart=performance.now()/1000;
+    }
+    if(previous!==activeStage && activeStage===7){
+      lockStart=performance.now()/1000;
     }
     if(theoryVisual)theoryVisual.dataset.stage=String(activeStage);
     steps.forEach((step,i)=>step.classList.toggle('active',i===activeStage));
@@ -880,6 +1085,7 @@
   drawBasin(.8);
   drawSobolev(performance.now()/1000);
   drawEigenSinks(.8);
+  drawShell(performance.now()/1000);
   drawResonance(.8);
   drawCurvature(.8);
   setStage(0);
