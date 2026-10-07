@@ -33,7 +33,7 @@
   );
 }
 .priority-spine::after{
-  height:calc((100% - 84px) * var(--spine-progress));
+  bottom:42px;
   background:linear-gradient(
     to bottom,
     var(--accent-3) 0%,
@@ -49,7 +49,13 @@
   box-shadow:
     0 0 12px rgba(103,212,255,.18),
     0 0 22px rgba(139,124,255,.1);
-  transition:height 70ms linear;
+  clip-path:polygon(
+    0 0,
+    100% 0,
+    100% calc(var(--spine-progress) * 100%),
+    0 calc(var(--spine-progress) * 100%)
+  );
+  transition:clip-path 70ms linear;
 }
 .priority-highlight{
   --node-color:var(--accent);
