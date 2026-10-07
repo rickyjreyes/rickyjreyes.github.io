@@ -579,13 +579,7 @@
 @media(max-width:980px){.priority-redesign-head,.priority-audit-top{grid-template-columns:1fr}.priority-mech-stage{grid-template-columns:1fr;gap:14px;height:calc(100vh - 140px);min-height:620px;top:118px}.priority-ring-panel{grid-template-columns:minmax(220px,.7fr) minmax(0,1fr);align-items:center}.priority-ring-stage-head,.priority-ring-center,.priority-ring-legend{grid-column:2}.priority-ring-panel svg{grid-column:1;grid-row:1/5;height:310px}.priority-mech-detail{max-width:none;padding:20px 22px}.priority-t1-shell{grid-template-columns:1fr}.priority-t1-tabs{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line)}.priority-t1-tab{min-width:210px;border-right:1px solid var(--line);border-bottom:0}.priority-t1-tab[aria-selected=true]{box-shadow:inset 0 -3px 0 var(--accent-3)}}
 @media(max-width:700px){.priority-mech-stage{position:sticky;top:104px;height:calc(100vh - 122px);min-height:600px;display:block}.priority-ring-panel{display:none}.priority-mech-detail{margin-top:0}.priority-mech-track{padding:12vh 0 28vh}.priority-mech-step{height:58vh;min-height:360px}.priority-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.priority-metric:nth-child(2){border-right:0}.priority-metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.priority-t1-panel{padding:20px 17px}.priority-t1-dates{grid-template-columns:1fr}.priority-t1-dates span:last-child{text-align:left}.priority-audit-mosaic{grid-template-columns:repeat(7,minmax(0,1fr))}.priority-regime{grid-template-columns:1fr}.priority-ordering-rule{display:none}}
 
-.supporting-validation-catalogue{border-top:1px solid rgba(124,224,159,.26)}
-.supporting-validation-catalogue .report-takeaways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 28px;max-width:1120px;margin-top:24px}
-.supporting-validation-catalogue .report-takeaways h3{grid-column:1/-1;margin:0 0 2px;font:500 1.2rem/1.3 Georgia,serif}
-.supporting-validation-catalogue .report-takeaways p{margin:0;padding:12px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem;line-height:1.55}
-.supporting-validation-catalogue .report-takeaways strong{color:var(--text)}
-.supporting-validation-catalogue .report-details{margin-top:20px}
-@media(max-width:700px){.supporting-validation-catalogue .report-takeaways{grid-template-columns:1fr}.supporting-validation-catalogue .report-takeaways h3{grid-column:1}}
+
 </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://rickyjreyes.github.io/priority/#page", "name": "Richard J. Reyes Intellectual Property, Priority and Provenance Registry", "description": "Human-auditable and machine-readable registry of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-07", "author": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "about": ["Wave Confinement Theory", "technical provenance", "scholarly priority", "patent-family priority", "WaveLock", "Phase-Flux Field"], "isPartOf": {"@type": "WebSite", "url": "https://rickyjreyes.github.io/"}, "mainEntity": {"@id": "https://rickyjreyes.github.io/priority/#dataset"}}, {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/priority/#dataset", "name": "Richard J. Reyes Research Priority Registry", "description": "Claim-level chronology linking dated public research disclosures and filed patent-family chronology to canonical identifiers, DOIs, provenance notes, later comparison cases, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-07", "creator": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/priority.json"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/external-convergence.json"}], "subjectOf": {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/data/publication_traceability.json", "name": "Richard J. Reyes Publication Traceability Registry"}}]}</script>
 </head>
@@ -614,7 +608,6 @@
     <a href="#patents">Patent chronology</a>
     <a href="#detector-evidence">Detector evidence</a>
     <a href="#post-date-convergence">Post-date convergence</a>
-    <a href="#supporting-validation-catalogue">Validation catalogue</a>
     <a href="#rca-audit">RCA audit</a>
     <a href="#priority-anchors">Priority anchors</a>
     <a href="#claims">Full claim registry</a>
@@ -971,27 +964,7 @@
     </section>
 
     
-    <section class="priority-section supporting-validation-catalogue" id="supporting-validation-catalogue" aria-labelledby="supporting-validation-title">
-      <p class="eyebrow">05 · Supporting validation catalogue</p>
-      <h2 id="supporting-validation-title">Supporting Validation Catalogue</h2>
-      <p class="section-lede">A broader reference catalogue mixing external research correspondence, incidents, engineering results, and author-run frozen/public-data tests. The highest-specificity evidence is intentionally surfaced earlier on the page.</p>
-      <div class="report-takeaways">
-        <h3>Core findings</h3>
-        <p><strong>Recursive AI drift:</strong> later work operationalizes semantic, behavioral, memory, constraint, and coordination drift corresponding to the June 11, 2025 RCA failure architecture.</p>
-        <p><strong>Propagation versus correction:</strong> later multi-agent incidents provide mechanism-level evidence for failures in which propagation, coordination, or boundary crossing can exceed corrective control.</p>
-        <p><strong>Prospective data tests:</strong> the public record includes frozen or holdout analyses in CMS and GWTC; interpretation remains dependent on the stated background and analysis assumptions.</p>
-        <p><strong>Quantitative RCA correspondence:</strong> the later incident reconstruction gives R≈0.0104 versus the earlier Rpred≈0.0100; broader replication and generalization remain open.</p>
-      </div>
-      <details class="report-details prediction-detail" open>
-        <summary><span><strong>24 validation records</strong><small>AI and agent safety, physical computation, wave dynamics, collider tests, GWTC, and quantitative results</small></span><span class="report-action">Collapse</span></summary>
-        <div class="report-details-body">
-          <p class="section-lede">The compact validation catalogue is preserved in the existing detector, convergence, publication, and empirical records on this page. This section restores the intended evidence-order boundary before the author-side RCA audit.</p>
-          <div class="priority-anchor-actions"><a class="button secondary" href="#ledger">Detector / empirical records</a><a class="button secondary" href="#post-date-convergence">Post-date convergence records</a></div>
-        </div>
-      </details>
-    </section>
-
-<section class="priority-redesign-section" id="rca-audit" aria-labelledby="rca-audit-title">
+    <section class="priority-redesign-section" id="rca-audit" aria-labelledby="rca-audit-title">
   <p class="priority-section-kicker">06 · Author-side mechanism and forecast audit</p>
   <h2 id="rca-audit-title" style="margin:0;font:500 clamp(1.9rem,3.7vw,3rem)/1.06 Georgia,serif;letter-spacing:-.035em">RCA Mechanism &amp; Forecast Audit</h2>
   <p class="priority-audit-intro">06 · Author-side reference audit of RCA mechanisms, diagnostics, containment architecture, and frozen forecast milestones. These classifications are supporting audit material, not stronger evidence than the external records and frozen tests above.</p>
