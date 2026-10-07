@@ -12,13 +12,13 @@ window.overlapRelationshipByUrl = Object.assign(window.overlapRelationshipByUrl 
   "https://arxiv.org/abs/2609.28614": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2609.33495": "EMPIRICAL CONVERGENCE",
 
-  "https://arxiv.org/abs/2606.10749": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2604.16548": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2603.20357": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2604.15034": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2606.10749": "POST-DATE CONVERGENCE",
+  "https://arxiv.org/abs/2604.16548": "POST-DATE CONVERGENCE",
+  "https://arxiv.org/abs/2603.20357": "POST-DATE CONVERGENCE",
+  "https://arxiv.org/abs/2604.15034": "POST-DATE CONVERGENCE",
   "https://arxiv.org/abs/2512.00403": "STRUCTURAL OVERLAP",
   "https://arxiv.org/abs/2605.20833": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2605.03228": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2605.03228": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2603.19935": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2607.07663": "STRUCTURAL OVERLAP"
+  "https://arxiv.org/abs/2607.07663": "POST-DATE CONVERGENCE"
 });
