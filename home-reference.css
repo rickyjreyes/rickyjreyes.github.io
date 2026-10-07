@@ -297,3 +297,9 @@ body.home-reference{
   html{scroll-behavior:auto}
   .theory-scene,.tech-edge{transition:none!important}
 }
+
+.evidence-item.public-data::before{background:var(--hr-cyan)}
+.evidence-item.forecast::before{background:var(--hr-violet)}
+.evidence-item.public-data .evidence-state{color:var(--hr-cyan)}
+.evidence-item.forecast .evidence-state{color:var(--hr-violet)}
+.evidence-item .text-link{margin-top:12px}
