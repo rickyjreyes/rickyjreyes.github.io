@@ -190,7 +190,7 @@
   <script src="overlap-data-6.js"></script>
   <script src="overlap-data-7.js"></script>
   <script src="overlap-data-8.js"></script>
-  <script src="overlap-dates.js"></script>
+  <script src="overlap-dates.js?v=20261007-2"></script>
   <script src="relationship-data.js"></script>
   <script src="relationship-data-2.js"></script>
   <script>
@@ -241,6 +241,16 @@
     function recordDateMeta(r){
       for(const key of [r[2],r[7],r[8]]){
         if(key&&verifiedDateByKey[key]) return verifiedDateByKey[key];
+      }
+      if(r[2]==='https://www.southampton.ac.uk/study/postgraduate-research/projects/photonic-time-crystals-timetronics'){
+        return {
+          date:'2026-07-07',
+          precision:'day',
+          label:'Public by Jul 7, 2026',
+          status:'public-by-date',
+          source:'AcademicJobs mirror of University of Southampton project listing',
+          note:'The programme was publicly listed no later than Jul 7, 2026.'
+        };
       }
       return null;
     }
