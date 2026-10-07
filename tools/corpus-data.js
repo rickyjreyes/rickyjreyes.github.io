@@ -164,7 +164,13 @@ window.WCT_CORPUS = {
     ['2026-04-23','Log-Periodic C9 Deformation','B-decay phenomenology branch.'],
     ['2026-05-09','Log-Spectral Structure in B0 Decays','LHCb open-data analysis.'],
     ['2026-05-12','Recursive AI Drift Validation Audit','AI drift audit.'],
-    ['2026-05-28','NIST Atomic Line Log-Periodicity','NIST open-data analysis.']
+    ['2026-05-28','NIST Atomic Line Log-Periodicity','NIST open-data analysis.'],
+    ['2026-08-26','Log-Periodic Structure in the GWTC Chirp-Mass Distribution','Frozen-holdout gravitational-wave open-data analysis.'],
+    ['2026-08-31','Log-Periodic Dimuon Residual in CMS Open Data','Cross-period collider open-data replication and prospective holdout.'],
+    ['2026-09-08','Exact Scale-Winding Bijection','Mathematical bridge between discrete scale invariance and WCT active-domain phase closure.'],
+    ['2026-09-08','Filament Reduction and Phase Quantization','Curvature-locked filament reduction and localized-mode phase quantization.'],
+    ['2026-09-08','Geometric Turbulence in Wave Confinement Theory','Numerical soliton-gas and phase-locked curvature-filament study.'],
+    ['2026-09-14','Propagation-Correction Criticality Law for Recursive AI','RCA extension with a propagation-versus-correction criticality law and prospective-prediction audit.']
   ],
   maps: {
     master: [
