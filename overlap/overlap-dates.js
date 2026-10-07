@@ -181,12 +181,12 @@ window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
     "source": "Physical Review A"
   },
   "https://www.southampton.ac.uk/study/postgraduate-research/projects/photonic-time-crystals-timetronics": {
-    "date": null,
-    "precision": "none",
-    "label": "Source undated",
-    "status": "source-undated",
-    "source": "University of Southampton",
-    "note": "The live project page gives a closing date but no publication/posting date."
+    "date": "2026-07-07",
+    "precision": "day",
+    "label": "Public by Jul 7, 2026",
+    "status": "public-by-date",
+    "source": "AcademicJobs mirror of University of Southampton project listing",
+    "note": "The University of Southampton project page does not expose a posting/publication date. A matching indexed listing with the same project title, supervisors, and description shows Applications Close: Jul 7, 2026, establishing that the programme was public no later than this date."
   },
   "10.1016/j.optlastec.2026.115113": {
     "date": "2026-08",
