@@ -62,6 +62,22 @@
   const basinParticlesGroup=document.querySelector('[data-basin-particles]');
   const basinFlows=[...document.querySelectorAll('.basin-flow')];
   const shellDots=document.querySelector('[data-shell-dots]');
+  const shellSpectrum=document.querySelector('[data-shell-spectrum]');
+  const shellStatus=document.querySelector('[data-shell-status]');
+  const resonanceForward=document.querySelector('[data-resonance-forward]');
+  const resonanceBackward=document.querySelector('[data-resonance-backward]');
+  const resonanceStanding=document.querySelector('[data-resonance-standing]');
+  const resonanceEnvelopeUpper=document.querySelector('[data-resonance-envelope-upper]');
+  const resonanceEnvelopeLower=document.querySelector('[data-resonance-envelope-lower]');
+  const resonanceNodesGroup=document.querySelector('[data-resonance-nodes]');
+  const resonanceAntinodesGroup=document.querySelector('[data-resonance-antinodes]');
+  const resonanceReflection=document.querySelector('[data-resonance-reflection]');
+  const phaseSegmentsGroup=document.querySelector('[data-curvature-phase-segments]');
+  const phaseDotsGroup=document.querySelector('[data-curvature-phase-dots]');
+  const phaseSeam=document.querySelector('[data-curvature-seam]');
+  const phaseSeamError=document.querySelector('[data-curvature-seam-error]');
+  const phaseErrorValue=document.querySelector('[data-curvature-error-value]');
+  const phaseErrorFill=document.querySelector('[data-curvature-error-fill]');
   const eigenParticlesGroup=document.querySelector('[data-eigen-particles]');
   const mode1=document.querySelector('[data-mode-one]');
   const mode2=document.querySelector('[data-mode-two]');
@@ -86,20 +102,24 @@
   const basinParticles=makeParticles(basinParticlesGroup,14,['fill-accent','fill-accent2','fill-accent3']);
   const eigenParticles=makeParticles(eigenParticlesGroup,24,['fill-accent','fill-accent2','fill-accent3']);
 
+  // Stage 04: deterministic broadband Fourier samples.
+  // Quartic weighting is a spectral filter visualization, not a PDE solve.
+  const spectralSamples=[];
   if(shellDots){
-    const classes=['fill-accent3','fill-accent2','fill-accent'];
-    for(let i=0;i<84;i++){
-      const a=i*2.399963229728653,rr=116+(i%3)*20;
-      const x=280+rr*Math.cos(a),y=240+rr*Math.sin(a);
+    for(let i=0;i<210;i++){
+      const q=.13+(i+.5)/210*1.49;
+      const phi=i*2.399963229728653;
+      const x=280+119*q*Math.cos(phi),y=222+119*q*Math.sin(phi);
       const el=document.createElementNS('http://www.w3.org/2000/svg','circle');
-      el.setAttribute('cx',x.toFixed(1));
-      el.setAttribute('cy',y.toFixed(1));
-      el.setAttribute('r',i%5===0?'3.1':'2');
-      el.setAttribute('class',classes[i%3]);
-      el.setAttribute('opacity',i%5===0?'.82':'.36');
+      el.setAttribute('cx',x.toFixed(2));
+      el.setAttribute('cy',y.toFixed(2));
+      el.setAttribute('r',i%7===0?'2.65':'1.95');
+      el.setAttribute('class','shell-spectral-mode');
       shellDots.appendChild(el);
+      spectralSamples.push({el,q});
     }
   }
+  let shellStart=performance.now()/1000;
 
   // Stage 01: deterministic broadband strands around the zero-wave reference.
   // Animated folding is explanatory; no turbulent PDE is being integrated.
