@@ -37,13 +37,13 @@
     "priorityAndInfluenceAreSeparateQuestions": true
   },
   "counts": {
-    "totalRecords": 241,
-    "physicsRecords": 173,
+    "totalRecords": 238,
+    "physicsRecords": 170,
     "physics9Plus": 70,
     "aiRecords": 68,
     "dateChecked": 6,
     "chronologyPriorArtReview": 4,
-    "ledgerOnly": 231,
+    "ledgerOnly": 228,
     "verifiedCases": 6,
     "auditCandidates": 4,
     "priorArtControls": 3
@@ -2231,35 +2231,6 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
-      "ledgerRank": 72,
-      "domain": "physics",
-      "title": "Analysis of optical bottle generation by coherent beam combining",
-      "primaryUrl": "https://doi.org/10.1364/OE.550102",
-      "source": "Optics Express",
-      "authors": [
-        "Jan K. Jabczyński"
-      ],
-      "identifier": "10.1364/OE.550102",
-      "identifierUrl": "https://doi.org/10.1364/OE.550102",
-      "overlapScore": 8.9,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
-      "influenceStatus": "unresolved",
-      "derivationStatus": "unresolved",
-      "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2025-02-07",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Optics Express"
-      }
-    },
-    {
       "ledgerRank": 73,
       "domain": "physics",
       "title": "Optoelectronic Physical Unclonable Functions and Reservoir-Inspired Computation with Low-Symmetry Integrated Photonics",
@@ -3197,42 +3168,6 @@
       }
     },
     {
-      "ledgerRank": 105,
-      "domain": "physics",
-      "title": "Basic Properties of High-Dynamic Beam Shaping with Coherent Combining of High-Power Laser Beams for Materials Processing",
-      "primaryUrl": "https://doi.org/10.3390/jmmp9030085",
-      "source": "Journal of Manufacturing and Materials Processing",
-      "authors": [
-        "Rudolf Weber",
-        "Jonas Wagner",
-        "Alexander Peter",
-        "Christian Hagenlocher",
-        "Ami Spira",
-        "Benayahu Urbach",
-        "Eyal Shekel",
-        "Yaniv Vidne"
-      ],
-      "identifier": "10.3390/jmmp9030085",
-      "identifierUrl": "https://doi.org/10.3390/jmmp9030085",
-      "overlapScore": 8.5,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
-      "influenceStatus": "unresolved",
-      "derivationStatus": "unresolved",
-      "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2025-03-06",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Journal of Manufacturing and Materials Processing / MDPI"
-      }
-    },
-    {
       "ledgerRank": 106,
       "domain": "physics",
       "title": "A Non-Volatile Heterogeneous Quantum Dot III-V/Si DFB Laser with Optical Memristive Behavior",
@@ -3866,44 +3801,6 @@
       "wctAnchors": [],
       "correspondence": [],
       "priorityDirection": "NOT_VERIFIED"
-    },
-    {
-      "ledgerRank": 128,
-      "domain": "physics",
-      "title": "All-silicon non-volatile optical memory based on photon avalanche-induced trapping",
-      "primaryUrl": "https://doi.org/10.1038/s42005-025-01934-4",
-      "source": "Communications Physics",
-      "authors": [
-        "Yuan Yuan",
-        "Yiwei Peng",
-        "Stanley Cheung",
-        "Wayne V. Sorin",
-        "Sean Hooten",
-        "Zhihong Huang",
-        "Di Liang",
-        "Jiuyi Zhang",
-        "Marco Fiorentino",
-        "Raymond G. Beausoleil"
-      ],
-      "identifier": "10.1038/s42005-025-01934-4",
-      "identifierUrl": "https://doi.org/10.1038/s42005-025-01934-4",
-      "overlapScore": 8,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
-      "influenceStatus": "unresolved",
-      "derivationStatus": "unresolved",
-      "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2025-01-25",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Communications Physics"
-      }
     },
     {
       "ledgerRank": 129,
