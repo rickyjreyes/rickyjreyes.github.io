@@ -44,7 +44,16 @@
     theorySteps.forEach((step,i)=>step.classList.toggle('active',i===stage));
     pips.forEach((pip,i)=>pip.classList.toggle('active',i<=stage));
     const cap=document.querySelector('[data-theory-caption]');
-    if(cap) cap.textContent = String(stage+1).padStart(2,'0')+' / 04 · '+['Wave transport','Finite-band selection','Resonant confinement','Curvature locking'][stage];
+    if(cap) cap.textContent = String(stage+1).padStart(2,'0')+' / 08 · '+[
+      'Zero-wave invariant state',
+      'Lyapunov descent',
+      'Sobolev confinement bound',
+      'Finite-k selection',
+      'Phase–Flux substrate',
+      'Self-emergent eigenmodes',
+      'Resonant confinement',
+      'Curvature locking'
+    ][stage];
   };
 
   const updateScroll = () => {
@@ -138,6 +147,8 @@
   const tangent=document.querySelector('[data-gamma-tangent]');
   const osc=document.querySelector('[data-gamma-osc]');
   const shellDots=document.querySelector('[data-shell-dots]');
+  const fluxOne=document.querySelector('[data-flux-one]');
+  const fluxTwo=document.querySelector('[data-flux-two]');
 
   const gammaPt=(t)=>{
     const r=128+28*Math.cos(3*t);
@@ -151,6 +162,8 @@
     }
     gamma.setAttribute('d',d+'Z');
   }
+  if(fluxOne){fluxOne.style.strokeDasharray='8 10'}
+  if(fluxTwo){fluxTwo.style.strokeDasharray='5 12'}
   if(shellDots){
     const parts=[];
     for(let i=0;i<80;i++){
@@ -175,16 +188,10 @@
     if(ts-lastTheory<32){theoryRaf=requestAnimationFrame(theoryLoop);return}
     lastTheory=ts;
     const t=ts/1000;
-    if(activeStage===0){
-      waves.forEach((path,i)=>{
-        const y0=120+i*60;let d='';
-        for(let x=8;x<=472;x+=8){
-          const env=1-Math.pow((x-240)/260,2)*.4;
-          d+=(x===8?'M':'L')+x+' '+(y0+15*env*Math.sin(.042*x-2.1*t+i*1.3)).toFixed(1);
-        }
-        path.setAttribute('d',d);
-      });
-    }else if(activeStage===2){
+    if(activeStage===4){
+      if(fluxOne) fluxOne.style.strokeDashoffset=String(-(t*18)%120);
+      if(fluxTwo) fluxTwo.style.strokeDashoffset=String((t*14)%120);
+    }else if(activeStage===6){
       const ring=(el,r0,amp,m,ph)=>{
         if(!el)return;let d='';
         for(let k=0;k<=120;k++){
@@ -194,7 +201,7 @@
         el.setAttribute('d',d+'Z');
       };
       ring(mode1,105,20,4,0);ring(mode2,150,12,6,1);
-    }else if(activeStage===3 && marker && tangent && osc){
+    }else if(activeStage===7 && marker && tangent && osc){
       const th=(t*.45)%(Math.PI*2),p=gammaPt(th),a=gammaPt(th-.05),b=gammaPt(th+.05);
       const dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,c=circum(gammaPt(th-.18),p,gammaPt(th+.18));
       marker.setAttribute('cx',p[0].toFixed(1));marker.setAttribute('cy',p[1].toFixed(1));
@@ -285,13 +292,33 @@
   };
   buildEquation();
 
+  document.querySelectorAll('.clickable-card[data-card-href]').forEach((card)=>{
+    const openCard=()=>{
+      const href=card.dataset.cardHref;
+      if(!href)return;
+      if(/^https?:\/\//.test(href)) window.open(href,'_blank','noopener,noreferrer');
+      else location.href=href;
+    };
+    card.addEventListener('click',(event)=>{
+      if(event.target.closest('a,button'))return;
+      openCard();
+    });
+    card.addEventListener('keydown',(event)=>{
+      if(event.key==='Enter'||event.key===' '){
+        if(event.target.closest('a,button') && event.target!==card)return;
+        event.preventDefault();
+        openCard();
+      }
+    });
+  });
+
   addEventListener('scroll',schedule,{passive:true});
   addEventListener('resize',()=>{
     schedule();
     if(theoryVisible&&!reduced.matches&&innerWidth>1050&&!theoryRaf)theoryRaf=requestAnimationFrame(theoryLoop);
   },{passive:true});
   reduced.addEventListener?.('change',()=>{
-    if(reduced.matches){setStage(3);renderEquationProgress(1)}
+    if(reduced.matches){setStage(7);renderEquationProgress(1)}
     else if(theoryVisible&&innerWidth>1050&&!theoryRaf)theoryRaf=requestAnimationFrame(theoryLoop);
     schedule();
   });
