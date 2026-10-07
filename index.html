@@ -210,7 +210,7 @@
       <div class="section-heading narrow">
         <p class="eyebrow">The research idea</p>
         <h2 id="idea-title">Persistent structure as confined wave dynamics.</h2>
-        <p>The homepage now follows the dependency flow itself: the zero-wave reference state folds into the first structured mode under the three-dimensional boundedness branch, field states descend through Lyapunov basins, finite-(k) selection organizes the spectrum, Phase–Flux carries energy and phase, eigenmode basins emerge from broadband competition, and resonant geometry closes into curvature locking.</p>
+        <p>The homepage follows the proposed dependency flow: a chaotic broadband field organizes its first ZW1 fold around the invariant zero-wave reference, Lyapunov basins draw down the field state, finite-wavenumber selection filters the spectrum, a toroidal Phase–Flux grid routes energy and phase subject to causal-flow constraints, eigenmode attractors emerge, and resonant geometry closes into curvature locking.</p>
       </div>
 
       <div class="wct-theory-scroll">
@@ -240,15 +240,17 @@
                 <text class="svg-accent" x="446" y="324">x</text>
                 <text class="svg-accent2" x="174" y="386">y</text>
                 <text class="svg-accent3" x="288" y="168">z</text>
-                <circle class="stroke-accent3 faint" cx="280" cy="320" r="76"></circle>
+
+                <g class="zw-turbulent-field" data-zw-turbulence></g>
+                <g class="zw-broadband-particles" data-zw-particles></g>
                 <path class="stroke-accent3 strong" data-zw-fold></path>
                 <path class="stroke-accent faint" data-zw-fold-inner></path>
                 <circle class="fill-accent3" data-zw-core cx="280" cy="320" r="5"></circle>
-                <text class="svg-muted" x="90" y="84">ZW0 · invariant reference</text>
-                <text class="svg-accent3" x="350" y="84">ZW1 · first fold</text>
+                <text class="svg-muted" x="90" y="84">zero-wave · invariant baseline</text>
+                <text class="svg-accent3" x="350" y="84">ZW1 · coherent fold</text>
                 <path class="stroke-accent faint" d="M226 82H330"></path>
-                <text class="svg-text" x="280" y="118" text-anchor="middle">bounded fold shown in x · y · z</text>
-                <text class="svg-accent3" x="280" y="448" text-anchor="middle">H²(ℝⁿ) ↪ L∞  ⇒  n ≤ 3 branch</text>
+                <text class="svg-text" x="280" y="118" text-anchor="middle">turbulent broadband content → coherent fold</text>
+                <text class="svg-accent3" x="280" y="448" text-anchor="middle">x · y · z   |   n ≤ 3 branch</text>
               </g>
 
               <g class="theory-scene scene-1">
@@ -298,16 +300,23 @@
               </g>
 
               <g class="theory-scene scene-4">
-                <circle class="stroke-accent faint" cx="280" cy="240" r="150"></circle>
-                <path class="stroke-accent strong" data-flux-one d="M110 296C174 152 308 124 446 198"></path>
-                <path class="stroke-accent2 strong" data-flux-two d="M112 332C216 374 354 352 446 230"></path>
-                <path class="stroke-accent3 faint dashed" d="M142 212C204 292 342 316 420 250"></path>
-                <circle class="fill-accent3-soft stroke-accent3" cx="280" cy="240" r="46"></circle>
-                <text class="svg-display small" x="280" y="232" text-anchor="middle">u, S, θ</text>
-                <text class="svg-muted" x="280" y="272" text-anchor="middle">energy · flux · phase</text>
-                <text class="svg-accent" x="280" y="424" text-anchor="middle">selected band → structured transport</text>
+                <g class="pff-torus-grid" data-pff-torus-grid>
+                  <g data-pff-grid-back></g><g data-pff-grid-front></g>
+                </g>
+                <g class="pff-flux-threads" data-pff-flux-threads></g>
+                <path class="pff-spindle-outer" data-pff-spindle d="M280 111 C350 188 335 310 280 373 C226 309 209 188 280 111Z"></path>
+                <path class="stroke-accent3 strong" data-pff-spindle-axis d="M280 119C280 190 280 295 280 365"></path>
+                <g class="pff-phase-particles" data-pff-particles></g>
+                <circle class="pff-spindle-core" cx="280" cy="240" r="8"></circle>
+                <text class="svg-muted" x="72" y="67">toroidal grid · spindle</text>
+                <text class="svg-accent" x="430" y="96" text-anchor="end">phase θ</text>
+                <text class="svg-accent2" x="82" y="225">S</text>
+                <text class="svg-accent3" x="280" y="389" text-anchor="middle">∂ₜu + ∇·S = 0</text>
+                <text class="svg-text" x="88" y="422">Flux capacity</text>
+                <rect class="pff-capacity-rail" x="88" y="435" width="384" height="8" rx="4"></rect>
+                <rect class="pff-capacity-fill" data-pff-capacity x="88" y="435" width="0" height="8" rx="4"></rect>
+                <text class="svg-muted" x="474" y="422" text-anchor="end">null-flow capacity  |S| / (c u) = 1</text>
               </g>
-
               <g class="theory-scene scene-5">
                 <path class="stroke-muted faint" d="M76 104H486M76 164H486M76 224H486M76 284H486M76 344H486M76 404H486"></path>
                 <path class="stroke-muted faint" d="M116 72V432M196 72V432M276 72V432M356 72V432M436 72V432"></path>
@@ -355,7 +364,7 @@
           </div>
 
           <div class="wct-theory-meta">
-            <strong data-theory-caption>01 / 08 · Zero-wave → ZW1 fold</strong>
+            <strong data-theory-caption>01 / 08 · Zero-wave turbulence → ZW1 fold</strong>
             <span class="wct-theory-pips" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
           </div>
           <div class="wct-theory-progress" aria-hidden="true"><span data-theory-progress></span></div>
@@ -364,24 +373,24 @@
 
         <ol class="wct-theory-steps" aria-label="Wave Confinement Theory dependency sequence">
           <li class="wct-theory-step active">
-            <span>01</span><h3>Zero-wave → ZW1 fold</h3>
-            <p>The invariant zero-wave is the quiescent reference. The first structured departure is shown as a ZW1 fold developing in the three available spatial directions under the bounded-confinement (n\le3) branch.</p>
+            <span>01</span><h3>Zero-wave turbulence → ZW1 fold</h3>
+            <p>Chaotic broadband wave turbulence folds toward a first coherent ZW1 mode in the three spatial directions. The exactly invariant zero-wave state remains the mathematical reference, distinct from the fluctuating field drawn here; the Sobolev n ≤ 3 condition belongs to the boundedness argument in step 03.</p>
           </li>
           <li class="wct-theory-step">
             <span>02</span><h3>Lyapunov basin flow</h3>
-            <p>Field states are shown moving through a basin of lower (mathcal E_{\mathrm{WCT}}), not merely down a one-dimensional curve. Under the stated gradient-flow assumptions, trajectories descend toward lower-energy attractor structure.</p>
+            <p>Field states are shown moving through a basin of lower 𝓔_WCT[ψ], not merely down a one-dimensional curve. Under the stated gradient-flow assumptions, trajectories descend toward lower-energy attractor structure.</p>
           </li>
           <li class="wct-theory-step">
             <span>03</span><h3>Sobolev three-dimensional bound</h3>
-            <p>The regularity route uses (H^2(\mathbb{R}^n)\hookrightarrow L^\infty) to restrict the stated bounded-confinement argument to (n\le3).</p>
+            <p>The regularity route uses H²(ℝⁿ) ↪ L∞ to restrict the stated bounded-confinement argument to n ≤ 3.</p>
           </li>
           <li class="wct-theory-step">
             <span>04</span><h3>Finite-(k) shell selection</h3>
-            <p>A quartic band-pass selects a preferred nonzero wavenumber (k_\star), concentrating support around a finite spectral shell rather than allowing unrestricted scale growth.</p>
+            <p>A quartic band-pass selects a preferred nonzero wavenumber k★, concentrating support around a finite spectral shell rather than allowing unrestricted scale growth.</p>
           </li>
           <li class="wct-theory-step">
             <span>05</span><h3>Phase–Flux organization</h3>
-            <p>Observable energy density, flux, and phase organize the selected band into a conservation- and causal-flow-aware substrate.</p>
+            <p>Energy density <em>u</em>, flux <em>S</em>, and phase θ are illustrated on a toroidal grid with a central spindle-like flow channel. The full capacity rail represents the null-flow normalization, not a measured flux or a solved PFF state. <a href="publications/phase-flux-field.html">Phase–Flux paper ↗</a></p>
           </li>
           <li class="wct-theory-step">
             <span>06</span><h3>Self-emergent eigenmode sinkholes</h3>
