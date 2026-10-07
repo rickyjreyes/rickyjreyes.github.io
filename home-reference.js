@@ -13,11 +13,11 @@
   const priorityItems=[...document.querySelectorAll('[data-priority-spine] .priority-highlight')];
 
   const labels=[
-    'Zero-wave → ZW1 fold',
+    'Zero-wave turbulence → ZW1 fold',
     'Lyapunov basin flow',
     'Sobolev three-dimensional bound',
     'Finite-k shell selection',
-    'Phase–Flux organization',
+    'Phase–Flux torus · spindle · capacity',
     'Self-emergent eigenmode sinkholes',
     'Resonant confinement',
     'Curvature locking'
@@ -32,6 +32,15 @@
   const zwFold=document.querySelector('[data-zw-fold]');
   const zwFoldInner=document.querySelector('[data-zw-fold-inner]');
   const zwCore=document.querySelector('[data-zw-core]');
+  const zwTurbulenceGroup=document.querySelector('[data-zw-turbulence]');
+  const zwParticlesGroup=document.querySelector('[data-zw-particles]');
+  const pffGridBack=document.querySelector('[data-pff-grid-back]');
+  const pffGridFront=document.querySelector('[data-pff-grid-front]');
+  const pffFluxThreads=document.querySelector('[data-pff-flux-threads]');
+  const pffSpindle=document.querySelector('[data-pff-spindle]');
+  const pffSpindleAxis=document.querySelector('[data-pff-spindle-axis]');
+  const pffParticlesGroup=document.querySelector('[data-pff-particles]');
+  const pffCapacity=document.querySelector('[data-pff-capacity]');
   const basinParticlesGroup=document.querySelector('[data-basin-particles]');
   const basinFlows=[...document.querySelectorAll('.basin-flow')];
   const shellDots=document.querySelector('[data-shell-dots]');
@@ -78,6 +87,123 @@
   if(fluxOne)fluxOne.style.strokeDasharray='8 10';
   if(fluxTwo)fluxTwo.style.strokeDasharray='5 12';
 
+  // Stage 01: deterministic broadband strands around the zero-wave reference.
+  // Animated folding is explanatory; no turbulent PDE is being integrated.
+  const svgEl=(tag,attrs={},parent)=>{
+    const el=document.createElementNS('http://www.w3.org/2000/svg',tag);
+    Object.entries(attrs).forEach(([key,value])=>el.setAttribute(key,String(value)));
+    if(parent)parent.appendChild(el);
+    return el;
+  };
+  const zwStrands=[];
+  if(zwTurbulenceGroup){
+    for(let i=0;i<15;i++){
+      zwStrands.push(svgEl('path',{
+        class:i%3===0?'zw-strand zw-strand-violet':i%3===1?'zw-strand zw-strand-cyan':'zw-strand zw-strand-green',
+        'stroke-width':i%4===0?1.5:1,
+        opacity:i%5===0?.75:.46
+      },zwTurbulenceGroup));
+    }
+  }
+  const zwSpecks=[];
+  if(zwParticlesGroup){
+    for(let i=0;i<30;i++){
+      zwSpecks.push(svgEl('circle',{
+        class:i%3===0?'fill-accent':i%3===1?'fill-accent2':'fill-accent3',
+        r:i%5===0?2.6:1.5,
+        opacity:'.55'
+      },zwParticlesGroup));
+    }
+  }
+
+  // Stage 05: illustrative toroidal coordinate grid, circulating flux and
+  // spindle channel. No finite-element solution or empirical flux is implied.
+  const torusGrid=[];
+  const torusThreads=[];
+  if(pffGridBack&&pffGridFront){
+    for(let i=0;i<10;i++)torusGrid.push({el:svgEl('path',{
+      class:i%2===0?'pff-grid-line pff-grid-violet':'pff-grid-line pff-grid-cyan'
+    },i<5?pffGridBack:pffGridFront),type:'longitude',i});
+    for(let i=0;i<18;i++)torusGrid.push({el:svgEl('path',{
+      class:'pff-grid-line pff-grid-meridian'
+    },i%2?pffGridBack:pffGridFront),type:'meridian',i});
+  }
+  if(pffFluxThreads){
+    for(let i=0;i<3;i++){
+      torusThreads.push(svgEl('path',{
+        class:['pff-thread pff-thread-cyan','pff-thread pff-thread-violet','pff-thread pff-thread-green'][i]
+      },pffFluxThreads));
+    }
+  }
+  const pffParticles=[];
+  if(pffParticlesGroup){
+    for(let i=0;i<14;i++){
+      pffParticles.push(svgEl('circle',{
+        class:['fill-accent','fill-accent2','fill-accent3'][i%3],
+        r:i%4===0?3.8:2.7
+      },pffParticlesGroup));
+    }
+  }
+
+  const torusProject=(theta,phi,rotation=0)=>{
+    const R=117,r=40;
+    const T=theta+rotation;
+    const radius=R+r*Math.cos(phi);
+    const x=radius*Math.cos(T),y=radius*Math.sin(T),z=r*Math.sin(phi);
+    return [280+x+.10*y,239+.45*y-.9*z];
+  };
+
+  const drawPffTorus=t=>{
+    const rotation=t*.12;
+    const polyline=(getPoint,n=84)=>{
+      let path='';
+      for(let k=0;k<=n;k++){
+        const p=getPoint(k/n);
+        path+=(k?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);
+      }
+      return path;
+    };
+    torusGrid.forEach(({el,type,i})=>{
+      if(type==='longitude'){
+        const phi=2*Math.PI*i/10;
+        el.setAttribute('d',polyline(u=>torusProject(u*Math.PI*2,phi,rotation),90));
+      }else{
+        const theta=i*Math.PI*2/18;
+        el.setAttribute('d',polyline(u=>torusProject(theta,u*Math.PI*2,rotation),46));
+      }
+    });
+    torusThreads.forEach((el,i)=>{
+      el.setAttribute('d',polyline(u=>torusProject(
+        u*Math.PI*4+i*Math.PI*.45+t*.21,
+        u*Math.PI*6+i*Math.PI*.68+t*.28,
+        rotation),116));
+      el.style.strokeDashoffset=String(-(t*24+i*16)%180);
+    });
+    if(pffSpindle){
+      const swell=8*Math.sin(t*1.08);
+      const w=45+swell;
+      pffSpindle.setAttribute('d',
+        'M280 113C'+(280+w).toFixed(1)+' 171 '+(280+w*1.17).toFixed(1)+
+        ' 302 280 371C'+(280-w*1.17).toFixed(1)+' 302 '+
+        (280-w).toFixed(1)+' 171 280 113Z');
+    }
+    if(pffSpindleAxis)pffSpindleAxis.style.strokeDashoffset=String(-(t*14)%60);
+    pffParticles.forEach((el,i)=>{
+      const u=(t*.085+i/pffParticles.length)%1;
+      const phase=i%3;
+      const p=torusProject(u*Math.PI*4+phase*Math.PI*.45,
+        u*Math.PI*6+phase*Math.PI*.68,rotation);
+      el.setAttribute('cx',p[0].toFixed(1));
+      el.setAttribute('cy',p[1].toFixed(1));
+      el.setAttribute('opacity',(.45+.5*Math.sin(u*Math.PI)).toFixed(2));
+    });
+    if(pffCapacity){
+      // Schematic only: oscillation is not a fitted physical flux ratio.
+      const proportion=.72+.18*Math.sin(t*.64);
+      pffCapacity.setAttribute('width',(384*proportion).toFixed(1));
+    }
+  };
+
   const gammaPt=(t)=>{
     const r=128+28*Math.cos(3*t);
     return [280+r*Math.cos(t),240+.82*r*Math.sin(t)];
@@ -102,22 +228,57 @@
 
   const drawFold=(t)=>{
     if(!zwFold||!zwFoldInner)return;
-    const birth=.2+.8*(.5+.5*Math.sin(t*.72));
-    const make=(r0,amp,phase)=>{
+    // One repeating passage from broadband disorder to a coherent folded mode.
+    const phase=t*.34;
+    const birth=.5-.5*Math.cos(phase); // 0: turbulent, 1: organized fold
+    const smooth=birth*birth*(3-2*birth);
+    const blend=(a,b)=>a*(1-smooth)+b*smooth;
+    const foldCurve=(radius,offset)=>{
       let d='';
-      for(let i=0;i<=140;i++){
-        const a=i/140*Math.PI*2;
-        const fold=amp*birth*Math.sin(3*a+phase);
-        const r=r0+fold;
-        const x=280+r*Math.cos(a);
-        const y=320+.48*r*Math.sin(a)-18*birth*Math.cos(2*a+phase);
-        d+=(i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);
+      for(let k=0;k<=148;k++){
+        const theta=k/148*Math.PI*2;
+        const r=radius+22*Math.sin(3*theta+offset+t*.13)*smooth;
+        const x=280+r*Math.cos(theta);
+        const y=320+.52*r*Math.sin(theta)-22*smooth*Math.cos(2*theta+offset);
+        d+=(k?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);
       }
       return d+'Z';
     };
-    zwFold.setAttribute('d',make(92,25,0));
-    zwFoldInner.setAttribute('d',make(48,14,.8));
-    if(zwCore)zwCore.setAttribute('r',(4+birth*4).toFixed(1));
+    zwFold.setAttribute('d',foldCurve(98,.15));
+    zwFoldInner.setAttribute('d',foldCurve(57,.9));
+    zwFold.style.opacity=String(.08+.85*smooth);
+    zwFoldInner.style.opacity=String(.05+.55*smooth);
+    if(zwCore){
+      zwCore.setAttribute('r',(2+5*smooth).toFixed(1));
+      zwCore.style.opacity=String(.16+.84*smooth);
+    }
+    zwStrands.forEach((el,i)=>{
+      const n=72,offset=i*.71;
+      let d='';
+      for(let k=0;k<=n;k++){
+        const u=k/n,theta=u*Math.PI*2;
+        const chaoticX=86+u*382+14*Math.sin(12*u+t*.76+offset);
+        const chaoticY=304+91*Math.sin(u*11+i*.86+t*.58)+
+          34*Math.cos(u*28-t*.45-i*1.21)+18*Math.sin(u*41+offset);
+        const radius=90+(i%5)*8+16*Math.cos(3*theta+offset);
+        const foldedX=280+radius*Math.cos(theta+offset*.22);
+        const foldedY=320+.50*radius*Math.sin(theta+offset*.22)-
+          16*Math.cos(2*theta+offset);
+        const x=blend(chaoticX,foldedX),y=blend(chaoticY,foldedY);
+        d+=(k?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);
+      }
+      el.setAttribute('d',d);
+      el.setAttribute('opacity',(.54-.25*smooth+.11*(i%3)).toFixed(2));
+    });
+    zwSpecks.forEach((el,i)=>{
+      const a=i*2.3999632297+t*(.16+.035*(i%4));
+      const r=blend(190+24*Math.sin(i*.7+t*.9),72+22*Math.sin(i*1.7+t*.35));
+      const x=280+r*Math.cos(a),y=314+.52*r*Math.sin(a)+
+        (1-smooth)*45*Math.cos(i*1.18+t*.65);
+      el.setAttribute('cx',x.toFixed(1));
+      el.setAttribute('cy',y.toFixed(1));
+      el.setAttribute('opacity',(.22+.56*(1-smooth)).toFixed(2));
+    });
   };
 
   const drawBasin=(t)=>{
@@ -188,10 +349,8 @@
     if(activeStage===0)drawFold(t);
     else if(activeStage===1)drawBasin(t);
     else if(activeStage===3&&shellDots)shellDots.setAttribute('transform','rotate('+((t*4)%360).toFixed(2)+' 280 240)');
-    else if(activeStage===4){
-      if(fluxOne)fluxOne.style.strokeDashoffset=String(-(t*18)%120);
-      if(fluxTwo)fluxTwo.style.strokeDashoffset=String((t*14)%120);
-    }else if(activeStage===5)drawEigenSinks(t);
+    else if(activeStage===4)drawPffTorus(t);
+    else if(activeStage===5)drawEigenSinks(t);
     else if(activeStage===6)drawResonance(t);
     else if(activeStage===7)drawCurvature(t);
   };
@@ -425,6 +584,7 @@
   });
 
   drawFold(.8);
+  drawPffTorus(.8);
   drawBasin(.8);
   drawEigenSinks(.8);
   drawResonance(.8);
