@@ -210,135 +210,226 @@
       <div class="section-heading narrow">
         <p class="eyebrow">The research idea</p>
         <h2 id="idea-title">Persistent structure as confined wave dynamics.</h2>
-        <p>Wave Confinement Theory develops a dependency path from an invariant zero-wave state through Lyapunov descent, Sobolev regularity, finite-wavenumber selection, the Phase–Flux substrate, self-emergent eigenmodes, resonant confinement, and curvature locking.</p>
+        <p>The homepage now follows the dependency flow itself: the zero-wave reference state folds into the first structured mode under the three-dimensional boundedness branch, field states descend through Lyapunov basins, finite-(k) selection organizes the spectrum, Phase–Flux carries energy and phase, eigenmode basins emerge from broadband competition, and resonant geometry closes into curvature locking.</p>
       </div>
 
       <div class="wct-theory-scroll">
         <div class="wct-theory-visual-wrap">
+          <div class="wct-theory-flow" aria-hidden="true">
+            <span>ZW0</span><i></i><span>ZW1</span><i></i><span>basin</span><i></i><span>n≤3</span><i></i><span>k*</span><i></i><span>PFF</span><i></i><span>modes</span><i></i><span>lock</span>
+          </div>
+
           <div class="wct-theory-visual" data-stage="0">
-            <svg viewBox="0 0 480 480" role="img" aria-label="Illustrative eight-stage WCT dependency sequence">
-              <circle class="theory-frame" cx="240" cy="240" r="226"></circle>
+            <svg viewBox="0 0 560 480" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative eight-stage WCT dependency sequence">
+              <defs>
+                <radialGradient id="wctWell" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="var(--accent-3)" stop-opacity=".28"></stop>
+                  <stop offset="48%" stop-color="var(--accent)" stop-opacity=".08"></stop>
+                  <stop offset="100%" stop-color="var(--bg-deep)" stop-opacity="0"></stop>
+                </radialGradient>
+              </defs>
+              <rect class="theory-frame" x="10" y="10" width="540" height="460" rx="24"></rect>
 
               <g class="theory-scene scene-0">
-                <circle class="fill-accent3" cx="240" cy="240" r="7"></circle>
-                <circle class="stroke-accent3 faint" cx="240" cy="240" r="58"></circle>
-                <text class="svg-muted" x="240" y="168" text-anchor="middle">zero-wave invariant state</text>
-                <text class="svg-display" x="240" y="260" text-anchor="middle">0</text>
+                <path class="stroke-muted faint" d="M92 320L280 214L468 320L280 426Z"></path>
+                <path class="stroke-muted faint" d="M92 320L92 285M468 320L468 285M280 214L280 178"></path>
+                <path class="stroke-muted faint" d="M139 294L327 400M186 267L374 373M233 241L421 347M139 347L327 241M186 373L374 267M233 400L421 294"></path>
+                <line class="stroke-accent strong" x1="280" y1="320" x2="438" y2="320"></line>
+                <line class="stroke-accent2 strong" x1="280" y1="320" x2="188" y2="374"></line>
+                <line class="stroke-accent3 strong" x1="280" y1="320" x2="280" y2="170"></line>
+                <text class="svg-accent" x="446" y="324">x</text>
+                <text class="svg-accent2" x="174" y="386">y</text>
+                <text class="svg-accent3" x="288" y="168">z</text>
+                <circle class="stroke-accent3 faint" cx="280" cy="320" r="76"></circle>
+                <path class="stroke-accent3 strong" data-zw-fold></path>
+                <path class="stroke-accent faint" data-zw-fold-inner></path>
+                <circle class="fill-accent3" data-zw-core cx="280" cy="320" r="5"></circle>
+                <text class="svg-muted" x="90" y="84">ZW0 · invariant reference</text>
+                <text class="svg-accent3" x="350" y="84">ZW1 · first fold</text>
+                <path class="stroke-accent faint" d="M226 82H330"></path>
+                <text class="svg-text" x="280" y="118" text-anchor="middle">bounded fold shown in x · y · z</text>
+                <text class="svg-accent3" x="280" y="448" text-anchor="middle">H²(ℝⁿ) ↪ L∞  ⇒  n ≤ 3 branch</text>
               </g>
 
               <g class="theory-scene scene-1">
-                <path class="stroke-accent3 strong" d="M62 116 C126 116 128 170 180 184 S244 220 278 258 S354 320 418 352"></path>
-                <path class="stroke-muted faint" d="M58 364H424M58 364V92"></path>
-                <text class="svg-accent" x="72" y="108">E[ψ]</text>
-                <text class="svg-accent3" x="310" y="264">dE/dt ≤ 0</text>
-                <text class="svg-muted" x="328" y="388">evolution</text>
+                <ellipse class="stroke-muted faint" cx="280" cy="250" rx="205" ry="146"></ellipse>
+                <ellipse class="stroke-accent faint" cx="280" cy="258" rx="164" ry="112"></ellipse>
+                <ellipse class="stroke-accent2 faint" cx="280" cy="269" rx="120" ry="78"></ellipse>
+                <ellipse class="stroke-accent3" cx="280" cy="282" rx="70" ry="42"></ellipse>
+                <ellipse fill="url(#wctWell)" cx="280" cy="282" rx="92" ry="62"></ellipse>
+                <circle class="fill-accent3" cx="280" cy="282" r="7"></circle>
+                <path class="basin-flow stroke-accent" d="M78 124C126 170 178 192 236 252"></path>
+                <path class="basin-flow stroke-accent2" d="M486 126C430 162 382 202 322 258"></path>
+                <path class="basin-flow stroke-accent" d="M82 376C146 350 196 332 252 296"></path>
+                <path class="basin-flow stroke-accent2" d="M486 382C416 350 362 326 310 296"></path>
+                <g data-basin-particles></g>
+                <text class="svg-accent" x="72" y="72">𝓔_WCT[ψ]</text>
+                <text class="svg-accent3" x="280" y="350" text-anchor="middle">attractor basin</text>
+                <text class="svg-muted" x="280" y="382" text-anchor="middle">state trajectories descend toward lower 𝓔</text>
+                <text class="svg-text" x="438" y="78" text-anchor="end">d𝓔/dt ≤ 0</text>
               </g>
 
               <g class="theory-scene scene-2">
-                <circle class="fill-accent-soft stroke-accent" cx="240" cy="240" r="55"></circle>
-                <circle class="stroke-accent faint dashed" cx="240" cy="240" r="105"></circle>
-                <circle class="stroke-accent2 faint dashed" cx="240" cy="240" r="155"></circle>
-                <text class="svg-text" x="240" y="232" text-anchor="middle">H²(ℝⁿ) ↪ L∞</text>
-                <text class="svg-accent3" x="240" y="258" text-anchor="middle">n ≤ 3</text>
-                <text class="svg-muted" x="240" y="84" text-anchor="middle">regularity / boundedness route</text>
+                <path class="stroke-muted faint" d="M118 356L280 262L442 356L280 448Z"></path>
+                <path class="stroke-muted faint" d="M118 356L118 180L280 86L442 180L442 356"></path>
+                <path class="stroke-muted faint" d="M118 180L280 274L442 180M280 86V274M280 274V448"></path>
+                <line class="stroke-accent strong" x1="280" y1="274" x2="447" y2="274"></line>
+                <line class="stroke-accent2 strong" x1="280" y1="274" x2="158" y2="345"></line>
+                <line class="stroke-accent3 strong" x1="280" y1="274" x2="280" y2="102"></line>
+                <circle class="fill-accent" cx="447" cy="274" r="4"></circle>
+                <circle class="fill-accent2" cx="158" cy="345" r="4"></circle>
+                <circle class="fill-accent3" cx="280" cy="102" r="4"></circle>
+                <text class="svg-accent" x="456" y="278">x</text>
+                <text class="svg-accent2" x="144" y="357">y</text>
+                <text class="svg-accent3" x="288" y="102">z</text>
+                <text class="svg-text large" x="280" y="226" text-anchor="middle">H²(ℝⁿ) ↪ L∞</text>
+                <text class="svg-accent3 large" x="280" y="254" text-anchor="middle">n ≤ 3</text>
+                <text class="svg-muted" x="280" y="410" text-anchor="middle">bounded-confinement regularity branch</text>
               </g>
 
               <g class="theory-scene scene-3">
-                <path class="stroke-muted faint" d="M240 40V440M40 240H440"></path>
-                <circle class="stroke-accent2 dashed" cx="240" cy="240" r="150"></circle>
-                <circle class="stroke-accent2 dashed" cx="240" cy="240" r="112"></circle>
+                <path class="stroke-muted faint" d="M280 38V442M78 240H482"></path>
+                <circle class="stroke-accent2 dashed" cx="280" cy="240" r="156"></circle>
+                <circle class="stroke-accent2 dashed" cx="280" cy="240" r="116"></circle>
                 <g data-shell-dots></g>
-                <text class="svg-accent2" x="374" y="96">|k| ≈ k*</text>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="136"></circle>
+                <text class="svg-accent2 large" x="414" y="84">|k| ≈ k*</text>
+                <text class="svg-muted" x="280" y="432" text-anchor="middle">quartic band-pass concentrates support on a finite shell</text>
               </g>
 
               <g class="theory-scene scene-4">
-                <circle class="stroke-accent faint" cx="240" cy="240" r="142"></circle>
-                <path class="stroke-accent strong" data-flux-one d="M90 280 C150 150 270 120 390 198"></path>
-                <path class="stroke-accent2 strong" data-flux-two d="M92 310 C184 350 308 346 390 232"></path>
-                <circle class="fill-accent3-soft stroke-accent3" cx="240" cy="240" r="42"></circle>
-                <text class="svg-display small" x="240" y="232" text-anchor="middle">u, S, θ</text>
-                <text class="svg-muted" x="240" y="268" text-anchor="middle">energy · flux · phase</text>
+                <circle class="stroke-accent faint" cx="280" cy="240" r="150"></circle>
+                <path class="stroke-accent strong" data-flux-one d="M110 296C174 152 308 124 446 198"></path>
+                <path class="stroke-accent2 strong" data-flux-two d="M112 332C216 374 354 352 446 230"></path>
+                <path class="stroke-accent3 faint dashed" d="M142 212C204 292 342 316 420 250"></path>
+                <circle class="fill-accent3-soft stroke-accent3" cx="280" cy="240" r="46"></circle>
+                <text class="svg-display small" x="280" y="232" text-anchor="middle">u, S, θ</text>
+                <text class="svg-muted" x="280" y="272" text-anchor="middle">energy · flux · phase</text>
+                <text class="svg-accent" x="280" y="424" text-anchor="middle">selected band → structured transport</text>
               </g>
 
               <g class="theory-scene scene-5">
-                <ellipse class="stroke-accent strong" cx="240" cy="240" rx="154" ry="72"></ellipse>
-                <ellipse class="stroke-accent2 strong" cx="240" cy="240" rx="72" ry="154"></ellipse>
-                <ellipse class="stroke-accent3 faint dashed" cx="240" cy="240" rx="132" ry="132"></ellipse>
-                <circle class="fill-accent" cx="132" cy="206" r="7"></circle>
-                <circle class="fill-accent2" cx="318" cy="166" r="6"></circle>
-                <circle class="fill-accent3" cx="286" cy="330" r="8"></circle>
-                <text class="svg-muted" x="240" y="72" text-anchor="middle">spectral entropy ↓ · mode competition</text>
-                <text class="svg-text" x="240" y="252" text-anchor="middle">eigenmode-like organization</text>
+                <path class="stroke-muted faint" d="M76 104H486M76 164H486M76 224H486M76 284H486M76 344H486M76 404H486"></path>
+                <path class="stroke-muted faint" d="M116 72V432M196 72V432M276 72V432M356 72V432M436 72V432"></path>
+                <g class="eigen-well" transform="translate(166 184)">
+                  <ellipse class="stroke-accent faint" cx="0" cy="0" rx="74" ry="48"></ellipse>
+                  <ellipse class="stroke-accent" cx="0" cy="0" rx="48" ry="30"></ellipse>
+                  <ellipse class="stroke-accent strong" cx="0" cy="0" rx="24" ry="14"></ellipse>
+                  <circle class="fill-accent" cx="0" cy="0" r="6"></circle>
+                </g>
+                <g class="eigen-well" transform="translate(382 196)">
+                  <ellipse class="stroke-accent2 faint" cx="0" cy="0" rx="66" ry="44"></ellipse>
+                  <ellipse class="stroke-accent2" cx="0" cy="0" rx="42" ry="27"></ellipse>
+                  <ellipse class="stroke-accent2 strong" cx="0" cy="0" rx="20" ry="12"></ellipse>
+                  <circle class="fill-accent2" cx="0" cy="0" r="6"></circle>
+                </g>
+                <g class="eigen-well dominant" transform="translate(282 340)">
+                  <ellipse class="stroke-accent3 faint" cx="0" cy="0" rx="92" ry="60"></ellipse>
+                  <ellipse class="stroke-accent3" cx="0" cy="0" rx="58" ry="36"></ellipse>
+                  <ellipse class="stroke-accent3 strong" cx="0" cy="0" rx="28" ry="17"></ellipse>
+                  <circle class="fill-accent3" cx="0" cy="0" r="8"></circle>
+                </g>
+                <g data-eigen-particles></g>
+                <text class="svg-muted" x="280" y="62" text-anchor="middle">broadband field</text>
+                <text class="svg-accent3" x="280" y="430" text-anchor="middle">spectral entropy ↓ · persistent mode basins deepen</text>
               </g>
 
               <g class="theory-scene scene-6">
-                <circle class="stroke-accent3 faint" cx="240" cy="240" r="60"></circle>
-                <circle class="stroke-accent3 faint" cx="240" cy="240" r="105"></circle>
-                <circle class="stroke-accent3 faint" cx="240" cy="240" r="150"></circle>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="62"></circle>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="110"></circle>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="158"></circle>
                 <path class="stroke-accent3 strong mode-line" data-mode-one></path>
                 <path class="stroke-accent3 faint mode-line" data-mode-two></path>
+                <text class="svg-muted" x="280" y="430" text-anchor="middle">standing structure persists instead of radiating away</text>
               </g>
 
               <g class="theory-scene scene-7">
                 <path class="stroke-accent3 strong" data-gamma></path>
-                <circle class="stroke-accent2 dashed" data-gamma-osc cx="240" cy="240" r="40"></circle>
+                <circle class="stroke-accent2 dashed" data-gamma-osc cx="280" cy="240" r="40"></circle>
                 <line class="stroke-accent strong" data-gamma-tangent x1="0" y1="0" x2="0" y2="0"></line>
-                <circle class="fill-accent" data-gamma-marker cx="240" cy="96" r="5"></circle>
-                <text class="svg-muted" x="56" y="70">Γ closed loop · tangent · osculating circle</text>
+                <circle class="fill-accent" data-gamma-marker cx="280" cy="96" r="5"></circle>
+                <text class="svg-muted" x="70" y="68">Γ closed loop · tangent · osculating circle</text>
+                <text class="svg-accent3" x="280" y="430" text-anchor="middle">phase + geometry + topology → locked localized mode</text>
               </g>
             </svg>
           </div>
 
           <div class="wct-theory-meta">
-            <strong data-theory-caption>01 / 08 · Zero-wave invariant state</strong>
+            <strong data-theory-caption>01 / 08 · Zero-wave → ZW1 fold</strong>
             <span class="wct-theory-pips" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
           </div>
-          <p class="wct-theory-boundary">Illustrative dependency map. Individual stages have different proof, simulation, or proposal status; the sequence itself is not an empirical result.</p>
+          <div class="wct-theory-progress" aria-hidden="true"><span data-theory-progress></span></div>
+          <p class="wct-theory-boundary">Illustrative dependency map in the WCT visual language. “Sinkhole” is used here as a visual metaphor for mode-attractor basins; individual stages retain their separate proof, numerical, or proposal status.</p>
         </div>
 
         <ol class="wct-theory-steps" aria-label="Wave Confinement Theory dependency sequence">
-          <li class="wct-theory-step active"><span>01</span><h3>Zero-wave invariant state</h3><p>The substrate begins from a distinguished zero-wave state that remains invariant rather than generating structure from nothing.</p></li>
-          <li class="wct-theory-step"><span>02</span><h3>Lyapunov descent</h3><p>A candidate energy functional supplies a direction of descent under the stated negative-gradient-flow assumptions.</p></li>
-          <li class="wct-theory-step"><span>03</span><h3>Sobolev confinement bound</h3><p>The regularity route uses \(H^2(\mathbb{R}^n)\hookrightarrow L^\infty\) to restrict the stated bounded-confinement argument to \(n\le 3\).</p></li>
-          <li class="wct-theory-step"><span>04</span><h3>Finite-\(k\) selection</h3><p>A quartic band-pass selects a preferred nonzero wavenumber \(k_\star\), producing shell-like spectral support rather than unrestricted growth.</p></li>
-          <li class="wct-theory-step"><span>05</span><h3>Phase–Flux substrate</h3><p>Observable energy density, flux, and phase organize the selected band into a conservation- and causal-flow-aware field description.</p></li>
-          <li class="wct-theory-step"><span>06</span><h3>Self-emergent eigenmodes</h3><p>Numerical broadband or random fields evolve toward finite-band support, reduced spectral entropy, mode competition, and eigenmode-like organization.</p></li>
-          <li class="wct-theory-step"><span>07</span><h3>Resonant confinement</h3><p>Boundary and feedback conditions organize persistent modes.</p></li>
-          <li class="wct-theory-step"><span>08</span><h3>Curvature locking</h3><p>Phase, geometry, and topology stabilize localized structure.</p></li>
+          <li class="wct-theory-step active">
+            <span>01</span><h3>Zero-wave → ZW1 fold</h3>
+            <p>The invariant zero-wave is the quiescent reference. The first structured departure is shown as a ZW1 fold developing in the three available spatial directions under the bounded-confinement (n\le3) branch.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>02</span><h3>Lyapunov basin flow</h3>
+            <p>Field states are shown moving through a basin of lower (mathcal E_{\mathrm{WCT}}), not merely down a one-dimensional curve. Under the stated gradient-flow assumptions, trajectories descend toward lower-energy attractor structure.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>03</span><h3>Sobolev three-dimensional bound</h3>
+            <p>The regularity route uses (H^2(\mathbb{R}^n)\hookrightarrow L^\infty) to restrict the stated bounded-confinement argument to (n\le3).</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>04</span><h3>Finite-(k) shell selection</h3>
+            <p>A quartic band-pass selects a preferred nonzero wavenumber (k_\star), concentrating support around a finite spectral shell rather than allowing unrestricted scale growth.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>05</span><h3>Phase–Flux organization</h3>
+            <p>Observable energy density, flux, and phase organize the selected band into a conservation- and causal-flow-aware substrate.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>06</span><h3>Self-emergent eigenmode sinkholes</h3>
+            <p>Broadband content is visualized draining into competing mode basins—sinkhole-like attractors—while spectral entropy falls and a smaller set of persistent eigenmode-like structures dominates.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>07</span><h3>Resonant confinement</h3>
+            <p>Boundary and feedback conditions organize those selected modes into persistent standing structures rather than freely propagating content.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>08</span><h3>Curvature locking</h3>
+            <p>Phase, geometry, and topology close the sequence by stabilizing a localized structure along a curved path.</p>
+          </li>
         </ol>
       </div>
 
       <div class="status-note">
-        <strong>Research status.</strong> WCT is an independently developed research program spanning mathematical formulation, numerical simulation, experiment, and open-data analysis. Definitions, derivations, computational results, empirical findings, phenomenology, and conjectures are explicitly distinguished so that individual claims can be evaluated on their own evidence.
+        <strong>Research status.</strong> WCT is an independently developed research program spanning mathematical formulation, numerical simulation, experiment, and open-data analysis. Definitions, derivations, computational results, empirical findings, phenomenology, and conjectures remain explicitly separated.
       </div>
 
-      <section class="wct-equation-build" aria-labelledby="equation-build-title">
-        <div class="section-heading narrow">
-          <p class="eyebrow">Equation build-up · registered chain</p>
-          <h2 id="equation-build-title">From a closed curve to an inverse-length scale.</h2>
-          <p>Curvature and torsion of a closed curve Γ combine into a spectral rate; its weighted average sets the effective wavenumber; under the stated E5 conditions, that maps dimensionally to a mass scale.</p>
-        </div>
+      <section class="wct-equation-build" data-equation-build aria-labelledby="equation-build-title">
+        <div class="wct-equation-sticky">
+          <div class="wct-equation-copy">
+            <p class="eyebrow">Equation build-up · registered chain</p>
+            <h2 id="equation-build-title">From a closed curve to an inverse-length scale.</h2>
+            <p class="wct-equation-lede">Scroll through the chain: first the closed curve is drawn, then the local phase/tangent/osculating geometry moves along it, then (sigma(s)) is revealed, and finally its weighted mean appears as the effective inverse-length scale.</p>
 
-        <div class="wct-equation-grid">
-          <div class="wct-equation-chain">
-            <article>
-              <span>Curvature spectral rate · E1B</span>
-              <div class="equation-math">\[\sigma(s)=\sqrt{\kappa(s)^2+\tau(s)^2}\]</div>
-            </article>
-            <article>
-              <span>Effective-wavenumber chain · E5 assumptions</span>
-              <div class="equation-math">\[k_{\mathrm{wind}}=k_{\sigma}=\langle\sigma\rangle_w\]</div>
-            </article>
-            <article>
-              <span>Mass–curvature dimensional mapping · E6</span>
-              <div class="equation-math">\[m=\frac{\hbar}{c}\,k_{\mathrm{eff}}\]</div>
-              <div class="equation-math equation-math-secondary">\[\text{under E5:}\quad m=\frac{\hbar}{c}\,\langle\sigma\rangle_w\]</div>
-            </article>
+            <div class="wct-equation-chain">
+              <article data-eq-card="0">
+                <span>Curvature spectral rate · E1B</span>
+                <div class="equation-math">\[\sigma(s)=\sqrt{\kappa(s)^2+\tau(s)^2}\]</div>
+              </article>
+              <article data-eq-card="1">
+                <span>Effective-wavenumber chain · E5 assumptions</span>
+                <div class="equation-math">\[k_{\mathrm{wind}}=k_{\sigma}=\langle\sigma\rangle_w\]</div>
+              </article>
+              <article data-eq-card="2">
+                <span>Mass–curvature dimensional mapping · E6</span>
+                <div class="equation-math">\[m=\frac{\hbar}{c}\,k_{\mathrm{eff}}\]</div>
+                <div class="equation-math equation-math-secondary">\[\text{under E5:}\quad m=\frac{\hbar}{c}\,\langle\sigma\rangle_w\]</div>
+              </article>
+            </div>
             <a class="text-link" href="equations/#E5">Assumptions, status, Lean &amp; SymPy in the equation registry <span aria-hidden="true">→</span></a>
           </div>
 
           <div class="wct-equation-visual">
-            <svg viewBox="0 0 520 560" role="img" aria-label="Illustrative torus-knot geometry with curvature spectral rate">
+            <div class="wct-equation-stage-label"><span data-eq-stage>01 · closed curve Γ</span><strong data-eq-progress>0%</strong></div>
+            <svg viewBox="0 0 520 560" role="img" aria-label="Scroll-built torus-knot geometry with curvature spectral rate">
               <path class="eq-guide" d="M28 345H492M28 490H492"></path>
               <path class="eq-knot"></path>
               <circle class="eq-phase" cx="260" cy="210" r="5"></circle>
@@ -352,31 +443,9 @@
               <line class="eq-mean" data-eq-mean x1="38" y1="440" x2="482" y2="440"></line>
               <text class="eq-label accent" data-eq-mean-label x="482" y="432" text-anchor="end">⟨σ⟩ = k_eff</text>
             </svg>
-            <p>Illustrative computation on a (2,3) torus knot with uniform weight <code>w</code>; κ, τ, and σ are computed numerically from that curve. It shows how the quantities relate, not a physical result.</p>
+            <p>Illustrative computation on a (2,3) torus knot with uniform weight <code>w</code>; κ, τ, and σ are computed numerically from that curve. It demonstrates the registered geometry chain, not an empirical result.</p>
           </div>
         </div>
-      </section>
-
-      <section class="home-visuals" aria-labelledby="home-visuals-title">
-        <div class="home-visuals-header">
-          <div><p class="eyebrow">Visual guide</p><h3 id="home-visuals-title">See the geometry before entering the registry.</h3></div>
-          <p>The strongest visuals are used as orientation or technical figures, with their evidentiary role stated explicitly.</p>
-        </div>
-        <div class="home-visual-grid">
-          <figure class="home-visual-card">
-            <a href="publications/geometry-of-resonance.html"><img src="assets/resonance.png" alt="Publication illustration for The Geometry of Resonance showing closed resonant geometry" loading="lazy"></a>
-            <figcaption><strong>The Geometry of Resonance</strong><span>Publication illustration · conceptual orientation to closed resonant geometry.</span></figcaption>
-          </figure>
-          <figure class="home-visual-card">
-            <a href="equations/"><img src="assets/coherence.png" alt="Technical visualization relating energy density, phase coherence, and confinement potential" loading="lazy"></a>
-            <figcaption><strong>Coherence and confinement</strong><span>Technical visualization · use the equation registry for the canonical mathematical definitions.</span></figcaption>
-          </figure>
-          <figure class="home-visual-card">
-            <a href="tools/"><img src="assets/toroid.png" alt="Concept illustration of a toroidal confined wave structure" loading="lazy"></a>
-            <figcaption><strong>Toroidal confinement</strong><span>Concept illustration · a visual model of closed-path confinement, not experimental evidence.</span></figcaption>
-          </figure>
-        </div>
-        <p class="home-visual-boundary"><strong>Boundary:</strong> illustrations explain the intended geometry; numerical and empirical claims are evaluated separately.</p>
       </section>
 
       <div class="orientation" aria-label="Where to go">
@@ -400,7 +469,7 @@
           <li>
             <p class="orientation-tag">Zenodo</p>
             <p>Permanent DOI records and downloadable releases for every cited paper.</p>
-            <a class="text-link" href="https://orcid.org/0009-0005-5975-8718">View archived works <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Reyes%2C+Richard+J.%22">View archived works <span aria-hidden="true">→</span></a>
           </li>
         </ul>
       </div>
