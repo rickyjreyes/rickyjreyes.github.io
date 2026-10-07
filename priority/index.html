@@ -157,13 +157,15 @@
     .agent-node,.external-node,.contain-agent{fill:#07111f;stroke:var(--accent-3);stroke-width:1.6}
     .agent-node.a2{stroke:var(--accent)}.agent-node.a3{stroke:var(--accent-2)}
     .agent-link{stroke:var(--line-strong);stroke-width:1.2}
-    .incident-packet,.growth-tracer,.trajectory-tracer,.branch-pulse,.residual-tracer,.replication-pulse{fill:var(--accent-3);filter:url(#rca-glow)}
+    .incident-packet,.growth-tracer,.trajectory-tracer{fill:var(--accent-3);filter:url(#rca-glow)}
+    .branch-pulse,.residual-tracer,.replication-pulse{fill:var(--accent-3);filter:url(#detector-glow)}
     .external-node{fill:rgba(182,255,218,.1)}
     .observer-ring{fill:none;stroke:var(--accent);stroke-width:1.4;stroke-dasharray:5 5}
     .observer-line{stroke:var(--accent);stroke-width:1.2}
     .mini-axis{stroke:var(--line-strong);stroke-width:1}
     .growth-curve{stroke:var(--accent-3);stroke-width:2;stroke-dasharray:520;stroke-dashoffset:520}
     .match-edge{stroke:var(--accent-3)}
+    .memory-cell,.baseline-node,.match-node,.external-node,.block-mark,.future-end,.story-bin-lock,.story-detector-core,.freeze-lock{transform-box:fill-box;transform-origin:center}
     .memory-cell{fill:rgba(103,212,255,.035);stroke:rgba(103,212,255,.34)}
     .memory-transfer{stroke:var(--accent);stroke-width:1.2;stroke-dasharray:3 4}
     .risk-threshold{stroke:#f0c987;stroke-width:1.2;stroke-dasharray:4 5}
@@ -179,7 +181,7 @@
     .branch-pulse.violet{fill:var(--accent-2)}
     .juno-kernel{opacity:.85}
     .response-arrow,.transform-arrow{stroke:var(--accent);stroke-width:1.6}
-    .collider-particle{fill:var(--accent-3);filter:url(#detector-glow);transform-box:fill-box;transform-origin:center}
+    .collider-particle{fill:var(--accent-3);filter:url(#detector-glow)}
     .cms-holdout-points circle{fill:var(--accent-3);opacity:0}
     .freeze-lock rect,.freeze-lock path{fill:#07111f;stroke:var(--accent-3);stroke-width:1.5}
     .event-dot{fill:var(--accent);opacity:0}.event-dot.holdout{fill:var(--accent-3)}
@@ -249,11 +251,10 @@
     .story-detectors .evidence-story-visual[data-story-stage="1"] .juno-smeared-wave{animation:storyFadeUp 1s .55s ease both}
     .story-detectors .evidence-story-visual[data-story-stage="1"] .story-detector-core{animation:storyPulse 2.2s ease-in-out infinite}
 
-    .story-detectors .evidence-story-visual[data-story-stage="2"] .collider-particle{animation:orbitCollider 4s linear infinite}
     .story-detectors .evidence-story-visual[data-story-stage="2"] .story-signal-line.violet{stroke-dasharray:520;stroke-dashoffset:520;animation:storyDraw 1.7s .45s ease forwards}
     .story-detectors .evidence-story-visual[data-story-stage="2"] .story-collider-track{animation:storyDash 1.6s linear infinite;stroke-dasharray:7 8}
 
-    .story-detectors .evidence-story-visual[data-story-stage="3"] .story-signal-line{stroke-dasharray:720;stroke-dashoffset:0;animation:storyDash 2.2s linear infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="3"] .story-signal-line{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
     .story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle{animation:holdoutEnter 1.45s ease both}
     .story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(2){animation-delay:.08s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(3){animation-delay:.16s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(4){animation-delay:.24s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(5){animation-delay:.32s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(6){animation-delay:.4s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(7){animation-delay:.48s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(8){animation-delay:.56s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(9){animation-delay:.64s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(10){animation-delay:.72s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(11){animation-delay:.8s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(12){animation-delay:.88s}
     .story-detectors .evidence-story-visual[data-story-stage="3"] .freeze-lock{animation:storyPulse 2s ease-in-out infinite}
@@ -403,7 +404,7 @@
     @media(prefers-reduced-motion:reduce){
       .story-rail span,.story-scene,.evidence-story-step{transition:none}
       .process-layer *,.story-scene *{animation:none!important}
-      .incident-packet,.growth-tracer,.trajectory-tracer,.branch-pulse,.residual-tracer,.replication-pulse,.juno-kernel{display:none}
+      .incident-packet,.growth-tracer,.trajectory-tracer,.branch-pulse,.residual-tracer,.replication-pulse,.juno-kernel,.collider-particle{display:none}
     }
 
     .metric{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
@@ -877,7 +878,9 @@
                 <foreignObject class="story-note-box" x="50" y="520" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">phenomenology → open-data candidate-spectrum analysis</div></foreignObject>
               
                 <g class="process-layer lhcb-transform-process" aria-hidden="true">
-                  <circle class="collider-particle" cx="160" cy="188" r="5"></circle>
+                  <circle class="collider-particle" cx="160" cy="188" r="5">
+                    <animateTransform attributeName="transform" type="rotate" from="0 160 282" to="360 160 282" dur="4s" repeatCount="indefinite"></animateTransform>
+                  </circle>
                   <path class="transform-arrow" d="M262 282H300"></path>
                   <text class="process-label" x="281" y="268" text-anchor="middle">log(m)</text>
                   <text class="process-label" x="281" y="300" text-anchor="middle">subtract baseline</text>
@@ -969,13 +972,13 @@
                 </g>
               
                 <g class="process-layer nist-rebin-process" aria-hidden="true">
-                  <g class="hist-row h120" transform="translate(110 218)">
+                  <g class="hist-row h120" transform="translate(250 218)">
                     <rect x="0" y="12" width="18" height="30"></rect><rect x="24" y="4" width="18" height="38"></rect><rect x="48" y="18" width="18" height="24"></rect><rect x="72" y="0" width="18" height="42"></rect><rect x="96" y="10" width="18" height="32"></rect><rect x="120" y="20" width="18" height="22"></rect>
                   </g>
-                  <g class="hist-row h160" transform="translate(110 280)">
+                  <g class="hist-row h160" transform="translate(250 280)">
                     <rect x="0" y="18" width="14" height="24"></rect><rect x="20" y="6" width="14" height="36"></rect><rect x="40" y="12" width="14" height="30"></rect><rect x="60" y="0" width="14" height="42"></rect><rect x="80" y="7" width="14" height="35"></rect><rect x="100" y="16" width="14" height="26"></rect><rect x="120" y="21" width="14" height="21"></rect>
                   </g>
-                  <g class="hist-row h200" transform="translate(110 342)">
+                  <g class="hist-row h200" transform="translate(250 342)">
                     <rect x="0" y="20" width="11" height="22"></rect><rect x="16" y="12" width="11" height="30"></rect><rect x="32" y="4" width="11" height="38"></rect><rect x="48" y="10" width="11" height="32"></rect><rect x="64" y="0" width="11" height="42"></rect><rect x="80" y="8" width="11" height="34"></rect><rect x="96" y="15" width="11" height="27"></rect><rect x="112" y="22" width="11" height="20"></rect><rect x="128" y="25" width="11" height="17"></rect>
                   </g>
                   <text class="process-label strong" x="312" y="424" text-anchor="middle">same selected frequency survives re-binning</text>
