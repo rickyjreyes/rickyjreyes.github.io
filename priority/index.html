@@ -1201,12 +1201,16 @@
       update();
     }
 
+    const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
     const stories=[...document.querySelectorAll('[data-scroll-story]')];
     const states=stories.map(story=>{
       const steps=[...story.querySelectorAll('[data-story-step]')];
+      const visual=story.querySelector('.evidence-story-visual');
+      const svg=visual&&visual.querySelector('svg');
       const state={
         story,
-        visual:story.querySelector('.evidence-story-visual'),
+        visual,
+        svg,
         steps,
         kicker:story.querySelector('[data-story-kicker]'),
         progress:story.querySelector('[data-story-progress]'),
@@ -1214,19 +1218,46 @@
         caption:story.querySelector('[data-story-caption]'),
         active:0
       };
+      const restartSvgMotion=()=>{
+        if(!svg||typeof svg.setCurrentTime!=='function')return;
+        try{
+          svg.pauseAnimations();
+          svg.setCurrentTime(0);
+          if(!reduceMotion)svg.unpauseAnimations();
+        }catch(_){}
+      };
       const render=idx=>{
         idx=Math.max(0,Math.min(steps.length-1,idx));
+        const changed=idx!==state.active;
         state.active=idx;
         if(state.visual)state.visual.dataset.storyStage=String(idx);
         steps.forEach((step,i)=>step.classList.toggle('active',i===idx));
         const step=steps[idx];
         if(step&&state.kicker)state.kicker.textContent=step.dataset.kicker||'';
         if(step&&state.caption)state.caption.textContent=step.dataset.caption||'';
+        if(changed||idx===0)restartSvgMotion();
       };
       state.render=render;
       render(0);
+      if(reduceMotion&&svg&&typeof svg.pauseAnimations==='function'){
+        try{svg.pauseAnimations()}catch(_){}
+      }
       return state;
     });
+
+    if('IntersectionObserver' in window&&!reduceMotion){
+      const storyObserver=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          const state=states.find(s=>s.visual===entry.target);
+          if(!state||!state.svg||typeof state.svg.pauseAnimations!=='function')return;
+          try{
+            if(entry.isIntersecting)state.svg.unpauseAnimations();
+            else state.svg.pauseAnimations();
+          }catch(_){}
+        });
+      },{rootMargin:'18% 0px 18% 0px'});
+      states.forEach(state=>{if(state.visual)storyObserver.observe(state.visual)});
+    }
 
     let ticking=false;
     const measure=()=>{
@@ -1259,6 +1290,6 @@
     measure();
   })();
 </script>
-<script src="../site-nav.js?v=20261007-strength1" defer></script>
+<script src="../site-nav.js?v=20261007-process1" defer></script>
 </body>
 </html>
