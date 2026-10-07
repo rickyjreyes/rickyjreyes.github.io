@@ -80,10 +80,32 @@
 
   <header class="site-header" id="top">
     <div class="nav-wrap">
-      <a class="wordmark" href="#top" aria-label="Richard J. Reyes home">
-        <span class="mark" aria-hidden="true">R</span>
-        <span>Richard J. Reyes</span>
-      </a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav>
+      <a class="wordmark" href="/#top" aria-label="Wave Confinement Theory home">
+        <img class="wct-wordmark-logo" src="/assets/Wavelock_transparent.png" alt="" aria-hidden="true">
+        <span>WCT</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Primary navigation">
+        <a href="/publications/">Publications</a>
+        <a href="/priority/">Priority</a>
+        <a href="/overlap/">WCT Adoption</a>
+        <a href="/patents/">Patents</a>
+        <a href="/equations/">Equations</a>
+        <div class="nav-group">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="nav-menu-verify">
+            <span>Verify</span><span class="nav-caret" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-dropdown" id="nav-menu-verify" role="group" aria-label="Verify">
+            <div class="nav-dropdown-shell">
+              <a href="/sympy/" class="nav-dropdown-link"><span class="nav-item-label">SymPy Audit</span><span class="nav-item-desc">Executable symbolic checks</span></a>
+              <a href="/lean/" class="nav-dropdown-link"><span class="nav-item-label">Lean Coverage</span><span class="nav-item-desc">Formal definitions and proof coverage</span></a>
+            </div>
+          </div>
+        </div>
+        <a href="/reproduce/">Reproduce</a>
+        <a href="/tools/">Tools</a>
+        <a href="/foundations/">Foundations</a>
+      </nav>
     </div>
   </header>
 
@@ -95,15 +117,14 @@
         <p class="hero-lede"><strong>Wave Confinement Theory was publicly disclosed by Richard J. Reyes on April 22, 2025.</strong> Papers, equations, simulations, experiments, open-data analyses, and computational extensions are organized here with public dates, DOI records, code, and evidence artifacts.</p>
         <div class="hero-actions">
           <a class="button primary" href="#start">Start reading</a>
-          <a class="button secondary" href="publications/">Browse publications</a>
-          <a class="button secondary" href="research-corpus/">Explore research corpus</a>
-          <a class="button secondary" href="https://github.com/rickyjreyes/geometry_of_resonance">Open technical research hub</a>
+          <a class="button secondary" href="/publications/">Publications</a>
+          <a class="button secondary" href="/research-corpus/">Explore research</a>
         </div>
-        <div class="identity-links" aria-label="External profiles and identifiers">
-          <a href="researcher/">Canonical researcher profile</a>
-          <a href="https://github.com/rickyjreyes">GitHub</a>
-          <a href="https://www.linkedin.com/in/rickyjreyes/">LinkedIn</a>
-          <a href="https://orcid.org/0009-0005-5975-8718">ORCID 0009-0005-5975-8718</a>
+        <div class="identity-links profile-links" aria-label="External profiles and identifiers">
+          <a class="profile-link-card" data-brand="github" href="https://github.com/rickyjreyes" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on GitHub (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/github/FFFFFF" alt=""></span><span class="profile-copy"><strong>GitHub</strong><span>github.com/rickyjreyes</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
+          <a class="profile-link-card" data-brand="linkedin" href="https://www.linkedin.com/in/rickyjreyes/" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on LinkedIn (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><svg class="profile-brand-logo" viewBox="0 0 24 24" role="img" focusable="false"><path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></span><span class="profile-copy"><strong>LinkedIn</strong><span>linkedin.com/in/rickyjreyes</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
+          <a class="profile-link-card" data-brand="zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Reyes%2C+Richard+J.%22" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes publications on Zenodo (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/zenodo/1682D4" alt=""></span><span class="profile-copy"><strong>Zenodo</strong><span>DOI publication archive</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
+          <a class="profile-link-card" data-brand="orcid" href="https://orcid.org/0009-0005-5975-8718" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes ORCID record (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/orcid/A6CE39" alt=""></span><span class="profile-copy"><strong>ORCID</strong><span>0009-0005-5975-8718</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
 
@@ -118,6 +139,12 @@
         <div class="field-label label-a">phase</div>
         <div class="field-label label-b">curvature</div>
         <div class="field-label label-c">topology</div>
+      </div>
+    </section><section class="frozen-release-callout" aria-label="Frozen reproducible release">
+      <div class="section-shell frozen-release-inner">
+        <span class="frozen-release-dot" aria-hidden="true"></span>
+        <div class="frozen-release-copy"><strong>WCT-2026.2 is frozen and reproducible.</strong><span>Exact commits, Lean, SymPy, registry, simulation, figure regeneration, Docker, Nix, and expected hashes.</span></div>
+        <a class="frozen-release-link" href="/reproduce/">Run it →</a>
       </div>
     </section>
 
@@ -485,6 +512,22 @@
       </div>
     </section>
 
+    <section class="patent-home-section" aria-labelledby="patent-home-title">
+      <div class="section-shell">
+        <div class="patent-home-heading">
+          <div><p class="eyebrow">Inventions and intellectual property</p><h2 id="patent-home-title">Four filed technology families.</h2></div>
+          <p>Public, non-enabling summaries connect the filing chronology to related papers, repositories, experiments, and evidence-status labels without publishing confidential application material.</p>
+        </div>
+        <div class="patent-home-grid" aria-label="Filed technology families">
+          <article class="patent-home-card"><div class="patent-home-brand"><span>Patent pending</span><img class="wavelock-card-logo" src="/assets/Wavelock_transparent.png" alt="WaveLock wave-shaped logo" loading="lazy" decoding="async"></div><h3>WaveLock and drift detection</h3><p>Curvature-regulated commitments, replay verification, protocol binding, attestation, and runtime drift analysis.</p></article>
+          <article class="patent-home-card"><span>Patent pending</span><h3>Persistent wave memory</h3><p>Wave-state storage, spectral confinement, readout, reset control, physical cells, arrays, and software emulation.</p></article>
+          <article class="patent-home-card"><span>Application filed</span><h3>Solid-state frequency reference</h3><p>Optically programmed semiconductor resonance with harmonic readout and oscillator-integration concepts.</p></article>
+          <article class="patent-home-card"><span>Application filed</span><h3>Coherent field generator</h3><p>Structured excitation, controlled confinement geometry, harmonic stabilization, relocking, and detector feedback.</p></article>
+        </div>
+        <div class="patent-home-actions"><a class="button primary" href="/patents/">Open patent portfolio</a><a class="button secondary" href="/patents.json">View machine-readable metadata</a></div>
+      </div>
+    </section>
+
     <section class="section publications-section" id="publications" aria-labelledby="publications-title">
       <div class="section-shell">
         <div class="section-heading publications-heading">
@@ -528,7 +571,11 @@
       </div>
     </section>
 
-    <section class="section section-shell about-section" id="about" aria-labelledby="about-title">
+    <section class="section section-shell about-section has-portrait" id="about" aria-labelledby="about-title">
+      <figure class="about-portrait">
+        <div class="about-portrait-frame"><img src="/assets/richardjreyes.png" alt="Richard J. Reyes, controls engineer and independent researcher" loading="lazy" decoding="async"></div>
+        <figcaption><strong>Richard J. Reyes</strong>Controls engineer, software developer, independent researcher, and founder of WaveLock.</figcaption>
+      </figure>
       <div class="about-copy">
         <p class="eyebrow">About</p>
         <h2 id="about-title">Engineering practice and independent research.</h2>
