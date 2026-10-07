@@ -3,128 +3,387 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f">
-<meta name="description" content="Wave Confinement Theory research chronology and dated release timeline.">
+<meta name="description" content="Unified Wave Confinement Theory chronology of research releases and public patent-family filing milestones.">
+<meta name="author" content="Richard J. Reyes">
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://rickyjreyes.github.io/tools/timeline/">
-<title>WCT Timeline | Richard J. Reyes</title>
+<title>Research Timeline | Richard J. Reyes</title>
 <link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../tools-v2.css"><link rel="stylesheet" href="../tools-v3.css">
+<style>
+.timeline-hero{padding-bottom:2.2rem}
+.timeline-hero h1{max-width:1040px}
+.timeline-hero .tool-hero-lede{max-width:900px}
+.timeline-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:2rem 0 0}
+.timeline-stat{min-height:124px;padding:18px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,rgba(14,29,48,.76),rgba(7,17,31,.9))}
+.timeline-stat span{display:block;color:var(--muted-2);font-size:.66rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase}
+.timeline-stat strong{display:block;margin-top:18px;font:500 clamp(1.55rem,3vw,2.35rem)/1 Georgia,serif;letter-spacing:-.035em}
+.timeline-stat small{display:block;margin-top:8px;color:var(--muted);font-size:.73rem;line-height:1.45}
+.timeline-latest{padding-top:34px}
+.timeline-latest-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.timeline-latest-card{position:relative;display:flex;min-height:220px;flex-direction:column;padding:24px;border:1px solid var(--line);border-radius:18px;background:radial-gradient(circle at 100% 0,rgba(103,212,255,.08),transparent 42%),rgba(8,18,31,.8);overflow:hidden}
+.timeline-latest-card.patent{background:radial-gradient(circle at 100% 0,rgba(168,137,255,.10),transparent 42%),rgba(8,18,31,.8)}
+.timeline-latest-card .kind{display:inline-flex;align-self:flex-start;padding:5px 9px;border:1px solid rgba(103,212,255,.3);border-radius:999px;color:var(--accent);font-size:.65rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.timeline-latest-card.patent .kind{border-color:rgba(168,137,255,.34);color:#c6b5ff}
+.timeline-latest-card time{margin-top:18px;color:var(--muted-2);font:700 .76rem ui-monospace,SFMono-Regular,Menlo,monospace}
+.timeline-latest-card h3{max-width:30ch;margin:8px 0 10px;font:500 clamp(1.35rem,2.4vw,2rem)/1.15 Georgia,serif;letter-spacing:-.025em}
+.timeline-latest-card p{max-width:70ch;margin:0;color:var(--muted);font-size:.88rem;line-height:1.65}
+.timeline-latest-card a{margin-top:auto;padding-top:18px;color:var(--text);font-size:.78rem;font-weight:800;text-decoration:none}
+.timeline-latest-card a:hover{color:var(--accent)}
+.timeline-controls-shell{position:sticky;z-index:8;top:68px;margin:0 0 20px;padding:12px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--bg-deep) 90%,transparent);backdrop-filter:blur(14px)}
+.timeline-toolbar{display:grid;grid-template-columns:minmax(220px,1fr) auto auto;gap:10px;align-items:center}
+.timeline-toolbar input,.timeline-toolbar select{min-height:44px;padding:10px 12px;border:1px solid var(--line-strong);border-radius:11px;background:#0a1728;color:var(--text);font:inherit}
+.timeline-type-filters,.timeline-year-filters{display:flex;flex-wrap:wrap;gap:7px}
+.timeline-filter{min-height:38px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.025);color:var(--muted);font-size:.76rem;font-weight:760;cursor:pointer}
+.timeline-filter[aria-pressed=true]{border-color:rgba(103,212,255,.5);background:rgba(103,212,255,.09);color:var(--text)}
+.timeline-filter[data-type="patent"][aria-pressed=true]{border-color:rgba(168,137,255,.5);background:rgba(168,137,255,.09)}
+.timeline-filter:hover{color:var(--text);border-color:var(--line-strong)}
+.timeline-filter-row{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.timeline-results{color:var(--muted-2);font-size:.76rem}
+.timeline-feed{display:grid;gap:34px}
+.timeline-year-block{border-top:1px solid var(--line);padding-top:20px}
+.timeline-year-head{display:grid;grid-template-columns:130px minmax(0,1fr);gap:20px;align-items:end;margin-bottom:14px}
+.timeline-year-head h3{margin:0;font:500 clamp(2.5rem,5vw,4.4rem)/.9 Georgia,serif;letter-spacing:-.055em}
+.timeline-year-head p{margin:0;color:var(--muted-2);font-size:.78rem}
+.timeline-rail{position:relative;height:50px;margin:0 0 12px 150px;border-bottom:1px solid var(--line)}
+.timeline-rail-month{position:absolute;bottom:-1px;width:1px;height:11px;background:var(--line-strong)}
+.timeline-rail-month span{position:absolute;top:16px;left:50%;transform:translateX(-50%);color:var(--muted-2);font-size:.58rem;text-transform:uppercase}
+.timeline-rail-dot{position:absolute;bottom:-6px;width:11px;height:11px;transform:translateX(-50%);border:2px solid var(--bg-deep);border-radius:50%;background:var(--accent);box-shadow:0 0 0 1px rgba(103,212,255,.45)}
+.timeline-rail-dot.patent{background:#a889ff;box-shadow:0 0 0 1px rgba(168,137,255,.55)}
+.timeline-events{display:grid}
+.timeline-event{display:grid;grid-template-columns:130px 18px minmax(0,1fr);gap:20px;position:relative}
+.timeline-event::before{grid-column:2;grid-row:1;position:absolute;top:0;bottom:0;left:50%;width:1px;transform:translateX(-50%);content:"";background:var(--line)}
+.timeline-event:first-child::before{top:22px}
+.timeline-event:last-child::before{bottom:calc(100% - 22px)}
+.timeline-event-date{padding:19px 0 24px;color:var(--muted);font:700 .72rem/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;text-align:right;font-variant-numeric:tabular-nums}
+.timeline-event-node{position:relative;z-index:2;grid-column:2;width:12px;height:12px;align-self:start;justify-self:center;margin-top:21px;border:3px solid var(--bg-deep);border-radius:50%;background:var(--accent);box-shadow:0 0 0 1px rgba(103,212,255,.5)}
+.timeline-event.patent .timeline-event-node{background:#a889ff;box-shadow:0 0 0 1px rgba(168,137,255,.55)}
+.timeline-event-card{grid-column:3;padding:17px 18px 20px;margin:0 0 8px;border:1px solid transparent;border-radius:14px;transition:border-color .15s ease,background .15s ease,transform .15s ease}
+.timeline-event-card:hover{border-color:var(--line);background:rgba(255,255,255,.025);transform:translateX(2px)}
+.timeline-event-top{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:8px}
+.timeline-kind,.timeline-status{display:inline-flex;padding:4px 8px;border:1px solid rgba(103,212,255,.28);border-radius:999px;color:var(--accent);font-size:.61rem;font-weight:850;letter-spacing:.075em;text-transform:uppercase}
+.timeline-event.patent .timeline-kind{border-color:rgba(168,137,255,.36);color:#c6b5ff}
+.timeline-status{border-color:var(--line);color:var(--muted-2)}
+.timeline-event-card h4{max-width:900px;margin:0;font:500 clamp(1.08rem,2vw,1.45rem)/1.28 Georgia,serif}
+.timeline-event-card p{max-width:900px;margin:8px 0 0;color:var(--muted);font-size:.83rem;line-height:1.62}
+.timeline-event-meta{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:11px;color:var(--muted-2);font-size:.68rem}
+.timeline-event-link{display:inline-flex;margin-top:11px;color:var(--text);font-size:.73rem;font-weight:800;text-decoration:none}
+.timeline-event-link:hover{color:var(--accent)}
+.timeline-empty{padding:38px;border:1px dashed var(--line-strong);border-radius:16px;color:var(--muted);text-align:center}
+.timeline-source-note{margin-top:24px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02);color:var(--muted-2);font-size:.76rem;line-height:1.6}
+.timeline-source-note strong{color:var(--text)}
+@media(max-width:900px){
+  .timeline-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .timeline-toolbar{grid-template-columns:1fr}
+  .timeline-controls-shell{position:static}
+  .timeline-filter-row{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:700px){
+  .timeline-latest-grid{grid-template-columns:1fr}
+  .timeline-year-head{grid-template-columns:1fr;gap:8px}
+  .timeline-rail{margin-left:0}
+  .timeline-event{grid-template-columns:72px 14px minmax(0,1fr);gap:11px}
+  .timeline-event-date{font-size:.64rem}
+  .timeline-event-card{padding:14px 12px 18px}
+}
+@media(max-width:520px){
+  .timeline-summary{grid-template-columns:1fr 1fr}
+  .timeline-stat{min-height:108px;padding:14px}
+  .timeline-stat strong{margin-top:14px}
+  .timeline-rail-month span{display:none}
+}
+@media(prefers-reduced-motion:reduce){.timeline-event-card{transition:none}}
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to timeline</a>
+<a class="skip-link" href="#chronology">Skip to timeline</a>
 <header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
 <main id="main">
-<section class="tool-hero tool-wrap"><p class="eyebrow">Tools · Timeline</p><h1>Research timeline.</h1><p class="tool-hero-lede">Follow dated releases and research branches across the Wave Confinement Theory chronology.</p><div class="tool-reference-links"><a href="../">All tools</a><a href="../glossary/">Glossary</a><a href="../equations/">Equations</a><a href="../graph/">Graph</a></div></section>
-<section class="tool-section tool-wrap" id="chronology"><div class="tool-head"><div><p class="eyebrow">Chronology</p><h2>Calendar of the research program.</h2></div><p>Events are positioned by year, month, and day. The continuous timescale preserves the full interval from the first release to the latest dated release.</p></div><div class="tool-toolbar"><input id="calendarSearch" type="search" placeholder="Search chronology by title or branch"></div><div class="calendar-controls" id="calendarControls" aria-label="Chronology year filters"></div><div id="calendarRoot"></div><aside class="calendar-detail" id="calendarDetail" hidden></aside></section>
+<section class="tool-hero tool-wrap timeline-hero">
+  <p class="eyebrow">Tools · Timeline</p>
+  <h1>Research chronology.</h1>
+  <p class="tool-hero-lede">A unified dated view of the WCT research program: DOI-archived papers, open-data analyses, mathematical releases, and public patent-family filing milestones.</p>
+  <div class="tool-reference-links"><a href="../">All tools</a><a href="../../publications/">Publications</a><a href="../../patents/">Patents</a><a href="../../priority/">Priority</a></div>
+  <div class="timeline-summary" aria-label="Timeline summary">
+    <div class="timeline-stat"><span>Research releases</span><strong id="paperCount">—</strong><small>Canonical publication archive</small></div>
+    <div class="timeline-stat"><span>Patent families</span><strong id="patentCount">—</strong><small>Publicly listed application families</small></div>
+    <div class="timeline-stat"><span>Dated milestones</span><strong id="eventCount">—</strong><small>Papers + filing chronology</small></div>
+    <div class="timeline-stat"><span>Latest dated event</span><strong id="latestDate">—</strong><small id="latestKind">Loading chronology</small></div>
+  </div>
+</section>
+
+<section class="tool-section tool-wrap timeline-latest" aria-labelledby="latest-title">
+  <div class="tool-head"><div><p class="eyebrow">Current edge</p><h2 id="latest-title">Latest recorded activity.</h2></div><p>The newest research release and the latest public patent milestone are surfaced before the full chronology.</p></div>
+  <div class="timeline-latest-grid">
+    <article class="timeline-latest-card" id="latestPaper"><span class="kind">Latest paper</span><time>Loading…</time><h3>Loading publication archive</h3><p></p></article>
+    <article class="timeline-latest-card patent" id="latestPatent"><span class="kind">Latest patent milestone</span><time>Loading…</time><h3>Loading patent portfolio</h3><p></p></article>
+  </div>
+</section>
+
+<section class="tool-section tool-wrap" id="chronology">
+  <div class="tool-head"><div><p class="eyebrow">Unified chronology</p><h2>Research and filing history.</h2></div><p>Filter by year or record type. Publication records come from the canonical scholarly archive; patent events come from the public application-family metadata.</p></div>
+
+  <div class="timeline-controls-shell">
+    <div class="timeline-toolbar">
+      <input id="timelineSearch" type="search" placeholder="Search title, DOI, category, patent family…" autocomplete="off" aria-label="Search chronology">
+      <div class="timeline-type-filters" id="typeFilters" aria-label="Record type filters">
+        <button class="timeline-filter" type="button" data-type="all" aria-pressed="true">All records</button>
+        <button class="timeline-filter" type="button" data-type="paper" aria-pressed="false">Papers</button>
+        <button class="timeline-filter" type="button" data-type="patent" aria-pressed="false">Patents</button>
+      </div>
+      <select id="timelineSort" aria-label="Timeline sort order"><option value="desc">Newest first</option><option value="asc">Oldest first</option></select>
+    </div>
+    <div class="timeline-filter-row">
+      <div class="timeline-year-filters" id="yearFilters" aria-label="Year filters"></div>
+      <span class="timeline-results" id="timelineResults" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <div class="timeline-feed" id="timelineFeed"></div>
+  <div class="timeline-source-note"><strong>Data sources.</strong> Publications are loaded from <a href="../../publications.json">publications.json</a>; patent-family milestones and current public status are loaded from <a href="../../patents.json">patents.json</a>. Patent dates record filing chronology only and do not determine legal priority for individual claims.</div>
+</section>
 </main>
-<footer class="site-footer"><div class="section-shell footer-bottom"><span>WCT Timeline</span><a href="#top">Back to top ↑</a></div></footer>
+<footer class="site-footer"><div class="section-shell footer-bottom"><span>WCT Research Timeline · Updated October 7, 2026</span><a href="#top">Back to top ↑</a></div></footer>
+
 <script src="../corpus-data.js"></script>
 <script>
 (() => {
-  const corpus = window.WCT_CORPUS || {};
-  const escapeHTML = (value) => String(value ?? '').replace(/[&<>\"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[char]));
-  const chronology = (corpus.chronology || []).map(([date, title, summary]) => ({ date, title, summary, value: new Date(`${date}T12:00:00`) })).sort((a, b) => a.value - b.value);
-  const calendarRoot = document.getElementById('calendarRoot');
-  const calendarControls = document.getElementById('calendarControls');
-  const calendarSearch = document.getElementById('calendarSearch');
-  const calendarDetail = document.getElementById('calendarDetail');
-  const monthNames = Array.from({ length: 12 }, (_, month) => new Intl.DateTimeFormat('en-US', { month: 'short' }).format(new Date(2025, month, 1)));
-  const years = [...new Set(chronology.map((event) => event.value.getFullYear()))];
-  let activeYear = '';
+  const escapeHTML = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const longMonthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const exactDateOverrides = {'Recursive AI Drift: A 2025 Prediction Timeline External Validation Audit and Technical Note':'2026-05-12'};
 
-  function dayOfYear(date) {
-    const start = new Date(date.getFullYear(), 0, 0);
-    return Math.floor((date - start) / 86400000);
+  const state = { events: [], papers: [], patents: [], type: 'all', year: 'all', sort: 'desc', query: '' };
+  const els = {
+    feed: document.getElementById('timelineFeed'),
+    search: document.getElementById('timelineSearch'),
+    typeFilters: document.getElementById('typeFilters'),
+    yearFilters: document.getElementById('yearFilters'),
+    sort: document.getElementById('timelineSort'),
+    results: document.getElementById('timelineResults')
+  };
+
+  function normalizedDate(raw, title='') {
+    if (exactDateOverrides[title]) return exactDateOverrides[title];
+    if (!raw) return null;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
+    if (/^\d{4}-\d{2}$/.test(raw)) return raw + '-15';
+    if (/^\d{4}$/.test(raw)) return raw + '-07-01';
+    return null;
   }
 
-  function daysInYear(year) {
-    return ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) ? 366 : 365;
+  function datePrecision(raw) {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw || '')) return 'day';
+    if (/^\d{4}-\d{2}$/.test(raw || '')) return 'month';
+    return 'year';
   }
 
-  function showCalendarDetail(event) {
-    calendarDetail.hidden = false;
-    calendarDetail.innerHTML = `<p class="eyebrow">${escapeHTML(new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(event.value))}</p><h3>${escapeHTML(event.title)}</h3><p>${escapeHTML(event.summary)}</p>`;
-    calendarDetail.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  function displayDate(raw, normalized) {
+    const precision = datePrecision(raw);
+    const [y,m,d] = normalized.split('-').map(Number);
+    if (precision === 'month') return longMonthNames[m-1] + ' ' + y;
+    if (precision === 'year') return String(y);
+    return longMonthNames[m-1] + ' ' + d + ', ' + y;
   }
 
-  function renderCalendar() {
-    calendarRoot.innerHTML = '';
-    years.forEach((year) => {
-      const yearEvents = chronology.filter((event) => event.value.getFullYear() === year);
-      const section = document.createElement('section');
-      section.className = 'calendar-year';
-      section.dataset.year = String(year);
-      section.innerHTML = `<div class="calendar-year-header"><h3>${year}</h3><span>${yearEvents.length} dated releases</span></div><div class="year-rail" aria-label="${year} release rail"></div><div class="calendar-grid"></div>`;
+  function compactDate(event) {
+    const [y,m,d] = event.date.split('-').map(Number);
+    if (event.precision === 'month') return monthNames[m-1] + ' ' + y;
+    return monthNames[m-1] + ' ' + d;
+  }
 
-      const rail = section.querySelector('.year-rail');
-      monthNames.forEach((name, month) => {
-        const marker = document.createElement('div');
-        marker.className = 'year-rail-month';
-        marker.style.left = `${(month / 12) * 100}%`;
-        marker.innerHTML = `<label>${name}</label>`;
-        rail.appendChild(marker);
-      });
-      yearEvents.forEach((event) => {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = 'year-event';
-        dot.style.left = `${(dayOfYear(event.value) / daysInYear(year)) * 100}%`;
-        dot.title = `${event.date} — ${event.title}`;
-        dot.dataset.search = `${event.title} ${event.summary}`.toLowerCase();
-        dot.addEventListener('click', () => showCalendarDetail(event));
-        rail.appendChild(dot);
-      });
+  function eventSearchText(event) {
+    return [event.title,event.summary,event.category,event.status,event.doi,event.family,event.kind].filter(Boolean).join(' ').toLowerCase();
+  }
 
-      const grid = section.querySelector('.calendar-grid');
-      for (let month = 0; month < 12; month += 1) {
-        const monthEvents = yearEvents.filter((event) => event.value.getMonth() === month);
-        const monthCard = document.createElement('article');
-        monthCard.className = `calendar-month${monthEvents.length ? '' : ' is-empty'}`;
-        monthCard.innerHTML = `<h4>${monthNames[month]}</h4>`;
-        monthEvents.forEach((event) => {
-          const button = document.createElement('button');
-          button.type = 'button';
-          button.className = 'calendar-event';
-          button.dataset.search = `${event.title} ${event.summary}`.toLowerCase();
-          button.innerHTML = `<span class="calendar-day">${event.value.getDate()}</span><span><strong>${escapeHTML(event.title)}</strong><small>${escapeHTML(event.summary)}</small></span>`;
-          button.addEventListener('click', () => showCalendarDetail(event));
-          monthCard.appendChild(button);
+  function fallbackPapers() {
+    const corpus = window.WCT_CORPUS || {};
+    return (corpus.chronology || []).map(([date,title,summary]) => ({
+      kind:'paper', date, rawDate:date, precision:'day', title, summary, category:'Research release',
+      status:'Dated release', url:'../../publications/', doi:''
+    }));
+  }
+
+  async function loadData() {
+    let paperData = [];
+    let patentData = null;
+    try {
+      const [pubResponse, patentResponse] = await Promise.all([fetch('../../publications.json'), fetch('../../patents.json')]);
+      if (!pubResponse.ok || !patentResponse.ok) throw new Error('Canonical timeline source unavailable');
+      const pubJson = await pubResponse.json();
+      patentData = await patentResponse.json();
+      paperData = (pubJson.works || []).map((work) => {
+        const raw = exactDateOverrides[work.title] || work.datePublished;
+        const date = normalizedDate(raw, work.title);
+        return {
+          kind:'paper',
+          date,
+          rawDate:raw,
+          precision:datePrecision(raw),
+          title:work.title,
+          summary:work.abstract || '',
+          category:work.category || 'Research release',
+          status:work.status || '',
+          url:work.landingPage || work.doiUrl || '../../publications/',
+          doi:work.doi || ''
+        };
+      }).filter((event) => event.date);
+    } catch (error) {
+      paperData = fallbackPapers();
+    }
+
+    const patentEvents = [];
+    if (patentData && Array.isArray(patentData.applications)) {
+      patentData.applications.forEach((app) => {
+        (app.public_chronology || []).forEach((item, index) => {
+          const date = normalizedDate(item.date);
+          if (!date) return;
+          patentEvents.push({
+            kind:'patent',
+            date,
+            rawDate:item.date,
+            precision:datePrecision(item.date),
+            title:(index === 0 ? app.public_name + ' — priority filing' : app.public_name + ' — filing update'),
+            summary:item.event,
+            category:'Patent family',
+            status:app.public_status || app.application_type || 'Application filed',
+            url:'../../patents/#portfolio',
+            family:app.public_name,
+            docket:app.docket || '',
+            doi:''
+          });
         });
-        grid.appendChild(monthCard);
-      }
-      calendarRoot.appendChild(section);
-    });
+      });
+      state.patents = patentData.applications;
+    }
+
+    state.papers = paperData;
+    state.events = [...paperData, ...patentEvents].sort((a,b) => a.date.localeCompare(b.date));
+    renderSummary(patentData);
+    buildYearFilters();
+    render();
   }
 
-  function applyCalendarFilters() {
-    const query = calendarSearch.value.trim().toLowerCase();
-    document.querySelectorAll('.calendar-year').forEach((section) => {
-      const yearMatches = !activeYear || section.dataset.year === activeYear;
-      let visibleEvents = 0;
-      section.querySelectorAll('.calendar-event').forEach((button) => {
-        const matches = !query || button.dataset.search.includes(query);
-        button.hidden = !matches;
-        if (matches) visibleEvents += 1;
-      });
-      section.querySelectorAll('.year-event').forEach((dot) => {
-        dot.hidden = !!query && !dot.dataset.search.includes(query);
-      });
-      section.querySelectorAll('.calendar-month').forEach((month) => {
-        const eventButtons = [...month.querySelectorAll('.calendar-event')];
-        month.hidden = !!query && eventButtons.length > 0 && !eventButtons.some((button) => !button.hidden);
-      });
-      section.hidden = !yearMatches || (!!query && visibleEvents === 0);
-    });
+  function renderSummary(patentData) {
+    const papers = state.papers;
+    const patentEvents = state.events.filter((event) => event.kind === 'patent');
+    const latestPaper = [...papers].sort((a,b) => b.date.localeCompare(a.date))[0];
+    const latestPatent = [...patentEvents].sort((a,b) => b.date.localeCompare(a.date))[0];
+    const latest = [...state.events].sort((a,b) => b.date.localeCompare(a.date))[0];
+
+    document.getElementById('paperCount').textContent = papers.length || '—';
+    document.getElementById('patentCount').textContent = state.patents.length || (patentData?.applications?.length ?? '—');
+    document.getElementById('eventCount').textContent = state.events.length || '—';
+    document.getElementById('latestDate').textContent = latest ? compactDate(latest) : '—';
+    document.getElementById('latestKind').textContent = latest ? (latest.kind === 'paper' ? 'Latest research release' : 'Latest patent milestone') : 'No dated records';
+
+    if (latestPaper) {
+      const card = document.getElementById('latestPaper');
+      card.querySelector('time').textContent = displayDate(latestPaper.rawDate, latestPaper.date);
+      card.querySelector('h3').textContent = latestPaper.title;
+      card.querySelector('p').textContent = latestPaper.summary;
+      card.insertAdjacentHTML('beforeend', '<a href="' + escapeHTML(latestPaper.url) + '">Open publication →</a>');
+    }
+
+    if (latestPatent) {
+      const card = document.getElementById('latestPatent');
+      card.querySelector('time').textContent = displayDate(latestPatent.rawDate, latestPatent.date);
+      card.querySelector('h3').textContent = latestPatent.title;
+      const review = patentData?.last_reviewed ? ' Portfolio metadata last reviewed ' + displayDate(patentData.last_reviewed, patentData.last_reviewed) + '.' : '';
+      card.querySelector('p').textContent = latestPatent.summary + review;
+      card.insertAdjacentHTML('beforeend', '<a href="../../patents/">Open patent portfolio →</a>');
+    }
   }
 
-  calendarControls.innerHTML = `<button type="button" data-year="" aria-pressed="true">All years</button>${years.map((year) => `<button type="button" data-year="${year}" aria-pressed="false">${year}</button>`).join('')}`;
-  calendarControls.addEventListener('click', (event) => {
+  function buildYearFilters() {
+    const years = [...new Set(state.events.map((event) => event.date.slice(0,4)))].sort((a,b) => b.localeCompare(a));
+    els.yearFilters.innerHTML = '<button class="timeline-filter" type="button" data-year="all" aria-pressed="true">All years</button>' +
+      years.map((year) => '<button class="timeline-filter" type="button" data-year="' + year + '" aria-pressed="false">' + year + '</button>').join('');
+  }
+
+  function filteredEvents() {
+    return state.events.filter((event) => {
+      if (state.type !== 'all' && event.kind !== state.type) return false;
+      if (state.year !== 'all' && !event.date.startsWith(state.year)) return false;
+      if (state.query && !eventSearchText(event).includes(state.query)) return false;
+      return true;
+    }).sort((a,b) => state.sort === 'desc' ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date));
+  }
+
+  function railPosition(date) {
+    const [year,month,day] = date.split('-').map(Number);
+    const value = new Date(year, month-1, day, 12);
+    const start = new Date(year,0,1,12);
+    const end = new Date(year+1,0,1,12);
+    return ((value-start)/(end-start))*100;
+  }
+
+  function renderYear(year, events) {
+    const ordered = [...events].sort((a,b) => state.sort === 'desc' ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date));
+    const railDots = events.map((event) =>
+      '<span class="timeline-rail-dot ' + event.kind + '" style="left:' + railPosition(event.date).toFixed(2) + '%" title="' + escapeHTML(displayDate(event.rawDate,event.date) + ' — ' + event.title) + '"></span>'
+    ).join('');
+    const monthTicks = monthNames.map((name,index) =>
+      '<span class="timeline-rail-month" style="left:' + ((index/12)*100).toFixed(2) + '%"><span>' + name + '</span></span>'
+    ).join('');
+
+    const cards = ordered.map((event) => {
+      const metadata = event.kind === 'paper'
+        ? [event.category,event.doi ? 'DOI ' + event.doi : ''].filter(Boolean)
+        : [event.family,event.docket || ''].filter(Boolean);
+      return '<article class="timeline-event ' + event.kind + '">' +
+        '<time class="timeline-event-date" datetime="' + escapeHTML(event.rawDate) + '">' + escapeHTML(compactDate(event)) + '</time>' +
+        '<span class="timeline-event-node" aria-hidden="true"></span>' +
+        '<div class="timeline-event-card">' +
+          '<div class="timeline-event-top"><span class="timeline-kind">' + (event.kind === 'paper' ? 'Research release' : 'Patent milestone') + '</span>' +
+          (event.status ? '<span class="timeline-status">' + escapeHTML(event.status) + '</span>' : '') + '</div>' +
+          '<h4>' + escapeHTML(event.title) + '</h4>' +
+          (event.summary ? '<p>' + escapeHTML(event.summary) + '</p>' : '') +
+          (metadata.length ? '<div class="timeline-event-meta">' + metadata.map((item) => '<span>' + escapeHTML(item) + '</span>').join('') + '</div>' : '') +
+          '<a class="timeline-event-link" href="' + escapeHTML(event.url) + '">' + (event.kind === 'paper' ? 'Open release' : 'Open patent portfolio') + ' →</a>' +
+        '</div></article>';
+    }).join('');
+
+    return '<section class="timeline-year-block" data-year="' + year + '">' +
+      '<div class="timeline-year-head"><h3>' + year + '</h3><p>' + events.length + ' dated ' + (events.length === 1 ? 'record' : 'records') + '</p></div>' +
+      '<div class="timeline-rail" aria-label="' + year + ' chronology rail">' + monthTicks + railDots + '</div>' +
+      '<div class="timeline-events">' + cards + '</div></section>';
+  }
+
+  function render() {
+    const events = filteredEvents();
+    els.results.textContent = 'Showing ' + events.length + ' of ' + state.events.length + ' dated records';
+    if (!events.length) {
+      els.feed.innerHTML = '<div class="timeline-empty">No chronology records match these filters.</div>';
+      return;
+    }
+    const grouped = new Map();
+    events.forEach((event) => {
+      const year = event.date.slice(0,4);
+      if (!grouped.has(year)) grouped.set(year, []);
+      grouped.get(year).push(event);
+    });
+    const years = [...grouped.keys()].sort((a,b) => state.sort === 'desc' ? b.localeCompare(a) : a.localeCompare(b));
+    els.feed.innerHTML = years.map((year) => renderYear(year, grouped.get(year))).join('');
+  }
+
+  els.search.addEventListener('input', () => { state.query = els.search.value.trim().toLowerCase(); render(); });
+  els.sort.addEventListener('change', () => { state.sort = els.sort.value; render(); });
+  els.typeFilters.addEventListener('click', (event) => {
+    const button = event.target.closest('button[data-type]');
+    if (!button) return;
+    state.type = button.dataset.type;
+    els.typeFilters.querySelectorAll('button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+    render();
+  });
+  els.yearFilters.addEventListener('click', (event) => {
     const button = event.target.closest('button[data-year]');
     if (!button) return;
-    activeYear = button.dataset.year;
-    calendarControls.querySelectorAll('button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-    applyCalendarFilters();
+    state.year = button.dataset.year;
+    els.yearFilters.querySelectorAll('button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+    render();
   });
-  calendarSearch.addEventListener('input', applyCalendarFilters);
-  renderCalendar();
+
+  loadData();
 })();
 </script>
 <script src="../tools-v3.js"></script>
