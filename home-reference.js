@@ -258,7 +258,7 @@
     }
   }
 
-  const sobolevCycle=[[3,1.8],[4,1.9],[5,2.8],[6,3.6],[1,1.6],[2,1.6]];
+  const sobolevCycle=[[3,1.3],[4,1.3],[5,2.6],[6,3.5],[1,1.4],[2,1.4]];
   const sobolevDuration=sobolevCycle.reduce((sum,entry)=>sum+entry[1],0);
   let sobolevPinned=null;
   let sobolevCurrent=0;
@@ -270,7 +270,7 @@
       if(elapsed<duration)return {n,elapsed,duration};
       elapsed-=duration;
     }
-    return {n:3,elapsed:0,duration:1.8};
+    return {n:3,elapsed:0,duration:1.3};
   };
 
   const selectSobolevDimension=n=>{
