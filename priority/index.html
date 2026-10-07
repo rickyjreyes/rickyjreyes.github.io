@@ -971,102 +971,305 @@
       update();
     }
 
-    const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const stories=[...document.querySelectorAll('[data-scroll-story]')];
-    const states=stories.map(story=>{
-      const steps=[...story.querySelectorAll('[data-story-step]')];
-      const visual=story.querySelector('.evidence-story-visual');
-      const svg=visual&&visual.querySelector('svg');
+    const NS='http://www.w3.org/2000/svg';
+    const cl=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+    const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+    const dec=(y,m,d)=>y+(m-1)/12+(d-1)/365;
+    const TODAY=2026+9/12+6/365;
+    const xs=v=>v<=TODAY?100+((v-2025.33)/(TODAY-2025.33))*330:430+((v-TODAY)/(2031-TODAY))*180;
+    const OX=xs(dec(2025,6,11));
+    const wave=(x0,x1,y,amp,per)=>{
+      let d='';
+      for(let x=x0;x<=x1;x+=4)d+=(x===x0?'M':'L')+x+' '+(y-amp*Math.sin(((x-x0)/per)*Math.PI*2)).toFixed(1);
+      return d;
+    };
+    const svgEl=(tag,attrs={})=>{
+      const el=document.createElementNS(NS,tag);
+      Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));
+      return el;
+    };
+    const setOp=(el,v)=>{if(el)el.style.opacity=String(cl(v))};
+
+    const RCA_NODE_DATA=[
+      {step:1,date:dec(2026,8,26),y:120,r:9,c:'#b6ffda',label:'OpenAI/HF event + METR · 2026-08-26',anchor:'start',ring:true,ldy:-14},
+      {step:3,date:dec(2026,9,9),y:205,r:7,c:'#b6ffda',label:'Anthropic · 2026-09-09',anchor:'end'},
+      {step:3,date:dec(2026,9,16),y:205,r:7,c:'#b6ffda',label:'OpenAI · 2026-09-16',anchor:'start'},
+      {step:4,date:dec(2026,3,15),y:290,r:7,c:'#67d4ff',label:'SafetyDrift · Mar 2026',anchor:'end'},
+      {step:4,date:dec(2026,5,15),y:290,r:7,c:'#67d4ff',label:'Remembering More, Risking More · May 2026',anchor:'start',ldy:22},
+      {step:5,date:dec(2026,6,18),y:360,r:7,c:'#ffcd5c',label:'DeepMind · 2026-06-18',anchor:'end',weak:true},
+      {step:6,date:2027.5,y:420,r:7,c:'#8b7cff',label:'2027',anchor:'start',hollow:true,dash:'2 2',noArc:true,ldy:-14},
+      {step:6,date:2028.5,y:420,r:7,c:'#8b7cff',label:'2028',anchor:'start',hollow:true,dash:'2 2',noArc:true,ldy:-14},
+      {step:6,date:2030,y:420,r:7,c:'#8b7cff',label:'2029–30',anchor:'start',hollow:true,dash:'2 2',noArc:true,ldy:-14}
+    ];
+
+    const DET_ROWS=[
+      ['JUNO','Nov 20, 2025 · forecast',[['done','stated'],['na','n/a'],['pending','pending'],['open','open']]],
+      ['LHC / LHCb','Apr 23 → May 9, 2026',[['done','C9(q²)'],['na','n/a'],['convergence','open-data'],['open','open']]],
+      ['CMS','G2 untouched target',[['done','waveform'],['done','sealed'],['conditional','Δχ² 126.28'],['open','open']]],
+      ['GWTC','train 173 · holdout 104',[['done','train-only'],['done','k*=9.6023'],['supported','p=.00130'],['open','open']]],
+      ['NIST','Fe II · 3 binnings',[['done','scan'],['na','n/a'],['convergence','bin-stable'],['open','open']]]
+    ];
+    const DET_STATUS={
+      done:{fill:'rgba(103,212,255,.14)',stroke:'rgba(103,212,255,.6)',text:'#e9f0f6',dash:'0'},
+      supported:{fill:'rgba(182,255,218,.18)',stroke:'#b6ffda',text:'#b6ffda',dash:'0'},
+      convergence:{fill:'rgba(103,212,255,.2)',stroke:'#67d4ff',text:'#67d4ff',dash:'0'},
+      conditional:{fill:'rgba(255,205,92,.14)',stroke:'#ffcd5c',text:'#ffcd5c',dash:'0'},
+      pending:{fill:'none',stroke:'#8b7cff',text:'#8b7cff',dash:'3 3'},
+      open:{fill:'none',stroke:'#8b7cff',text:'#8b7cff',dash:'3 3'},
+      na:{fill:'none',stroke:'rgba(170,201,225,.18)',text:'#71869a',dash:'1 4'}
+    };
+
+    const stories=[...document.querySelectorAll('[data-scroll-story]')].map(story=>{
+      const visual=story.querySelector('.scrubbed-story-visual');
       const state={
-        story,
-        visual,
-        svg,
-        steps,
+        story,visual,svg:visual&&visual.querySelector('svg'),
+        kind:visual&&visual.dataset.storyKind,
+        steps:[...story.querySelectorAll('[data-story-step]')],
         kicker:story.querySelector('[data-story-kicker]'),
         progress:story.querySelector('[data-story-progress]'),
         rail:story.querySelector('[data-story-rail]'),
         caption:story.querySelector('[data-story-caption]'),
         flow:[...story.querySelectorAll('[data-flow-step]')],
-        flowLines:[...story.querySelectorAll('[data-story-flow] i')],
-        active:0
+        cur:0,target:0,active:0
       };
-      const restartSvgMotion=()=>{
-        if(!svg||typeof svg.setCurrentTime!=='function')return;
-        try{
-          svg.pauseAnimations();
-          svg.setCurrentTime(0);
-          if(!reduceMotion)svg.unpauseAnimations();
-        }catch(_){}
-      };
-      const render=idx=>{
-        idx=Math.max(0,Math.min(steps.length-1,idx));
-        const changed=idx!==state.active;
-        state.active=idx;
-        if(state.visual)state.visual.dataset.storyStage=String(idx);
-        steps.forEach((step,i)=>step.classList.toggle('active',i===idx));
-        const step=steps[idx];
-        if(step&&state.kicker)state.kicker.textContent=step.dataset.kicker||'';
-        if(step&&state.caption)state.caption.textContent=step.dataset.caption||'';
-        state.flow.forEach((node,i)=>{
-          node.classList.toggle('active',i===idx);
-          node.classList.toggle('landed',i<idx);
-        });
-        state.flowLines.forEach((line,i)=>line.classList.toggle('landed',i<idx));
-        if(changed||idx===0)restartSvgMotion();
-      };
-      state.render=render;
-      render(0);
-      if(reduceMotion&&svg&&typeof svg.pauseAnimations==='function'){
-        try{svg.pauseAnimations()}catch(_){}
-      }
+      if(state.kind==='rca')buildRca(state);
+      if(state.kind==='detector')buildDetector(state);
       return state;
     });
 
-    if('IntersectionObserver' in window&&!reduceMotion){
-      const storyObserver=new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-          const state=states.find(s=>s.visual===entry.target);
-          if(!state||!state.svg||typeof state.svg.pauseAnimations!=='function')return;
-          try{
-            if(entry.isIntersecting)state.svg.unpauseAnimations();
-            else state.svg.pauseAnimations();
-          }catch(_){}
-        });
-      },{rootMargin:'18% 0px 18% 0px'});
-      states.forEach(state=>{if(state.visual)storyObserver.observe(state.visual)});
+    function buildRca(state){
+      if(!state.svg)return;
+      state.axis=state.svg.querySelector('[data-rca-axis]');
+      state.ticks=[...state.svg.querySelectorAll('[data-rca-tick]')].map(g=>{
+        const x=xs(Number(g.dataset.rcaTick));
+        const line=g.querySelector('line'),text=g.querySelector('text');
+        line.setAttribute('x1',x);line.setAttribute('x2',x);text.setAttribute('x',x);
+        return g;
+      });
+      state.tiers=[...state.svg.querySelectorAll('[data-rca-tier]')];
+      state.today=state.svg.querySelector('[data-rca-today]');
+      state.todayLabel=state.svg.querySelector('[data-rca-today-label]');
+      const todayX=xs(TODAY);
+      state.today.setAttribute('x1',todayX);state.today.setAttribute('x2',todayX);state.todayLabel.setAttribute('x',todayX);
+      state.futureRail=state.svg.querySelector('[data-rca-future-rail]');
+      state.futureCopy=state.svg.querySelector('[data-rca-future-copy]');
+      state.futureRail.setAttribute('x1',todayX);state.futureRail.setAttribute('x2',612);
+
+      const arcs=state.svg.querySelector('[data-rca-arcs]');
+      const nodes=state.svg.querySelector('[data-rca-nodes]');
+      state.rcaNodes=RCA_NODE_DATA.map(cfg=>{
+        const x=xs(cfg.date);
+        const arc=svgEl('path',{class:'rca-arc',pathLength:1,stroke:cfg.c});
+        if(!cfg.noArc)arc.setAttribute('d','M'+OX.toFixed(1)+' 461 C'+OX.toFixed(1)+' '+(cfg.y+60)+' '+(x-90).toFixed(1)+' '+cfg.y+' '+(x-cfg.r-2).toFixed(1)+' '+cfg.y);
+        else arc.style.display='none';
+        arcs.appendChild(arc);
+        const g=svgEl('g',{class:'rca-node'});
+        const ring=svgEl('circle',{class:'rca-node-ring',cx:x,cy:cfg.y,r:cfg.r+6,stroke:cfg.c});
+        const dot=svgEl('circle',{class:'rca-node-dot',cx:x,cy:cfg.y,r:0,fill:cfg.hollow?'#07111f':cfg.c,stroke:cfg.c,'stroke-dasharray':cfg.dash||'0'});
+        let anchor=cfg.anchor;
+        if(anchor==='start'&&x>560)anchor='end';
+        const lx=anchor==='end'?x-cfg.r-8:x+cfg.r+8;
+        const label=svgEl('text',{class:'rca-node-label',x:lx,y:cfg.y+(cfg.ldy??4),'text-anchor':anchor,fill:cfg.c});
+        label.textContent=cfg.label;
+        g.append(ring,dot,label);nodes.appendChild(g);
+        return {cfg,x,arc,g,ring,dot,label};
+      });
+      state.origin=state.svg.querySelector('[data-rca-origin]');
+      state.originRing=state.svg.querySelector('[data-rca-origin-ring]');
+      state.originDot=state.svg.querySelector('[data-rca-origin-dot]');
+      state.originLabel=state.svg.querySelector('[data-rca-origin-label]');
+      state.originRing.setAttribute('cx',OX);state.originDot.setAttribute('cx',OX);state.originLabel.setAttribute('x',OX);
+      state.mech=[...state.svg.querySelectorAll('[data-rca-mech]')];
+      state.chips=[...state.svg.querySelectorAll('[data-rca-chip]')];
+      const evx=xs(dec(2026,8,26))-10;
+      state.chips.forEach(g=>g.querySelector('line').setAttribute('x2',evx));
+      state.quant=state.svg.querySelector('[data-rca-quant]');
+      state.q1=state.svg.querySelector('[data-rca-q1]');state.q1l=state.svg.querySelector('[data-rca-q1-label]');
+      state.q2=state.svg.querySelector('[data-rca-q2]');state.q2l=state.svg.querySelector('[data-rca-q2-label]');
+      state.q3=state.svg.querySelector('[data-rca-q3]');state.q3l=state.svg.querySelector('[data-rca-q3-label]');
+      state.ratioTag=state.svg.querySelector('[data-rca-ratio-tag]');
+      state.ratioTag.setAttribute('x',xs(dec(2026,8,26))+16);
     }
 
-    let ticking=false;
-    const measure=()=>{
-      ticking=false;
-      const target=innerHeight*.48;
-      states.forEach(state=>{
-        let best=0,bestDist=Infinity;
-        state.steps.forEach((step,i)=>{
-          const rect=step.getBoundingClientRect();
-          const center=rect.top+rect.height*.5;
-          const d=Math.abs(center-target);
-          if(d<bestDist){bestDist=d;best=i}
+    function buildDetector(state){
+      if(!state.svg)return;
+      state.band=state.svg.querySelector('[data-det-band]');
+      state.head=state.svg.querySelector('[data-det-head]');
+      state.repOutline=state.svg.querySelector('[data-det-rep-outline]');
+      state.panels=[...state.svg.querySelectorAll('[data-det-panel]')];
+      const root=state.svg.querySelector('[data-det-matrix]');
+      const cols=[250,350,450,550],ys=[120,175,230,285,340];
+      state.detRows=[];
+      DET_ROWS.forEach(([name,sub,cells],i)=>{
+        const label=svgEl('text',{class:'detector-row-label',x:20,y:ys[i]+12});label.textContent=name;
+        const sublabel=svgEl('text',{class:'detector-row-sub',x:20,y:ys[i]+26});sublabel.textContent=sub;
+        const rule=svgEl('line',{class:'detector-row-rule',x1:194,x2:592,y1:ys[i]+15,y2:ys[i]+15});
+        root.append(label,sublabel,rule);
+        const cellRefs=cells.map(([status,text],j)=>{
+          const s=DET_STATUS[status];
+          const rect=svgEl('rect',{class:'detector-cell',x:cols[j],y:ys[i],width:0,height:30,rx:7,fill:s.fill,stroke:s.stroke,'stroke-dasharray':s.dash});
+          const tx=svgEl('text',{class:'detector-cell-label',x:cols[j],y:ys[i]+19,fill:s.text});tx.textContent=text;
+          root.append(rect,tx);
+          return {rect,text:tx,status,col:j,center:cols[j]};
         });
-        if(best!==state.active)state.render(best);
-        const rect=state.story.getBoundingClientRect();
-        const start=innerHeight*.55;
-        const span=Math.max(1,rect.height-innerHeight*.32);
-        const p=Math.max(0,Math.min(1,(start-rect.top)/span));
-        if(state.rail)state.rail.style.transform='scaleX('+p+')';
-        if(state.progress)state.progress.textContent=Math.round(p*100)+'%';
+        state.detRows.push({label,sublabel,rule,cells:cellRefs,y:ys[i],index:i});
       });
+      state.seal=state.svg.querySelector('[data-det-seal]');
+      state.waveIdeal=state.svg.querySelector('[data-det-wave-ideal]');
+      state.waveSmear=state.svg.querySelector('[data-det-wave-smear]');
+      state.lhcb=state.svg.querySelector('[data-det-lhcb]');
+      state.cmsPts=state.svg.querySelector('[data-det-cms-points]');
+      state.cmsWave=state.svg.querySelector('[data-det-cms-wave]');
+      state.cmsChi=state.svg.querySelector('[data-det-cms-chi]');
+      state.gate=state.svg.querySelector('[data-det-gate]');
+      state.holdout=state.svg.querySelector('[data-det-holdout]');
+      state.pval=state.svg.querySelector('[data-det-pval]');
+      state.bins=[...state.svg.querySelectorAll('[data-det-bin]')];
+      state.lock=state.svg.querySelector('[data-det-lock]');
+      state.nistLabel=state.svg.querySelector('[data-det-nist-label]');
+      state.repPaths=[...state.svg.querySelectorAll('[data-det-rep-path]')];
+      state.repTarget=state.svg.querySelector('[data-det-rep-target]');
+      state.waveIdeal.setAttribute('d',wave(40,600,450,18,80));
+      state.lhcb.setAttribute('d',wave(60,580,470,30,104));
+      state.cmsWave.setAttribute('d',wave(40,560,470,36,144*520/448));
+    }
+
+    function updateCommon(state,t){
+      const a=cl(Math.round(t),0,state.steps.length-1);
+      state.active=a;
+      state.steps.forEach((step,i)=>step.classList.toggle('active',i===a));
+      const step=state.steps[a];
+      if(step&&state.kicker)state.kicker.textContent=step.dataset.kicker||'';
+      if(step&&state.caption)state.caption.textContent=step.dataset.caption||'';
+      state.flow.forEach((node,i)=>{
+        node.classList.toggle('active',i===a);
+        node.classList.toggle('landed',i<a);
+      });
+      const p=cl((t+1)/state.steps.length);
+      if(state.rail)state.rail.style.transform='scaleX('+p+')';
+      if(state.progress)state.progress.textContent=Math.round(p*100)+'%';
+    }
+
+    function updateRca(state,t){
+      const foc=s=>t>5.5?.9:Math.abs(t-s)<.55?1:.42;
+      const axis=ease(cl((t+.95)/.7));
+      state.axis.style.strokeDashoffset=String(1-axis);setOp(state.axis,axis);
+      state.ticks.forEach(g=>setOp(g,axis));
+      state.tiers.forEach(g=>{
+        const s=Number(g.dataset.rcaTier);
+        setOp(g,cl((t-(s-.6))/.4)*.85);
+      });
+      const o=cl((t+.45)/.35);
+      setOp(state.origin,o);
+      state.originDot.setAttribute('r',(9*(o<1?o*(1+.35*Math.sin(Math.PI*o)):1)).toFixed(1));
+      state.originRing.setAttribute('r',(9+14*cl((t+.2)/.6)).toFixed(1));
+      setOp(state.originRing,(1-cl((t+.2)/.6))*o);
+      const mechOp=o*(t<.6?1:.38);state.mech.forEach(el=>setOp(el,mechOp));
+
+      state.rcaNodes.forEach(n=>{
+        const {cfg}=n;
+        const a=cl((t-(cfg.step-.62))/.42),b=cl((t-(cfg.step-.28))/.3),f=foc(cfg.step);
+        const pop=b<1?b*(1+.35*Math.sin(Math.PI*b)):1;
+        n.dot.setAttribute('r',(cfg.r*pop).toFixed(1));
+        n.ring.setAttribute('r',((cfg.r+6)*pop).toFixed(1));
+        setOp(n.g,b*f);setOp(n.ring,cfg.ring?b*f:0);
+        if(!cfg.noArc){
+          n.arc.style.strokeDashoffset=String(1-ease(a));
+          setOp(n.arc,.75*f*(cfg.weak?.55:1));
+        }
+      });
+
+      state.chips.forEach((g,i)=>{
+        const v=cl((t-(.72+i*.12))/.16)*(t<1.6?1:t<2.6?.45:.28);
+        setOp(g,v);
+      });
+      const qIn=cl((t-1.5)/.3)*(1-cl((t-2.55)/.3));
+      setOp(state.quant,qIn);
+      const q1=cl((t-1.72)/.2),q2=cl((t-1.92)/.2),q3=cl((t-2.1)/.15);
+      state.q1.setAttribute('cy',(236-24*(1-q1)).toFixed(1));state.q2.setAttribute('cy',(236-24*(1-q2)).toFixed(1));
+      setOp(state.q1,q1);setOp(state.q1l,q1);setOp(state.q2,q2);setOp(state.q2l,q2);setOp(state.q3,q3);setOp(state.q3l,q3);
+      setOp(state.ratioTag,cl((t-2.55)/.3)*(t>5.5?.9:.8));
+      const todayOp=cl((t-5.45)/.3),futureOp=cl((t-5.7)/.3);
+      setOp(state.today,todayOp);setOp(state.todayLabel,todayOp);setOp(state.futureRail,futureOp);setOp(state.futureCopy,futureOp);
+    }
+
+    function updateDetector(state,t){
+      const step=cl(Math.round(t),0,6),lane=step-1;
+      const lf=i=>t<.5||t>5.5?1:i===lane?1:.45;
+      setOp(state.head,cl((t+.9)/.4));
+      state.detRows.forEach(row=>{
+        const rowOp=cl((t+.7-row.index*.06)/.4)*lf(row.index);
+        setOp(row.label,rowOp);setOp(row.sublabel,rowOp);setOp(row.rule,rowOp);
+        row.cells.forEach(cell=>{
+          const j=cell.col;
+          const v=j===0?cl((t+.55-row.index*.07)/.3):cl((t-(row.index+1-.55)-(j-1)*.2)/.3);
+          const w=80*ease(v);
+          cell.rect.setAttribute('x',(cell.center-w/2).toFixed(1));
+          cell.rect.setAttribute('width',w.toFixed(1));
+          setOp(cell.rect,cl(v*2)*lf(row.index));
+          setOp(cell.text,cl((v-.6)/.4)*lf(row.index));
+        });
+      });
+      if(lane>=0&&lane<5){
+        state.band.setAttribute('y',String([120,175,230,285,340][lane]-8));
+        setOp(state.band,t>=.5&&t<=5.5?1-cl(Math.abs(t-step)*2-.6):0);
+      }else setOp(state.band,0);
+      const repBase=cl((t-5.45)/.35);
+      setOp(state.repOutline,repBase*(.6+.4*Math.sin(Math.min(1,cl((t-5.45)/.55))*Math.PI)));
+
+      state.panels.forEach((g,i)=>setOp(g,cl(1-Math.abs(t-i)*1.9)));
+      const u=s=>cl((t-(s-.5))/.9);
+      const u0=ease(u(0)),u1=ease(u(1)),u2=ease(u(2)),u3=ease(u(3)),u4=u(4),u5=u(5),u6=ease(u(6));
+      state.seal.setAttribute('d','M232 470H'+(232+176*u0).toFixed(1));
+      state.waveSmear.setAttribute('d',wave(40,600,512,18*(1-.62*u1),80));
+      state.lhcb.style.strokeDashoffset=String(1-u2);
+      setOp(state.cmsPts,u3);state.cmsWave.style.strokeDashoffset=String(1-u3);state.cmsChi.textContent='Δχ² '+(126.28*u3).toFixed(2);
+      state.gate.setAttribute('y2',(410+110*ease(cl((u4-.3)/.25))).toFixed(1));
+      const hold=cl((u4-.5)/.2),pval=cl((u4-.72)/.2);setOp(state.holdout,hold);setOp(state.pval,pval);
+      state.bins.forEach((g,i)=>{g.querySelector('circle').setAttribute('r',(7*ease(cl((u5-i*.18)/.3))).toFixed(1))});
+      state.lock.setAttribute('y2',(416+108*ease(cl((u5-.55)/.35))).toFixed(1));setOp(state.nistLabel,cl((u5-.8)/.2));
+      state.repPaths.forEach((p,i)=>p.style.strokeDashoffset=String(1-cl((u6-i*.12)/.7)));
+      state.repTarget.setAttribute('r',(20+14*u6).toFixed(1));
+    }
+
+    function storyProgress(state){
+      const centers=state.steps.map(s=>{const r=s.getBoundingClientRect();return r.top+r.height/2});
+      if(centers.length<2)return 0;
+      const panel=state.story.querySelector('.evidence-story-visual-wrap');
+      const pb=panel?panel.getBoundingClientRect().bottom:0;
+      const narrow=innerWidth<980&&panel&&getComputedStyle(panel).position==='sticky';
+      const anchor=narrow?Math.max(pb,0)+(innerHeight-Math.max(pb,0))*.5:innerHeight*.55;
+      if(anchor<centers[0])return cl((anchor-centers[0])/(centers[1]-centers[0]),-1,0);
+      for(let i=0;i<centers.length-1;i++)if(anchor<centers[i+1])return i+(anchor-centers[i])/(centers[i+1]-centers[i]);
+      return centers.length-1;
+    }
+
+    const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let raf=0;
+    const read=()=>stories.forEach(s=>{const p=storyProgress(s);s.target=reduceMotion?Math.round(p):p});
+    const frame=()=>{
+      raf=0;let moving=false;
+      stories.forEach(s=>{
+        const d=s.target-s.cur;
+        if(Math.abs(d)>.002){s.cur+=d*(reduceMotion?1:.2);moving=true}else s.cur=s.target;
+        updateCommon(s,s.cur);
+        if(s.kind==='rca')updateRca(s,s.cur);
+        if(s.kind==='detector')updateDetector(s,s.cur);
+      });
+      if(moving)raf=requestAnimationFrame(frame);
     };
-    const onScroll=()=>{
-      if(ticking)return;
-      ticking=true;
-      requestAnimationFrame(measure);
-    };
-    addEventListener('scroll',onScroll,{passive:true});
-    addEventListener('resize',onScroll,{passive:true});
-    measure();
+    const kick=()=>{read();if(!raf)raf=requestAnimationFrame(frame)};
+    addEventListener('scroll',kick,{passive:true});
+    addEventListener('resize',kick,{passive:true});
+    read();
+    stories.forEach(s=>{
+      s.cur=s.target;
+      updateCommon(s,s.cur);
+      if(s.kind==='rca')updateRca(s,s.cur);
+      if(s.kind==='detector')updateDetector(s,s.cur);
+    });
   })();
 </script>
-<script src="../site-nav.js?v=20261007-process1" defer></script>
+<script src="../site-nav.js?v=20261007-scrub1" defer></script>
 </body>
 </html>
