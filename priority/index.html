@@ -210,6 +210,10 @@
     @keyframes ringClose{0%{transform:scale(1.2);stroke-dashoffset:24;opacity:.3}55%,100%{transform:scale(1);stroke-dashoffset:0;opacity:1}}
     @keyframes futureBlink{0%,100%{opacity:.25}50%{opacity:.8}}
     @keyframes kernelWave{to{stroke-dashoffset:-54}}
+    @keyframes rebin120{0%,28%{opacity:1}34%,100%{opacity:.16}}
+    @keyframes rebin160{0%,28%{opacity:.16}34%,62%{opacity:1}68%,100%{opacity:.16}}
+    @keyframes rebin200{0%,62%{opacity:.16}68%,100%{opacity:1}}
+
 
     .story-rca .evidence-story-visual[data-story-stage="0"] .scene-0 .baseline-edge{animation:storyDraw .9s ease forwards}
     .story-rca .evidence-story-visual[data-story-stage="0"] .scene-0 .baseline-edge.e2{animation-delay:.12s}
@@ -259,13 +263,17 @@
     .story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(2){animation-delay:.08s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(3){animation-delay:.16s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(4){animation-delay:.24s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(5){animation-delay:.32s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(6){animation-delay:.4s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(7){animation-delay:.48s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(8){animation-delay:.56s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(9){animation-delay:.64s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(10){animation-delay:.72s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(11){animation-delay:.8s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(12){animation-delay:.88s}
     .story-detectors .evidence-story-visual[data-story-stage="3"] .freeze-lock{animation:storyPulse 2s ease-in-out infinite}
 
-    .story-detectors .evidence-story-visual[data-story-stage="4"] .train-stream .event-dot{animation:trainEnter 2s ease-in-out infinite}
-    .story-detectors .evidence-story-visual[data-story-stage="4"] .holdout-stream .event-dot{animation:holdoutStream 2s .8s ease-in-out infinite}
-    .story-detectors .evidence-story-visual[data-story-stage="4"] .event-dot.d2{animation-delay:.18s}.story-detectors .evidence-story-visual[data-story-stage="4"] .event-dot.d3{animation-delay:.36s}
+    .story-detectors .evidence-story-visual[data-story-stage="4"] .train-stream .event-dot{animation:trainEnter 2.4s ease-in-out infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="4"] .train-stream .d2{animation-delay:.18s}.story-detectors .evidence-story-visual[data-story-stage="4"] .train-stream .d3{animation-delay:.36s}
+    .story-detectors .evidence-story-visual[data-story-stage="4"] .holdout-stream .event-dot{animation:holdoutStream 2.4s .95s ease-in-out infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="4"] .holdout-stream .d2{animation-delay:1.13s}.story-detectors .evidence-story-visual[data-story-stage="4"] .holdout-stream .d3{animation-delay:1.31s}
     .story-detectors .evidence-story-visual[data-story-stage="4"] .gwtc-gate{animation:gateClose 1.2s .5s ease both;transform-box:fill-box;transform-origin:center}
 
-    .story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row rect{animation:rebinPulse 2.4s ease-in-out infinite}
-    .story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row.h160 rect{animation-delay:.35s}.story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row.h200 rect{animation-delay:.7s}
+    .story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row{opacity:.16}
+    .story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row.h120{animation:rebin120 4.2s linear infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row.h160{animation:rebin160 4.2s linear infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row.h200{animation:rebin200 4.2s linear infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row rect{animation:rebinPulse 1.4s ease-in-out infinite}
     .story-detectors .evidence-story-visual[data-story-stage="5"] .story-bin-lock{animation:storyPulse 2.2s ease-in-out infinite}
 
     .story-detectors .evidence-story-visual[data-story-stage="6"] .story-open-ring{animation:ringClose 3s ease-in-out infinite}
@@ -318,6 +326,12 @@
       border:1px solid rgba(170,201,225,.11);border-radius:14px;background:rgba(4,10,18,.48);overflow:hidden
     }
     .evidence-story-visual svg{display:block;width:100%;height:100%;min-height:inherit}
+    .evidence-story-flow{display:flex;align-items:center;gap:7px;margin:0 0 10px;min-width:0;color:var(--muted-2);font:800 .55rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.065em;text-transform:uppercase;white-space:nowrap;overflow:hidden}
+    .evidence-story-flow span{transition:color .25s ease,opacity .25s ease;opacity:.42}
+    .evidence-story-flow span.landed{color:var(--accent-3);opacity:.72}
+    .evidence-story-flow span.active{color:var(--text);opacity:1}
+    .evidence-story-flow i{height:1px;min-width:8px;flex:1;background:var(--line-strong);transform-origin:left;transition:background .25s ease}
+    .evidence-story-flow i.landed{background:linear-gradient(90deg,var(--accent-3),var(--accent))}
     .story-scene{opacity:0;transform:translateY(8px) scale(.995);transition:opacity .32s ease,transform .32s ease;pointer-events:none}
     .evidence-story-visual[data-story-stage="0"] .scene-0,
     .evidence-story-visual[data-story-stage="1"] .scene-1,
@@ -519,6 +533,9 @@
 
       <div class="evidence-story" data-scroll-story>
         <div class="evidence-story-visual-wrap">
+          <div class="evidence-story-flow" data-story-flow aria-hidden="true">
+            <span data-flow-step>record</span><i></i><span data-flow-step>event</span><i></i><span data-flow-step>R</span><i></i><span data-flow-step>labs</span><i></i><span data-flow-step>drift</span><i></i><span data-flow-step>control</span><i></i><span data-flow-step>open</span>
+          </div>
           <div class="evidence-story-stage"><span data-story-kicker>01 · dated disclosure</span><strong data-story-progress>0%</strong></div>
           <div class="story-rail" aria-hidden="true"><span data-story-rail></span></div>
           <div class="evidence-story-visual" data-story-stage="0" aria-label="Scroll-driven RCA priority evidence ordered from strongest post-disclosure correspondence to weaker supporting evidence">
@@ -803,6 +820,9 @@
 
       <div class="evidence-story" data-scroll-story>
         <div class="evidence-story-visual-wrap">
+          <div class="evidence-story-flow" data-story-flow aria-hidden="true">
+            <span data-flow-step>targets</span><i></i><span data-flow-step>JUNO</span><i></i><span data-flow-step>LHCb</span><i></i><span data-flow-step>CMS</span><i></i><span data-flow-step>GWTC</span><i></i><span data-flow-step>NIST</span><i></i><span data-flow-step>replicate</span>
+          </div>
           <div class="evidence-story-stage"><span data-story-kicker>01 · prediction targets</span><strong data-story-progress>0%</strong></div>
           <div class="story-rail" aria-hidden="true"><span data-story-rail></span></div>
           <div class="evidence-story-visual" data-story-stage="0" aria-label="Scroll-driven detector narrative covering JUNO, LHC and LHCb, CMS, GWTC, NIST, and the next independent replication step">
@@ -1216,6 +1236,8 @@
         progress:story.querySelector('[data-story-progress]'),
         rail:story.querySelector('[data-story-rail]'),
         caption:story.querySelector('[data-story-caption]'),
+        flow:[...story.querySelectorAll('[data-flow-step]')],
+        flowLines:[...story.querySelectorAll('[data-story-flow] i')],
         active:0
       };
       const restartSvgMotion=()=>{
@@ -1235,6 +1257,11 @@
         const step=steps[idx];
         if(step&&state.kicker)state.kicker.textContent=step.dataset.kicker||'';
         if(step&&state.caption)state.caption.textContent=step.dataset.caption||'';
+        state.flow.forEach((node,i)=>{
+          node.classList.toggle('active',i===idx);
+          node.classList.toggle('landed',i<idx);
+        });
+        state.flowLines.forEach((line,i)=>line.classList.toggle('landed',i<idx));
         if(changed||idx===0)restartSvgMotion();
       };
       state.render=render;
