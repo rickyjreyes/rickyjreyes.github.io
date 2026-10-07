@@ -1210,9 +1210,12 @@
           setOp(cell.text,cl((v-.6)/.4)*lf(row.index));
         });
       });
-      if(lane>=0&&lane<5){
-        state.band.setAttribute('y',String([120,175,230,285,340][lane]-8));
-        setOp(state.band,t>=.5&&t<=5.5?1-cl(Math.abs(t-step)*2-.6):0);
+      if(t>=.5&&t<=5.5){
+        const ys=[120,175,230,285,340];
+        const laneT=cl(t-1,0,4),lo=Math.floor(laneT),hi=Math.min(4,Math.ceil(laneT)),mix=laneT-lo;
+        const y=ys[lo]+(ys[hi]-ys[lo])*ease(mix);
+        state.band.setAttribute('y',(y-8).toFixed(1));
+        setOp(state.band,1-cl(Math.abs(t-step)*2-.6));
       }else setOp(state.band,0);
       const repBase=cl((t-5.45)/.35);
       setOp(state.repOutline,repBase*(.6+.4*Math.sin(Math.min(1,cl((t-5.45)/.55))*Math.PI)));
