@@ -313,7 +313,7 @@
       raw.push([x,y]);
       maxX=Math.max(maxX,Math.abs(x));maxY=Math.max(maxY,Math.abs(y));
     }
-    const scale=Math.min(62/maxX,60/maxY);
+    const scale=Math.min(54/maxX,52/maxY);
     return raw.map(p=>[297+p[0]*scale,269+p[1]*scale]);
   };
 
