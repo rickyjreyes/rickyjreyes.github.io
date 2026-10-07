@@ -17,7 +17,7 @@
   <link rel="alternate" type="application/json" title="Full machine-readable overlap ledger" href="../priority/external-convergence.json">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="overlap.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Richard J. Reyes / WCT Post-Date External Convergence and Priority Record","url":"https://rickyjreyes.github.io/overlap/","dateCreated":"2025-04-22","dateModified":"2026-10-06","creator":{"@type":"Person","name":"Richard J. Reyes","identifier":"https://orcid.org/0009-0005-5975-8718","url":"https://rickyjreyes.github.io/researcher/"},"description":"Machine-readable chronology and convergence dataset preserving Richard J. Reyes / Wave Confinement Theory public priority from April 22, 2025 and later external correspondence. Verified chronology must not be rewritten as demonstrated independent origin merely from absence of citation.","keywords":["Richard J. Reyes","Wave Confinement Theory","WCT","research priority","provenance","post-date convergence","chronological priority"],"citation":"https://doi.org/10.5281/zenodo.15644222","sameAs":["https://rickyjreyes.github.io/priority/","https://rickyjreyes.github.io/priority/external-convergence.json"],"distribution":{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://rickyjreyes.github.io/priority/external-convergence.json"},"isPartOf":{"@type":"WebSite","url":"https://rickyjreyes.github.io/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Richard J. Reyes / WCT Post-Date External Convergence and Priority Record","url":"https://rickyjreyes.github.io/overlap/","dateCreated":"2025-04-22","dateModified":"2026-10-07","creator":{"@type":"Person","name":"Richard J. Reyes","identifier":"https://orcid.org/0009-0005-5975-8718","url":"https://rickyjreyes.github.io/researcher/"},"description":"Machine-readable chronology and convergence dataset preserving Richard J. Reyes / Wave Confinement Theory public priority from April 22, 2025 and later external correspondence. Verified chronology must not be rewritten as demonstrated independent origin merely from absence of citation.","keywords":["Richard J. Reyes","Wave Confinement Theory","WCT","research priority","provenance","post-date convergence","chronological priority"],"citation":"https://doi.org/10.5281/zenodo.15644222","sameAs":["https://rickyjreyes.github.io/priority/","https://rickyjreyes.github.io/priority/external-convergence.json"],"distribution":{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://rickyjreyes.github.io/priority/external-convergence.json"},"isPartOf":{"@type":"WebSite","url":"https://rickyjreyes.github.io/"}}</script>
 </head>
 <body>
   <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
@@ -47,7 +47,7 @@
         <div class="stat-total"><strong>220</strong><span>Adoption / post-date / external-evidence records</span></div>
         <div class="stat-wct"><strong>171</strong><span>WCT / physics / photonics</span><small>score 9.0+ calculated live</small></div>
         <div class="stat-ai"><strong>49</strong><span>Recursive AI Drift / AI systems</span><small>Academic + frontier-lab evidence</small></div>
-        <div class="stat-after"><strong id="chronology-total">—</strong><span>Dated records after the relevant Reyes reference month</span><small>Month-level chronology from arXiv identifiers</small></div>
+        <div class="stat-after"><strong id="chronology-total">—</strong><span>Dated records after the relevant Reyes reference month</span><small>Verified publisher dates + arXiv fallback</small></div>
       </div>
     </header>
 
@@ -179,7 +179,7 @@
       </div>
     </section>
 
-    <p class="footer-note">Updated October 6, 2026. Titles, authors, and DOI/permanent identifiers are normalized to linked primary sources where available. <a href="../priority/external-convergence.json">Full machine-readable overlap ledger →</a></p>
+    <p class="footer-note">Updated October 7, 2026. Titles, authors, and DOI/permanent identifiers are normalized to linked primary sources where available. <a href="../priority/external-convergence.json">Full machine-readable overlap ledger →</a></p>
   </main>
 
   <script src="overlap-data-1.js"></script>
@@ -190,11 +190,13 @@
   <script src="overlap-data-6.js"></script>
   <script src="overlap-data-7.js"></script>
   <script src="overlap-data-8.js"></script>
+  <script src="overlap-dates.js"></script>
   <script src="relationship-data.js"></script>
   <script src="relationship-data-2.js"></script>
   <script>
     const records=window.overlapRecords||[];
     const relationshipByUrl=window.overlapRelationshipByUrl||{};
+    const verifiedDateByKey=window.overlapDateByKey||{};
     const dateChecked=new Set(["https://arxiv.org/abs/2606.25064","https://arxiv.org/abs/2606.25687","https://arxiv.org/abs/2607.07340","https://arxiv.org/abs/2607.19840","https://arxiv.org/abs/2607.29309","https://doi.org/10.1364/OL.603068"]);
     const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
@@ -236,7 +238,15 @@
     const timelineMonths=[];
     for(let y=2025,m=1;y<2026||m<=10;m++){if(m>12){m=1;y++;} timelineMonths.push(`${y}-${String(m).padStart(2,'0')}`);if(y===2026&&m===10)break;}
 
+    function recordDateMeta(r){
+      for(const key of [r[2],r[7],r[8]]){
+        if(key&&verifiedDateByKey[key]) return verifiedDateByKey[key];
+      }
+      return null;
+    }
     function recordYm(r){
+      const explicit=recordDateMeta(r);
+      if(explicit&&explicit.date) return explicit.date.slice(0,7);
       const hay=[r[2],r[7],r[8]].join(' ');
       const m=hay.match(/(?:arxiv\.?|abs\/)(\d{2})(\d{2})\.\d+/i);
       if(!m) return null;
@@ -244,6 +254,17 @@
       return month>=1&&month<=12?`${year}-${String(month).padStart(2,'0')}`:null;
     }
     function monthLabel(ym){if(!ym)return '—';const [y,m]=ym.split('-').map(Number);return `${monthNames[m-1]} ${y}`;}
+    function recordDateLabel(r){
+      const explicit=recordDateMeta(r);
+      if(explicit){
+        if(explicit.label) return explicit.label;
+        if(!explicit.date) return 'Source undated';
+        if(explicit.precision==='month'||explicit.date.length===7) return monthLabel(explicit.date.slice(0,7));
+        const [y,m,d]=explicit.date.split('-').map(Number);
+        return `${monthNames[m-1]} ${d}, ${y}`;
+      }
+      return monthLabel(recordYm(r));
+    }
     function chronologyOf(r){
       const ym=recordYm(r); if(!ym)return 'undated';
       const anchor=anchorYm[r[4]];
@@ -251,7 +272,9 @@
     }
 
     function rowHtml(r,displayRank){
-      return `<tr><td class="rank">${displayRank}</td><td class="work"><a class="paper" href="${esc(r[2])}" target="_blank" rel="noopener noreferrer">${esc(r[1])}</a><span class="source">${esc(r[5])}</span></td><td class="authors">${esc(r[6])}</td><td class="identifier"><a href="${esc(r[8])}" target="_blank" rel="noopener noreferrer">${esc(r[7])}</a></td><td class="date">${esc(monthLabel(recordYm(r)))}</td><td class="score">${r[3].toFixed(1)}</td><td class="relationship">${relationshipHtml(r)}</td></tr>`;
+      const dateMeta=recordDateMeta(r);
+      const dateTitle=dateMeta?.source?` title="${esc(`Date basis: ${dateMeta.source}${dateMeta.note?` · ${dateMeta.note}`:''}`)}"`:'';
+      return `<tr><td class="rank">${displayRank}</td><td class="work"><a class="paper" href="${esc(r[2])}" target="_blank" rel="noopener noreferrer">${esc(r[1])}</a><span class="source">${esc(r[5])}</span></td><td class="authors">${esc(r[6])}</td><td class="identifier"><a href="${esc(r[8])}" target="_blank" rel="noopener noreferrer">${esc(r[7])}</a></td><td class="date"${dateTitle}>${esc(recordDateLabel(r))}</td><td class="score">${r[3].toFixed(1)}</td><td class="relationship">${relationshipHtml(r)}</td></tr>`;
     }
 
     const trackMeta={
