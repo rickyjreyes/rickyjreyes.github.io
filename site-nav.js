@@ -86,7 +86,7 @@
     if (document.getElementById('wct-site-nav-base')) return;
     const script = document.createElement('script');
     script.id = 'wct-site-nav-base';
-    script.src = '/site-nav-base.js?v=20260915-static1';
+    script.src = '/site-nav-base.js?v=20261007-tools2';
     script.async = false;
     document.head.appendChild(script);
   };
