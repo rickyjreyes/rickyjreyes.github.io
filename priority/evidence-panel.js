@@ -2,17 +2,18 @@
   const path = location.pathname.replace(/index\.html$/i, '');
   if (path !== '/priority/') return;
 
-  const getRcaValidationMount = (main) => {
-    const rca = document.getElementById('rca-confirmation');
-    if (!rca) return main;
-    let mount = document.getElementById('rca-validation-record');
-    if (!mount) {
-      mount = document.createElement('div');
-      mount.id = 'rca-validation-record';
-      mount.className = 'rca-validation-record';
-      mount.setAttribute('aria-label', 'RCA validation and external evidence record');
-      rca.appendChild(mount);
-    }
+  const getSupportingAuditMount = (main) => {
+    let mount = document.getElementById('supporting-audit-record');
+    if (mount) return mount;
+    mount = document.createElement('div');
+    mount.id = 'supporting-audit-record';
+    mount.className = 'supporting-audit-record';
+    mount.setAttribute('aria-label', 'Supporting validation and audit record');
+    const convergence = document.getElementById('verified-convergence') || document.querySelector('[aria-labelledby="convergence-title"]');
+    const claims = document.getElementById('scholarly-priority') || document.querySelector('[aria-labelledby="claims-title"]');
+    if (convergence && convergence.parentNode) convergence.parentNode.insertBefore(mount, convergence.nextSibling);
+    else if (claims && claims.parentNode) claims.parentNode.insertBefore(mount, claims);
+    else main.appendChild(mount);
     return mount;
   };
 
@@ -206,14 +207,16 @@
     const nav = document.createElement('nav');
     nav.id = 'priority-jump';
     nav.className = 'priority-jump';
-    nav.setAttribute('aria-label', 'Priority registry sections');
+    nav.setAttribute('aria-label', 'Priority registry sections ordered by evidence strength');
     nav.innerHTML = `
-      <a href="#verified-predictions">Verified predictions</a>
-      <a href="#expanded-evidence">External evidence</a>
-      <a href="#verified-convergence">Verified convergence</a>
-      <a href="#patent-priority">Patent families</a>
-      <a href="#scholarly-priority">Scholarly claims</a>
-      <a href="#historical-controls">Historical controls</a>
+      <a href="#rca-confirmation">RCA high-specificity evidence</a>
+      <a href="#patent-priority">Patent chronology</a>
+      <a href="#detector-evidence">Detector evidence</a>
+      <a href="#verified-convergence">Post-date convergence</a>
+      <a href="#verified-predictions">Validation catalogue</a>
+      <a href="#rca-prediction-audit">RCA audit</a>
+      <a href="#key-priority-anchors">Priority anchors</a>
+      <a href="#scholarly-priority">Full claim registry</a>
     `;
     const head = main.querySelector('.priority-head');
     if (head) head.appendChild(nav);
@@ -274,9 +277,9 @@
     section.id = 'verified-predictions';
     section.setAttribute('aria-labelledby', 'verified-predictions-title');
     section.innerHTML = `
-      <p class="eyebrow">Prediction &amp; validation record</p>
-      <h2 id="verified-predictions-title">24 green claims with dated anchors and confirming evidence</h2>
-      <p class="section-lede">Each green item below states the predicted or pre-existing Reyes claim and the later observation, literature result, engineering result, incident, or frozen/public-data test that confirmed it.</p>
+      <p class="eyebrow">05 · Supporting validation catalogue</p>
+      <h2 id="verified-predictions-title">24-record supporting validation catalogue</h2>
+      <p class="section-lede">This catalogue mixes external research correspondence, later incidents, engineering results, and author-run frozen/public-data tests. The highest-specificity cases are surfaced above; this section preserves the broader supporting record.</p>
 
       <div class="prediction-metrics" aria-label="Prediction validation summary">
         <div class="prediction-metric"><strong>24</strong><span>verified green claims</span></div>
@@ -321,7 +324,7 @@
       </div>
     `;
 
-    const mount = getRcaValidationMount(main);
+    const mount = getSupportingAuditMount(main);
     mount.appendChild(section);
   };
 
@@ -354,7 +357,7 @@
       <div class="evidence-actions"><a class="button primary" href="../overlap/?track=ai">Open the 39-record AI evidence ledger</a><a class="button secondary" href="external-convergence.json">Convergence evidence JSON</a><a class="button secondary" href="../publications/recursive-ai-drift-audit.html">Recursive AI Drift audit</a></div>
     `;
 
-    const mount = getRcaValidationMount(main);
+    const mount = getSupportingAuditMount(main);
     const verified = document.getElementById('verified-predictions');
     if (verified && verified.parentNode === mount) mount.insertBefore(section, verified);
     else mount.appendChild(section);
@@ -378,7 +381,7 @@
     rewritePriorityCopy();
     simplifyAuditStrip();
     buildVerifiedPredictions(main);
-    buildEvidence(main);
+    // High-specificity external evidence is curated in the static RCA story; avoid a duplicate runtime panel.
     improveLongSections();
     buildJumpNav(main);
   };
