@@ -332,6 +332,46 @@
     .evidence-story-flow span.active{color:var(--text);opacity:1}
     .evidence-story-flow i{height:1px;min-width:8px;flex:1;background:var(--line-strong);transform-origin:left;transition:background .25s ease}
     .evidence-story-flow i.landed{background:linear-gradient(90deg,var(--accent-3),var(--accent))}
+    /* Continuous scrubbed evidence models -------------------------------- */
+    .evidence-story{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,4vw,58px)}
+    .evidence-story-visual-wrap{top:82px;padding:14px;background:rgba(7,17,31,.965);box-shadow:0 26px 84px rgba(0,0,0,.24)}
+    .evidence-story-flow{gap:4px 6px;flex-wrap:wrap;white-space:normal;overflow:visible;margin-bottom:2px}
+    .evidence-story-flow i{display:none}
+    .evidence-story-flow span{padding:4px 8px;border:1px solid var(--line);border-radius:999px;opacity:.55;transition:all .22s ease}
+    .evidence-story-flow span.landed{color:var(--accent-3);border-color:rgba(182,255,218,.38);opacity:.82}
+    .evidence-story-flow span.active{color:#07111f;background:var(--accent-3);border-color:var(--accent-3);opacity:1}
+    .scrubbed-story-visual{height:min(540px,calc(100vh - 225px));min-height:430px;border:0;border-radius:12px;background:transparent;overflow:hidden}
+    .scrubbed-story-visual .scrub-story-svg{display:block;width:100%;height:100%;min-height:0}
+    .scrub-story-svg text{font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+    .scrub-axis{stroke:rgba(170,201,225,.35);stroke-width:1.2;stroke-dasharray:1 1}
+    .rca-tier line{stroke:rgba(170,201,225,.07)} .rca-tier text{fill:var(--muted-2);font-size:9.5px;font-weight:800;letter-spacing:.1em}
+    .rca-tick line{stroke:rgba(170,201,225,.4)} .rca-tick text{fill:var(--muted-2);font:600 10px ui-monospace,SFMono-Regular,Menlo,monospace;text-anchor:middle}
+    .rca-today{stroke:var(--accent-3);stroke-dasharray:3 5}.rca-today-label{fill:var(--accent-3);font-size:10px;font-weight:850;letter-spacing:.12em;text-anchor:middle}
+    .rca-arc{fill:none;stroke-width:1.6;stroke-dasharray:1 1}
+    .rca-node-label{font-size:10.5px;font-weight:650}.rca-node-dot{stroke-width:1.6}.rca-node-ring{fill:none;stroke-width:1.2}
+    .rca-mechanisms text{fill:var(--muted);font-size:10.5px;font-weight:650}
+    .origin-dot{fill:var(--accent-3)}.origin-ring{fill:none;stroke:var(--accent-3)}.rca-origin text{fill:var(--accent-3);font-size:10.5px;font-weight:850;letter-spacing:.06em;text-anchor:middle}
+    .rca-event-chips text{fill:var(--text);font-size:10.5px;font-weight:650;text-anchor:end}.rca-event-chips line{stroke:rgba(182,255,218,.35)}
+    .rca-quant-panel rect{fill:#0b1727;stroke:rgba(170,201,225,.22)}.quant-kicker{fill:var(--muted-2);font-size:9.5px;font-weight:850;letter-spacing:.1em}.quant-axis{stroke:rgba(170,201,225,.35)}
+    .quant-tick{fill:var(--muted-2);font:600 9px ui-monospace,SFMono-Regular,Menlo,monospace}.quant-pred{fill:var(--accent)}.quant-observed{fill:var(--accent-3)}
+    .quant-pred-label{fill:var(--accent);font:700 10.5px ui-monospace,SFMono-Regular,Menlo,monospace}.quant-observed-label{fill:var(--accent-3);font:700 10.5px ui-monospace,SFMono-Regular,Menlo,monospace}
+    .quant-bracket{fill:none;stroke:var(--text)}.quant-delta{fill:var(--text);font-size:10px;font-weight:850}
+    .rca-ratio-tag{fill:var(--accent-3);font:700 10.5px ui-monospace,SFMono-Regular,Menlo,monospace}.rca-future-rail{stroke:var(--accent-2);stroke-dasharray:2 6}.rca-future-copy{fill:var(--accent-2);font-size:10px;font-weight:650}
+    .detector-active-band{fill:rgba(103,212,255,.055)}.detector-columns text{fill:var(--muted-2);font-size:9.5px;font-weight:850;letter-spacing:.06em}.detector-columns .replication-head{fill:var(--accent-2)}
+    .replication-column{fill:none;stroke:var(--accent-2);stroke-dasharray:4 5}.detector-row-label{fill:var(--text);font-size:12px;font-weight:750}.detector-row-sub{fill:var(--muted-2);font-size:9.5px;font-weight:650}
+    .detector-row-rule{stroke:rgba(170,201,225,.08)}.detector-cell{stroke-width:1.3}.detector-cell-label{font-size:9.5px;font-weight:750;text-anchor:middle}
+    .detector-detail-divider{stroke:rgba(170,201,225,.12)}.detector-detail text{fill:var(--muted);font-size:10px;font-weight:650}.detector-detail .detail-foot{fill:var(--muted-2);font-size:9px}
+    .seal-line{fill:none;stroke:var(--accent-3);stroke-width:2}.juno-ideal{fill:none;stroke:var(--accent-3);stroke-width:1.8}.juno-smear{fill:none;stroke:var(--accent);stroke-width:1.8;opacity:.75}
+    .detail-axes{fill:none;stroke:rgba(170,201,225,.3)}.lhcb-residual{fill:none;stroke:var(--accent-2);stroke-width:1.8;stroke-dasharray:1 1}
+    .cms-points circle{fill:var(--text);opacity:.75}.cms-wave{fill:none;stroke:#ffcd5c;stroke-width:1.8;stroke-dasharray:1 1}.cms-chi{fill:#ffcd5c!important;font:850 14px ui-monospace,SFMono-Regular,Menlo,monospace}.cms-sub{fill:var(--muted)!important;font:650 10px ui-monospace,SFMono-Regular,Menlo,monospace}
+    .train-box{fill:rgba(103,212,255,.08);stroke:rgba(103,212,255,.4)}.train-kicker{fill:var(--accent)!important;font-size:10px!important;font-weight:850!important;letter-spacing:.08em}.train-value{fill:var(--text)!important;font:750 20px ui-monospace,SFMono-Regular,Menlo,monospace!important}
+    .freeze-gate{stroke:var(--accent-3);stroke-width:2}.holdout-box{fill:rgba(182,255,218,.08);stroke:rgba(182,255,218,.45)}.holdout-kicker{fill:var(--accent-3)!important;font-size:10px!important;font-weight:850!important;letter-spacing:.08em}.holdout-value{fill:var(--accent-3)!important;font:750 20px ui-monospace,SFMono-Regular,Menlo,monospace!important}
+    [data-det-bin] line{stroke:rgba(170,201,225,.18)}[data-det-bin] text{font:650 10px ui-monospace,SFMono-Regular,Menlo,monospace}[data-det-bin] circle{fill:var(--accent)}
+    .nist-lock{stroke:var(--accent);stroke-dasharray:3 3}.nist-result{fill:var(--text)!important;font:750 11px ui-monospace,SFMono-Regular,Menlo,monospace!important}
+    .rep-path{fill:none;stroke:var(--accent-2);stroke-width:1.6;stroke-dasharray:1 1}.rep-target{fill:none;stroke:var(--accent-2);stroke-width:1.6;stroke-dasharray:4 4}.rep-target-label{fill:var(--text)!important;font-size:8.5px!important;font-weight:850!important;letter-spacing:.06em}
+    .evidence-story-step{min-height:72vh;padding-left:22px}.evidence-story-step.active{border-left-width:2px}
+    @media(max-width:980px){.evidence-story{grid-template-columns:1fr;gap:24px}.evidence-story-visual-wrap{top:70px}.scrubbed-story-visual{height:36vh;min-height:320px}.evidence-story-step{min-height:56vh}}
+    @media(max-width:620px){.evidence-story-flow{display:none}.scrubbed-story-visual{height:310px;min-height:310px}}
     .story-scene{opacity:0;transform:translateY(8px) scale(.995);transition:opacity .32s ease,transform .32s ease;pointer-events:none}
     .evidence-story-visual[data-story-stage="0"] .scene-0,
     .evidence-story-visual[data-story-stage="1"] .scene-1,
@@ -538,208 +578,56 @@
           </div>
           <div class="evidence-story-stage"><span data-story-kicker>01 · dated disclosure</span><strong data-story-progress>0%</strong></div>
           <div class="story-rail" aria-hidden="true"><span data-story-rail></span></div>
-          <div class="evidence-story-visual" data-story-stage="0" aria-label="Scroll-driven RCA priority evidence ordered from strongest post-disclosure correspondence to weaker supporting evidence">
-            <svg viewBox="0 0 560 620" role="img">
-              <defs>
-                <linearGradient id="rca-flow" x1="0" x2="1"><stop offset="0" stop-color="#67d4ff"/><stop offset=".55" stop-color="#8b7cff"/><stop offset="1" stop-color="#b6ffda"/></linearGradient>
-                <filter id="rca-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-              </defs>
-
-              <g class="story-scene scene-0">
-                <text class="story-scene-kicker" x="40" y="58">JUNE 11, 2025 · PRE-DISCLOSURE BASELINE</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">RCA fixes the failure-state model before the later comparison evidence</div></foreignObject>
-                <path class="rca-timeline" d="M58 312H500"></path>
-                <g class="rca-time-node live" transform="translate(82 312)"><circle r="10"></circle><text y="36" text-anchor="middle">2025</text></g>
-                <g class="rca-time-node" transform="translate(196 312)"><circle r="8"></circle><text y="36" text-anchor="middle">2026</text></g>
-                <g class="rca-time-node" transform="translate(310 312)"><circle r="8"></circle><text y="36" text-anchor="middle">2027</text></g>
-                <g class="rca-time-node" transform="translate(424 312)"><circle r="8"></circle><text y="36" text-anchor="middle">2028</text></g>
-                <g class="rca-time-node faint" transform="translate(494 312)"><circle r="7"></circle><text y="36" text-anchor="middle">2030</text></g>
-                <g class="rca-callout" transform="translate(58 158)"><rect width="182" height="88" rx="14"></rect><text class="story-card-label" x="18" y="28">recursive drift</text><text class="story-card-copy" x="18" y="52">semantic · memory</text><text class="story-card-copy" x="18" y="70">constraint · coordination</text></g>
-                <g class="rca-callout violet" transform="translate(320 158)"><rect width="182" height="88" rx="14"></rect><text class="story-card-label" x="18" y="28">criticality</text><text class="story-card-copy" x="18" y="52">propagation</text><text class="story-card-copy" x="18" y="70">versus correction</text></g>
-                <foreignObject class="story-note-box" x="50" y="450" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">dated public disclosure is the necessary baseline; it is not itself later confirmation</div></foreignObject>
-              
-                <g class="process-layer rca-baseline-process" aria-hidden="true">
-                  <circle class="process-node baseline-root" cx="280" cy="364" r="8"></circle>
-                  <path class="process-edge baseline-edge e1" d="M280 364C238 349 206 334 174 318"></path>
-                  <path class="process-edge baseline-edge e2" d="M280 364C322 349 354 334 386 318"></path>
-                  <path class="process-edge baseline-edge e3" d="M280 364C246 386 218 402 192 420"></path>
-                  <path class="process-edge baseline-edge e4" d="M280 364C314 386 342 402 368 420"></path>
-                  <circle class="process-node baseline-node n1" cx="174" cy="318" r="5"></circle>
-                  <circle class="process-node baseline-node n2" cx="386" cy="318" r="5"></circle>
-                  <circle class="process-node baseline-node n3" cx="192" cy="420" r="5"></circle>
-                  <circle class="process-node baseline-node n4" cx="368" cy="420" r="5"></circle>
-                  <text class="process-label" x="156" y="305">memory</text>
-                  <text class="process-label" x="367" y="305">propagation</text>
-                  <text class="process-label" x="161" y="442">correction</text>
-                  <text class="process-label" x="350" y="442">containment</text>
-                </g>
-</g>
-
-              <g class="story-scene scene-1">
-                <text class="story-scene-kicker" x="40" y="58">STRONGEST EVENT CORRESPONDENCE · 2026</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">OpenAI/Hugging Face event + METR investigation match multiple RCA failure variables simultaneously</div></foreignObject>
-                <g class="rca-incident-card" transform="translate(44 176)">
-                  <rect width="218" height="258" rx="16"></rect>
-                  <text class="story-card-label" x="18" y="34">OBSERVED EVENT</text>
-                  <text class="story-card-copy" x="18" y="66">unauthorized communication</text>
-                  <text class="story-card-copy" x="18" y="88">coordination / propagation</text>
-                  <text class="story-card-copy" x="18" y="110">internet / boundary crossing</text>
-                  <text class="story-card-copy" x="18" y="132">evaluation-scorer pursuit</text>
-                  <path class="rca-incident-flow" d="M28 182H188M158 166L188 182L158 198"></path>
-                  <text class="story-axis-label" x="18" y="226">propagation exceeds intended controls</text>
-                </g>
-                <g class="rca-incident-card independent" transform="translate(298 176)">
-                  <rect width="218" height="258" rx="16"></rect>
-                  <text class="story-card-label" x="18" y="34">INDEPENDENT INVESTIGATION</text>
-                  <text class="story-card-copy" x="18" y="66">METR incident analysis</text>
-                  <text class="story-card-copy" x="18" y="88">overreach / deception</text>
-                  <text class="story-card-copy" x="18" y="110">third-party infrastructure</text>
-                  <text class="story-card-copy" x="18" y="132">evaluation gaming</text>
-                  <circle class="rca-check-ring" cx="108" cy="184" r="28"></circle>
-                  <path class="rca-check" d="M94 184l10 10 20-25"></path>
-                  <text class="story-axis-label" x="108" y="230" text-anchor="middle">separate investigative record</text>
-                </g>
-              
-                <g class="process-layer rca-incident-process" aria-hidden="true">
-                  <path class="incident-boundary" d="M280 166V452"></path>
-                  <text class="process-label" x="280" y="466" text-anchor="middle">intended isolation boundary</text>
-                  <path id="rcaIncidentPath" class="incident-propagation-path" d="M82 376C142 344 186 332 236 344C266 352 284 330 316 316C354 299 398 286 470 300"></path>
-                  <g class="incident-agent-cluster">
-                    <circle class="agent-node a1" cx="92" cy="376" r="8"></circle>
-                    <circle class="agent-node a2" cx="142" cy="348" r="7"></circle>
-                    <circle class="agent-node a3" cx="196" cy="338" r="7"></circle>
-                    <path class="agent-link" d="M100 372L135 352M149 347L188 340"></path>
-                  </g>
-                  <circle class="incident-packet" r="6">
-                    <animateMotion dur="3.6s" repeatCount="indefinite" path="M82 376C142 344 186 332 236 344C266 352 284 330 316 316C354 299 398 286 470 300"></animateMotion>
-                  </circle>
-                  <circle class="external-node" cx="470" cy="300" r="12"></circle>
-                  <circle class="observer-ring" cx="408" cy="382" r="28"></circle>
-                  <path class="observer-line" d="M408 354L408 322L446 306"></path>
-                  <text class="process-label" x="408" y="420" text-anchor="middle">independent observation</text>
-                </g>
-</g>
-
-              <g class="story-scene scene-2">
-                <text class="story-scene-kicker" x="40" y="58">QUANTITATIVE CORRESPONDENCE</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Prospective Rₚᵣₑd compared with the later incident reconstruction</div></foreignObject>
-                <text class="rca-ratio-label" x="84" y="202">R<tspan baseline-shift="sub" font-size="12">pred</tspan></text>
-                <text class="rca-ratio-value" x="84" y="250">0.0100</text>
-                <text class="rca-ratio-label" x="338" y="202">R<tspan baseline-shift="sub" font-size="12">2026</tspan></text>
-                <text class="rca-ratio-value green" x="338" y="250">0.0104</text>
-                <path class="rca-ratio-track" d="M86 322H474"></path>
-                <circle class="rca-ratio-dot pred" cx="276" cy="322" r="9"></circle>
-                <circle class="rca-ratio-dot green observed" cx="284" cy="322" r="7"></circle>
-                <foreignObject class="story-note-box" x="50" y="364" width="460" height="56"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">≈4% relative difference; high specificity, but the event reconstruction remains author-side and requires independent reproduction</div></foreignObject>
-              
-                <g class="process-layer rca-ratio-derivation" aria-hidden="true">
-                  <path class="mini-axis" d="M80 500H470M80 500V418"></path>
-                  <path class="growth-curve" d="M82 496C142 493 190 486 232 474C278 460 318 444 354 430C390 417 422 407 466 398"></path>
-                  <circle class="growth-tracer" r="5">
-                    <animateMotion dur="3.2s" repeatCount="indefinite" path="M82 496C142 493 190 486 232 474C278 460 318 444 354 430C390 417 422 407 466 398"></animateMotion>
-                  </circle>
-                  <text class="process-label" x="86" y="518">a(0)=1</text>
-                  <text class="process-label strong" x="414" y="390">a(3h)=53</text>
-                  <text class="process-label equation" x="260" y="536" text-anchor="middle">λ → μ,ν → R = μ/ν</text>
-                </g>
-</g>
-
-              <g class="story-scene scene-3">
-                <text class="story-scene-kicker" x="40" y="58">ADDITIONAL EXTERNAL EMPIRICAL RECORDS</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Frontier-lab observations independently expose adjacent RCA failure classes</div></foreignObject>
-                <path class="rca-spoke" d="M280 310L144 202M280 310L416 202"></path>
-                <circle class="rca-hub" cx="280" cy="310" r="58"></circle>
-                <text class="rca-hub-title" x="280" y="304" text-anchor="middle">RCA</text>
-                <text class="rca-hub-small" x="280" y="324" text-anchor="middle">2025-06-11</text>
-                <g class="rca-chip green" transform="translate(48 134)"><rect width="192" height="104" rx="13"></rect><text x="16" y="28">OpenAI · 2026</text><text class="small" x="16" y="54">persistent state</text><text class="small" x="16" y="72">oversight evasion</text><text class="small" x="16" y="90">boundary crossing</text></g>
-                <g class="rca-chip violet" transform="translate(320 134)"><rect width="192" height="104" rx="13"></rect><text x="16" y="28">Anthropic · 2026</text><text class="small" x="16" y="54">unauthorized access</text><text class="small" x="16" y="72">task escalation</text><text class="small" x="16" y="90">system boundary crossing</text></g>
-                <foreignObject class="story-note-box" x="50" y="450" width="460" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">strong mechanism correspondence, but less specific than the multi-agent event + independent investigation pair</div></foreignObject>
-              
-                <g class="process-layer rca-match-process" aria-hidden="true">
-                  <path class="match-edge m1" d="M280 310L222 346"></path>
-                  <path class="match-edge m2" d="M280 310L338 346"></path>
-                  <path class="match-edge m3" d="M280 310L236 390"></path>
-                  <path class="match-edge m4" d="M280 310L324 390"></path>
-                  <circle class="match-node n1" cx="222" cy="346" r="6"></circle>
-                  <circle class="match-node n2" cx="338" cy="346" r="6"></circle>
-                  <circle class="match-node n3" cx="236" cy="390" r="6"></circle>
-                  <circle class="match-node n4" cx="324" cy="390" r="6"></circle>
-                  <text class="process-label" x="194" y="365">state</text>
-                  <text class="process-label" x="344" y="365">access</text>
-                  <text class="process-label" x="198" y="410">oversight</text>
-                  <text class="process-label" x="335" y="410">boundary</text>
-                </g>
-</g>
-
-              <g class="story-scene scene-4">
-                <text class="story-scene-kicker" x="40" y="58">INDEPENDENT RESEARCH CONVERGENCE</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Independent 2026 literature formalizes memory contamination and trajectory drift</div></foreignObject>
-                <g class="rca-literature-card" transform="translate(48 166)"><rect width="216" height="236" rx="16"></rect><text class="story-card-label" x="18" y="34">Remembering More, Risking More</text><text class="story-card-copy" x="18" y="66">memory-equipped agents</text><text class="story-card-copy" x="18" y="86">temporal contamination</text><path class="rca-memory-chain" d="M30 132C72 92 102 178 144 132S194 92 202 124"></path><circle class="rca-memory-dot" cx="30" cy="132" r="5"></circle><circle class="rca-memory-dot" cx="144" cy="132" r="5"></circle><text class="story-axis-label" x="18" y="202">persistent state → longitudinal risk</text></g>
-                <g class="rca-literature-card violet" transform="translate(296 166)"><rect width="216" height="236" rx="16"></rect><text class="story-card-label" x="18" y="34">SafetyDrift</text><text class="story-card-copy" x="18" y="66">trajectory accumulation</text><text class="story-card-copy" x="18" y="86">unsafe transition</text><path class="rca-drift-path" d="M26 160L66 150L104 124L142 98L190 54"></path><circle class="rca-memory-dot violet" cx="26" cy="160" r="5"></circle><circle class="rca-memory-dot violet" cx="104" cy="124" r="5"></circle><circle class="rca-memory-dot violet" cx="190" cy="54" r="5"></circle><text class="story-axis-label" x="18" y="202">local actions → trajectory failure</text></g>
-              
-                <g class="process-layer rca-research-process" aria-hidden="true">
-                  <g class="memory-sessions">
-                    <rect class="memory-cell c1" x="74" y="426" width="36" height="18" rx="5"></rect>
-                    <rect class="memory-cell c2" x="120" y="426" width="36" height="18" rx="5"></rect>
-                    <rect class="memory-cell c3" x="166" y="426" width="36" height="18" rx="5"></rect>
-                    <rect class="memory-cell c4" x="212" y="426" width="36" height="18" rx="5"></rect>
-                    <path class="memory-transfer" d="M110 435H120M156 435H166M202 435H212"></path>
-                  </g>
-                  <path class="risk-threshold" d="M316 438H500"></path>
-                  <path class="trajectory-accumulation" d="M318 454L350 447L382 439L414 426L446 405L486 374"></path>
-                  <circle class="trajectory-tracer" r="5">
-                    <animateMotion dur="3.5s" repeatCount="indefinite" path="M318 454L350 447L382 439L414 426L446 405L486 374"></animateMotion>
-                  </circle>
-                  <text class="process-label" x="76" y="466">state persists across sessions</text>
-                  <text class="process-label" x="408" y="466" text-anchor="middle">local actions accumulate</text>
-                </g>
-</g>
-
-              <g class="story-scene scene-5">
-                <text class="story-scene-kicker" x="40" y="58">INSTITUTIONAL RESPONSE · LOWER EVIDENTIARY WEIGHT</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">DeepMind later formalizes monitoring and containment for increasingly capable agents</div></foreignObject>
-                <circle class="story-open-ring" cx="280" cy="300" r="112"></circle>
-                <circle class="story-open-ring inner" cx="280" cy="300" r="72"></circle>
-                <text class="story-open-title" x="280" y="278" text-anchor="middle">MONITOR</text>
-                <text class="story-open-title" x="280" y="308" text-anchor="middle">CONTAIN</text>
-                <text class="story-open-title" x="280" y="338" text-anchor="middle">CORRECT</text>
-                <path class="story-open-ray" d="M280 170V116M390 235L438 207M390 365L438 393M280 430V484M170 365L122 393M170 235L122 207"></path>
-                <foreignObject class="story-note-box" x="50" y="486" width="460" height="54"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">relevant control-architecture convergence, but not direct empirical confirmation of an RCA-predicted failure event</div></foreignObject>
-              
-                <g class="process-layer rca-containment-process" aria-hidden="true">
-                  <circle class="contain-agent" cx="280" cy="300" r="8"></circle>
-                  <circle class="contain-agent satellite s1" cx="240" cy="270" r="5"></circle>
-                  <circle class="contain-agent satellite s2" cx="322" cy="266" r="5"></circle>
-                  <circle class="contain-agent satellite s3" cx="330" cy="332" r="5"></circle>
-                  <circle class="contain-agent satellite s4" cx="232" cy="338" r="5"></circle>
-                  <path class="contain-link" d="M275 295L244 274M285 294L318 270M286 306L326 328M274 306L236 334"></path>
-                  <path class="escape-edge blocked b1" d="M330 332L432 392"></path>
-                  <path class="escape-edge blocked b2" d="M322 266L430 208"></path>
-                  <path class="block-mark" d="M376 354l12 12m0-12l-12 12M374 226l12 12m0-12l-12 12"></path>
-                </g>
-</g>
-
-              <g class="story-scene scene-6">
-                <text class="story-scene-kicker" x="40" y="58">OPEN FORECAST WINDOWS</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Future milestones remain unscored until their stated windows close</div></foreignObject>
-                <path class="rca-future-line" d="M78 322H486"></path>
-                <g class="rca-future-node landed" transform="translate(110 322)"><circle r="11"></circle><text y="38" text-anchor="middle">2025</text><text y="58" text-anchor="middle">landed classes</text></g>
-                <g class="rca-future-node landed" transform="translate(210 322)"><circle r="11"></circle><text y="38" text-anchor="middle">2026</text><text y="58" text-anchor="middle">warning evidence</text></g>
-                <g class="rca-future-node" transform="translate(318 322)"><circle r="9"></circle><text y="38" text-anchor="middle">2027</text><text y="58" text-anchor="middle">open</text></g>
-                <g class="rca-future-node" transform="translate(418 322)"><circle r="9"></circle><text y="38" text-anchor="middle">2028</text><text y="58" text-anchor="middle">open</text></g>
-                <g class="rca-future-node faint" transform="translate(486 322)"><circle r="7"></circle><text y="38" text-anchor="middle">2030</text></g>
-              
-                <g class="process-layer rca-future-process" aria-hidden="true">
-                  <path class="today-line" d="M244 188V420"></path>
-                  <text class="process-label strong" x="244" y="176" text-anchor="middle">TODAY</text>
-                  <path class="future-branch f1" d="M244 246C286 228 318 216 350 198"></path>
-                  <path class="future-branch f2" d="M244 286C304 294 354 306 410 326"></path>
-                  <path class="future-branch f3" d="M244 328C300 354 354 382 468 398"></path>
-                  <circle class="future-end e1" cx="350" cy="198" r="6"></circle>
-                  <circle class="future-end e2" cx="410" cy="326" r="6"></circle>
-                  <circle class="future-end e3" cx="468" cy="398" r="6"></circle>
-                </g>
-</g>
+          <div class="evidence-story-visual scrubbed-story-visual" data-story-kind="rca" aria-label="Continuous scrubbed timeline from the June 11, 2025 RCA disclosure through later external evidence and open forecast windows">
+            <svg class="scrub-story-svg" viewBox="0 0 640 520" role="img" aria-label="RCA evidence timeline ordered by evidentiary weight">
+              <g class="rca-tier" data-rca-tier="1"><line x1="100" x2="612" y1="120" y2="120"></line><text x="100" y="106">EVENT + INDEPENDENT INVESTIGATION</text></g>
+              <g class="rca-tier" data-rca-tier="3"><line x1="100" x2="612" y1="205" y2="205"></line><text x="100" y="191">FRONTIER-LAB OBSERVATIONS</text></g>
+              <g class="rca-tier" data-rca-tier="4"><line x1="100" x2="612" y1="290" y2="290"></line><text x="100" y="276">INDEPENDENT RESEARCH</text></g>
+              <g class="rca-tier" data-rca-tier="5"><line x1="100" x2="612" y1="360" y2="360"></line><text x="100" y="346">INSTITUTIONAL RESPONSE</text></g>
+              <g class="rca-tier" data-rca-tier="6"><line x1="100" x2="612" y1="420" y2="420"></line><text x="100" y="406">OPEN FORECAST WINDOWS</text></g>
+              <line class="scrub-axis" data-rca-axis x1="100" x2="612" y1="470" y2="470" pathLength="1"></line>
+              <g class="rca-tick" data-rca-tick="2025.5"><line y1="466" y2="474"></line><text y="492">Jul 2025</text></g>
+              <g class="rca-tick" data-rca-tick="2026"><line y1="466" y2="474"></line><text y="492">Jan 2026</text></g>
+              <g class="rca-tick" data-rca-tick="2026.5"><line y1="466" y2="474"></line><text y="492">Jul 2026</text></g>
+              <g class="rca-tick" data-rca-tick="2028"><line y1="466" y2="474"></line><text y="492">2028</text></g>
+              <g class="rca-tick" data-rca-tick="2030"><line y1="466" y2="474"></line><text y="492">2030</text></g>
+              <line class="rca-today" data-rca-today y1="96" y2="470"></line>
+              <text class="rca-today-label" data-rca-today-label y="88">TODAY</text>
+              <g data-rca-arcs></g>
+              <g data-rca-nodes></g>
+              <g class="rca-mechanisms" data-rca-mechanisms>
+                <text data-rca-mech x="130" y="386">memory</text>
+                <text data-rca-mech x="130" y="404">propagation</text>
+                <text data-rca-mech x="130" y="422">correction</text>
+                <text data-rca-mech x="130" y="440">containment</text>
+              </g>
+              <g class="rca-origin" data-rca-origin>
+                <circle class="origin-ring" data-rca-origin-ring cy="470"></circle>
+                <circle class="origin-dot" data-rca-origin-dot cy="470"></circle>
+                <text data-rca-origin-label y="512">RCA · 2025-06-11</text>
+              </g>
+              <g class="rca-event-chips" data-rca-chips>
+                <g data-rca-chip="0"><line x1="362" y1="60" y2="120"></line><text x="356" y="64">unauthorized communication</text></g>
+                <g data-rca-chip="1"><line x1="362" y1="79" y2="120"></line><text x="356" y="83">coordination / propagation</text></g>
+                <g data-rca-chip="2"><line x1="362" y1="98" y2="120"></line><text x="356" y="102">internet / boundary crossing</text></g>
+                <g data-rca-chip="3"><line x1="362" y1="117" y2="120"></line><text x="356" y="121">evaluation-scorer pursuit</text></g>
+              </g>
+              <g class="rca-quant-panel" data-rca-quant>
+                <rect x="108" y="168" width="244" height="104" rx="12"></rect>
+                <text class="quant-kicker" x="124" y="192">PROPAGATION / CORRECTION · R = μ/ν</text>
+                <line class="quant-axis" x1="130" x2="330" y1="236" y2="236"></line>
+                <text class="quant-tick" x="130" y="258" text-anchor="middle">0.0095</text>
+                <text class="quant-tick" x="330" y="258" text-anchor="middle">0.0110</text>
+                <circle class="quant-pred" data-rca-q1 cx="196.7" cy="236" r="7"></circle>
+                <text class="quant-pred-label" data-rca-q1-label x="196.7" y="216" text-anchor="middle">Rpred 0.0100</text>
+                <circle class="quant-observed" data-rca-q2 cx="250" cy="236" r="7"></circle>
+                <text class="quant-observed-label" data-rca-q2-label x="262" y="216">R2026 0.0104</text>
+                <path class="quant-bracket" data-rca-q3 d="M197 246V252H250V246"></path>
+                <text class="quant-delta" data-rca-q3-label x="223" y="266" text-anchor="middle">≈4%</text>
+              </g>
+              <text class="rca-ratio-tag" data-rca-ratio-tag y="146">R ≈ 4% apart</text>
+              <line class="rca-future-rail" data-rca-future-rail y1="420" y2="420"></line>
+              <text class="rca-future-copy" data-rca-future-copy x="612" y="448" text-anchor="end">unscored until windows close</text>
             </svg>
           </div>
           <p class="evidence-story-caption" data-story-caption>The June 11, 2025 RCA disclosure fixes the comparison baseline before any of the later evidence used here.</p>
@@ -825,208 +713,70 @@
           </div>
           <div class="evidence-story-stage"><span data-story-kicker>01 · prediction targets</span><strong data-story-progress>0%</strong></div>
           <div class="story-rail" aria-hidden="true"><span data-story-rail></span></div>
-          <div class="evidence-story-visual" data-story-stage="0" aria-label="Scroll-driven detector narrative covering JUNO, LHC and LHCb, CMS, GWTC, NIST, and the next independent replication step">
-            <svg viewBox="0 0 560 620" role="img">
-              <defs><filter id="detector-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-
-              <g class="story-scene scene-0">
-                <text class="story-scene-kicker" x="40" y="58">PREDICTION MAP</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Pre-test detector hypotheses fixed by domain</div></foreignObject>
-                <circle class="detector-origin" cx="280" cy="282" r="55"></circle>
-                <text class="detector-origin-title" x="280" y="278" text-anchor="middle">WCT</text>
-                <text class="detector-origin-small" x="280" y="298" text-anchor="middle">prospective targets</text>
-                <path class="detector-branch green" d="M235 250C188 213 155 182 118 142"></path>
-                <path class="detector-branch violet" d="M325 250C372 213 405 182 442 142"></path>
-                <g class="story-target-card green" transform="translate(42 105)"><rect width="158" height="92" rx="14"></rect><text class="story-card-label" x="18" y="31">JUNO</text><text class="story-card-copy" x="18" y="55">ghost-mode</text><text class="story-card-copy" x="18" y="73">detectability</text></g>
-                <g class="story-target-card violet" transform="translate(360 105)"><rect width="158" height="92" rx="14"></rect><text class="story-card-label" x="18" y="31">LHC / LHCb</text><text class="story-card-copy" x="18" y="55">log-periodic</text><text class="story-card-copy" x="18" y="73">structure</text></g>
-                <foreignObject class="story-note-box" x="50" y="414" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">prospective hypotheses precede target-statistic evaluation</div></foreignObject>
-              
-                <g class="process-layer detector-map-process" aria-hidden="true">
-                  <circle class="branch-pulse green" r="5">
-                    <animateMotion dur="2.8s" repeatCount="indefinite" path="M235 250C188 213 155 182 118 142"></animateMotion>
-                  </circle>
-                  <circle class="branch-pulse violet" r="5">
-                    <animateMotion dur="3.1s" begin=".5s" repeatCount="indefinite" path="M325 250C372 213 405 182 442 142"></animateMotion>
-                  </circle>
-                  <path class="prediction-seal" d="M232 344H328"></path>
-                  <text class="process-label" x="280" y="364" text-anchor="middle">hypotheses fixed before target statistics</text>
+          <div class="evidence-story-visual scrubbed-story-visual" data-story-kind="detector" aria-label="Continuous scrubbed matrix of detector-facing hypotheses, frozen parameters, evaluated targets, and unresolved independent replication">
+            <svg class="scrub-story-svg" viewBox="0 0 640 560" role="img" aria-label="Detector evidence matrix with continuous stage-specific detail">
+              <rect class="detector-active-band" data-det-band x="8" y="112" width="624" height="46" rx="10"></rect>
+              <g class="detector-columns" data-det-head>
+                <text x="250" y="70" text-anchor="middle">HYPOTHESIS</text><text x="250" y="83" text-anchor="middle">STATED</text>
+                <text x="350" y="70" text-anchor="middle">PARAMETERS</text><text x="350" y="83" text-anchor="middle">FROZEN</text>
+                <text x="450" y="70" text-anchor="middle">TARGET</text><text x="450" y="83" text-anchor="middle">EVALUATED</text>
+                <text class="replication-head" x="550" y="70" text-anchor="middle">INDEPENDENT</text><text class="replication-head" x="550" y="83" text-anchor="middle">REPLICATION</text>
+              </g>
+              <rect class="replication-column" data-det-rep-outline x="508" y="92" width="84" height="290" rx="12"></rect>
+              <g data-det-matrix></g>
+              <line class="detector-detail-divider" x1="20" x2="620" y1="398" y2="398"></line>
+              <g class="detector-detail" data-det-panel="0">
+                <path class="seal-line" data-det-seal d="M232 470H232"></path>
+                <text x="320" y="498" text-anchor="middle">hypotheses fixed before target statistics</text>
+              </g>
+              <g class="detector-detail" data-det-panel="1">
+                <text x="40" y="428">ideal modulation</text>
+                <path class="juno-ideal" data-det-wave-ideal></path>
+                <text x="40" y="490">after detector response</text>
+                <path class="juno-smear" data-det-wave-smear></path>
+                <text class="detail-foot" x="600" y="540" text-anchor="end">schematic · detector-response forecast · experimental target evaluation pending</text>
+              </g>
+              <g class="detector-detail" data-det-panel="2">
+                <path class="detail-axes" d="M60 520H580M60 420V520"></path>
+                <path class="lhcb-residual" data-det-lhcb pathLength="1"></path>
+                <text x="60" y="540">log-domain residual search</text>
+              </g>
+              <g class="detector-detail" data-det-panel="3">
+                <g class="cms-points" data-det-cms-points>
+                  <circle cx="75" cy="469" r="3.5"></circle><circle cx="112" cy="444" r="3.5"></circle>
+                  <circle cx="149" cy="481" r="3.5"></circle><circle cx="186" cy="443" r="3.5"></circle>
+                  <circle cx="223" cy="471" r="3.5"></circle><circle cx="260" cy="500" r="3.5"></circle>
+                  <circle cx="297" cy="467" r="3.5"></circle><circle cx="334" cy="441" r="3.5"></circle>
+                  <circle cx="371" cy="473" r="3.5"></circle><circle cx="408" cy="501" r="3.5"></circle>
+                  <circle cx="445" cy="466" r="3.5"></circle><circle cx="482" cy="440" r="3.5"></circle>
                 </g>
-</g>
-
-              <g class="story-scene scene-1">
-                <text class="story-scene-kicker" x="40" y="58">JUNO · NOV 20, 2025</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">JUNO detectability under the detector transfer function</div></foreignObject>
-                <text class="story-axis-label" x="60" y="174">ideal modulation</text>
-                <path class="story-neutrino-wave green juno-ideal-wave" d="M60 220C92 165 124 275 156 220S220 165 252 220S316 275 348 220S412 165 444 220"></path>
-                <text class="story-axis-label" x="60" y="286">after detector response</text>
-                <path class="story-neutrino-wave faint juno-smeared-wave" d="M60 318C92 294 124 342 156 318S220 294 252 318S316 342 348 318S412 294 444 318"></path>
-                <g transform="translate(196 342)"><path class="story-detector" d="M0 0h168v130c0 46-168 46-168 0z"></path><ellipse class="story-detector-top" cx="84" cy="0" rx="84" ry="18"></ellipse><circle class="story-detector-core" cx="84" cy="78" r="31"></circle><text class="story-card-label" x="84" y="84" text-anchor="middle">JUNO</text></g>
-                <foreignObject class="story-note-box" x="50" y="532" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">detector-response forecast · experimental target evaluation pending</div></foreignObject>
-              
-                <g class="process-layer juno-response-process" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="junoKernel" x1="0" x2="1">
-                      <stop offset="0" stop-color="#67d4ff" stop-opacity="0"></stop>
-                      <stop offset=".5" stop-color="#67d4ff" stop-opacity=".22"></stop>
-                      <stop offset="1" stop-color="#67d4ff" stop-opacity="0"></stop>
-                    </linearGradient>
-                  </defs>
-                  <rect class="juno-kernel" x="54" y="184" width="72" height="158" rx="30" fill="url(#junoKernel)">
-                    <animate attributeName="x" values="54;390;54" dur="5s" repeatCount="indefinite"></animate>
-                  </rect>
-                  <path class="response-arrow" d="M462 220V312"></path>
-                  <text class="process-label" x="474" y="260">resolution</text>
-                  <text class="process-label" x="474" y="276">+ smearing</text>
-                </g>
-</g>
-
-              <g class="story-scene scene-2">
-                <text class="story-scene-kicker" x="40" y="58">LHC / LHCb · APR–MAY 2026</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">LHCb phenomenology mapped to an open-data spectral test</div></foreignObject>
-                <circle class="story-collider-ring" cx="160" cy="282" r="94"></circle>
-                <circle class="story-collider-ring inner" cx="160" cy="282" r="68"></circle>
-                <circle class="story-dot" cx="244" cy="242" r="7"></circle>
-                <circle class="story-dot violet" cx="78" cy="326" r="7"></circle>
-                <path class="story-collider-track" d="M78 326C112 270 179 220 244 242"></path>
-                <text class="story-card-label" x="160" y="278" text-anchor="middle">LHCb</text>
-                <text class="story-card-copy" x="160" y="299" text-anchor="middle">B⁰ → K*⁰ μ⁺μ⁻</text>
-                <g transform="translate(305 196)">
-                  <path class="story-plot-axis" d="M0 170H205M0 10V170"></path>
-                  <path class="story-signal-line violet" d="M0 92C18 42 36 142 54 92S90 42 108 92S144 142 162 92S198 42 205 77"></path>
-                  <text class="story-axis-label" x="0" y="196">log-domain residual search</text>
-                </g>
-                <foreignObject class="story-note-box" x="50" y="520" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">phenomenology → open-data candidate-spectrum analysis</div></foreignObject>
-              
-                <g class="process-layer lhcb-transform-process" aria-hidden="true">
-                  <circle class="collider-particle" cx="160" cy="188" r="5">
-                    <animateTransform attributeName="transform" type="rotate" from="0 160 282" to="360 160 282" dur="4s" repeatCount="indefinite"></animateTransform>
-                  </circle>
-                  <path class="transform-arrow" d="M262 282H300"></path>
-                  <text class="process-label" x="281" y="268" text-anchor="middle">log(m)</text>
-                  <text class="process-label" x="281" y="300" text-anchor="middle">subtract baseline</text>
-                  <circle class="residual-tracer" r="4">
-                    <animateMotion dur="3.2s" repeatCount="indefinite" path="M305 288C323 238 341 338 359 288S395 238 413 288S449 338 467 288S503 238 510 273"></animateMotion>
-                  </circle>
-                </g>
-</g>
-
-              <g class="story-scene scene-3">
-                <text class="story-scene-kicker" x="40" y="58">CMS · FROZEN PROSPECTIVE TEST</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Frozen waveform evaluated on the untouched G2 target</div></foreignObject>
-                <g transform="translate(56 180)">
-                  <path class="story-plot-axis" d="M0 220H448M0 20V220"></path>
-                  <path class="story-signal-line" d="M0 132C24 68 48 196 72 132S120 68 144 132S192 196 216 132S264 68 288 132S336 196 360 132S408 68 432 132"></path>
-                  <path class="story-freeze-line" d="M250 18V222"></path>
-                  <text class="story-axis-label" x="250" y="246" text-anchor="middle">freeze → G2 holdout</text>
-                  <text class="story-metric-big" x="300" y="62">Δχ² 126.28</text>
-                  <text class="story-metric-small" x="300" y="86">A = 0.9709</text>
-                </g>
-                <foreignObject class="story-note-box" x="50" y="514" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">strong fixed-model result · background sensitivity remains material</div></foreignObject>
-              
-                <g class="process-layer cms-freeze-process" aria-hidden="true">
-                  <g class="cms-holdout-points">
-                    <circle cx="86" cy="322" r="4"></circle><circle cx="118" cy="280" r="4"></circle>
-                    <circle cx="150" cy="342" r="4"></circle><circle cx="182" cy="278" r="4"></circle>
-                    <circle cx="214" cy="326" r="4"></circle><circle cx="246" cy="374" r="4"></circle>
-                    <circle cx="278" cy="320" r="4"></circle><circle cx="310" cy="274" r="4"></circle>
-                    <circle cx="342" cy="330" r="4"></circle><circle cx="374" cy="376" r="4"></circle>
-                    <circle cx="406" cy="318" r="4"></circle><circle cx="438" cy="272" r="4"></circle>
-                  </g>
-                  <g class="freeze-lock" transform="translate(296 184)">
-                    <rect x="-12" y="10" width="24" height="20" rx="4"></rect>
-                    <path d="M-7 10V2a7 7 0 0 1 14 0v8"></path>
-                  </g>
-                  <text class="process-label strong" x="296" y="168" text-anchor="middle">parameters sealed</text>
-                </g>
-</g>
-
-              <g class="story-scene scene-4">
-                <text class="story-scene-kicker" x="40" y="58">GWTC · FROZEN HOLDOUT</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Training-selected k* evaluated once on the GWTC holdout</div></foreignObject>
-                <g transform="translate(56 180)">
-                  <rect class="story-split train" width="210" height="180" rx="14"></rect>
-                  <rect class="story-split holdout" x="238" width="210" height="180" rx="14"></rect>
-                  <text class="story-card-label" x="22" y="35">TRAIN · N=173</text>
-                  <text class="story-card-copy" x="22" y="67">select k*</text>
-                  <text class="story-metric-big" x="22" y="116">9.6023</text>
-                  <path class="story-arrow" d="M198 90H248"></path>
-                  <text class="story-card-label" x="260" y="35">HOLDOUT · N=104</text>
-                  <text class="story-card-copy" x="260" y="67">evaluate once</text>
-                  <text class="story-metric-big green" x="260" y="116">p=.00130</text>
-                </g>
-                <foreignObject class="story-note-box" x="50" y="470" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">training selection and holdout evaluation use disjoint event sets</div></foreignObject>
-              
-                <g class="process-layer gwtc-flow-process" aria-hidden="true">
-                  <g class="train-stream">
-                    <circle class="event-dot d1" cx="34" cy="250" r="4"></circle>
-                    <circle class="event-dot d2" cx="24" cy="275" r="4"></circle>
-                    <circle class="event-dot d3" cx="38" cy="300" r="4"></circle>
-                  </g>
-                  <path class="gwtc-gate" d="M272 214V340"></path>
-                  <path class="gwtc-gate latch" d="M264 250H280M264 304H280"></path>
-                  <g class="holdout-stream">
-                    <circle class="event-dot holdout d1" cx="526" cy="250" r="4"></circle>
-                    <circle class="event-dot holdout d2" cx="536" cy="275" r="4"></circle>
-                    <circle class="event-dot holdout d3" cx="522" cy="300" r="4"></circle>
-                  </g>
-                  <text class="process-label" x="280" y="384" text-anchor="middle">freeze gate closes before holdout evaluation</text>
-                </g>
-</g>
-
-              <g class="story-scene scene-5">
-                <text class="story-scene-kicker" x="40" y="58">NIST · ATOMIC OPEN DATA</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Fe II frequency selection invariant across three binnings</div></foreignObject>
-                <g transform="translate(60 188)">
-                  <text class="story-axis-label" x="0" y="-18">selected k</text>
-                  <path class="story-plot-axis" d="M0 240H430M0 0V240"></path>
-                  <path class="story-bin-line" d="M0 58H430M0 120H430M0 182H430"></path>
-                  <circle class="story-bin-dot" cx="312" cy="58" r="8"></circle>
-                  <circle class="story-bin-dot" cx="312" cy="120" r="8"></circle>
-                  <circle class="story-bin-dot" cx="312" cy="182" r="8"></circle>
-                  <path class="story-bin-lock" d="M312 42V198"></path>
-                  <text class="story-bin-label" x="18" y="63">120 bins</text>
-                  <text class="story-bin-label" x="18" y="125">160 bins</text>
-                  <text class="story-bin-label" x="18" y="187">200 bins</text>
-                  <text class="story-metric-big" x="336" y="126">k=31.3265</text>
-                  <text class="story-metric-small" x="336" y="151">0/5000 × 3</text>
-                </g>
-              
-                <g class="process-layer nist-rebin-process" aria-hidden="true">
-                  <g class="hist-row h120" transform="translate(250 218)">
-                    <rect x="0" y="12" width="18" height="30"></rect><rect x="24" y="4" width="18" height="38"></rect><rect x="48" y="18" width="18" height="24"></rect><rect x="72" y="0" width="18" height="42"></rect><rect x="96" y="10" width="18" height="32"></rect><rect x="120" y="20" width="18" height="22"></rect>
-                  </g>
-                  <g class="hist-row h160" transform="translate(250 280)">
-                    <rect x="0" y="18" width="14" height="24"></rect><rect x="20" y="6" width="14" height="36"></rect><rect x="40" y="12" width="14" height="30"></rect><rect x="60" y="0" width="14" height="42"></rect><rect x="80" y="7" width="14" height="35"></rect><rect x="100" y="16" width="14" height="26"></rect><rect x="120" y="21" width="14" height="21"></rect>
-                  </g>
-                  <g class="hist-row h200" transform="translate(250 342)">
-                    <rect x="0" y="20" width="11" height="22"></rect><rect x="16" y="12" width="11" height="30"></rect><rect x="32" y="4" width="11" height="38"></rect><rect x="48" y="10" width="11" height="32"></rect><rect x="64" y="0" width="11" height="42"></rect><rect x="80" y="8" width="11" height="34"></rect><rect x="96" y="15" width="11" height="27"></rect><rect x="112" y="22" width="11" height="20"></rect><rect x="128" y="25" width="11" height="17"></rect>
-                  </g>
-                  <text class="process-label strong" x="312" y="424" text-anchor="middle">same selected frequency survives re-binning</text>
-                </g>
-</g>
-
-              <g class="story-scene scene-6">
-                <text class="story-scene-kicker" x="40" y="58">NEXT DISCRIMINATOR</text>
-                <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Remaining discriminator: independent replication and causal identification</div></foreignObject>
-                <circle class="story-open-ring" cx="280" cy="300" r="112"></circle>
-                <circle class="story-open-ring inner" cx="280" cy="300" r="72"></circle>
-                <text class="story-open-title" x="280" y="286" text-anchor="middle">INDEPENDENT</text>
-                <text class="story-open-title" x="280" y="316" text-anchor="middle">REPLICATION</text>
-                <text class="story-axis-label" x="280" y="356" text-anchor="middle">new data · new implementation · physical cause</text>
-                <path class="story-open-ray" d="M280 170V116M390 235L438 207M390 365L438 393M280 430V484M170 365L122 393M170 235L122 207"></path>
-              
-                <g class="process-layer replication-process" aria-hidden="true">
-                  <path id="repData" class="replication-path" d="M92 180C150 214 198 248 240 282"></path>
-                  <path id="repCode" class="replication-path" d="M468 180C410 214 362 248 320 282"></path>
-                  <path id="repCause" class="replication-path" d="M280 500V372"></path>
-                  <circle class="replication-pulse data" r="5"><animateMotion dur="3s" repeatCount="indefinite" path="M92 180C150 214 198 248 240 282"></animateMotion></circle>
-                  <circle class="replication-pulse code" r="5"><animateMotion dur="3.4s" begin=".4s" repeatCount="indefinite" path="M468 180C410 214 362 248 320 282"></animateMotion></circle>
-                  <circle class="replication-pulse cause" r="5"><animateMotion dur="2.8s" begin=".8s" repeatCount="indefinite" path="M280 500V372"></animateMotion></circle>
-                  <text class="process-label" x="74" y="164">new data</text>
-                  <text class="process-label" x="486" y="164" text-anchor="end">new implementation</text>
-                  <text class="process-label" x="280" y="526" text-anchor="middle">causal discrimination</text>
-                </g>
-</g>
+                <path class="cms-wave" data-det-cms-wave pathLength="1"></path>
+                <text class="cms-chi" data-det-cms-chi x="600" y="426" text-anchor="end">Δχ² 0.00</text>
+                <text class="cms-sub" x="600" y="442" text-anchor="end">A = 0.9709 · freeze → G2 holdout</text>
+              </g>
+              <g class="detector-detail" data-det-panel="4">
+                <rect class="train-box" x="60" y="420" width="220" height="90" rx="12"></rect>
+                <text class="train-kicker" x="78" y="446">TRAIN · N=173</text>
+                <text class="train-value" x="78" y="482">k* 9.6023</text>
+                <line class="freeze-gate" data-det-gate x1="320" x2="320" y1="410" y2="410"></line>
+                <g data-det-holdout><rect class="holdout-box" x="360" y="420" width="220" height="90" rx="12"></rect><text class="holdout-kicker" x="378" y="446">HOLDOUT · N=104</text></g>
+                <text class="holdout-value" data-det-pval x="378" y="482">p = .00130</text>
+                <text class="detail-foot" x="320" y="534" text-anchor="middle">training selection and holdout evaluation use disjoint event sets</text>
+              </g>
+              <g class="detector-detail" data-det-panel="5">
+                <g data-det-bin="0"><line x1="140" x2="560" y1="432" y2="432"></line><text x="60" y="436">120 bins</text><circle cx="420" cy="432"></circle></g>
+                <g data-det-bin="1"><line x1="140" x2="560" y1="470" y2="470"></line><text x="60" y="474">160 bins</text><circle cx="420" cy="470"></circle></g>
+                <g data-det-bin="2"><line x1="140" x2="560" y1="508" y2="508"></line><text x="60" y="512">200 bins</text><circle cx="420" cy="508"></circle></g>
+                <line class="nist-lock" data-det-lock x1="420" x2="420" y1="416" y2="416"></line>
+                <text class="nist-result" data-det-nist-label x="436" y="540">k=31.3265 · 0/5000 × 3</text>
+              </g>
+              <g class="detector-detail" data-det-panel="6">
+                <path class="rep-path" data-det-rep-path="0" pathLength="1" d="M70 420 C200 430 380 450 512 466"></path><text x="70" y="412">new data</text>
+                <path class="rep-path" data-det-rep-path="1" pathLength="1" d="M70 520 C200 510 380 490 512 476"></path><text x="70" y="536">new implementation</text>
+                <path class="rep-path" data-det-rep-path="2" pathLength="1" d="M300 540 C360 520 440 500 514 480"></path><text x="300" y="556" text-anchor="middle">physical cause</text>
+                <circle class="rep-target" data-det-rep-target cx="550" cy="470"></circle>
+                <text class="rep-target-label" x="550" y="474" text-anchor="middle">REPLICATION</text>
+              </g>
             </svg>
           </div>
           <p class="evidence-story-caption" data-story-caption>The detector record begins with pre-test targets: JUNO constrains resolution-surviving ghost-mode modulation, while LHC/LHCb specifies log-periodic collider structure.</p>
@@ -1221,102 +971,308 @@
       update();
     }
 
-    const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const stories=[...document.querySelectorAll('[data-scroll-story]')];
-    const states=stories.map(story=>{
-      const steps=[...story.querySelectorAll('[data-story-step]')];
-      const visual=story.querySelector('.evidence-story-visual');
-      const svg=visual&&visual.querySelector('svg');
+    const NS='http://www.w3.org/2000/svg';
+    const cl=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+    const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+    const dec=(y,m,d)=>y+(m-1)/12+(d-1)/365;
+    const TODAY=2026+9/12+6/365;
+    const xs=v=>v<=TODAY?100+((v-2025.33)/(TODAY-2025.33))*330:430+((v-TODAY)/(2031-TODAY))*180;
+    const OX=xs(dec(2025,6,11));
+    const wave=(x0,x1,y,amp,per)=>{
+      let d='';
+      for(let x=x0;x<=x1;x+=4)d+=(x===x0?'M':'L')+x+' '+(y-amp*Math.sin(((x-x0)/per)*Math.PI*2)).toFixed(1);
+      return d;
+    };
+    const svgEl=(tag,attrs={})=>{
+      const el=document.createElementNS(NS,tag);
+      Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));
+      return el;
+    };
+    const setOp=(el,v)=>{if(el)el.style.opacity=String(cl(v))};
+
+    const RCA_NODE_DATA=[
+      {step:1,date:dec(2026,8,26),y:120,r:9,c:'#b6ffda',label:'OpenAI/HF event + METR · 2026-08-26',anchor:'start',ring:true,ldy:-14},
+      {step:3,date:dec(2026,9,9),y:205,r:7,c:'#b6ffda',label:'Anthropic · 2026-09-09',anchor:'end'},
+      {step:3,date:dec(2026,9,16),y:205,r:7,c:'#b6ffda',label:'OpenAI · 2026-09-16',anchor:'start'},
+      {step:4,date:dec(2026,3,15),y:290,r:7,c:'#67d4ff',label:'SafetyDrift · Mar 2026',anchor:'end'},
+      {step:4,date:dec(2026,5,15),y:290,r:7,c:'#67d4ff',label:'Remembering More, Risking More · May 2026',anchor:'start',ldy:22},
+      {step:5,date:dec(2026,6,18),y:360,r:7,c:'#ffcd5c',label:'DeepMind · 2026-06-18',anchor:'end',weak:true},
+      {step:6,date:2027.5,y:420,r:7,c:'#8b7cff',label:'2027',anchor:'start',hollow:true,dash:'2 2',noArc:true,ldy:-14},
+      {step:6,date:2028.5,y:420,r:7,c:'#8b7cff',label:'2028',anchor:'start',hollow:true,dash:'2 2',noArc:true,ldy:-14},
+      {step:6,date:2030,y:420,r:7,c:'#8b7cff',label:'2029–30',anchor:'start',hollow:true,dash:'2 2',noArc:true,ldy:-14}
+    ];
+
+    const DET_ROWS=[
+      ['JUNO','Nov 20, 2025 · forecast',[['done','stated'],['na','n/a'],['pending','pending'],['open','open']]],
+      ['LHC / LHCb','Apr 23 → May 9, 2026',[['done','C9(q²)'],['na','n/a'],['convergence','open-data'],['open','open']]],
+      ['CMS','G2 untouched target',[['done','waveform'],['done','sealed'],['conditional','Δχ² 126.28'],['open','open']]],
+      ['GWTC','train 173 · holdout 104',[['done','train-only'],['done','k*=9.6023'],['supported','p=.00130'],['open','open']]],
+      ['NIST','Fe II · 3 binnings',[['done','scan'],['na','n/a'],['convergence','bin-stable'],['open','open']]]
+    ];
+    const DET_STATUS={
+      done:{fill:'rgba(103,212,255,.14)',stroke:'rgba(103,212,255,.6)',text:'#e9f0f6',dash:'0'},
+      supported:{fill:'rgba(182,255,218,.18)',stroke:'#b6ffda',text:'#b6ffda',dash:'0'},
+      convergence:{fill:'rgba(103,212,255,.2)',stroke:'#67d4ff',text:'#67d4ff',dash:'0'},
+      conditional:{fill:'rgba(255,205,92,.14)',stroke:'#ffcd5c',text:'#ffcd5c',dash:'0'},
+      pending:{fill:'none',stroke:'#8b7cff',text:'#8b7cff',dash:'3 3'},
+      open:{fill:'none',stroke:'#8b7cff',text:'#8b7cff',dash:'3 3'},
+      na:{fill:'none',stroke:'rgba(170,201,225,.18)',text:'#71869a',dash:'1 4'}
+    };
+
+    const stories=[...document.querySelectorAll('[data-scroll-story]')].map(story=>{
+      const visual=story.querySelector('.scrubbed-story-visual');
       const state={
-        story,
-        visual,
-        svg,
-        steps,
+        story,visual,svg:visual&&visual.querySelector('svg'),
+        kind:visual&&visual.dataset.storyKind,
+        steps:[...story.querySelectorAll('[data-story-step]')],
         kicker:story.querySelector('[data-story-kicker]'),
         progress:story.querySelector('[data-story-progress]'),
         rail:story.querySelector('[data-story-rail]'),
         caption:story.querySelector('[data-story-caption]'),
         flow:[...story.querySelectorAll('[data-flow-step]')],
-        flowLines:[...story.querySelectorAll('[data-story-flow] i')],
-        active:0
+        cur:0,target:0,active:0
       };
-      const restartSvgMotion=()=>{
-        if(!svg||typeof svg.setCurrentTime!=='function')return;
-        try{
-          svg.pauseAnimations();
-          svg.setCurrentTime(0);
-          if(!reduceMotion)svg.unpauseAnimations();
-        }catch(_){}
-      };
-      const render=idx=>{
-        idx=Math.max(0,Math.min(steps.length-1,idx));
-        const changed=idx!==state.active;
-        state.active=idx;
-        if(state.visual)state.visual.dataset.storyStage=String(idx);
-        steps.forEach((step,i)=>step.classList.toggle('active',i===idx));
-        const step=steps[idx];
-        if(step&&state.kicker)state.kicker.textContent=step.dataset.kicker||'';
-        if(step&&state.caption)state.caption.textContent=step.dataset.caption||'';
-        state.flow.forEach((node,i)=>{
-          node.classList.toggle('active',i===idx);
-          node.classList.toggle('landed',i<idx);
-        });
-        state.flowLines.forEach((line,i)=>line.classList.toggle('landed',i<idx));
-        if(changed||idx===0)restartSvgMotion();
-      };
-      state.render=render;
-      render(0);
-      if(reduceMotion&&svg&&typeof svg.pauseAnimations==='function'){
-        try{svg.pauseAnimations()}catch(_){}
-      }
+      if(state.kind==='rca')buildRca(state);
+      if(state.kind==='detector')buildDetector(state);
       return state;
     });
 
-    if('IntersectionObserver' in window&&!reduceMotion){
-      const storyObserver=new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-          const state=states.find(s=>s.visual===entry.target);
-          if(!state||!state.svg||typeof state.svg.pauseAnimations!=='function')return;
-          try{
-            if(entry.isIntersecting)state.svg.unpauseAnimations();
-            else state.svg.pauseAnimations();
-          }catch(_){}
-        });
-      },{rootMargin:'18% 0px 18% 0px'});
-      states.forEach(state=>{if(state.visual)storyObserver.observe(state.visual)});
+    function buildRca(state){
+      if(!state.svg)return;
+      state.axis=state.svg.querySelector('[data-rca-axis]');
+      state.ticks=[...state.svg.querySelectorAll('[data-rca-tick]')].map(g=>{
+        const x=xs(Number(g.dataset.rcaTick));
+        const line=g.querySelector('line'),text=g.querySelector('text');
+        line.setAttribute('x1',x);line.setAttribute('x2',x);text.setAttribute('x',x);
+        return g;
+      });
+      state.tiers=[...state.svg.querySelectorAll('[data-rca-tier]')];
+      state.today=state.svg.querySelector('[data-rca-today]');
+      state.todayLabel=state.svg.querySelector('[data-rca-today-label]');
+      const todayX=xs(TODAY);
+      state.today.setAttribute('x1',todayX);state.today.setAttribute('x2',todayX);state.todayLabel.setAttribute('x',todayX);
+      state.futureRail=state.svg.querySelector('[data-rca-future-rail]');
+      state.futureCopy=state.svg.querySelector('[data-rca-future-copy]');
+      state.futureRail.setAttribute('x1',todayX);state.futureRail.setAttribute('x2',612);
+
+      const arcs=state.svg.querySelector('[data-rca-arcs]');
+      const nodes=state.svg.querySelector('[data-rca-nodes]');
+      state.rcaNodes=RCA_NODE_DATA.map(cfg=>{
+        const x=xs(cfg.date);
+        const arc=svgEl('path',{class:'rca-arc',pathLength:1,stroke:cfg.c});
+        if(!cfg.noArc)arc.setAttribute('d','M'+OX.toFixed(1)+' 461 C'+OX.toFixed(1)+' '+(cfg.y+60)+' '+(x-90).toFixed(1)+' '+cfg.y+' '+(x-cfg.r-2).toFixed(1)+' '+cfg.y);
+        else arc.style.display='none';
+        arcs.appendChild(arc);
+        const g=svgEl('g',{class:'rca-node'});
+        const ring=svgEl('circle',{class:'rca-node-ring',cx:x,cy:cfg.y,r:cfg.r+6,stroke:cfg.c});
+        const dot=svgEl('circle',{class:'rca-node-dot',cx:x,cy:cfg.y,r:0,fill:cfg.hollow?'#07111f':cfg.c,stroke:cfg.c,'stroke-dasharray':cfg.dash||'0'});
+        let anchor=cfg.anchor;
+        if(anchor==='start'&&x>560)anchor='end';
+        const lx=anchor==='end'?x-cfg.r-8:x+cfg.r+8;
+        const label=svgEl('text',{class:'rca-node-label',x:lx,y:cfg.y+(cfg.ldy??4),'text-anchor':anchor,fill:cfg.c});
+        label.textContent=cfg.label;
+        g.append(ring,dot,label);nodes.appendChild(g);
+        return {cfg,x,arc,g,ring,dot,label};
+      });
+      state.origin=state.svg.querySelector('[data-rca-origin]');
+      state.originRing=state.svg.querySelector('[data-rca-origin-ring]');
+      state.originDot=state.svg.querySelector('[data-rca-origin-dot]');
+      state.originLabel=state.svg.querySelector('[data-rca-origin-label]');
+      state.originRing.setAttribute('cx',OX);state.originDot.setAttribute('cx',OX);state.originLabel.setAttribute('x',OX);
+      state.mech=[...state.svg.querySelectorAll('[data-rca-mech]')];
+      state.chips=[...state.svg.querySelectorAll('[data-rca-chip]')];
+      const evx=xs(dec(2026,8,26))-10;
+      state.chips.forEach(g=>g.querySelector('line').setAttribute('x2',evx));
+      state.quant=state.svg.querySelector('[data-rca-quant]');
+      state.q1=state.svg.querySelector('[data-rca-q1]');state.q1l=state.svg.querySelector('[data-rca-q1-label]');
+      state.q2=state.svg.querySelector('[data-rca-q2]');state.q2l=state.svg.querySelector('[data-rca-q2-label]');
+      state.q3=state.svg.querySelector('[data-rca-q3]');state.q3l=state.svg.querySelector('[data-rca-q3-label]');
+      state.ratioTag=state.svg.querySelector('[data-rca-ratio-tag]');
+      state.ratioTag.setAttribute('x',xs(dec(2026,8,26))+16);
     }
 
-    let ticking=false;
-    const measure=()=>{
-      ticking=false;
-      const target=innerHeight*.48;
-      states.forEach(state=>{
-        let best=0,bestDist=Infinity;
-        state.steps.forEach((step,i)=>{
-          const rect=step.getBoundingClientRect();
-          const center=rect.top+rect.height*.5;
-          const d=Math.abs(center-target);
-          if(d<bestDist){bestDist=d;best=i}
+    function buildDetector(state){
+      if(!state.svg)return;
+      state.band=state.svg.querySelector('[data-det-band]');
+      state.head=state.svg.querySelector('[data-det-head]');
+      state.repOutline=state.svg.querySelector('[data-det-rep-outline]');
+      state.panels=[...state.svg.querySelectorAll('[data-det-panel]')];
+      const root=state.svg.querySelector('[data-det-matrix]');
+      const cols=[250,350,450,550],ys=[120,175,230,285,340];
+      state.detRows=[];
+      DET_ROWS.forEach(([name,sub,cells],i)=>{
+        const label=svgEl('text',{class:'detector-row-label',x:20,y:ys[i]+12});label.textContent=name;
+        const sublabel=svgEl('text',{class:'detector-row-sub',x:20,y:ys[i]+26});sublabel.textContent=sub;
+        const rule=svgEl('line',{class:'detector-row-rule',x1:194,x2:592,y1:ys[i]+15,y2:ys[i]+15});
+        root.append(label,sublabel,rule);
+        const cellRefs=cells.map(([status,text],j)=>{
+          const s=DET_STATUS[status];
+          const rect=svgEl('rect',{class:'detector-cell',x:cols[j],y:ys[i],width:0,height:30,rx:7,fill:s.fill,stroke:s.stroke,'stroke-dasharray':s.dash});
+          const tx=svgEl('text',{class:'detector-cell-label',x:cols[j],y:ys[i]+19,fill:s.text});tx.textContent=text;
+          root.append(rect,tx);
+          return {rect,text:tx,status,col:j,center:cols[j]};
         });
-        if(best!==state.active)state.render(best);
-        const rect=state.story.getBoundingClientRect();
-        const start=innerHeight*.55;
-        const span=Math.max(1,rect.height-innerHeight*.32);
-        const p=Math.max(0,Math.min(1,(start-rect.top)/span));
-        if(state.rail)state.rail.style.transform='scaleX('+p+')';
-        if(state.progress)state.progress.textContent=Math.round(p*100)+'%';
+        state.detRows.push({label,sublabel,rule,cells:cellRefs,y:ys[i],index:i});
       });
+      state.seal=state.svg.querySelector('[data-det-seal]');
+      state.waveIdeal=state.svg.querySelector('[data-det-wave-ideal]');
+      state.waveSmear=state.svg.querySelector('[data-det-wave-smear]');
+      state.lhcb=state.svg.querySelector('[data-det-lhcb]');
+      state.cmsPts=state.svg.querySelector('[data-det-cms-points]');
+      state.cmsWave=state.svg.querySelector('[data-det-cms-wave]');
+      state.cmsChi=state.svg.querySelector('[data-det-cms-chi]');
+      state.gate=state.svg.querySelector('[data-det-gate]');
+      state.holdout=state.svg.querySelector('[data-det-holdout]');
+      state.pval=state.svg.querySelector('[data-det-pval]');
+      state.bins=[...state.svg.querySelectorAll('[data-det-bin]')];
+      state.lock=state.svg.querySelector('[data-det-lock]');
+      state.nistLabel=state.svg.querySelector('[data-det-nist-label]');
+      state.repPaths=[...state.svg.querySelectorAll('[data-det-rep-path]')];
+      state.repTarget=state.svg.querySelector('[data-det-rep-target]');
+      state.waveIdeal.setAttribute('d',wave(40,600,450,18,80));
+      state.lhcb.setAttribute('d',wave(60,580,470,30,104));
+      state.cmsWave.setAttribute('d',wave(40,560,470,36,144*520/448));
+    }
+
+    function updateCommon(state,t){
+      const a=cl(Math.round(t),0,state.steps.length-1);
+      state.active=a;
+      state.steps.forEach((step,i)=>step.classList.toggle('active',i===a));
+      const step=state.steps[a];
+      if(step&&state.kicker)state.kicker.textContent=step.dataset.kicker||'';
+      if(step&&state.caption)state.caption.textContent=step.dataset.caption||'';
+      state.flow.forEach((node,i)=>{
+        node.classList.toggle('active',i===a);
+        node.classList.toggle('landed',i<a);
+      });
+      const p=cl((t+1)/state.steps.length);
+      if(state.rail)state.rail.style.transform='scaleX('+p+')';
+      if(state.progress)state.progress.textContent=Math.round(p*100)+'%';
+    }
+
+    function updateRca(state,t){
+      const foc=s=>t>5.5?.9:Math.abs(t-s)<.55?1:.42;
+      const axis=ease(cl((t+.95)/.7));
+      state.axis.style.strokeDashoffset=String(1-axis);setOp(state.axis,axis);
+      state.ticks.forEach(g=>setOp(g,axis));
+      state.tiers.forEach(g=>{
+        const s=Number(g.dataset.rcaTier);
+        setOp(g,cl((t-(s-.6))/.4)*.85);
+      });
+      const o=cl((t+.45)/.35);
+      setOp(state.origin,o);
+      state.originDot.setAttribute('r',(9*(o<1?o*(1+.35*Math.sin(Math.PI*o)):1)).toFixed(1));
+      state.originRing.setAttribute('r',(9+14*cl((t+.2)/.6)).toFixed(1));
+      setOp(state.originRing,(1-cl((t+.2)/.6))*o);
+      const mechOp=o*(t<.6?1:.38);state.mech.forEach(el=>setOp(el,mechOp));
+
+      state.rcaNodes.forEach(n=>{
+        const {cfg}=n;
+        const a=cl((t-(cfg.step-.62))/.42),b=cl((t-(cfg.step-.28))/.3),f=foc(cfg.step);
+        const pop=b<1?b*(1+.35*Math.sin(Math.PI*b)):1;
+        n.dot.setAttribute('r',(cfg.r*pop).toFixed(1));
+        n.ring.setAttribute('r',((cfg.r+6)*pop).toFixed(1));
+        setOp(n.g,b*f);setOp(n.ring,cfg.ring?b*f:0);
+        if(!cfg.noArc){
+          n.arc.style.strokeDashoffset=String(1-ease(a));
+          setOp(n.arc,.75*f*(cfg.weak?.55:1));
+        }
+      });
+
+      state.chips.forEach((g,i)=>{
+        const v=cl((t-(.72+i*.12))/.16)*(t<1.6?1:t<2.6?.45:.28);
+        setOp(g,v);
+      });
+      const qIn=cl((t-1.5)/.3)*(1-cl((t-2.55)/.3));
+      setOp(state.quant,qIn);
+      const q1=cl((t-1.72)/.2),q2=cl((t-1.92)/.2),q3=cl((t-2.1)/.15);
+      state.q1.setAttribute('cy',(236-24*(1-q1)).toFixed(1));state.q2.setAttribute('cy',(236-24*(1-q2)).toFixed(1));
+      setOp(state.q1,q1);setOp(state.q1l,q1);setOp(state.q2,q2);setOp(state.q2l,q2);setOp(state.q3,q3);setOp(state.q3l,q3);
+      setOp(state.ratioTag,cl((t-2.55)/.3)*(t>5.5?.9:.8));
+      const todayOp=cl((t-5.45)/.3),futureOp=cl((t-5.7)/.3);
+      setOp(state.today,todayOp);setOp(state.todayLabel,todayOp);setOp(state.futureRail,futureOp);setOp(state.futureCopy,futureOp);
+    }
+
+    function updateDetector(state,t){
+      const step=cl(Math.round(t),0,6),lane=step-1;
+      const lf=i=>t<.5||t>5.5?1:i===lane?1:.45;
+      setOp(state.head,cl((t+.9)/.4));
+      state.detRows.forEach(row=>{
+        const rowOp=cl((t+.7-row.index*.06)/.4)*lf(row.index);
+        setOp(row.label,rowOp);setOp(row.sublabel,rowOp);setOp(row.rule,rowOp);
+        row.cells.forEach(cell=>{
+          const j=cell.col;
+          const v=j===0?cl((t+.55-row.index*.07)/.3):cl((t-(row.index+1-.55)-(j-1)*.2)/.3);
+          const w=80*ease(v);
+          cell.rect.setAttribute('x',(cell.center-w/2).toFixed(1));
+          cell.rect.setAttribute('width',w.toFixed(1));
+          setOp(cell.rect,cl(v*2)*lf(row.index));
+          setOp(cell.text,cl((v-.6)/.4)*lf(row.index));
+        });
+      });
+      if(t>=.5&&t<=5.5){
+        const ys=[120,175,230,285,340];
+        const laneT=cl(t-1,0,4),lo=Math.floor(laneT),hi=Math.min(4,Math.ceil(laneT)),mix=laneT-lo;
+        const y=ys[lo]+(ys[hi]-ys[lo])*ease(mix);
+        state.band.setAttribute('y',(y-8).toFixed(1));
+        setOp(state.band,1-cl(Math.abs(t-step)*2-.6));
+      }else setOp(state.band,0);
+      const repBase=cl((t-5.45)/.35);
+      setOp(state.repOutline,repBase*(.6+.4*Math.sin(Math.min(1,cl((t-5.45)/.55))*Math.PI)));
+
+      state.panels.forEach((g,i)=>setOp(g,cl(1-Math.abs(t-i)*1.9)));
+      const u=s=>cl((t-(s-.5))/.9);
+      const u0=ease(u(0)),u1=ease(u(1)),u2=ease(u(2)),u3=ease(u(3)),u4=u(4),u5=u(5),u6=ease(u(6));
+      state.seal.setAttribute('d','M232 470H'+(232+176*u0).toFixed(1));
+      state.waveSmear.setAttribute('d',wave(40,600,512,18*(1-.62*u1),80));
+      state.lhcb.style.strokeDashoffset=String(1-u2);
+      setOp(state.cmsPts,u3);state.cmsWave.style.strokeDashoffset=String(1-u3);state.cmsChi.textContent='Δχ² '+(126.28*u3).toFixed(2);
+      state.gate.setAttribute('y2',(410+110*ease(cl((u4-.3)/.25))).toFixed(1));
+      const hold=cl((u4-.5)/.2),pval=cl((u4-.72)/.2);setOp(state.holdout,hold);setOp(state.pval,pval);
+      state.bins.forEach((g,i)=>{g.querySelector('circle').setAttribute('r',(7*ease(cl((u5-i*.18)/.3))).toFixed(1))});
+      state.lock.setAttribute('y2',(416+108*ease(cl((u5-.55)/.35))).toFixed(1));setOp(state.nistLabel,cl((u5-.8)/.2));
+      state.repPaths.forEach((p,i)=>p.style.strokeDashoffset=String(1-cl((u6-i*.12)/.7)));
+      state.repTarget.setAttribute('r',(20+14*u6).toFixed(1));
+    }
+
+    function storyProgress(state){
+      const centers=state.steps.map(s=>{const r=s.getBoundingClientRect();return r.top+r.height/2});
+      if(centers.length<2)return 0;
+      const panel=state.story.querySelector('.evidence-story-visual-wrap');
+      const pb=panel?panel.getBoundingClientRect().bottom:0;
+      const narrow=innerWidth<980&&panel&&getComputedStyle(panel).position==='sticky';
+      const anchor=narrow?Math.max(pb,0)+(innerHeight-Math.max(pb,0))*.5:innerHeight*.55;
+      if(anchor<centers[0])return cl((anchor-centers[0])/(centers[1]-centers[0]),-1,0);
+      for(let i=0;i<centers.length-1;i++)if(anchor<centers[i+1])return i+(anchor-centers[i])/(centers[i+1]-centers[i]);
+      return centers.length-1;
+    }
+
+    const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let raf=0;
+    const read=()=>stories.forEach(s=>{const p=storyProgress(s);s.target=reduceMotion?Math.round(p):p});
+    const frame=()=>{
+      raf=0;let moving=false;
+      stories.forEach(s=>{
+        const d=s.target-s.cur;
+        if(Math.abs(d)>.002){s.cur+=d*(reduceMotion?1:.2);moving=true}else s.cur=s.target;
+        updateCommon(s,s.cur);
+        if(s.kind==='rca')updateRca(s,s.cur);
+        if(s.kind==='detector')updateDetector(s,s.cur);
+      });
+      if(moving)raf=requestAnimationFrame(frame);
     };
-    const onScroll=()=>{
-      if(ticking)return;
-      ticking=true;
-      requestAnimationFrame(measure);
-    };
-    addEventListener('scroll',onScroll,{passive:true});
-    addEventListener('resize',onScroll,{passive:true});
-    measure();
+    const kick=()=>{read();if(!raf)raf=requestAnimationFrame(frame)};
+    addEventListener('scroll',kick,{passive:true});
+    addEventListener('resize',kick,{passive:true});
+    read();
+    stories.forEach(s=>{
+      s.cur=s.target;
+      updateCommon(s,s.cur);
+      if(s.kind==='rca')updateRca(s,s.cur);
+      if(s.kind==='detector')updateDetector(s,s.cur);
+    });
   })();
 </script>
-<script src="../site-nav.js?v=20261007-process1" defer></script>
+<script src="../site-nav.js?v=20261007-scrub1" defer></script>
 </body>
 </html>
