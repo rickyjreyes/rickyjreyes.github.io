@@ -532,6 +532,56 @@
 @media(prefers-reduced-motion:reduce){
   .sobolev-controls button{transition:none}
 }
+
+/* The 1–6D cube is an actual 2D projection of an n-cube graph.
+   Every vertex and adjacency edge is constructed in JS, not duplicated 3D boxes. */
+.sobolev-geometry-caption{
+  fill:var(--muted-2);
+  font:750 10px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing:.07em;
+}
+.sobolev-topology-count{
+  fill:var(--text);
+  font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+.sobolev-topology-edges,.sobolev-topology-vertices{
+  pointer-events:none;
+}
+.sobolev-cube-edges{
+  fill:none;
+  stroke:var(--accent-3);
+  stroke-width:1.15;
+  stroke-opacity:.40;
+  stroke-linecap:round;
+  vector-effect:non-scaling-stroke;
+}
+.sobolev-cube-edges.critical{
+  stroke:var(--accent);
+  stroke-width:1.2;
+  stroke-opacity:.50;
+}
+.sobolev-cube-edges.supercritical{
+  stroke:var(--accent-2);
+  stroke-width:1;
+  stroke-opacity:.31;
+}
+.sobolev-cube-vertex{
+  fill:var(--accent-3);
+  stroke:rgba(4,10,18,.67);
+  stroke-width:1;
+}
+.sobolev-cube-vertex.critical{fill:var(--accent)}
+.sobolev-cube-vertex.supercritical{fill:var(--accent-2)}
+.sobolev-state.critical,.sobolev-state.supercritical{font-size:10px}
+.sobolev-state.critical{fill:var(--accent)}
+.sobolev-state.supercritical{fill:var(--accent-2)}
+.sobolev-peak.critical{
+  stroke:var(--accent);
+  stroke-width:2.8;
+  filter:drop-shadow(0 0 8px rgba(103,212,255,.44));
+}
+.sobolev-peak-fill.critical{fill:rgba(103,212,255,.08)}
+.sobolev-supercritical-ray{pointer-events:none}
 .wct-theory-meta{
   display:flex;
   align-items:center;
