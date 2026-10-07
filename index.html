@@ -272,33 +272,44 @@
               </g>
 
               <g class="theory-scene scene-2">
-                <rect class="sobolev-field-panel" x="54" y="116" width="274" height="284" rx="16"></rect>
-                <text class="svg-muted" x="73" y="137">Gaussian test field · projected view</text>
+                <defs>
+                  <linearGradient id="sobolev-spike-glow" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="var(--accent-2)" stop-opacity=".32"></stop>
+                    <stop offset="1" stop-color="var(--accent-2)" stop-opacity="0"></stop>
+                  </linearGradient>
+                </defs>
+                <rect class="sobolev-field-panel" x="48" y="105" width="337" height="295" rx="16"></rect>
+                <rect class="sobolev-scaling-panel" x="402" y="105" width="130" height="295" rx="16"></rect>
+
+                <text class="sobolev-title" x="57" y="78">H² → L∞</text>
+                <text class="sobolev-regime-key" x="225" y="77">1–3D</text>
+                <text class="sobolev-regime-key critical" x="322" y="77">4D</text>
+                <text class="sobolev-regime-key supercritical" x="413" y="77">5D+</text>
+
+                <text class="sobolev-dimension-big" x="65" y="151" data-sobolev-dimension-label>3D</text>
+                <text class="sobolev-state supported" x="140" y="151" data-sobolev-state>SUBCRITICAL</text>
+                <path class="sobolev-baseline" d="M69 342H369"></path>
                 <g class="sobolev-dimensional-lattice" data-sobolev-lattice></g>
                 <g class="sobolev-packet-contours" data-sobolev-contours></g>
                 <g class="sobolev-packet-particles" data-sobolev-particles></g>
+                <g class="sobolev-spike-rays" data-sobolev-rays></g>
+                <path class="sobolev-peak-fill" data-sobolev-peak-fill></path>
                 <path class="sobolev-peak" data-sobolev-peak></path>
-                <text class="svg-accent3" x="72" y="378" data-sobolev-dimension-label>n = 3 · volumetric wave profile</text>
+                <circle class="sobolev-peak-node" data-sobolev-peak-node cx="215" cy="260" r="4"></circle>
+                <text class="svg-muted" x="66" y="383">concentration →</text>
+                <text class="sobolev-focus-readout" x="365" y="383" text-anchor="end" data-sobolev-lambda>λ ×1.0</text>
 
-                <rect class="sobolev-scaling-panel" x="345" y="116" width="165" height="284" rx="16"></rect>
-                <text class="svg-muted" x="358" y="137">Sobolev embedding</text>
-                <text class="sobolev-state supported" x="358" y="161" data-sobolev-state>CONTROLLED · n = 3</text>
-                <text class="svg-muted" x="358" y="181">H² ↪ L∞  :  n &lt; 4</text>
-
-                <text class="svg-muted" x="358" y="215">Gaussian Laplacian norm</text>
-                <text class="svg-text" x="358" y="235">∥Δψλ∥² ∝ λ^(4−n)</text>
-                <text class="svg-muted" x="498" y="251" text-anchor="end" data-sobolev-lambda>λ = 1.00</text>
-                <path class="sobolev-graph-axis" d="M362 264V350H498"></path>
-                <path class="sobolev-graph-grid" d="M362 307H498M362 264H498"></path>
+                <text class="svg-muted" x="417" y="128">PEAK · H² FIXED</text>
+                <text class="sobolev-gain" x="417" y="167" data-sobolev-peak-value>×1.00</text>
+                <text class="sobolev-exponent" x="417" y="189" data-sobolev-slope>α = −0.5</text>
+                <path class="sobolev-graph-axis" d="M416 223V374H522"></path>
+                <path class="sobolev-graph-grid" d="M416 292H522M416 235H522M416 350H522"></path>
+                <g class="sobolev-guide-lines" data-sobolev-guides></g>
                 <path class="sobolev-scaling-line" data-sobolev-scaling-line></path>
-                <circle class="sobolev-scaling-marker" data-sobolev-scaling-marker cx="430" cy="310" r="4"></circle>
-                <text class="sobolev-scaling-slope" x="365" y="368" data-sobolev-slope>4−n = 1</text>
-                <text class="svg-muted" x="496" y="368" text-anchor="end">λ →</text>
-                <text class="svg-muted" x="358" y="387" data-sobolev-norm>∥Δψλ∥² / Cₙ = 1.000</text>
+                <circle class="sobolev-scaling-marker" data-sobolev-scaling-marker cx="416" cy="292" r="4"></circle>
+                <text class="svg-muted" x="420" y="393">λ 1 → 8</text>
 
-                <text class="svg-text" x="280" y="74" text-anchor="middle">The H² regularity threshold</text>
-                <text class="svg-accent3" x="280" y="99" text-anchor="middle">boundedness route for n = 1, 2, 3 · critical at n = 4</text>
-                <text class="svg-muted" x="280" y="426" text-anchor="middle">The embedding guarantee is conditional on H² assumptions.</text>
+                <text class="svg-muted" x="280" y="424" text-anchor="middle">Gaussian scaling · bounded H² budget · projected illustration</text>
               </g>
 
               <g class="theory-scene scene-3">
@@ -374,12 +385,14 @@
               </g>
             </svg>
             <div class="sobolev-controls" role="group" aria-label="Sobolev dimension comparison">
-              <span class="sobolev-control-caption">Dimension</span>
-              <button type="button" data-sobolev-dim="1" aria-pressed="false" aria-label="Show one-dimensional case">1D</button>
-              <button type="button" data-sobolev-dim="2" aria-pressed="false" aria-label="Show two-dimensional case">2D</button>
-              <button type="button" data-sobolev-dim="3" aria-pressed="true" aria-label="Show three-dimensional case">3D</button>
-              <button type="button" data-sobolev-dim="4" aria-pressed="false" aria-label="Show four-dimensional critical case">4D</button>
-              <span class="sobolev-control-note" data-sobolev-control-note>Auto · select a dimension to hold</span>
+              <span class="sobolev-control-caption">n</span>
+              <button type="button" data-sobolev-dim="1" aria-pressed="false" aria-label="Compare 1D subcritical scaling">1D</button>
+              <button type="button" data-sobolev-dim="2" aria-pressed="false" aria-label="Compare 2D subcritical scaling">2D</button>
+              <button type="button" data-sobolev-dim="3" aria-pressed="true" aria-label="Compare 3D subcritical scaling">3D</button>
+              <button type="button" data-sobolev-dim="4" aria-pressed="false" aria-label="Compare 4D critical scaling">4D</button>
+              <button type="button" data-sobolev-dim="5" aria-pressed="false" aria-label="Compare 5D supercritical scaling">5D</button>
+              <button type="button" data-sobolev-dim="6" aria-pressed="false" aria-label="Compare 6D supercritical scaling">6D</button>
+              <span class="sobolev-control-note" data-sobolev-control-note>AUTO</span>
             </div>
           </div>
 
@@ -402,8 +415,8 @@
           </li>
           <li class="wct-theory-step">
             <span>03</span><h3>Sobolev three-dimensional bound</h3>
-            <p>The embedding <strong>H²(ℝⁿ) ↪ L∞</strong> controls field amplitudes under the stated H² assumptions when <strong>n ≤ 3</strong>. Compare 1D, 2D, 3D and the critical 4D case, while the Gaussian test-field scale follows <strong>∥Δψ<sub>λ</sub>∥² ∝ λ<sup>4−n</sup></strong>. The 4D threshold marks loss of this particular guarantee—not a proof that every 4D confinement mechanism fails.</p>
-            <p class="sobolev-source-links"><a href="publications/hard-upper-bound-spatial-dimensionality.html">Dimensional-bound derivation ↗</a> · <a href="publications/self-emergent-fourier-cymatics.html">Related numerical eigenmode study ↗</a></p>
+            <p><strong>1–3D:</strong> subcritical (H^2\to L^\infty) control. <strong>4D:</strong> critical threshold. <strong>5D+:</strong> a narrowing Gaussian can develop a growing peak while its (H^2) norm stays bounded. This illustrates the limit of the embedding argument—not universal instability.</p>
+            <p class="sobolev-source-links"><a href="publications/hard-upper-bound-spatial-dimensionality.html">Dimensional-bound derivation ↗</a> · <a href="publications/self-emergent-fourier-cymatics.html">Related eigenmode study ↗</a></p>
           </li>
           <li class="wct-theory-step">
             <span>04</span><h3>Finite-(k) shell selection</h3>
