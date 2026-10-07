@@ -54,10 +54,6 @@
     .case-title{font-weight:700;color:var(--text)}
     .case-note{display:block;margin-top:6px;color:var(--muted-2);font-size:.82rem;line-height:1.5}
     .note{margin-top:34px;padding:22px;border-left:3px solid var(--accent);background:rgba(103,212,255,.05);color:var(--muted);max-width:1200px}
-    .control-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
-    .control-item{padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
-    .control-item strong{display:block;margin-bottom:7px}
-    .control-item p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.6}
     .audit-status{margin-top:24px;padding:20px;border:1px solid rgba(139,124,255,.28);border-radius:14px;background:rgba(139,124,255,.055);color:var(--muted);max-width:1200px}
     .patent-status{color:var(--accent);font-weight:750}
 
@@ -238,12 +234,8 @@
     .metric{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
     .sources{display:flex;flex-direction:column;gap:7px}
     .sources a{font-size:.82rem}
-    .rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
-    .rule{padding:19px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
-    .rule strong{display:block;margin-bottom:7px}
-    .rule p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.58}
     @media(max-width:1400px){.definitions{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:1200px){.priority-shell{width:calc(100% - 28px)}.audit-strip,.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}.control-list,.rules{grid-template-columns:1fr}}
+    @media(max-width:1200px){.priority-shell{width:calc(100% - 28px)}.audit-strip,.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:620px){.priority-shell{width:calc(100% - 20px);padding-top:54px}.definitions,.audit-strip{grid-template-columns:1fr}.priority-head p,.section-lede{font-size:1rem}.table-wrap{margin-right:-10px;margin-left:-10px;width:calc(100% + 20px);padding:0 10px}}
     @media(max-width:620px){.claim-registry-wrap{margin-left:0;margin-right:0;width:100%;padding:0}}
   </style>
