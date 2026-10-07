@@ -117,7 +117,7 @@
       .registry-tools{align-items:stretch}
       .claim-filter{max-width:none;flex-basis:100%}
     }
-    /* Scroll-driven evidence story ------------------------------------------- */
+    /* Scroll-driven priority stories ---------------------------------------- */
     .evidence-story-section{overflow:visible}
     .evidence-story{
       display:grid;
@@ -127,95 +127,97 @@
       margin-top:34px
     }
     .evidence-story-visual-wrap{
-      position:sticky;
-      top:92px;
-      display:grid;
-      gap:10px;
-      padding:16px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:
-        radial-gradient(circle at 50% 42%,rgba(103,212,255,.055),transparent 18rem),
-        linear-gradient(145deg,rgba(14,29,48,.68),rgba(8,18,31,.84));
+      position:sticky;top:92px;display:grid;gap:10px;padding:16px;
+      border:1px solid var(--line);border-radius:18px;
+      background:radial-gradient(circle at 50% 42%,rgba(103,212,255,.055),transparent 18rem),
+                 linear-gradient(145deg,rgba(14,29,48,.68),rgba(8,18,31,.84));
       box-shadow:0 24px 70px rgba(0,0,0,.18)
     }
     .evidence-story-stage{
       display:flex;align-items:center;justify-content:space-between;gap:16px;
-      color:var(--muted-2);
-      font:800 .64rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;
+      color:var(--muted-2);font:800 .64rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;
       letter-spacing:.08em;text-transform:uppercase
     }
     .evidence-story-stage strong{color:var(--accent);font-weight:800}
+    .story-rail{height:2px;overflow:hidden;border-radius:99px;background:rgba(170,201,225,.12)}
+    .story-rail span{display:block;width:100%;height:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--accent-3));transition:transform 120ms linear}
     .evidence-story-visual{
       min-height:clamp(420px,calc(100vh - 260px),620px);
-      border:1px solid rgba(170,201,225,.11);
-      border-radius:14px;
-      background:rgba(4,10,18,.48);
-      overflow:hidden
+      border:1px solid rgba(170,201,225,.11);border-radius:14px;background:rgba(4,10,18,.48);overflow:hidden
     }
     .evidence-story-visual svg{display:block;width:100%;height:100%;min-height:inherit}
-    .story-track,.story-progress-line{fill:none;stroke-linecap:round;stroke-linejoin:round}
-    .story-track{stroke:rgba(170,201,225,.15);stroke-width:2}
-    .story-progress-line{
-      stroke:var(--accent);
-      stroke-width:2.2;
-      stroke-dasharray:1;
-      stroke-dashoffset:1;
-      filter:drop-shadow(0 0 5px rgba(103,212,255,.32));
-      transition:stroke-dashoffset 260ms ease
+    .story-scene{opacity:0;transform:translateY(8px) scale(.995);transition:opacity .32s ease,transform .32s ease;pointer-events:none}
+    .evidence-story-visual[data-story-stage="0"] .scene-0,
+    .evidence-story-visual[data-story-stage="1"] .scene-1,
+    .evidence-story-visual[data-story-stage="2"] .scene-2,
+    .evidence-story-visual[data-story-stage="3"] .scene-3,
+    .evidence-story-visual[data-story-stage="4"] .scene-4,
+    .evidence-story-visual[data-story-stage="5"] .scene-5,
+    .evidence-story-visual[data-story-stage="6"] .scene-6{opacity:1;transform:none}
+    .story-scene-kicker,.story-axis-label,.story-card-label,.story-card-copy,.story-scene-note,
+    .rca-time-node text,.rca-chip text,.rca-audit-label,.rca-future-node text,
+    .story-bin-label,.story-metric-small{
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace
     }
-    .story-node{color:var(--muted-2);opacity:.28;transition:opacity .25s ease,color .25s ease,transform .25s ease}
-    .story-node>circle:first-child{fill:#07111f;stroke:currentColor;stroke-width:1.6}
-    .story-node-core{fill:currentColor}
-    .story-node.reached{opacity:.72}
-    .story-node.current{opacity:1;color:var(--accent);filter:url(#story-glow)}
-    .story-node.current.conditional{color:#f0c987}
-    .story-node.current.negative{color:#f29b8c}
-    .story-node.current.convergence{color:var(--accent)}
-    .story-node.current.open{color:#a899ff}
-    .story-node.reached[data-story-node="1"]{color:var(--accent-3)}
-    .story-node.reached[data-story-node="2"]{color:#f0c987}
-    .story-node.reached[data-story-node="3"]{color:#f29b8c}
-    .story-node.reached[data-story-node="4"]{color:var(--accent)}
-    .story-node.reached[data-story-node="5"]{color:#a899ff}
-    .story-node-slash{stroke:currentColor;stroke-width:2;stroke-linecap:round}
-    .story-node-index,.story-node-value,.story-axis-label{
-      fill:currentColor;font-family:ui-monospace,SFMono-Regular,Menlo,monospace
-    }
-    .story-node-index{font-size:10px;font-weight:800;letter-spacing:.08em}
-    .story-node-value{font-size:11px;font-weight:700}
-    .story-node-title{fill:var(--text);font-family:Georgia,"Times New Roman",serif;font-size:13px}
-    .story-axis-label{fill:var(--muted-2);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+    .story-scene-kicker{fill:var(--accent);font-size:10px;font-weight:850;letter-spacing:.09em}
+    .story-scene-title{fill:var(--text);font:500 25px/1 Georgia,"Times New Roman",serif}
+    .story-scene-title.left{text-anchor:start}
+    .story-scene-note{fill:var(--muted);font-size:11px}
+    .story-axis-label{fill:var(--muted-2);font-size:10px;letter-spacing:.05em}
+    .story-target-card rect,.rca-callout rect,.rca-chip rect{fill:rgba(103,212,255,.045);stroke:rgba(103,212,255,.32)}
+    .story-target-card.violet rect,.rca-callout.violet rect,.rca-chip.violet rect{fill:rgba(139,124,255,.05);stroke:rgba(139,124,255,.34)}
+    .story-target-card.green rect,.rca-chip.green rect{fill:rgba(182,255,218,.045);stroke:rgba(182,255,218,.34)}
+    .story-card-label{fill:var(--text);font-size:12px;font-weight:800}
+    .story-card-copy{fill:var(--muted);font-size:10px}
     .evidence-story-caption{margin:0;color:var(--muted);font-size:.78rem;line-height:1.55}
     .evidence-story-steps{display:grid}
     .evidence-story-step{
-      min-height:68vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      padding:42px 0 42px 30px;
-      border-left:1px solid var(--line);
-      opacity:.42;
+      min-height:68vh;display:flex;flex-direction:column;justify-content:center;
+      padding:42px 0 42px 30px;border-left:1px solid var(--line);opacity:.38;
       transition:opacity .22s ease,border-color .22s ease
     }
     .evidence-story-step.active{opacity:1;border-left-color:var(--accent)}
-    .story-step-meta{
-      color:var(--accent);
-      font:800 .67rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;
-      letter-spacing:.09em;text-transform:uppercase
-    }
-    .story-step-meta.supported{color:var(--accent-3)}
-    .story-step-meta.conditional{color:#f0c987}
-    .story-step-meta.negative{color:#f29b8c}
-    .story-step-meta.convergence{color:var(--accent)}
-    .story-step-meta.open{color:#a899ff}
-    .evidence-story-step h3{
-      max-width:24ch;margin:12px 0 13px;
-      font:500 clamp(1.5rem,2.6vw,2.15rem)/1.12 Georgia,"Times New Roman",serif;
-      letter-spacing:-.025em
-    }
-    .evidence-story-step p{max-width:66ch;margin:0;color:var(--muted);font-size:.96rem;line-height:1.72}
+    .story-step-meta{color:var(--accent);font:800 .67rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.09em;text-transform:uppercase}
+    .story-step-meta.supported{color:var(--accent-3)} .story-step-meta.conditional{color:#f0c987}
+    .story-step-meta.convergence{color:var(--accent)} .story-step-meta.open{color:#a899ff}
+    .evidence-story-step h3{max-width:27ch;margin:12px 0 13px;font:500 clamp(1.5rem,2.6vw,2.15rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+    .evidence-story-step p{max-width:68ch;margin:0;color:var(--muted);font-size:.96rem;line-height:1.72}
     .evidence-story-step .text-link{margin-top:16px}
+    .evidence-story-step .text-link+.text-link{margin-top:8px}
+
+    /* RCA scenes */
+    .rca-timeline,.rca-future-line,.rca-ratio-track{fill:none;stroke:var(--line-strong);stroke-width:2}
+    .rca-time-node circle,.rca-future-node circle{fill:#07111f;stroke:var(--muted-2);stroke-width:1.5}
+    .rca-time-node.live circle,.rca-future-node.landed circle{stroke:var(--accent-3);fill:rgba(182,255,218,.09)}
+    .rca-time-node text,.rca-future-node text{fill:var(--muted-2);font-size:10px}
+    .rca-spoke{fill:none;stroke:url(#rca-flow);stroke-width:1.5;stroke-dasharray:4 6}
+    .rca-hub{fill:rgba(103,212,255,.06);stroke:var(--accent);stroke-width:1.5}
+    .rca-hub-title{fill:var(--text);font:600 21px/1 Georgia,serif}.rca-hub-small{fill:var(--muted-2);font:10px ui-monospace,SFMono-Regular,Menlo,monospace}
+    .rca-chip text{fill:var(--text);font-size:11px;font-weight:750}.rca-chip text.small{fill:var(--muted-2);font-size:9.5px;font-weight:500}
+    .rca-ratio-label{fill:var(--muted);font:700 17px ui-monospace,SFMono-Regular,Menlo,monospace}
+    .rca-ratio-value{fill:var(--accent);font:500 48px Georgia,serif}.rca-ratio-value.green{fill:var(--accent-3)}
+    .rca-ratio-dot{fill:var(--accent);filter:url(#rca-glow)}.rca-ratio-dot.green{fill:var(--accent-3)}
+    .rca-stack{fill:var(--accent-3);opacity:.75}.rca-stack.convergence{fill:var(--accent)}.rca-stack.partial{fill:#f0c987}.rca-stack.open{fill:var(--accent-2)}.rca-stack.prospective{fill:var(--muted-2)}
+    .rca-audit-count{fill:var(--accent);font:500 28px Georgia,serif}.rca-audit-count.green{fill:var(--accent-3)}.rca-audit-count.amber{fill:#f0c987}.rca-audit-count.violet{fill:var(--accent-2)}.rca-audit-count.muted{fill:var(--muted-2)}
+    .rca-audit-label{fill:var(--muted);font-size:10.5px}
+
+    /* Detector scenes */
+    .detector-origin{fill:rgba(103,212,255,.05);stroke:var(--accent);stroke-width:1.5}
+    .detector-origin-title{fill:var(--text);font:600 19px Georgia,serif}.detector-origin-small{fill:var(--muted-2);font:10px ui-monospace,SFMono-Regular,Menlo,monospace}
+    .detector-branch{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:5 6}.detector-branch.green{stroke:var(--accent-3)}.detector-branch.violet{stroke:var(--accent-2)}
+    .story-neutrino-wave,.story-signal-line,.story-collider-track,.story-plot-axis,.story-freeze-line,.story-bin-line,.story-bin-lock,.story-open-ray{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+    .story-neutrino-wave{stroke:var(--accent);stroke-width:2}.story-neutrino-wave.green{stroke:var(--accent-3)}.story-neutrino-wave.faint{opacity:.32;stroke-dasharray:4 5}
+    .story-detector{fill:rgba(103,212,255,.035);stroke:var(--accent);stroke-width:1.4}.story-detector-top{fill:#07111f;stroke:var(--accent);stroke-width:1.4}.story-detector-core{fill:rgba(103,212,255,.12);stroke:var(--accent)}
+    .story-collider-ring{fill:none;stroke:var(--accent);stroke-width:1.5}.story-collider-ring.inner{stroke:var(--accent-2);stroke-dasharray:5 5}.story-collider-track{stroke:var(--accent-3);stroke-width:2}
+    .story-dot{fill:var(--accent);filter:url(#detector-glow)}.story-dot.violet{fill:var(--accent-2)}
+    .story-plot-axis{stroke:var(--line-strong);stroke-width:1}.story-signal-line{stroke:var(--accent);stroke-width:2}.story-signal-line.violet{stroke:var(--accent-2)}.story-signal-line.green{stroke:var(--accent-3)}
+    .story-freeze-line{stroke:var(--accent-3);stroke-width:1.5;stroke-dasharray:4 5}
+    .story-metric-big{fill:var(--accent);font:500 28px Georgia,serif}.story-metric-big.green{fill:var(--accent-3)}.story-metric-small{fill:var(--muted);font-size:10px}
+    .story-split{stroke-width:1.2}.story-split.train{fill:rgba(103,212,255,.04);stroke:rgba(103,212,255,.3)}.story-split.holdout{fill:rgba(182,255,218,.045);stroke:rgba(182,255,218,.34)}
+    .story-arrow{stroke:var(--accent-3);stroke-width:2;marker-end:none}
+    .story-bin-line{stroke:var(--line);stroke-width:1}.story-bin-lock{stroke:var(--accent-3);stroke-width:1.6;stroke-dasharray:4 5}.story-bin-dot{fill:var(--accent-3)}.story-bin-label{fill:var(--muted);font-size:10px}
+    .story-open-ring{fill:none;stroke:var(--accent-2);stroke-width:1.5;stroke-dasharray:6 7}.story-open-ring.inner{stroke:var(--accent)}.story-open-title{fill:var(--text);font:600 22px Georgia,serif}.story-open-ray{stroke:var(--accent-2);stroke-width:1.2;opacity:.6}
+
     @media(max-width:980px){
       .evidence-story{grid-template-columns:1fr;gap:26px}
       .evidence-story-visual-wrap{top:78px;z-index:2}
@@ -228,7 +230,7 @@
       .evidence-story-step{min-height:auto;padding:42px 0 42px 18px}
     }
     @media(prefers-reduced-motion:reduce){
-      .story-progress-line,.story-node,.evidence-story-step{transition:none}
+      .story-rail span,.story-scene,.evidence-story-step{transition:none}
     }
 
     .metric{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
@@ -256,7 +258,7 @@
       <p>This registry documents the earliest verifiable public disclosures of technical contributions by Richard J. Reyes and, where applicable, the priority dates of related patent families. It also records later technical works exhibiting materially overlapping structures. Chronology and structural overlap establish neither copying nor infringement; derivation, patentability, validity, enforceability, and claim scope are separate questions.</p><div class="note"><strong>DOI/version rule.</strong> Priority chronology is not inferred from Zenodo record-number ordering. A research-chronology date may refer to an original manuscript/public disclosure while the canonical citation DOI points to a later revision or redeposit. For <em>The Geometry of Resonance</em>, this site uses 10.5281/zenodo.15644222 as the canonical citation target while explicitly retaining the multi-record version lineage.</div>
       <div class="identity"><strong>Richard J. Reyes</strong>ORCID: <a href="https://orcid.org/0009-0005-5975-8718">0009-0005-5975-8718</a><br>Canonical scholarly archive: <a href="../publications/">rickyjreyes.github.io/publications/</a><br>Public patent portfolio: <a href="../patents/">rickyjreyes.github.io/patents/</a></div>
       <div class="rights-notice"><strong>Intellectual Property Notice.</strong> Richard J. Reyes asserts authorship and documented public priority for the scholarly contributions identified by Claim ID and records claimed inventorship and patent-family priority for the listed filed families. Nothing on this page grants a license, waives rights, or expands the legal scope of any patent claim.</div>
-      <div class="toplinks"><a class="button secondary" href="#ledger">Current claims &amp; evidence</a><a class="button secondary" href="claims.json">Claims JSON</a><a class="button secondary" href="priority.json">Machine-readable priority JSON</a><a class="button secondary" href="external-convergence.json">Convergence audit JSON</a><a class="button secondary" href="../patents.json">Patent metadata JSON</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="../overlap/">Post-Date Overlap Ledger</a></div>
+      <div class="toplinks"><a class="button secondary" href="#rca-confirmation">RCA / AI confirmation</a><a class="button secondary" href="#patents">Patent priority</a><a class="button secondary" href="#detector-evidence">Detector evidence</a><a class="button secondary" href="claims.json">Claims JSON</a><a class="button secondary" href="priority.json">Machine-readable priority JSON</a><a class="button secondary" href="external-convergence.json">Convergence audit JSON</a><a class="button secondary" href="../patents.json">Patent metadata JSON</a><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="../overlap/">Post-Date Overlap Ledger</a></div>
       <div class="audit-strip" aria-label="Audit status">
         <div><strong>28</strong><span>DOI-backed research releases</span></div>
         <div><strong>24</strong><span>validation records</span></div>
@@ -265,160 +267,146 @@
       </div>
     </header>
 
-    <section class="priority-section evidence-story-section" id="evidence-story" aria-labelledby="evidence-story-title">
-      <p class="eyebrow">Evidence story</p>
-      <h2 id="evidence-story-title">What happened when the claims met data.</h2>
-      <p class="section-lede">The registry is easier to understand as an audit sequence than as a glossary. Scroll through the strongest current evidence path: what was frozen, what survived, what stayed conditional, what failed before target evaluation, and what remains open. This is an audit path, not a chronological timeline.</p>
+    <section class="priority-section evidence-story-section story-rca" id="rca-confirmation" aria-labelledby="rca-confirmation-title">
+      <p class="eyebrow">01 · RCA / AI confirmation record</p>
+      <h2 id="rca-confirmation-title">The first priority question: did the 2025 AI-risk architecture map onto what came next?</h2>
+      <p class="section-lede">RCA was released June 11, 2025 with a staged failure model centered on recursive drift, persistent state, propagation versus correction, multi-agent amplification, and physically bounded containment. The current audit separates later mechanism-level correspondences from partial matches and still-prospective milestones instead of treating the whole forecast as one binary claim.</p>
 
-      <div class="evidence-story" data-evidence-story>
+      <div class="evidence-story" data-scroll-story>
         <div class="evidence-story-visual-wrap">
-          <div class="evidence-story-stage"><span data-story-kicker>01 · public record</span><strong data-story-progress>0%</strong></div>
-          <div class="evidence-story-visual" data-story-stage="0" aria-label="Animated audit path from public claims through holdout tests, conditional evidence, route closure, public-data support, and open replication">
-            <svg viewBox="0 0 520 620" role="img">
+          <div class="evidence-story-stage"><span data-story-kicker>01 · June 2025 forecast</span><strong data-story-progress>0%</strong></div>
+          <div class="story-rail" aria-hidden="true"><span data-story-rail></span></div>
+          <div class="evidence-story-visual" data-story-stage="0" aria-label="Scroll-driven RCA forecast and later-evidence audit">
+            <svg viewBox="0 0 560 620" role="img">
               <defs>
-                <filter id="story-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <linearGradient id="rca-flow" x1="0" x2="1"><stop offset="0" stop-color="#67d4ff"/><stop offset=".55" stop-color="#8b7cff"/><stop offset="1" stop-color="#b6ffda"/></linearGradient>
+                <filter id="rca-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
               </defs>
 
-              <path class="story-track" d="M260 62L164 162L356 262L356 362L164 462L260 558"></path>
-              <path class="story-progress-line" data-story-line d="M260 62L164 162L356 262L356 362L164 462L260 558" pathLength="1"></path>
-
-              <g class="story-node current" data-story-node="0" transform="translate(260 62)">
-                <circle r="17"></circle><circle class="story-node-core" r="5"></circle>
-                <text class="story-node-index" y="-28" text-anchor="middle">PUBLIC RECORD</text>
-                <text class="story-node-title" y="38" text-anchor="middle">claims + provenance</text>
+              <g class="story-scene scene-0">
+                <text class="story-scene-kicker" x="40" y="58">JUNE 11, 2025</text>
+                <text class="story-scene-title left" x="40" y="100">A staged failure model is published.</text>
+                <path class="rca-timeline" d="M58 312H500"></path>
+                <g class="rca-time-node live" transform="translate(82 312)"><circle r="10"></circle><text y="36" text-anchor="middle">2025</text></g>
+                <g class="rca-time-node" transform="translate(196 312)"><circle r="8"></circle><text y="36" text-anchor="middle">2026</text></g>
+                <g class="rca-time-node" transform="translate(310 312)"><circle r="8"></circle><text y="36" text-anchor="middle">2027</text></g>
+                <g class="rca-time-node" transform="translate(424 312)"><circle r="8"></circle><text y="36" text-anchor="middle">2028</text></g>
+                <g class="rca-time-node faint" transform="translate(494 312)"><circle r="7"></circle><text y="36" text-anchor="middle">2030</text></g>
+                <g class="rca-callout" transform="translate(58 158)">
+                  <rect width="182" height="88" rx="14"></rect>
+                  <text class="story-card-label" x="18" y="28">recursive drift</text>
+                  <text class="story-card-copy" x="18" y="52">semantic · memory</text>
+                  <text class="story-card-copy" x="18" y="70">constraint · coordination</text>
+                </g>
+                <g class="rca-callout violet" transform="translate(320 158)">
+                  <rect width="182" height="88" rx="14"></rect>
+                  <text class="story-card-label" x="18" y="28">criticality</text>
+                  <text class="story-card-copy" x="18" y="52">propagation</text>
+                  <text class="story-card-copy" x="18" y="70">versus correction</text>
+                </g>
+                <text class="story-scene-note" x="280" y="466" text-anchor="middle">forecast exists before the later 2026 evidence record</text>
               </g>
 
-              <g class="story-node" data-story-node="1" transform="translate(164 162)">
-                <circle r="17"></circle><circle class="story-node-core" r="5"></circle>
-                <text class="story-node-index" x="-28" y="-7" text-anchor="end">GWTC</text>
-                <text class="story-node-value" x="-28" y="12" text-anchor="end">p = 0.00130</text>
+              <g class="story-scene scene-1">
+                <text class="story-scene-kicker" x="40" y="58">2025 → 2026</text>
+                <text class="story-scene-title left" x="40" y="100">The same failure classes begin appearing independently.</text>
+                <circle class="rca-hub" cx="280" cy="300" r="62"></circle>
+                <text class="rca-hub-title" x="280" y="295" text-anchor="middle">RCA</text>
+                <text class="rca-hub-small" x="280" y="316" text-anchor="middle">mechanism map</text>
+                <path class="rca-spoke" d="M235 260L142 176M325 260L420 176M230 338L137 422M330 338L425 422"></path>
+                <g class="rca-chip" transform="translate(54 118)"><rect width="176" height="84" rx="13"></rect><text x="16" y="30">semantic drift</text><text class="small" x="16" y="54">recursive degradation</text></g>
+                <g class="rca-chip violet" transform="translate(330 118)"><rect width="176" height="84" rx="13"></rect><text x="16" y="30">persistent memory</text><text class="small" x="16" y="54">state contamination</text></g>
+                <g class="rca-chip green" transform="translate(48 405)"><rect width="190" height="84" rx="13"></rect><text x="16" y="30">multi-agent drift</text><text class="small" x="16" y="54">coordination / spread</text></g>
+                <g class="rca-chip" transform="translate(324 405)"><rect width="190" height="84" rx="13"></rect><text x="16" y="30">constraint loss</text><text class="small" x="16" y="54">tools · audit · goals</text></g>
               </g>
 
-              <g class="story-node conditional" data-story-node="2" transform="translate(356 262)">
-                <circle r="17"></circle><circle class="story-node-core" r="5"></circle>
-                <text class="story-node-index" x="28" y="-7">CMS</text>
-                <text class="story-node-value" x="28" y="12">Δχ² = 126.28</text>
+              <g class="story-scene scene-2">
+                <text class="story-scene-kicker" x="40" y="58">QUANTITATIVE CHECK</text>
+                <text class="story-scene-title left" x="40" y="100">A frozen ratio lands close to the later reconstruction.</text>
+                <text class="rca-ratio-label" x="84" y="202">R<tspan baseline-shift="sub" font-size="12">pred</tspan></text>
+                <text class="rca-ratio-value" x="84" y="250">0.0100</text>
+                <text class="rca-ratio-label" x="338" y="202">R<tspan baseline-shift="sub" font-size="12">2026</tspan></text>
+                <text class="rca-ratio-value green" x="338" y="250">0.0104</text>
+                <path class="rca-ratio-track" d="M86 322H474"></path>
+                <circle class="rca-ratio-dot" cx="276" cy="322" r="9"></circle>
+                <circle class="rca-ratio-dot green" cx="284" cy="322" r="7"></circle>
+                <text class="story-scene-note" x="280" y="380" text-anchor="middle">≈ 4% relative difference in the current incident reconstruction</text>
+                <text class="story-axis-label" x="280" y="460" text-anchor="middle">quantitative correspondence ≠ universal validation</text>
               </g>
 
-              <g class="story-node negative" data-story-node="3" transform="translate(356 362)">
-                <circle r="17"></circle>
-                <path class="story-node-slash" d="M-8 8L8-8"></path>
-                <text class="story-node-index" x="28" y="-7">ATLAS</text>
-                <text class="story-node-value" x="28" y="12">route closed</text>
+              <g class="story-scene scene-3">
+                <text class="story-scene-kicker" x="40" y="58">CURRENT AUDIT</text>
+                <text class="story-scene-title left" x="40" y="100">Not every forecast item is scored the same way.</text>
+                <g transform="translate(54 188)">
+                  <rect class="rca-stack strong" width="160" height="46" rx="8"></rect>
+                  <rect class="rca-stack convergence" y="58" width="116" height="46" rx="8"></rect>
+                  <rect class="rca-stack partial" y="116" width="116" height="46" rx="8"></rect>
+                  <rect class="rca-stack open" y="174" width="34" height="46" rx="8"></rect>
+                  <rect class="rca-stack prospective" y="232" width="78" height="46" rx="8"></rect>
+                </g>
+                <g transform="translate(245 196)">
+                  <text class="rca-audit-count green" x="0" y="20">15</text><text class="rca-audit-label" x="62" y="20">strong mechanism / quantitative</text>
+                  <text class="rca-audit-count" x="0" y="78">10</text><text class="rca-audit-label" x="62" y="78">structural convergence</text>
+                  <text class="rca-audit-count amber" x="0" y="136">10</text><text class="rca-audit-label" x="62" y="136">partial / precursor</text>
+                  <text class="rca-audit-count violet" x="0" y="194">1</text><text class="rca-audit-label" x="62" y="194">open validation item</text>
+                  <text class="rca-audit-count muted" x="0" y="252">6</text><text class="rca-audit-label" x="62" y="252">prospective / unestablished</text>
+                </g>
+                <text class="story-scene-note" x="280" y="535" text-anchor="middle">42 retained audit items · graded rather than collapsed into one score</text>
               </g>
 
-              <g class="story-node convergence" data-story-node="4" transform="translate(164 462)">
-                <circle r="17"></circle><circle class="story-node-core" r="5"></circle>
-                <text class="story-node-index" x="-28" y="-7" text-anchor="end">NIST</text>
-                <text class="story-node-value" x="-28" y="12" text-anchor="end">0 / 5000 × 3</text>
+              <g class="story-scene scene-4">
+                <text class="story-scene-kicker" x="40" y="58">WHAT REMAINS OPEN</text>
+                <text class="story-scene-title left" x="40" y="100">The later milestones are still prospective.</text>
+                <path class="rca-future-line" d="M78 322H486"></path>
+                <g class="rca-future-node landed" transform="translate(110 322)"><circle r="11"></circle><text y="38" text-anchor="middle">2025</text><text y="58" text-anchor="middle">landed classes</text></g>
+                <g class="rca-future-node landed" transform="translate(210 322)"><circle r="11"></circle><text y="38" text-anchor="middle">2026</text><text y="58" text-anchor="middle">warning evidence</text></g>
+                <g class="rca-future-node" transform="translate(318 322)"><circle r="9"></circle><text y="38" text-anchor="middle">2027</text><text y="58" text-anchor="middle">open</text></g>
+                <g class="rca-future-node" transform="translate(418 322)"><circle r="9"></circle><text y="38" text-anchor="middle">2028</text><text y="58" text-anchor="middle">open</text></g>
+                <g class="rca-future-node faint" transform="translate(486 322)"><circle r="7"></circle><text y="38" text-anchor="middle">2030</text></g>
+                <text class="story-scene-note" x="280" y="474" text-anchor="middle">mechanism evidence is not permission to mark future milestones complete</text>
               </g>
-
-              <g class="story-node open" data-story-node="5" transform="translate(260 558)">
-                <circle r="17"></circle>
-                <text class="story-node-index" y="-28" text-anchor="middle">NEXT</text>
-                <text class="story-node-title" y="38" text-anchor="middle">independent replication</text>
-              </g>
-
-              <text class="story-axis-label" x="22" y="598">audit logic · not chronology</text>
             </svg>
           </div>
-          <p class="evidence-story-caption" data-story-caption>Priority establishes what was publicly stated and when. It does not by itself establish that the physical claim is true.</p>
+          <p class="evidence-story-caption" data-story-caption>The priority claim begins with the dated June 11, 2025 RCA release: the later comparison only matters because the mechanism map existed first.</p>
         </div>
 
         <div class="evidence-story-steps">
-          <article class="evidence-story-step active" data-story-step="0">
-            <span class="story-step-meta">01 · provenance</span>
-            <h3>Start with a public claim before later evidence exists.</h3>
-            <p>The DOI-backed corpus fixes what was actually stated, when it entered the public record, and which later tests can legitimately count as post-disclosure evidence. Priority is the starting condition—not the scientific conclusion.</p>
-            <a href="#claims" class="text-link">Open the claim registry →</a>
+          <article class="evidence-story-step active" data-story-step="0" data-kicker="01 · June 2025 forecast" data-caption="The priority claim begins with the dated June 11, 2025 RCA release: the later comparison only matters because the mechanism map existed first.">
+            <span class="story-step-meta">01 · frozen public record</span>
+            <h3>The AI-risk architecture was written down before the later evidence.</h3>
+            <p>RCA framed failure as recursive semantic and memory drift, multi-agent propagation, weakened correction, reward-hacking pressure, and loss of auditability. That dated record is the baseline against which later work and incidents can be compared.</p>
+            <a href="../publications/resonance-confinement-architecture.html" class="text-link">Open the original RCA record →</a>
           </article>
 
-          <article class="evidence-story-step" data-story-step="1">
-            <span class="story-step-meta supported">02 · frozen holdout</span>
-            <h3>GWTC survives the frozen test.</h3>
-            <p>Training-only selection fixed <code>k=9.6023256</code> before the 104-event holdout was evaluated. The holdout returned <code>ΔD=10.0354</code> and Monte Carlo <code>p=0.00129987</code> under the declared null.</p>
-            <a href="https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md" class="text-link">Open GWTC results →</a>
+          <article class="evidence-story-step" data-story-step="1" data-kicker="02 · mechanism convergence" data-caption="Later research and incidents operationalize several of the same drift classes—semantic, memory, coordination, and constraint failure—without making every RCA claim automatically true.">
+            <span class="story-step-meta supported">02 · mechanism convergence</span>
+            <h3>Later systems begin exhibiting the failure classes RCA singled out.</h3>
+            <p>Independent work on agent drift, evolving memory, constraint degradation, and multi-agent coordination now supplies operational examples of several RCA mechanisms. The strongest overlap is in persistent-state drift and propagation across longer agent trajectories.</p>
           </article>
 
-          <article class="evidence-story-step" data-story-step="2">
-            <span class="story-step-meta conditional">03 · conditional signal</span>
-            <h3>CMS is positive—but the background model matters.</h3>
-            <p>The fixed-waveform G2 test returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code> under the declared background. Alternative smooth backgrounds weaken the apparent significance, so the result stays conditional rather than being promoted to a collider discovery.</p>
-            <a href="https://github.com/rickyjreyes/wct-cms" class="text-link">Open CMS analysis →</a>
+          <article class="evidence-story-step" data-story-step="2" data-kicker="03 · quantitative correspondence" data-caption="The current audit reconstructs a later multi-agent event at R≈0.0104 versus the earlier Rpred≈0.0100. It is a close correspondence, but still needs independent replication and generalization.">
+            <span class="story-step-meta supported">03 · quantitative correspondence</span>
+            <h3>The propagation/correction ratio lands unusually close in the current reconstruction.</h3>
+            <p>The earlier program recorded <code>R_pred≈0.0100</code>. The later incident reconstruction gives <code>R_2026≈0.0104</code>, roughly a 4% relative difference. That is the strongest quantitative correspondence in the current RCA audit, while independent reconstruction remains an open requirement.</p>
+            <a href="../publications/recursive-ai-drift-audit.html" class="text-link">Open the RCA validation audit →</a>
           </article>
 
-          <article class="evidence-story-step" data-story-step="3">
-            <span class="story-step-meta negative">04 · failed route preserved</span>
-            <h3>ATLAS closes before the frozen target is tested.</h3>
-            <p>The V6.1 background route failed its own adequacy gates with no qualifying nuisance dimension. The target frequency was never evaluated and the final holdout remained untouched. The failed route stays visible instead of being tuned away.</p>
-            <a href="https://github.com/rickyjreyes/wct-atlas/issues/6" class="text-link">Open ATLAS closure →</a>
+          <article class="evidence-story-step" data-story-step="3" data-kicker="04 · graded audit" data-caption="The audit keeps strong, structural, partial, open, and future items separate instead of converting the entire forecast into one all-or-nothing score.">
+            <span class="story-step-meta convergence">04 · graded audit</span>
+            <h3>The confirmation record is strongest when the misses and open items remain visible.</h3>
+            <p>The current ledger retains 42 audit items: 15 strong mechanism or quantitative correspondences, 10 structural convergences, 10 partial or precursor cases, 1 open validation item, and 6 prospective or unestablished milestones.</p>
           </article>
 
-          <article class="evidence-story-step" data-story-step="4">
-            <span class="story-step-meta convergence">05 · separate public dataset</span>
-            <h3>NIST adds a different evidence layer.</h3>
-            <p>Fe II selected the same <code>k=31.3265306122449</code> at 120, 160, and 200 bins, with <code>0/5000</code> null exceedances at each setting. That is public-data numerical support, but it is still an author-run analysis rather than independent replication.</p>
-            <a href="https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md" class="text-link">Open NIST results →</a>
-          </article>
-
-          <article class="evidence-story-step" data-story-step="5">
-            <span class="story-step-meta open">06 · unresolved</span>
-            <h3>The next decisive step is independence.</h3>
-            <p>The current record contains positive, conditional, and failed analysis paths. What would materially change the scientific status now is independent replication, stronger null/model robustness, and a physical explanation that survives across datasets.</p>
-            <a href="#claims" class="text-link">Continue to the full provenance registry →</a>
+          <article class="evidence-story-step" data-story-step="4" data-kicker="05 · future milestones" data-caption="Early mechanism classes have evidence; the later 2027–2030 milestones remain prospective and should stay visually open until their windows and evidentiary conditions are met.">
+            <span class="story-step-meta open">05 · still prospective</span>
+            <h3>The story does not end by declaring the future already confirmed.</h3>
+            <p>The 2027–2030 stages remain prospective. Their value now is that they were stated in advance and can be judged later against specific events, not that mechanism-level evidence from 2026 automatically validates the entire future trajectory.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="priority-section" id="ledger" aria-labelledby="ledger-title">
-      <h2 id="ledger-title">Current program-level claims</h2>
-      <p class="section-lede">The first two rows are the strongest current empirical signals in the public program. ATLAS is retained beside them because its failed background-adequacy route materially limits the cross-detector replication story.</p>
-      <div class="ledger-wrap">
-        <table class="ledger">
-          <thead><tr><th>Claim</th><th>Status</th><th>Best current result</th><th>Main limitation / next evidentiary step</th><th>Primary sources</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><span class="claim-title">GWTC frozen chirp-mass mode</span><span class="claim-id">EMP-GWTC-001</span></td>
-              <td><span class="status supported">Frozen holdout · supported under tested null</span></td>
-              <td>Training-only selection froze <span class="metric">k=9.6023256</span> with <span class="metric">N=173</span>. The <span class="metric">N=104</span> holdout returned <span class="metric">ΔD=10.0354</span> and Monte Carlo <span class="metric">p=0.00129987</span> from 10,000 null simulations. A separate KDE formulation returned <span class="metric">p=0.00089991</span> on the same holdout.</td>
-              <td>The KDE result is supporting analysis, not a second independent holdout, because the holdout had already been inspected by the primary analysis. Independent catalog/dataset replication and physical-cause identification remain open.</td>
-              <td><div class="sources"><a href="https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/GWTC/blob/main/tables/gwtc_frozen_holdout_result.csv">Frozen table</a><a href="https://doi.org/10.5281/zenodo.22256802">Archive</a></div></td>
-            </tr>
-            <tr>
-              <td><span class="claim-title">CMS fixed-waveform dimuon residual</span><span class="claim-id">EMP-CMS-001</span></td>
-              <td><span class="status conditional">Conditional · background-sensitive</span></td>
-              <td>The prospective G2 fixed-waveform test returned <span class="metric">A=0.9708618</span> and <span class="metric">Δχ²=126.2832</span> under the declared background model, after the frequency/phase/sign and analysis rules were frozen.</td>
-              <td>Alternative smooth backgrounds reduce the apparent significance substantially. Detector/reconstruction effects versus a physical origin remain unresolved, so this is not presented as a collider discovery or as validation of the full WCT framework.</td>
-              <td><div class="sources"><a href="https://github.com/rickyjreyes/wct-cms">Repository</a><a href="https://doi.org/10.5281/zenodo.22257067">Archive</a></div></td>
-            </tr>
-            <tr>
-              <td><span class="claim-title">CMS → ATLAS detector transfer</span><span class="claim-id">EMP-ATLAS-001</span></td>
-              <td><span class="status negative">Route closed before target</span></td>
-              <td>Frozen V6.1 ended <span class="metric">V6_FAILED_HIERARCHICAL_ROUTE_CLOSED</span> with qualifying <span class="metric">k=[]</span>. No nuisance dimension passed both stability and residual-control gates.</td>
-              <td>The CMS-frequency ATLAS target was never evaluated and the final holdout remained untouched. Therefore there is no positive independent-detector replication—and also no direct negative result at the frozen target frequency—from this route.</td>
-              <td><div class="sources"><a href="https://github.com/rickyjreyes/wct-atlas/issues/6">V6.1 closure</a><a href="https://github.com/rickyjreyes/wct-atlas/issues/10">Final-report issue</a></div></td>
-            </tr>
-            <tr>
-              <td><span class="claim-title">NIST Fe II log-cosine bin stability</span><span class="claim-id">EMP-NIST-001</span></td>
-              <td><span class="status convergence">Open-data numerical support</span></td>
-              <td>Across 120, 160, and 200 bins, the Fe II scan selected the same <span class="metric">k=31.3265306122449</span>, with <span class="metric">0/5000</span> null exceedances at each setting and an empirical resolution floor of <span class="metric">1/5001 ≈ 0.00019996</span>.</td>
-              <td>This is an author-run public-data analysis. Independent replication, broader species behavior, null/model robustness, and the physical interpretation of the spectral structure remain separate questions.</td>
-              <td><div class="sources"><a href="https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/NIST/blob/main/tables/nist_verdict.csv">Verdict table</a></div></td>
-            </tr>
-            <tr>
-              <td><span class="claim-title">WCT core emergence claim</span><span class="claim-id">WCT-CORE-001</span></td>
-              <td><span class="status open">Theory · empirically open</span></td>
-              <td>The framework is publicly specified with equations, assumptions, symbolic/formal-support mappings, simulations, and claim-level traceability.</td>
-              <td>The proposition that mass, force, spectra, and effective spacetime geometry emerge from confinement is not established by the empirical rows above. Each narrower mathematical and physical claim requires its own validation path.</td>
-              <td><div class="sources"><a href="../publications/geometry-of-resonance.html">Foundation paper</a><a href="../equations/">Equations</a><a href="../reproduce/">Reproduce</a></div></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="priority-section" aria-labelledby="patent-title">
+    <section class="priority-section" id="patents" aria-labelledby="patent-title">
       <p class="eyebrow">Filed intellectual-property chronology</p>
       <h2 id="patent-title">Patent-Family Priority Registry</h2>
       <p class="section-lede">These dates record the earliest priority date reported for each filed family and the later filing stage shown in the portfolio. They do not establish patentability, validity, enforceability, claim scope, or infringement.</p>
@@ -429,6 +417,231 @@
         <tr><td><a class="case-title" href="../patents/#portfolio">Solid-State Frequency Reference</a><span class="case-note">REYES-FREQ-2025 · Solid-State Frequency Reference via Curvature-Locked Resonant Semiconductors</span></td><td>2025-12-18</td><td>U.S. provisional filed 2025-12-18</td><td>Structured optical programming; persistent semiconductor resonance; harmonic signatures; frequency readout; oscillator integration.</td><td><span class="patent-status">Application filed</span></td></tr>
       </tbody></table></div>
       <p class="note"><strong>Patent chronology rule:</strong> family → earliest reported priority date → later filing stage → public non-enabling scope. For legal status or claim scope, consult the official application record.</p>
+    </section>
+
+    <section class="priority-section evidence-story-section story-detectors" id="detector-evidence" aria-labelledby="detector-evidence-title">
+      <p class="eyebrow">03 · Detector prediction and test record</p>
+      <h2 id="detector-evidence-title">First say where to look. Then show what the data did.</h2>
+      <p class="section-lede">This branch starts with detector-facing commitments rather than with the strongest-looking statistics. JUNO defined a neutrino detectability target; the LHC/LHCb work defined a collider log-periodic target; CMS later produced a frozen prospective dimuon test; GWTC supplied a separate frozen holdout in gravitational-wave data; and NIST added an atomic open-data signal with bin-stable frequency selection.</p>
+
+      <div class="evidence-story" data-scroll-story>
+        <div class="evidence-story-visual-wrap">
+          <div class="evidence-story-stage"><span data-story-kicker>01 · prediction targets</span><strong data-story-progress>0%</strong></div>
+          <div class="story-rail" aria-hidden="true"><span data-story-rail></span></div>
+          <div class="evidence-story-visual" data-story-stage="0" aria-label="Scroll-driven detector narrative covering JUNO, LHC and LHCb, CMS, GWTC, NIST, and the next independent replication step">
+            <svg viewBox="0 0 560 620" role="img">
+              <defs><filter id="detector-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+
+              <g class="story-scene scene-0">
+                <text class="story-scene-kicker" x="40" y="58">PREDICTION MAP</text>
+                <text class="story-scene-title left" x="40" y="100">Two detector-facing branches are put on the record.</text>
+                <circle class="detector-origin" cx="280" cy="282" r="55"></circle>
+                <text class="detector-origin-title" x="280" y="278" text-anchor="middle">WCT</text>
+                <text class="detector-origin-small" x="280" y="298" text-anchor="middle">where to look?</text>
+                <path class="detector-branch green" d="M235 250C188 213 155 182 118 142"></path>
+                <path class="detector-branch violet" d="M325 250C372 213 405 182 442 142"></path>
+                <g class="story-target-card green" transform="translate(42 105)"><rect width="158" height="92" rx="14"></rect><text class="story-card-label" x="18" y="31">JUNO</text><text class="story-card-copy" x="18" y="55">ghost-mode</text><text class="story-card-copy" x="18" y="73">detectability</text></g>
+                <g class="story-target-card violet" transform="translate(360 105)"><rect width="158" height="92" rx="14"></rect><text class="story-card-label" x="18" y="31">LHC / LHCb</text><text class="story-card-copy" x="18" y="55">log-periodic</text><text class="story-card-copy" x="18" y="73">structure</text></g>
+                <text class="story-scene-note" x="280" y="430" text-anchor="middle">forecast / phenomenology before later tests are interpreted</text>
+              </g>
+
+              <g class="story-scene scene-1">
+                <text class="story-scene-kicker" x="40" y="58">JUNO · NOV 20, 2025</text>
+                <text class="story-scene-title left" x="40" y="100">Can a ghost-mode modulation survive detector smearing?</text>
+                <path class="story-neutrino-wave green" d="M60 240C92 185 124 295 156 240S220 185 252 240S316 295 348 240S412 185 444 240"></path>
+                <path class="story-neutrino-wave faint" d="M60 240C92 216 124 264 156 240S220 216 252 240S316 264 348 240S412 216 444 240"></path>
+                <g transform="translate(196 342)"><path class="story-detector" d="M0 0h168v130c0 46-168 46-168 0z"></path><ellipse class="story-detector-top" cx="84" cy="0" rx="84" ry="18"></ellipse><circle class="story-detector-core" cx="84" cy="78" r="31"></circle><text class="story-card-label" x="84" y="84" text-anchor="middle">JUNO</text></g>
+                <text class="story-scene-note" x="280" y="548" text-anchor="middle">detectability forecast · experimental measurement still open</text>
+              </g>
+
+              <g class="story-scene scene-2">
+                <text class="story-scene-kicker" x="40" y="58">LHC / LHCb · APR–MAY 2026</text>
+                <text class="story-scene-title left" x="40" y="100">The collider branch becomes a concrete spectral search.</text>
+                <circle class="story-collider-ring" cx="160" cy="282" r="94"></circle>
+                <circle class="story-collider-ring inner" cx="160" cy="282" r="68"></circle>
+                <circle class="story-dot" cx="244" cy="242" r="7"></circle>
+                <circle class="story-dot violet" cx="78" cy="326" r="7"></circle>
+                <path class="story-collider-track" d="M78 326C112 270 179 220 244 242"></path>
+                <text class="story-card-label" x="160" y="278" text-anchor="middle">LHCb</text>
+                <text class="story-card-copy" x="160" y="299" text-anchor="middle">B⁰ → K*⁰ μ⁺μ⁻</text>
+                <g transform="translate(305 196)">
+                  <path class="story-plot-axis" d="M0 170H205M0 10V170"></path>
+                  <path class="story-signal-line violet" d="M0 92C18 42 36 142 54 92S90 42 108 92S144 142 162 92S198 42 205 77"></path>
+                  <text class="story-axis-label" x="0" y="196">log-domain residual search</text>
+                </g>
+                <text class="story-scene-note" x="280" y="536" text-anchor="middle">phenomenology → open-data candidate-spectrum analysis</text>
+              </g>
+
+              <g class="story-scene scene-3">
+                <text class="story-scene-kicker" x="40" y="58">CMS · FROZEN PROSPECTIVE TEST</text>
+                <text class="story-scene-title left" x="40" y="100">A fixed waveform is carried into untouched data.</text>
+                <g transform="translate(56 180)">
+                  <path class="story-plot-axis" d="M0 220H448M0 20V220"></path>
+                  <path class="story-signal-line" d="M0 132C24 68 48 196 72 132S120 68 144 132S192 196 216 132S264 68 288 132S336 196 360 132S408 68 432 132"></path>
+                  <path class="story-freeze-line" d="M250 18V222"></path>
+                  <text class="story-axis-label" x="250" y="246" text-anchor="middle">freeze → G2 holdout</text>
+                  <text class="story-metric-big" x="300" y="62">Δχ² 126.28</text>
+                  <text class="story-metric-small" x="300" y="86">A = 0.9709</text>
+                </g>
+                <text class="story-scene-note" x="280" y="530" text-anchor="middle">strong fixed-model result · background sensitivity remains material</text>
+              </g>
+
+              <g class="story-scene scene-4">
+                <text class="story-scene-kicker" x="40" y="58">GWTC · FROZEN HOLDOUT</text>
+                <text class="story-scene-title left" x="40" y="100">A separate domain survives a pre-frozen frequency test.</text>
+                <g transform="translate(56 180)">
+                  <rect class="story-split train" width="210" height="180" rx="14"></rect>
+                  <rect class="story-split holdout" x="238" width="210" height="180" rx="14"></rect>
+                  <text class="story-card-label" x="22" y="35">TRAIN · N=173</text>
+                  <text class="story-card-copy" x="22" y="67">select k*</text>
+                  <text class="story-metric-big" x="22" y="116">9.6023</text>
+                  <path class="story-arrow" d="M198 90H248"></path>
+                  <text class="story-card-label" x="260" y="35">HOLDOUT · N=104</text>
+                  <text class="story-card-copy" x="260" y="67">evaluate once</text>
+                  <text class="story-metric-big green" x="260" y="116">p=.00130</text>
+                </g>
+                <text class="story-scene-note" x="280" y="486" text-anchor="middle">selection and evaluation are visibly separated</text>
+              </g>
+
+              <g class="story-scene scene-5">
+                <text class="story-scene-kicker" x="40" y="58">NIST · ATOMIC OPEN DATA</text>
+                <text class="story-scene-title left" x="40" y="100">The same selected frequency survives three binning choices.</text>
+                <g transform="translate(60 188)">
+                  <text class="story-axis-label" x="0" y="-18">selected k</text>
+                  <path class="story-plot-axis" d="M0 240H430M0 0V240"></path>
+                  <path class="story-bin-line" d="M0 58H430M0 120H430M0 182H430"></path>
+                  <circle class="story-bin-dot" cx="312" cy="58" r="8"></circle>
+                  <circle class="story-bin-dot" cx="312" cy="120" r="8"></circle>
+                  <circle class="story-bin-dot" cx="312" cy="182" r="8"></circle>
+                  <path class="story-bin-lock" d="M312 42V198"></path>
+                  <text class="story-bin-label" x="18" y="63">120 bins</text>
+                  <text class="story-bin-label" x="18" y="125">160 bins</text>
+                  <text class="story-bin-label" x="18" y="187">200 bins</text>
+                  <text class="story-metric-big" x="336" y="126">k=31.3265</text>
+                  <text class="story-metric-small" x="336" y="151">0/5000 × 3</text>
+                </g>
+              </g>
+
+              <g class="story-scene scene-6">
+                <text class="story-scene-kicker" x="40" y="58">NEXT DISCRIMINATOR</text>
+                <text class="story-scene-title left" x="40" y="100">The open question is no longer “can I find a pattern?”</text>
+                <circle class="story-open-ring" cx="280" cy="300" r="112"></circle>
+                <circle class="story-open-ring inner" cx="280" cy="300" r="72"></circle>
+                <text class="story-open-title" x="280" y="286" text-anchor="middle">INDEPENDENT</text>
+                <text class="story-open-title" x="280" y="316" text-anchor="middle">REPLICATION</text>
+                <text class="story-axis-label" x="280" y="356" text-anchor="middle">new data · new implementation · physical cause</text>
+                <path class="story-open-ray" d="M280 170V116M390 235L438 207M390 365L438 393M280 430V484M170 365L122 393M170 235L122 207"></path>
+              </g>
+            </svg>
+          </div>
+          <p class="evidence-story-caption" data-story-caption>The detector story begins with prospective targets: JUNO for a resolution-surviving ghost-mode modulation and the LHC/LHCb branch for log-periodic collider structure.</p>
+        </div>
+
+        <div class="evidence-story-steps">
+          <article class="evidence-story-step active" data-story-step="0" data-kicker="01 · prediction targets" data-caption="The detector story begins with prospective targets: JUNO for a resolution-surviving ghost-mode modulation and the LHC/LHCb branch for log-periodic collider structure.">
+            <span class="story-step-meta">01 · prediction map</span>
+            <h3>The important part comes before the p-values: where did the program say to look?</h3>
+            <p>The detector-facing record contains two explicit branches. JUNO asks whether a WCT-motivated log-energy / ghost-mode modulation would survive realistic resolution and smearing. The LHC/LHCb branch asks whether collider observables contain log-periodic structure rather than only a constant shift.</p>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="1" data-kicker="02 · JUNO forecast" data-caption="JUNO is still a forecast, not an observation: the published work defines detectability conditions and amplitude damping under detector resolution, leaving experimental measurement as the next stage.">
+            <span class="story-step-meta open">02 · JUNO · prospective</span>
+            <h3>JUNO defines a detector-resolution test before the measurement exists.</h3>
+            <p>The November 20, 2025 study derives conditions under which a WCT-motivated modulation could remain visible after JUNO resolution, smearing, and systematic limitations. Its value here is prospective: it defines a detector-facing falsification target rather than claiming a JUNO detection.</p>
+            <a href="../publications/juno-ghost-mode-neutrinos.html" class="text-link">Open the JUNO forecast →</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="2" data-kicker="03 · LHC / LHCb branch" data-caption="The collider branch progresses from a specific log-periodic C9(q²) phenomenology to an open-data B⁰→K*⁰μ⁺μ⁻ candidate-spectrum search with explicit controls and non-discovery caveats.">
+            <span class="story-step-meta convergence">03 · LHC / LHCb</span>
+            <h3>The collider prediction becomes a concrete open-data search.</h3>
+            <p>The April 23, 2026 paper introduces a WCT-motivated log-periodic deformation of <code>C9(q²)</code>. The May 9 follow-up searches open B⁰ → K*⁰ μ⁺μ⁻ candidate spectra for log-domain residual structure, active-domain winding, and Koide-like comb geometry with sideband, charm-continuum, covariance, and non-discovery controls.</p>
+            <a href="../publications/curvature-log-periodic-c9-deformation.html" class="text-link">Open LHCb phenomenology →</a>
+            <a href="../publications/lhcb-log-spectral-koide-winding.html" class="text-link">Open LHCb open-data analysis →</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="3" data-kicker="04 · CMS prospective test" data-caption="CMS supplies the strongest collider-side frozen prospective test in the current record, while alternative smooth backgrounds keep the interpretation conditional.">
+            <span class="story-step-meta conditional">04 · CMS · frozen waveform</span>
+            <h3>CMS carries a fixed waveform into untouched target data.</h3>
+            <p>Before the G2 target was inspected, frequency, phase, sign, selection rules, binning, masks, background treatment, null sizes, and random seed were frozen. The holdout returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code> under that fixed background; alternative smooth backgrounds materially weaken the apparent significance.</p>
+            <a href="https://github.com/rickyjreyes/wct-cms" class="text-link">Open CMS analysis →</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="4" data-kicker="05 · GWTC frozen holdout" data-caption="GWTC cleanly separates frequency selection from holdout evaluation: k*=9.6023256 was chosen on training data and the N=104 holdout returned p=0.00129987 under the declared null.">
+            <span class="story-step-meta supported">05 · GWTC · frozen holdout</span>
+            <h3>GWTC supplies the cleanest train/holdout separation.</h3>
+            <p>Training-only selection fixed <code>k*=9.6023256</code> using 173 events. The 104-event holdout returned <code>ΔD=10.0354</code> and Monte Carlo <code>p=0.00129987</code> under the declared null. A KDE formulation is supporting analysis on the same already-inspected holdout, not a second independent replication.</p>
+            <a href="https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md" class="text-link">Open GWTC results →</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="5" data-kicker="06 · NIST bin stability" data-caption="NIST adds a different public-data domain: Fe II selects the same k=31.3265306122449 at 120, 160, and 200 bins with zero null exceedances in 5,000 simulations at each setting.">
+            <span class="story-step-meta convergence">06 · NIST · atomic open data</span>
+            <h3>NIST adds cross-binning stability in a different physical dataset.</h3>
+            <p>Across 120, 160, and 200 bins, the Fe II analysis selected the same <code>k=31.3265306122449</code>, with <code>0/5000</code> null exceedances at each setting. It is a separate public-data domain, but remains an author-run analysis rather than independent replication.</p>
+            <a href="https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md" class="text-link">Open NIST results →</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="6" data-kicker="07 · next discriminator" data-caption="The next major increase in confidence would come from an independent dataset or implementation reproducing the frozen structure while distinguishing physical origin from background, reconstruction, and analysis artifacts.">
+            <span class="story-step-meta open">07 · unresolved</span>
+            <h3>The next step has to be harder than another author-run scan.</h3>
+            <p>The evidence story now contains prospective detector targets, frozen holdouts, conditional collider evidence, and cross-binning atomic support. The strongest next discriminator is independent replication on new data or a genuinely independent implementation, together with a physical-cause test that separates the proposed mechanism from background and reconstruction effects.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="priority-section" id="ledger" aria-labelledby="ledger-title">
+      <p class="eyebrow">04 · Audit table</p>
+      <h2 id="ledger-title">Current detector and empirical record</h2>
+      <p class="section-lede">The storytelling sections above show the logic. This table preserves the compact audit state: prospective detector forecasts, public-data phenomenology, frozen holdouts, conditional signals, and open replication requirements. ATLAS is intentionally omitted from this priority-facing summary.</p>
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <thead><tr><th>Claim</th><th>Status</th><th>Best current result</th><th>Main limitation / next evidentiary step</th><th>Primary sources</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="claim-title">JUNO ghost-mode detectability forecast</span><span class="claim-id">WCT-NU-001</span></td>
+              <td><span class="status open">Prospective detector forecast</span></td>
+              <td>The November 20, 2025 study derives detectability conditions and amplitude-damping estimates for WCT-motivated log-energy / ghost-mode modulations under JUNO resolution and smearing.</td>
+              <td>This is not a JUNO observation. Experimental measurement against a frozen detector-facing signal model remains the validation stage.</td>
+              <td><div class="sources"><a href="../publications/juno-ghost-mode-neutrinos.html">Publication</a><a href="https://doi.org/10.5281/zenodo.17715872">Archive</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">LHC / LHCb log-periodic branch</span><span class="claim-id">WCT-LHCB-001 · WCT-LHCB-002</span></td>
+              <td><span class="status convergence">Public-data phenomenology / analysis</span></td>
+              <td>The April 2026 study defines a log-periodic deformation of C9(q²); the May 2026 open-data analysis searches B⁰ → K*⁰ μ⁺μ⁻ candidate spectra for log-domain residual structure, winding, and Koide-like comb geometry with explicit controls.</td>
+              <td>Discovery-level confirmation is not claimed. Full covariance, look-elsewhere treatment, exact executable pipeline linkage, and independent replication remain material.</td>
+              <td><div class="sources"><a href="../publications/curvature-log-periodic-c9-deformation.html">Phenomenology</a><a href="../publications/lhcb-log-spectral-koide-winding.html">Open-data analysis</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">CMS fixed-waveform dimuon residual</span><span class="claim-id">EMP-CMS-001</span></td>
+              <td><span class="status conditional">Conditional · background-sensitive</span></td>
+              <td>The prospective G2 fixed-waveform test returned <span class="metric">A=0.9708618</span> and <span class="metric">Δχ²=126.2832</span> under the declared background model, after frequency, phase, sign, and analysis rules were frozen.</td>
+              <td>Alternative smooth backgrounds reduce the apparent significance substantially. Detector/reconstruction effects versus a physical origin remain unresolved.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/wct-cms">Repository</a><a href="https://doi.org/10.5281/zenodo.22257067">Archive</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">GWTC frozen chirp-mass mode</span><span class="claim-id">EMP-GWTC-001</span></td>
+              <td><span class="status supported">Frozen holdout · supported under tested null</span></td>
+              <td>Training-only selection froze <span class="metric">k=9.6023256</span> with <span class="metric">N=173</span>. The <span class="metric">N=104</span> holdout returned <span class="metric">ΔD=10.0354</span> and Monte Carlo <span class="metric">p=0.00129987</span> from 10,000 null simulations.</td>
+              <td>Independent catalog/dataset replication and physical-cause identification remain open. The KDE result is supporting analysis on the same holdout, not a second independent holdout.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/GWTC/blob/main/tables/gwtc_frozen_holdout_result.csv">Frozen table</a><a href="https://doi.org/10.5281/zenodo.22256802">Archive</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">NIST Fe II log-cosine bin stability</span><span class="claim-id">EMP-NIST-001</span></td>
+              <td><span class="status convergence">Open-data numerical support</span></td>
+              <td>Across 120, 160, and 200 bins, Fe II selected the same <span class="metric">k=31.3265306122449</span>, with <span class="metric">0/5000</span> null exceedances at each setting and an empirical resolution floor of <span class="metric">1/5001 ≈ 0.00019996</span>.</td>
+              <td>Independent replication, broader species behavior, null/model robustness, and the physical interpretation remain separate questions.</td>
+              <td><div class="sources"><a href="https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/NIST/blob/main/tables/nist_verdict.csv">Verdict table</a></div></td>
+            </tr>
+            <tr>
+              <td><span class="claim-title">WCT core emergence claim</span><span class="claim-id">WCT-CORE-001</span></td>
+              <td><span class="status open">Theory · empirically open</span></td>
+              <td>The framework is publicly specified with equations, assumptions, symbolic/formal-support mappings, simulations, and claim-level traceability.</td>
+              <td>The proposition that mass, force, spectra, and effective spacetime geometry emerge from confinement is not established by the empirical rows above. Each narrower claim requires its own validation path.</td>
+              <td><div class="sources"><a href="../publications/geometry-of-resonance.html">Foundation paper</a><a href="../equations/">Equations</a><a href="../reproduce/">Reproduce</a></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="priority-section" aria-labelledby="convergence-title">
@@ -517,58 +730,53 @@
       update();
     }
 
-    const story=document.querySelector('[data-evidence-story]');
-    if(!story)return;
-    const visual=story.querySelector('.evidence-story-visual');
-    const line=story.querySelector('[data-story-line]');
-    const nodes=[...story.querySelectorAll('[data-story-node]')];
-    const steps=[...story.querySelectorAll('[data-story-step]')];
-    const kicker=story.querySelector('[data-story-kicker]');
-    const progress=story.querySelector('[data-story-progress]');
-    const caption=story.querySelector('[data-story-caption]');
-    const captions=[
-      'Priority establishes what was publicly stated and when. It does not by itself establish that the physical claim is true.',
-      'GWTC is the cleanest frozen-holdout result in the current program: the frequency was selected before the holdout statistic was evaluated.',
-      'CMS shows why a large test statistic is not the end of the story: background choice materially changes the interpretation.',
-      'ATLAS is preserved as a failed analysis route. The target was not tested, so the record is neither a replication nor a target-frequency falsification.',
-      'NIST moves to a different public dataset and reproduces the selected frequency across three binning choices, while remaining author-run.',
-      'The strongest unresolved discriminator is independence: new datasets, independent implementations, and physical mechanism tests.'
-    ];
-    const labels=[
-      '01 · public record','02 · frozen holdout','03 · conditional signal',
-      '04 · route closed','05 · public-data support','06 · independence'
-    ];
+    const stories=[...document.querySelectorAll('[data-scroll-story]')];
+    const states=stories.map(story=>{
+      const steps=[...story.querySelectorAll('[data-story-step]')];
+      const state={
+        story,
+        visual:story.querySelector('.evidence-story-visual'),
+        steps,
+        kicker:story.querySelector('[data-story-kicker]'),
+        progress:story.querySelector('[data-story-progress]'),
+        rail:story.querySelector('[data-story-rail]'),
+        caption:story.querySelector('[data-story-caption]'),
+        active:0
+      };
+      const render=idx=>{
+        idx=Math.max(0,Math.min(steps.length-1,idx));
+        state.active=idx;
+        if(state.visual)state.visual.dataset.storyStage=String(idx);
+        steps.forEach((step,i)=>step.classList.toggle('active',i===idx));
+        const step=steps[idx];
+        if(step&&state.kicker)state.kicker.textContent=step.dataset.kicker||'';
+        if(step&&state.caption)state.caption.textContent=step.dataset.caption||'';
+      };
+      state.render=render;
+      render(0);
+      return state;
+    });
 
-    let active=0,ticking=false;
-    const render=(idx)=>{
-      idx=Math.max(0,Math.min(steps.length-1,idx));
-      active=idx;
-      if(visual)visual.dataset.storyStage=String(idx);
-      steps.forEach((step,i)=>step.classList.toggle('active',i===idx));
-      nodes.forEach((node,i)=>{
-        node.classList.toggle('reached',i<=idx);
-        node.classList.toggle('current',i===idx);
-      });
-      if(kicker)kicker.textContent=labels[idx];
-      if(caption)caption.textContent=captions[idx];
-    };
+    let ticking=false;
     const measure=()=>{
       ticking=false;
       const target=innerHeight*.48;
-      let best=0,bestDist=Infinity;
-      steps.forEach((step,i)=>{
-        const r=step.getBoundingClientRect();
-        const center=r.top+r.height*.5;
-        const d=Math.abs(center-target);
-        if(d<bestDist){bestDist=d;best=i}
+      states.forEach(state=>{
+        let best=0,bestDist=Infinity;
+        state.steps.forEach((step,i)=>{
+          const rect=step.getBoundingClientRect();
+          const center=rect.top+rect.height*.5;
+          const d=Math.abs(center-target);
+          if(d<bestDist){bestDist=d;best=i}
+        });
+        if(best!==state.active)state.render(best);
+        const rect=state.story.getBoundingClientRect();
+        const start=innerHeight*.55;
+        const span=Math.max(1,rect.height-innerHeight*.32);
+        const p=Math.max(0,Math.min(1,(start-rect.top)/span));
+        if(state.rail)state.rail.style.transform='scaleX('+p+')';
+        if(state.progress)state.progress.textContent=Math.round(p*100)+'%';
       });
-      if(best!==active)render(best);
-      const sr=story.getBoundingClientRect();
-      const start=innerHeight*.55;
-      const span=Math.max(1,sr.height-innerHeight*.32);
-      const storyProgress=Math.max(0,Math.min(1,(start-sr.top)/span));
-      if(line)line.style.strokeDashoffset=String(1-storyProgress);
-      if(progress)progress.textContent=Math.round(storyProgress*100)+'%';
     };
     const onScroll=()=>{
       if(ticking)return;
@@ -577,7 +785,6 @@
     };
     addEventListener('scroll',onScroll,{passive:true});
     addEventListener('resize',onScroll,{passive:true});
-    render(0);
     measure();
   })();
 </script>
