@@ -84,28 +84,28 @@
         #key-priority-anchors .priority-anchor-id{grid-column:2;text-align:left;margin-top:-8px}
         #rca-prediction-audit .rca-group-grid{grid-template-columns:1fr}
       }
-      .rca-validation-record{
+      .supporting-audit-record{
         margin-top:48px;
         padding-top:10px;
         border-top:1px solid rgba(103,212,255,.22);
       }
-      .rca-validation-record>.priority-section{
+      .supporting-audit-record>.priority-section{
         padding:38px 0!important;
         border-top:1px solid var(--line)!important;
       }
-      .rca-validation-record>.priority-section:first-child{
+      .supporting-audit-record>.priority-section:first-child{
         border-top:0!important;
         padding-top:28px!important;
       }
-      .rca-validation-record #expanded-evidence{
+      .supporting-audit-record #expanded-evidence{
         border-top:0!important;
       }
-      .rca-validation-record #verified-predictions,
-      .rca-validation-record #rca-prediction-audit{
+      .supporting-audit-record #verified-predictions,
+      .supporting-audit-record #rca-prediction-audit{
         max-width:none;
       }
-      .rca-validation-record .prediction-grid,
-      .rca-validation-record .evidence-grid{
+      .supporting-audit-record .prediction-grid,
+      .supporting-audit-record .evidence-grid{
         max-width:none;
       }
 
@@ -175,7 +175,7 @@
     section.id = 'key-priority-anchors';
     section.setAttribute('aria-labelledby', 'key-priority-anchors-title');
     section.innerHTML = `
-      <p class="eyebrow">Dated public record</p>
+      <p class="eyebrow">07 · Chronology index</p>
       <h2 id="key-priority-anchors-title">Key Priority Anchors</h2>
       <p class="section-lede">Selected public records that define the main chronology of the WCT research program. The complete registry below preserves the full Claim ID → source → date → DOI chain.</p>
       <ol class="priority-timeline">
@@ -207,7 +207,9 @@
       </ol>
       <div class="priority-anchor-actions"><a class="button secondary" href="#scholarly-priority">Full claim-level registry</a><a class="button secondary" href="../publications/">Publication archive</a></div>
     `;
-    verified.parentNode.insertBefore(section, verified);
+    const claims = $('#scholarly-priority') || $('[aria-labelledby="claims-title"]');
+    if (claims && claims.parentNode) claims.parentNode.insertBefore(section, claims);
+    else verified.parentNode.insertBefore(section, verified);
   };
 
   const wrapPredictionDetail = (section) => {
@@ -237,9 +239,9 @@
     const eyebrow = $('.eyebrow', section);
     const h2 = $('#verified-predictions-title', section);
     const lede = $('.section-lede', section);
-    if (eyebrow) eyebrow.textContent = 'Validation record';
-    if (h2) h2.textContent = 'Independent and Holdout Evidence';
-    if (lede) lede.textContent = 'A compact summary of later observations, literature results, engineering results, incidents, and frozen/public-data tests corresponding to earlier Reyes claims. Full case-level detail remains auditable below.';
+    if (eyebrow) eyebrow.textContent = '05 · Supporting validation catalogue';
+    if (h2) h2.textContent = 'Supporting Validation Catalogue';
+    if (lede) lede.textContent = 'A broader reference catalogue mixing external research correspondence, incidents, engineering results, and author-run frozen/public-data tests. The highest-specificity evidence is intentionally surfaced earlier on the page.';
 
     if (!$('.report-takeaways', section)) {
       const takeaways = document.createElement('div');
@@ -265,7 +267,7 @@
     const h2 = $('#rca-prediction-audit-title', section);
     const lede = $('.section-lede', section);
     if (h2) h2.textContent = 'RCA Mechanism & Forecast Audit';
-    if (lede) lede.textContent = 'Reference audit of the RCA mechanism, diagnostic vocabulary, containment architecture, and frozen forecast milestones. Detailed items are retained for inspection rather than presented as the main priority record.';
+    if (lede) lede.textContent = '06 · Author-side reference audit of RCA mechanisms, diagnostics, containment architecture, and frozen forecast milestones. These classifications are supporting audit material, not stronger evidence than the external records and frozen tests above.';
 
     if (!$('.rca-model-summary', section)) {
       const block = document.createElement('div');
@@ -335,7 +337,7 @@
     if (!section) return;
     const eyebrow = $('.eyebrow', section);
     const h2 = $('#convergence-title', section) || $('h2', section);
-    if (eyebrow) eyebrow.textContent = 'Date-checked comparison layer';
+    if (eyebrow) eyebrow.textContent = '04 · Broader post-date convergence';
     if (h2) h2.textContent = 'Verified Post-Date Comparisons';
   };
 
@@ -367,14 +369,14 @@
     const nav = $('#priority-jump');
     if (!nav) return;
     const labels = [
-      ['#key-priority-anchors','Priority anchors'],
-      ['#scholarly-priority','Claim registry'],
+      ['#rca-confirmation','RCA high-specificity evidence'],
       ['#patent-priority','Patent chronology'],
-      ['#verified-predictions','Validation record'],
+      ['#detector-evidence','Detector evidence'],
+      ['#verified-convergence','Post-date convergence'],
+      ['#verified-predictions','Validation catalogue'],
       ['#rca-prediction-audit','RCA audit'],
-      ['#expanded-evidence','External evidence'],
-      ['#verified-convergence','Post-date comparisons'],
-      ['#historical-controls','Historical controls']
+      ['#key-priority-anchors','Priority anchors'],
+      ['#scholarly-priority','Full claim registry']
     ];
     nav.innerHTML = '';
     labels.forEach(([href,text]) => {
@@ -387,34 +389,38 @@
 
   const reorderSections = () => {
     const main = $('.priority-shell');
-    const rca = $('#rca-confirmation');
-    if (!main || !rca) return;
+    if (!main) return;
 
-    let mount = $('#rca-validation-record', rca);
+    const convergence = $('#verified-convergence') || $('[aria-labelledby="convergence-title"]');
+    const claims = $('#scholarly-priority') || $('[aria-labelledby="claims-title"]');
+
+    let mount = $('#supporting-audit-record');
     if (!mount) {
       mount = document.createElement('div');
-      mount.id = 'rca-validation-record';
-      mount.className = 'rca-validation-record';
-      mount.setAttribute('aria-label', 'RCA validation and external evidence record');
-      rca.appendChild(mount);
+      mount.id = 'supporting-audit-record';
+      mount.className = 'supporting-audit-record';
+      mount.setAttribute('aria-label', 'Supporting validation and author-side audit record');
     }
 
-    const external = $('#expanded-evidence');
+    if (convergence && convergence.parentNode === main) {
+      main.insertBefore(mount, convergence.nextSibling);
+    } else if (claims && claims.parentNode === main) {
+      main.insertBefore(mount, claims);
+    } else if (!mount.parentNode) {
+      main.appendChild(mount);
+    }
+
     const verified = $('#verified-predictions');
     const audit = $('#rca-prediction-audit');
-
-    // These are the actual runtime-generated sections. Move them into the RCA
-    // narrative instead of leaving duplicated summaries near the top while the
-    // real validation record is appended to the bottom of <main>.
-    [external, verified, audit].filter(Boolean).forEach(section => {
-      section.classList.add('rca-validation-detail');
+    [verified, audit].filter(Boolean).forEach(section => {
+      section.classList.add('supporting-audit-detail');
       mount.appendChild(section);
     });
 
-    // Keep the general WCT chronology outside the RCA evidence stack.
     const anchors = $('#key-priority-anchors');
-    const claims = $('#scholarly-priority') || $('[aria-labelledby="claims-title"]');
-    if (anchors && claims && anchors.parentNode === main) main.insertBefore(anchors, claims);
+    if (anchors && claims && claims.parentNode === main) {
+      main.insertBefore(anchors, claims);
+    }
   };
 
   const run = () => {
