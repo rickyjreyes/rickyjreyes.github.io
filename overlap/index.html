@@ -281,7 +281,7 @@
 
     function relationshipFilteredRecords(kind){
       const all=domainRecords(kind);
-      return activeRelationship?all.filter(r=>relationship(r)===activeRelationship):all;
+      return all.filter(r=>(!activeRelationship||relationship(r)===activeRelationship)&&(!activeChronology||chronologyOf(r)===activeChronology));
     }
 
     function renderSummaryCounts(){
@@ -422,6 +422,7 @@
     function toggleRelationshipFilter(label){
       activeRelationship=activeRelationship===label?null:label;
       renderRelationshipFilterState();
+      renderFilterChips();
       renderTop();
       renderLedger();
     }
