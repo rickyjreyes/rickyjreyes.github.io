@@ -81,7 +81,6 @@
         <a href="#evidence">Evidence</a>
         <a href="#theory">Theory</a>
         <a href="#start">Start here</a>
-        <a href="#technology">Technology</a>
         <a href="#branches">Branches</a>
         <a href="#publications">Publications</a>
         <a href="#reproduce">Reproduce</a>
@@ -135,51 +134,65 @@
       <div class="section-shell reference-status-grid">
         <div><strong>28</strong><span>research releases</span></div>
         <div><strong>2025–2026</strong><span>public research chronology</span></div>
-        <div><strong>Claims</strong><span>supported, conditional, negative, and open states separated</span></div>
+        <div><strong>Claims</strong><span>selected supported, conditional, and prospective states separated</span></div>
       </div>
     </section>
 
     <section class="reference-section section-shell" id="evidence" aria-labelledby="evidence-title">
       <div class="reference-heading">
         <div>
-          <p class="eyebrow">Current evidence snapshot · October 6, 2026</p>
-          <h2 id="evidence-title">What the program currently shows—and what it does not.</h2>
+          <p class="eyebrow">Selected priority &amp; evidence anchors</p>
+          <h2 id="evidence-title">Five cross-domain records worth seeing first.</h2>
         </div>
-        <p>This is the shortest status view for readers who want the empirical result before the broader theory. Statistical statements below apply to their stated analysis and null/background model; they are not presented as validation of every WCT claim.</p>
+        <p>This is a deliberately selected homepage view, not the complete audit ledger. It surfaces the strongest or most consequential empirical and prospective records across gravitational-wave, collider, atomic, and neutrino-detector work. The full Priority page retains the complete chronology and status record.</p>
       </div>
 
-      <div class="evidence-legend" aria-label="Evidence status legend">
-        <span style="color:var(--hr-green)"><i></i>Positive under frozen test</span>
-        <span style="color:var(--hr-amber)"><i></i>Conditional · background-sensitive</span>
-        <span style="color:var(--hr-red)"><i></i>Negative / non-replication</span>
-        <span style="color:var(--hr-violet)"><i></i>Open · theory-level</span>
+      <div class="evidence-legend" aria-label="Homepage highlight status legend">
+        <span style="color:var(--hr-green)"><i></i>Frozen / prospective holdout</span>
+        <span style="color:var(--hr-amber)"><i></i>Conditional · model-sensitive</span>
+        <span style="color:var(--hr-cyan)"><i></i>Public-data analysis</span>
+        <span style="color:var(--hr-violet)"><i></i>Prospective detector forecast</span>
       </div>
 
       <div class="evidence-spine">
         <article class="evidence-item positive">
-          <p class="evidence-state">Positive under frozen test · GWTC</p>
-          <h3>GWTC frozen holdout</h3>
-          <p>Training selected <code>k=9.6023256</code>; the 104-event holdout returned ΔD=10.0354 with Monte Carlo <code>p=0.00129987</code> under the frozen test. This is the strongest clean frozen holdout currently listed.</p>
+          <p class="evidence-state">Frozen holdout · GWTC</p>
+          <h3>GWTC chirp-mass mode survives the frozen holdout</h3>
+          <p>Training-only selection froze <code>k*=9.6023256</code> before the GWTC-5 holdout evaluation. The holdout returned <code>ΔD=10.035425</code> with <code>p=0.00129987</code>. A separately formulated KDE analysis selected <code>k*=9.7941176</code> and returned <code>p=0.00089991</code> on the same holdout as a supporting analysis.</p>
+          <a class="text-link" href="publications/gwtc-log-periodic-chirp-mass.html">Open GWTC record <span aria-hidden="true">→</span></a>
         </article>
+
         <article class="evidence-item conditional">
-          <p class="evidence-state">Conditional · background-sensitive · CMS</p>
-          <h3>CMS fixed-waveform residual</h3>
-          <p>The prospective G2 test returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code> under the declared background. The effect is background-model sensitive; alternative smooth backgrounds reduce it substantially.</p>
+          <p class="evidence-state">Prospective phase-locked holdout · CMS</p>
+          <h3>Frozen CMS waveform persists across file and period tests</h3>
+          <p>After discovery, the CMS frequency was frozen rather than rescanned. An unused Run2016H file reproduced it with <code>Ar=0.9367</code> and <code>Δχ²=118.91</code>, followed by a preregistered Run2016G test with <code>Ar=0.9349</code> and <code>Δχ²=115.89</code>. The later untouched G2 phase-locked holdout returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code>. Significance remains background-model dependent.</p>
+          <a class="text-link" href="publications/cms-log-periodic-dimuon-residual.html">Open CMS record <span aria-hidden="true">→</span></a>
         </article>
-        <article class="evidence-item negative">
-          <p class="evidence-state">Negative / non-replication · ATLAS</p>
-          <h3>ATLAS transfer test</h3>
-          <p>No positive cross-detector replication was obtained. V6.1 closed as <code>V6_FAILED_HIERARCHICAL_ROUTE_CLOSED</code> with no qualifying nuisance dimension, before the final CMS-frequency target was evaluated.</p>
+
+        <article class="evidence-item public-data">
+          <p class="evidence-state">Public-data analysis · NIST</p>
+          <h3>Bin-stable log-periodic structure in the public Fe II line list</h3>
+          <p>The NIST analysis reports a reproducible log-cosine line-density scan over Atomic Spectra Database exports. The canonical Fe II program explicitly tests bin stability, active-domain winding, Poisson-bootstrap nulls, neighboring ions, implementation parity, and baseline sensitivity.</p>
+          <a class="text-link" href="publications/nist-bin-stable-log-periodic-structure.html">Open NIST record <span aria-hidden="true">→</span></a>
         </article>
-        <article class="evidence-item open">
-          <p class="evidence-state">Open · theory-level</p>
-          <h3>Core emergence claims</h3>
-          <p>Claims that mass, force, or effective spacetime emerge from confinement remain theory-level proposals unless a claim-specific ledger entry states a stronger empirical status.</p>
+
+        <article class="evidence-item public-data">
+          <p class="evidence-state">Public-data analysis · LHCb</p>
+          <h3>Log-spectral and winding structure in B⁰ → K*⁰ μ⁺μ⁻ candidate spectra</h3>
+          <p>The LHCb open-data study searches candidate spectra for log-domain residual structure, active-domain winding, and Koide-like comb geometry. Its analysis includes KDE baseline repair, sideband and charm-continuum controls, veto-window covariance, and explicit non-discovery caveats.</p>
+          <a class="text-link" href="publications/lhcb-log-spectral-koide-winding.html">Open LHCb record <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="evidence-item forecast">
+          <p class="evidence-state">Prospective detector forecast · JUNO</p>
+          <h3>JUNO detectability forecast for WCT-motivated ghost-mode structure</h3>
+          <p>The November 20, 2025 study asks whether WCT-motivated log-energy or ghost-mode modulations could survive JUNO detector resolution, smearing, and systematic limitations. It derives detectability conditions and amplitude-damping estimates as a falsifiable detector-facing forecast; it is not presented as a JUNO observation.</p>
+          <a class="text-link" href="publications/juno-ghost-mode-neutrinos.html">Open JUNO forecast <span aria-hidden="true">→</span></a>
         </article>
       </div>
 
-      <p class="provenance-note"><strong>Provenance policy.</strong> April 22, 2025 is the program-level public-chronology date used by this site. <a href="https://doi.org/10.5281/zenodo.15644222">10.5281/zenodo.15644222</a> is the canonical citation target used here for <em>The Geometry of Resonance</em>, not a claim that its Zenodo record number is the earliest same-title deposit. The title has a multi-record Zenodo version lineage, and legacy/version citations include <code>10.5281/zenodo.15286791</code>. Record-number order is not used as evidence of priority. Where an original manuscript/public-disclosure date differs from a later archive record creation or redeposit date, the two dates are treated separately.</p>
-      <a class="text-link" href="priority/#ledger">Open the current claims &amp; evidence ledger <span aria-hidden="true">→</span></a>
+      <p class="provenance-note"><strong>Selection policy.</strong> These are homepage highlights chosen for scientific importance, preregistration/freeze structure, cross-domain coverage, or prospective specificity. Use the <a href="priority/">Priority registry</a> for the complete dated record, validation ledger, and underlying provenance.</p>
+      <a class="text-link" href="priority/">Open the full Priority registry <span aria-hidden="true">→</span></a>
     </section>
 
     <section class="reference-section alt" id="theory" aria-labelledby="theory-title">
@@ -357,83 +370,6 @@
           <p>The argument that stable curvature-locked confinement is restricted to at most three spatial dimensions.</p>
           <a class="paper-doi" href="https://doi.org/10.5281/zenodo.17081283">10.5281/zenodo.17081283</a>
         </article>
-      </div>
-    </section>
-
-    <section class="reference-section alt" id="technology" aria-labelledby="technology-title">
-      <div class="section-shell">
-        <div class="reference-heading">
-          <div>
-            <p class="eyebrow">From theory to technology</p>
-            <h2 id="technology-title">A research program with implementation paths.</h2>
-          </div>
-          <p>WCT begins as a mathematical framework and extends into computational, photonic, memory, security, and control architectures. Implementation status is tracked at the project level so theoretical claims, prototypes, experiments, and engineering milestones remain distinct.</p>
-        </div>
-
-        <div class="relationship-legend" aria-label="Relationship types">
-          <span style="color:var(--hr-green)"><i></i>Patent family</span>
-          <span style="color:var(--hr-cyan)"><i></i>Prototype</span>
-          <span style="color:var(--hr-amber)"><i></i>Author experiment</span>
-          <span style="color:var(--hr-violet)"><i></i>Architecture proposal</span>
-          <span style="color:var(--hr-red)"><i></i>Open engineering problem</span>
-        </div>
-
-        <div class="tech-map">
-          <svg viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
-            <circle cx="500" cy="280" r="8" fill="#b6ffda"></circle>
-            <text x="500" y="260" text-anchor="middle" fill="#e8eef4" font-family="IBM Plex Mono,monospace" font-size="14">WCT</text>
-            <path class="tech-edge" pathLength="1" d="M500 280C390 250 270 120 150 112" stroke="#f0c987"></path>
-            <path class="tech-edge" pathLength="1" d="M500 280C610 250 730 120 850 112" stroke="#67d4ff"></path>
-            <path class="tech-edge" pathLength="1" d="M500 280C390 280 270 240 150 252" stroke="#b6ffda"></path>
-            <path class="tech-edge" pathLength="1" d="M500 280C610 280 730 240 850 252" stroke="#f29b8c"></path>
-            <path class="tech-edge" pathLength="1" d="M500 280C390 310 270 410 150 404" stroke="#a899ff"></path>
-            <path class="tech-edge" pathLength="1" d="M500 280C610 310 730 410 850 404" stroke="#a899ff"></path>
-            <path class="tech-edge" pathLength="1" d="M500 280C500 360 500 468 500 500" stroke="#67d4ff"></path>
-          </svg>
-          <div class="tech-grid">
-            <article class="tech-item">
-              <p class="rel" style="color:var(--hr-amber)">Author experiment</p>
-              <h3>Scientific instrumentation</h3>
-              <p>Photodiode harmonic state: raw oscilloscope waveform, FFT analysis, prediction ledger, ratio diagnostics, shuffle nulls, and explicit control requirements.</p>
-            </article>
-            <article class="tech-item">
-              <p class="rel" style="color:var(--hr-cyan)">Prototype · patent family</p>
-              <h3>WaveLock and drift detection</h3>
-              <p>Curvature-regulated commitments, replay verification, protocol binding, attestation, and runtime drift analysis.</p>
-            </article>
-            <article class="tech-item">
-              <p class="rel" style="color:var(--hr-green)">Patent family · architecture proposal</p>
-              <h3>Persistent wave memory</h3>
-              <p>Wave-state storage, spectral confinement, readout, reset control, physical cells, arrays, and software emulation.</p>
-            </article>
-            <article class="tech-item">
-              <p class="rel" style="color:var(--hr-red)">Patent family · open engineering problem</p>
-              <h3>Photonics and frequency references</h3>
-              <p>Solid-state frequency reference and coherent field generator concepts using structured excitation, confinement geometry, harmonic stabilization, relocking, and detector feedback.</p>
-            </article>
-            <article class="tech-item">
-              <p class="rel" style="color:var(--hr-violet)">Architecture proposal</p>
-              <h3>AI drift and coherence architectures</h3>
-              <p>Extensions of confinement and coherence concepts into AI architecture and recursive drift analysis.</p>
-            </article>
-            <article class="tech-item">
-              <p class="rel" style="color:var(--hr-violet)">Architecture proposal · open engineering problem</p>
-              <h3>Control systems</h3>
-              <p>Resonance-based and diagnostics-driven control, including fusion-control diagnostics.</p>
-            </article>
-            <article class="tech-item">
-              <p class="rel" style="color:var(--hr-cyan)">Prototype · open engineering problem</p>
-              <h3>Secure computation</h3>
-              <p>CurvaChain prototype ledger and one-time signatures, with documented security-analysis targets.</p>
-            </article>
-            <article class="tech-item">
-              <p class="rel">Technical diligence</p>
-              <h3>Inspect the implementation paths</h3>
-              <p><a class="text-link" href="patents/">Patents</a> · <a class="text-link" href="reproduce/">Reproduce</a> · <a class="text-link" href="equations/">Equations</a></p>
-            </article>
-          </div>
-        </div>
-        <p class="tech-boundary"><strong>Engineering evaluation:</strong> commercial performance, scaling behavior, production-scale hardware feasibility, security proof, and independent replication are tracked as separate validation milestones.</p>
       </div>
     </section>
 
