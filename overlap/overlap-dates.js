@@ -361,5 +361,118 @@ window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
     "precision": "day",
     "status": "verified",
     "source": "Journal of Scientific Computing / Springer"
+  },
+  "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/": {
+    "date": "2026-08-26",
+    "precision": "day",
+    "status": "verified",
+    "source": "METR / Redwood Research"
+  },
+  "https://openai.com/index/hugging-face-incident-and-the-road-ahead/": {
+    "date": "2026-08-26",
+    "precision": "day",
+    "status": "verified",
+    "source": "OpenAI"
+  },
+  "https://openai.com/index/model-misalignment-reporting-framework/": {
+    "date": "2026-09-16",
+    "precision": "day",
+    "status": "verified",
+    "source": "OpenAI"
+  },
+  "https://openai.com/index/hugging-face-model-evaluation-security-incident/": {
+    "date": "2026-07-21",
+    "precision": "day",
+    "status": "verified",
+    "source": "OpenAI"
+  },
+  "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/": {
+    "date": "2025-12-09",
+    "precision": "day",
+    "status": "verified",
+    "source": "OWASP GenAI Security Project"
+  },
+  "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents": {
+    "date": "2026-09-09",
+    "precision": "day",
+    "status": "verified",
+    "source": "Anthropic"
+  },
+  "https://metr.org/agent-incidents/": {
+    "date": "2026-05-19",
+    "precision": "day",
+    "status": "last-updated",
+    "source": "METR",
+    "note": "Maintained catalogue; source states LAST UPDATED May 19, 2026."
+  },
+  "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/": {
+    "date": "2026-07-13",
+    "precision": "day",
+    "status": "verified",
+    "source": "Anthropic Alignment Science"
+  },
+  "https://deepmind.google/blog/securing-the-future-of-ai-agents/": {
+    "date": "2026-06-18",
+    "precision": "day",
+    "status": "verified",
+    "source": "Google DeepMind"
+  },
+  "https://apolloresearch.ai/science/metagaming-matters-for-training-evaluation-and-oversight": {
+    "date": "2026-03-16",
+    "precision": "day",
+    "status": "verified",
+    "source": "Apollo Research"
+  },
+  "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/": {
+    "date": "2026-03-19",
+    "precision": "day",
+    "status": "verified",
+    "source": "OpenAI"
+  },
+  "https://alignment.anthropic.com/2026/automated-alignment-researchers/": {
+    "date": "2026-08-28",
+    "precision": "day",
+    "status": "first-public-version",
+    "source": "arXiv first public version / Anthropic Alignment Science",
+    "note": "First public version of arXiv:2608.28945 dated August 28, 2026."
+  },
+  "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/": {
+    "date": "2026-06-11",
+    "precision": "day",
+    "status": "verified",
+    "source": "Google DeepMind"
+  },
+  "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/": {
+    "date": "2025-09-22",
+    "precision": "day",
+    "status": "first-publication",
+    "source": "Google DeepMind",
+    "note": "Original publication September 22, 2025; page updated April 17, 2026."
+  },
+  "https://openai.com/index/reasoning-models-chain-of-thought-controllability/": {
+    "date": "2026-03-05",
+    "precision": "day",
+    "status": "verified",
+    "source": "OpenAI"
+  },
+  "https://www.apolloresearch.ai/science/we-need-3rd-party-training-run-assessments": {
+    "date": "2026-07-05",
+    "precision": "day",
+    "status": "verified",
+    "source": "Apollo Research"
+  },
+  "https://www.media.mit.edu/groups/nanda/overview/": {
+    "date": "2025-07",
+    "precision": "month",
+    "status": "verified-month",
+    "source": "MIT Project NANDA report",
+    "note": "Report is dated July 2025; no day is stated in the report date."
+  },
+  "https://www.tdcommons.org/2026.html": {
+    "date": "2026-04",
+    "precision": "month",
+    "status": "verified-month",
+    "source": "Technical Disclosure Commons / Digital Commons Network",
+    "note": "The indexed defensive-publication record is dated April 2026; no day was established."
   }
 });
