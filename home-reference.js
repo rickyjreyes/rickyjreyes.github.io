@@ -41,15 +41,16 @@
   const pffSpindleAxis=document.querySelector('[data-pff-spindle-axis]');
   const pffParticlesGroup=document.querySelector('[data-pff-particles]');
   const pffCapacity=document.querySelector('[data-pff-capacity]');
-  const sobolevLattice=document.querySelector('[data-sobolev-lattice]');
-  const sobolevContours=document.querySelector('[data-sobolev-contours]');
-  const sobolevParticleGroup=document.querySelector('[data-sobolev-particles]');
+  const sobolevContoursGroup=document.querySelector('[data-sobolev-contours]');
+  const sobolevParticlesGroup=document.querySelector('[data-sobolev-particles]');
   const sobolevRaysGroup=document.querySelector('[data-sobolev-rays]');
+  const sobolevEdgesGroup=document.querySelector('[data-sobolev-topology-edges]');
+  const sobolevVerticesGroup=document.querySelector('[data-sobolev-topology-vertices]');
+  const sobolevTopologyCount=document.querySelector('[data-sobolev-topology-count]');
   const sobolevPeak=document.querySelector('[data-sobolev-peak]');
   const sobolevPeakFill=document.querySelector('[data-sobolev-peak-fill]');
   const sobolevPeakNode=document.querySelector('[data-sobolev-peak-node]');
   const sobolevGraph=document.querySelector('[data-sobolev-scaling-line]');
-  const sobolevGuides=document.querySelector('[data-sobolev-guides]');
   const sobolevMarker=document.querySelector('[data-sobolev-scaling-marker]');
   const sobolevDimensionLabel=document.querySelector('[data-sobolev-dimension-label]');
   const sobolevStatus=document.querySelector('[data-sobolev-state]');
@@ -217,206 +218,264 @@
     }
   };
 
-  // Stage 03: exact analytic Gaussian H² scaling illustrated as a concentrating packet.
-  // g_n(x) Gaussian; ψ_{λ,n}(x) = λ^((n-4)/2) g_n(λx).
-  // ∥Δψ_{λ,n}∥₂ stays constant while ∥ψ_{λ,n}∥∞ ∝ λ^((n-4)/2).
-  // The full H² norm remains bounded for λ >= 1. At n=4 this particular
-  // Gaussian remains amplitude-neutral; nonembedding at n=4 is more subtle.
-  // Shapes are schematic projections, not a simulated WCT wavefield.
-  const sobolevGridLines=[];
-  const sobolevContourLines=[];
+  // Stage 03: exact mathematical H² scaling examples, not WCT dynamics.
+  // n != 4: Gaussian g_lambda(x) = lambda^((n-4)/2) exp(-lambda² |x|²).
+  //         ||Delta g_lambda||_2 is independent of lambda >= 1.
+  // n == 4: F_M(x) = c_M sum_{j=0}^{M-1} exp(-4^j |x|²).
+  //         Choose c_M to fix ||Delta F_M||_2 exactly for each M.
+  //         Then ||F_M||_H² stays bounded but F_M(0) grows as sqrt(M).
+  // The cubes below are accurate n-cube graph projections, NOT topology
+  // of a curved WCT field or dynamical failure of confinement.
+
+  const sobolevContours=[];
   const sobolevParticles=[];
   const sobolevRays=[];
-  if(sobolevLattice)for(let i=0;i<84;i++){
-    sobolevGridLines.push(svgEl('path',{
-      class:i>=12?'sobolev-ghost-line':'sobolev-lattice-line'
-    },sobolevLattice));
-  }
-  if(sobolevContours)for(let i=0;i<5;i++){
-    sobolevContourLines.push(svgEl('ellipse',{
+  if(sobolevContoursGroup)for(let i=0;i<5;i++){
+    sobolevContours.push(svgEl('ellipse',{
       class:i%2?'sobolev-contour violet':'sobolev-contour'
-    },sobolevContours));
+    },sobolevContoursGroup));
   }
-  if(sobolevParticleGroup)for(let i=0;i<28;i++){
+  if(sobolevParticlesGroup)for(let i=0;i<28;i++){
     sobolevParticles.push(svgEl('circle',{
       class:['fill-accent','fill-accent2','fill-accent3'][i%3],
-      r:i%5===0?2.5:1.7
-    },sobolevParticleGroup));
+      r:i%5===0?2.3:1.7,opacity:'.36'
+    },sobolevParticlesGroup));
   }
   if(sobolevRaysGroup)for(let i=0;i<12;i++){
-    sobolevRays.push(svgEl('line',{
-      class:'sobolev-supercritical-ray'
-    },sobolevRaysGroup));
+    sobolevRays.push(svgEl('line',{class:'sobolev-supercritical-ray'},sobolevRaysGroup));
   }
-  if(sobolevGuides){
-    for(const n of [3,4,6]){
-      const alpha=(n-4)/2;
-      svgEl('path',{
-        class:'sobolev-reference-curve '+(n===6?'supercritical':n===4?'critical':'subcritical'),
-        d:'M416 292L520 '+(292-55*alpha).toFixed(1)
-      },sobolevGuides);
+
+  const topologyEdgesPath=sobolevEdgesGroup
+    ?svgEl('path',{class:'sobolev-cube-edges'},sobolevEdgesGroup):null;
+  const topologyVertices=[];
+  if(sobolevVerticesGroup)for(let i=0;i<64;i++){
+    topologyVertices.push(svgEl('circle',{
+      class:'sobolev-cube-vertex',r:1.9,opacity:'0'
+    },sobolevVerticesGroup));
+  }
+
+  // Exact Gaussian Laplacian inner product in R^4:
+  // <Delta exp(-a r²), Delta exp(-b r²)> =
+  //   96 (ab/(a+b))² (pi/(a+b))².
+  const criticalLevels=18;
+  const criticalA=Array.from({length:criticalLevels},(_,i)=>Math.pow(4,i));
+  const criticalGram=criticalA.map(a=>criticalA.map(b=>
+    96*Math.pow(a*b/(a+b),2)*Math.pow(Math.PI/(a+b),2)));
+  const criticalReference=Math.sqrt(criticalGram[0][0]);
+  const criticalWeights=new Float64Array(criticalLevels);
+  const criticalState=levelCount=>{
+    let sum=0,energy=0;
+    for(let i=0;i<criticalLevels;i++){
+      const weight=clamp(levelCount-i);
+      criticalWeights[i]=weight;
+      sum+=weight;
     }
-  }
+    for(let i=0;i<criticalLevels;i++){
+      const wi=criticalWeights[i];
+      if(wi===0)continue;
+      for(let k=0;k<criticalLevels;k++){
+        const wk=criticalWeights[k];
+        if(wk>0)energy+=wi*wk*criticalGram[i][k];
+      }
+    }
+    const scale=energy>0?criticalReference/Math.sqrt(energy):1;
+    return {peak:sum*scale,scale,weights:Float64Array.from(criticalWeights)};
+  };
 
-  const sobolevCycle=[[3,1.3],[4,1.3],[5,2.6],[6,3.5],[1,1.4],[2,1.4]];
-  const sobolevDuration=sobolevCycle.reduce((sum,entry)=>sum+entry[1],0);
-  let sobolevPinned=null;
-  let sobolevCurrent=0;
+  const sobolevCycle=[[3,2.0],[4,4.5],[5,3.0],[6,3.5],[1,1.6],[2,1.6]];
+  const sobolevDuration=sobolevCycle.reduce((total,item)=>total+item[1],0);
+  let sobolevPinned=null,sobolevCurrent=0;
   let sobolevStart=performance.now()/1000;
-
   const sobolevAuto=t=>{
     let elapsed=((t-sobolevStart)%sobolevDuration+sobolevDuration)%sobolevDuration;
     for(const [n,duration] of sobolevCycle){
       if(elapsed<duration)return {n,elapsed,duration};
       elapsed-=duration;
     }
-    return {n:3,elapsed:0,duration:1.3};
+    return {n:3,elapsed:0,duration:2};
   };
 
-  const selectSobolevDimension=n=>{
+  const cubeProjected=n=>{
+    const N=1<<n;
+    const basis=Array.from({length:n},(_,i)=>{
+      const theta=.41+i*2.399963229728653;
+      const r=1+.11*i;
+      return [r*Math.cos(theta),r*Math.sin(theta)];
+    });
+    const raw=[];
+    let maxX=.0001,maxY=.0001;
+    for(let mask=0;mask<N;mask++){
+      let x=0,y=0;
+      for(let i=0;i<n;i++){
+        const dir=(mask&(1<<i))?.5:-.5;
+        x+=dir*basis[i][0];y+=dir*basis[i][1];
+      }
+      raw.push([x,y]);
+      maxX=Math.max(maxX,Math.abs(x));maxY=Math.max(maxY,Math.abs(y));
+    }
+    const scale=Math.min(62/maxX,60/maxY);
+    return raw.map(p=>[297+p[0]*scale,269+p[1]*scale]);
+  };
+
+  const setSobolevDimension=n=>{
     if(n===sobolevCurrent)return;
     sobolevCurrent=n;
+    const critical=n===4,supercritical=n>4;
     if(sobolevDimensionLabel)sobolevDimensionLabel.textContent=n+'D';
-    const supercritical=n>4,critical=n===4;
     if(sobolevStatus){
-      sobolevStatus.textContent=supercritical?'SUPERCRITICAL':critical?'CRITICAL':'SUBCRITICAL';
-      sobolevStatus.classList.toggle('critical',critical);
-      sobolevStatus.classList.toggle('supercritical',supercritical);
-      sobolevStatus.classList.toggle('supported',n<4);
+      sobolevStatus.textContent=critical?'CRITICAL · UNBOUNDED':supercritical?'SUPERCRITICAL':'SUBCRITICAL';
+      for(const cls of ['critical','supercritical','supported'])sobolevStatus.classList.remove(cls);
+      sobolevStatus.classList.add(critical?'critical':supercritical?'supercritical':'supported');
     }
     if(sobolevSlope){
       const alpha=(n-4)/2;
-      sobolevSlope.textContent='α = '+(alpha>0?'+':'')+alpha.toFixed(1);
+      sobolevSlope.textContent=critical?'MULTISCALE':('α = '+(alpha>0?'+':'')+alpha.toFixed(1));
     }
-    for(const el of [sobolevGraph,sobolevMarker,sobolevPeak,sobolevPeakFill,sobolevPeakNode]){
+    if(sobolevTopologyCount){
+      sobolevTopologyCount.textContent=(1<<n)+' V · '+(n*(1<<(n-1)))+' E';
+    }
+    for(const el of [sobolevGraph,sobolevMarker,sobolevPeak,
+      sobolevPeakFill,sobolevPeakNode,topologyEdgesPath]){
       if(!el)continue;
-      el.classList.toggle('supercritical',supercritical);
       el.classList.toggle('critical',critical);
+      el.classList.toggle('supercritical',supercritical);
     }
-    sobolevControls.forEach(button=>{
-      const chosen=Number(button.dataset.sobolevDim)===n;
-      button.setAttribute('aria-pressed',String(chosen));
-      button.classList.toggle('supercritical',n>4&&chosen);
-      button.classList.toggle('critical',n===4&&chosen);
+    topologyVertices.forEach(el=>{
+      el.classList.toggle('critical',critical);
+      el.classList.toggle('supercritical',supercritical);
     });
+    sobolevControls.forEach(btn=>{
+      const selected=Number(btn.dataset.sobolevDim)===n;
+      btn.setAttribute('aria-pressed',String(selected));
+      btn.classList.toggle('critical',critical&&selected);
+      btn.classList.toggle('supercritical',supercritical&&selected);
+    });
+
     if(sobolevGraph){
+      let path='';
       const alpha=(n-4)/2;
-      sobolevGraph.setAttribute('d',
-        'M416 292L520 '+(292-55*alpha).toFixed(2));
+      for(let i=0;i<=70;i++){
+        const u=i/70;
+        const gain=critical
+          ?criticalState(1+(criticalLevels-1)*u).peak
+          :Math.pow(8,alpha*u);
+        const px=416+104*u,py=292-17*Math.log2(gain);
+        path+=(i?'L':'M')+px.toFixed(2)+' '+py.toFixed(2);
+      }
+      sobolevGraph.setAttribute('d',path);
     }
   };
 
   const drawSobolev=t=>{
-    if(!sobolevLattice)return;
-    const mode=sobolevPinned===null?sobolevAuto(t):{
-      n:sobolevPinned,elapsed:Math.max(0,t-sobolevStart),duration:3.25
-    };
+    if(!sobolevPeak||!sobolevGraph)return;
+    const mode=sobolevPinned===null?sobolevAuto(t):
+      {n:sobolevPinned,elapsed:Math.max(0,t-sobolevStart),duration:5};
     const n=mode.n,alpha=(n-4)/2;
-    selectSobolevDimension(n);
-    const progress=reduced.matches?1:clamp(mode.elapsed/Math.max(.7,mode.duration-.22));
+    setSobolevDimension(n);
+    const progress=reduced.matches?1:clamp(mode.elapsed/Math.max(.7,mode.duration-.16));
     const eased=progress*progress*(3-2*progress);
     const lambda=Math.exp(Math.log(8)*eased);
-    const amplitude=Math.pow(lambda,alpha);
-    if(sobolevPeakValue)sobolevPeakValue.textContent='×'+amplitude.toFixed(2);
-    if(sobolevFocusLabel)sobolevFocusLabel.textContent='λ ×'+lambda.toFixed(1);
+    const critical=n===4;
+    const levelCount=1+(criticalLevels-1)*eased;
+    const criticalPacket=critical?criticalState(levelCount):null;
+    const amp=critical?criticalPacket.peak:Math.pow(lambda,alpha);
+    if(sobolevPeakValue)sobolevPeakValue.textContent='×'+amp.toFixed(2);
+    if(sobolevFocusLabel)sobolevFocusLabel.textContent=critical?
+      'scales '+levelCount.toFixed(1):'λ ×'+lambda.toFixed(1);
 
-    const baseline=342,center=215;
-    const peakHeight=18+196*Math.log1p(amplitude)/Math.log(9);
-    const width=88/lambda;
-    const tipY=baseline-peakHeight;
-    let topPath='',fillPath='M72 342';
-    for(let i=0;i<=120;i++){
-      const x=72+i/120*296;
-      const u=(x-center)/width;
-      const y=baseline-peakHeight*Math.exp(-u*u);
-      const vertex=(i?'L':'M')+x.toFixed(2)+' '+y.toFixed(2);
-      topPath+=vertex;
-      fillPath+='L'+x.toFixed(2)+' '+y.toFixed(2);
+    const baseline=341,center=158;
+    // SVG uses a *labeled logarithmic vertical mapping*. Physical profile
+    // ordinates are computed from the exact Gaussian family above.
+    const visualHeight=value=>192*Math.log1p(Math.max(0,value))/Math.log(9)+18;
+    let curve='',fill='M67 341';
+    const sampleCount=220;
+    for(let i=0;i<=sampleCount;i++){
+      const s=i/sampleCount*2-1;
+      const physicalR=Math.sign(s)*Math.pow(Math.abs(s),2.35)*1.33;
+      const x=center+physicalR*68;
+      let v;
+      if(critical){
+        let sum=0;
+        for(let j=0;j<criticalLevels;j++){
+          const w=criticalPacket.weights[j];
+          if(w>0)sum+=w*Math.exp(-criticalA[j]*physicalR*physicalR);
+        }
+        v=criticalPacket.scale*sum;
+      }else{
+        v=amp*Math.exp(-lambda*lambda*physicalR*physicalR);
+      }
+      const y=baseline-visualHeight(v);
+      curve+=(i?'L':'M')+x.toFixed(2)+' '+y.toFixed(2);
+      fill+='L'+x.toFixed(2)+' '+y.toFixed(2);
     }
-    fillPath+='L368 342Z';
-    if(sobolevPeak)sobolevPeak.setAttribute('d',topPath);
-    if(sobolevPeakFill)sobolevPeakFill.setAttribute('d',fillPath);
+    fill+='L249 341Z';
+    sobolevPeak.setAttribute('d',curve);
+    if(sobolevPeakFill)sobolevPeakFill.setAttribute('d',fill);
+    const tipY=baseline-visualHeight(amp);
     if(sobolevPeakNode){
       sobolevPeakNode.setAttribute('cx',String(center));
       sobolevPeakNode.setAttribute('cy',tipY.toFixed(2));
-      sobolevPeakNode.setAttribute('r',(n>4?3+2.5*eased:3).toFixed(2));
+      sobolevPeakNode.setAttribute('r',(n>=4?3.8+1.5*eased:3).toFixed(1));
     }
 
-    // Crisp 1D, 2D and 3D subspaces, plus ghost projections of further
-    // coordinates in n=4..6. These projected edges do not imply full 4D rendering.
-    const rot=t*.11,co=Math.cos(rot),si=Math.sin(rot);
-    const project=(x,y,z,extra=0)=>{
-      const X=x*co+z*si,Z=z*co-x*si;
-      return [216+48*X+23*Z+extra*11,276+14*X-43*y+22*Z-extra*9];
-    };
-    const edge=(a,b)=>'M'+a[0].toFixed(1)+' '+a[1].toFixed(1)+
-      'L'+b[0].toFixed(1)+' '+b[1].toFixed(1);
-    const paths=[];
-    if(n===1){
-      paths.push('M118 301H314');
-      for(let i=0;i<9;i++)paths.push('M'+(118+i*24)+' 297V305');
-    }else if(n===2){
-      for(let i=-3;i<=3;i++){
-        const v=i/3;
-        paths.push(edge([216-80-30*v,308+22*v-16],[216+80-30*v,308+22*v+16]));
-      }
-      for(let i=-3;i<=3;i++){
-        const v=i/3;
-        paths.push(edge([216+80*v+30,308-22+16*v],[216+80*v-30,308+22+16*v]));
-      }
-    }else{
-      const vertices=[];
-      for(const x of [-1,1])for(const y of [-1,1])for(const z of [-1,1])vertices.push({x,y,z});
-      const count=1+Math.max(0,n-3);
-      for(let e=0;e<count;e++){
-        for(let i=0;i<vertices.length;i++)for(let j=i+1;j<vertices.length;j++){
-          const a=vertices[i],b=vertices[j];
-          if(Number(a.x!==b.x)+Number(a.y!==b.y)+Number(a.z!==b.z)===1)
-            paths.push(edge(project(a.x,a.y,a.z,e),project(b.x,b.y,b.z,e)));
-        }
-        if(e>0){
-          for(const v of vertices.slice(0,4))
-            paths.push(edge(project(v.x,v.y,v.z,e-1),project(v.x,v.y,v.z,e)));
-        }
-      }
-    }
-    sobolevGridLines.forEach((el,i)=>{
-      el.setAttribute('d',paths[i]||'');
-      el.classList.toggle('supercritical',n>4&&i>=12);
-      el.setAttribute('opacity',n>4&&i>=12?'.27':'.32');
-    });
-
-    sobolevContourLines.forEach((el,i)=>{
-      const radius=(58+i*21)/Math.pow(lambda,.68);
+    sobolevContours.forEach((el,i)=>{
+      const rad=critical?Math.max(3,(16+i*16)/Math.sqrt(levelCount))
+        :(16+i*15)/Math.pow(lambda,.75);
       el.setAttribute('cx',String(center));
-      el.setAttribute('cy',String(baseline-7));
-      el.setAttribute('rx',radius.toFixed(2));
-      el.setAttribute('ry',(n===1?2:radius*(n===2?.24:.34)).toFixed(2));
-      el.style.opacity=n>4?String(.20+.18*eased):'.30';
+      el.setAttribute('cy',String(baseline-6));
+      el.setAttribute('rx',rad.toFixed(2));
+      el.setAttribute('ry',(n===1?2:rad*(n===2?.24:.36)).toFixed(2));
+      el.style.opacity=critical?String(.15+.25*eased):'.26';
     });
     sobolevParticles.forEach((el,i)=>{
-      const theta=i*2.39996323+t*(.10+.016*(i%3));
-      const radius=(16+(i%7)*11)/Math.pow(lambda,.73);
-      const x=center+radius*Math.cos(theta);
-      const y=baseline-5+(n===1?.06:n===2?.25:.4)*radius*Math.sin(theta)-
-        Math.exp(-radius/29)*peakHeight*.19;
-      el.setAttribute('cx',x.toFixed(2));
-      el.setAttribute('cy',y.toFixed(2));
-      el.setAttribute('opacity',n>4?(.16+.62*eased).toFixed(2):'.24');
+      const angle=i*2.39996323+t*(.13+.013*(i%4));
+      const r=(13+(i%7)*10)/(critical?Math.pow(levelCount,.56):Math.pow(lambda,.72));
+      const x=center+r*Math.cos(angle);
+      const y=baseline-5+(n===1?.08:n===2?.25:.37)*r*Math.sin(angle)-tipY*.015;
+      el.setAttribute('cx',x.toFixed(2));el.setAttribute('cy',y.toFixed(2));
+      el.setAttribute('opacity',n>=4?(.22+.45*eased).toFixed(2):'.22');
     });
     sobolevRays.forEach((el,i)=>{
-      const theta=i/12*Math.PI*2+t*.11;
-      const length=(12+16*eased)*(n>4?1:.15);
-      el.setAttribute('x1',(center+Math.cos(theta)*6).toFixed(1));
-      el.setAttribute('y1',(tipY+Math.sin(theta)*6).toFixed(1));
-      el.setAttribute('x2',(center+Math.cos(theta)*(6+length)).toFixed(1));
-      el.setAttribute('y2',(tipY+Math.sin(theta)*(6+length)).toFixed(1));
-      el.style.opacity=n>4?String(Math.max(0,(eased-.23)*.52)):'0';
+      const angle=i/12*Math.PI*2+t*.14;
+      const length=(8+17*eased)*(n>=4?1:.16);
+      el.setAttribute('x1',(center+6*Math.cos(angle)).toFixed(1));
+      el.setAttribute('y1',(tipY+6*Math.sin(angle)).toFixed(1));
+      el.setAttribute('x2',(center+(6+length)*Math.cos(angle)).toFixed(1));
+      el.setAttribute('y2',(tipY+(6+length)*Math.sin(angle)).toFixed(1));
+      el.style.opacity=n>=4?String(Math.max(0,(eased-.22)*.48)):'0';
     });
 
+    // Actual n-cube: 2^n vertices and n*2^(n-1) adjacency edges.
+    // This is a linear 2D projection with modest continuous rotation.
+    if(topologyEdgesPath){
+      const vertices=cubeProjected(n);
+      const th=t*.08,co=Math.cos(th),si=Math.sin(th);
+      const project=p=>{
+        const x=p[0]-297,y=p[1]-269;
+        return [297+x*co-y*si,269+x*si+y*co];
+      };
+      const projected=vertices.map(project);
+      let edges='';
+      for(let mask=0;mask<(1<<n);mask++)for(let axis=0;axis<n;axis++){
+        if(mask&(1<<axis))continue;
+        const a=projected[mask],b=projected[mask|(1<<axis)];
+        edges+='M'+a[0].toFixed(1)+' '+a[1].toFixed(1)+
+          'L'+b[0].toFixed(1)+' '+b[1].toFixed(1);
+      }
+      topologyEdgesPath.setAttribute('d',edges);
+      topologyVertices.forEach((el,i)=>{
+        if(i>=projected.length){el.setAttribute('opacity','0');return;}
+        const pt=projected[i];
+        el.setAttribute('cx',pt[0].toFixed(1));
+        el.setAttribute('cy',pt[1].toFixed(1));
+        el.setAttribute('opacity',n>=5?'.68':'.82');
+      });
+    }
+
     if(sobolevMarker){
+      const logGain=Math.log2(amp);
       sobolevMarker.setAttribute('cx',(416+104*eased).toFixed(2));
-      sobolevMarker.setAttribute('cy',(292-55*alpha*eased).toFixed(2));
+      sobolevMarker.setAttribute('cy',(292-17*logGain).toFixed(2));
     }
   };
 
