@@ -353,59 +353,94 @@
           const h=Math.max(3,(count/max)*100);
           return `<span class="timeline-segment ${relationClass(label)}" style="height:${h}%" aria-hidden="true"></span>`;
         }).join('');
-        return `<div class="timeline-month" data-month="${ym}" tabindex="0" aria-label="${esc(monthLabel(ym))}: ${total} dated record${total===1?'':'s'}. Hover or focus for details."><div class="timeline-stack">${stack}</div></div>`;
+        return `<div class="timeline-month" data-month="${ym}" tabindex="0" role="button" aria-haspopup="dialog" aria-label="${esc(monthLabel(ym))}: ${total} dated record${total===1?'':'s'}. Hover for details; click to pin."><div class="timeline-stack">${stack}</div></div>`;
       }).join('');
 
       const tooltip=document.getElementById('timeline-tooltip');
+      let pinnedMonth=null;
       const monthNumber=ym=>{const [y,m]=ym.split('-').map(Number);return y*12+m;};
       const relativeLabel=ym=>{
         const delta=monthNumber(ym)-monthNumber(anchorYm[activeTrack]);
-        const base=activeTrack==='physics'?'WCT reference':'RCA reference';
-        if(delta===0)return base+' month';
+        const base=activeTrack==='physics'?'WCT reference month':'RCA reference month';
+        if(delta===0)return base;
         const n=Math.abs(delta);
-        return `${n} mo ${delta>0?'after':'before'} ${base}`;
+        return `${n} month${n===1?'':'s'} ${delta>0?'after':'before'} ${base}`;
       };
-      const popupHtml=ym=>{
+      const popupHtml=(ym,pinned)=>{
         const items=byMonth.get(ym)||[];
         const counts={};items.forEach(r=>{const label=relationship(r);counts[label]=(counts[label]||0)+1;});
         const avg=items.length?(items.reduce((sum,r)=>sum+Number(r[3]),0)/items.length).toFixed(1):'—';
         const high=items.length?Math.max(...items.map(r=>Number(r[3]))).toFixed(1):'—';
-        const mix=relOrder.filter(label=>counts[label]).reverse().map(label=>`<span class="timeline-popup-chip ${relationClass(label)}"><i></i>${esc(label)} <strong>${counts[label]}</strong></span>`).join('');
-        const top=[...items].sort((a,b)=>Number(b[3])-Number(a[3])||String(a[1]).localeCompare(String(b[1]))).slice(0,2);
-        const recordsHtml=top.length?top.map(r=>`<div class="timeline-popup-record"><div><strong>${esc(r[1])}</strong><small>${esc(r[5])} · ${esc(relationship(r))}</small></div><span>${Number(r[3]).toFixed(1)}</span></div>`).join(''):'<p class="timeline-popup-empty">No dated records in this month.</p>';
-        const more=items.length>2?`<span class="timeline-popup-more">+${items.length-2} more record${items.length-2===1?'':'s'} in the ledger</span>`:'';
-        return `<div class="timeline-popup-head"><div><span class="timeline-popup-kicker">External chronology</span><strong class="timeline-tip-month">${esc(monthLabel(ym))}</strong></div><span class="timeline-popup-relative">${esc(relativeLabel(ym))}</span></div>
-          <div class="timeline-popup-metrics"><span><strong>${items.length}</strong> records</span><span><strong>${avg}</strong> mean</span><span><strong>${high}</strong> high</span></div>
-          <div class="timeline-popup-mix">${mix||'<span class="timeline-tip-empty">No relationship data</span>'}</div>
-          <div class="timeline-popup-top"><span class="timeline-popup-label">Highest-scoring work</span>${recordsHtml}${more}</div>`;
+        const breakdown=relOrder.filter(label=>counts[label]).reverse().map(label=>{
+          const count=counts[label];
+          const pct=items.length?Math.round(count/items.length*100):0;
+          return `<div class="timeline-popup-breakdown-row"><span class="timeline-popup-rel"><i class="${relationClass(label)}"></i>${esc(label)}</span><span class="timeline-popup-bar"><b style="width:${pct}%"></b></span><strong>${count}</strong></div>`;
+        }).join('');
+        const top=[...items].sort((a,b)=>Number(b[3])-Number(a[3])||String(a[1]).localeCompare(String(b[1]))).slice(0,3);
+        const recordsHtml=top.length?top.map((r,i)=>`<a class="timeline-popup-record" href="${esc(r[2])}" target="_blank" rel="noopener noreferrer"><span class="timeline-popup-rank">0${i+1}</span><span class="timeline-popup-record-copy"><strong>${esc(r[1])}</strong><small>${esc(r[5])} · ${esc(relationship(r))}</small></span><span class="timeline-popup-score">${Number(r[3]).toFixed(1)}</span></a>`).join(''):'<p class="timeline-popup-empty">No dated records in this month.</p>';
+        return `<div class="timeline-popup-head"><div><span class="timeline-popup-kicker">External chronology</span><strong class="timeline-tip-month">${esc(monthLabel(ym))}</strong><span class="timeline-popup-relative">${esc(relativeLabel(ym))}</span></div><button class="timeline-popup-close" type="button" aria-label="Close chronology popup" ${pinned?'':'tabindex="-1"'}>×</button></div>
+          <div class="timeline-popup-metrics"><div><strong>${items.length}</strong><span>Dated records</span></div><div><strong>${avg}</strong><span>Mean overlap</span></div><div><strong>${high}</strong><span>Highest score</span></div></div>
+          <div class="timeline-popup-section"><span class="timeline-popup-label">Relationship mix</span>${breakdown||'<span class="timeline-tip-empty">No relationship data for this month.</span>'}</div>
+          <div class="timeline-popup-section timeline-popup-records"><span class="timeline-popup-label">Highest-scoring work</span>${recordsHtml}</div>
+          <div class="timeline-popup-footer"><span>${pinned?'Pinned · links are active':'Click the month to pin this popup'}</span>${items.length?`<button class="timeline-popup-view" type="button" data-view-month="${ym}" ${pinned?'':'tabindex="-1"'}>Show ${items.length} in ledger →</button>`:''}</div>`;
       };
-      const highlight=el=>{
+      const highlight=(el)=>{
         bars.classList.add('has-hover');
         bars.querySelectorAll('.timeline-month').forEach(node=>node.classList.toggle('is-hovered',node===el));
       };
-      const hideTooltip=()=>{
-        tooltip.hidden=true;
+      const clearHighlight=()=>{
         bars.classList.remove('has-hover');
         bars.querySelectorAll('.timeline-month.is-hovered').forEach(node=>node.classList.remove('is-hovered'));
       };
-      const showTooltip=el=>{
-        const ym=el.dataset.month;
+      const positionTooltip=ym=>{
         const index=timelineMonths.indexOf(ym);
         const pct=((index+.5)/timelineMonths.length)*100;
-        tooltip.innerHTML=popupHtml(ym);
-        tooltip.style.left=`${Math.min(80,Math.max(20,pct))}%`;
+        tooltip.style.left=`${Math.min(82,Math.max(18,pct))}%`;
+        tooltip.style.setProperty('--timeline-pointer',`${Math.min(88,Math.max(12,pct))}%`);
+      };
+      const showTooltip=(el,pin=false)=>{
+        const ym=el.dataset.month;
+        if(pin)pinnedMonth=ym;
+        tooltip.innerHTML=popupHtml(ym,Boolean(pinnedMonth));
+        tooltip.classList.toggle('is-pinned',Boolean(pinnedMonth));
+        positionTooltip(ym);
         tooltip.hidden=false;
         highlight(el);
       };
+      const hideTooltip=(force=false)=>{
+        if(pinnedMonth&&!force)return;
+        if(force)pinnedMonth=null;
+        tooltip.hidden=true;
+        tooltip.classList.remove('is-pinned');
+        clearHighlight();
+      };
+
       bars.querySelectorAll('.timeline-month').forEach(el=>{
-        el.addEventListener('pointerenter',()=>showTooltip(el));
-        el.addEventListener('pointerleave',hideTooltip);
-        el.addEventListener('focus',()=>showTooltip(el));
-        el.addEventListener('blur',hideTooltip);
+        el.addEventListener('pointerenter',()=>{if(!pinnedMonth)showTooltip(el,false);});
+        el.addEventListener('pointerleave',()=>{if(!pinnedMonth)hideTooltip();});
+        el.addEventListener('focus',()=>{if(!pinnedMonth)showTooltip(el,false);});
+        el.addEventListener('blur',()=>{if(!pinnedMonth)hideTooltip();});
+        el.addEventListener('click',()=>{
+          if(pinnedMonth===el.dataset.month){hideTooltip(true);return;}
+          showTooltip(el,true);
+        });
         el.addEventListener('keydown',event=>{
-          if(event.key==='Escape'){event.preventDefault();hideTooltip();el.blur();}
+          if(event.key==='Escape'){event.preventDefault();hideTooltip(true);el.focus();}
         });
       });
+
+      tooltip.onclick=event=>{
+        const close=event.target.closest('.timeline-popup-close');
+        if(close){hideTooltip(true);return;}
+        const view=event.target.closest('[data-view-month]');
+        if(view){
+          const ym=view.dataset.viewMonth;
+          document.getElementById('q-track').value=monthLabel(ym);
+          renderLedger();
+          hideTooltip(true);
+          document.getElementById('complete-ledger').scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      };
 
       document.getElementById('timeline-axis').innerHTML=timelineMonths.map((ym,i)=>i%3===0||i===timelineMonths.length-1?`<span style="grid-column:${i+1}">${esc(monthLabel(ym).replace(' 20',' ’'))}</span>`:'').join('');
       const anchorIndex=timelineMonths.indexOf(anchorYm[activeTrack]);
