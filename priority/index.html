@@ -54,10 +54,6 @@
     .case-title{font-weight:700;color:var(--text)}
     .case-note{display:block;margin-top:6px;color:var(--muted-2);font-size:.82rem;line-height:1.5}
     .note{margin-top:34px;padding:22px;border-left:3px solid var(--accent);background:rgba(103,212,255,.05);color:var(--muted);max-width:1200px}
-    .control-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
-    .control-item{padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
-    .control-item strong{display:block;margin-bottom:7px}
-    .control-item p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.6}
     .audit-status{margin-top:24px;padding:20px;border:1px solid rgba(139,124,255,.28);border-radius:14px;background:rgba(139,124,255,.055);color:var(--muted);max-width:1200px}
     .patent-status{color:var(--accent);font-weight:750}
 
@@ -121,15 +117,125 @@
       .registry-tools{align-items:stretch}
       .claim-filter{max-width:none;flex-basis:100%}
     }
+    /* Scroll-driven evidence story ------------------------------------------- */
+    .evidence-story-section{overflow:visible}
+    .evidence-story{
+      display:grid;
+      grid-template-columns:minmax(390px,.92fr) minmax(0,1.08fr);
+      gap:clamp(38px,6vw,88px);
+      align-items:start;
+      margin-top:34px
+    }
+    .evidence-story-visual-wrap{
+      position:sticky;
+      top:92px;
+      display:grid;
+      gap:10px;
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:
+        radial-gradient(circle at 50% 42%,rgba(103,212,255,.055),transparent 18rem),
+        linear-gradient(145deg,rgba(14,29,48,.68),rgba(8,18,31,.84));
+      box-shadow:0 24px 70px rgba(0,0,0,.18)
+    }
+    .evidence-story-stage{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      color:var(--muted-2);
+      font:800 .64rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;
+      letter-spacing:.08em;text-transform:uppercase
+    }
+    .evidence-story-stage strong{color:var(--accent);font-weight:800}
+    .evidence-story-visual{
+      min-height:clamp(420px,calc(100vh - 260px),620px);
+      border:1px solid rgba(170,201,225,.11);
+      border-radius:14px;
+      background:rgba(4,10,18,.48);
+      overflow:hidden
+    }
+    .evidence-story-visual svg{display:block;width:100%;height:100%;min-height:inherit}
+    .story-track,.story-progress-line{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .story-track{stroke:rgba(170,201,225,.15);stroke-width:2}
+    .story-progress-line{
+      stroke:var(--accent);
+      stroke-width:2.2;
+      stroke-dasharray:1;
+      stroke-dashoffset:1;
+      filter:drop-shadow(0 0 5px rgba(103,212,255,.32));
+      transition:stroke-dashoffset 260ms ease
+    }
+    .story-node{color:var(--muted-2);opacity:.28;transition:opacity .25s ease,color .25s ease,transform .25s ease}
+    .story-node>circle:first-child{fill:#07111f;stroke:currentColor;stroke-width:1.6}
+    .story-node-core{fill:currentColor}
+    .story-node.reached{opacity:.72}
+    .story-node.current{opacity:1;color:var(--accent);filter:url(#story-glow)}
+    .story-node.current.conditional{color:#f0c987}
+    .story-node.current.negative{color:#f29b8c}
+    .story-node.current.convergence{color:var(--accent)}
+    .story-node.current.open{color:#a899ff}
+    .story-node.reached[data-story-node="1"]{color:var(--accent-3)}
+    .story-node.reached[data-story-node="2"]{color:#f0c987}
+    .story-node.reached[data-story-node="3"]{color:#f29b8c}
+    .story-node.reached[data-story-node="4"]{color:var(--accent)}
+    .story-node.reached[data-story-node="5"]{color:#a899ff}
+    .story-node-slash{stroke:currentColor;stroke-width:2;stroke-linecap:round}
+    .story-node-index,.story-node-value,.story-axis-label{
+      fill:currentColor;font-family:ui-monospace,SFMono-Regular,Menlo,monospace
+    }
+    .story-node-index{font-size:10px;font-weight:800;letter-spacing:.08em}
+    .story-node-value{font-size:11px;font-weight:700}
+    .story-node-title{fill:var(--text);font-family:Georgia,"Times New Roman",serif;font-size:13px}
+    .story-axis-label{fill:var(--muted-2);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+    .evidence-story-caption{margin:0;color:var(--muted);font-size:.78rem;line-height:1.55}
+    .evidence-story-steps{display:grid}
+    .evidence-story-step{
+      min-height:68vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:42px 0 42px 30px;
+      border-left:1px solid var(--line);
+      opacity:.42;
+      transition:opacity .22s ease,border-color .22s ease
+    }
+    .evidence-story-step.active{opacity:1;border-left-color:var(--accent)}
+    .story-step-meta{
+      color:var(--accent);
+      font:800 .67rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;
+      letter-spacing:.09em;text-transform:uppercase
+    }
+    .story-step-meta.supported{color:var(--accent-3)}
+    .story-step-meta.conditional{color:#f0c987}
+    .story-step-meta.negative{color:#f29b8c}
+    .story-step-meta.convergence{color:var(--accent)}
+    .story-step-meta.open{color:#a899ff}
+    .evidence-story-step h3{
+      max-width:24ch;margin:12px 0 13px;
+      font:500 clamp(1.5rem,2.6vw,2.15rem)/1.12 Georgia,"Times New Roman",serif;
+      letter-spacing:-.025em
+    }
+    .evidence-story-step p{max-width:66ch;margin:0;color:var(--muted);font-size:.96rem;line-height:1.72}
+    .evidence-story-step .text-link{margin-top:16px}
+    @media(max-width:980px){
+      .evidence-story{grid-template-columns:1fr;gap:26px}
+      .evidence-story-visual-wrap{top:78px;z-index:2}
+      .evidence-story-visual{min-height:360px;height:46vh}
+      .evidence-story-step{min-height:52vh;padding-left:22px}
+    }
+    @media(max-width:620px){
+      .evidence-story-visual-wrap{position:relative;top:auto;padding:12px}
+      .evidence-story-visual{height:auto;min-height:350px}
+      .evidence-story-step{min-height:auto;padding:42px 0 42px 18px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .story-progress-line,.story-node,.evidence-story-step{transition:none}
+    }
+
     .metric{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
     .sources{display:flex;flex-direction:column;gap:7px}
     .sources a{font-size:.82rem}
-    .rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
-    .rule{padding:19px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
-    .rule strong{display:block;margin-bottom:7px}
-    .rule p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.58}
     @media(max-width:1400px){.definitions{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:1200px){.priority-shell{width:calc(100% - 28px)}.audit-strip,.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}.control-list,.rules{grid-template-columns:1fr}}
+    @media(max-width:1200px){.priority-shell{width:calc(100% - 28px)}.audit-strip,.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:620px){.priority-shell{width:calc(100% - 20px);padding-top:54px}.definitions,.audit-strip{grid-template-columns:1fr}.priority-head p,.section-lede{font-size:1rem}.table-wrap{margin-right:-10px;margin-left:-10px;width:calc(100% + 20px);padding:0 10px}}
     @media(max-width:620px){.claim-registry-wrap{margin-left:0;margin-right:0;width:100%;padding:0}}
   </style>
@@ -158,6 +264,112 @@
         <div><strong>4</strong><span>filed patent families</span></div>
       </div>
     </header>
+
+    <section class="priority-section evidence-story-section" id="evidence-story" aria-labelledby="evidence-story-title">
+      <p class="eyebrow">Evidence story</p>
+      <h2 id="evidence-story-title">What happened when the claims met data.</h2>
+      <p class="section-lede">The registry is easier to understand as an audit sequence than as a glossary. Scroll through the strongest current evidence path: what was frozen, what survived, what stayed conditional, what failed before target evaluation, and what remains open. This is an audit path, not a chronological timeline.</p>
+
+      <div class="evidence-story" data-evidence-story>
+        <div class="evidence-story-visual-wrap">
+          <div class="evidence-story-stage"><span data-story-kicker>01 · public record</span><strong data-story-progress>0%</strong></div>
+          <div class="evidence-story-visual" data-story-stage="0" aria-label="Animated audit path from public claims through holdout tests, conditional evidence, route closure, public-data support, and open replication">
+            <svg viewBox="0 0 520 620" role="img">
+              <defs>
+                <filter id="story-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+
+              <path class="story-track" d="M260 62L164 162L356 262L356 362L164 462L260 558"></path>
+              <path class="story-progress-line" data-story-line d="M260 62L164 162L356 262L356 362L164 462L260 558" pathLength="1"></path>
+
+              <g class="story-node current" data-story-node="0" transform="translate(260 62)">
+                <circle r="17"></circle><circle class="story-node-core" r="5"></circle>
+                <text class="story-node-index" y="-28" text-anchor="middle">PUBLIC RECORD</text>
+                <text class="story-node-title" y="38" text-anchor="middle">claims + provenance</text>
+              </g>
+
+              <g class="story-node" data-story-node="1" transform="translate(164 162)">
+                <circle r="17"></circle><circle class="story-node-core" r="5"></circle>
+                <text class="story-node-index" x="-28" y="-7" text-anchor="end">GWTC</text>
+                <text class="story-node-value" x="-28" y="12" text-anchor="end">p = 0.00130</text>
+              </g>
+
+              <g class="story-node conditional" data-story-node="2" transform="translate(356 262)">
+                <circle r="17"></circle><circle class="story-node-core" r="5"></circle>
+                <text class="story-node-index" x="28" y="-7">CMS</text>
+                <text class="story-node-value" x="28" y="12">Δχ² = 126.28</text>
+              </g>
+
+              <g class="story-node negative" data-story-node="3" transform="translate(356 362)">
+                <circle r="17"></circle>
+                <path class="story-node-slash" d="M-8 8L8-8"></path>
+                <text class="story-node-index" x="28" y="-7">ATLAS</text>
+                <text class="story-node-value" x="28" y="12">route closed</text>
+              </g>
+
+              <g class="story-node convergence" data-story-node="4" transform="translate(164 462)">
+                <circle r="17"></circle><circle class="story-node-core" r="5"></circle>
+                <text class="story-node-index" x="-28" y="-7" text-anchor="end">NIST</text>
+                <text class="story-node-value" x="-28" y="12" text-anchor="end">0 / 5000 × 3</text>
+              </g>
+
+              <g class="story-node open" data-story-node="5" transform="translate(260 558)">
+                <circle r="17"></circle>
+                <text class="story-node-index" y="-28" text-anchor="middle">NEXT</text>
+                <text class="story-node-title" y="38" text-anchor="middle">independent replication</text>
+              </g>
+
+              <text class="story-axis-label" x="22" y="598">audit logic · not chronology</text>
+            </svg>
+          </div>
+          <p class="evidence-story-caption" data-story-caption>Priority establishes what was publicly stated and when. It does not by itself establish that the physical claim is true.</p>
+        </div>
+
+        <div class="evidence-story-steps">
+          <article class="evidence-story-step active" data-story-step="0">
+            <span class="story-step-meta">01 · provenance</span>
+            <h3>Start with a public claim before later evidence exists.</h3>
+            <p>The DOI-backed corpus fixes what was actually stated, when it entered the public record, and which later tests can legitimately count as post-disclosure evidence. Priority is the starting condition—not the scientific conclusion.</p>
+            <a href="#claims" class="text-link">Open the claim registry →</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="1">
+            <span class="story-step-meta supported">02 · frozen holdout</span>
+            <h3>GWTC survives the frozen test.</h3>
+            <p>Training-only selection fixed <code>k=9.6023256</code> before the 104-event holdout was evaluated. The holdout returned <code>ΔD=10.0354</code> and Monte Carlo <code>p=0.00129987</code> under the declared null.</p>
+            <a href="https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md" class="text-link">Open GWTC results →</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="2">
+            <span class="story-step-meta conditional">03 · conditional signal</span>
+            <h3>CMS is positive—but the background model matters.</h3>
+            <p>The fixed-waveform G2 test returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code> under the declared background. Alternative smooth backgrounds weaken the apparent significance, so the result stays conditional rather than being promoted to a collider discovery.</p>
+            <a href="https://github.com/rickyjreyes/wct-cms" class="text-link">Open CMS analysis →</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="3">
+            <span class="story-step-meta negative">04 · failed route preserved</span>
+            <h3>ATLAS closes before the frozen target is tested.</h3>
+            <p>The V6.1 background route failed its own adequacy gates with no qualifying nuisance dimension. The target frequency was never evaluated and the final holdout remained untouched. The failed route stays visible instead of being tuned away.</p>
+            <a href="https://github.com/rickyjreyes/wct-atlas/issues/6" class="text-link">Open ATLAS closure →</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="4">
+            <span class="story-step-meta convergence">05 · separate public dataset</span>
+            <h3>NIST adds a different evidence layer.</h3>
+            <p>Fe II selected the same <code>k=31.3265306122449</code> at 120, 160, and 200 bins, with <code>0/5000</code> null exceedances at each setting. That is public-data numerical support, but it is still an author-run analysis rather than independent replication.</p>
+            <a href="https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md" class="text-link">Open NIST results →</a>
+          </article>
+
+          <article class="evidence-story-step" data-story-step="5">
+            <span class="story-step-meta open">06 · unresolved</span>
+            <h3>The next decisive step is independence.</h3>
+            <p>The current record contains positive, conditional, and failed analysis paths. What would materially change the scientific status now is independent replication, stronger null/model robustness, and a physical explanation that survives across datasets.</p>
+            <a href="#claims" class="text-link">Continue to the full provenance registry →</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section class="priority-section" id="ledger" aria-labelledby="ledger-title">
       <h2 id="ledger-title">Current program-level claims</h2>
@@ -206,20 +418,6 @@
       </div>
     </section>
 
-    <section class="priority-section" aria-labelledby="reading-title">
-      <h2 id="reading-title">How to read status labels</h2>
-      <div class="rules">
-        <article class="rule"><strong>Frozen holdout</strong><p>Selection or model parameters were fixed before the holdout statistic was evaluated. This is stronger than a discovery scan, but still only tests the declared null/model.</p></article>
-        <article class="rule"><strong>Conditional</strong><p>A signal or derivation exists, but a material dependency—such as background choice, calibration, transfer validity, or an unresolved assumption—changes the strength of the conclusion.</p></article>
-        <article class="rule"><strong>Route closed</strong><p>A predeclared analysis path failed its own adequacy gate. The failure is preserved rather than tuned away, and it does not get rewritten as an unperformed target test.</p></article>
-        <article class="rule"><strong>Open-data numerical support</strong><p>The result is reproducible against public data in the author-run pipeline, but independent replication and interpretation remain separate evidence layers.</p></article>
-        <article class="rule"><strong>Theory / empirically open</strong><p>The claim is mathematically or conceptually specified but does not yet have claim-level empirical evidence sufficient to state it as an observed physical fact.</p></article>
-        <article class="rule"><strong>Independent replication</strong><p>Reserved for evidence generated outside the author-controlled analysis path with a sufficiently independent dataset, implementation, or research group. None of the rows above is silently upgraded to that status.</p></article>
-      </div>
-    </section>
-
-    
-
     <section class="priority-section" aria-labelledby="patent-title">
       <p class="eyebrow">Filed intellectual-property chronology</p>
       <h2 id="patent-title">Patent-Family Priority Registry</h2>
@@ -257,18 +455,7 @@
       <div class="audit-status"><strong>Promotion standard.</strong> A candidate moves into the verified table only after its WCT anchor/date, external manuscript chronology, and older prior art are normalized. Evidence of derivation requires a separate provenance layer such as documented access, distinctive equation-level correspondence, unusual parameter or figure matches, terminology transfer, citation trails, communications, or code similarity.</div>
     </section>
 
-    <section class="priority-section" aria-labelledby="controls-title">
-      <p class="eyebrow">Negative controls</p>
-      <h2 id="controls-title">Older prior art is part of the record.</h2>
-      <p class="section-lede">The historical claim is not that WCT invented every ingredient. Important primitives substantially predate the WCT corpus and constrain what can legitimately be claimed as original.</p>
-      <div class="control-list">
-        <article class="control-item"><strong>Localized Swift-Hohenberg states / homoclinic snaking</strong><p>Finite-wavenumber localization and related pattern-selection mechanisms predate WCT. WCT priority claims must concern narrower combinations, not Swift-Hohenberg localization itself.</p></article>
-        <article class="control-item"><strong>Toroidal BEC persistent currents</strong><p>Toroidal confinement, winding, and persistent circulation were studied well before 2025. The narrower WCT comparison concerns how topology is combined with curvature feedback, spectral selection, and mass/locking constructions.</p></article>
-        <article class="control-item"><strong>Pure-quartic solitons</strong><p>Fourth-order-dispersion solitons were experimentally demonstrated before WCT. Later high-order-dispersion results are convergence/context unless the compared architecture contains additional distinctive WCT structure.</p></article>
-      </div>
-    </section>
-
-    <section class="priority-section" aria-labelledby="claims-title">
+    <section class="priority-section" id="claims" aria-labelledby="claims-title">
       <p class="eyebrow">DOI-backed source layer</p>
       <h2 id="claims-title">Claim-Level Scholarly Priority Registry</h2>
       <p class="section-lede">The table maps distinctive claims and architectures in the Richard J. Reyes research corpus to their earliest public archival records.</p>
@@ -314,20 +501,84 @@
     const input=document.getElementById('claim-filter');
     const count=document.getElementById('claim-count');
     const rows=[...document.querySelectorAll('.claim-table tbody tr')];
-    if(!input||!count||!rows.length)return;
-    const total=rows.length;
-    const update=()=>{
-      const q=input.value.trim().toLowerCase();
-      let shown=0;
-      rows.forEach(row=>{
-        const match=!q||row.textContent.toLowerCase().includes(q);
-        row.hidden=!match;
-        if(match)shown++;
+    if(input&&count&&rows.length){
+      const total=rows.length;
+      const update=()=>{
+        const q=input.value.trim().toLowerCase();
+        let shown=0;
+        rows.forEach(row=>{
+          const match=!q||row.textContent.toLowerCase().includes(q);
+          row.hidden=!match;
+          if(match)shown++;
+        });
+        count.textContent=q ? shown+' of '+total+' records' : total+' records';
+      };
+      input.addEventListener('input',update);
+      update();
+    }
+
+    const story=document.querySelector('[data-evidence-story]');
+    if(!story)return;
+    const visual=story.querySelector('.evidence-story-visual');
+    const line=story.querySelector('[data-story-line]');
+    const nodes=[...story.querySelectorAll('[data-story-node]')];
+    const steps=[...story.querySelectorAll('[data-story-step]')];
+    const kicker=story.querySelector('[data-story-kicker]');
+    const progress=story.querySelector('[data-story-progress]');
+    const caption=story.querySelector('[data-story-caption]');
+    const captions=[
+      'Priority establishes what was publicly stated and when. It does not by itself establish that the physical claim is true.',
+      'GWTC is the cleanest frozen-holdout result in the current program: the frequency was selected before the holdout statistic was evaluated.',
+      'CMS shows why a large test statistic is not the end of the story: background choice materially changes the interpretation.',
+      'ATLAS is preserved as a failed analysis route. The target was not tested, so the record is neither a replication nor a target-frequency falsification.',
+      'NIST moves to a different public dataset and reproduces the selected frequency across three binning choices, while remaining author-run.',
+      'The strongest unresolved discriminator is independence: new datasets, independent implementations, and physical mechanism tests.'
+    ];
+    const labels=[
+      '01 · public record','02 · frozen holdout','03 · conditional signal',
+      '04 · route closed','05 · public-data support','06 · independence'
+    ];
+
+    let active=0,ticking=false;
+    const render=(idx)=>{
+      idx=Math.max(0,Math.min(steps.length-1,idx));
+      active=idx;
+      if(visual)visual.dataset.storyStage=String(idx);
+      steps.forEach((step,i)=>step.classList.toggle('active',i===idx));
+      nodes.forEach((node,i)=>{
+        node.classList.toggle('reached',i<=idx);
+        node.classList.toggle('current',i===idx);
       });
-      count.textContent=q ? shown+' of '+total+' records' : total+' records';
+      if(kicker)kicker.textContent=labels[idx];
+      if(caption)caption.textContent=captions[idx];
     };
-    input.addEventListener('input',update);
-    update();
+    const measure=()=>{
+      ticking=false;
+      const target=innerHeight*.48;
+      let best=0,bestDist=Infinity;
+      steps.forEach((step,i)=>{
+        const r=step.getBoundingClientRect();
+        const center=r.top+r.height*.5;
+        const d=Math.abs(center-target);
+        if(d<bestDist){bestDist=d;best=i}
+      });
+      if(best!==active)render(best);
+      const sr=story.getBoundingClientRect();
+      const start=innerHeight*.55;
+      const span=Math.max(1,sr.height-innerHeight*.32);
+      const storyProgress=Math.max(0,Math.min(1,(start-sr.top)/span));
+      if(line)line.style.strokeDashoffset=String(1-storyProgress);
+      if(progress)progress.textContent=Math.round(storyProgress*100)+'%';
+    };
+    const onScroll=()=>{
+      if(ticking)return;
+      ticking=true;
+      requestAnimationFrame(measure);
+    };
+    addEventListener('scroll',onScroll,{passive:true});
+    addEventListener('resize',onScroll,{passive:true});
+    render(0);
+    measure();
   })();
 </script>
 <script src="../site-nav.js" defer></script>
