@@ -138,6 +138,139 @@
     .rca-memory-chain,.rca-drift-path{fill:none;stroke:var(--accent-3);stroke-width:1.7}
     .rca-drift-path{stroke:var(--accent-2)}
     .rca-memory-dot{fill:var(--accent-3)}.rca-memory-dot.violet{fill:var(--accent-2)}
+
+    /* Process-driven story motion ------------------------------------------- */
+    .process-layer{pointer-events:none}
+    .process-label{fill:var(--muted-2);font:9.5px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.025em}
+    .process-label.strong{fill:var(--accent-3);font-weight:800}
+    .process-label.equation{fill:var(--accent);font-size:11px}
+    .process-node,.match-node,.future-end{fill:#07111f;stroke:var(--accent);stroke-width:1.5}
+    .process-edge,.match-edge,.future-branch,.incident-propagation-path,.memory-transfer,.trajectory-accumulation,
+    .contain-link,.escape-edge,.prediction-seal,.response-arrow,.transform-arrow,.gwtc-gate,.replication-path,
+    .mini-axis,.growth-curve,.today-line,.risk-threshold,.observer-line,.agent-link,.block-mark{
+      fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke
+    }
+    .process-edge,.match-edge{stroke:var(--accent);stroke-width:1.4;stroke-dasharray:180;stroke-dashoffset:180}
+    .baseline-node,.match-node{opacity:0}
+    .incident-boundary{fill:none;stroke:#f0c987;stroke-width:1.2;stroke-dasharray:5 6;opacity:.75}
+    .incident-propagation-path{stroke:var(--accent-3);stroke-width:2;stroke-dasharray:8 8}
+    .agent-node,.external-node,.contain-agent{fill:#07111f;stroke:var(--accent-3);stroke-width:1.6}
+    .agent-node.a2{stroke:var(--accent)}.agent-node.a3{stroke:var(--accent-2)}
+    .agent-link{stroke:var(--line-strong);stroke-width:1.2}
+    .incident-packet,.growth-tracer,.trajectory-tracer,.branch-pulse,.residual-tracer,.replication-pulse{fill:var(--accent-3);filter:url(#rca-glow)}
+    .external-node{fill:rgba(182,255,218,.1)}
+    .observer-ring{fill:none;stroke:var(--accent);stroke-width:1.4;stroke-dasharray:5 5}
+    .observer-line{stroke:var(--accent);stroke-width:1.2}
+    .mini-axis{stroke:var(--line-strong);stroke-width:1}
+    .growth-curve{stroke:var(--accent-3);stroke-width:2;stroke-dasharray:520;stroke-dashoffset:520}
+    .match-edge{stroke:var(--accent-3)}
+    .memory-cell{fill:rgba(103,212,255,.035);stroke:rgba(103,212,255,.34)}
+    .memory-transfer{stroke:var(--accent);stroke-width:1.2;stroke-dasharray:3 4}
+    .risk-threshold{stroke:#f0c987;stroke-width:1.2;stroke-dasharray:4 5}
+    .trajectory-accumulation{stroke:var(--accent-2);stroke-width:2;stroke-dasharray:300;stroke-dashoffset:300}
+    .contain-agent.satellite{stroke:var(--accent)}
+    .contain-link{stroke:var(--line-strong);stroke-width:1.1}
+    .escape-edge{stroke:#f0c987;stroke-width:1.6;stroke-dasharray:5 6}
+    .block-mark{stroke:#f0c987;stroke-width:2}
+    .today-line{stroke:var(--accent-3);stroke-width:1.5;stroke-dasharray:7 6}
+    .future-branch{stroke:var(--accent-2);stroke-width:1.4;stroke-dasharray:5 7;opacity:.56}
+    .future-end{stroke:var(--accent-2);opacity:.65}
+    .prediction-seal{stroke:var(--accent-3);stroke-width:1.4;stroke-dasharray:4 5}
+    .branch-pulse.violet{fill:var(--accent-2)}
+    .juno-kernel{opacity:.85}
+    .response-arrow,.transform-arrow{stroke:var(--accent);stroke-width:1.6}
+    .collider-particle{fill:var(--accent-3);filter:url(#detector-glow);transform-box:fill-box;transform-origin:center}
+    .cms-holdout-points circle{fill:var(--accent-3);opacity:0}
+    .freeze-lock rect,.freeze-lock path{fill:#07111f;stroke:var(--accent-3);stroke-width:1.5}
+    .event-dot{fill:var(--accent);opacity:0}.event-dot.holdout{fill:var(--accent-3)}
+    .gwtc-gate{stroke:var(--accent-3);stroke-width:1.6}.gwtc-gate.latch{stroke-width:2}
+    .hist-row rect{fill:rgba(103,212,255,.22);stroke:rgba(103,212,255,.5);transform-box:fill-box;transform-origin:center bottom}
+    .hist-row.h160 rect{fill:rgba(139,124,255,.2);stroke:rgba(139,124,255,.5)}
+    .hist-row.h200 rect{fill:rgba(182,255,218,.18);stroke:rgba(182,255,218,.5)}
+    .replication-path{stroke:var(--accent-2);stroke-width:1.4;stroke-dasharray:5 6}
+    .replication-pulse.code{fill:var(--accent)}.replication-pulse.cause{fill:var(--accent-2)}
+    .rca-ratio-dot,.story-signal-line,.detector-branch,.story-bin-lock,.story-open-ring,.story-open-ray,
+    .story-neutrino-wave,.story-collider-track{transform-box:fill-box;transform-origin:center}
+
+    @keyframes storyDraw{to{stroke-dashoffset:0}}
+    @keyframes storyPulse{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.35)}}
+    @keyframes storyDash{to{stroke-dashoffset:-40}}
+    @keyframes storyFadeUp{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:none}}
+    @keyframes ratioPredIn{0%{transform:translateX(-145px);opacity:.15}100%{transform:none;opacity:1}}
+    @keyframes ratioObsIn{0%{transform:translateX(145px);opacity:.15}100%{transform:none;opacity:1}}
+    @keyframes containClose{0%{transform:scale(1.24);opacity:.18}55%,100%{transform:scale(1);opacity:1}}
+    @keyframes orbitCollider{to{transform:rotate(360deg)}}
+    @keyframes holdoutEnter{0%{opacity:0;transform:translateX(90px)}45%,100%{opacity:.9;transform:none}}
+    @keyframes trainEnter{0%{opacity:0;transform:translateX(-45px)}45%,100%{opacity:.9;transform:translateX(80px)}}
+    @keyframes holdoutStream{0%{opacity:0;transform:translateX(45px)}45%,100%{opacity:.95;transform:translateX(-82px)}}
+    @keyframes gateClose{0%{opacity:.2;transform:scaleY(.25)}45%,100%{opacity:1;transform:scaleY(1)}}
+    @keyframes rebinPulse{0%,100%{transform:scaleY(.55);opacity:.45}45%{transform:scaleY(1);opacity:1}}
+    @keyframes ringClose{0%{transform:scale(1.2);stroke-dashoffset:24;opacity:.3}55%,100%{transform:scale(1);stroke-dashoffset:0;opacity:1}}
+    @keyframes futureBlink{0%,100%{opacity:.25}50%{opacity:.8}}
+    @keyframes kernelWave{to{stroke-dashoffset:-54}}
+
+    .story-rca .evidence-story-visual[data-story-stage="0"] .scene-0 .baseline-edge{animation:storyDraw .9s ease forwards}
+    .story-rca .evidence-story-visual[data-story-stage="0"] .scene-0 .baseline-edge.e2{animation-delay:.12s}
+    .story-rca .evidence-story-visual[data-story-stage="0"] .scene-0 .baseline-edge.e3{animation-delay:.24s}
+    .story-rca .evidence-story-visual[data-story-stage="0"] .scene-0 .baseline-edge.e4{animation-delay:.36s}
+    .story-rca .evidence-story-visual[data-story-stage="0"] .scene-0 .baseline-node{animation:storyPulse 2.4s ease-in-out infinite}
+    .story-rca .evidence-story-visual[data-story-stage="0"] .scene-0 .n2{animation-delay:.25s}.story-rca .evidence-story-visual[data-story-stage="0"] .scene-0 .n3{animation-delay:.5s}.story-rca .evidence-story-visual[data-story-stage="0"] .scene-0 .n4{animation-delay:.75s}
+
+    .story-rca .evidence-story-visual[data-story-stage="1"] .incident-propagation-path{animation:storyDash 1.7s linear infinite}
+    .story-rca .evidence-story-visual[data-story-stage="1"] .external-node{animation:storyPulse 1.8s ease-in-out infinite}
+    .story-rca .evidence-story-visual[data-story-stage="1"] .observer-ring{animation:storyDash 2.4s linear infinite}
+
+    .story-rca .evidence-story-visual[data-story-stage="2"] .growth-curve{animation:storyDraw 1.8s cubic-bezier(.2,.7,.2,1) forwards}
+    .story-rca .evidence-story-visual[data-story-stage="2"] .rca-ratio-dot.pred{animation:ratioPredIn 1.25s .35s ease-out both}
+    .story-rca .evidence-story-visual[data-story-stage="2"] .rca-ratio-dot.observed{animation:ratioObsIn 1.25s .35s ease-out both}
+    .story-rca .evidence-story-visual[data-story-stage="2"] .rca-ratio-value{animation:storyFadeUp .7s .75s ease both}
+
+    .story-rca .evidence-story-visual[data-story-stage="3"] .match-edge{animation:storyDraw .8s ease forwards}
+    .story-rca .evidence-story-visual[data-story-stage="3"] .match-edge.m2{animation-delay:.18s}.story-rca .evidence-story-visual[data-story-stage="3"] .match-edge.m3{animation-delay:.36s}.story-rca .evidence-story-visual[data-story-stage="3"] .match-edge.m4{animation-delay:.54s}
+    .story-rca .evidence-story-visual[data-story-stage="3"] .match-node{animation:storyPulse 2.2s ease-in-out infinite}
+
+    .story-rca .evidence-story-visual[data-story-stage="4"] .trajectory-accumulation{animation:storyDraw 1.8s ease forwards}
+    .story-rca .evidence-story-visual[data-story-stage="4"] .memory-cell{animation:storyPulse 2.8s ease-in-out infinite}
+    .story-rca .evidence-story-visual[data-story-stage="4"] .memory-cell.c2{animation-delay:.35s}.story-rca .evidence-story-visual[data-story-stage="4"] .memory-cell.c3{animation-delay:.7s}.story-rca .evidence-story-visual[data-story-stage="4"] .memory-cell.c4{animation-delay:1.05s}
+
+    .story-rca .evidence-story-visual[data-story-stage="5"] .story-open-ring{animation:ringClose 2.8s ease-in-out infinite}
+    .story-rca .evidence-story-visual[data-story-stage="5"] .story-open-ring.inner{animation-delay:.25s}
+    .story-rca .evidence-story-visual[data-story-stage="5"] .escape-edge{animation:storyDash 1.5s linear infinite}
+    .story-rca .evidence-story-visual[data-story-stage="5"] .block-mark{animation:storyPulse 1.8s ease-in-out infinite}
+
+    .story-rca .evidence-story-visual[data-story-stage="6"] .future-branch{animation:storyDash 2.5s linear infinite}
+    .story-rca .evidence-story-visual[data-story-stage="6"] .future-end{animation:futureBlink 2s ease-in-out infinite}
+    .story-rca .evidence-story-visual[data-story-stage="6"] .today-line{animation:storyDraw .9s ease forwards;stroke-dasharray:240;stroke-dashoffset:240}
+
+    .story-detectors .evidence-story-visual[data-story-stage="0"] .detector-branch{animation:storyDash 1.8s linear infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="0"] .prediction-seal{animation:storyDraw 1s ease forwards;stroke-dasharray:120;stroke-dashoffset:120}
+
+    .story-detectors .evidence-story-visual[data-story-stage="1"] .juno-ideal-wave{animation:kernelWave 1.7s linear infinite;stroke-dasharray:10 8}
+    .story-detectors .evidence-story-visual[data-story-stage="1"] .juno-smeared-wave{animation:storyFadeUp 1s .55s ease both}
+    .story-detectors .evidence-story-visual[data-story-stage="1"] .story-detector-core{animation:storyPulse 2.2s ease-in-out infinite}
+
+    .story-detectors .evidence-story-visual[data-story-stage="2"] .collider-particle{animation:orbitCollider 4s linear infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="2"] .story-signal-line.violet{stroke-dasharray:520;stroke-dashoffset:520;animation:storyDraw 1.7s .45s ease forwards}
+    .story-detectors .evidence-story-visual[data-story-stage="2"] .story-collider-track{animation:storyDash 1.6s linear infinite;stroke-dasharray:7 8}
+
+    .story-detectors .evidence-story-visual[data-story-stage="3"] .story-signal-line{stroke-dasharray:720;stroke-dashoffset:0;animation:storyDash 2.2s linear infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle{animation:holdoutEnter 1.45s ease both}
+    .story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(2){animation-delay:.08s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(3){animation-delay:.16s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(4){animation-delay:.24s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(5){animation-delay:.32s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(6){animation-delay:.4s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(7){animation-delay:.48s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(8){animation-delay:.56s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(9){animation-delay:.64s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(10){animation-delay:.72s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(11){animation-delay:.8s}.story-detectors .evidence-story-visual[data-story-stage="3"] .cms-holdout-points circle:nth-child(12){animation-delay:.88s}
+    .story-detectors .evidence-story-visual[data-story-stage="3"] .freeze-lock{animation:storyPulse 2s ease-in-out infinite}
+
+    .story-detectors .evidence-story-visual[data-story-stage="4"] .train-stream .event-dot{animation:trainEnter 2s ease-in-out infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="4"] .holdout-stream .event-dot{animation:holdoutStream 2s .8s ease-in-out infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="4"] .event-dot.d2{animation-delay:.18s}.story-detectors .evidence-story-visual[data-story-stage="4"] .event-dot.d3{animation-delay:.36s}
+    .story-detectors .evidence-story-visual[data-story-stage="4"] .gwtc-gate{animation:gateClose 1.2s .5s ease both;transform-box:fill-box;transform-origin:center}
+
+    .story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row rect{animation:rebinPulse 2.4s ease-in-out infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row.h160 rect{animation-delay:.35s}.story-detectors .evidence-story-visual[data-story-stage="5"] .hist-row.h200 rect{animation-delay:.7s}
+    .story-detectors .evidence-story-visual[data-story-stage="5"] .story-bin-lock{animation:storyPulse 2.2s ease-in-out infinite}
+
+    .story-detectors .evidence-story-visual[data-story-stage="6"] .story-open-ring{animation:ringClose 3s ease-in-out infinite}
+    .story-detectors .evidence-story-visual[data-story-stage="6"] .story-open-ring.inner{animation-delay:.35s}
+    .story-detectors .evidence-story-visual[data-story-stage="6"] .replication-path{animation:storyDash 1.8s linear infinite}
+
     @media(max-width:980px){.priority-proof-head{grid-template-columns:1fr}.priority-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:620px){.priority-proof{padding:18px}.priority-proof-grid{grid-template-columns:1fr}.priority-proof-bottom{align-items:flex-start;flex-direction:column}}
 
@@ -269,6 +402,8 @@
     }
     @media(prefers-reduced-motion:reduce){
       .story-rail span,.story-scene,.evidence-story-step{transition:none}
+      .process-layer *,.story-scene *{animation:none!important}
+      .incident-packet,.growth-tracer,.trajectory-tracer,.branch-pulse,.residual-tracer,.replication-pulse,.juno-kernel{display:none}
     }
 
     .metric{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
@@ -279,7 +414,7 @@
     @media(max-width:620px){.priority-shell{width:calc(100% - 20px);padding-top:54px}.definitions,.audit-strip{grid-template-columns:1fr}.priority-head p,.section-lede{font-size:1rem}.table-wrap{margin-right:-10px;margin-left:-10px;width:calc(100% + 20px);padding:0 10px}}
     @media(max-width:620px){.claim-registry-wrap{margin-left:0;margin-right:0;width:100%;padding:0}}
   </style>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://rickyjreyes.github.io/priority/#page", "name": "Richard J. Reyes Intellectual Property, Priority and Provenance Registry", "description": "Human-auditable and machine-readable registry of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-06", "author": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "about": ["Wave Confinement Theory", "technical provenance", "scholarly priority", "patent-family priority", "WaveLock", "Phase-Flux Field"], "isPartOf": {"@type": "WebSite", "url": "https://rickyjreyes.github.io/"}, "mainEntity": {"@id": "https://rickyjreyes.github.io/priority/#dataset"}}, {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/priority/#dataset", "name": "Richard J. Reyes Research Priority Registry", "description": "Claim-level chronology linking dated public research disclosures and filed patent-family chronology to canonical identifiers, DOIs, provenance notes, later comparison cases, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-06", "creator": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/priority.json"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/external-convergence.json"}], "subjectOf": {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/data/publication_traceability.json", "name": "Richard J. Reyes Publication Traceability Registry"}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://rickyjreyes.github.io/priority/#page", "name": "Richard J. Reyes Intellectual Property, Priority and Provenance Registry", "description": "Human-auditable and machine-readable registry of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-07", "author": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "about": ["Wave Confinement Theory", "technical provenance", "scholarly priority", "patent-family priority", "WaveLock", "Phase-Flux Field"], "isPartOf": {"@type": "WebSite", "url": "https://rickyjreyes.github.io/"}, "mainEntity": {"@id": "https://rickyjreyes.github.io/priority/#dataset"}}, {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/priority/#dataset", "name": "Richard J. Reyes Research Priority Registry", "description": "Claim-level chronology linking dated public research disclosures and filed patent-family chronology to canonical identifiers, DOIs, provenance notes, later comparison cases, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-07", "creator": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/priority.json"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/external-convergence.json"}], "subjectOf": {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/data/publication_traceability.json", "name": "Richard J. Reyes Publication Traceability Registry"}}]}</script>
 </head>
 <body>
   <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
@@ -404,7 +539,23 @@
                 <g class="rca-callout" transform="translate(58 158)"><rect width="182" height="88" rx="14"></rect><text class="story-card-label" x="18" y="28">recursive drift</text><text class="story-card-copy" x="18" y="52">semantic · memory</text><text class="story-card-copy" x="18" y="70">constraint · coordination</text></g>
                 <g class="rca-callout violet" transform="translate(320 158)"><rect width="182" height="88" rx="14"></rect><text class="story-card-label" x="18" y="28">criticality</text><text class="story-card-copy" x="18" y="52">propagation</text><text class="story-card-copy" x="18" y="70">versus correction</text></g>
                 <foreignObject class="story-note-box" x="50" y="450" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">dated public disclosure is the necessary baseline; it is not itself later confirmation</div></foreignObject>
-              </g>
+              
+                <g class="process-layer rca-baseline-process" aria-hidden="true">
+                  <circle class="process-node baseline-root" cx="280" cy="364" r="8"></circle>
+                  <path class="process-edge baseline-edge e1" d="M280 364C238 349 206 334 174 318"></path>
+                  <path class="process-edge baseline-edge e2" d="M280 364C322 349 354 334 386 318"></path>
+                  <path class="process-edge baseline-edge e3" d="M280 364C246 386 218 402 192 420"></path>
+                  <path class="process-edge baseline-edge e4" d="M280 364C314 386 342 402 368 420"></path>
+                  <circle class="process-node baseline-node n1" cx="174" cy="318" r="5"></circle>
+                  <circle class="process-node baseline-node n2" cx="386" cy="318" r="5"></circle>
+                  <circle class="process-node baseline-node n3" cx="192" cy="420" r="5"></circle>
+                  <circle class="process-node baseline-node n4" cx="368" cy="420" r="5"></circle>
+                  <text class="process-label" x="156" y="305">memory</text>
+                  <text class="process-label" x="367" y="305">propagation</text>
+                  <text class="process-label" x="161" y="442">correction</text>
+                  <text class="process-label" x="350" y="442">containment</text>
+                </g>
+</g>
 
               <g class="story-scene scene-1">
                 <text class="story-scene-kicker" x="40" y="58">STRONGEST EVENT CORRESPONDENCE · 2026</text>
@@ -430,7 +581,26 @@
                   <path class="rca-check" d="M94 184l10 10 20-25"></path>
                   <text class="story-axis-label" x="108" y="230" text-anchor="middle">separate investigative record</text>
                 </g>
-              </g>
+              
+                <g class="process-layer rca-incident-process" aria-hidden="true">
+                  <path class="incident-boundary" d="M280 166V452"></path>
+                  <text class="process-label" x="280" y="466" text-anchor="middle">intended isolation boundary</text>
+                  <path id="rcaIncidentPath" class="incident-propagation-path" d="M82 376C142 344 186 332 236 344C266 352 284 330 316 316C354 299 398 286 470 300"></path>
+                  <g class="incident-agent-cluster">
+                    <circle class="agent-node a1" cx="92" cy="376" r="8"></circle>
+                    <circle class="agent-node a2" cx="142" cy="348" r="7"></circle>
+                    <circle class="agent-node a3" cx="196" cy="338" r="7"></circle>
+                    <path class="agent-link" d="M100 372L135 352M149 347L188 340"></path>
+                  </g>
+                  <circle class="incident-packet" r="6">
+                    <animateMotion dur="3.6s" repeatCount="indefinite" path="M82 376C142 344 186 332 236 344C266 352 284 330 316 316C354 299 398 286 470 300"></animateMotion>
+                  </circle>
+                  <circle class="external-node" cx="470" cy="300" r="12"></circle>
+                  <circle class="observer-ring" cx="408" cy="382" r="28"></circle>
+                  <path class="observer-line" d="M408 354L408 322L446 306"></path>
+                  <text class="process-label" x="408" y="420" text-anchor="middle">independent observation</text>
+                </g>
+</g>
 
               <g class="story-scene scene-2">
                 <text class="story-scene-kicker" x="40" y="58">QUANTITATIVE CORRESPONDENCE</text>
@@ -440,10 +610,21 @@
                 <text class="rca-ratio-label" x="338" y="202">R<tspan baseline-shift="sub" font-size="12">2026</tspan></text>
                 <text class="rca-ratio-value green" x="338" y="250">0.0104</text>
                 <path class="rca-ratio-track" d="M86 322H474"></path>
-                <circle class="rca-ratio-dot" cx="276" cy="322" r="9"></circle>
-                <circle class="rca-ratio-dot green" cx="284" cy="322" r="7"></circle>
+                <circle class="rca-ratio-dot pred" cx="276" cy="322" r="9"></circle>
+                <circle class="rca-ratio-dot green observed" cx="284" cy="322" r="7"></circle>
                 <foreignObject class="story-note-box" x="50" y="364" width="460" height="56"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">≈4% relative difference; high specificity, but the event reconstruction remains author-side and requires independent reproduction</div></foreignObject>
-              </g>
+              
+                <g class="process-layer rca-ratio-derivation" aria-hidden="true">
+                  <path class="mini-axis" d="M80 500H470M80 500V418"></path>
+                  <path class="growth-curve" d="M82 496C142 493 190 486 232 474C278 460 318 444 354 430C390 417 422 407 466 398"></path>
+                  <circle class="growth-tracer" r="5">
+                    <animateMotion dur="3.2s" repeatCount="indefinite" path="M82 496C142 493 190 486 232 474C278 460 318 444 354 430C390 417 422 407 466 398"></animateMotion>
+                  </circle>
+                  <text class="process-label" x="86" y="518">a(0)=1</text>
+                  <text class="process-label strong" x="414" y="390">a(3h)=53</text>
+                  <text class="process-label equation" x="260" y="536" text-anchor="middle">λ → μ,ν → R = μ/ν</text>
+                </g>
+</g>
 
               <g class="story-scene scene-3">
                 <text class="story-scene-kicker" x="40" y="58">ADDITIONAL EXTERNAL EMPIRICAL RECORDS</text>
@@ -455,14 +636,46 @@
                 <g class="rca-chip green" transform="translate(48 134)"><rect width="192" height="104" rx="13"></rect><text x="16" y="28">OpenAI · 2026</text><text class="small" x="16" y="54">persistent state</text><text class="small" x="16" y="72">oversight evasion</text><text class="small" x="16" y="90">boundary crossing</text></g>
                 <g class="rca-chip violet" transform="translate(320 134)"><rect width="192" height="104" rx="13"></rect><text x="16" y="28">Anthropic · 2026</text><text class="small" x="16" y="54">unauthorized access</text><text class="small" x="16" y="72">task escalation</text><text class="small" x="16" y="90">system boundary crossing</text></g>
                 <foreignObject class="story-note-box" x="50" y="450" width="460" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">strong mechanism correspondence, but less specific than the multi-agent event + independent investigation pair</div></foreignObject>
-              </g>
+              
+                <g class="process-layer rca-match-process" aria-hidden="true">
+                  <path class="match-edge m1" d="M280 310L222 346"></path>
+                  <path class="match-edge m2" d="M280 310L338 346"></path>
+                  <path class="match-edge m3" d="M280 310L236 390"></path>
+                  <path class="match-edge m4" d="M280 310L324 390"></path>
+                  <circle class="match-node n1" cx="222" cy="346" r="6"></circle>
+                  <circle class="match-node n2" cx="338" cy="346" r="6"></circle>
+                  <circle class="match-node n3" cx="236" cy="390" r="6"></circle>
+                  <circle class="match-node n4" cx="324" cy="390" r="6"></circle>
+                  <text class="process-label" x="194" y="365">state</text>
+                  <text class="process-label" x="344" y="365">access</text>
+                  <text class="process-label" x="198" y="410">oversight</text>
+                  <text class="process-label" x="335" y="410">boundary</text>
+                </g>
+</g>
 
               <g class="story-scene scene-4">
                 <text class="story-scene-kicker" x="40" y="58">INDEPENDENT RESEARCH CONVERGENCE</text>
                 <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">Independent 2026 literature formalizes memory contamination and trajectory drift</div></foreignObject>
                 <g class="rca-literature-card" transform="translate(48 166)"><rect width="216" height="236" rx="16"></rect><text class="story-card-label" x="18" y="34">Remembering More, Risking More</text><text class="story-card-copy" x="18" y="66">memory-equipped agents</text><text class="story-card-copy" x="18" y="86">temporal contamination</text><path class="rca-memory-chain" d="M30 132C72 92 102 178 144 132S194 92 202 124"></path><circle class="rca-memory-dot" cx="30" cy="132" r="5"></circle><circle class="rca-memory-dot" cx="144" cy="132" r="5"></circle><text class="story-axis-label" x="18" y="202">persistent state → longitudinal risk</text></g>
                 <g class="rca-literature-card violet" transform="translate(296 166)"><rect width="216" height="236" rx="16"></rect><text class="story-card-label" x="18" y="34">SafetyDrift</text><text class="story-card-copy" x="18" y="66">trajectory accumulation</text><text class="story-card-copy" x="18" y="86">unsafe transition</text><path class="rca-drift-path" d="M26 160L66 150L104 124L142 98L190 54"></path><circle class="rca-memory-dot violet" cx="26" cy="160" r="5"></circle><circle class="rca-memory-dot violet" cx="104" cy="124" r="5"></circle><circle class="rca-memory-dot violet" cx="190" cy="54" r="5"></circle><text class="story-axis-label" x="18" y="202">local actions → trajectory failure</text></g>
-              </g>
+              
+                <g class="process-layer rca-research-process" aria-hidden="true">
+                  <g class="memory-sessions">
+                    <rect class="memory-cell c1" x="74" y="426" width="36" height="18" rx="5"></rect>
+                    <rect class="memory-cell c2" x="120" y="426" width="36" height="18" rx="5"></rect>
+                    <rect class="memory-cell c3" x="166" y="426" width="36" height="18" rx="5"></rect>
+                    <rect class="memory-cell c4" x="212" y="426" width="36" height="18" rx="5"></rect>
+                    <path class="memory-transfer" d="M110 435H120M156 435H166M202 435H212"></path>
+                  </g>
+                  <path class="risk-threshold" d="M316 438H500"></path>
+                  <path class="trajectory-accumulation" d="M318 454L350 447L382 439L414 426L446 405L486 374"></path>
+                  <circle class="trajectory-tracer" r="5">
+                    <animateMotion dur="3.5s" repeatCount="indefinite" path="M318 454L350 447L382 439L414 426L446 405L486 374"></animateMotion>
+                  </circle>
+                  <text class="process-label" x="76" y="466">state persists across sessions</text>
+                  <text class="process-label" x="408" y="466" text-anchor="middle">local actions accumulate</text>
+                </g>
+</g>
 
               <g class="story-scene scene-5">
                 <text class="story-scene-kicker" x="40" y="58">INSTITUTIONAL RESPONSE · LOWER EVIDENTIARY WEIGHT</text>
@@ -474,7 +687,19 @@
                 <text class="story-open-title" x="280" y="338" text-anchor="middle">CORRECT</text>
                 <path class="story-open-ray" d="M280 170V116M390 235L438 207M390 365L438 393M280 430V484M170 365L122 393M170 235L122 207"></path>
                 <foreignObject class="story-note-box" x="50" y="486" width="460" height="54"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">relevant control-architecture convergence, but not direct empirical confirmation of an RCA-predicted failure event</div></foreignObject>
-              </g>
+              
+                <g class="process-layer rca-containment-process" aria-hidden="true">
+                  <circle class="contain-agent" cx="280" cy="300" r="8"></circle>
+                  <circle class="contain-agent satellite s1" cx="240" cy="270" r="5"></circle>
+                  <circle class="contain-agent satellite s2" cx="322" cy="266" r="5"></circle>
+                  <circle class="contain-agent satellite s3" cx="330" cy="332" r="5"></circle>
+                  <circle class="contain-agent satellite s4" cx="232" cy="338" r="5"></circle>
+                  <path class="contain-link" d="M275 295L244 274M285 294L318 270M286 306L326 328M274 306L236 334"></path>
+                  <path class="escape-edge blocked b1" d="M330 332L432 392"></path>
+                  <path class="escape-edge blocked b2" d="M322 266L430 208"></path>
+                  <path class="block-mark" d="M376 354l12 12m0-12l-12 12M374 226l12 12m0-12l-12 12"></path>
+                </g>
+</g>
 
               <g class="story-scene scene-6">
                 <text class="story-scene-kicker" x="40" y="58">OPEN FORECAST WINDOWS</text>
@@ -485,7 +710,18 @@
                 <g class="rca-future-node" transform="translate(318 322)"><circle r="9"></circle><text y="38" text-anchor="middle">2027</text><text y="58" text-anchor="middle">open</text></g>
                 <g class="rca-future-node" transform="translate(418 322)"><circle r="9"></circle><text y="38" text-anchor="middle">2028</text><text y="58" text-anchor="middle">open</text></g>
                 <g class="rca-future-node faint" transform="translate(486 322)"><circle r="7"></circle><text y="38" text-anchor="middle">2030</text></g>
-              </g>
+              
+                <g class="process-layer rca-future-process" aria-hidden="true">
+                  <path class="today-line" d="M244 188V420"></path>
+                  <text class="process-label strong" x="244" y="176" text-anchor="middle">TODAY</text>
+                  <path class="future-branch f1" d="M244 246C286 228 318 216 350 198"></path>
+                  <path class="future-branch f2" d="M244 286C304 294 354 306 410 326"></path>
+                  <path class="future-branch f3" d="M244 328C300 354 354 382 468 398"></path>
+                  <circle class="future-end e1" cx="350" cy="198" r="6"></circle>
+                  <circle class="future-end e2" cx="410" cy="326" r="6"></circle>
+                  <circle class="future-end e3" cx="468" cy="398" r="6"></circle>
+                </g>
+</g>
             </svg>
           </div>
           <p class="evidence-story-caption" data-story-caption>The June 11, 2025 RCA disclosure fixes the comparison baseline before any of the later evidence used here.</p>
@@ -583,16 +819,45 @@
                 <g class="story-target-card green" transform="translate(42 105)"><rect width="158" height="92" rx="14"></rect><text class="story-card-label" x="18" y="31">JUNO</text><text class="story-card-copy" x="18" y="55">ghost-mode</text><text class="story-card-copy" x="18" y="73">detectability</text></g>
                 <g class="story-target-card violet" transform="translate(360 105)"><rect width="158" height="92" rx="14"></rect><text class="story-card-label" x="18" y="31">LHC / LHCb</text><text class="story-card-copy" x="18" y="55">log-periodic</text><text class="story-card-copy" x="18" y="73">structure</text></g>
                 <foreignObject class="story-note-box" x="50" y="414" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">prospective hypotheses precede target-statistic evaluation</div></foreignObject>
-              </g>
+              
+                <g class="process-layer detector-map-process" aria-hidden="true">
+                  <circle class="branch-pulse green" r="5">
+                    <animateMotion dur="2.8s" repeatCount="indefinite" path="M235 250C188 213 155 182 118 142"></animateMotion>
+                  </circle>
+                  <circle class="branch-pulse violet" r="5">
+                    <animateMotion dur="3.1s" begin=".5s" repeatCount="indefinite" path="M325 250C372 213 405 182 442 142"></animateMotion>
+                  </circle>
+                  <path class="prediction-seal" d="M232 344H328"></path>
+                  <text class="process-label" x="280" y="364" text-anchor="middle">hypotheses fixed before target statistics</text>
+                </g>
+</g>
 
               <g class="story-scene scene-1">
                 <text class="story-scene-kicker" x="40" y="58">JUNO · NOV 20, 2025</text>
                 <foreignObject class="story-title-box" x="40" y="76" width="480" height="78"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-title">JUNO detectability under the detector transfer function</div></foreignObject>
-                <path class="story-neutrino-wave green" d="M60 240C92 185 124 295 156 240S220 185 252 240S316 295 348 240S412 185 444 240"></path>
-                <path class="story-neutrino-wave faint" d="M60 240C92 216 124 264 156 240S220 216 252 240S316 264 348 240S412 216 444 240"></path>
+                <text class="story-axis-label" x="60" y="174">ideal modulation</text>
+                <path class="story-neutrino-wave green juno-ideal-wave" d="M60 220C92 165 124 275 156 220S220 165 252 220S316 275 348 220S412 165 444 220"></path>
+                <text class="story-axis-label" x="60" y="286">after detector response</text>
+                <path class="story-neutrino-wave faint juno-smeared-wave" d="M60 318C92 294 124 342 156 318S220 294 252 318S316 342 348 318S412 294 444 318"></path>
                 <g transform="translate(196 342)"><path class="story-detector" d="M0 0h168v130c0 46-168 46-168 0z"></path><ellipse class="story-detector-top" cx="84" cy="0" rx="84" ry="18"></ellipse><circle class="story-detector-core" cx="84" cy="78" r="31"></circle><text class="story-card-label" x="84" y="84" text-anchor="middle">JUNO</text></g>
                 <foreignObject class="story-note-box" x="50" y="532" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">detector-response forecast · experimental target evaluation pending</div></foreignObject>
-              </g>
+              
+                <g class="process-layer juno-response-process" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="junoKernel" x1="0" x2="1">
+                      <stop offset="0" stop-color="#67d4ff" stop-opacity="0"></stop>
+                      <stop offset=".5" stop-color="#67d4ff" stop-opacity=".22"></stop>
+                      <stop offset="1" stop-color="#67d4ff" stop-opacity="0"></stop>
+                    </linearGradient>
+                  </defs>
+                  <rect class="juno-kernel" x="54" y="184" width="72" height="158" rx="30" fill="url(#junoKernel)">
+                    <animate attributeName="x" values="54;390;54" dur="5s" repeatCount="indefinite"></animate>
+                  </rect>
+                  <path class="response-arrow" d="M462 220V312"></path>
+                  <text class="process-label" x="474" y="260">resolution</text>
+                  <text class="process-label" x="474" y="276">+ smearing</text>
+                </g>
+</g>
 
               <g class="story-scene scene-2">
                 <text class="story-scene-kicker" x="40" y="58">LHC / LHCb · APR–MAY 2026</text>
@@ -610,7 +875,17 @@
                   <text class="story-axis-label" x="0" y="196">log-domain residual search</text>
                 </g>
                 <foreignObject class="story-note-box" x="50" y="520" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">phenomenology → open-data candidate-spectrum analysis</div></foreignObject>
-              </g>
+              
+                <g class="process-layer lhcb-transform-process" aria-hidden="true">
+                  <circle class="collider-particle" cx="160" cy="188" r="5"></circle>
+                  <path class="transform-arrow" d="M262 282H300"></path>
+                  <text class="process-label" x="281" y="268" text-anchor="middle">log(m)</text>
+                  <text class="process-label" x="281" y="300" text-anchor="middle">subtract baseline</text>
+                  <circle class="residual-tracer" r="4">
+                    <animateMotion dur="3.2s" repeatCount="indefinite" path="M305 288C323 238 341 338 359 288S395 238 413 288S449 338 467 288S503 238 510 273"></animateMotion>
+                  </circle>
+                </g>
+</g>
 
               <g class="story-scene scene-3">
                 <text class="story-scene-kicker" x="40" y="58">CMS · FROZEN PROSPECTIVE TEST</text>
@@ -624,7 +899,23 @@
                   <text class="story-metric-small" x="300" y="86">A = 0.9709</text>
                 </g>
                 <foreignObject class="story-note-box" x="50" y="514" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">strong fixed-model result · background sensitivity remains material</div></foreignObject>
-              </g>
+              
+                <g class="process-layer cms-freeze-process" aria-hidden="true">
+                  <g class="cms-holdout-points">
+                    <circle cx="86" cy="322" r="4"></circle><circle cx="118" cy="280" r="4"></circle>
+                    <circle cx="150" cy="342" r="4"></circle><circle cx="182" cy="278" r="4"></circle>
+                    <circle cx="214" cy="326" r="4"></circle><circle cx="246" cy="374" r="4"></circle>
+                    <circle cx="278" cy="320" r="4"></circle><circle cx="310" cy="274" r="4"></circle>
+                    <circle cx="342" cy="330" r="4"></circle><circle cx="374" cy="376" r="4"></circle>
+                    <circle cx="406" cy="318" r="4"></circle><circle cx="438" cy="272" r="4"></circle>
+                  </g>
+                  <g class="freeze-lock" transform="translate(296 184)">
+                    <rect x="-12" y="10" width="24" height="20" rx="4"></rect>
+                    <path d="M-7 10V2a7 7 0 0 1 14 0v8"></path>
+                  </g>
+                  <text class="process-label strong" x="296" y="168" text-anchor="middle">parameters sealed</text>
+                </g>
+</g>
 
               <g class="story-scene scene-4">
                 <text class="story-scene-kicker" x="40" y="58">GWTC · FROZEN HOLDOUT</text>
@@ -641,7 +932,23 @@
                   <text class="story-metric-big green" x="260" y="116">p=.00130</text>
                 </g>
                 <foreignObject class="story-note-box" x="50" y="470" width="460" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="story-scene-note">training selection and holdout evaluation use disjoint event sets</div></foreignObject>
-              </g>
+              
+                <g class="process-layer gwtc-flow-process" aria-hidden="true">
+                  <g class="train-stream">
+                    <circle class="event-dot d1" cx="34" cy="250" r="4"></circle>
+                    <circle class="event-dot d2" cx="24" cy="275" r="4"></circle>
+                    <circle class="event-dot d3" cx="38" cy="300" r="4"></circle>
+                  </g>
+                  <path class="gwtc-gate" d="M272 214V340"></path>
+                  <path class="gwtc-gate latch" d="M264 250H280M264 304H280"></path>
+                  <g class="holdout-stream">
+                    <circle class="event-dot holdout d1" cx="526" cy="250" r="4"></circle>
+                    <circle class="event-dot holdout d2" cx="536" cy="275" r="4"></circle>
+                    <circle class="event-dot holdout d3" cx="522" cy="300" r="4"></circle>
+                  </g>
+                  <text class="process-label" x="280" y="384" text-anchor="middle">freeze gate closes before holdout evaluation</text>
+                </g>
+</g>
 
               <g class="story-scene scene-5">
                 <text class="story-scene-kicker" x="40" y="58">NIST · ATOMIC OPEN DATA</text>
@@ -660,7 +967,20 @@
                   <text class="story-metric-big" x="336" y="126">k=31.3265</text>
                   <text class="story-metric-small" x="336" y="151">0/5000 × 3</text>
                 </g>
-              </g>
+              
+                <g class="process-layer nist-rebin-process" aria-hidden="true">
+                  <g class="hist-row h120" transform="translate(110 218)">
+                    <rect x="0" y="12" width="18" height="30"></rect><rect x="24" y="4" width="18" height="38"></rect><rect x="48" y="18" width="18" height="24"></rect><rect x="72" y="0" width="18" height="42"></rect><rect x="96" y="10" width="18" height="32"></rect><rect x="120" y="20" width="18" height="22"></rect>
+                  </g>
+                  <g class="hist-row h160" transform="translate(110 280)">
+                    <rect x="0" y="18" width="14" height="24"></rect><rect x="20" y="6" width="14" height="36"></rect><rect x="40" y="12" width="14" height="30"></rect><rect x="60" y="0" width="14" height="42"></rect><rect x="80" y="7" width="14" height="35"></rect><rect x="100" y="16" width="14" height="26"></rect><rect x="120" y="21" width="14" height="21"></rect>
+                  </g>
+                  <g class="hist-row h200" transform="translate(110 342)">
+                    <rect x="0" y="20" width="11" height="22"></rect><rect x="16" y="12" width="11" height="30"></rect><rect x="32" y="4" width="11" height="38"></rect><rect x="48" y="10" width="11" height="32"></rect><rect x="64" y="0" width="11" height="42"></rect><rect x="80" y="8" width="11" height="34"></rect><rect x="96" y="15" width="11" height="27"></rect><rect x="112" y="22" width="11" height="20"></rect><rect x="128" y="25" width="11" height="17"></rect>
+                  </g>
+                  <text class="process-label strong" x="312" y="424" text-anchor="middle">same selected frequency survives re-binning</text>
+                </g>
+</g>
 
               <g class="story-scene scene-6">
                 <text class="story-scene-kicker" x="40" y="58">NEXT DISCRIMINATOR</text>
@@ -671,7 +991,19 @@
                 <text class="story-open-title" x="280" y="316" text-anchor="middle">REPLICATION</text>
                 <text class="story-axis-label" x="280" y="356" text-anchor="middle">new data · new implementation · physical cause</text>
                 <path class="story-open-ray" d="M280 170V116M390 235L438 207M390 365L438 393M280 430V484M170 365L122 393M170 235L122 207"></path>
-              </g>
+              
+                <g class="process-layer replication-process" aria-hidden="true">
+                  <path id="repData" class="replication-path" d="M92 180C150 214 198 248 240 282"></path>
+                  <path id="repCode" class="replication-path" d="M468 180C410 214 362 248 320 282"></path>
+                  <path id="repCause" class="replication-path" d="M280 500V372"></path>
+                  <circle class="replication-pulse data" r="5"><animateMotion dur="3s" repeatCount="indefinite" path="M92 180C150 214 198 248 240 282"></animateMotion></circle>
+                  <circle class="replication-pulse code" r="5"><animateMotion dur="3.4s" begin=".4s" repeatCount="indefinite" path="M468 180C410 214 362 248 320 282"></animateMotion></circle>
+                  <circle class="replication-pulse cause" r="5"><animateMotion dur="2.8s" begin=".8s" repeatCount="indefinite" path="M280 500V372"></animateMotion></circle>
+                  <text class="process-label" x="74" y="164">new data</text>
+                  <text class="process-label" x="486" y="164" text-anchor="end">new implementation</text>
+                  <text class="process-label" x="280" y="526" text-anchor="middle">causal discrimination</text>
+                </g>
+</g>
             </svg>
           </div>
           <p class="evidence-story-caption" data-story-caption>The detector record begins with pre-test targets: JUNO constrains resolution-surviving ghost-mode modulation, while LHC/LHCb specifies log-periodic collider structure.</p>
