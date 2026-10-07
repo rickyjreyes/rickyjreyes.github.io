@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="home-visuals.css">
   <link rel="stylesheet" href="home-technology.css">
   <link rel="stylesheet" href="home-parallax.css">
+  <link rel="stylesheet" href="home-reference.css">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -66,16 +67,45 @@
 }
   </script>
   <script type="application/ld+json" id="wct-priority-schema">{"@context":"https://schema.org","@type":"CreativeWorkSeries","@id":"https://rickyjreyes.github.io/#wave-confinement-theory","name":"Wave Confinement Theory","alternateName":"WCT","creator":{"@type":"Person","@id":"https://rickyjreyes.github.io/researcher/#richard-j-reyes","name":"Richard J. Reyes","identifier":"https://orcid.org/0009-0005-5975-8718","url":"https://rickyjreyes.github.io/researcher/"},"dateCreated":"2025-04-22","datePublished":"2025-04-22","citation":"https://doi.org/10.5281/zenodo.15644222","url":"https://rickyjreyes.github.io/","description":"Wave Confinement Theory is a research program by Richard J. Reyes whose public chronology begins April 22, 2025. This site uses DOI 10.5281/zenodo.15644222 as the canonical citation target for The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime; multiple Zenodo version records exist and record-number order is not used as evidence of priority.","hasPart":{"@type":"ScholarlyArticle","name":"The Geometry of Resonance: Wave Confinement Theory and the Emergence of Mass, Force, and Spacetime","datePublished":"2025-04-22","identifier":"10.5281/zenodo.15644222","url":"https://doi.org/10.5281/zenodo.15644222","author":{"@id":"https://rickyjreyes.github.io/researcher/#richard-j-reyes"}},"subjectOf":{"@type":"Dataset","name":"Richard J. Reyes WCT Priority Registry","url":"https://rickyjreyes.github.io/priority/priority.json"}}</script>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+    svg: { fontCache: 'global' }
+  };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" id="top">
     <div class="nav-wrap">
-      <a class="wordmark" href="#top" aria-label="Richard J. Reyes home">
-        <span class="mark" aria-hidden="true">R</span>
-        <span>Richard J. Reyes</span>
-      </a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav>
+      <a class="wordmark" href="/#top" aria-label="Wave Confinement Theory home">
+        <img class="wct-wordmark-logo" src="/assets/Wavelock_transparent.png" alt="" aria-hidden="true">
+        <span>WCT</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Primary navigation">
+        <a href="/publications/">Publications</a>
+        <a href="/priority/">Priority</a>
+        <a href="/overlap/">WCT Adoption</a>
+        <a href="/patents/">Patents</a>
+        <a href="/equations/">Equations</a>
+        <div class="nav-group">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="nav-menu-verify">
+            <span>Verify</span><span class="nav-caret" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-dropdown" id="nav-menu-verify" role="group" aria-label="Verify">
+            <div class="nav-dropdown-shell">
+              <a href="/sympy/" class="nav-dropdown-link"><span class="nav-item-label">SymPy Audit</span><span class="nav-item-desc">Executable symbolic checks</span></a>
+              <a href="/lean/" class="nav-dropdown-link"><span class="nav-item-label">Lean Coverage</span><span class="nav-item-desc">Formal definitions and proof coverage</span></a>
+            </div>
+          </div>
+        </div>
+        <a href="/reproduce/">Reproduce</a>
+        <a href="/tools/">Tools</a>
+        <a href="/foundations/">Foundations</a>
+      </nav>
     </div>
   </header>
 
@@ -87,15 +117,14 @@
         <p class="hero-lede"><strong>Wave Confinement Theory was publicly disclosed by Richard J. Reyes on April 22, 2025.</strong> Papers, equations, simulations, experiments, open-data analyses, and computational extensions are organized here with public dates, DOI records, code, and evidence artifacts.</p>
         <div class="hero-actions">
           <a class="button primary" href="#start">Start reading</a>
-          <a class="button secondary" href="publications/">Browse publications</a>
-          <a class="button secondary" href="research-corpus/">Explore research corpus</a>
-          <a class="button secondary" href="https://github.com/rickyjreyes/geometry_of_resonance">Open technical research hub</a>
+          <a class="button secondary" href="/publications/">Publications</a>
+          <a class="button secondary" href="/research-corpus/">Explore research</a>
         </div>
-        <div class="identity-links" aria-label="External profiles and identifiers">
-          <a href="researcher/">Canonical researcher profile</a>
-          <a href="https://github.com/rickyjreyes">GitHub</a>
-          <a href="https://www.linkedin.com/in/rickyjreyes/">LinkedIn</a>
-          <a href="https://orcid.org/0009-0005-5975-8718">ORCID 0009-0005-5975-8718</a>
+        <div class="identity-links profile-links" aria-label="External profiles and identifiers">
+          <a class="profile-link-card" data-brand="github" href="https://github.com/rickyjreyes" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on GitHub (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/github/FFFFFF" alt=""></span><span class="profile-copy"><strong>GitHub</strong><span>github.com/rickyjreyes</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
+          <a class="profile-link-card" data-brand="linkedin" href="https://www.linkedin.com/in/rickyjreyes/" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on LinkedIn (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><svg class="profile-brand-logo" viewBox="0 0 24 24" role="img" focusable="false"><path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></span><span class="profile-copy"><strong>LinkedIn</strong><span>linkedin.com/in/rickyjreyes</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
+          <a class="profile-link-card" data-brand="zenodo" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Reyes%2C+Richard+J.%22" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes publications on Zenodo (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/zenodo/1682D4" alt=""></span><span class="profile-copy"><strong>Zenodo</strong><span>DOI publication archive</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
+          <a class="profile-link-card" data-brand="orcid" href="https://orcid.org/0009-0005-5975-8718" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes ORCID record (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/orcid/A6CE39" alt=""></span><span class="profile-copy"><strong>ORCID</strong><span>0009-0005-5975-8718</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
 
@@ -111,74 +140,312 @@
         <div class="field-label label-b">curvature</div>
         <div class="field-label label-c">topology</div>
       </div>
+    </section><section class="frozen-release-callout" aria-label="Frozen reproducible release">
+      <div class="section-shell frozen-release-inner">
+        <span class="frozen-release-dot" aria-hidden="true"></span>
+        <div class="frozen-release-copy"><strong>WCT-2026.2 is frozen and reproducible.</strong><span>Exact commits, Lean, SymPy, registry, simulation, figure regeneration, Docker, Nix, and expected hashes.</span></div>
+        <a class="frozen-release-link" href="/reproduce/">Run it →</a>
+      </div>
     </section>
 
     <section class="status-strip" aria-label="Research status">
       <div class="section-shell status-grid">
         <div><strong>28</strong><span>research releases</span></div>
         <div><strong>2025–2026</strong><span>public research chronology</span></div>
-        <div><strong>Claims</strong><span>supported, conditional, negative, and open states separated</span></div>
+        <div><strong>Claims</strong><span>supported, conditional, prospective, and open states separated</span></div>
       </div>
     </section>
 
-    <section class="section section-shell" id="current-evidence" aria-labelledby="current-evidence-title">
+    <section class="section section-shell priority-home" id="current-evidence" aria-labelledby="current-evidence-title">
       <div class="section-heading narrow">
-        <p class="eyebrow">Current evidence snapshot · October 6, 2026</p>
-        <h2 id="current-evidence-title">What the program currently shows—and what it does not.</h2>
-        <p>This is the shortest status view for readers who want the empirical result before the broader theory. Statistical statements below apply to their stated analysis and null/background model; they are not presented as validation of every WCT claim.</p>
+        <p class="eyebrow">Selected priority &amp; evidence anchors</p>
+        <h2 id="current-evidence-title">Five cross-domain records worth seeing first.</h2>
+        <p>This is a deliberately selected homepage view rather than the complete audit ledger. It surfaces the most important empirical and prospective records across gravitational-wave, collider, atomic, and neutrino-detector work. The full Priority registry retains the complete dated chronology and validation record.</p>
       </div>
 
-      <div class="logic-chain" aria-label="Current empirical claim status">
-        <div><span>01</span><strong>GWTC frozen holdout</strong><p>Training selected <code>k=9.6023256</code>; the 104-event holdout returned ΔD=10.0354 with Monte Carlo <code>p=0.00129987</code> under the frozen test. This is the strongest clean frozen holdout currently listed.</p></div>
-        <div><span>02</span><strong>CMS fixed-waveform residual</strong><p>The prospective G2 test returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code> under the declared background. The effect is background-model sensitive; alternative smooth backgrounds reduce it substantially.</p></div>
-        <div><span>03</span><strong>ATLAS transfer test</strong><p>No positive cross-detector replication was obtained. V6.1 closed as <code>V6_FAILED_HIERARCHICAL_ROUTE_CLOSED</code> with no qualifying nuisance dimension, before the final CMS-frequency target was evaluated.</p></div>
-        <div><span>04</span><strong>Core emergence claims</strong><p>Claims that mass, force, or effective spacetime emerge from confinement remain theory-level proposals unless a claim-specific ledger entry states a stronger empirical status.</p></div>
+      <div class="priority-spine" data-priority-spine aria-label="Selected WCT priority and evidence highlights">
+        <article class="priority-highlight highlight-gwtc clickable-card" data-spine-color="green" data-card-href="publications/gwtc-log-periodic-chirp-mass.html" tabindex="0" role="link" aria-label="Open GWTC frozen holdout record">
+          <span class="priority-highlight-index">01 · GWTC · Frozen holdout</span>
+          <h3>Chirp-mass mode survives the frozen holdout</h3>
+          <p>Training-only selection froze <code>k*=9.6023256</code> before the 104-event holdout evaluation. The holdout returned <code>ΔD=10.0354</code> with Monte Carlo <code>p=0.00129987</code>.</p>
+          <a class="text-link" href="publications/gwtc-log-periodic-chirp-mass.html">Open GWTC record <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="priority-highlight highlight-cms clickable-card" data-spine-color="violet" data-card-href="publications/cms-log-periodic-dimuon-residual.html" tabindex="0" role="link" aria-label="Open CMS prospective holdout record">
+          <span class="priority-highlight-index">02 · CMS · Prospective holdout</span>
+          <h3>Frozen waveform persists across file and period tests</h3>
+          <p>The untouched G2 phase-locked holdout returned <code>A=0.9708618</code> and <code>Δχ²=126.2832</code> under the declared background. Interpretation remains background-model sensitive.</p>
+          <a class="text-link" href="publications/cms-log-periodic-dimuon-residual.html">Open CMS record <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="priority-highlight highlight-nist clickable-card" data-spine-color="green" data-card-href="publications/nist-bin-stable-log-periodic-structure.html" tabindex="0" role="link" aria-label="Open NIST Fe II analysis">
+          <span class="priority-highlight-index">03 · NIST · Atomic public data</span>
+          <h3>Bin-stable log-periodic structure in the Fe II line list</h3>
+          <p>The public NIST Atomic Spectra Database program tests bin stability, active-domain winding, Poisson-bootstrap nulls, neighboring ions, implementation parity, and baseline sensitivity.</p>
+          <a class="text-link" href="publications/nist-bin-stable-log-periodic-structure.html">Open NIST record <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="priority-highlight highlight-lhcb clickable-card" data-spine-color="cyan" data-card-href="publications/lhcb-log-spectral-koide-winding.html" tabindex="0" role="link" aria-label="Open LHCb open-data analysis">
+          <span class="priority-highlight-index">04 · LHCb · Collider public data</span>
+          <h3>Log-spectral structure and active-domain winding</h3>
+          <p>The open-data candidate-spectrum analysis tests log-domain residual structure, active-domain winding, Koide-like comb geometry, sideband controls, charm-continuum controls, and veto-window covariance.</p>
+          <a class="text-link" href="publications/lhcb-log-spectral-koide-winding.html">Open LHCb record <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="priority-highlight highlight-juno clickable-card" data-spine-color="violet" data-card-href="publications/juno-ghost-mode-neutrinos.html" tabindex="0" role="link" aria-label="Open JUNO detector forecast">
+          <span class="priority-highlight-index">05 · JUNO · Prospective detector forecast</span>
+          <h3>Detector-facing forecast for ghost-mode structure</h3>
+          <p>The November 20, 2025 study asks whether WCT-motivated log-energy or ghost-mode modulations could survive JUNO energy resolution, smearing, and systematic limitations. It is a falsifiable detectability forecast, not a JUNO observation.</p>
+          <a class="text-link" href="publications/juno-ghost-mode-neutrinos.html">Open JUNO forecast <span aria-hidden="true">→</span></a>
+        </article>
       </div>
 
       <div class="status-note">
-        <strong>Provenance policy.</strong> April 22, 2025 is the program-level public-chronology date used by this site. <a href="https://doi.org/10.5281/zenodo.15644222">10.5281/zenodo.15644222</a> is the canonical citation target used here for <em>The Geometry of Resonance</em>, not a claim that its Zenodo record number is the earliest same-title deposit. The title has a multi-record Zenodo version lineage, and legacy/version citations include <code>10.5281/zenodo.15286791</code>. Record-number order is not used as evidence of priority. Where an original manuscript/public-disclosure date differs from a later archive record creation or redeposit date, the two dates are treated separately.
+        <strong>Selection policy.</strong> These homepage highlights were chosen for freeze/preregistration structure, cross-domain coverage, public-data reproducibility, or prospective specificity. Use the Priority registry for the complete dated record and underlying provenance.
       </div>
-      <a class="text-link" href="priority/#ledger">Open the current claims &amp; evidence ledger <span aria-hidden="true">→</span></a>
+      <a class="text-link" href="priority/">Open the full Priority registry <span aria-hidden="true">→</span></a>
     </section>
 
-    <section class="section section-shell" id="idea" aria-labelledby="idea-title">
+    <section class="section section-shell wct-theory-section" id="idea" aria-labelledby="idea-title">
       <div class="section-heading narrow">
         <p class="eyebrow">The research idea</p>
         <h2 id="idea-title">Persistent structure as confined wave dynamics.</h2>
-        <p>Wave Confinement Theory is a proposed geometric wave framework in which localized physical structure arises from sustained oscillation, finite-wavenumber selection, phase organization, curvature feedback, and topology.</p>
+        <p>The homepage now follows the dependency flow itself: the zero-wave reference state folds into the first structured mode under the three-dimensional boundedness branch, field states descend through Lyapunov basins, finite-(k) selection organizes the spectrum, Phase–Flux carries energy and phase, eigenmode basins emerge from broadband competition, and resonant geometry closes into curvature locking.</p>
       </div>
 
-      <div class="logic-chain" aria-label="Wave Confinement Theory logic chain">
-        <div><span>01</span><strong>Wave transport</strong><p>Energy and phase propagate through a field.</p></div>
-        <div><span>02</span><strong>Finite-band selection</strong><p>A preferred spectral shell suppresses unrestricted growth.</p></div>
-        <div><span>03</span><strong>Resonant confinement</strong><p>Boundary and feedback conditions organize persistent modes.</p></div>
-        <div><span>04</span><strong>Curvature locking</strong><p>Phase, geometry, and topology stabilize localized structure.</p></div>
+      <div class="wct-theory-scroll">
+        <div class="wct-theory-visual-wrap">
+          <div class="wct-theory-flow" aria-hidden="true">
+            <span>ZW0</span><i></i><span>ZW1</span><i></i><span>basin</span><i></i><span>n≤3</span><i></i><span>k*</span><i></i><span>PFF</span><i></i><span>modes</span><i></i><span>lock</span>
+          </div>
+
+          <div class="wct-theory-visual" data-stage="0">
+            <svg viewBox="0 0 560 480" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative eight-stage WCT dependency sequence">
+              <defs>
+                <radialGradient id="wctWell" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="var(--accent-3)" stop-opacity=".28"></stop>
+                  <stop offset="48%" stop-color="var(--accent)" stop-opacity=".08"></stop>
+                  <stop offset="100%" stop-color="var(--bg-deep)" stop-opacity="0"></stop>
+                </radialGradient>
+              </defs>
+              <rect class="theory-frame" x="10" y="10" width="540" height="460" rx="24"></rect>
+
+              <g class="theory-scene scene-0">
+                <path class="stroke-muted faint" d="M92 320L280 214L468 320L280 426Z"></path>
+                <path class="stroke-muted faint" d="M92 320L92 285M468 320L468 285M280 214L280 178"></path>
+                <path class="stroke-muted faint" d="M139 294L327 400M186 267L374 373M233 241L421 347M139 347L327 241M186 373L374 267M233 400L421 294"></path>
+                <line class="stroke-accent strong" x1="280" y1="320" x2="438" y2="320"></line>
+                <line class="stroke-accent2 strong" x1="280" y1="320" x2="188" y2="374"></line>
+                <line class="stroke-accent3 strong" x1="280" y1="320" x2="280" y2="170"></line>
+                <text class="svg-accent" x="446" y="324">x</text>
+                <text class="svg-accent2" x="174" y="386">y</text>
+                <text class="svg-accent3" x="288" y="168">z</text>
+                <circle class="stroke-accent3 faint" cx="280" cy="320" r="76"></circle>
+                <path class="stroke-accent3 strong" data-zw-fold></path>
+                <path class="stroke-accent faint" data-zw-fold-inner></path>
+                <circle class="fill-accent3" data-zw-core cx="280" cy="320" r="5"></circle>
+                <text class="svg-muted" x="90" y="84">ZW0 · invariant reference</text>
+                <text class="svg-accent3" x="350" y="84">ZW1 · first fold</text>
+                <path class="stroke-accent faint" d="M226 82H330"></path>
+                <text class="svg-text" x="280" y="118" text-anchor="middle">bounded fold shown in x · y · z</text>
+                <text class="svg-accent3" x="280" y="448" text-anchor="middle">H²(ℝⁿ) ↪ L∞  ⇒  n ≤ 3 branch</text>
+              </g>
+
+              <g class="theory-scene scene-1">
+                <ellipse class="stroke-muted faint" cx="280" cy="250" rx="205" ry="146"></ellipse>
+                <ellipse class="stroke-accent faint" cx="280" cy="258" rx="164" ry="112"></ellipse>
+                <ellipse class="stroke-accent2 faint" cx="280" cy="269" rx="120" ry="78"></ellipse>
+                <ellipse class="stroke-accent3" cx="280" cy="282" rx="70" ry="42"></ellipse>
+                <ellipse fill="url(#wctWell)" cx="280" cy="282" rx="92" ry="62"></ellipse>
+                <circle class="fill-accent3" cx="280" cy="282" r="7"></circle>
+                <path class="basin-flow stroke-accent" d="M78 124C126 170 178 192 236 252"></path>
+                <path class="basin-flow stroke-accent2" d="M486 126C430 162 382 202 322 258"></path>
+                <path class="basin-flow stroke-accent" d="M82 376C146 350 196 332 252 296"></path>
+                <path class="basin-flow stroke-accent2" d="M486 382C416 350 362 326 310 296"></path>
+                <g data-basin-particles></g>
+                <text class="svg-accent" x="72" y="72">𝓔_WCT[ψ]</text>
+                <text class="svg-accent3" x="280" y="350" text-anchor="middle">attractor basin</text>
+                <text class="svg-muted" x="280" y="382" text-anchor="middle">state trajectories descend toward lower 𝓔</text>
+                <text class="svg-text" x="438" y="78" text-anchor="end">d𝓔/dt ≤ 0</text>
+              </g>
+
+              <g class="theory-scene scene-2">
+                <path class="stroke-muted faint" d="M118 356L280 262L442 356L280 448Z"></path>
+                <path class="stroke-muted faint" d="M118 356L118 180L280 86L442 180L442 356"></path>
+                <path class="stroke-muted faint" d="M118 180L280 274L442 180M280 86V274M280 274V448"></path>
+                <line class="stroke-accent strong" x1="280" y1="274" x2="447" y2="274"></line>
+                <line class="stroke-accent2 strong" x1="280" y1="274" x2="158" y2="345"></line>
+                <line class="stroke-accent3 strong" x1="280" y1="274" x2="280" y2="102"></line>
+                <circle class="fill-accent" cx="447" cy="274" r="4"></circle>
+                <circle class="fill-accent2" cx="158" cy="345" r="4"></circle>
+                <circle class="fill-accent3" cx="280" cy="102" r="4"></circle>
+                <text class="svg-accent" x="456" y="278">x</text>
+                <text class="svg-accent2" x="144" y="357">y</text>
+                <text class="svg-accent3" x="288" y="102">z</text>
+                <text class="svg-text large" x="280" y="226" text-anchor="middle">H²(ℝⁿ) ↪ L∞</text>
+                <text class="svg-accent3 large" x="280" y="254" text-anchor="middle">n ≤ 3</text>
+                <text class="svg-muted" x="280" y="410" text-anchor="middle">bounded-confinement regularity branch</text>
+              </g>
+
+              <g class="theory-scene scene-3">
+                <path class="stroke-muted faint" d="M280 38V442M78 240H482"></path>
+                <circle class="stroke-accent2 dashed" cx="280" cy="240" r="156"></circle>
+                <circle class="stroke-accent2 dashed" cx="280" cy="240" r="116"></circle>
+                <g data-shell-dots></g>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="136"></circle>
+                <text class="svg-accent2 large" x="414" y="84">|k| ≈ k*</text>
+                <text class="svg-muted" x="280" y="432" text-anchor="middle">quartic band-pass concentrates support on a finite shell</text>
+              </g>
+
+              <g class="theory-scene scene-4">
+                <circle class="stroke-accent faint" cx="280" cy="240" r="150"></circle>
+                <path class="stroke-accent strong" data-flux-one d="M110 296C174 152 308 124 446 198"></path>
+                <path class="stroke-accent2 strong" data-flux-two d="M112 332C216 374 354 352 446 230"></path>
+                <path class="stroke-accent3 faint dashed" d="M142 212C204 292 342 316 420 250"></path>
+                <circle class="fill-accent3-soft stroke-accent3" cx="280" cy="240" r="46"></circle>
+                <text class="svg-display small" x="280" y="232" text-anchor="middle">u, S, θ</text>
+                <text class="svg-muted" x="280" y="272" text-anchor="middle">energy · flux · phase</text>
+                <text class="svg-accent" x="280" y="424" text-anchor="middle">selected band → structured transport</text>
+              </g>
+
+              <g class="theory-scene scene-5">
+                <path class="stroke-muted faint" d="M76 104H486M76 164H486M76 224H486M76 284H486M76 344H486M76 404H486"></path>
+                <path class="stroke-muted faint" d="M116 72V432M196 72V432M276 72V432M356 72V432M436 72V432"></path>
+                <g class="eigen-well" transform="translate(166 184)">
+                  <ellipse class="stroke-accent faint" cx="0" cy="0" rx="74" ry="48"></ellipse>
+                  <ellipse class="stroke-accent" cx="0" cy="0" rx="48" ry="30"></ellipse>
+                  <ellipse class="stroke-accent strong" cx="0" cy="0" rx="24" ry="14"></ellipse>
+                  <circle class="fill-accent" cx="0" cy="0" r="6"></circle>
+                </g>
+                <g class="eigen-well" transform="translate(382 196)">
+                  <ellipse class="stroke-accent2 faint" cx="0" cy="0" rx="66" ry="44"></ellipse>
+                  <ellipse class="stroke-accent2" cx="0" cy="0" rx="42" ry="27"></ellipse>
+                  <ellipse class="stroke-accent2 strong" cx="0" cy="0" rx="20" ry="12"></ellipse>
+                  <circle class="fill-accent2" cx="0" cy="0" r="6"></circle>
+                </g>
+                <g class="eigen-well dominant" transform="translate(282 340)">
+                  <ellipse class="stroke-accent3 faint" cx="0" cy="0" rx="92" ry="60"></ellipse>
+                  <ellipse class="stroke-accent3" cx="0" cy="0" rx="58" ry="36"></ellipse>
+                  <ellipse class="stroke-accent3 strong" cx="0" cy="0" rx="28" ry="17"></ellipse>
+                  <circle class="fill-accent3" cx="0" cy="0" r="8"></circle>
+                </g>
+                <g data-eigen-particles></g>
+                <text class="svg-muted" x="280" y="62" text-anchor="middle">broadband field</text>
+                <text class="svg-accent3" x="280" y="430" text-anchor="middle">spectral entropy ↓ · persistent mode basins deepen</text>
+              </g>
+
+              <g class="theory-scene scene-6">
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="62"></circle>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="110"></circle>
+                <circle class="stroke-accent3 faint" cx="280" cy="240" r="158"></circle>
+                <path class="stroke-accent3 strong mode-line" data-mode-one></path>
+                <path class="stroke-accent3 faint mode-line" data-mode-two></path>
+                <text class="svg-muted" x="280" y="430" text-anchor="middle">standing structure persists instead of radiating away</text>
+              </g>
+
+              <g class="theory-scene scene-7">
+                <path class="stroke-accent3 strong" data-gamma></path>
+                <circle class="stroke-accent2 dashed" data-gamma-osc cx="280" cy="240" r="40"></circle>
+                <line class="stroke-accent strong" data-gamma-tangent x1="0" y1="0" x2="0" y2="0"></line>
+                <circle class="fill-accent" data-gamma-marker cx="280" cy="96" r="5"></circle>
+                <text class="svg-muted" x="70" y="68">Γ closed loop · tangent · osculating circle</text>
+                <text class="svg-accent3" x="280" y="430" text-anchor="middle">phase + geometry + topology → locked localized mode</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="wct-theory-meta">
+            <strong data-theory-caption>01 / 08 · Zero-wave → ZW1 fold</strong>
+            <span class="wct-theory-pips" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+          <div class="wct-theory-progress" aria-hidden="true"><span data-theory-progress></span></div>
+          <p class="wct-theory-boundary">Illustrative dependency map in the WCT visual language. “Sinkhole” is used here as a visual metaphor for mode-attractor basins; individual stages retain their separate proof, numerical, or proposal status.</p>
+        </div>
+
+        <ol class="wct-theory-steps" aria-label="Wave Confinement Theory dependency sequence">
+          <li class="wct-theory-step active">
+            <span>01</span><h3>Zero-wave → ZW1 fold</h3>
+            <p>The invariant zero-wave is the quiescent reference. The first structured departure is shown as a ZW1 fold developing in the three available spatial directions under the bounded-confinement (n\le3) branch.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>02</span><h3>Lyapunov basin flow</h3>
+            <p>Field states are shown moving through a basin of lower (mathcal E_{\mathrm{WCT}}), not merely down a one-dimensional curve. Under the stated gradient-flow assumptions, trajectories descend toward lower-energy attractor structure.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>03</span><h3>Sobolev three-dimensional bound</h3>
+            <p>The regularity route uses (H^2(\mathbb{R}^n)\hookrightarrow L^\infty) to restrict the stated bounded-confinement argument to (n\le3).</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>04</span><h3>Finite-(k) shell selection</h3>
+            <p>A quartic band-pass selects a preferred nonzero wavenumber (k_\star), concentrating support around a finite spectral shell rather than allowing unrestricted scale growth.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>05</span><h3>Phase–Flux organization</h3>
+            <p>Observable energy density, flux, and phase organize the selected band into a conservation- and causal-flow-aware substrate.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>06</span><h3>Self-emergent eigenmode sinkholes</h3>
+            <p>Broadband content is visualized draining into competing mode basins—sinkhole-like attractors—while spectral entropy falls and a smaller set of persistent eigenmode-like structures dominates.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>07</span><h3>Resonant confinement</h3>
+            <p>Boundary and feedback conditions organize those selected modes into persistent standing structures rather than freely propagating content.</p>
+          </li>
+          <li class="wct-theory-step">
+            <span>08</span><h3>Curvature locking</h3>
+            <p>Phase, geometry, and topology close the sequence by stabilizing a localized structure along a curved path.</p>
+          </li>
+        </ol>
       </div>
 
       <div class="status-note">
-        <strong>Research status.</strong> WCT is an independently developed research program spanning mathematical formulation, numerical simulation, experiment, and open-data analysis. Definitions, derivations, computational results, empirical findings, phenomenology, and conjectures are explicitly distinguished so that individual claims can be evaluated on their own evidence.
+        <strong>Research status.</strong> WCT is an independently developed research program spanning mathematical formulation, numerical simulation, experiment, and open-data analysis. Definitions, derivations, computational results, empirical findings, phenomenology, and conjectures remain explicitly separated.
       </div>
 
-      <section class="home-visuals" aria-labelledby="home-visuals-title">
-        <div class="home-visuals-header">
-          <div><p class="eyebrow">Visual guide</p><h3 id="home-visuals-title">See the geometry before entering the registry.</h3></div>
-          <p>The strongest visuals are used as orientation or technical figures, with their evidentiary role stated explicitly.</p>
+      <section class="wct-equation-build" data-equation-build aria-labelledby="equation-build-title">
+        <div class="wct-equation-sticky">
+          <div class="wct-equation-copy">
+            <p class="eyebrow">Equation build-up · registered chain</p>
+            <h2 id="equation-build-title">From a closed curve to an inverse-length scale.</h2>
+            <p class="wct-equation-lede">Scroll through the chain: first the closed curve is drawn, then the local phase/tangent/osculating geometry moves along it, then (sigma(s)) is revealed, and finally its weighted mean appears as the effective inverse-length scale.</p>
+
+            <div class="wct-equation-chain">
+              <article data-eq-card="0">
+                <span>Curvature spectral rate · E1B</span>
+                <div class="equation-math">\[\sigma(s)=\sqrt{\kappa(s)^2+\tau(s)^2}\]</div>
+              </article>
+              <article data-eq-card="1">
+                <span>Effective-wavenumber chain · E5 assumptions</span>
+                <div class="equation-math">\[k_{\mathrm{wind}}=k_{\sigma}=\langle\sigma\rangle_w\]</div>
+              </article>
+              <article data-eq-card="2">
+                <span>Mass–curvature dimensional mapping · E6</span>
+                <div class="equation-math">\[m=\frac{\hbar}{c}\,k_{\mathrm{eff}}\]</div>
+                <div class="equation-math equation-math-secondary">\[\text{under E5:}\quad m=\frac{\hbar}{c}\,\langle\sigma\rangle_w\]</div>
+              </article>
+            </div>
+            <a class="text-link" href="equations/#E5">Assumptions, status, Lean &amp; SymPy in the equation registry <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="wct-equation-visual">
+            <div class="wct-equation-stage-label"><span data-eq-stage>01 · closed curve Γ</span><strong data-eq-progress>0%</strong></div>
+            <svg viewBox="0 0 520 560" role="img" aria-label="Scroll-built torus-knot geometry with curvature spectral rate">
+              <path class="eq-guide" d="M28 345H492M28 490H492"></path>
+              <path class="eq-knot"></path>
+              <circle class="eq-phase" cx="260" cy="210" r="5"></circle>
+              <line class="eq-tangent" x1="0" y1="0" x2="0" y2="0"></line>
+              <circle class="eq-osc" cx="260" cy="210" r="34"></circle>
+              <text class="eq-label accent" x="260" y="32" text-anchor="middle">phase direction along Γ · winding</text>
+              <text class="eq-label" x="390" y="108">τ</text>
+              <text class="eq-label" x="350" y="128">κ</text>
+              <text class="eq-label" x="34" y="386">σ(s) along arc length s</text>
+              <path class="eq-sigma"></path>
+              <line class="eq-mean" data-eq-mean x1="38" y1="440" x2="482" y2="440"></line>
+              <text class="eq-label accent" data-eq-mean-label x="482" y="432" text-anchor="end">⟨σ⟩ = k_eff</text>
+            </svg>
+            <p>Illustrative computation on a (2,3) torus knot with uniform weight <code>w</code>; κ, τ, and σ are computed numerically from that curve. It demonstrates the registered geometry chain, not an empirical result.</p>
+          </div>
         </div>
-        <div class="home-visual-grid">
-          <figure class="home-visual-card">
-            <a href="publications/geometry-of-resonance.html"><img src="assets/resonance.png" alt="Publication illustration for The Geometry of Resonance showing closed resonant geometry" loading="lazy"></a>
-            <figcaption><strong>The Geometry of Resonance</strong><span>Publication illustration · conceptual orientation to closed resonant geometry.</span></figcaption>
-          </figure>
-          <figure class="home-visual-card">
-            <a href="equations/"><img src="assets/coherence.png" alt="Technical visualization relating energy density, phase coherence, and confinement potential" loading="lazy"></a>
-            <figcaption><strong>Coherence and confinement</strong><span>Technical visualization · use the equation registry for the canonical mathematical definitions.</span></figcaption>
-          </figure>
-          <figure class="home-visual-card">
-            <a href="tools/"><img src="assets/toroid.png" alt="Concept illustration of a toroidal confined wave structure" loading="lazy"></a>
-            <figcaption><strong>Toroidal confinement</strong><span>Concept illustration · a visual model of closed-path confinement, not experimental evidence.</span></figcaption>
-          </figure>
-        </div>
-        <p class="home-visual-boundary"><strong>Boundary:</strong> illustrations explain the intended geometry; numerical and empirical claims are evaluated separately.</p>
       </section>
 
       <div class="orientation" aria-label="Where to go">
@@ -202,7 +469,7 @@
           <li>
             <p class="orientation-tag">Zenodo</p>
             <p>Permanent DOI records and downloadable releases for every cited paper.</p>
-            <a class="text-link" href="https://orcid.org/0009-0005-5975-8718">View archived works <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Reyes%2C+Richard+J.%22">View archived works <span aria-hidden="true">→</span></a>
           </li>
         </ul>
       </div>
@@ -215,7 +482,7 @@
       </div>
 
       <ol class="reading-path">
-        <li>
+        <li class="clickable-card" data-card-href="publications/geometry-of-resonance.html" tabindex="0" role="link">
           <div class="step">01</div>
           <div>
             <p class="paper-type">Core overview · Foundational proposal</p>
@@ -224,7 +491,7 @@
             <p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.15644222">DOI: 10.5281/zenodo.15644222</a></p>
           </div>
         </li>
-        <li>
+        <li class="clickable-card" data-card-href="publications/phase-flux-field.html" tabindex="0" role="link">
           <div class="step">02</div>
           <div>
             <p class="paper-type">Axiomatic substrate · Foundational proposal</p>
@@ -233,7 +500,7 @@
             <p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.17578766">DOI: 10.5281/zenodo.17578766</a></p>
           </div>
         </li>
-        <li>
+        <li class="clickable-card" data-card-href="publications/rest-energy-density-weighted-loop-curvature.html" tabindex="0" role="link">
           <div class="step">03</div>
           <div>
             <p class="paper-type">Mass-locking proposal · Mathematical derivation</p>
@@ -242,7 +509,7 @@
             <p class="reading-doi"><a href="https://doi.org/10.5281/zenodo.20533537">DOI: 10.5281/zenodo.20533537</a></p>
           </div>
         </li>
-        <li>
+        <li class="clickable-card" data-card-href="publications/hard-upper-bound-spatial-dimensionality.html" tabindex="0" role="link">
           <div class="step">04</div>
           <div>
             <p class="paper-type">Mathematical stability · Mathematical derivation</p>
@@ -254,70 +521,6 @@
       </ol>
 
       <a class="text-link" href="https://github.com/rickyjreyes/geometry_of_resonance">Open the complete research hub <span aria-hidden="true">→</span></a>
-    </section>
-
-    <section class="technology-bridge section-shell" id="technology" aria-labelledby="technology-title">
-      <div class="technology-heading">
-        <div>
-          <p class="eyebrow">From theory to technology</p>
-          <h2 id="technology-title">A research program with implementation paths.</h2>
-        </div>
-        <p>WCT begins as a mathematical framework and extends into computational, photonic, memory, security, and control architectures. Implementation status is tracked at the project level so theoretical claims, prototypes, experiments, and engineering milestones remain distinct.</p>
-      </div>
-
-      <div class="technology-path" aria-label="Research to technology path">
-        <article class="technology-step">
-          <span class="technology-step-index">01 · Framework</span>
-          <h3>Mathematical structure</h3>
-          <p>Canonical equations, explicit assumptions, status labels, symbolic checks, and formal-support mappings define what the theory actually claims.</p>
-        </article>
-        <article class="technology-step">
-          <span class="technology-step-index">02 · Computation</span>
-          <h3>Numerical models</h3>
-          <p>Simulations and diagnostics test finite-band selection, localization, phase organization, persistence, and failure modes.</p>
-        </article>
-        <article class="technology-step">
-          <span class="technology-step-index">03 · Architecture</span>
-          <h3>Implementation concepts</h3>
-          <p>Research branches explore persistent wave memory, drift detection, resonant references, coherent field generation, and related computational structures.</p>
-        </article>
-        <article class="technology-step">
-          <span class="technology-step-index">04 · Diligence</span>
-          <h3>Evidence and IP</h3>
-          <p>Reproducible source, experiments, public-data studies, patent filings, and open technical gaps provide separate paths for evaluation.</p>
-        </article>
-      </div>
-
-      <div class="technology-lower">
-        <div class="technology-panel">
-          <h3>Potential application directions</h3>
-          <p>These areas are being investigated as consequences or engineering extensions of the underlying confinement and coherence ideas.</p>
-          <div class="technology-tags" aria-label="Potential application directions">
-            <span>Photonics</span>
-            <span>Resonant computing</span>
-            <span>Persistent wave memory</span>
-            <span>AI drift &amp; coherence architectures</span>
-            <span>Control systems</span>
-            <span>Secure computation</span>
-          </div>
-        </div>
-        <aside class="technology-panel" aria-label="Technical diligence paths">
-          <h3>What can be inspected now</h3>
-          <ul class="technology-evidence-list">
-            <li>Canonical equations and research-status labels</li>
-            <li>SymPy and Lean verification surfaces</li>
-            <li>Pinned reproducible simulation stack</li>
-            <li>Experiments and public-data analyses</li>
-            <li>Filed invention families and chronology</li>
-          </ul>
-          <div class="technology-actions">
-            <a class="button primary" href="patents/">Patent portfolio</a>
-            <a class="button secondary" href="reproduce/">Reproduce</a>
-            <a class="button secondary" href="equations/">Equations</a>
-          </div>
-        </aside>
-      </div>
-      <p class="technology-boundary"><strong>Engineering evaluation:</strong> commercial performance, scaling behavior, production-scale hardware feasibility, and independent replication are tracked as separate validation milestones.</p>
     </section>
 
     <section class="section section-shell" id="branches" aria-labelledby="branches-title">
@@ -378,6 +581,22 @@
       </div>
     </section>
 
+    <section class="patent-home-section" aria-labelledby="patent-home-title">
+      <div class="section-shell">
+        <div class="patent-home-heading">
+          <div><p class="eyebrow">Inventions and intellectual property</p><h2 id="patent-home-title">Four filed technology families.</h2></div>
+          <p>Public, non-enabling summaries connect the filing chronology to related papers, repositories, experiments, and evidence-status labels without publishing confidential application material.</p>
+        </div>
+        <div class="patent-home-grid" aria-label="Filed technology families">
+          <article class="patent-home-card"><div class="patent-home-brand"><span>Patent pending</span><img class="wavelock-card-logo" src="/assets/Wavelock_transparent.png" alt="WaveLock wave-shaped logo" loading="lazy" decoding="async"></div><h3>WaveLock and drift detection</h3><p>Curvature-regulated commitments, replay verification, protocol binding, attestation, and runtime drift analysis.</p></article>
+          <article class="patent-home-card"><span>Patent pending</span><h3>Persistent wave memory</h3><p>Wave-state storage, spectral confinement, readout, reset control, physical cells, arrays, and software emulation.</p></article>
+          <article class="patent-home-card"><span>Application filed</span><h3>Solid-state frequency reference</h3><p>Optically programmed semiconductor resonance with harmonic readout and oscillator-integration concepts.</p></article>
+          <article class="patent-home-card"><span>Application filed</span><h3>Coherent field generator</h3><p>Structured excitation, controlled confinement geometry, harmonic stabilization, relocking, and detector feedback.</p></article>
+        </div>
+        <div class="patent-home-actions"><a class="button primary" href="/patents/">Open patent portfolio</a><a class="button secondary" href="/patents.json">View machine-readable metadata</a></div>
+      </div>
+    </section>
+
     <section class="section publications-section" id="publications" aria-labelledby="publications-title">
       <div class="section-shell">
         <div class="section-heading publications-heading">
@@ -411,7 +630,7 @@
         </div>
 
         <div class="archive-cta">
-          <p>The complete, searchable archive holds 24 research releases with research-status labels, category and year filters, DOI links where available, source repositories, and citation exports.</p>
+          <p>The complete, searchable archive holds 28 research releases with research-status labels, category and year filters, DOI links where available, source repositories, and citation exports.</p>
           <div class="archive-cta-actions">
             <a class="button primary" href="publications/">Open machine-readable publication archive</a>
             <a class="button secondary" href="research-corpus/">Open WCT research corpus</a>
@@ -421,7 +640,11 @@
       </div>
     </section>
 
-    <section class="section section-shell about-section" id="about" aria-labelledby="about-title">
+    <section class="section section-shell about-section has-portrait" id="about" aria-labelledby="about-title">
+      <figure class="about-portrait">
+        <div class="about-portrait-frame"><img src="/assets/richardjreyes.png" alt="Richard J. Reyes, controls engineer and independent researcher" loading="lazy" decoding="async"></div>
+        <figcaption><strong>Richard J. Reyes</strong>Controls engineer, software developer, independent researcher, and founder of WaveLock.</figcaption>
+      </figure>
       <div class="about-copy">
         <p class="eyebrow">About</p>
         <h2 id="about-title">Engineering practice and independent research.</h2>
@@ -476,6 +699,7 @@
     </div>
   </footer>
 
+  <script src="home-reference.js" defer></script>
   <script src="home-parallax.js" defer></script>
   <script src="script.js" defer></script>
 <script src="site-nav.js" defer></script>
