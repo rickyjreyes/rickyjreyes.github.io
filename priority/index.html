@@ -69,10 +69,58 @@
     .ledger th:nth-child(1){width:18%}.ledger th:nth-child(2){width:18%}.ledger th:nth-child(3){width:29%}.ledger th:nth-child(4){width:25%}.ledger th:nth-child(5){width:10%}
     .claim-title{display:block;color:var(--text);font-weight:800;margin-bottom:6px}
     .claim-id{color:var(--muted-2);font:700 .72rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}
-    .status{display:inline-flex;max-width:100%;padding:5px 9px;border:1px solid rgba(103,212,255,.38);border-radius:999px;background:rgba(103,212,255,.065);color:var(--text);font-size:.65rem;font-weight:850;letter-spacing:.035em;line-height:1.25;text-transform:uppercase;white-space:normal}
-    .status.conditional{border-color:rgba(255,205,92,.42);background:rgba(255,205,92,.07)}
-    .status.negative{border-color:rgba(255,125,125,.4);background:rgba(255,125,125,.06)}
-    .status.open{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.025);color:var(--muted)}
+    .status{display:inline-flex;align-items:center;gap:7px;max-width:100%;padding:5px 9px;border:1px solid rgba(103,212,255,.38);border-radius:999px;background:rgba(103,212,255,.065);color:var(--text);font-size:.65rem;font-weight:850;letter-spacing:.035em;line-height:1.25;text-transform:uppercase;white-space:normal}
+    .status::before{content:"";width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+    .status.supported{color:var(--accent-3);border-color:rgba(182,255,218,.42);background:rgba(182,255,218,.065)}
+    .status.convergence{color:var(--accent);border-color:rgba(103,212,255,.42);background:rgba(103,212,255,.065)}
+    .status.conditional{color:#f0c987;border-color:rgba(240,201,135,.44);background:rgba(240,201,135,.065)}
+    .status.negative{color:#f29b8c;border-color:rgba(242,155,140,.42);background:rgba(242,155,140,.06)}
+    .status.open{color:#a899ff;border-color:rgba(168,153,255,.34);background:rgba(168,153,255,.045)}
+    .registry-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin-top:28px}
+    .claim-filter{display:flex;align-items:center;gap:10px;flex:1 1 360px;max-width:520px;min-height:44px;padding:0 14px;border:1px solid var(--line-strong);border-radius:10px;background:rgba(9,22,37,.54)}
+    .claim-filter span{color:var(--muted-2);font:800 .66rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase}
+    .claim-filter input{flex:1;min-width:0;border:0;outline:0;color:var(--text);background:transparent;font:inherit;font-size:.9rem}
+    .claim-filter input::placeholder{color:var(--muted-2)}
+    .registry-count{color:var(--muted-2);font:700 .72rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}
+    .claim-table tr[hidden]{display:none}
+    @media(max-width:820px){
+      .ledger-wrap,.claim-registry-wrap{overflow:visible;border-top:0}
+      .ledger,.claim-table{display:block;min-width:0}
+      .ledger thead,.claim-table thead{display:none}
+      .ledger tbody,.claim-table tbody{display:grid;gap:14px}
+      .ledger tr,.claim-table tr{display:block;padding:4px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
+      .ledger td,.claim-table td{
+        display:grid;
+        grid-template-columns:minmax(112px,138px) minmax(0,1fr);
+        gap:14px;
+        padding:13px 0;
+        border-bottom:1px solid var(--line);
+        font-size:.9rem;
+      }
+      .ledger td:last-child,.claim-table td:last-child{border-bottom:0}
+      .ledger td::before,.claim-table td::before{
+        color:var(--muted-2);
+        font:800 .62rem/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+        letter-spacing:.08em;
+        text-transform:uppercase;
+      }
+      .ledger td:nth-child(1)::before{content:"Claim"}
+      .ledger td:nth-child(2)::before{content:"Status"}
+      .ledger td:nth-child(3)::before{content:"Best result"}
+      .ledger td:nth-child(4)::before{content:"Limitation / next step"}
+      .ledger td:nth-child(5)::before{content:"Sources"}
+      .claim-table td:nth-child(1)::before{content:"Claim ID"}
+      .claim-table td:nth-child(2)::before{content:"Distinct contribution"}
+      .claim-table td:nth-child(3)::before{content:"Earliest public record"}
+      .claim-table td:nth-child(4)::before{content:"Chronology"}
+      .claim-table td:nth-child(5)::before{content:"Canonical DOI"}
+      .sources{flex-direction:row!important;flex-wrap:wrap;gap:7px 12px}
+    }
+    @media(max-width:520px){
+      .ledger td,.claim-table td{grid-template-columns:1fr;gap:6px}
+      .registry-tools{align-items:stretch}
+      .claim-filter{max-width:none;flex-basis:100%}
+    }
     .metric{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
     .sources{display:flex;flex-direction:column;gap:7px}
     .sources a{font-size:.82rem}
@@ -83,6 +131,7 @@
     @media(max-width:1400px){.definitions{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:1200px){.priority-shell{width:calc(100% - 28px)}.audit-strip,.definitions{grid-template-columns:repeat(2,minmax(0,1fr))}.control-list,.rules{grid-template-columns:1fr}}
     @media(max-width:620px){.priority-shell{width:calc(100% - 20px);padding-top:54px}.definitions,.audit-strip{grid-template-columns:1fr}.priority-head p,.section-lede{font-size:1rem}.table-wrap{margin-right:-10px;margin-left:-10px;width:calc(100% + 20px);padding:0 10px}}
+    @media(max-width:620px){.claim-registry-wrap{margin-left:0;margin-right:0;width:100%;padding:0}}
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://rickyjreyes.github.io/priority/#page", "name": "Richard J. Reyes Intellectual Property, Priority and Provenance Registry", "description": "Human-auditable and machine-readable registry of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-06", "author": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "about": ["Wave Confinement Theory", "technical provenance", "scholarly priority", "patent-family priority", "WaveLock", "Phase-Flux Field"], "isPartOf": {"@type": "WebSite", "url": "https://rickyjreyes.github.io/"}, "mainEntity": {"@id": "https://rickyjreyes.github.io/priority/#dataset"}}, {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/priority/#dataset", "name": "Richard J. Reyes Research Priority Registry", "description": "Claim-level chronology linking dated public research disclosures and filed patent-family chronology to canonical identifiers, DOIs, provenance notes, later comparison cases, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-06", "creator": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/priority.json"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/external-convergence.json"}], "subjectOf": {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/data/publication_traceability.json", "name": "Richard J. Reyes Publication Traceability Registry"}}]}</script>
 </head>
@@ -119,7 +168,7 @@
           <tbody>
             <tr>
               <td><span class="claim-title">GWTC frozen chirp-mass mode</span><span class="claim-id">EMP-GWTC-001</span></td>
-              <td><span class="status">Frozen holdout · supported under tested null</span></td>
+              <td><span class="status supported">Frozen holdout · supported under tested null</span></td>
               <td>Training-only selection froze <span class="metric">k=9.6023256</span> with <span class="metric">N=173</span>. The <span class="metric">N=104</span> holdout returned <span class="metric">ΔD=10.0354</span> and Monte Carlo <span class="metric">p=0.00129987</span> from 10,000 null simulations. A separate KDE formulation returned <span class="metric">p=0.00089991</span> on the same holdout.</td>
               <td>The KDE result is supporting analysis, not a second independent holdout, because the holdout had already been inspected by the primary analysis. Independent catalog/dataset replication and physical-cause identification remain open.</td>
               <td><div class="sources"><a href="https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/GWTC/blob/main/tables/gwtc_frozen_holdout_result.csv">Frozen table</a><a href="https://doi.org/10.5281/zenodo.22256802">Archive</a></div></td>
@@ -140,7 +189,7 @@
             </tr>
             <tr>
               <td><span class="claim-title">NIST Fe II log-cosine bin stability</span><span class="claim-id">EMP-NIST-001</span></td>
-              <td><span class="status conditional">Open-data numerical support</span></td>
+              <td><span class="status convergence">Open-data numerical support</span></td>
               <td>Across 120, 160, and 200 bins, the Fe II scan selected the same <span class="metric">k=31.3265306122449</span>, with <span class="metric">0/5000</span> null exceedances at each setting and an empirical resolution floor of <span class="metric">1/5001 ≈ 0.00019996</span>.</td>
               <td>This is an author-run public-data analysis. Independent replication, broader species behavior, null/model robustness, and the physical interpretation of the spectral structure remain separate questions.</td>
               <td><div class="sources"><a href="https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md">Results</a><a href="https://github.com/rickyjreyes/NIST/blob/main/tables/nist_verdict.csv">Verdict table</a></div></td>
@@ -223,7 +272,11 @@
       <p class="eyebrow">DOI-backed source layer</p>
       <h2 id="claims-title">Claim-Level Scholarly Priority Registry</h2>
       <p class="section-lede">The table maps distinctive claims and architectures in the Richard J. Reyes research corpus to their earliest public archival records.</p>
-      <div class="table-wrap"><table class="claim-table"><thead><tr><th>Claim ID</th><th>Distinct contribution</th><th>Earliest public record</th><th>Research chronology</th><th>Canonical citation DOI</th></tr></thead><tbody>
+      <div class="registry-tools">
+        <label class="claim-filter" for="claim-filter"><span>Filter</span><input id="claim-filter" type="search" placeholder="Claim ID, title, contribution, date, or DOI" autocomplete="off"></label>
+        <span class="registry-count" id="claim-count" aria-live="polite">22 records</span>
+      </div>
+      <div class="table-wrap claim-registry-wrap"><table class="claim-table"><thead><tr><th>Claim ID</th><th>Distinct contribution</th><th>Earliest public record</th><th>Research chronology</th><th>Canonical citation DOI</th></tr></thead><tbody>
         <tr><td>WCT-CORE-001</td><td>Wave Confinement Theory as a geometric framework in which mass, force, spectra, and effective spacetime geometry emerge from confined oscillatory fields.</td><td>The Geometry of Resonance</td><td>2025-04-22</td><td><a href="https://doi.org/10.5281/zenodo.15644222">10.5281/zenodo.15644222</a></td></tr>
         <tr><td>WCT-CONST-001</td><td>Derivation program for physical constants from resonance geometry and wave confinement.</td><td>Structure and Derivation of Physical Constants through Wave Confinement</td><td>2025-04-26</td><td><a href="https://doi.org/10.5281/zenodo.15596159">10.5281/zenodo.15596159</a></td></tr>
         <tr><td>WCT-COMP-001</td><td>Curvature-bounded wave-computation classes and model-relative separation of P_WCC and NP_WCC.</td><td>P vs NP in Curvature-Bounded Wave Computation</td><td>2025-05-07</td><td><a href="https://doi.org/10.5281/zenodo.17743607">10.5281/zenodo.17743607</a></td></tr>
@@ -256,6 +309,27 @@
       <p class="section-lede">Publication of this registry documents chronology, provenance, attribution, and publicly disclosed intellectual-property positions. Nothing herein should be interpreted as a waiver, dedication to the public, implied license, abandonment of patent rights, limitation of inventorship positions, or consent to unattributed reuse. Patent rights, where applicable, are governed by the corresponding application or issued patent and applicable law.</p>
     </section>
   </main>
+<script>
+  (() => {
+    const input=document.getElementById('claim-filter');
+    const count=document.getElementById('claim-count');
+    const rows=[...document.querySelectorAll('.claim-table tbody tr')];
+    if(!input||!count||!rows.length)return;
+    const total=rows.length;
+    const update=()=>{
+      const q=input.value.trim().toLowerCase();
+      let shown=0;
+      rows.forEach(row=>{
+        const match=!q||row.textContent.toLowerCase().includes(q);
+        row.hidden=!match;
+        if(match)shown++;
+      });
+      count.textContent=q ? shown+' of '+total+' records' : total+' records';
+    };
+    input.addEventListener('input',update);
+    update();
+  })();
+</script>
 <script src="../site-nav.js" defer></script>
 </body>
 </html>
