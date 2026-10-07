@@ -541,14 +541,43 @@
 .priority-forecast-dot{position:relative;display:block;width:15px;height:15px;border:2px solid var(--status-color);border-radius:50%;background:var(--dot-bg,var(--bg-deep))}
 .priority-forecast-date{color:var(--status-color);font-size:.76rem;font-weight:800}.priority-forecast-title{font-size:.82rem;font-weight:700;line-height:1.3}.priority-forecast-copy{color:var(--muted);font-size:.72rem;line-height:1.42}.priority-forecast-status{color:var(--muted-2);font-size:.69rem;line-height:1.35}.priority-today{position:relative;display:flex;justify-content:center;padding-top:6px}.priority-today::before{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:1px dashed var(--accent-3)}.priority-today span{position:relative;align-self:start;padding:3px 5px;background:var(--bg-deep);color:var(--accent-3);font-size:.57rem;font-weight:850;letter-spacing:.08em;writing-mode:vertical-rl;transform:rotate(180deg)}
 .priority-regime-label{margin:18px 0 9px;color:var(--muted-2);font-size:.64rem;font-weight:850;letter-spacing:.095em;text-transform:uppercase}.priority-regime{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.priority-audit-card{display:grid;align-content:start;gap:7px;padding:16px;border:1px solid var(--line);border-top:2px solid var(--status-color);border-radius:9px;background:#0a1626;transition:opacity .18s ease}.priority-audit-card.dim{opacity:.15}.priority-audit-card-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.priority-audit-num{color:var(--muted-2);font:700 .7rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}.priority-audit-status{color:var(--status-color);font-size:.58rem;font-weight:850;letter-spacing:.07em;text-align:right;text-transform:uppercase}.priority-audit-card h4{margin:0;font-size:.91rem;line-height:1.3}.priority-audit-card p{margin:0;color:var(--muted);font-size:.76rem;line-height:1.48}.priority-audit-card .audit-result{color:var(--text);font-size:.72rem}
-.priority-ring-layout{display:grid;grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);gap:30px 48px;align-items:start;margin-top:24px}
-.priority-ring-panel{position:sticky;top:144px;display:grid;gap:12px;padding:15px;border:1px solid var(--line);border-radius:15px;background:rgba(7,17,31,.96)}
-.priority-ring-panel svg{display:block;width:100%;height:min(62vh,500px)}.priority-ring-center{min-height:2.8em;margin:0;color:var(--text);font:500 1rem/1.3 Georgia,serif;text-align:center}.priority-ring-legend{display:grid;gap:5px}.priority-ring-legend div{display:grid;grid-template-columns:auto 1fr auto;gap:8px;padding:6px 8px;border-radius:7px;background:rgba(255,255,255,.012);font-size:.7rem}.priority-ring-legend span:first-child{color:var(--muted-2);font-weight:800;text-transform:uppercase}.priority-ring-legend strong{color:var(--text);font-weight:650}.priority-ring-legend em{color:var(--muted-2);font-style:normal;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-.priority-ring-segment{transition:opacity .22s ease,stroke-width .22s ease;cursor:pointer}.priority-ring-segment.dim{opacity:.08}.priority-ring-segment.active{stroke:#fff!important;stroke-width:2.4!important;opacity:1!important}
-.priority-ring-chapter{margin-bottom:34px}.priority-ring-chapter-head{padding:4px 0 11px;border-bottom:1px solid var(--line)}.priority-ring-chapter-head span{color:var(--accent);font-size:.64rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}.priority-ring-chapter-head h4{margin:5px 0 0;font:500 1.35rem/1.2 Georgia,serif}.priority-ring-chapter-head p{margin:7px 0 0;color:var(--muted);font-size:.78rem}
-.priority-ring-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.priority-ring-card{scroll-margin-top:160px}.priority-ring-card.active{outline:1px solid rgba(255,255,255,.28);outline-offset:1px}
-@media(max-width:980px){.priority-redesign-head,.priority-audit-top,.priority-ring-layout{grid-template-columns:1fr}.priority-t1-shell{grid-template-columns:1fr}.priority-t1-tabs{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line)}.priority-t1-tab{min-width:210px;border-right:1px solid var(--line);border-bottom:0}.priority-t1-tab[aria-selected=true]{box-shadow:inset 0 -3px 0 var(--accent-3)}.priority-ring-panel{position:static}.priority-ring-panel svg{height:420px}}
-@media(max-width:700px){.priority-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.priority-metric:nth-child(2){border-right:0}.priority-metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.priority-t1-panel{padding:20px 17px}.priority-t1-dates{grid-template-columns:1fr}.priority-t1-dates span:last-child{text-align:left}.priority-audit-mosaic{grid-template-columns:repeat(7,minmax(0,1fr))}.priority-regime,.priority-ring-cards{grid-template-columns:1fr}.priority-ordering-rule{display:none}.priority-ring-panel svg{height:330px}}
+.priority-mech-story{position:relative;display:grid;margin-top:24px}
+.priority-mech-stage,.priority-mech-track{grid-area:1/1}
+.priority-mech-stage{position:sticky;top:144px;z-index:2;display:grid;grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);gap:30px 48px;align-items:center;height:calc(100vh - 170px);min-height:540px;pointer-events:none}
+.priority-mech-stage>*{pointer-events:auto}
+.priority-mech-track{position:relative;z-index:1;padding:18vh 0 32vh;pointer-events:none}
+.priority-mech-step{height:48vh;min-height:340px;scroll-margin-top:32vh}
+.priority-ring-panel{display:grid;gap:10px;padding:15px;border:1px solid var(--line);border-radius:15px;background:rgba(7,17,31,.96);box-shadow:0 20px 55px rgba(0,0,0,.18)}
+.priority-ring-stage-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:2px 3px 0}
+.priority-ring-stage-head span{color:var(--accent-3);font:750 .66rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}
+.priority-ring-stage-head strong{color:var(--muted-2);font-size:.66rem;font-weight:700;text-align:right}
+.priority-ring-panel svg{display:block;width:100%;height:min(54vh,455px)}
+.priority-ring-center{min-height:2.6em;margin:0;color:var(--text);font:500 .98rem/1.3 Georgia,serif;text-align:center}
+.priority-ring-legend{display:grid;gap:5px}
+.priority-ring-legend div{display:grid;grid-template-columns:auto 1fr auto;gap:8px;padding:6px 8px;border-radius:7px;background:rgba(255,255,255,.012);font-size:.7rem;transition:opacity .18s ease,background .18s ease}
+.priority-ring-legend div.active{background:rgba(103,212,255,.055)}
+.priority-ring-legend span:first-child{color:var(--muted-2);font-weight:800;text-transform:uppercase}
+.priority-ring-legend strong{color:var(--text);font-weight:650}
+.priority-ring-legend em{color:var(--muted-2);font-style:normal;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.priority-ring-segment{transition:opacity .22s ease,stroke-width .22s ease,filter .22s ease;cursor:pointer}
+.priority-ring-segment.dim{opacity:.08}
+.priority-ring-segment.active{stroke:#fff!important;stroke-width:2.5!important;opacity:1!important;filter:drop-shadow(0 0 7px rgba(255,255,255,.18))}
+.priority-mech-detail{align-self:center;max-width:760px;padding:26px 28px 24px;border:1px solid var(--line);border-top:2px solid var(--status-color,var(--accent));border-radius:14px;background:rgba(8,21,34,.97);box-shadow:0 22px 60px rgba(0,0,0,.2)}
+.priority-mech-detail-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.priority-mech-number{color:var(--muted-2);font:750 .72rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}
+.priority-mech-status{padding:5px 9px;border:1px solid var(--status-color,var(--accent));border-radius:999px;color:var(--status-color,var(--accent));font-size:.61rem;font-weight:850;letter-spacing:.07em;text-transform:uppercase}
+.priority-mech-ring{margin:18px 0 0;color:var(--accent);font-size:.64rem;font-weight:850;letter-spacing:.095em;text-transform:uppercase}
+.priority-mech-detail h4{margin:7px 0 0;font:500 clamp(1.65rem,3vw,2.45rem)/1.08 Georgia,serif;letter-spacing:-.025em}
+.priority-mech-evidence{max-width:68ch;margin:17px 0 0;color:var(--muted);font-size:.94rem;line-height:1.62}
+.priority-mech-result{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:.8rem;line-height:1.5}
+.priority-mech-result span{color:var(--muted-2);font:750 .61rem/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.07em;text-transform:uppercase}
+.priority-mech-result strong{color:var(--text);font-weight:650}
+.priority-mech-nav{display:grid;grid-template-columns:40px 1fr 40px;gap:10px;align-items:center;margin-top:22px}
+.priority-mech-nav button{width:40px;height:40px;border:1px solid var(--line-strong);border-radius:50%;background:transparent;color:var(--text);font:inherit;cursor:pointer}
+.priority-mech-nav button:hover,.priority-mech-nav button:focus-visible{border-color:rgba(182,255,218,.46);background:rgba(182,255,218,.05);outline:none}
+.priority-mech-nav span{color:var(--muted-2);font:700 .68rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-align:center}
+@media(max-width:980px){.priority-redesign-head,.priority-audit-top{grid-template-columns:1fr}.priority-mech-stage{grid-template-columns:1fr;gap:14px;height:calc(100vh - 140px);min-height:620px;top:118px}.priority-ring-panel{grid-template-columns:minmax(220px,.7fr) minmax(0,1fr);align-items:center}.priority-ring-stage-head,.priority-ring-center,.priority-ring-legend{grid-column:2}.priority-ring-panel svg{grid-column:1;grid-row:1/5;height:310px}.priority-mech-detail{max-width:none;padding:20px 22px}.priority-t1-shell{grid-template-columns:1fr}.priority-t1-tabs{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line)}.priority-t1-tab{min-width:210px;border-right:1px solid var(--line);border-bottom:0}.priority-t1-tab[aria-selected=true]{box-shadow:inset 0 -3px 0 var(--accent-3)}}
+@media(max-width:700px){.priority-mech-stage{position:sticky;top:104px;height:calc(100vh - 122px);min-height:600px;display:block}.priority-ring-panel{display:none}.priority-mech-detail{margin-top:0}.priority-mech-track{padding:12vh 0 28vh}.priority-mech-step{height:58vh;min-height:360px}.priority-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.priority-metric:nth-child(2){border-right:0}.priority-metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.priority-t1-panel{padding:20px 17px}.priority-t1-dates{grid-template-columns:1fr}.priority-t1-dates span:last-child{text-align:left}.priority-audit-mosaic{grid-template-columns:repeat(7,minmax(0,1fr))}.priority-regime{grid-template-columns:1fr}.priority-ordering-rule{display:none}}
 </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://rickyjreyes.github.io/priority/#page", "name": "Richard J. Reyes Intellectual Property, Priority and Provenance Registry", "description": "Human-auditable and machine-readable registry of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-07", "author": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "about": ["Wave Confinement Theory", "technical provenance", "scholarly priority", "patent-family priority", "WaveLock", "Phase-Flux Field"], "isPartOf": {"@type": "WebSite", "url": "https://rickyjreyes.github.io/"}, "mainEntity": {"@id": "https://rickyjreyes.github.io/priority/#dataset"}}, {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/priority/#dataset", "name": "Richard J. Reyes Research Priority Registry", "description": "Claim-level chronology linking dated public research disclosures and filed patent-family chronology to canonical identifiers, DOIs, provenance notes, later comparison cases, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-07", "creator": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/priority.json"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/external-convergence.json"}], "subjectOf": {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/data/publication_traceability.json", "name": "Richard J. Reyes Publication Traceability Registry"}}]}</script>
 </head>
@@ -727,14 +756,32 @@
   <p class="priority-regime-label">Regime milestones on the same trajectory</p>
   <div class="priority-regime" id="priority-regime"></div>
 
-  <div class="priority-subhead"><h3>Mechanisms, diagnostics, and containment</h3><span>31 items · three rings, from failure mechanism outward to control</span></div>
-  <div class="priority-ring-layout">
-    <div class="priority-ring-panel">
-      <svg id="priority-ring-svg" viewBox="-190 -190 380 380" role="img" aria-label="Three-ring RCA mechanism audit map"></svg>
-      <p class="priority-ring-center" id="priority-ring-center">Scroll to place each item on its ring</p>
-      <div class="priority-ring-legend" id="priority-ring-legend"></div>
+  <div class="priority-subhead"><h3>Mechanisms, diagnostics, and containment</h3><span>31 items · three rings · one audit item per scroll position</span></div>
+  <div class="priority-mech-story" id="priority-mech-story">
+    <div class="priority-mech-stage">
+      <div class="priority-ring-panel">
+        <div class="priority-ring-stage-head"><span id="priority-ring-count">01 / 31</span><strong id="priority-ring-name">Ring 1 · Core failure mechanisms</strong></div>
+        <svg id="priority-ring-svg" viewBox="-190 -190 380 380" role="img" aria-label="Three-ring RCA mechanism audit map"></svg>
+        <p class="priority-ring-center" id="priority-ring-center">#1 · Recursive Symbolic Drift</p>
+        <div class="priority-ring-legend" id="priority-ring-legend"></div>
+      </div>
+      <article class="priority-mech-detail" id="priority-mech-detail" aria-live="polite">
+        <div class="priority-mech-detail-top">
+          <span class="priority-mech-number" id="priority-mech-number">#1</span>
+          <span class="priority-mech-status" id="priority-mech-status">Landed</span>
+        </div>
+        <p class="priority-mech-ring" id="priority-mech-ring">Ring 1 of 3 · inner</p>
+        <h4 id="priority-mech-title">Recursive Symbolic Drift</h4>
+        <p class="priority-mech-evidence" id="priority-mech-evidence"></p>
+        <p class="priority-mech-result"><span>Status</span><strong id="priority-mech-result"></strong></p>
+        <div class="priority-mech-nav">
+          <button type="button" id="priority-mech-prev" aria-label="Previous audit item">←</button>
+          <span id="priority-mech-progress">01 / 31</span>
+          <button type="button" id="priority-mech-next" aria-label="Next audit item">→</button>
+        </div>
+      </article>
     </div>
-    <div id="priority-ring-content"></div>
+    <div class="priority-mech-track" id="priority-ring-content" aria-label="Scroll through RCA mechanism audit items"></div>
   </div>
 </section>
 
@@ -1455,9 +1502,62 @@
     const A=p(r1,a0),B=p(r1,a1),C=p(r0,a1),D=p(r0,a0),large=(a1-a0)>180?1:0;
     return 'M'+A[0].toFixed(2)+' '+A[1].toFixed(2)+' A'+r1+' '+r1+' 0 '+large+' 1 '+B[0].toFixed(2)+' '+B[1].toFixed(2)+' L'+C[0].toFixed(2)+' '+C[1].toFixed(2)+' A'+r0+' '+r0+' 0 '+large+' 0 '+D[0].toFixed(2)+' '+D[1].toFixed(2)+' Z';
   }
+  let mechOrder=[],mechActive=0,mechRaf=0;
+  const mechFlat=()=>GROUPS.flatMap((g,gi)=>g.items.map(n=>({n,gi,g,x:BY.get(n)})));
+  function mechanismOrder(){
+    const all=mechFlat();
+    return filter?all.filter(v=>v.x.k===filter):all;
+  }
+  function arcPath(r0,r1,a0,a1){
+    const p=(r,a)=>[r*Math.cos(a*Math.PI/180),r*Math.sin(a*Math.PI/180)];
+    const A=p(r1,a0),B=p(r1,a1),C=p(r0,a1),D=p(r0,a0),large=(a1-a0)>180?1:0;
+    return 'M'+A[0].toFixed(2)+' '+A[1].toFixed(2)+' A'+r1+' '+r1+' 0 '+large+' 1 '+B[0].toFixed(2)+' '+B[1].toFixed(2)+' L'+C[0].toFixed(2)+' '+C[1].toFixed(2)+' A'+r0+' '+r0+' 0 '+large+' 0 '+D[0].toFixed(2)+' '+D[1].toFixed(2)+' Z';
+  }
+  function renderMechanismDetail(index){
+    if(!mechOrder.length)return;
+    mechActive=Math.max(0,Math.min(index,mechOrder.length-1));
+    const v=mechOrder[mechActive],x=v.x,q=statusStyle(x.k);
+    const detail=document.getElementById('priority-mech-detail');
+    detail.style.setProperty('--status-color',q.c);
+    document.getElementById('priority-mech-number').textContent='#'+x.n;
+    document.getElementById('priority-mech-status').textContent=q.label;
+    document.getElementById('priority-mech-ring').textContent=v.g.ring;
+    document.getElementById('priority-mech-title').textContent=x.t;
+    document.getElementById('priority-mech-evidence').textContent=x.e;
+    document.getElementById('priority-mech-result').textContent=x.st;
+    document.getElementById('priority-mech-progress').textContent=String(mechActive+1).padStart(2,'0')+' / '+String(mechOrder.length).padStart(2,'0');
+    document.getElementById('priority-ring-count').textContent=String(mechActive+1).padStart(2,'0')+' / '+String(mechOrder.length).padStart(2,'0');
+    document.getElementById('priority-ring-name').textContent='Ring '+(v.gi+1)+' · '+v.g.title;
+    document.getElementById('priority-ring-center').textContent='#'+x.n+' · '+x.t;
+    document.querySelectorAll('.priority-ring-segment').forEach(seg=>seg.classList.toggle('active',Number(seg.dataset.auditId)===x.n));
+    document.querySelectorAll('.priority-ring-legend>div').forEach((row,i)=>row.classList.toggle('active',i===v.gi));
+  }
+  function scrollToMechanism(index){
+    if(!mechOrder.length)return;
+    const i=(index+mechOrder.length)%mechOrder.length;
+    const id=mechOrder[i].n;
+    document.querySelector('.priority-mech-step[data-audit-id="'+id+'"]')?.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  function updateMechanismFromScroll(force=false){
+    if(mechRaf&&!force)return;
+    const run=()=>{
+      mechRaf=0;
+      const steps=[...document.querySelectorAll('.priority-mech-step')];
+      if(!steps.length)return;
+      const anchor=(window.innerHeight||1)*.52;
+      let best=0,dist=Infinity;
+      steps.forEach((step,i)=>{
+        const r=step.getBoundingClientRect(),d=Math.abs((r.top+r.bottom)/2-anchor);
+        if(d<dist){dist=d;best=i;}
+      });
+      if(force||best!==mechActive)renderMechanismDetail(best);
+    };
+    if(force)run(); else mechRaf=requestAnimationFrame(run);
+  }
   function buildRing(){
-    const svg=document.getElementById('priority-ring-svg'),content=document.getElementById('priority-ring-content'),legend=document.getElementById('priority-ring-legend');if(!svg||!content)return;
-    svg.innerHTML='';content.innerHTML='';legend.innerHTML='';
+    const svg=document.getElementById('priority-ring-svg'),track=document.getElementById('priority-ring-content'),legend=document.getElementById('priority-ring-legend');
+    if(!svg||!track||!legend)return;
+    svg.innerHTML='';track.innerHTML='';legend.innerHTML='';
     const radii=[[46,78],[88,120],[130,165]];
     GROUPS.forEach((g,gi)=>{
       const [r0,r1]=radii[gi],step=360/g.items.length,gap=2.2;
@@ -1467,38 +1567,32 @@
         path.setAttribute('fill',q.bg==='transparent'?'rgba(156,176,193,.045)':q.bg);
         path.setAttribute('stroke',q.c);path.setAttribute('stroke-width','1.2');if(q.dash)path.setAttribute('stroke-dasharray','4 4');
         path.classList.add('priority-ring-segment');path.dataset.auditId=n;path.dataset.auditStatus=x.k;
+        if(filter&&filter!==x.k)path.classList.add('dim');
         const title=document.createElementNS('http://www.w3.org/2000/svg','title');title.textContent='#'+n+' · '+x.t+' · '+q.label;path.appendChild(title);
-        path.addEventListener('click',()=>document.getElementById('rca-audit-'+n)?.scrollIntoView({behavior:'smooth',block:'center'}));svg.appendChild(path);
+        path.addEventListener('click',()=>{
+          const idx=mechOrder.findIndex(v=>v.n===n);
+          if(idx>=0)scrollToMechanism(idx);
+        });
+        svg.appendChild(path);
       });
-      const ch=document.createElement('section');ch.className='priority-ring-chapter';ch.innerHTML='<div class="priority-ring-chapter-head"><span>'+esc(g.ring)+'</span><h4>'+esc(g.title)+'</h4><p>'+esc(g.note)+'</p></div><div class="priority-ring-cards">'+g.items.map(n=>card(BY.get(n))).join('')+'</div>';content.appendChild(ch);
       legend.insertAdjacentHTML('beforeend','<div><span>Ring '+(gi+1)+'</span><strong>'+esc(g.title)+'</strong><em>'+g.items.length+'</em></div>');
     });
     const core=document.createElementNS('http://www.w3.org/2000/svg','circle');core.setAttribute('cx','0');core.setAttribute('cy','0');core.setAttribute('r','33');core.setAttribute('fill','#07111f');core.setAttribute('stroke','rgba(170,201,225,.18)');svg.appendChild(core);
     const t=document.createElementNS('http://www.w3.org/2000/svg','text');t.setAttribute('x','0');t.setAttribute('y','4');t.setAttribute('text-anchor','middle');t.setAttribute('fill','#e9f0f6');t.setAttribute('style','font:500 15px Georgia,serif');t.textContent='RCA';svg.appendChild(t);
-    setupObserver();renderRingStates();
-  }
-  let observer=null;
-  function setupObserver(){
-    observer?.disconnect();
-    const cards=[...document.querySelectorAll('#priority-ring-content .priority-ring-card')];
-    observer=new IntersectionObserver(entries=>{
-      let best=null;
-      entries.forEach(e=>{if(e.isIntersecting&&(!best||e.intersectionRatio>best.intersectionRatio))best=e;});
-      if(best){
-        const id=best.target.dataset.auditId,x=BY.get(+id);
-        document.querySelectorAll('.priority-ring-card.active,.priority-ring-segment.active').forEach(n=>n.classList.remove('active'));
-        best.target.classList.add('active');
-        document.querySelector('.priority-ring-segment[data-audit-id="'+id+'"]')?.classList.add('active');
-        document.getElementById('priority-ring-center').textContent='#'+id+' · '+x.t;
-      }
-    },{rootMargin:'-34% 0px -48% 0px',threshold:[.15,.35,.6]});
-    cards.forEach(c=>observer.observe(c));
-  }
-  function renderRingStates(){
-    document.querySelectorAll('[data-audit-status]').forEach(el=>el.classList.toggle('dim',!!filter&&el.dataset.auditStatus!==filter));
-  }
 
-  renderT1();renderAudit();buildRing();
+    mechOrder=mechanismOrder();
+    track.innerHTML=mechOrder.map((v,i)=>'<section class="priority-mech-step" data-audit-id="'+v.n+'" aria-label="'+esc('Audit item '+(i+1)+' of '+mechOrder.length+': '+v.x.t)+'"></section>').join('');
+    mechActive=0;
+    renderMechanismDetail(0);
+    requestAnimationFrame(()=>updateMechanismFromScroll(true));
+  }
+  function renderRingStates(){buildRing();}
+
+  renderT1();renderAudit();
+  document.getElementById('priority-mech-prev')?.addEventListener('click',()=>scrollToMechanism(mechActive-1));
+  document.getElementById('priority-mech-next')?.addEventListener('click',()=>scrollToMechanism(mechActive+1));
+  window.addEventListener('scroll',()=>updateMechanismFromScroll(false),{passive:true});
+  window.addEventListener('resize',()=>updateMechanismFromScroll(false),{passive:true});
 })();</script>
 <script src="../site-nav.js?v=20261007-scrub1" defer></script>
 </body>
