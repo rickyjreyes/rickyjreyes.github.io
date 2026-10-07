@@ -2197,12 +2197,12 @@
       "correspondence": [],
       "priorityDirection": "NOT_VERIFIED",
       "externalChronology": {
-        "publicationDate": null,
-        "dateLabel": "Source undated",
-        "datePrecision": "none",
-        "dateStatus": "source-undated",
-        "dateSource": "University of Southampton",
-        "dateNote": "The live project page gives a closing date but no publication/posting date."
+        "publicationDate": "2026-07-07",
+        "dateLabel": "Public by Jul 7, 2026",
+        "datePrecision": "day",
+        "dateStatus": "public-by-date",
+        "dateSource": "AcademicJobs mirror of University of Southampton project listing",
+        "dateNote": "The University of Southampton project page does not expose a posting/publication date. A matching indexed listing with the same project title, supervisors, and description shows Applications Close: Jul 7, 2026, establishing that the programme was public no later than this date."
       }
     },
     {
