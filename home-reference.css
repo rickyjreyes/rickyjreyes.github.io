@@ -919,6 +919,34 @@
 }
 .reading-path li.clickable-card:focus-visible{box-shadow:inset 3px 0 0 var(--accent)}
 
+/* Homepage audit metrics: use concrete counts without changing the site's visual language. */
+.home-audit-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.home-audit-grid>div{
+  min-width:0;
+  padding-inline:clamp(16px,2.7vw,36px);
+}
+.home-audit-grid>div:first-child{padding-left:0}
+.home-audit-grid strong{color:var(--text)}
+.home-audit-grid span{max-width:20ch}
+@media(max-width:900px) and (min-width:681px){
+  .home-audit-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    padding-block:10px;
+  }
+  .home-audit-grid>div,
+  .home-audit-grid>div:first-child{
+    min-height:82px;
+    align-content:center;
+    padding-inline:20px;
+    border-left:1px solid var(--line);
+    border-top:1px solid var(--line);
+  }
+  .home-audit-grid>div:nth-child(odd){border-left:0;padding-left:0}
+  .home-audit-grid>div:nth-child(-n+2){border-top:0}
+}
+
 /* Existing homepage enhancements rendered before runtime -------------------- */
 .identity-links.profile-links{
   display:grid;
