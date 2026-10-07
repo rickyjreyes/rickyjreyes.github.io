@@ -335,6 +335,152 @@
   fill:var(--accent-3);
   filter:drop-shadow(0 0 6px rgba(182,255,218,.45));
 }
+
+/* Sobolev stage 03: dimension-dependent projected packet and exact
+   Gaussian Laplacian norm exponent. This is not a PDE solution. */
+.sobolev-field-panel,.sobolev-scaling-panel{
+  fill:rgba(8,19,33,.65);
+  stroke:var(--line-strong);
+  stroke-width:1;
+}
+.sobolev-scaling-panel{fill:rgba(12,25,43,.58)}
+.sobolev-dimensional-lattice,.sobolev-packet-contours,
+.sobolev-packet-particles{pointer-events:none}
+.sobolev-lattice-line{
+  fill:none;
+  stroke:var(--accent);
+  stroke-width:1;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  opacity:.45;
+  vector-effect:non-scaling-stroke;
+}
+.sobolev-ghost-line{
+  fill:none;
+  stroke:var(--accent-2);
+  stroke-width:1;
+  stroke-dasharray:4 5;
+  opacity:.55;
+  vector-effect:non-scaling-stroke;
+}
+.sobolev-ghost-line.critical{opacity:.78}
+.sobolev-contour{
+  fill:none;
+  stroke:var(--accent-3);
+  stroke-width:1.15;
+  stroke-linecap:round;
+  opacity:.42;
+  vector-effect:non-scaling-stroke;
+}
+.sobolev-contour.violet{stroke:var(--accent-2);opacity:.47}
+.sobolev-peak{
+  fill:none;
+  stroke:var(--accent-3);
+  stroke-width:2.1;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  filter:drop-shadow(0 0 5px rgba(182,255,218,.22));
+  vector-effect:non-scaling-stroke;
+}
+.sobolev-peak.critical{
+  stroke:var(--accent-2);
+  filter:drop-shadow(0 0 5px rgba(139,124,255,.25));
+}
+.sobolev-graph-axis,.sobolev-graph-grid{
+  fill:none;stroke:var(--line-strong);stroke-width:1;vector-effect:non-scaling-stroke
+}
+.sobolev-graph-grid{stroke-dasharray:3 6;opacity:.6}
+.sobolev-scaling-line{
+  fill:none;stroke:var(--accent-3);stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;
+}
+.sobolev-scaling-line.critical{stroke:var(--accent-2)}
+.sobolev-scaling-marker{
+  fill:var(--accent-3);
+  stroke:var(--bg-deep);
+  stroke-width:1.4;
+}
+.sobolev-scaling-marker.critical{fill:var(--accent-2)}
+.sobolev-state{
+  fill:var(--accent-3);
+  font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+.sobolev-state.critical{fill:var(--accent-2)}
+.sobolev-scaling-slope{
+  fill:var(--text);
+  font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+.sobolev-controls{
+  display:none;
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:max-content;
+  max-width:calc(100% - 16px);
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  padding:6px 9px;
+  z-index:3;
+  border:1px solid var(--line-strong);
+  border-radius:12px;
+  background:rgba(4,10,18,.92);
+  box-shadow:0 8px 24px rgba(0,0,0,.24);
+}
+.wct-theory-visual[data-stage="2"] .sobolev-controls{display:flex}
+.sobolev-controls button{
+  cursor:pointer;
+  min-width:34px;
+  min-height:28px;
+  padding:3px 8px;
+  color:var(--muted);
+  background:rgba(14,29,48,.8);
+  border:1px solid var(--line);
+  border-radius:7px;
+  font:700 .65rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  transition:color .12s ease,border-color .12s ease,background-color .12s ease;
+}
+.sobolev-controls button[aria-pressed="true"]{
+  color:var(--bg-deep);
+  background:var(--accent-3);
+  border-color:var(--accent-3);
+}
+.sobolev-controls button.critical[aria-pressed="true"]{
+  color:var(--bg-deep);
+  background:var(--accent-2);
+  border-color:var(--accent-2);
+}
+.sobolev-controls button:focus-visible{
+  outline:2px solid var(--accent);outline-offset:2px;
+}
+.sobolev-control-caption{
+  color:var(--text);
+  font-size:.61rem;font-weight:800;
+  letter-spacing:.07em;text-transform:uppercase;
+  margin-right:4px;
+}
+.sobolev-control-note{
+  color:var(--muted-2);
+  font-size:.58rem;white-space:nowrap;
+  margin-left:5px;
+}
+.wct-theory-step .sobolev-source-links{
+  margin-top:13px;
+  font-size:.73rem;
+  line-height:1.55;
+  color:var(--muted-2);
+}
+.sobolev-source-links a{color:var(--accent);text-underline-offset:3px}
+@media(max-width:680px){
+  .sobolev-control-note{display:none}
+  .sobolev-controls{gap:3px;padding:5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .sobolev-controls button{transition:none}
+}
 .wct-theory-meta{
   display:flex;
   align-items:center;
