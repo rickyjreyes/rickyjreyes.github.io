@@ -21,4 +21,9 @@ window.overlapRelationshipByUrl = Object.assign(window.overlapRelationshipByUrl 
   "https://arxiv.org/abs/2605.03228": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2603.19935": "STRUCTURAL OVERLAP",
   "https://arxiv.org/abs/2607.07663": "POST-DATE CONVERGENCE"
+  "https://doi.org/10.1038/s44455-026-00043-8": "POST-DATE CONVERGENCE",
+  "https://doi.org/10.1002/lpor.72012": "EMPIRICAL CONVERGENCE",
+  "https://doi.org/10.1063/5.0339700": "EMPIRICAL CONVERGENCE",
+  "https://doi.org/10.1103/tz41-5qcp": "STRUCTURAL OVERLAP",
+
 });
