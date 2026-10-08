@@ -474,7 +474,7 @@ window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
     "status": "verified-month",
     "source": "Technical Disclosure Commons / Digital Commons Network",
     "note": "The indexed defensive-publication record is dated April 2026; no day was established."
-  }
+  },
   "10.1038/s44455-026-00043-8": {
     "date": "2026-10-05",
     "precision": "day",
