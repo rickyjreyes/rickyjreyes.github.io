@@ -534,7 +534,11 @@
 .priority-audit-filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}.priority-audit-filter{display:inline-flex;align-items:center;gap:7px;min-height:34px;padding:0 11px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--muted);font:inherit;font-size:.72rem;font-weight:650;cursor:pointer}.priority-audit-filter i{width:9px;height:9px;border:1.5px solid var(--status-color);border-radius:2px;background:var(--status-bg)}.priority-audit-filter[aria-pressed=true]{border-color:var(--status-color,var(--accent));background:rgba(255,255,255,.025);color:var(--text)}
 .priority-forecast-note{margin:14px 0 0;color:var(--muted);font-size:.8rem;line-height:1.45}.priority-forecast-note strong{color:var(--text)}
 .priority-subhead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:7px 24px;margin-top:50px;padding-bottom:11px;border-bottom:1px solid var(--line)}.priority-subhead h3{margin:0;font:500 clamp(1.35rem,2.3vw,1.8rem)/1.2 Georgia,serif}.priority-subhead span{max-width:65ch;color:var(--muted-2);font-size:.76rem}
-.priority-forecast-scroll{overflow-x:auto;padding-bottom:7px}
+.priority-forecast-scroll{overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:rgba(150,180,205,.38) transparent;touch-action:pan-x pan-y;padding-bottom:10px}
+.priority-forecast-scroll::-webkit-scrollbar{height:8px}
+.priority-forecast-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.025);border-radius:999px}
+.priority-forecast-scroll::-webkit-scrollbar-thumb{background:rgba(150,180,205,.34);border-radius:999px}
+.priority-forecast-scroll::-webkit-scrollbar-thumb:hover{background:rgba(150,180,205,.5)}
 .priority-forecast{display:grid;grid-template-columns:repeat(3,minmax(140px,1fr)) 46px repeat(5,minmax(140px,1fr));min-width:1140px;margin:0;padding:0;list-style:none}
 .priority-forecast-item{position:relative;display:grid;align-content:start;gap:7px;padding:20px 12px 17px 0;transition:opacity .18s ease}.priority-forecast-item.dim{opacity:.16}
 .priority-forecast-item::before{content:"";position:absolute;left:0;right:0;top:28px;height:2px;background:var(--status-color)}
@@ -985,7 +989,7 @@
     </div>
 
     <div class="priority-subhead"><h3>Frozen prediction timeline</h3><span>The staged RCA trajectory from early empirical warning through still-prospective 2027–2030 milestones.</span></div>
-    <div class="priority-forecast-scroll"><ol class="priority-forecast" id="priority-forecast"></ol></div>
+    <div class="priority-forecast-scroll" tabindex="0" role="region" aria-label="Scrollable frozen RCA prediction timeline"><ol class="priority-forecast" id="priority-forecast"></ol></div>
     <p class="priority-regime-label">Regime milestones on the same trajectory</p>
     <div class="priority-regime" id="priority-regime"></div>
   </div>
