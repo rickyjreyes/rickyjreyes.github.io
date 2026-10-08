@@ -475,4 +475,29 @@ window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
     "source": "Technical Disclosure Commons / Digital Commons Network",
     "note": "The indexed defensive-publication record is dated April 2026; no day was established."
   }
+  "10.1038/s44455-026-00043-8": {
+    "date": "2026-10-05",
+    "precision": "day",
+    "status": "verified",
+    "source": "npj Metamaterials / Nature Portfolio"
+  },
+  "10.1002/lpor.72012": {
+    "date": "2026-10-03",
+    "precision": "day",
+    "status": "verified",
+    "source": "Laser & Photonics Reviews / Wiley"
+  },
+  "10.1063/5.0339700": {
+    "date": "2026-10-01",
+    "precision": "day",
+    "status": "verified",
+    "source": "APL Photonics / AIP Publishing"
+  },
+  "10.1103/tz41-5qcp": {
+    "date": "2026-10-07",
+    "precision": "day",
+    "status": "verified",
+    "source": "Physical Review D / APS"
+  },
+
 });
