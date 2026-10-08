@@ -68,7 +68,11 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 .lean-cross p{max-width:47ch;margin:10px 0 0;color:var(--muted);font-size:.84rem;line-height:1.52}
 .lean-cross-filter{margin-top:14px!important;color:var(--text)!important}
 .lean-cross-filter button{padding:0;border:0;background:none;color:var(--accent-3);font:inherit;text-decoration:underline;cursor:pointer}
-.lean-cross-scroll{overflow-x:auto}
+.lean-cross-scroll{overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:rgba(150,180,205,.38) transparent;touch-action:pan-x pan-y;padding-bottom:7px}
+.lean-cross-scroll::-webkit-scrollbar{height:8px}
+.lean-cross-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.025);border-radius:999px}
+.lean-cross-scroll::-webkit-scrollbar-thumb{background:rgba(150,180,205,.34);border-radius:999px}
+.lean-cross-scroll::-webkit-scrollbar-thumb:hover{background:rgba(150,180,205,.5)}
 .lean-cross-grid{display:grid;grid-template-columns:max-content repeat(4,minmax(68px,1fr));gap:6px 8px;min-width:520px;font-size:.78rem}
 .lean-cross-head{align-self:end;color:var(--muted-2);font:700 .61rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.075em;text-transform:uppercase;text-align:center}
 .lean-cross-head:first-child{text-align:left}
@@ -185,7 +189,7 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 <div class="lean-tier-grid" id="lean-tier-grid"></div>
 <div class="lean-cross">
 <div><h3>Lean coverage against symbolic outcome</h3><p>The two layers are independent. A SymPy PASS does not imply a Lean proof, and an absence of formal coverage is not evidence of falsity. Select a cell to list its objects.</p><p class="lean-cross-filter" id="lean-cross-filter" hidden></p></div>
-<div class="lean-cross-scroll"><div class="lean-cross-grid" id="lean-cross-grid" role="grid" aria-label="Lean coverage by SymPy outcome"></div></div>
+<div class="lean-cross-scroll" tabindex="0" role="region" aria-label="Scrollable Lean and SymPy outcome matrix"><div class="lean-cross-grid" id="lean-cross-grid" role="grid" aria-label="Lean coverage by SymPy outcome"></div></div>
 </div>
 </section>
 
