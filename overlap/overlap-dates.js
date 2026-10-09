@@ -1,5 +1,5 @@
 // Verified publication/release dates for overlap records.
-// Audited 2026-10-07. Exact publisher dates are used where available;
+// Audited 2026-10-09. Exact publisher dates are used where available;
 // month precision is preserved where the primary source exposes only a month.
 // "source-undated" is deliberate: no publication/posting date was stated by the source.
 window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
@@ -499,5 +499,15 @@ window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
     "status": "verified",
     "source": "Physical Review D / APS"
   },
+
+  // Eight post-date reviewed publications; initial arXiv v1 submissions.
+  "https://arxiv.org/abs/2603.04474": {"date":"2026-03-04","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
+  "https://arxiv.org/abs/2605.10721": {"date":"2026-05-11","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
+  "https://arxiv.org/abs/2605.03228": {"date":"2026-05-04","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
+  "https://arxiv.org/abs/2609.28614": {"date":"2026-09-23","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
+  "https://arxiv.org/abs/2603.15727": {"date":"2026-03-16","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
+  "https://arxiv.org/abs/2606.05976": {"date":"2026-06-04","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
+  "https://arxiv.org/abs/2605.10245": {"date":"2026-05-11","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
+  "https://arxiv.org/abs/2606.03725": {"date":"2026-06-02","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
 
 });
