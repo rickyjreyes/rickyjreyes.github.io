@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.6",
+  "schemaVersion": "1.7",
   "updated": "2026-10-09",
   "title": "WCT External Literature Convergence Audit and Full Post-Date Overlap Ledger",
   "canonical": "https://rickyjreyes.github.io/priority/#convergence-title",
@@ -5520,12 +5520,14 @@
     {
       "ledgerRank": 183,
       "domain": "ai",
-      "title": "The Self-Correction Illusion: LLMs Correct Others but Not Themselves",
+      "title": "The Self-Correction Illusion: Role Relabeling Gates Explicit Error Flagging in Large Language Models",
       "primaryUrl": "https://arxiv.org/abs/2606.05976",
       "source": "arXiv",
       "authors": [
         "Kuan-Yen Chen",
         "Fang-Yi Su",
+        "Shih-Yen Lin",
+        "Bao Li",
         "Jung-Hsien Chiang"
       ],
       "identifier": "10.48550/arXiv.2606.05976",
@@ -5568,7 +5570,8 @@
         "originalClaimArchiveVerification": "not_promoted",
         "externalPaperVersionNote": "Current arXiv v2 title differs from earlier ledger title."
       },
-      "currentExternalTitle": "The Self-Correction Illusion: Role Relabeling Gates Explicit Error Flagging in Large Language Models"
+      "currentExternalTitle": "The Self-Correction Illusion: Role Relabeling Gates Explicit Error Flagging in Large Language Models",
+      "originalLedgerTitle": "The Self-Correction Illusion: LLMs Correct Others but Not Themselves"
     },
     {
       "ledgerRank": 184,
