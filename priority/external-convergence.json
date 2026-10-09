@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.7",
+  "schemaVersion": "1.8",
   "updated": "2026-10-09",
   "title": "WCT External Literature Convergence Audit and Full Post-Date Overlap Ledger",
   "canonical": "https://rickyjreyes.github.io/priority/#convergence-title",
@@ -44,11 +44,11 @@
     "aiRecords": 68,
     "dateChecked": 6,
     "chronologyPriorArtReview": 4,
-    "ledgerOnly": 224,
+    "ledgerOnly": 219,
     "verifiedCases": 6,
     "auditCandidates": 4,
     "priorArtControls": 3,
-    "postDateReviewed": 8
+    "postDateReviewed": 13
   },
   "statusVocabulary": {
     "ledger": "Present in the public overlap ledger; chronology and prior-art normalization have not yet been promoted to the verified subset.",
@@ -5270,15 +5270,44 @@
       "identifier": "10.48550/arXiv.2605.02812",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2605.02812",
       "overlapScore": 9.9,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "Persistent agent files and scheduled re-entry carry attacker-influenced instructions across restarts, agent boundaries and platforms; external gating of memory promotion and capabilities interrupts propagation."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-09",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-05-04",
+        "datePrecision": "day",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2605.02812"
+      },
+      "chronologyAssertion": "This external publication follows the RCA dated claim registry anchor; earliest identified RCA public archive is 2025-06-13. Source-version comparison remains open. Chronology and correspondence alone do not establish influence, adoption, copying, or independent RCA/WCT validation.",
+      "postDateReview": {
+        "correspondenceType": "empirical_ai_security",
+        "mechanism": "Persistent agent files and scheduled re-entry carry attacker-influenced instructions across restarts, agent boundaries and platforms; external gating of memory promotion and capabilities interrupts propagation.",
+        "limitations": "The paper studies adversarial worms and mitigation in agent frameworks. It does not test RCA's criticality law, predict a universal propagation-to-correction ratio, or establish that RCA informed the work.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": null
+      }
     },
     {
       "ledgerRank": 177,
@@ -5645,15 +5674,44 @@
       "identifier": "10.48550/arXiv.2609.00595",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.00595",
       "overlapScore": 9.7,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "Individually checked agents can still form unsafe multi-agent execution paths when information, authority and state cross trust boundaries; path closure and recovery require system-level evaluation."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-13",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-09-01",
+        "datePrecision": "day",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2609.00595"
+      },
+      "chronologyAssertion": "This external publication follows the RCA dated claim registry anchor; earliest identified RCA public archive is 2025-06-13. Source-version comparison remains open. Chronology and correspondence alone do not establish influence, adoption, copying, or independent RCA/WCT validation.",
+      "postDateReview": {
+        "correspondenceType": "literature_structural_correspondence",
+        "mechanism": "Individually checked agents can still form unsafe multi-agent execution paths when information, authority and state cross trust boundaries; path closure and recovery require system-level evaluation.",
+        "limitations": "This is a systematization of earlier multi-agent security literature, not a new RCA-specific experiment or independently confirmed causal adoption of RCA. It does not validate the RCA ratio.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": null
+      }
     },
     {
       "ledgerRank": 186,
@@ -5667,21 +5725,44 @@
       "identifier": "OWASP Top 10 for Agentic Applications 2026",
       "identifierUrl": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
       "overlapScore": 9.7,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "OWASP ASI08 names cascading failures in agentic applications as an operational security risk, highlighting chains of faults or compromised inputs propagating across automated agent workflows."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
       "externalChronology": {
         "publicationDate": "2025-12-09",
         "dateLabel": null,
         "datePrecision": "day",
         "dateStatus": "verified",
-        "dateSource": "OWASP GenAI Security Project"
+        "dateSource": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+      },
+      "auditId": "PD-11",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "chronologyAssertion": "This external publication follows the RCA dated claim registry anchor; earliest identified RCA public archive is 2025-06-13. Source-version comparison remains open. Chronology and correspondence alone do not establish influence, adoption, copying, or independent RCA/WCT validation.",
+      "postDateReview": {
+        "correspondenceType": "institutional_security_taxonomy",
+        "mechanism": "OWASP ASI08 names cascading failures in agentic applications as an operational security risk, highlighting chains of faults or compromised inputs propagating across automated agent workflows.",
+        "limitations": "This is an institutional risk taxonomy assembled from broader community security experience. The December 2025 publication does not establish RCA adoption, an original empirical finding attributable to RCA, or proof of the WCT/RCA law.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": "OWASP institutional risk framework dated 2025-12-09, not a standalone scientific experiment."
       }
     },
     {
@@ -5700,15 +5781,44 @@
       "identifier": "10.48550/arXiv.2605.19240",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2605.19240",
       "overlapScore": 9.7,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "Agent-to-agent influence cascades across interaction channels; cross-channel monitoring of emerging causal propagation routes identifies bridge and amplifier agents before locally benign events become system-level failure."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-10",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-05-19",
+        "datePrecision": "day",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2605.19240"
+      },
+      "chronologyAssertion": "This external publication follows the RCA dated claim registry anchor; earliest identified RCA public archive is 2025-06-13. Source-version comparison remains open. Chronology and correspondence alone do not establish influence, adoption, copying, or independent RCA/WCT validation.",
+      "postDateReview": {
+        "correspondenceType": "empirical_ai_failure",
+        "mechanism": "Agent-to-agent influence cascades across interaction channels; cross-channel monitoring of emerging causal propagation routes identifies bridge and amplifier agents before locally benign events become system-level failure.",
+        "limitations": "CASPIAN introduces its own transfer-entropy influence matrix and benchmarks detection; no derivation from RCA's field model or independent measurement of its numerical propagation/correction ratio.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": null
+      }
     },
     {
       "ledgerRank": 188,
@@ -5730,15 +5840,44 @@
       "identifier": "10.48550/arXiv.2604.07775",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2604.07775",
       "overlapScore": 9.7,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "A compromised agent exploits inter-agent trust to cascade malicious instructions, with attack transfer depending on roles, communication surfaces and defensive boundaries rather than single-agent behavior alone."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-12",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-04-09",
+        "datePrecision": "day",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2604.07775"
+      },
+      "chronologyAssertion": "This external publication follows the RCA dated claim registry anchor; earliest identified RCA public archive is 2025-06-13. Source-version comparison remains open. Chronology and correspondence alone do not establish influence, adoption, copying, or independent RCA/WCT validation.",
+      "postDateReview": {
+        "correspondenceType": "empirical_ai_security",
+        "mechanism": "A compromised agent exploits inter-agent trust to cascade malicious instructions, with attack transfer depending on roles, communication surfaces and defensive boundaries rather than single-agent behavior alone.",
+        "limitations": "ACIArena is a security benchmark for injection across agent interfaces. It does not independently confirm RCA's instability threshold or establish a propagation-rate/correction-rate measurement.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": null
+      }
     },
     {
       "ledgerRank": 189,
@@ -7905,6 +8044,136 @@
       "correspondence": "Frenet-frame torsion, geometry-induced effective gauge potential, and closed-curve holonomy.",
       "limitations": "Thin-waveguide derivation has its own assumptions and does not establish WCT's effective-mass or emergent-spacetime relation.",
       "correspondenceType": "physics_structural_correspondence",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": null,
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-09",
+      "ledgerRank": 176,
+      "domain": "ai",
+      "externalTitle": "Autonomous LLM Agent Worms: Cross-Platform Propagation, Automated Discovery and Temporal Re-Entry Defense",
+      "externalUrl": "https://arxiv.org/abs/2605.02812",
+      "externalDate": "2026-05-04",
+      "dateSource": "https://arxiv.org/abs/2605.02812",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "Persistent agent files and scheduled re-entry carry attacker-influenced instructions across restarts, agent boundaries and platforms; external gating of memory promotion and capabilities interrupts propagation.",
+      "limitations": "The paper studies adversarial worms and mitigation in agent frameworks. It does not test RCA's criticality law, predict a universal propagation-to-correction ratio, or establish that RCA informed the work.",
+      "correspondenceType": "empirical_ai_security",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": null,
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-10",
+      "ledgerRank": 187,
+      "domain": "ai",
+      "externalTitle": "CASPIAN: Online Detection and Attribution of Cascade Attacks in LLM Multi-Agent Systems via Cross-Channel Causal Monitoring",
+      "externalUrl": "https://arxiv.org/abs/2605.19240",
+      "externalDate": "2026-05-19",
+      "dateSource": "https://arxiv.org/abs/2605.19240",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "Agent-to-agent influence cascades across interaction channels; cross-channel monitoring of emerging causal propagation routes identifies bridge and amplifier agents before locally benign events become system-level failure.",
+      "limitations": "CASPIAN introduces its own transfer-entropy influence matrix and benchmarks detection; no derivation from RCA's field model or independent measurement of its numerical propagation/correction ratio.",
+      "correspondenceType": "empirical_ai_failure",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": null,
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-11",
+      "ledgerRank": 186,
+      "domain": "ai",
+      "externalTitle": "OWASP Top 10 for Agentic Applications for 2026 — ASI08 Cascading Failures",
+      "externalUrl": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "externalDate": "2025-12-09",
+      "dateSource": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "OWASP ASI08 names cascading failures in agentic applications as an operational security risk, highlighting chains of faults or compromised inputs propagating across automated agent workflows.",
+      "limitations": "This is an institutional risk taxonomy assembled from broader community security experience. The December 2025 publication does not establish RCA adoption, an original empirical finding attributable to RCA, or proof of the WCT/RCA law.",
+      "correspondenceType": "institutional_security_taxonomy",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": "Institutional ASI08 classification; no claim of OWASP adoption of RCA.",
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-12",
+      "ledgerRank": 188,
+      "domain": "ai",
+      "externalTitle": "ACIArena: Toward Unified Evaluation for Agent Cascading Injection",
+      "externalUrl": "https://arxiv.org/abs/2604.07775",
+      "externalDate": "2026-04-09",
+      "dateSource": "https://arxiv.org/abs/2604.07775",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "A compromised agent exploits inter-agent trust to cascade malicious instructions, with attack transfer depending on roles, communication surfaces and defensive boundaries rather than single-agent behavior alone.",
+      "limitations": "ACIArena is a security benchmark for injection across agent interfaces. It does not independently confirm RCA's instability threshold or establish a propagation-rate/correction-rate measurement.",
+      "correspondenceType": "empirical_ai_security",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": null,
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-13",
+      "ledgerRank": 185,
+      "domain": "ai",
+      "externalTitle": "SoK: When Safe Agents Fail Together: The Security of Multi Agent LLM Systems",
+      "externalUrl": "https://arxiv.org/abs/2609.00595",
+      "externalDate": "2026-09-01",
+      "dateSource": "https://arxiv.org/abs/2609.00595",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "Individually checked agents can still form unsafe multi-agent execution paths when information, authority and state cross trust boundaries; path closure and recovery require system-level evaluation.",
+      "limitations": "This is a systematization of earlier multi-agent security literature, not a new RCA-specific experiment or independently confirmed causal adoption of RCA. It does not validate the RCA ratio.",
+      "correspondenceType": "literature_structural_correspondence",
       "verificationStatus": "post_date_reviewed",
       "versionNote": null,
       "lastVerified": "2026-10-09"
