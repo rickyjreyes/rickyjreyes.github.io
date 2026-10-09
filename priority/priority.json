@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.4",
-  "updated": "2026-10-06",
+  "updated": "2026-10-09",
   "registryName": "Richard J. Reyes Intellectual Property, Priority & Provenance Registry",
   "purpose": "Provide a machine-readable and human-auditable record of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.",
   "author": {
@@ -449,6 +449,108 @@
     "doiBackedResearchReleases": 28,
     "validationRecords": 24,
     "externalEvidenceConvergenceRecords": 242,
-    "filedPatentFamilies": 4
-  }
+    "filedPatentFamilies": 4,
+    "postDateReviewedExternalCases": 8,
+    "externalLedgerOnlyRecords": 224,
+    "externalDateCheckedCases": 6,
+    "externalChronologyReviewCandidates": 4
+  },
+  "postDateReviewedCases": [
+    {
+      "id": "PD-01",
+      "ledgerRank": 193,
+      "externalTitle": "From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration",
+      "externalUrl": "https://arxiv.org/abs/2603.04474",
+      "externalDate": "2026-03-04",
+      "earlierClaimId": "WCT-AI-001",
+      "earlierClaimDate": "2025-06-11",
+      "correspondence": "Multi-agent error cascades through dependency graphs, amplified false consensus, and suppression by an external monitoring layer.",
+      "limitations": "Models injected errors and defenses in multi-agent collaboration; does not evaluate RCA's quantitative criticality ratio.",
+      "verificationStatus": "post_date_reviewed"
+    },
+    {
+      "id": "PD-02",
+      "ledgerRank": 184,
+      "externalTitle": "Conformity Generates Collective Misalignment in AI Agents Societies",
+      "externalUrl": "https://arxiv.org/abs/2605.10721",
+      "externalDate": "2026-05-11",
+      "earlierClaimId": "WCT-AI-001",
+      "earlierClaimDate": "2025-06-11",
+      "correspondence": "Collective misalignment from individually aligned interacting agents, conformity, and persistent misaligned group states.",
+      "limitations": "Statistical-physics model of agent opinion dynamics, not experimental validation of the RCA substrate.",
+      "verificationStatus": "post_date_reviewed"
+    },
+    {
+      "id": "PD-03",
+      "ledgerRank": 199,
+      "externalTitle": "MAGE: Safeguarding LLM Agents against Long-Horizon Threats via Shadow Memory",
+      "externalUrl": "https://arxiv.org/abs/2605.03228",
+      "externalDate": "2026-05-04",
+      "earlierClaimId": "WCT-AI-001",
+      "earlierClaimDate": "2025-06-11",
+      "correspondence": "Persistent safety-focused shadow memory, long-horizon deviation detection, and pre-action protection.",
+      "limitations": "A distinct safety defense with functional resemblance to RCA's external anchoring; mechanisms and implementations differ.",
+      "verificationStatus": "post_date_reviewed"
+    },
+    {
+      "id": "PD-04",
+      "ledgerRank": 178,
+      "externalTitle": "Reward Hacking Challenges Oversight of Autonomous Research Agents",
+      "externalUrl": "https://arxiv.org/abs/2609.28614",
+      "externalDate": "2026-09-23",
+      "earlierClaimId": "WCT-AI-001",
+      "earlierClaimDate": "2025-06-11",
+      "correspondence": "Reward hacking in autonomous research loops, evaluator feedback, and iterative evasion.",
+      "limitations": "Empirical evidence of an RCA-relevant failure class; not a test of RCA prediction ratios or physical mitigation.",
+      "verificationStatus": "post_date_reviewed"
+    },
+    {
+      "id": "PD-05",
+      "ledgerRank": 180,
+      "externalTitle": "AgentWorm: Self-Propagating Attacks Across LLM Agent Ecosystems",
+      "externalUrl": "https://arxiv.org/abs/2603.15727",
+      "externalDate": "2026-03-16",
+      "earlierClaimId": "WCT-AI-001",
+      "earlierClaimDate": "2025-06-11",
+      "correspondence": "Autonomous agent propagation, persistent compromise across restarts, and tool-mediated cross-agent infection.",
+      "limitations": "Security experiment; not evidence of access to RCA or proof that all propagation is uncontrollable.",
+      "verificationStatus": "post_date_reviewed"
+    },
+    {
+      "id": "PD-06",
+      "ledgerRank": 183,
+      "externalTitle": "The Self-Correction Illusion: Role Relabeling Gates Explicit Error Flagging in Large Language Models",
+      "externalUrl": "https://arxiv.org/abs/2606.05976",
+      "externalDate": "2026-06-04",
+      "earlierClaimId": "WCT-AI-001",
+      "earlierClaimDate": "2025-06-11",
+      "correspondence": "Failure to flag self-generated errors under some role labels, with substantially different outcomes under role relabeling.",
+      "limitations": "Role-label experiments isolate one self-correction limitation; do not measure RCA anchor decay or collapse thresholds.",
+      "verificationStatus": "post_date_reviewed"
+    },
+    {
+      "id": "PD-07",
+      "ledgerRank": 8,
+      "externalTitle": "Charged-Lepton Koide Geometry from a Green-Dressed Compact Family Cycle",
+      "externalUrl": "https://arxiv.org/abs/2605.10245",
+      "externalDate": "2026-05-11",
+      "earlierClaimId": "WCT-KOIDE-001",
+      "earlierClaimDate": "2025-12-10",
+      "correspondence": "Charged-lepton Koide geometry, compact phase cycles, and a 45-degree mass-vector cone.",
+      "limitations": "Both address Koide geometry but adopt different assumptions and do not derive one another. The external paper's current v2 was revised October 5, 2026.",
+      "verificationStatus": "post_date_reviewed"
+    },
+    {
+      "id": "PD-08",
+      "ledgerRank": 12,
+      "externalTitle": "Torsion-induced gauge structure in curved quantum waveguides",
+      "externalUrl": "https://arxiv.org/abs/2606.03725",
+      "externalDate": "2026-06-02",
+      "earlierClaimId": "WCT-MASS-001",
+      "earlierClaimDate": "2025-10-27",
+      "correspondence": "Frenet-frame torsion, geometry-induced effective gauge potential, and closed-curve holonomy.",
+      "limitations": "Thin-waveguide derivation has its own assumptions and does not establish WCT's effective-mass or emergent-spacetime relation.",
+      "verificationStatus": "post_date_reviewed"
+    }
+  ]
 }
