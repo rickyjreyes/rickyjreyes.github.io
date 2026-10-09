@@ -500,7 +500,12 @@ window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
     "source": "Physical Review D / APS"
   },
 
-  // Eight post-date reviewed publications; initial arXiv v1 submissions.
+  // Reviewed post-date sources; the OWASP Dec 9, 2025 date already appears above.
+  "https://arxiv.org/abs/2605.02812": {"date":"2026-05-04","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Reviewed post-date chronology only; RCA source-version match and influence unverified."},
+  "https://arxiv.org/abs/2605.19240": {"date":"2026-05-19","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Reviewed post-date chronology only; RCA source-version match and influence unverified."},
+  "https://arxiv.org/abs/2604.07775": {"date":"2026-04-09","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Reviewed post-date chronology only; RCA source-version match and influence unverified."},
+  "https://arxiv.org/abs/2609.00595": {"date":"2026-09-01","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Reviewed post-date chronology only; RCA source-version match and influence unverified."},
+  // Existing eight reviewed cases; initial arXiv v1 submissions.
   "https://arxiv.org/abs/2603.04474": {"date":"2026-03-04","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
   "https://arxiv.org/abs/2605.10721": {"date":"2026-05-11","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
   "https://arxiv.org/abs/2605.03228": {"date":"2026-05-04","precision":"day","status":"verified","source":"arXiv initial submission (v1)","note":"Post-date publication chronology; no inference of influence or independent validation."},
