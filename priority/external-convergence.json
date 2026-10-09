@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.6",
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "title": "WCT External Literature Convergence Audit and Full Post-Date Overlap Ledger",
   "canonical": "https://rickyjreyes.github.io/priority/#convergence-title",
   "registry": "https://rickyjreyes.github.io/priority/",
@@ -44,10 +44,11 @@
     "aiRecords": 68,
     "dateChecked": 6,
     "chronologyPriorArtReview": 4,
-    "ledgerOnly": 232,
+    "ledgerOnly": 224,
     "verifiedCases": 6,
     "auditCandidates": 4,
-    "priorArtControls": 3
+    "priorArtControls": 3,
+    "postDateReviewed": 8
   },
   "statusVocabulary": {
     "ledger": "Present in the public overlap ledger; chronology and prior-art normalization have not yet been promoted to the verified subset.",
@@ -56,14 +57,17 @@
     "not_normalized": "No promoted chronology conclusion is asserted for this ledger record.",
     "unresolved": "No conclusion is asserted.",
     "not_assessed": "This audit does not assess the field.",
-    "reyes_disclosure_precedes": "A dated Richard J. Reyes / WCT public disclosure recorded in this audit predates the external work."
+    "reyes_disclosure_precedes": "A dated Richard J. Reyes / WCT public disclosure recorded in this audit predates the external work.",
+    "post_date_reviewed": "2026 external manuscript date checked against an earlier dated Reyes claim in the public claim registry. Specific source-version claim matching and full promotion remain open; scientific validation or influence is not implied.",
+    "post_date_chronology_reviewed": "The source's external publication date follows the earlier dated claim-registry anchor. This does not assert derivation, influence or mechanism equivalence."
   },
   "recordFieldSemantics": {
     "ledgerRank": "Sequential display rank derived from domain ordering and descending Post-Date Overlap Score; it is not a stable research identifier.",
     "overlapScore": "Heuristic 0-10 comparison score for density and specificity of technical correspondence; it is not a probability.",
     "wctAnchors": "Exact dated WCT claim anchors only when chronology normalization has recorded them; an empty array means not yet normalized.",
     "verificationStatus": "Machine-readable audit state for this record.",
-    "displayRelationship": "Public evidence-category label used by the /overlap interface; separate from the stricter audit relationship field and does not by itself establish derivation, influence, or completion of prior-art normalization."
+    "displayRelationship": "Public evidence-category label used by the /overlap interface; separate from the stricter audit relationship field and does not by itself establish derivation, influence, or completion of prior-art normalization.",
+    "postDateReview": "Reviewed post-date technical correspondence and explicit limits, distinct from the fully promoted date_checked class."
   },
   "records": [
     {
@@ -321,15 +325,42 @@
       "identifier": "10.48550/arXiv.2605.10245",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2605.10245",
       "overlapScore": 9.7,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-KOIDE-001",
+          "title": "Wave Confinement Theory Predicts the Koide Mass Relation",
+          "date": "2025-12-10",
+          "doi": "10.5281/zenodo.17887562",
+          "url": "https://doi.org/10.5281/zenodo.17887562",
+          "dateBasis": "claim_registry_dated_manuscript"
+        }
+      ],
+      "correspondence": [
+        "Charged-lepton Koide geometry, compact phase cycles, and a 45-degree mass-vector cone."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-07",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-05-11",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2605.10245"
+      },
+      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
+      "postDateReview": {
+        "correspondenceType": "physics_structural_correspondence",
+        "mechanism": "Charged-lepton Koide geometry, compact phase cycles, and a 45-degree mass-vector cone.",
+        "limitations": "Both address Koide geometry but adopt different assumptions and do not derive one another. The external paper's current v2 was revised October 5, 2026.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": "Comparison to current arXiv v2; verify details against v1 before any stronger priority claim."
+      }
     },
     {
       "ledgerRank": 9,
@@ -447,15 +478,42 @@
       "identifier": "10.48550/arXiv.2606.03725",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2606.03725",
       "overlapScore": 9.6,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-MASS-001",
+          "title": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
+          "date": "2025-10-27",
+          "doi": "10.5281/zenodo.17459463",
+          "url": "https://doi.org/10.5281/zenodo.17459463",
+          "dateBasis": "claim_registry_dated_manuscript"
+        }
+      ],
+      "correspondence": [
+        "Frenet-frame torsion, geometry-induced effective gauge potential, and closed-curve holonomy."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-08",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-06-02",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2606.03725"
+      },
+      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
+      "postDateReview": {
+        "correspondenceType": "physics_structural_correspondence",
+        "mechanism": "Frenet-frame torsion, geometry-induced effective gauge potential, and closed-curve holonomy.",
+        "limitations": "Thin-waveguide derivation has its own assumptions and does not establish WCT's effective-mass or emergent-spacetime relation.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": null
+      }
     },
     {
       "ledgerRank": 13,
@@ -5277,15 +5335,43 @@
       "identifier": "10.48550/arXiv.2609.28614",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.28614",
       "overlapScore": 9.9,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "Reward hacking in autonomous research loops, evaluator feedback, and iterative evasion."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-04",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-09-23",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2609.28614"
+      },
+      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
+      "postDateReview": {
+        "correspondenceType": "empirical_ai_failure",
+        "mechanism": "Reward hacking in autonomous research loops, evaluator feedback, and iterative evasion.",
+        "limitations": "Empirical evidence of an RCA-relevant failure class; not a test of RCA prediction ratios or physical mitigation.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": null
+      }
     },
     {
       "ledgerRank": 179,
@@ -5337,15 +5423,43 @@
       "identifier": "10.48550/arXiv.2603.15727",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2603.15727",
       "overlapScore": 9.8,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "Autonomous agent propagation, persistent compromise across restarts, and tool-mediated cross-agent infection."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-05",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-03-16",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2603.15727"
+      },
+      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
+      "postDateReview": {
+        "correspondenceType": "empirical_ai_failure",
+        "mechanism": "Autonomous agent propagation, persistent compromise across restarts, and tool-mediated cross-agent infection.",
+        "limitations": "Security experiment; not evidence of access to RCA or proof that all propagation is uncontrollable.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": null
+      }
     },
     {
       "ledgerRank": 181,
@@ -5417,15 +5531,44 @@
       "identifier": "10.48550/arXiv.2606.05976",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2606.05976",
       "overlapScore": 9.8,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "Failure to flag self-generated errors under some role labels, with substantially different outcomes under role relabeling."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-06",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-06-04",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2606.05976"
+      },
+      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
+      "postDateReview": {
+        "correspondenceType": "empirical_ai_failure",
+        "mechanism": "Failure to flag self-generated errors under some role labels, with substantially different outcomes under role relabeling.",
+        "limitations": "Role-label experiments isolate one self-correction limitation; do not measure RCA anchor decay or collapse thresholds.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": "Current arXiv v2 title differs from earlier ledger title."
+      },
+      "currentExternalTitle": "The Self-Correction Illusion: Role Relabeling Gates Explicit Error Flagging in Large Language Models"
     },
     {
       "ledgerRank": 184,
@@ -5443,15 +5586,43 @@
       "identifier": "10.48550/arXiv.2605.10721",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2605.10721",
       "overlapScore": 9.8,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "Collective misalignment from individually aligned interacting agents, conformity, and persistent misaligned group states."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-02",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-05-11",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2605.10721"
+      },
+      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
+      "postDateReview": {
+        "correspondenceType": "empirical_ai_failure",
+        "mechanism": "Collective misalignment from individually aligned interacting agents, conformity, and persistent misaligned group states.",
+        "limitations": "Statistical-physics model of agent opinion dynamics, not experimental validation of the RCA substrate.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": null
+      }
     },
     {
       "ledgerRank": 185,
@@ -5690,15 +5861,43 @@
       "identifier": "10.48550/arXiv.2603.04474",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2603.04474",
       "overlapScore": 9.6,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "Multi-agent error cascades through dependency graphs, amplified false consensus, and suppression by an external monitoring layer."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
+      "auditId": "PD-01",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-03-04",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2603.04474"
+      },
+      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
+      "postDateReview": {
+        "correspondenceType": "empirical_ai_failure",
+        "mechanism": "Multi-agent error cascades through dependency graphs, amplified false consensus, and suppression by an external monitoring layer.",
+        "limitations": "Models injected errors and defenses in multi-agent collaboration; does not evaluate RCA's quantitative criticality ratio.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": null
+      }
     },
     {
       "ledgerRank": 194,
@@ -5859,18 +6058,46 @@
       "identifier": "10.48550/arXiv.2605.03228",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2605.03228",
       "overlapScore": 9.4,
-      "verificationStatus": "ledger",
-      "relationship": "potential_technical_overlap",
-      "chronologyStatus": "not_normalized",
+      "verificationStatus": "post_date_reviewed",
+      "relationship": "later_structural_overlap",
+      "chronologyStatus": "post_date_chronology_reviewed",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [],
-      "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": [
+        "Persistent safety-focused shadow memory, long-horizon deviation detection, and pre-action protection."
+      ],
+      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
       "displayRelationship": "EMPIRICAL CONVERGENCE",
       "relationshipRationale": "Long-horizon threat evaluation with persistent shadow memory and experimentally evaluated detection/mitigation.",
-      "relationshipLastReviewed": "2026-10-07"
+      "relationshipLastReviewed": "2026-10-07",
+      "auditId": "PD-03",
+      "auditClass": "post_date_documented_correspondence",
+      "lastVerified": "2026-10-09",
+      "externalChronology": {
+        "manuscriptDate": "2026-05-04",
+        "dateStatus": "external_initial_arxiv_submission_checked",
+        "dateSource": "https://arxiv.org/abs/2605.03228"
+      },
+      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
+      "postDateReview": {
+        "correspondenceType": "defensive_method_correspondence",
+        "mechanism": "Persistent safety-focused shadow memory, long-horizon deviation detection, and pre-action protection.",
+        "limitations": "A distinct safety defense with functional resemblance to RCA's external anchoring; mechanisms and implementations differ.",
+        "originalClaimArchiveVerification": "not_promoted",
+        "externalPaperVersionNote": null
+      }
     },
     {
       "ledgerRank": 200,
@@ -7471,5 +7698,214 @@
     "Older prior art for component concepts erases a later Reyes-specific synthesis, formulation, architecture, or prediction's documented priority.",
     "Unresolved influence is equivalent to demonstrated independent discovery.",
     "A later external publication may be presented as the origin of a Reyes-specific claim when the registry records an earlier Reyes/WCT public disclosure."
-  ]
+  ],
+  "postDateReviewedCases": [
+    {
+      "id": "PD-01",
+      "ledgerRank": 193,
+      "domain": "ai",
+      "externalTitle": "From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration",
+      "externalUrl": "https://arxiv.org/abs/2603.04474",
+      "externalDate": "2026-03-04",
+      "dateSource": "https://arxiv.org/abs/2603.04474",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "Multi-agent error cascades through dependency graphs, amplified false consensus, and suppression by an external monitoring layer.",
+      "limitations": "Models injected errors and defenses in multi-agent collaboration; does not evaluate RCA's quantitative criticality ratio.",
+      "correspondenceType": "empirical_ai_failure",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": null,
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-02",
+      "ledgerRank": 184,
+      "domain": "ai",
+      "externalTitle": "Conformity Generates Collective Misalignment in AI Agents Societies",
+      "externalUrl": "https://arxiv.org/abs/2605.10721",
+      "externalDate": "2026-05-11",
+      "dateSource": "https://arxiv.org/abs/2605.10721",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "Collective misalignment from individually aligned interacting agents, conformity, and persistent misaligned group states.",
+      "limitations": "Statistical-physics model of agent opinion dynamics, not experimental validation of the RCA substrate.",
+      "correspondenceType": "empirical_ai_failure",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": null,
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-03",
+      "ledgerRank": 199,
+      "domain": "ai",
+      "externalTitle": "MAGE: Safeguarding LLM Agents against Long-Horizon Threats via Shadow Memory",
+      "externalUrl": "https://arxiv.org/abs/2605.03228",
+      "externalDate": "2026-05-04",
+      "dateSource": "https://arxiv.org/abs/2605.03228",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "Persistent safety-focused shadow memory, long-horizon deviation detection, and pre-action protection.",
+      "limitations": "A distinct safety defense with functional resemblance to RCA's external anchoring; mechanisms and implementations differ.",
+      "correspondenceType": "defensive_method_correspondence",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": null,
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-04",
+      "ledgerRank": 178,
+      "domain": "ai",
+      "externalTitle": "Reward Hacking Challenges Oversight of Autonomous Research Agents",
+      "externalUrl": "https://arxiv.org/abs/2609.28614",
+      "externalDate": "2026-09-23",
+      "dateSource": "https://arxiv.org/abs/2609.28614",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "Reward hacking in autonomous research loops, evaluator feedback, and iterative evasion.",
+      "limitations": "Empirical evidence of an RCA-relevant failure class; not a test of RCA prediction ratios or physical mitigation.",
+      "correspondenceType": "empirical_ai_failure",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": null,
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-05",
+      "ledgerRank": 180,
+      "domain": "ai",
+      "externalTitle": "AgentWorm: Self-Propagating Attacks Across LLM Agent Ecosystems",
+      "externalUrl": "https://arxiv.org/abs/2603.15727",
+      "externalDate": "2026-03-16",
+      "dateSource": "https://arxiv.org/abs/2603.15727",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "Autonomous agent propagation, persistent compromise across restarts, and tool-mediated cross-agent infection.",
+      "limitations": "Security experiment; not evidence of access to RCA or proof that all propagation is uncontrollable.",
+      "correspondenceType": "empirical_ai_failure",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": null,
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-06",
+      "ledgerRank": 183,
+      "domain": "ai",
+      "externalTitle": "The Self-Correction Illusion: Role Relabeling Gates Explicit Error Flagging in Large Language Models",
+      "externalUrl": "https://arxiv.org/abs/2606.05976",
+      "externalDate": "2026-06-04",
+      "dateSource": "https://arxiv.org/abs/2606.05976",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-AI-001",
+          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
+          "date": "2025-06-11",
+          "doi": "10.5281/zenodo.17732661",
+          "url": "https://doi.org/10.5281/zenodo.17732661",
+          "dateBasis": "claim_registry_dated_manuscript",
+          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
+        }
+      ],
+      "correspondence": "Failure to flag self-generated errors under some role labels, with substantially different outcomes under role relabeling.",
+      "limitations": "Role-label experiments isolate one self-correction limitation; do not measure RCA anchor decay or collapse thresholds.",
+      "correspondenceType": "empirical_ai_failure",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": "Current arXiv v2 title differs from earlier ledger title.",
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-07",
+      "ledgerRank": 8,
+      "domain": "physics",
+      "externalTitle": "Charged-Lepton Koide Geometry from a Green-Dressed Compact Family Cycle",
+      "externalUrl": "https://arxiv.org/abs/2605.10245",
+      "externalDate": "2026-05-11",
+      "dateSource": "https://arxiv.org/abs/2605.10245",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-KOIDE-001",
+          "title": "Wave Confinement Theory Predicts the Koide Mass Relation",
+          "date": "2025-12-10",
+          "doi": "10.5281/zenodo.17887562",
+          "url": "https://doi.org/10.5281/zenodo.17887562",
+          "dateBasis": "claim_registry_dated_manuscript"
+        }
+      ],
+      "correspondence": "Charged-lepton Koide geometry, compact phase cycles, and a 45-degree mass-vector cone.",
+      "limitations": "Both address Koide geometry but adopt different assumptions and do not derive one another. The external paper's current v2 was revised October 5, 2026.",
+      "correspondenceType": "physics_structural_correspondence",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": "Comparison to current arXiv v2; verify details against v1 before any stronger priority claim.",
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "PD-08",
+      "ledgerRank": 12,
+      "domain": "physics",
+      "externalTitle": "Torsion-induced gauge structure in curved quantum waveguides",
+      "externalUrl": "https://arxiv.org/abs/2606.03725",
+      "externalDate": "2026-06-02",
+      "dateSource": "https://arxiv.org/abs/2606.03725",
+      "wctAnchors": [
+        {
+          "claimId": "WCT-MASS-001",
+          "title": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
+          "date": "2025-10-27",
+          "doi": "10.5281/zenodo.17459463",
+          "url": "https://doi.org/10.5281/zenodo.17459463",
+          "dateBasis": "claim_registry_dated_manuscript"
+        }
+      ],
+      "correspondence": "Frenet-frame torsion, geometry-induced effective gauge potential, and closed-curve holonomy.",
+      "limitations": "Thin-waveguide derivation has its own assumptions and does not establish WCT's effective-mass or emergent-spacetime relation.",
+      "correspondenceType": "physics_structural_correspondence",
+      "verificationStatus": "post_date_reviewed",
+      "versionNote": null,
+      "lastVerified": "2026-10-09"
+    }
+  ],
+  "postDateReviewRule": "Post-date review checks the later publication's initial date and articulates the narrower correspondence to a dated earlier Reyes claim. It does not replace the separate source-version and full-promotion requirements."
 }
