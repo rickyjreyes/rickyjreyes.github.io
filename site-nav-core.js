@@ -32,7 +32,8 @@
     {
       type: 'menu', label: 'Verify', items: [
         ['/sympy/', 'SymPy Audit', 'Executable symbolic checks'],
-        ['/lean/', 'Lean Coverage', 'Formal definitions and proof coverage']
+        ['/lean/', 'Lean Coverage', 'Formal definitions and proof coverage'],
+        ['/ai-validation/', 'AI Validation', 'RCA forecasts, external evidence and cross-system tests']
       ]
     },
     { type: 'link', href: '/reproduce/', label: 'Reproduce' },
