@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1-draft",
+  "as_of": "2026-10-10",
+  "status": "presentation_draft_not_registry_promotion",
+  "source_registry": {
+    "repo": "rickyjreyes/rickyjreyes.github.io",
+    "file": "priority/external-convergence.json",
+    "original_total": 242,
+    "ai": 68,
+    "physics": 174,
+    "audit42": {
+      "landed_author_score": 15,
+      "convergence": 10,
+      "partial": 10,
+      "open": 1,
+      "prospective": 6
+    }
+  },
+  "chronology": {
+    "original_manuscript_date": "2025-06-11",
+    "identified_public_archive": "https://zenodo.org/records/15659978",
+    "archive_created_date": "2025-06-13",
+    "canonical_citation": "https://doi.org/10.5281/zenodo.17732661",
+    "original_exact_R_prediction_provenance": "verification_open"
+  },
+  "incident": {
+    "event": "OpenAI / Hugging Face agent collaboration incident",
+    "primary_reporting": [
+      "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+      "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+    ],
+    "independent_events_count": 1,
+    "reported_observations": [
+      {
+        "hours": 3,
+        "cumulative_posting_agents": 53
+      },
+      {
+        "hours": 6,
+        "cumulative_posting_agents": 76
+      }
+    ],
+    "calculation": {
+      "mu_per_hour_assumption": 0.013888888888888888,
+      "formula": "lambda = log(N)/t; R = mu/(lambda + mu)",
+      "windows": [
+        {
+          "hours": 3,
+          "N": 53,
+          "lambda": 1.3234306378507072,
+          "R": 0.010385617357095051
+        },
+        {
+          "hours": 6,
+          "N": 76,
+          "lambda": 0.7217888900477218,
+          "R": 0.018879038196538512
+        }
+      ],
+      "predicted_ratio_author_claim": 0.01,
+      "predicted_ratio_original_file_authentication": "open",
+      "limitations": [
+        "72h correction period assumed, not direct fit",
+        "participant count is a cumulative proxy",
+        "different declared observation windows change ratio"
+      ]
+    }
+  },
+  "correspondences": [
+    {
+      "id": "PD-01",
+      "mechanism": "multi-agent error propagation",
+      "external": "https://arxiv.org/abs/2603.04474",
+      "status": "independent_mechanism_comparison_not_rca_replication"
+    },
+    {
+      "id": "PD-02",
+      "mechanism": "collective misalignment",
+      "external": "https://arxiv.org/abs/2605.10721",
+      "status": "structural_correspondence"
+    },
+    {
+      "id": "L197",
+      "mechanism": "memory contamination",
+      "external": "https://arxiv.org/abs/2605.17830",
+      "status": "empirical_external_failure_class"
+    },
+    {
+      "id": "PD-03",
+      "mechanism": "shadow memory",
+      "external": "https://arxiv.org/abs/2605.03228",
+      "status": "functional_analogue"
+    },
+    {
+      "id": "PD-10",
+      "mechanism": "cross-channel cascade monitoring",
+      "external": "https://arxiv.org/abs/2605.19240",
+      "status": "method_comparator"
+    },
+    {
+      "id": "PD-04",
+      "mechanism": "reward hacking",
+      "external": "https://arxiv.org/abs/2609.28614",
+      "status": "empirical_external_failure_class"
+    }
+  ],
+  "future_tests": [
+    {
+      "id": "A",
+      "hypothesis": "frozen RCA metrics predict unseen cascades",
+      "baseline": "network degree and conventional cascade models",
+      "data": "https://arxiv.org/abs/2604.07775"
+    },
+    {
+      "id": "B",
+      "hypothesis": "RCA anchor score predicts longitudinal violations",
+      "baseline": "NullMemory and elapsed-step count",
+      "data": "https://arxiv.org/abs/2605.17830"
+    },
+    {
+      "id": "C",
+      "hypothesis": "RCA-aware intervention improves recovery vs current controls",
+      "baseline": "no intervention; baseline monitoring",
+      "data": "https://arxiv.org/abs/2603.04474"
+    }
+  ],
+  "promotion_rule": "No independent validation without frozen operational definitions, previously unseen data, uncertainty, negative controls and appropriate baselines."
+}
