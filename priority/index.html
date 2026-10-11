@@ -589,6 +589,29 @@
 
 .priority-audit-part-b{margin-top:72px;padding-top:58px;border-top:1px solid rgba(103,212,255,.22)}
 @media(max-width:700px){.priority-audit-part-b{margin-top:52px;padding-top:42px}}
+
+/* Independent RCA anchor-survival corroboration — separate from the historical ledger. */
+.rca-crossvalidation{max-width:1200px;margin:54px 0;padding:38px 36px;border:1px solid rgba(103,212,255,.24);border-radius:19px;background:linear-gradient(135deg,rgba(103,212,255,.043),rgba(255,255,255,.013));}
+.rca-crossvalidation .rca-crossvalidation-lede{color:var(--muted);max-width:90ch;line-height:1.7;margin:12px 0 24px}
+.rca-crossvalidation h2{font:500 clamp(1.8rem,3.4vw,2.65rem)/1.12 Georgia,serif;letter-spacing:-.028em;margin:0}
+.rca-crossvalidation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.rca-crossvalidation-card{border:1px solid var(--line);border-radius:13px;background:rgba(6,18,30,.48);padding:22px;min-width:0}
+.rca-crossvalidation-source{font-size:.73rem;letter-spacing:.09em;text-transform:uppercase;font-weight:760;color:var(--muted-2);margin:0 0 10px}
+.rca-crossvalidation-card h3{font:500 clamp(1.3rem,2.1vw,1.65rem)/1.2 Georgia,serif;margin:0 0 9px}
+.rca-crossvalidation-card .rca-crossvalidation-meta{font-size:.83rem;color:var(--muted);margin:0 0 18px}
+.rca-crossvalidation-numbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 14px}
+.rca-crossvalidation-numbers.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.rca-crossvalidation-stat{border-top:1px solid rgba(170,201,225,.22);padding-top:13px;min-width:0}
+.rca-crossvalidation-stat strong{display:block;color:var(--text);font:500 clamp(1.65rem,3.2vw,2.6rem)/1.15 Georgia,serif;font-variant-numeric:tabular-nums}
+.rca-crossvalidation-stat span{display:block;color:var(--muted);font-size:.78rem;line-height:1.4;margin-top:6px}
+.rca-crossvalidation-card>p{font-size:.91rem;line-height:1.65}
+.rca-crossvalidation-links{display:flex;gap:13px;flex-wrap:wrap;font-size:.83rem;margin-top:16px}
+.rca-crossvalidation-interpretation{margin-top:18px;border-left:3px solid var(--accent,#67d4ff);background:rgba(103,212,255,.035);padding:17px 19px}
+.rca-crossvalidation-interpretation strong{display:block;margin-bottom:5px}
+.rca-crossvalidation-interpretation p{margin:7px 0 0;max-width:95ch;color:var(--muted);font-size:.9rem;line-height:1.65}
+.rca-crossvalidation-chronology{font-size:.8rem;color:var(--muted-2);line-height:1.65;margin:15px 0 0}
+@media(max-width:800px){.rca-crossvalidation{padding:24px 18px;margin:38px 0}.rca-crossvalidation-grid{grid-template-columns:1fr}}
+@media(max-width:470px){.rca-crossvalidation-numbers.three{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.rca-crossvalidation-stat strong{font-size:1.6rem}}
 </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://rickyjreyes.github.io/priority/#page", "name": "Richard J. Reyes Intellectual Property, Priority and Provenance Registry", "description": "Human-auditable and machine-readable registry of documented scholarly origin, public disclosure chronology, claimed patent-family priority, attribution anchors, later external technical overlap, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-07", "author": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "about": ["Wave Confinement Theory", "technical provenance", "scholarly priority", "patent-family priority", "WaveLock", "Phase-Flux Field"], "isPartOf": {"@type": "WebSite", "url": "https://rickyjreyes.github.io/"}, "mainEntity": {"@id": "https://rickyjreyes.github.io/priority/#dataset"}}, {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/priority/#dataset", "name": "Richard J. Reyes Research Priority Registry", "description": "Claim-level chronology linking dated public research disclosures and filed patent-family chronology to canonical identifiers, DOIs, provenance notes, later comparison cases, and prior-art controls.", "url": "https://rickyjreyes.github.io/priority/", "dateModified": "2026-10-07", "creator": {"@type": "Person", "name": "Richard J. Reyes", "identifier": "https://orcid.org/0009-0005-5975-8718", "sameAs": ["https://orcid.org/0009-0005-5975-8718", "https://github.com/rickyjreyes"]}, "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/priority.json"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://rickyjreyes.github.io/priority/external-convergence.json"}], "subjectOf": {"@type": "Dataset", "@id": "https://rickyjreyes.github.io/data/publication_traceability.json", "name": "Richard J. Reyes Publication Traceability Registry"}}]}</script>
 </head>
@@ -617,6 +640,7 @@
     <a href="#patents">Patent chronology</a>
     <a href="#detector-evidence">Detector evidence</a>
     <a href="#post-date-convergence">Post-date convergence</a>
+    <a href="#rca-independent-anchor-validation">RCA external experiments</a>
     <a href="#rca-audit">RCA audit</a>
     <a href="#priority-anchors">Priority anchors</a>
     <a href="#claims">Full claim registry</a>
@@ -1012,6 +1036,44 @@
     </section>
 
     
+
+    <!-- Independent experimental corroboration: display layer only; not a registry status promotion. -->
+    <section class="priority-section rca-crossvalidation" id="rca-independent-anchor-validation" aria-labelledby="rca-independent-anchor-title">
+      <p class="eyebrow">Independent experimental corroboration · RCA / AI</p>
+      <h2 id="rca-independent-anchor-title">Semantic-anchor decay: constraint loss, behavioral violation, and protection</h2>
+      <p class="rca-crossvalidation-lede">Two separate 2026 research programmes experimentally test components of a mechanism relevant to RCA: long-running agents may lose persistent constraints during context compaction, and a separate mechanism for retaining those constraints can substantially reduce the resulting failure. The results below are from different benchmarks and are not pooled into a single experiment.</p>
+      <div class="rca-crossvalidation-grid">
+        <article class="rca-crossvalidation-card" aria-labelledby="rca-crossvalidation-lost-title">
+          <p class="rca-crossvalidation-source">External experiment 01 · COMPINT</p>
+          <h3 id="rca-crossvalidation-lost-title"><em>Lost in Compaction</em></h3>
+          <p class="rca-crossvalidation-meta">Zhiqi Wang, Yichi Zhang, Dongwon Lee, Yuchen Yang · arXiv v1 submitted July 31, 2026</p>
+          <div class="rca-crossvalidation-numbers" aria-label="Study-reported constraint-retention findings">
+            <div class="rca-crossvalidation-stat"><strong>17%</strong><span>Average injected session constraints retained by evaluated compactors</span></div>
+            <div class="rca-crossvalidation-stat"><strong>&gt;90%</strong><span>Retention with a separate session-constraint-aware extractor</span></div>
+          </div>
+          <p>The researchers tested long-context conversation, agent trajectories, and research workflows. Their intervention ran alongside the compactor, without changing the underlying language model or compactor.</p>
+          <div class="rca-crossvalidation-links"><a href="https://arxiv.org/abs/2608.11242v1" target="_blank" rel="noopener noreferrer">Original paper · v1 ↗</a><a href="https://github.com/ZhiqiEliWang/compaction-integrity" target="_blank" rel="noopener noreferrer">Benchmark and implementation ↗</a></div>
+        </article>
+        <article class="rca-crossvalidation-card" aria-labelledby="rca-crossvalidation-governance-title">
+          <p class="rca-crossvalidation-source">External experiment 02 · ConstraintRot</p>
+          <h3 id="rca-crossvalidation-governance-title"><em>Governance Decay</em></h3>
+          <p class="rca-crossvalidation-meta">Shiyang Chen · arXiv v1 submitted June 21, 2026 · 1,323 episodes, seven model families</p>
+          <div class="rca-crossvalidation-numbers three" aria-label="Study-reported violation rates">
+            <div class="rca-crossvalidation-stat"><strong>0%</strong><span>Policy in full context</span></div>
+            <div class="rca-crossvalidation-stat"><strong>30%</strong><span>After context compaction</span></div>
+            <div class="rca-crossvalidation-stat"><strong>0%</strong><span>With constraint pinning</span></div>
+          </div>
+          <p>When the constraint survived summarization, the reported violation rate remained 0%; when it was lost, it reached 38%. Constraint Pinning protected governance constraints from lossy compaction and restored 0% violations in this benchmark.</p>
+          <div class="rca-crossvalidation-links"><a href="https://arxiv.org/abs/2606.22528v1" target="_blank" rel="noopener noreferrer">Original paper · v1 ↗</a></div>
+        </article>
+      </div>
+      <div class="rca-crossvalidation-interpretation">
+        <strong>Precisely what this corroborates</strong>
+        <p>These independent studies provide empirical support for a narrower RCA-relevant failure-and-correction mechanism: persistent constraints can disappear during recursive context management; the loss can produce prohibited actions; and isolating or pinning the constraints can prevent the benchmarked failure. The results do not independently replicate the complete RCA architecture, establish its physical substrate, or validate a unique numerical RCA criticality law.</p>
+      </div>
+      <p class="rca-crossvalidation-chronology"><strong>Chronology boundary:</strong> RCA has a June 2025 registration and a later text-verified November 2025 version. Exact claim-to-claim priority based on the June manuscript remains conditional on authentication of that original file. The two cited external papers are later 2026 studies. These are two independent research studies—not three independent validations merely because multiple outcomes are displayed.</p>
+    </section>
+
     <section class="priority-redesign-section" id="rca-audit" aria-labelledby="rca-audit-title">
   <div class="priority-audit-part priority-audit-part-a">
     <p class="priority-section-kicker">06A · Author-side mechanism and forecast audit</p>
