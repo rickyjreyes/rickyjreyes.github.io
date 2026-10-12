@@ -229,21 +229,113 @@ def paper_page(pub: dict, titles: dict[str, str]) -> str:
 <footer class="paper-footer"><div class="section-shell"><a href="./">← Publication archive</a><span>Wave Confinement Theory research program</span></div></footer>
 <script>
 (function(){{
-  var text = (document.querySelector('[data-citation-text]') || {{}}).textContent || '';
-  var feedback = document.querySelector('[data-copy-feedback]');
-  document.querySelectorAll('[data-copy-citation]').forEach(function(btn){{
-    btn.addEventListener('click', function(){{
-      var done = function(){{
-        if (feedback) {{ feedback.hidden = false; }}
-        var prev = btn.textContent;
-        btn.textContent = 'Copied';
-        setTimeout(function(){{ btn.textContent = prev; if (feedback) feedback.hidden = true; }}, 2400);
-      }};
-      if (navigator.clipboard && navigator.clipboard.writeText) {{
-        navigator.clipboard.writeText(text.trim()).then(done, done);
-      }} else {{ done(); }}
+  var items=[].slice.call(document.querySelectorAll('.pub-index-item'));
+  var q=document.querySelector('[data-search-input]');
+  var cat=document.querySelector('[data-filter-category]');
+  var status=document.querySelector('[data-filter-status]');
+  var yearWrap=document.querySelector('[data-year-buttons]');
+  var count=document.querySelector('[data-pub-count]');
+  var empty=document.querySelector('[data-pub-empty]');
+  var archive=document.getElementById('archive');
+  var total=items.length;
+  var year='';
+  var railRaf=0;
+  var shown=[];
+  var centers=[];
+  var firstY=0,lastY=0;
+  var cursor=null;
+  if(archive){{
+    cursor=document.createElement('span');
+    cursor.className='pub-timeline-cursor';
+    cursor.setAttribute('aria-hidden','true');
+    archive.prepend(cursor);
+  }}
+  function clamp(v,a,b){{return Math.max(a,Math.min(b,v));}}
+  function measureRail(){{
+    if(!archive)return;
+    shown=items.filter(function(it){{return !it.hidden;}});
+    if(!shown.length){{
+      archive.classList.remove('timeline-active');
+      archive.style.setProperty('--pub-line-span','0px');
+      archive.style.setProperty('--pub-fill-height','0px');
+      centers=[];
+      return;
+    }}
+    var top=archive.getBoundingClientRect().top;
+    centers=shown.map(function(it){{
+      var node=it.querySelector('.pub-timeline-date')||it;
+      var r=node.getBoundingClientRect();
+      return r.top+r.height*.5-top;
     }});
+    firstY=centers[0];
+    lastY=centers[centers.length-1];
+    archive.style.setProperty('--pub-line-start',firstY.toFixed(2)+'px');
+    archive.style.setProperty('--pub-line-span',Math.max(0,lastY-firstY).toFixed(2)+'px');
+    scheduleRail();
+  }}
+  function updateRail(){{
+    if(!archive||!shown.length)return;
+    var top=archive.getBoundingClientRect().top;
+    var vh=window.innerHeight||1;
+    var remaining=Math.max(0,document.documentElement.scrollHeight-vh-window.scrollY);
+    var bottomEase=clamp(1-remaining/(vh*.9),0,1);
+    var anchor=vh*(.52+.38*bottomEase);
+    var cursorY=clamp(anchor-top,firstY,lastY);
+    if(remaining<3)cursorY=lastY;
+    archive.style.setProperty('--pub-cursor-y',cursorY.toFixed(2)+'px');
+    archive.style.setProperty('--pub-fill-height',Math.max(0,cursorY-firstY).toFixed(2)+'px');
+    archive.classList.toggle('timeline-active',cursorY>firstY+1||top<anchor);
+    var current=0,dist=Infinity;
+    centers.forEach(function(y,i){{
+      var d=Math.abs(y-cursorY);
+      if(d<dist){{dist=d;current=i;}}
+    }});
+    if(remaining<3)current=shown.length-1;
+    shown.forEach(function(it,i){{
+      it.classList.toggle('pub-current',i===current);
+      it.classList.toggle('pub-past',i===current||centers[i]<=cursorY+.5);
+    }});
+  }}
+  function scheduleRail(){{
+    if(railRaf)return;
+    railRaf=requestAnimationFrame(function(){{railRaf=0;updateRail();}});
+  }}
+  function apply(){{
+    var term=(q.value||'').trim().toLowerCase();
+    var c=cat.value,s=status.value,visible=0;
+    items.forEach(function(it){{
+      var ok=(!term||it.dataset.search.indexOf(term)>-1)
+        &&(!c||it.dataset.category===c)
+        &&(!s||it.dataset.status===s)
+        &&(!year||it.dataset.year===year);
+      it.hidden=!ok;
+      if(ok)visible++;
+      else it.classList.remove('pub-past','pub-current');
+    }});
+    if(empty)empty.hidden=visible!==0;
+    if(count)count.textContent=visible===total?('Showing all '+total+' releases.'):('Showing '+visible+' of '+total+' releases.');
+    measureRail();
+  }}
+  q&&q.addEventListener('input',apply);
+  cat&&cat.addEventListener('change',apply);
+  status&&status.addEventListener('change',apply);
+  yearWrap&&yearWrap.addEventListener('click',function(e){{
+    var b=e.target.closest('button[data-year]');if(!b)return;
+    year=b.dataset.year;
+    yearWrap.querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',String(x===b));}});
+    apply();
   }});
+  var reset=document.querySelector('[data-pub-reset]');
+  reset&&reset.addEventListener('click',function(){{
+    q.value='';cat.value='';status.value='';year='';
+    yearWrap.querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',String(x.dataset.year===''));}});
+    apply();
+  }});
+  window.addEventListener('scroll',scheduleRail,{{passive:true}});
+  window.addEventListener('resize',measureRail,{{passive:true}});
+  if(archive&&'ResizeObserver'in window)new ResizeObserver(measureRail).observe(archive);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measureRail);
+  apply();
 }})();
 </script>
 </body></html>
@@ -294,8 +386,6 @@ button.button{cursor:pointer;font-family:inherit}
 
 
 PUB_INDEX_CSS = """
-/* Publications: date-first chronology, retaining the site's existing palette. */
-html{scroll-behavior:auto}
 .pub-index-head{padding-bottom:42px;border-bottom:1px solid var(--line)}
 .pub-index-head h1{margin:0;font:500 clamp(3rem,7vw,6rem)/1 Georgia,serif;letter-spacing:-.04em}
 .pub-index-head p{max-width:760px;color:var(--muted)}
@@ -312,28 +402,57 @@ html{scroll-behavior:auto}
 .year-buttons button{padding:9px 14px;color:var(--muted);border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.018);cursor:pointer;font-size:.78rem;font-weight:700}
 .year-buttons button[aria-pressed=true],.year-buttons button:hover{color:var(--text);border-color:rgba(103,212,255,.45);background:rgba(103,212,255,.08)}
 .pub-count{margin:30px 0 0;color:var(--muted-2);font-size:.82rem}
-.pub-index-list{--pub-line-x:52px;position:relative;display:grid;gap:28px;padding:28px 0 8px;border-top:1px solid var(--line);margin-top:16px}
-.pub-index-list::before{content:"";position:absolute;z-index:0;top:59px;bottom:44px;left:var(--pub-line-x);width:2px;transform:translateX(-50%);background:linear-gradient(to bottom,rgba(103,212,255,.65),rgba(139,124,255,.48) 52%,rgba(182,255,218,.45));pointer-events:none}
-.pub-index-list:not(.pub-has-results)::before{display:none}
-.pub-index-item{position:relative;z-index:1;display:grid;grid-template-columns:104px minmax(0,1fr);align-items:start;gap:20px;min-width:0}
+.pub-index-list{--pub-line-x:49px;--pub-line-start:0px;--pub-line-span:0px;--pub-fill-height:0px;--pub-cursor-y:0px;position:relative;border-top:1px solid var(--line);margin-top:16px}
+.pub-index-list::before,.pub-index-list::after{content:"";position:absolute;z-index:0;left:var(--pub-line-x);top:var(--pub-line-start);width:2px;transform:translateX(-50%);border-radius:999px;pointer-events:none}
+.pub-index-list::before{height:var(--pub-line-span);background:linear-gradient(to bottom,rgba(103,212,255,.16),rgba(139,124,255,.14) 52%,rgba(182,255,218,.16))}
+.pub-index-list::after{height:var(--pub-fill-height);background:linear-gradient(to bottom,var(--accent),var(--accent-2) 54%,var(--accent-3));box-shadow:0 0 10px rgba(103,212,255,.2),0 0 20px rgba(139,124,255,.12);transition:height 120ms cubic-bezier(.22,.7,.24,1)}
+.pub-timeline-cursor{position:absolute;z-index:4;left:var(--pub-line-x);top:var(--pub-cursor-y);width:12px;height:12px;transform:translate(-50%,-50%);border:2px solid var(--bg-deep);border-radius:50%;background:var(--accent);box-shadow:0 0 0 1px var(--accent),0 0 20px rgba(103,212,255,.5);opacity:0;pointer-events:none;transition:top 120ms cubic-bezier(.22,.7,.24,1),opacity .16s ease}
+.pub-index-list.timeline-active .pub-timeline-cursor{opacity:1}
+.pub-index-item{position:relative;z-index:1;display:grid;grid-template-columns:98px minmax(0,1fr);gap:22px;padding:34px 0 0;border:0}
+.pub-index-item>div{min-width:0;padding:0 0 36px;border-bottom:1px solid var(--line);transition:border-color .2s ease,background .2s ease}
 .pub-index-item[hidden]{display:none}
-.pub-timeline-date{z-index:1;justify-self:center;display:flex;flex-direction:column;align-items:center;justify-content:center;width:94px;min-height:62px;padding:10px 5px;border:1px solid var(--line-strong);border-radius:12px;background:var(--bg-deep);color:var(--text);font-variant-numeric:tabular-nums;text-align:center;transition:border-color .18s ease,background .18s ease,color .18s ease}
-.pub-timeline-date strong{font:800 .85rem/1.15 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.045em;white-space:nowrap}
-.pub-timeline-date small{margin-top:5px;color:var(--muted-2);font:700 .69rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}
-.pub-index-item>div{min-width:0;padding:22px 26px 24px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(115deg,rgba(103,212,255,.028),rgba(255,255,255,.012) 65%);transition:border-color .18s ease,background .18s ease}
-.pub-index-item[data-category="Primary WCT foundation"]>div{border-left:3px solid rgba(103,212,255,.68);background:linear-gradient(110deg,rgba(103,212,255,.065),rgba(255,255,255,.012) 70%)}
-.pub-index-item:hover>div,.pub-index-item:focus-within>div{border-color:rgba(103,212,255,.55);background:linear-gradient(110deg,rgba(103,212,255,.085),rgba(255,255,255,.016) 72%)}
-.pub-index-item:hover .pub-timeline-date,.pub-index-item:focus-within .pub-timeline-date{border-color:var(--accent);background:var(--panel-soft);color:var(--accent)}
-.pub-index-item:focus-within a:focus-visible{outline:2px solid var(--accent);outline-offset:5px;border-radius:3px}
-.pub-index-meta{margin:0 0 13px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 11px}
-.pub-index-cat{color:var(--accent);font-size:.71rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.pub-status{padding:4px 10px;border:1px solid rgba(103,212,255,.34);border-radius:999px;background:rgba(103,212,255,.065);font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
-.pub-index-item h2{margin:0;font:500 clamp(1.2rem,2.4vw,1.6rem)/1.34 Georgia,serif}
+.pub-index-item>.pub-timeline-date{position:relative;z-index:3;justify-self:center;display:grid;place-items:center;width:42px;height:28px;margin-top:1px;border:1px solid var(--line-strong);border-radius:999px;background:var(--bg-deep);color:var(--muted-2);font:700 .68rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.05em;font-variant-numeric:tabular-nums;transition:border-color .18s ease,color .18s ease,background .18s ease,box-shadow .18s ease,transform .18s ease}
+.pub-index-item.pub-past>.pub-timeline-date{border-color:rgba(182,255,218,.45);color:var(--accent-3);background:color-mix(in srgb,var(--bg-deep) 92%,var(--accent-3));box-shadow:0 0 12px rgba(182,255,218,.08)}
+.pub-index-item.pub-current>.pub-timeline-date{border-color:var(--accent);color:var(--text);background:color-mix(in srgb,var(--bg-deep) 84%,var(--accent));box-shadow:0 0 0 3px rgba(103,212,255,.07),0 0 20px rgba(103,212,255,.22);transform:scale(1.07)}
+.pub-index-item.pub-current>div{border-bottom-color:rgba(103,212,255,.28);background:linear-gradient(90deg,rgba(103,212,255,.035),transparent 68%)}
+.pub-index-meta{margin:0 0 10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.pub-index-cat{color:var(--accent);font-size:.69rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.pub-index-date{order:-1;display:inline-flex;align-items:center;padding:5px 9px;border:1px solid rgba(182,255,218,.2);border-radius:999px;background:rgba(182,255,218,.045);color:var(--text);font:800 .82rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;transition:color .18s ease,border-color .18s ease,background .18s ease}
+.pub-index-item.pub-current .pub-index-date{color:var(--accent-3);border-color:rgba(182,255,218,.38);background:rgba(182,255,218,.07)}
+.pub-status{padding:4px 10px;border:1px solid rgba(103,212,255,.4);border-radius:999px;background:rgba(103,212,255,.07);font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
+.pub-index-item h2{margin:0;font:500 clamp(1.15rem,2.4vw,1.55rem)/1.25 Georgia,serif}
 .pub-index-item h2 a{text-decoration:none}
-.pub-index-item code{display:inline-block;margin-top:14px;color:var(--muted-2);font-size:.75rem;overflow-wrap:anywhere}
-.pub-empty{grid-column:1/-1;padding:40px 0;color:var(--muted)}
-@media(max-width:600px){.pub-index-list{--pub-line-x:37px;gap:22px;padding-top:24px}.pub-index-list::before{top:55px;bottom:40px}.pub-index-item{grid-template-columns:74px minmax(0,1fr);gap:12px}.pub-timeline-date{width:68px;min-height:58px;padding:9px 3px;border-radius:10px}.pub-timeline-date strong{font-size:.69rem;letter-spacing:0}.pub-timeline-date small{font-size:.62rem}.pub-index-item>div{padding:16px 16px 19px}.pub-index-item h2{font-size:1.13rem;line-height:1.36}.pub-index-meta{gap:7px 9px}.pub-index-cat{font-size:.62rem}.pub-status{font-size:.6rem}}
-@media(prefers-reduced-motion:reduce){.pub-timeline-date,.pub-index-item>div{transition:none}}
+.pub-index-item code{display:inline-block;margin-top:10px;color:var(--muted-2);font-size:.72rem}
+.pub-empty{padding:40px 0;color:var(--muted)}
+@media(max-width:600px){.pub-index-date{font-size:.76rem;padding:4px 8px}.pub-index-list{--pub-line-x:37px}.pub-index-item{grid-template-columns:74px minmax(0,1fr);gap:14px;padding-top:27px}.pub-index-item>.pub-timeline-date{width:38px;height:26px;font-size:.64rem}.pub-index-item>div{padding-bottom:28px}}
+@media(prefers-reduced-motion:reduce){.pub-index-list::after,.pub-timeline-cursor,.pub-index-item>.pub-timeline-date,.pub-index-item>div,.pub-index-date{transition:none}}
+/* Keep the original animated rail and highlighted milestones; use dates instead of issue numbers. */
+.pub-index-item>.pub-timeline-date{display:flex;flex-direction:column;align-items:center;justify-content:center;width:88px;height:52px;padding:5px 4px;border-radius:12px;text-align:center;pointer-events:none;line-height:1}
+.pub-timeline-date strong{font:800 .8rem/1.15 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.035em;white-space:nowrap}
+.pub-timeline-date small{margin-top:5px;font:700 .67rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted-2);letter-spacing:.06em}
+.pub-index-item.pub-past>.pub-timeline-date small{color:var(--accent-3)}
+.pub-index-item.pub-current>.pub-timeline-date small{color:var(--text)}
+.pub-index-author{margin:16px 0 0!important;color:var(--muted)!important;font-size:.94rem}
+.pub-index-author strong,.pub-index-byline strong{color:var(--text)}
+.pub-index-byline{margin:11px 0 0;color:var(--muted);font-size:.82rem;line-height:1.5}
+.pub-index-item h2{line-height:1.32}
+.pub-index-item{cursor:pointer;scroll-margin-top:110px}
+.pub-index-item h2 a::after{content:"";position:absolute;inset:0;z-index:3;cursor:pointer}
+.pub-index-item:hover>div,.pub-index-item:focus-within>div{border-bottom-color:rgba(103,212,255,.45);background:linear-gradient(90deg,rgba(103,212,255,.075),transparent 74%)}
+.pub-index-item:hover>.pub-timeline-date,.pub-index-item:focus-within>.pub-timeline-date{border-color:var(--accent);color:var(--text);background:color-mix(in srgb,var(--bg-deep) 86%,var(--accent));box-shadow:0 0 0 3px rgba(103,212,255,.06),0 0 20px rgba(103,212,255,.14)}
+.pub-index-item:focus-within{outline:2px solid var(--accent);outline-offset:5px;border-radius:6px}
+@media(min-width:801px) and (prefers-reduced-motion:no-preference){
+  html{scroll-snap-type:y proximity;scroll-padding-top:clamp(85px,14vh,145px)}
+  .pub-index-item{scroll-snap-align:start;scroll-snap-stop:normal}
+}
+@media(max-width:600px){
+  .pub-index-item>.pub-timeline-date{width:68px;height:50px;padding:5px 2px;border-radius:10px}
+  .pub-timeline-date strong{font-size:.67rem;letter-spacing:0}
+  .pub-timeline-date small{font-size:.59rem}
+  .pub-index-item{scroll-margin-top:90px}
+  .pub-index-author{font-size:.84rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-snap-type:none;scroll-behavior:auto}.pub-index-item>.pub-timeline-date,.pub-index-item>div{transition:none}}
 """.strip()
 
 def publications_index(pubs: list[dict]) -> str:
@@ -375,8 +494,10 @@ def publications_index(pubs: list[dict]) -> str:
         f'{timeline_date(p)}<div>'
         f'<p class="pub-index-meta">'
         f'<span class="pub-index-cat">{esc(p["category"])}</span>'
+        f'<span class="pub-index-date">{esc(p["display_date"])}</span>'
         f'<span class="pub-status">{esc(p.get("status", "Preprint"))}</span></p>'
         f'<h2><a href="{p["slug"]}.html">{esc(p["title"])}</a></h2>'
+        f'<p class="pub-index-byline">By <strong>{AUTHOR}</strong></p>'
         f'<code>{p["doi"]}</code></div></article>'
         for p in chronological_pubs
     )
@@ -407,6 +528,7 @@ def publications_index(pubs: list[dict]) -> str:
 <a class="skip-link" href="#archive">Skip to publication list</a>
 <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>{AUTHOR}</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
 <main class="paper-shell"><header class="pub-index-head"><p class="paper-kicker">Scholarly archive</p><h1>Publications</h1>
+<p class="pub-index-author">Research archive by <strong>{AUTHOR}</strong></p>
 <!-- canonical-provenance:start -->
 <p class="canonical-provenance-intro"><strong>Wave Confinement Theory (WCT) is a research program developed by <a href="../researcher/">Richard J. Reyes</a> beginning in 2025.</strong> This archive is the canonical research chronology linking Reyes-authored releases to chronology dates, canonical citation DOIs, Zenodo records, and source artifacts. A chronology date can predate the creation of a later Zenodo revision or redeposit; record-number order is not treated as evidence of priority.</p>
 <!-- canonical-provenance:end -->
