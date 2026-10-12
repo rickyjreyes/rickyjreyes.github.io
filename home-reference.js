@@ -867,6 +867,7 @@
 
   // Mobile chapter controls: direct stage selection, independent of scroll position.
   if(theoryWrap && steps.length){
+    theoryWrap.closest('.wct-theory-scroll')?.classList.add('has-mobile-stage-nav');
     const makeControls=(bottom=false)=>{
       const nav=document.createElement('nav');
       nav.className='mobile-stage-nav'+(bottom?' stage-nav-bottom':'');
