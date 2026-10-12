@@ -1,0 +1,112 @@
+/* Mobile readiness pass, 2026-10-12. Desktop layouts and source records preserved. */
+@media (max-width:760px) {
+  :root { --mobile-header-height:68px; }
+  html {scroll-padding-top:calc(var(--mobile-header-height) + 12px)!important;}
+  main [id],section[id],article[id],header[id],footer[id] {scroll-margin-top:calc(var(--mobile-header-height) + 12px)!important;}
+  .site-header .nav-wrap {width:calc(100% - 28px)!important;min-height:var(--mobile-header-height)!important;gap:12px!important;}
+  .site-header .wordmark {min-height:58px!important;margin:0!important;padding:4px 0!important;gap:8px!important;max-width:calc(100% - 102px);font-size:.9rem!important;}
+  .site-header .wordmark .wct-wordmark-logo {width:46px!important;height:46px!important;flex:0 0 46px!important;object-fit:contain!important;}
+  .site-header .wordmark span:last-child {min-width:0;overflow-wrap:anywhere;}
+  .site-header .menu-button {display:inline-flex!important;align-items:center;justify-content:center;min-width:78px;min-height:44px;padding:9px 13px;font:700 .88rem/1.2 system-ui,sans-serif;}
+  .site-header #site-nav {top:calc(100% + 1px)!important;left:0!important;right:0!important;max-height:calc(100dvh - var(--mobile-header-height) - 12px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;z-index:1100;padding:9px!important;}
+  .site-header #site-nav a,.site-header #site-nav .nav-trigger {min-height:44px;display:flex;align-items:center;padding:11px 12px!important;}
+  .site-header #site-nav .nav-dropdown-link {min-height:44px;padding:9px 12px!important;}
+  .site-header #site-nav .nav-dropdown-shell {padding:4px 5px!important;}
+  main, .priority-shell,.overlap-shell,.lean-shell,.section-shell,.tool-wrap {min-width:0;}
+  img,video,canvas {max-width:100%;}
+  button,input,select,textarea {max-width:100%;}
+  input[type=search],input[type=text],select,textarea {font-size:16px;}
+  .table-wrap,.ledger-wrap,.priority-forecast-scroll,.lean-cross-scroll,.equation-formula,.audit-equation,.lean-equation {max-width:100%;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;}
+  .equation-formula mjx-container,.audit-equation mjx-container,.lean-equation mjx-container {max-width:none;}
+  /* Homepage: the existing stacked narrative remains the canonical reading order. */
+  .hero {min-height:0!important;gap:28px!important;padding-block:32px 48px!important;}
+  .hero h1 {font-size:clamp(2.15rem,10.8vw,3.7rem)!important;line-height:1.08!important;overflow-wrap:break-word;}
+  .hero-copy,.hero .wct-wrap,.wct-theory-visual-wrap,.wct-equation-visual,.wct-equation-copy {min-width:0;max-width:100%;}
+  .hero .wct-wrap {width:min(100%,390px)!important;margin-inline:auto;}
+  .hero .wct-wrap svg,.wct-theory-visual svg,.wct-equation-visual svg,.field-visual svg {max-width:100%;height:auto;}
+  .wct-theory-scroll,.wct-equation-build,.wct-equation-sticky,.technology-heading,.technology-lower {grid-template-columns:minmax(0,1fr)!important;}
+  .wct-theory-visual,.wct-equation-visual {max-height:min(55svh,460px);overflow:hidden;}
+  .wct-theory-steps,.wct-equation-copy,.wct-theory-step,.wct-equation-chain article {min-width:0;max-width:100%;}
+  .wct-theory-flow {white-space:normal!important;overflow-wrap:anywhere;}
+  .home-audit-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+  .home-audit-grid>div {min-width:0;}
+  .priority-spine {padding-left:30px!important;}
+  .priority-highlight::before {left:-26px!important;}
+  .priority-highlight::after {left:-13px!important;width:14px!important;}
+  /* Shared filters and verification explorers. */
+  .equation-toolbar,.audit-toolbar {position:static!important;top:auto!important;grid-template-columns:minmax(0,1fr)!important;padding:12px!important;gap:9px!important;}
+  .equation-toolbar>* ,.audit-toolbar>* {min-width:0;width:100%;max-width:100%;}
+  .equation-toolbar button,.audit-toolbar button,.equation-toolbar select,.audit-toolbar select {min-height:44px;}
+  .equation-status-grid,.status-summaries {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .equation-family,.equation-entry,.audit-section,.audit-card {min-width:0;}
+  .equation-entry,.audit-card {overflow-wrap:anywhere;}
+  .equation-formula,.audit-equation,.lean-equation {overflow-x:auto;min-width:0;}
+  .equation-formula mjx-container[display="true"],.audit-equation mjx-container[display="true"],.lean-equation mjx-container[display="true"] {font-size:95%!important;width:max-content;min-width:min-content;}
+  .lean-browser,.lean-hero-grid,.lean-cross {grid-template-columns:minmax(0,1fr)!important;}
+  .lean-index,.lean-detail {position:static!important;top:auto!important;max-height:none!important;min-width:0;}
+  .lean-index {max-height:min(46svh,360px)!important;overflow-y:auto!important;overscroll-behavior:contain;}
+  .lean-tier-grid {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .lean-detail pre,.lean-detail code,.audit-card pre {max-width:100%;overflow-x:auto;white-space:pre;}
+  /* Priority narrative: avoid fixed stages obscuring later content. */
+  .priority-shell {width:calc(100% - 24px)!important;padding-top:32px!important;}
+  .priority-head h1 {font-size:clamp(2rem,9.2vw,3.35rem)!important;line-height:1.08!important;overflow-wrap:anywhere;}
+  .priority-section {padding-block:32px!important;min-width:0;}
+  .priority-t1-shell,.priority-audit-top,.priority-proof-head,.priority-mech-stage,.priority-redesign-head {grid-template-columns:minmax(0,1fr)!important;}
+  .priority-t1-shell {overflow:visible!important;}
+  .priority-t1-tabs {display:flex!important;flex-flow:row nowrap!important;overflow-x:auto;max-width:100%;border-right:0!important;border-bottom:1px solid var(--line);overscroll-behavior-x:contain;}
+  .priority-t1-tab {flex:0 0 min(78vw,235px);min-height:52px;padding:10px 12px!important;}
+  .priority-mech-stage {position:relative!important;top:auto!important;height:auto!important;min-height:0!important;gap:12px!important;}
+  .priority-mech-track {padding:16px 0 38px!important;}
+  .priority-mech-step {min-height:0!important;}
+  .evidence-story-visual-wrap {position:relative!important;top:auto!important;}
+  .evidence-story-visual,.scrubbed-story-visual {height:auto!important;min-height:0!important;max-height:min(58svh,400px);}
+  .priority-shell .pd-review {max-width:100%;margin:20px 0 28px;padding:20px 0;}
+  .priority-shell .pd-chartscroll {overflow-x:auto;}
+  .priority-shell .pd-toolbar {gap:10px;}
+  .priority-shell .pd-filters,.priority-shell .pd-sorts {max-width:100%;}
+  .priority-shell .pd-toolbar button {min-height:40px;}
+  .priority-shell .pd-row,.priority-shell .pd-grouphead {grid-template-columns:minmax(0,1fr)!important;}
+  /* Card view for data tables in Priority and Overlap; original DOM, links and identifiers are retained. */
+  .priority-shell .table-wrap:has(table.mobile-data-cards),.overlap-shell .table-wrap:has(table.mobile-data-cards) {width:100%!important;max-width:100%!important;margin-inline:0!important;padding:0!important;overflow:visible!important;}
+  .priority-shell table.mobile-data-cards,.overlap-shell table.mobile-data-cards {display:block!important;min-width:0!important;width:100%!important;table-layout:auto!important;border:0!important;}
+  table.mobile-data-cards thead {position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%);}
+  table.mobile-data-cards tbody {display:grid!important;grid-template-columns:minmax(0,1fr);gap:12px;}
+  table.mobile-data-cards tr {display:block!important;min-width:0!important;width:100%!important;padding:12px 14px!important;border:1px solid var(--line)!important;border-radius:12px;background:rgba(255,255,255,.025);}
+  table.mobile-data-cards tr[hidden] {display:none!important;}
+  table.mobile-data-cards td {display:block!important;min-width:0!important;width:100%!important;max-width:100%!important;height:auto!important;padding:9px 0!important;border:0!important;border-bottom:1px solid rgba(170,201,225,.12)!important;white-space:normal!important;overflow-wrap:anywhere;line-height:1.55!important;}
+  table.mobile-data-cards td:last-child {border-bottom:0!important;}
+  table.mobile-data-cards td::before {content:attr(data-mobile-label);display:block!important;position:static!important;float:none!important;margin:0 0 4px!important;color:var(--accent,#67d4ff)!important;font:750 .65rem/1.3 system-ui,sans-serif!important;letter-spacing:.04em;text-transform:uppercase;}
+  table.mobile-data-cards td[data-mobile-label=""]::before {display:none!important;}
+  table.mobile-data-cards td a {overflow-wrap:anywhere;}
+  .overlap-shell .controls,.overlap-shell .track-controls,.overlap-shell .ledger-controls {flex-wrap:wrap;min-width:0;}
+  .overlap-shell .controls>*,.overlap-shell .track-controls>* {min-width:0;max-width:100%;}
+  .overlap-shell .timeline-tooltip {width:min(330px,calc(100vw - 26px))!important;max-height:min(60svh,430px)!important;overflow-y:auto;}
+  .overlap-shell .comparison-grid,.overlap-shell .comparison-pair {min-width:0;max-width:100%;}
+  .overlap-shell .comparison-pair {grid-template-columns:minmax(0,1fr)!important;overflow-wrap:anywhere;}
+  .overlap-shell .comparison-arrow {transform:rotate(90deg);justify-self:start;}
+  /* Concept graph: scroll the page normally, explicitly enter interaction mode to pan/drag. */
+  .graph-shell {grid-template-columns:minmax(0,1fr)!important;min-height:0!important;overflow:visible!important;}
+  .graph-stage {min-width:0;max-width:100%;}
+  .graph-stage svg {height:clamp(310px,56svh,520px)!important;touch-action:pan-y!important;}
+  .graph-stage.mobile-graph-interacting svg {touch-action:none!important;}
+  .graph-inspector {min-width:0;padding:16px!important;overflow-wrap:anywhere;}
+  .graph-hint {position:static!important;padding:10px 12px!important;font-size:.74rem!important;white-space:normal!important;}
+  .graph-mobile-controls {display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .graph-mobile-controls button {min-height:44px;min-width:44px;padding:9px 13px;border:1px solid var(--line-strong);border-radius:8px;background:#10243a;color:var(--text);font:700 .83rem system-ui,sans-serif;}
+  .graph-mobile-controls button[aria-pressed="true"] {border-color:var(--accent);background:rgba(103,212,255,.14);}
+  .graph-toolbar-note {color:var(--muted);font-size:.74rem;line-height:1.5;}
+  .tool-toolbar {display:grid!important;grid-template-columns:minmax(0,1fr)!important;}
+  .tool-toolbar>* {width:100%;min-width:0;max-width:100%;min-height:44px;}
+}
+@media (max-width:420px) {
+  .site-header .wordmark .wct-wordmark-logo {width:40px!important;height:40px!important;flex-basis:40px!important;}
+  .site-header .wordmark {font-size:.82rem!important;}
+  .hero h1 {font-size:clamp(2rem,10vw,2.8rem)!important;}
+  .priority-shell .pd-stats {grid-template-columns:repeat(2,minmax(0,1fr));}
+  .priority-shell .pd-stats>div {min-width:0;}
+  .overlap-shell .comparison-meta {grid-template-columns:1fr!important;}
+  .overlap-shell .verified-badge {grid-column:auto!important;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero *, .priority-shell *, .overlap-shell *, .graph-shell *, .lean-shell * {scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important;}
+}
