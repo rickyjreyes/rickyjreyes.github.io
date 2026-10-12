@@ -363,6 +363,12 @@
   let panning = false;
   let lastPoint = null;
   let showAllLabels = false;
+  let phoneGraphMode = false;
+  const activeTouches = new Map();
+  let pinchStart = null;
+  const graphStage = graphSvg.closest('.graph-stage');
+  const isPhone = window.matchMedia('(max-width:760px)');
+  const canInteract = event => event.pointerType !== 'touch' || !isPhone.matches || phoneGraphMode;
   function updateTransform() {
     graphScene.setAttribute('transform', `translate(${panX},${panY}) scale(${zoom})`);
   }
@@ -374,51 +380,96 @@
     const point = svgPoint(event);
     return { x: (point.x - panX) / zoom, y: (point.y - panY) / zoom };
   }
+  function zoomAt(factor,point={x:W/2,y:H/2}) {
+    const previous=zoom;
+    zoom=Math.max(.45,Math.min(3.2,zoom*factor));
+    panX=point.x-(point.x-panX)*(zoom/previous);
+    panY=point.y-(point.y-panY)*(zoom/previous);
+    updateTransform();
+  }
   function inspectNode(node) {
     nodes.forEach((item) => item.el.classList.toggle('is-selected', item === node));
     const connected = links.filter((link) => link.source === node || link.target === node).map((link) => link.source === node ? link.target.label : link.source.label).sort();
     graphInspector.innerHTML = `<span class="tool-tag">${escapeHTML(node.family)}</span><h3>${escapeHTML(node.label)}</h3><p>${escapeHTML(node.definition || 'Connected corpus concept.')}</p>${node.equation ? `<p class="mathline">${escapeHTML(node.equation)}</p>` : ''}<h4>Connections · ${connected.length}</h4><ul>${connected.map((label) => `<li>${escapeHTML(label)}</li>`).join('')}</ul>`;
   }
-  nodeLayer.addEventListener('pointerdown', (event) => {
-    const group = event.target.closest('.graph-node');
-    if (!group) return;
-    dragged = nodeMap.get(group.dataset.id);
-    graphSvg.setPointerCapture(event.pointerId);
-    inspectNode(dragged);
-  });
-  graphSvg.addEventListener('pointerdown', (event) => {
-    if (event.target.closest('.graph-node')) return;
-    panning = true;
-    lastPoint = svgPoint(event);
+  nodeLayer.addEventListener('pointerdown', event => {
+    const group=event.target.closest('.graph-node');
+    if(!group) return;
+    const node=nodeMap.get(group.dataset.id);
+    if(!node) return;
+    inspectNode(node);
+    if(!canInteract(event)) return;
+    if(event.pointerType==='touch' && activeTouches.size) return;
+    dragged=node;
     graphSvg.setPointerCapture(event.pointerId);
   });
-  graphSvg.addEventListener('pointermove', (event) => {
-    if (dragged) {
-      const point = graphPoint(event);
-      dragged.x = point.x;
-      dragged.y = point.y;
-      dragged.vx = 0;
-      dragged.vy = 0;
-      updateGraph();
-    } else if (panning) {
-      const point = svgPoint(event);
-      panX += point.x - lastPoint.x;
-      panY += point.y - lastPoint.y;
-      lastPoint = point;
-      updateTransform();
+  graphSvg.addEventListener('pointerdown', event => {
+    if(!canInteract(event)) return;
+    if(event.pointerType==='touch') {
+      activeTouches.set(event.pointerId,svgPoint(event));
+      if(activeTouches.size>=2) {
+        const [a,b]=Array.from(activeTouches.values()).slice(0,2);
+        pinchStart={distance:Math.max(1,Math.hypot(a.x-b.x,a.y-b.y)),
+          midpoint:{x:(a.x+b.x)/2,y:(a.y+b.y)/2}, zoom,panX,panY};
+        dragged=null;panning=false;
+        graphSvg.setPointerCapture(event.pointerId);
+        return;
+      }
+    }
+    if(event.target.closest('.graph-node')) return;
+    panning=true;
+    lastPoint=svgPoint(event);
+    graphSvg.setPointerCapture(event.pointerId);
+  });
+  graphSvg.addEventListener('pointermove', event => {
+    if(!canInteract(event)) return;
+    if(event.pointerType==='touch' && activeTouches.has(event.pointerId)) {
+      activeTouches.set(event.pointerId,svgPoint(event));
+      if(activeTouches.size>=2 && pinchStart) {
+        const [a,b]=Array.from(activeTouches.values()).slice(0,2);
+        const midpoint={x:(a.x+b.x)/2,y:(a.y+b.y)/2};
+        zoom=Math.max(.45,Math.min(3.2,pinchStart.zoom*Math.hypot(a.x-b.x,a.y-b.y)/pinchStart.distance));
+        panX=midpoint.x-(pinchStart.midpoint.x-pinchStart.panX)*(zoom/pinchStart.zoom);
+        panY=midpoint.y-(pinchStart.midpoint.y-pinchStart.panY)*(zoom/pinchStart.zoom);
+        updateTransform();return;
+      }
+    }
+    if(dragged) {
+      const point=graphPoint(event);
+      dragged.x=point.x;dragged.y=point.y;dragged.vx=0;dragged.vy=0;updateGraph();
+    } else if(panning && lastPoint) {
+      const point=svgPoint(event);
+      panX+=point.x-lastPoint.x;panY+=point.y-lastPoint.y;
+      lastPoint=point;updateTransform();
     }
   });
-  graphSvg.addEventListener('pointerup', () => { dragged = null; panning = false; });
-  graphSvg.addEventListener('pointercancel', () => { dragged = null; panning = false; });
-  graphSvg.addEventListener('wheel', (event) => {
+  function endPointer(event) {
+    if(event.pointerType==='touch') {
+      activeTouches.delete(event.pointerId);
+      if(activeTouches.size<2) pinchStart=null;
+    }
+    dragged=null;panning=false;lastPoint=null;
+  }
+  graphSvg.addEventListener('pointerup',endPointer);
+  graphSvg.addEventListener('pointercancel',endPointer);
+  graphSvg.addEventListener('lostpointercapture',endPointer);
+  graphSvg.addEventListener('wheel',event => {
     event.preventDefault();
-    const point = svgPoint(event);
-    const oldZoom = zoom;
-    zoom = Math.max(.45, Math.min(3.2, zoom * (event.deltaY < 0 ? 1.12 : .89)));
-    panX = point.x - (point.x - panX) * (zoom / oldZoom);
-    panY = point.y - (point.y - panY) * (zoom / oldZoom);
-    updateTransform();
-  }, { passive: false });
+    zoomAt(event.deltaY<0?1.12:.89,svgPoint(event));
+  },{passive:false});
+  const graphMobileToggle=document.getElementById('graphMobileToggle');
+  graphMobileToggle?.addEventListener('click',()=>{
+    phoneGraphMode=!phoneGraphMode;
+    activeTouches.clear();pinchStart=null;dragged=null;panning=false;lastPoint=null;
+    graphStage?.classList.toggle('mobile-graph-interacting',phoneGraphMode);
+    graphMobileToggle.setAttribute('aria-pressed',String(phoneGraphMode));
+    graphMobileToggle.textContent=phoneGraphMode?'Exit graph mode':'Explore graph';
+  });
+  document.getElementById('graphZoomIn')?.addEventListener('click',()=>zoomAt(1.25));
+  document.getElementById('graphZoomOut')?.addEventListener('click',()=>zoomAt(.8));
+  document.getElementById('graphFit')?.addEventListener('click',()=>{
+    zoom=1;panX=0;panY=0;updateTransform();
+  });
 
   function applyGraphFilter() {
     const query = graphSearch.value.trim().toLowerCase();
