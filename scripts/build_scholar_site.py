@@ -294,6 +294,8 @@ button.button{cursor:pointer;font-family:inherit}
 
 
 PUB_INDEX_CSS = """
+/* Publications: date-first chronology, retaining the site's existing palette. */
+html{scroll-behavior:auto}
 .pub-index-head{padding-bottom:42px;border-bottom:1px solid var(--line)}
 .pub-index-head h1{margin:0;font:500 clamp(3rem,7vw,6rem)/1 Georgia,serif;letter-spacing:-.04em}
 .pub-index-head p{max-width:760px;color:var(--muted)}
@@ -304,35 +306,34 @@ PUB_INDEX_CSS = """
 .pub-search input::placeholder{color:var(--muted-2)}
 .pub-facets{display:flex;flex-wrap:wrap;gap:26px}
 .pub-facet{margin:0;padding:0;border:0;min-width:200px;flex:1 1 220px}
-.pub-facet select{width:100%;padding:11px 13px;color:var(--text);border:1px solid var(--line-strong);border-radius:10px;background:rgba(255,255,255,.025);font:inherit}
+.pub-facet select{width:100%;padding:11px 13px;color:var(--text);border:1px solid var(--line-strong);border-radius:10px;background:var(--panel);font:inherit;color-scheme:dark}
+.pub-facet select option{color:var(--text);background:var(--panel)}
 .year-buttons{display:flex;flex-wrap:wrap;gap:8px}
 .year-buttons button{padding:9px 14px;color:var(--muted);border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.018);cursor:pointer;font-size:.78rem;font-weight:700}
 .year-buttons button[aria-pressed=true],.year-buttons button:hover{color:var(--text);border-color:rgba(103,212,255,.45);background:rgba(103,212,255,.08)}
 .pub-count{margin:30px 0 0;color:var(--muted-2);font-size:.82rem}
-.pub-index-list{--pub-line-x:36px;--pub-line-start:0px;--pub-line-span:0px;--pub-fill-height:0px;--pub-cursor-y:0px;position:relative;border-top:1px solid var(--line);margin-top:16px}
-.pub-index-list::before,.pub-index-list::after{content:"";position:absolute;z-index:0;left:var(--pub-line-x);top:var(--pub-line-start);width:2px;transform:translateX(-50%);border-radius:999px;pointer-events:none}
-.pub-index-list::before{height:var(--pub-line-span);background:linear-gradient(to bottom,rgba(103,212,255,.16),rgba(139,124,255,.14) 52%,rgba(182,255,218,.16))}
-.pub-index-list::after{height:var(--pub-fill-height);background:linear-gradient(to bottom,var(--accent),var(--accent-2) 54%,var(--accent-3));box-shadow:0 0 10px rgba(103,212,255,.2),0 0 20px rgba(139,124,255,.12);transition:height 120ms cubic-bezier(.22,.7,.24,1)}
-.pub-timeline-cursor{position:absolute;z-index:4;left:var(--pub-line-x);top:var(--pub-cursor-y);width:12px;height:12px;transform:translate(-50%,-50%);border:2px solid var(--bg-deep);border-radius:50%;background:var(--accent);box-shadow:0 0 0 1px var(--accent),0 0 20px rgba(103,212,255,.5);opacity:0;pointer-events:none;transition:top 120ms cubic-bezier(.22,.7,.24,1),opacity .16s ease}
-.pub-index-list.timeline-active .pub-timeline-cursor{opacity:1}
-.pub-index-item{position:relative;z-index:1;display:grid;grid-template-columns:72px minmax(0,1fr);gap:22px;padding:24px 0 0;border:0}
-.pub-index-item>div{min-width:0;padding:0 0 25px;border-bottom:1px solid var(--line);transition:border-color .2s ease,background .2s ease}
+.pub-index-list{--pub-line-x:52px;position:relative;display:grid;gap:28px;padding:28px 0 8px;border-top:1px solid var(--line);margin-top:16px}
+.pub-index-list::before{content:"";position:absolute;z-index:0;top:59px;bottom:44px;left:var(--pub-line-x);width:2px;transform:translateX(-50%);background:linear-gradient(to bottom,rgba(103,212,255,.65),rgba(139,124,255,.48) 52%,rgba(182,255,218,.45));pointer-events:none}
+.pub-index-list:not(.pub-has-results)::before{display:none}
+.pub-index-item{position:relative;z-index:1;display:grid;grid-template-columns:104px minmax(0,1fr);align-items:start;gap:20px;min-width:0}
 .pub-index-item[hidden]{display:none}
-.pub-index-item>span{position:relative;z-index:3;justify-self:center;display:grid;place-items:center;width:42px;height:28px;margin-top:1px;border:1px solid var(--line-strong);border-radius:999px;background:var(--bg-deep);color:var(--muted-2);font:700 .68rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.05em;font-variant-numeric:tabular-nums;transition:border-color .18s ease,color .18s ease,background .18s ease,box-shadow .18s ease,transform .18s ease}
-.pub-index-item.pub-past>span{border-color:rgba(182,255,218,.45);color:var(--accent-3);background:color-mix(in srgb,var(--bg-deep) 92%,var(--accent-3));box-shadow:0 0 12px rgba(182,255,218,.08)}
-.pub-index-item.pub-current>span{border-color:var(--accent);color:var(--text);background:color-mix(in srgb,var(--bg-deep) 84%,var(--accent));box-shadow:0 0 0 3px rgba(103,212,255,.07),0 0 20px rgba(103,212,255,.22);transform:scale(1.07)}
-.pub-index-item.pub-current>div{border-bottom-color:rgba(103,212,255,.28);background:linear-gradient(90deg,rgba(103,212,255,.035),transparent 68%)}
-.pub-index-meta{margin:0 0 10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
-.pub-index-cat{color:var(--accent);font-size:.69rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.pub-index-date{order:-1;display:inline-flex;align-items:center;padding:5px 9px;border:1px solid rgba(182,255,218,.2);border-radius:999px;background:rgba(182,255,218,.045);color:var(--text);font:800 .82rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;transition:color .18s ease,border-color .18s ease,background .18s ease}
-.pub-index-item.pub-current .pub-index-date{color:var(--accent-3);border-color:rgba(182,255,218,.38);background:rgba(182,255,218,.07)}
-.pub-status{padding:4px 10px;border:1px solid rgba(103,212,255,.4);border-radius:999px;background:rgba(103,212,255,.07);font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
-.pub-index-item h2{margin:0;font:500 clamp(1.15rem,2.4vw,1.55rem)/1.25 Georgia,serif}
+.pub-timeline-date{z-index:1;justify-self:center;display:flex;flex-direction:column;align-items:center;justify-content:center;width:94px;min-height:62px;padding:10px 5px;border:1px solid var(--line-strong);border-radius:12px;background:var(--bg-deep);color:var(--text);font-variant-numeric:tabular-nums;text-align:center;transition:border-color .18s ease,background .18s ease,color .18s ease}
+.pub-timeline-date strong{font:800 .85rem/1.15 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.045em;white-space:nowrap}
+.pub-timeline-date small{margin-top:5px;color:var(--muted-2);font:700 .69rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}
+.pub-index-item>div{min-width:0;padding:22px 26px 24px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(115deg,rgba(103,212,255,.028),rgba(255,255,255,.012) 65%);transition:border-color .18s ease,background .18s ease}
+.pub-index-item[data-category="Primary WCT foundation"]>div{border-left:3px solid rgba(103,212,255,.68);background:linear-gradient(110deg,rgba(103,212,255,.065),rgba(255,255,255,.012) 70%)}
+.pub-index-item:hover>div,.pub-index-item:focus-within>div{border-color:rgba(103,212,255,.55);background:linear-gradient(110deg,rgba(103,212,255,.085),rgba(255,255,255,.016) 72%)}
+.pub-index-item:hover .pub-timeline-date,.pub-index-item:focus-within .pub-timeline-date{border-color:var(--accent);background:var(--panel-soft);color:var(--accent)}
+.pub-index-item:focus-within a:focus-visible{outline:2px solid var(--accent);outline-offset:5px;border-radius:3px}
+.pub-index-meta{margin:0 0 13px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 11px}
+.pub-index-cat{color:var(--accent);font-size:.71rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.pub-status{padding:4px 10px;border:1px solid rgba(103,212,255,.34);border-radius:999px;background:rgba(103,212,255,.065);font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
+.pub-index-item h2{margin:0;font:500 clamp(1.2rem,2.4vw,1.6rem)/1.34 Georgia,serif}
 .pub-index-item h2 a{text-decoration:none}
-.pub-index-item code{display:inline-block;margin-top:10px;color:var(--muted-2);font-size:.72rem}
-.pub-empty{padding:40px 0;color:var(--muted)}
-@media(max-width:600px){.pub-index-date{font-size:.76rem;padding:4px 8px}.pub-index-list{--pub-line-x:26px}.pub-index-item{grid-template-columns:52px minmax(0,1fr);gap:14px;padding-top:21px}.pub-index-item>span{width:38px;height:26px;font-size:.64rem}.pub-index-item>div{padding-bottom:22px}}
-@media(prefers-reduced-motion:reduce){.pub-index-list::after,.pub-timeline-cursor,.pub-index-item>span,.pub-index-item>div,.pub-index-date{transition:none}}
+.pub-index-item code{display:inline-block;margin-top:14px;color:var(--muted-2);font-size:.75rem;overflow-wrap:anywhere}
+.pub-empty{grid-column:1/-1;padding:40px 0;color:var(--muted)}
+@media(max-width:600px){.pub-index-list{--pub-line-x:37px;gap:22px;padding-top:24px}.pub-index-list::before{top:55px;bottom:40px}.pub-index-item{grid-template-columns:74px minmax(0,1fr);gap:12px}.pub-timeline-date{width:68px;min-height:58px;padding:9px 3px;border-radius:10px}.pub-timeline-date strong{font-size:.69rem;letter-spacing:0}.pub-timeline-date small{font-size:.62rem}.pub-index-item>div{padding:16px 16px 19px}.pub-index-item h2{font-size:1.13rem;line-height:1.36}.pub-index-meta{gap:7px 9px}.pub-index-cat{font-size:.62rem}.pub-status{font-size:.6rem}}
+@media(prefers-reduced-motion:reduce){.pub-timeline-date,.pub-index-item>div{transition:none}}
 """.strip()
 
 def publications_index(pubs: list[dict]) -> str:
@@ -343,18 +344,41 @@ def publications_index(pubs: list[dict]) -> str:
     def search_blob(p: dict) -> str:
         return " ".join([p["title"], p["category"], p.get("status", ""), p["doi"]]).lower()
 
+
+    # Date ordering is only for presentation; archival publication IDs are unchanged.
+    # Month-only records follow exact-day records in their month without an invented day.
+    chronological_pubs = sorted(
+        pubs,
+        key=lambda p: (
+            p["date"][:7],
+            int(p["date"][8:10]) if len(p["date"]) == 10 else 32,
+            p["n"],
+        ),
+    )
+    month_labels = ("JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC")
+
+    def timeline_date(p: dict) -> str:
+        parts = p["date"].split("-")
+        label = month_labels[int(parts[1]) - 1]
+        if len(parts) == 3:
+            label += f" {int(parts[2]):02d}"
+        return (
+            f'<time class="pub-timeline-date" datetime="{esc(p["date"])}" '
+            f'aria-label="{esc(p["display_date"])}"><strong>{label}</strong>'
+            f'<small>{parts[0]}</small></time>'
+        )
+
     items = "\n".join(
         f'<article class="pub-index-item" data-category="{esc(p["category"])}" '
         f'data-status="{esc(p.get("status", "Preprint"))}" data-year="{p["date"][:4]}" '
         f'data-search="{esc(search_blob(p))}">'
-        f'<span>{p["n"]:02d}</span><div>'
+        f'{timeline_date(p)}<div>'
         f'<p class="pub-index-meta">'
         f'<span class="pub-index-cat">{esc(p["category"])}</span>'
-        f'<span class="pub-index-date">{esc(p["display_date"])}</span>'
         f'<span class="pub-status">{esc(p.get("status", "Preprint"))}</span></p>'
         f'<h2><a href="{p["slug"]}.html">{esc(p["title"])}</a></h2>'
         f'<code>{p["doi"]}</code></div></article>'
-        for p in pubs
+        for p in chronological_pubs
     )
 
     cat_options = "".join(
@@ -381,9 +405,12 @@ def publications_index(pubs: list[dict]) -> str:
 <style>{PUB_INDEX_CSS}</style>
 </head><body>
 <a class="skip-link" href="#archive">Skip to publication list</a>
-<header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>{AUTHOR}</span></a><nav class="paper-nav" aria-label="Publication navigation"><a href="../#start">Start here</a><a href="../#about">About</a></nav></div></header>
+<header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>{AUTHOR}</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
 <main class="paper-shell"><header class="pub-index-head"><p class="paper-kicker">Scholarly archive</p><h1>Publications</h1>
-<p>The complete, chronological archive of {len(pubs)} archival releases. Each release has its own landing page with a plain-language overview, a research-status label, DOI links, and Highwire Press, Dublin Core, and Schema.org ScholarlyArticle metadata.</p>
+<!-- canonical-provenance:start -->
+<p class="canonical-provenance-intro"><strong>Wave Confinement Theory (WCT) is a research program developed by <a href="../researcher/">Richard J. Reyes</a> beginning in 2025.</strong> This archive is the canonical research chronology linking Reyes-authored releases to chronology dates, canonical citation DOIs, Zenodo records, and source artifacts. A chronology date can predate the creation of a later Zenodo revision or redeposit; record-number order is not treated as evidence of priority.</p>
+<!-- canonical-provenance:end -->
+<p>The complete, chronological archive of {len(pubs)} DOI-archived research releases. Each release has a canonical local landing page with citation, provenance, research-status, and traceability metadata.</p>
 <div class="export-links"><a class="button secondary" href="../publications.bib">BibTeX</a><a class="button secondary" href="../publications.ris">RIS</a><a class="button secondary" href="../publications.json">JSON</a><a class="button secondary" href="../feed.xml">Atom feed</a></div></header>
 <form class="pub-controls" role="search" aria-label="Filter publications" onsubmit="return false">
 <div class="pub-search"><label for="pub-q">Search titles, categories, and status</label>
@@ -397,7 +424,7 @@ def publications_index(pubs: list[dict]) -> str:
 <div class="year-buttons" data-year-buttons><button type="button" data-year="" aria-pressed="true">All</button>{year_btns}</div></fieldset>
 </div></form>
 <p class="pub-count" role="status" aria-live="polite" data-pub-count>Showing all {len(pubs)} releases.</p>
-<section class="pub-index-list" id="archive">{items}
+<section class="pub-index-list pub-has-results" id="archive">{items}
 <p class="pub-empty" data-pub-empty hidden>No publications match the current filters. <button type="button" class="button secondary" data-pub-reset>Clear filters</button></p></section></main>
 <footer class="paper-footer"><div class="section-shell"><a href="../">← Research home</a><span>{len(pubs)} archival releases</span></div></footer>
 <script>
@@ -412,79 +439,20 @@ def publications_index(pubs: list[dict]) -> str:
   var archive=document.getElementById('archive');
   var total=items.length;
   var year='';
-  var railRaf=0;
-  var cursor=null;
-  var stepLocked=false;
-  var stepTimer=0;
-  if(archive){{
-    cursor=document.createElement('span');
-    cursor.className='pub-timeline-cursor';
-    cursor.setAttribute('aria-hidden','true');
-    archive.prepend(cursor);
-  }}
-  function clamp(v,a,b){{return Math.max(a,Math.min(b,v));}}
-  function nodeCenter(item,archiveRect){{
-    var node=item.querySelector(':scope > span');
-    var r=(node||item).getBoundingClientRect();
-    return r.top+r.height*.5-archiveRect.top;
-  }}
-  function updateDateRail(){{
-    if(!archive)return;
-    var shown=items.filter(function(it){{return !it.hidden;}});
-    items.forEach(function(it){{it.classList.remove('pub-past','pub-current');}});
-    if(!shown.length){{
-      archive.classList.remove('timeline-active');
-      archive.style.setProperty('--pub-line-span','0px');
-      archive.style.setProperty('--pub-fill-height','0px');
-      return;
-    }}
-    var ar=archive.getBoundingClientRect();
-    var firstY=nodeCenter(shown[0],ar);
-    var lastY=nodeCenter(shown[shown.length-1],ar);
-    var span=Math.max(0,lastY-firstY);
-    archive.style.setProperty('--pub-line-start',firstY.toFixed(2)+'px');
-    archive.style.setProperty('--pub-line-span',span.toFixed(2)+'px');
-
-    var vh=window.innerHeight||1;
-    var doc=document.documentElement;
-    var maxScroll=Math.max(1,doc.scrollHeight-vh);
-    var remaining=Math.max(0,maxScroll-window.scrollY);
-    var bottomEase=clamp(1-remaining/(vh*.9),0,1);
-    var anchor=vh*(.52+.38*bottomEase);
-    var cursorY=clamp(anchor-ar.top,firstY,lastY);
-    if(remaining<3)cursorY=lastY;
-
-    archive.style.setProperty('--pub-cursor-y',cursorY.toFixed(2)+'px');
-    archive.style.setProperty('--pub-fill-height',Math.max(0,cursorY-firstY).toFixed(2)+'px');
-    archive.classList.toggle('timeline-active',cursorY>firstY+1||ar.top<anchor);
-
-    var current=0,dist=Infinity;
-    shown.forEach(function(it,i){{
-      var y=nodeCenter(it,ar);
-      if(y<=cursorY+.5)it.classList.add('pub-past');
-      var d=Math.abs(y-cursorY);
-      if(d<dist){{dist=d;current=i;}}
-    }});
-    if(remaining<3)current=shown.length-1;
-    shown[current].classList.add('pub-current','pub-past');
-  }}
-  function scheduleDateRail(){{
-    if(railRaf)return;
-    railRaf=requestAnimationFrame(function(){{railRaf=0;updateDateRail();}});
-  }}
   function apply(){{
     var term=(q.value||'').trim().toLowerCase();
-    var c=cat.value, s=status.value, shown=0;
+    var c=cat.value,s=status.value,shown=0;
     items.forEach(function(it){{
       var ok=(!term||it.dataset.search.indexOf(term)>-1)
         &&(!c||it.dataset.category===c)
         &&(!s||it.dataset.status===s)
         &&(!year||it.dataset.year===year);
-      it.hidden=!ok;if(ok)shown++;
+      it.hidden=!ok;
+      if(ok)shown++;
     }});
     if(empty)empty.hidden=shown!==0;
+    if(archive)archive.classList.toggle('pub-has-results',shown!==0);
     if(count)count.textContent=shown===total?('Showing all '+total+' releases.'):('Showing '+shown+' of '+total+' releases.');
-    scheduleDateRail();
   }}
   q&&q.addEventListener('input',apply);
   cat&&cat.addEventListener('change',apply);
@@ -501,47 +469,10 @@ def publications_index(pubs: list[dict]) -> str:
     yearWrap.querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',String(x.dataset.year===''));}});
     apply();
   }});
-  function visibleItems(){{
-    return items.filter(function(it){{return !it.hidden;}});
-  }}
-  function currentVisibleIndex(shown){{
-    var current=archive&&archive.querySelector('.pub-index-item.pub-current:not([hidden])');
-    var index=shown.indexOf(current);
-    if(index>-1)return index;
-    var anchor=(window.innerHeight||1)*.52;
-    var best=0,dist=Infinity;
-    shown.forEach(function(it,i){{
-      var r=it.getBoundingClientRect();
-      var d=Math.abs((r.top+r.bottom)*.5-anchor);
-      if(d<dist){{dist=d;best=i;}}
-    }});
-    return best;
-  }}
-  function stepPublication(e){{
-    if(!archive||!e||e.ctrlKey||Math.abs(e.deltaY)<8)return;
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||window.matchMedia('(max-width: 760px)').matches)return;
-    var shown=visibleItems();
-    if(shown.length<2)return;
-    var current=currentVisibleIndex(shown);
-    var direction=e.deltaY>0?1:-1;
-    var next=current+direction;
-    if(next<0||next>=shown.length)return;
-    e.preventDefault();
-    if(stepLocked)return;
-    stepLocked=true;
-    shown[next].scrollIntoView({{behavior:'smooth',block:'center'}});
-    clearTimeout(stepTimer);
-    stepTimer=setTimeout(function(){{
-      stepLocked=false;
-      updateDateRail();
-    }},460);
-  }}
-  archive&&archive.addEventListener('wheel',stepPublication,{{passive:false}});
-  window.addEventListener('scroll',scheduleDateRail,{{passive:true}});
-  window.addEventListener('resize',scheduleDateRail,{{passive:true}});
-  updateDateRail();
+  apply();
 }})();
 </script>
+<script src="../site-nav.js" defer></script>
 </body></html>"""
 
 
