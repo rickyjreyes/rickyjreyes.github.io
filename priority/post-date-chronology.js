@@ -68,14 +68,20 @@
     chart.innerHTML = lanes.map(lane => {
       const data=records.filter(r => r.kind === lane.kind).sort((a,b)=>a.days-b.days);
       const occupied=[];
+      const duplicateCounts=new Map();
+      const seenDuplicates=new Map();
+      data.forEach(r=>duplicateCounts.set(r.days,(duplicateCounts.get(r.days)||0)+1));
       const points=data.map(r => {
+        const index=seenDuplicates.get(r.days)||0;
+        seenDuplicates.set(r.days,index+1);
+        const offset=(index-(duplicateCounts.get(r.days)-1)/2)*19;
         let level=0;
         while (occupied[level] != null && r.days-occupied[level]<31) level++;
         occupied[level]=r.days;
         const top=5+level*22;
         const special=r.id==='PD-11'?' institutional':'';
         const dim=filter!=='all'&&filter!==r.kind?' is-dim':'';
-        return '<button type="button" class="pd-mark '+lane.kind+special+dim+(selected===r.id?' is-selected':'')+'" data-pd-select="'+r.id+'" style="left:'+pos(r.days)+';--mark-top:'+top+'px" title="'+esc(r.id+' · '+r.title+' · '+r.days+' days')+'" aria-label="'+esc('Open '+r.id+': '+r.title+', '+r.days+' days after earlier record')+'"><span>'+r.id.slice(3)+'</span></button>';
+        return '<button type="button" class="pd-mark '+lane.kind+special+dim+(selected===r.id?' is-selected':'')+'" data-pd-select="'+r.id+'" style="left:calc('+pos(r.days)+' + '+offset+'px);--mark-top:'+top+'px" title="'+esc(r.id+' · '+r.title+' · '+r.days+' days')+'" aria-label="'+esc('Open '+r.id+': '+r.title+', '+r.days+' days after earlier record')+'"><span>'+r.id.slice(3)+'</span></button>';
       }).join('');
       const highest=occupied.length;
       return '<div class="pd-lane"><div class="pd-lane-title"><strong>'+esc(lane.label)+'</strong><span>'+esc(lane.sub)+'</span></div><div class="pd-track '+lane.kind+'" style="min-height:'+Math.max(122,highest*22+35)+'px"><span class="pd-track-line"></span>'+points+'</div></div>';
