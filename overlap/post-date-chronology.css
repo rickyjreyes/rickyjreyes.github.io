@@ -16,13 +16,13 @@
 .pd-lane,.pd-axis{display:grid;grid-template-columns:190px minmax(0,1fr);gap:18px}
 .pd-lane-title{padding-top:15px}.pd-lane-title strong{display:block;color:#b6ffda;text-transform:uppercase;font-size:.65rem;letter-spacing:.065em;line-height:1.35}.pd-lane-title span{display:block;max-width:170px;color:var(--muted);font-size:.66rem;line-height:1.4;margin-top:5px}
 .pd-lane:has(.pd-track.wct) .pd-lane-title strong{color:#9385ff}
-.pd-track{position:relative;margin:10px 12px 2px 1px}.pd-track-line{position:absolute;left:0;right:0;top:36px;height:1px;background:rgba(156,176,193,.56)}
+.pd-track{position:relative;margin:10px 12px 2px 1px}.pd-track-line{position:absolute;left:0;right:0;top:104px;height:1px;background:rgba(156,176,193,.56)}
 .pd-track-line::before{content:"";position:absolute;left:0;top:-3px;width:7px;height:7px;border-radius:50%;background:#b6ffda}
 .pd-track.wct .pd-track-line::before{background:#9385ff}
-.pd-mark{position:absolute;z-index:2;top:calc(var(--mark-top) + 0px);transform:translateX(-50%);appearance:none;border:0;background:transparent;color:#b6ffda;cursor:pointer;min-width:27px;height:62px;padding:0}
-.pd-mark::before{content:"";position:absolute;top:20px;left:50%;height:calc(36px - var(--mark-top));border-left:1px dashed rgba(182,255,218,.40)}
-.pd-mark::after{content:"";position:absolute;top:53px;left:50%;width:7px;height:7px;transform:translate(-50%,-50%);border-radius:50%;background:currentColor;box-shadow:0 0 0 3px #0c1c2d}
-.pd-mark span{position:absolute;left:50%;top:0;transform:translateX(-50%);font-size:.59rem;letter-spacing:.02em;font-weight:800}
+.pd-mark{position:absolute;z-index:2;top:0;transform:translateX(-50%);appearance:none;border:0;background:transparent;color:#b6ffda;cursor:pointer;min-width:27px;height:110px;padding:0}
+.pd-mark::before{content:"";position:absolute;top:calc(var(--mark-top) + 13px);left:50%;height:calc(104px - var(--mark-top) - 13px);border-left:1px dashed rgba(182,255,218,.40)}
+.pd-mark::after{content:"";position:absolute;top:104px;left:50%;width:7px;height:7px;transform:translate(-50%,-50%);border-radius:50%;background:currentColor;box-shadow:0 0 0 3px #0c1c2d}
+.pd-mark span{position:absolute;left:50%;top:var(--mark-top);transform:translateX(-50%);font-size:.59rem;letter-spacing:.02em;font-weight:800}
 .pd-mark.wct{color:#9385ff}.pd-mark.institutional{color:#f0c987}.pd-mark.institutional::after{border-radius:1px;transform:translate(-50%,-50%) rotate(45deg)}
 .pd-mark.is-dim{opacity:.22}.pd-mark.is-selected::after,.pd-mark:focus-visible::after{box-shadow:0 0 0 3px #0c1c2d,0 0 0 5px currentColor}
 .pd-mark:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:4px}
