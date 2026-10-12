@@ -26,7 +26,7 @@
   .hero .wct-wrap {width:min(100%,390px)!important;margin-inline:auto;}
   .hero .wct-wrap svg,.wct-theory-visual svg,.wct-equation-visual svg,.field-visual svg {max-width:100%;height:auto;}
   .wct-theory-scroll,.wct-equation-build,.wct-equation-sticky,.technology-heading,.technology-lower {grid-template-columns:minmax(0,1fr)!important;}
-  .wct-theory-visual,.wct-equation-visual {max-height:min(55svh,460px);overflow:hidden;}
+  .wct-theory-visual,.wct-equation-visual {max-width:100%;height:auto!important;min-height:0;overflow:visible!important;}
   .wct-theory-steps,.wct-equation-copy,.wct-theory-step,.wct-equation-chain article {min-width:0;max-width:100%;}
   .wct-theory-flow {white-space:normal!important;overflow-wrap:anywhere;}
   .home-audit-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -81,6 +81,9 @@
   table.mobile-data-cards td a {overflow-wrap:anywhere;}
   .overlap-shell .controls,.overlap-shell .track-controls,.overlap-shell .ledger-controls {flex-wrap:wrap;min-width:0;}
   .overlap-shell .controls>*,.overlap-shell .track-controls>* {min-width:0;max-width:100%;}
+  .overlap-shell .chronology-section {max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;}
+  .overlap-shell .timeline-shell,.overlap-shell .timeline-axis {min-width:620px;}
+  .overlap-shell .timeline-month {min-width:22px;}
   .overlap-shell .timeline-tooltip {width:min(330px,calc(100vw - 26px))!important;max-height:min(60svh,430px)!important;overflow-y:auto;}
   .overlap-shell .comparison-grid,.overlap-shell .comparison-pair {min-width:0;max-width:100%;}
   .overlap-shell .comparison-pair {grid-template-columns:minmax(0,1fr)!important;overflow-wrap:anywhere;}
