@@ -455,7 +455,7 @@
     const mobileCSS = document.createElement('link');
     mobileCSS.id = 'wct-mobile-ready-css';
     mobileCSS.rel = 'stylesheet';
-    mobileCSS.href = '/mobile-ready.css?v=20261012-2';
+    mobileCSS.href = '/mobile-ready.css?v=20261012-mobile-nav';
     document.head.appendChild(mobileCSS);
   }
   if (!document.getElementById('wct-mobile-ready-script')) {
@@ -467,7 +467,7 @@
   }
 
   const core = document.createElement('script');
-  core.src = '/site-nav-core.js?v=20260826-tools-pages';
+  core.src = '/site-nav-core.js?v=20261012-mobile-menu';
   core.async = false;
   core.addEventListener('load', enhanceNavigation);
   document.head.appendChild(core);
