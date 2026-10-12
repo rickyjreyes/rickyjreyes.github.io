@@ -1501,6 +1501,7 @@
       });
     };
     stories.forEach(s=>{
+      s.story.classList.add('has-mobile-stage-nav');
       const makeNav=bottom=>{
         const nav=document.createElement('nav');
         nav.className='mobile-stage-nav story-mobile-nav'+(bottom?' stage-nav-bottom':'');
