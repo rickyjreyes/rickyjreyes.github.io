@@ -229,6 +229,34 @@
         .identity-links.profile-links{grid-template-columns:1fr;max-width:480px}
         .about-section.has-portrait{grid-template-columns:1fr}.about-section.has-portrait .about-facts{grid-column:auto}.about-portrait{position:static;width:min(100%,390px)}.wavelock-card-logo{width:76px;height:76px}.frozen-release-inner{grid-template-columns:auto 1fr}.frozen-release-link{grid-column:2}
       }
+      /* Tablet portrait uses the same navigable drawer rather than squeezing
+         nine desktop destinations next to a full-size wordmark. */
+      @media(min-width:761px) and (max-width:1024px){
+        html{scroll-padding-top:82px!important}
+        main [id],section[id],article[id],header[id],footer[id]{scroll-margin-top:82px!important}
+        .site-header .nav-wrap{width:calc(100% - 36px)!important;min-height:68px!important;gap:12px!important;position:static!important}
+        .site-header .wordmark{min-height:58px!important;margin:0!important;padding:4px 0!important;gap:9px!important}
+        .site-header .wordmark .wct-wordmark-logo{width:46px!important;height:46px!important}
+        .site-header .menu-button{display:inline-flex!important;align-items:center;justify-content:center;min-width:88px;min-height:44px;padding:9px 14px}
+        .site-header #site-nav:not(.open){display:none!important}
+        .site-header #site-nav.open{display:flex!important}
+        .site-header #site-nav{position:absolute!important;top:100%!important;left:0!important;right:0!important;width:100%!important;
+          max-height:calc(100dvh - 68px - env(safe-area-inset-bottom,0px))!important;
+          flex-direction:column!important;align-items:stretch!important;gap:3px!important;
+          overflow-x:hidden!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+          padding:10px 18px calc(22px + env(safe-area-inset-bottom,0px))!important;
+          border:1px solid var(--line,rgba(170,201,225,.16))!important;border-radius:0 0 16px 16px!important;
+          background:rgba(4,10,18,.99)!important;box-shadow:0 20px 60px rgba(0,0,0,.5)!important}
+        .site-header #site-nav>a,.site-header #site-nav .nav-trigger{display:flex!important;width:100%!important;min-height:50px!important;align-items:center!important;justify-content:space-between!important;padding:12px 14px!important;text-align:left!important;border-radius:9px!important;font-size:.91rem!important}
+        .site-header #site-nav .nav-group{width:100%!important;flex:0 0 auto!important}
+        .site-header #site-nav .nav-trigger{cursor:pointer!important}
+        .site-header #site-nav .nav-group>.nav-dropdown{position:static!important;top:auto!important;left:auto!important;width:100%!important;min-width:0!important;max-width:none!important;padding:0!important;transform:none!important}
+        .site-header #site-nav .nav-group:not(.open)>.nav-dropdown{display:none!important}
+        .site-header #site-nav .nav-group.open>.nav-dropdown{display:block!important}
+        .site-header #site-nav .nav-dropdown-shell{margin:2px 0 8px 10px!important;padding:4px 5px 4px 9px!important;border:0!important;border-left:2px solid rgba(103,212,255,.25)!important;border-radius:0 9px 9px 0!important;background:rgba(103,212,255,.035)!important;box-shadow:none!important}
+        .site-header #site-nav .nav-dropdown-link{display:block!important;min-height:52px!important;margin:2px 0!important;padding:11px 12px!important;white-space:normal!important}
+        .site-header #site-nav a:focus-visible,.site-header #site-nav button:focus-visible,.site-header .menu-button:focus-visible{outline:2px solid var(--accent,#67d4ff)!important;outline-offset:2px!important}
+      }
       @media(max-width:700px){.patent-home-heading{grid-template-columns:1fr;gap:16px}.patent-home-grid{grid-template-columns:1fr}.patent-home-card{min-height:auto}}
     `;
     document.head.appendChild(style);
@@ -255,7 +283,7 @@
     });
   };
 
-  const mobileNav = window.matchMedia('(max-width: 760px)');
+  const mobileNav = window.matchMedia('(max-width: 1024px)');
   nav.querySelectorAll('.nav-trigger').forEach((trigger) => {
     const group = trigger.closest('.nav-group');
     group.addEventListener('mouseenter', () => {
