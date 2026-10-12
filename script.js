@@ -1,7 +1,8 @@
 (() => {
   const header=document.querySelector('.site-header'),menu=document.querySelector('.menu-button'),nav=document.querySelector('#site-nav'),year=document.querySelector('#year');
   const updateHeader=()=>header?.classList.toggle('scrolled',scrollY>12); updateHeader(); addEventListener('scroll',updateHeader,{passive:true});
-  if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});nav.addEventListener('click',e=>{if(!e.target.closest('a'))return;nav.classList.remove('open');menu.setAttribute('aria-expanded','false');});document.addEventListener('click',e=>{if(nav.contains(e.target)||menu.contains(e.target))return;nav.classList.remove('open');menu.setAttribute('aria-expanded','false');});}
+  // Navigation is owned by site-nav-core.js on every page; do not attach a
+  // second homepage menu controller to the same DOM elements.
   if(year)year.textContent=String(new Date().getFullYear());
 
   const utilityStyle=document.createElement('style');utilityStyle.textContent=`.orientation-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important}.orientation-grid li:last-child{grid-column:auto!important}.clickable-card{position:relative;cursor:pointer;transition:transform 180ms ease,border-color 180ms ease,background 180ms ease}.clickable-card:hover{transform:translateY(-4px);border-color:rgba(103,212,255,.38)!important;background-color:rgba(103,212,255,.035)}.clickable-card:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.clickable-card a{position:relative;z-index:2}`;document.head.appendChild(utilityStyle);
