@@ -36,7 +36,15 @@
       ]
     },
     { type: 'link', href: '/reproduce/', label: 'Reproduce' },
-    { type: 'link', href: '/tools/', label: 'Tools' },
+    {
+      type: 'menu', label: 'Tools', items: [
+        ['/tools/', 'All Tools', 'Open the complete research tools hub'],
+        ['/tools/glossary/', 'Glossary', 'Alphabetical concepts, definitions, and notation'],
+        ['/tools/timeline/', 'Timeline', 'Dated research chronology and releases'],
+        ['/tools/graph/', 'Graph', 'Interactive concept and corpus connections'],
+        ['/tools/videos/', 'Videos', 'Playlist videos with individual descriptions']
+      ]
+    },
     { type: 'link', href: '/foundations/', label: 'Foundations' }
   ];
 
@@ -170,6 +178,52 @@
         #site-nav .nav-group.open>.nav-dropdown{display:block}
         #site-nav .nav-group.open>.nav-trigger .nav-caret{transform:rotate(180deg);color:var(--accent,#67d4ff)}
         #site-nav .nav-dropdown-link{margin-left:8px;padding:9px 12px 9px 16px;border-radius:7px;white-space:normal}
+        /* Full-width, vertically scrollable mobile navigation. The menu includes
+           Publications, Priority, Adoption, Patents, Equations, Verify,
+           Reproduce, Tools, Foundations and every submenu destination. */
+        .site-header{overflow:visible!important}
+        .site-header .nav-wrap{position:static!important}
+        .site-header #site-nav{
+          position:absolute!important;top:100%!important;left:0!important;right:0!important;
+          width:100%!important;max-height:calc(100vh - 68px - env(safe-area-inset-bottom,0px))!important;
+          max-height:calc(100dvh - 68px - env(safe-area-inset-bottom,0px))!important;
+          overflow-x:hidden!important;overflow-y:auto!important;
+          overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch;
+          align-items:stretch!important;gap:3px!important;
+          padding:10px max(14px,env(safe-area-inset-left,0px)) calc(22px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-right,0px))!important;
+          border:1px solid var(--line,rgba(170,201,225,.16))!important;
+          border-radius:0 0 16px 16px!important;background:rgba(4,10,18,.99)!important;
+          box-shadow:0 20px 60px rgba(0,0,0,.5)!important;
+          scrollbar-width:thin;scrollbar-color:rgba(103,212,255,.48) transparent;
+        }
+        .site-header #site-nav.open{display:flex!important;}
+        .site-header #site-nav>a,.site-header #site-nav .nav-trigger{
+          display:flex!important;width:100%!important;min-height:50px!important;
+          align-items:center!important;justify-content:space-between!important;
+          padding:12px 14px!important;font-size:.91rem!important;
+          border-radius:9px!important;text-align:left!important;
+        }
+        .site-header #site-nav .nav-group{width:100%!important;flex:0 0 auto;}
+        .site-header #site-nav .nav-dropdown{position:static!important;top:auto!important;width:100%!important;max-width:none!important;padding:0!important;transform:none!important;}
+        .site-header #site-nav .nav-dropdown-shell{
+          margin:2px 0 8px 10px!important;padding:4px 5px 4px 9px!important;
+          background:rgba(103,212,255,.035)!important;border:0!important;
+          border-left:2px solid rgba(103,212,255,.25)!important;
+          border-radius:0 9px 9px 0!important;box-shadow:none!important;
+        }
+        .site-header #site-nav .nav-dropdown-link{
+          display:block!important;min-height:52px!important;max-width:100%;
+          margin:2px 0!important;padding:11px 12px!important;
+        }
+        .site-header #site-nav .nav-item-label{font-size:.87rem!important;}
+        .site-header #site-nav .nav-item-desc{font-size:.73rem!important;line-height:1.4!important;}
+        .site-header #site-nav .nav-group:not(.open)>.nav-dropdown{display:none!important;}
+        .site-header #site-nav .nav-group.open>.nav-dropdown{display:block!important;}
+        .site-header #site-nav .nav-trigger{cursor:pointer!important;}
+        .site-header .menu-button{min-width:84px!important;min-height:44px!important;cursor:pointer;}
+        .site-header #site-nav a:focus-visible,.site-header #site-nav button:focus-visible,.site-header .menu-button:focus-visible{
+          outline:2px solid var(--accent,#67d4ff)!important;outline-offset:2px!important;
+        }
         #site-nav .nav-item-label{font-size:.8rem}
         #site-nav .nav-item-desc{font-size:.67rem}
         .identity-links.profile-links{grid-template-columns:1fr;max-width:480px}
@@ -181,7 +235,6 @@
   }
 
   let menu = wrap.querySelector('.menu-button');
-  const insertedMenu = !menu;
   if (!menu) {
     menu = document.createElement('button');
     menu.className = 'menu-button';
@@ -238,31 +291,34 @@
   });
 
   mobileNav.addEventListener?.('change', () => {
-    closeDropdowns();
+    setMenuOpen(false);
     nav.querySelectorAll('.nav-group').forEach((group) => group.classList.remove('hover-open'));
   });
 
-  const legacyMenuController = [...document.scripts].some((script) => /(^|\/)script\.js$/.test(script.getAttribute('src') || ''));
-  if (insertedMenu || !legacyMenuController) {
-    menu.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      menu.setAttribute('aria-expanded', String(open));
-      if (!open) closeDropdowns();
-    });
-  }
+  const setMenuOpen = (open, returnFocus = false) => {
+    nav.classList.toggle('open', open);
+    menu.setAttribute('aria-expanded', String(open));
+    menu.textContent = open ? 'Close' : 'Menu';
+    if (!open) {
+      closeDropdowns();
+      if (returnFocus) menu.focus();
+    }
+  };
+  menu.addEventListener('click', () => {
+    const open = !nav.classList.contains('open');
+    setMenuOpen(open);
+    if (open && mobileNav.matches) nav.querySelector('a,button')?.focus({ preventScroll: true });
+  });
 
   nav.addEventListener('click', (event) => {
     if (!event.target.closest('a')) return;
-    closeDropdowns();
-    nav.classList.remove('open');
-    menu?.setAttribute('aria-expanded', 'false');
+    setMenuOpen(false);
   });
 
   document.addEventListener('click', (event) => {
     if (!nav.contains(event.target)) closeDropdowns();
     if (menu && !nav.contains(event.target) && !menu.contains(event.target)) {
-      nav.classList.remove('open');
-      menu.setAttribute('aria-expanded', 'false');
+      setMenuOpen(false);
     }
   });
 
@@ -270,8 +326,7 @@
     if (event.key !== 'Escape') return;
     closeDropdowns();
     nav.querySelectorAll('.nav-group').forEach((group) => group.classList.remove('hover-open'));
-    nav.classList.remove('open');
-    menu?.setAttribute('aria-expanded', 'false');
+    setMenuOpen(false, true);
   });
 
   if (currentPath === '/lean/' && !document.getElementById('lean-hierarchy-loader')) {
