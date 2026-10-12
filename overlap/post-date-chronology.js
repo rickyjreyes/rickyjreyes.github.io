@@ -43,7 +43,7 @@
     '<div class="pd-chartbox"><div class="pd-charthead"><strong>Days from the earliest Reyes record to each later work</strong><span>Each lane starts at its own earlier record (day 0). Select a mark to open that record.</span></div><div class="pd-chartscroll"><div class="pd-chart" id="pd-chart"></div></div><div class="pd-legend"><span><i class="pd-dot"></i> Research paper</span><span><i class="pd-square"></i> Institutional framework</span><span><i class="pd-dash"></i> Version note — compare against v1</span></div></div>'+
     '<div class="pd-toolbar"><div class="pd-filters" role="group" aria-label="Filter post-date records"><button type="button" data-pd-filter="all">All 13</button><button type="button" data-pd-filter="rca">RCA / AI · 11</button><button type="button" data-pd-filter="wct">WCT / physics · 2</button></div><div class="pd-sorts" role="group" aria-label="Order post-date records"><span>Order</span><button type="button" data-pd-sort="date">By date</button><button type="button" data-pd-sort="ledger">By ledger ID</button></div></div>'+
     '<div class="pd-groups" id="pd-groups" aria-live="polite"></div>'+
-    '<p class="pd-source">Source of record: machine-readable <a href="../priority/priority.json">priority registry</a> and <a href="../priority/external-convergence.json">external catalogue</a>. These thirteen entries are a reviewed subset of the existing external catalogue, not new additions to the 242-record total.</p>';
+    '<p class="pd-source">Source of record: <a href="../priority/">dated priority and claim registry</a> and <a href="../priority/external-convergence.json">machine-readable external catalogue</a>. These thirteen entries are a reviewed subset of the existing external catalogue, not new additions to the 242-record total.</p>';
   divider.replaceWith(shell);
   original.forEach(card => card.remove());
 
@@ -72,7 +72,7 @@
         return '<button type="button" class="pd-mark '+lane.kind+special+dim+(selected===r.id?' is-selected':'')+'" data-pd-select="'+r.id+'" style="left:'+pos(r.days)+';--mark-top:'+top+'px" title="'+esc(r.id+' · '+r.title+' · '+r.days+' days')+'" aria-label="'+esc('Open '+r.id+': '+r.title+', '+r.days+' days after earlier record')+'"><span>'+r.id.slice(3)+'</span></button>';
       }).join('');
       const highest=occupied.length;
-      return '<div class="pd-lane"><div class="pd-lane-title"><strong>'+esc(lane.label)+'</strong><span>'+esc(lane.sub)+'</span></div><div class="pd-track '+lane.kind+'" style="min-height:'+Math.max(67,highest*22+33)+'px"><span class="pd-track-line"></span>'+points+'</div></div>';
+      return '<div class="pd-lane"><div class="pd-lane-title"><strong>'+esc(lane.label)+'</strong><span>'+esc(lane.sub)+'</span></div><div class="pd-track '+lane.kind+'" style="min-height:'+Math.max(122,highest*22+35)+'px"><span class="pd-track-line"></span>'+points+'</div></div>';
     }).join('')+
     '<div class="pd-axis"><span class="pd-axis-pad"></span><div class="pd-axis-ticks">'+[0,90,180,270,365,450].map(d=>'<span style="left:'+pos(d)+'">'+(d===365?'1 year':d===0?'day 0':d+' d')+'</span>').join('')+'</div></div>';
   }
