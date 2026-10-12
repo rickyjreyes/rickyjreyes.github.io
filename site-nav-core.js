@@ -352,9 +352,13 @@
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
+    const wasOpen = nav.classList.contains('open');
     closeDropdowns();
     nav.querySelectorAll('.nav-group').forEach((group) => group.classList.remove('hover-open'));
-    setMenuOpen(false, true);
+    if (wasOpen) {
+      setMenuOpen(false, true);
+      event.preventDefault();
+    }
   });
 
   if (currentPath === '/lean/' && !document.getElementById('lean-hierarchy-loader')) {
