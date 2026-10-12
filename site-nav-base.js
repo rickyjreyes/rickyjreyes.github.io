@@ -450,6 +450,22 @@
     }
   };
 
+  // One scoped, cache-versioned mobile layer for all pages using the shared navigation.
+  if (!document.getElementById('wct-mobile-ready-css')) {
+    const mobileCSS = document.createElement('link');
+    mobileCSS.id = 'wct-mobile-ready-css';
+    mobileCSS.rel = 'stylesheet';
+    mobileCSS.href = '/mobile-ready.css?v=20261012-1';
+    document.head.appendChild(mobileCSS);
+  }
+  if (!document.getElementById('wct-mobile-ready-script')) {
+    const mobileJS = document.createElement('script');
+    mobileJS.id = 'wct-mobile-ready-script';
+    mobileJS.src = '/mobile-ready.js?v=20261012-1';
+    mobileJS.async = false;
+    document.head.appendChild(mobileJS);
+  }
+
   const core = document.createElement('script');
   core.src = '/site-nav-core.js?v=20260826-tools-pages';
   core.async = false;
