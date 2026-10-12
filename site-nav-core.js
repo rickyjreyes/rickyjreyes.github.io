@@ -55,7 +55,7 @@
   }
 
   const renderLink = (href, label, className = '', description = '') => {
-    const active = isActivePath(href);
+    const active = className === 'nav-dropdown-link' ? normalizePath(href) === currentPath : isActivePath(href);
     const classes = [className, active ? 'is-active' : ''].filter(Boolean).join(' ');
     const body = description
       ? `<span class="nav-item-label">${label}</span><span class="nav-item-desc">${description}</span>`
