@@ -291,5 +291,58 @@
     code.replaceChildren(a);
   });
 
+  // Keep the *original* search and filter controls accessible during normal
+  // document scrolling. The sentinel detects when the form has reached the
+  // sticky header; no wheel/touch events are intercepted and no values copied.
+  const facets=controls.querySelector('.pub-facets');
+  const yearButtons=controls.querySelector('[data-year-buttons]');
+  chooser.id='pub-sticky-tracks';
+  if(facets)facets.id='pub-sticky-facets';
+  const stickyToggle=document.createElement('button');
+  stickyToggle.type='button';
+  stickyToggle.className='pub-sticky-toggle';
+  stickyToggle.setAttribute('aria-expanded','false');
+  stickyToggle.setAttribute('aria-controls','pub-sticky-tracks pub-sticky-facets');
+  stickyToggle.innerHTML='<span>Filters</span><span class="pub-sticky-count" hidden>0</span><span class="pub-sticky-caret" aria-hidden="true">⌄</span>';
+  controls.prepend(stickyToggle);
+  const syncFilterBadge=()=>{
+    const selectedYear=yearButtons?.querySelector('button[aria-pressed="true"]')?.dataset.year||'';
+    const active=[window.__wctPubTrack,cat?.value,controls.querySelector('[data-filter-status]')?.value,selectedYear].filter(Boolean).length;
+    const indicator=stickyToggle.querySelector('.pub-sticky-count');
+    indicator.hidden=!active;
+    indicator.textContent=String(active);
+    stickyToggle.setAttribute('aria-label',active?'Filters, '+active+' active':'Filters');
+  };
+  stickyToggle.addEventListener('click',()=>{
+    const expanded=!controls.classList.contains('is-expanded');
+    controls.classList.toggle('is-expanded',expanded);
+    stickyToggle.setAttribute('aria-expanded',String(expanded));
+  });
+  const sentinel=document.createElement('div');
+  sentinel.className='pub-sticky-sentinel';
+  sentinel.setAttribute('aria-hidden','true');
+  controls.before(sentinel);
+  const setStuck=stuck=>{
+    controls.classList.toggle('is-stuck',stuck);
+    if(!stuck){
+      controls.classList.remove('is-expanded');
+      stickyToggle.setAttribute('aria-expanded','false');
+    }
+  };
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(changes=>{
+      const entry=changes[0];
+      setStuck(!entry.isIntersecting&&entry.boundingClientRect.top<74);
+    },{rootMargin:'-73px 0px 0px 0px',threshold:0});
+    observer.observe(sentinel);
+  }else{
+    const checkStuck=()=>setStuck(sentinel.getBoundingClientRect().top<73);
+    window.addEventListener('scroll',checkStuck,{passive:true});
+    window.addEventListener('resize',checkStuck,{passive:true});
+    checkStuck();
+  }
+  document.addEventListener('wct-publication-filter',syncFilterBadge);
+  syncFilterBadge();
+
   document.documentElement.classList.add('pub-enhanced');
 })();
