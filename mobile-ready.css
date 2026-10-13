@@ -115,3 +115,44 @@
   .hero *, .priority-shell *, .overlap-shell *, .graph-shell *, .lean-shell * {scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important;}
 }
 
+/* 2026-10-12 · Accessible mobile chapter navigation (WCT, RCA, detectors).
+   Never hide the canonical step list outside the enhanced mobile breakpoint. */
+.mobile-stage-nav{display:none;}
+@media(max-width:980px){
+  .wct-theory-scroll{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important;}
+  .wct-theory-visual-wrap{position:relative!important;top:auto!important;min-width:0;scroll-margin-top:82px!important;padding:12px!important;}
+  .wct-theory-visual{width:100%;height:auto!important;aspect-ratio:560/480;max-height:none!important;overflow:visible!important;}
+  .wct-theory-visual svg{width:100%!important;height:100%!important;max-height:none!important;}
+  .wct-theory-steps{display:block!important;min-width:0!important;margin:0!important;padding:0!important;gap:0!important;}
+  .wct-theory-scroll.has-mobile-stage-nav .wct-theory-steps .wct-theory-step{display:none!important;min-height:0!important;margin:0!important;padding:18px 16px!important;overflow-wrap:anywhere;}
+  .wct-theory-scroll.has-mobile-stage-nav .wct-theory-steps .wct-theory-step.active{display:flex!important;}
+  .wct-theory-flow{overflow-x:auto!important;overscroll-behavior-x:contain;}
+  .wct-theory-boundary{margin-bottom:0;}
+  .wct-theory-scroll>.stage-nav-bottom{margin-top:2px;}
+  .wct-theory-scroll.has-mobile-stage-nav .mobile-stage-nav{display:flex;}
+}
+@media(max-width:760px){
+  .evidence-story{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important;min-width:0;}
+  .evidence-story .evidence-story-visual-wrap{position:relative!important;top:auto!important;min-width:0;padding:12px!important;scroll-margin-top:82px!important;}
+  .evidence-story .evidence-story-steps{display:block!important;min-width:0;margin:0!important;padding:0!important;}
+  .evidence-story.has-mobile-stage-nav .evidence-story-step{display:none!important;min-height:0!important;height:auto!important;margin:0!important;padding:18px 16px!important;opacity:1!important;overflow-wrap:anywhere;justify-content:flex-start!important;transition:none!important;border-left:2px solid var(--line);}
+  .evidence-story.has-mobile-stage-nav .evidence-story-step.active{display:flex!important;border-left-color:var(--accent)!important;}
+  .evidence-story .evidence-story-step h3{max-width:none;}
+  .evidence-story .evidence-story-visual.scrubbed-story-visual{height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;}
+  .evidence-story .scrub-story-svg{display:block!important;width:100%!important;height:auto!important;max-height:none!important;}
+  .evidence-story .evidence-story-flow{overflow-x:auto;white-space:nowrap;overscroll-behavior-x:contain;}
+  .evidence-story.has-mobile-stage-nav .mobile-stage-nav{display:flex;}
+  .evidence-story>.stage-nav-bottom{margin:0;}
+}
+@media(max-width:980px){
+  .mobile-stage-nav{align-items:center;justify-content:space-between;gap:8px;min-width:0;padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .mobile-stage-nav button{flex:0 1 auto;display:inline-flex;align-items:center;justify-content:center;min-width:98px;min-height:44px;padding:10px 12px;border:1px solid var(--line-strong);border-radius:9px;background:rgba(103,212,255,.055);color:var(--text);font:750 .79rem/1.2 system-ui,sans-serif;cursor:pointer;}
+  .mobile-stage-nav button:disabled{cursor:default;opacity:.36;}
+  .mobile-stage-nav button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  .mobile-stage-nav [role="status"]{flex:0 0 auto;font:750 .73rem/1.2 ui-monospace,monospace;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap;}
+}
+@media(max-width:365px){
+  .mobile-stage-nav{gap:4px;}
+  .mobile-stage-nav button{min-width:78px;padding:8px 7px;font-size:.7rem;}
+  .mobile-stage-nav [role="status"]{font-size:.65rem;}
+}

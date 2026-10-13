@@ -1247,7 +1247,7 @@
         rail:story.querySelector('[data-story-rail]'),
         caption:story.querySelector('[data-story-caption]'),
         flow:[...story.querySelectorAll('[data-flow-step]')],
-        cur:0,target:0,active:0
+        cur:0,target:0,active:0,mobileIndex:0
       };
       if(state.kind==='rca')buildRca(state);
       if(state.kind==='detector')buildDetector(state);
@@ -1354,7 +1354,13 @@
     function updateCommon(state,t){
       const a=cl(Math.round(t),0,state.steps.length-1);
       state.active=a;
-      state.steps.forEach((step,i)=>step.classList.toggle('active',i===a));
+      state.steps.forEach((step,i)=>{
+        step.classList.toggle('active',i===a);
+        if(i===a)step.setAttribute('aria-current','step');else step.removeAttribute('aria-current');
+      });
+      state.story.querySelectorAll('[data-story-mobile-prev]').forEach(button=>button.disabled=a===0);
+      state.story.querySelectorAll('[data-story-mobile-next]').forEach(button=>button.disabled=a===state.steps.length-1);
+      state.story.querySelectorAll('[data-story-mobile-counter]').forEach(counter=>counter.textContent='Step '+(a+1)+' of '+state.steps.length);
       const step=state.steps[a];
       if(step&&state.kicker)state.kicker.textContent=step.dataset.kicker||'';
       if(step&&state.caption)state.caption.textContent=step.dataset.caption||'';
@@ -1465,8 +1471,12 @@
     }
 
     const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mobileStory=matchMedia('(max-width:760px)');
     let raf=0;
-    const read=()=>stories.forEach(s=>{const p=storyProgress(s);s.target=reduceMotion?Math.round(p):p});
+    const read=()=>stories.forEach(s=>{
+      const p=mobileStory.matches?s.mobileIndex:storyProgress(s);
+      s.target=mobileStory.matches?p:(reduceMotion?Math.round(p):p);
+    });
     const frame=()=>{
       raf=0;let moving=false;
       stories.forEach(s=>{
@@ -1479,6 +1489,39 @@
       if(moving)raf=requestAnimationFrame(frame);
     };
     const kick=()=>{read();if(!raf)raf=requestAnimationFrame(frame)};
+    // Direct mobile chapter navigation. Desktop continues to use scroll progress.
+    const selectMobileStep=(s,index,fromBottom=false)=>{
+      s.mobileIndex=cl(index,0,s.steps.length-1);
+      s.target=s.cur=s.mobileIndex;
+      updateCommon(s,s.cur);
+      if(s.kind==='rca')updateRca(s,s.cur);
+      if(s.kind==='detector')updateDetector(s,s.cur);
+      if(fromBottom)s.story.querySelector('.evidence-story-visual-wrap')?.scrollIntoView({
+        behavior:reduceMotion?'auto':'smooth',block:'start'
+      });
+    };
+    stories.forEach(s=>{
+      s.story.classList.add('has-mobile-stage-nav');
+      const makeNav=bottom=>{
+        const nav=document.createElement('nav');
+        nav.className='mobile-stage-nav story-mobile-nav'+(bottom?' stage-nav-bottom':'');
+        nav.setAttribute('aria-label',(s.kind==='rca'?'RCA':'Detector')+' evidence stages'+(bottom?' after text':''));
+        nav.innerHTML='<button type="button" data-story-mobile-prev aria-label="Previous evidence stage">← Previous</button>'+
+          '<span data-story-mobile-counter role="status" aria-live="polite">Step 1 of '+s.steps.length+'</span>'+
+          '<button type="button" data-story-mobile-next aria-label="Next evidence stage">Next →</button>';
+        nav.querySelector('[data-story-mobile-prev]').addEventListener('click',()=>selectMobileStep(s,s.mobileIndex-1,bottom));
+        nav.querySelector('[data-story-mobile-next]').addEventListener('click',()=>selectMobileStep(s,s.mobileIndex+1,bottom));
+        return nav;
+      };
+      const cap=s.story.querySelector('[data-story-caption]');
+      if(cap)cap.insertAdjacentElement('afterend',makeNav(false));
+      const stepList=s.story.querySelector('.evidence-story-steps');
+      if(stepList)stepList.insertAdjacentElement('afterend',makeNav(true));
+    });
+    mobileStory.addEventListener?.('change',()=>{
+      if(mobileStory.matches)stories.forEach(s=>{s.mobileIndex=cl(Math.round(s.active),0,s.steps.length-1)});
+      kick();
+    });
     addEventListener('scroll',kick,{passive:true});
     addEventListener('resize',kick,{passive:true});
     read();
@@ -1715,6 +1758,6 @@
   window.addEventListener('resize',()=>updateMechanismFromScroll(false),{passive:true});
 })();</script>
 <script src="post-date-chronology.js?v=20261012-1" defer></script>
-<script src="../site-nav.js?v=20261007-scrub1" defer></script>
+<script src="../site-nav.js?v=20261013-mobile-chapters" defer></script>
 </body>
 </html>

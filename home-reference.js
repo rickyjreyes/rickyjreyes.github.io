@@ -848,6 +848,9 @@
     pips.forEach((pip,i)=>pip.classList.toggle('active',i<=activeStage));
     if(caption)caption.textContent=String(activeStage+1).padStart(2,'0')+' / 08 · '+labels[activeStage];
     if(theoryProgress)theoryProgress.style.width=((activeStage+1)/8*100).toFixed(2)+'%';
+    document.querySelectorAll('[data-theory-stage-counter]').forEach(node=>node.textContent='Step '+(activeStage+1)+' of '+steps.length);
+    document.querySelectorAll('[data-theory-stage-prev]').forEach(node=>node.disabled=activeStage===0);
+    document.querySelectorAll('[data-theory-stage-next]').forEach(node=>node.disabled=activeStage===steps.length-1);
     drawTheoryFrame(performance.now()/1000);
   };
 
@@ -861,6 +864,32 @@
     });
     return best;
   };
+
+  // Mobile chapter controls: direct stage selection, independent of scroll position.
+  if(theoryWrap && steps.length){
+    theoryWrap.closest('.wct-theory-scroll')?.classList.add('has-mobile-stage-nav');
+    const makeControls=(bottom=false)=>{
+      const nav=document.createElement('nav');
+      nav.className='mobile-stage-nav'+(bottom?' stage-nav-bottom':'');
+      nav.setAttribute('aria-label','WCT explanation stages'+(bottom?' after text':''));
+      nav.innerHTML='<button type="button" data-theory-stage-prev aria-label="Previous WCT stage">← Previous</button>'+
+        '<span data-theory-stage-counter role="status" aria-live="polite">Step 1 of '+steps.length+'</span>'+
+        '<button type="button" data-theory-stage-next aria-label="Next WCT stage">Next →</button>';
+      nav.querySelector('[data-theory-stage-prev]').addEventListener('click',()=>selectStage(activeStage-1,bottom));
+      nav.querySelector('[data-theory-stage-next]').addEventListener('click',()=>selectStage(activeStage+1,bottom));
+      return nav;
+    };
+    const selectStage=(index,fromBottom)=>{
+      setStage(index);
+      if(fromBottom)theoryWrap.scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'});
+    };
+    const boundary=theoryWrap.querySelector('.wct-theory-boundary');
+    const first=makeControls();
+    if(boundary)boundary.insertAdjacentElement('afterend',first);
+    else theoryWrap.appendChild(first);
+    const list=theoryWrap.parentElement?.querySelector('.wct-theory-steps');
+    if(list)list.insertAdjacentElement('afterend',makeControls(true));
+  }
 
   if(theoryWrap&&'IntersectionObserver'in window){
     const io=new IntersectionObserver(([entry])=>{
