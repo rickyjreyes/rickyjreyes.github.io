@@ -6441,7 +6441,7 @@
       "ledgerRank": 241,
       "domain": "ai",
       "title": "The GenAI Divide: State of AI in Business 2025",
-      "primaryUrl": "https://www.media.mit.edu/groups/nanda/overview/",
+      "primaryUrl": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
       "source": "MIT Project NANDA report",
       "authors": [
         "Aditya Challapally",
@@ -6450,7 +6450,7 @@
         "Pradyumna Chari"
       ],
       "identifier": "No DOI assigned",
-      "identifierUrl": "https://www.media.mit.edu/groups/nanda/overview/",
+      "identifierUrl": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
       "overlapScore": 5.8,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
@@ -6466,13 +6466,13 @@
       "ledgerRank": 242,
       "domain": "ai",
       "title": "Temporal Blind Spot Failure in Serverless Cloud Systems: How AI Agents Cause Cloud Disasters",
-      "primaryUrl": "https://www.tdcommons.org/2026.html",
+      "primaryUrl": "https://www.tdcommons.org/cgi/viewcontent.cgi?article=11197&context=dpubs_series",
       "source": "Technical Disclosure Commons",
       "authors": [
         "Aaron Burton"
       ],
       "identifier": "No DOI assigned; Technical Disclosure Commons record 9903",
-      "identifierUrl": "https://www.tdcommons.org/2026.html",
+      "identifierUrl": "https://www.tdcommons.org/cgi/viewcontent.cgi?article=11197&context=dpubs_series",
       "overlapScore": 5.6,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
