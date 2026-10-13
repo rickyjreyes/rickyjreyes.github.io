@@ -114,8 +114,8 @@ def validate_traceability(
                 errors.append(f"{slug}: page lacks exact equation link for {equation_id}")
         if trace.get("datasets"):
             evidence_links_checked += len(trace["datasets"])
-    if len(traces) != 22:
-        errors.append(f"Expected traceability for 22 publications, found {len(traces)}")
+    if len(traces) != len(publications):
+        errors.append(f"Expected traceability for {len(publications)} publications, found {len(traces)}")
     return claim_links_checked, len(traces), evidence_links_checked + equation_links_checked
 
 
