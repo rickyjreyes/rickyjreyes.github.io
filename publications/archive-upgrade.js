@@ -291,9 +291,12 @@
     code.replaceChildren(a);
   });
 
-  // Keep the *original* search and filter controls accessible during normal
-  // document scrolling. The sentinel detects when the form has reached the
-  // sticky header; no wheel/touch events are intercepted and no values copied.
+  document.documentElement.classList.add('pub-enhanced');
+
+  // Keep the original filter inputs. Compact them when their normal position
+  // reaches the *measured* WCT header, not a hard-coded 72px approximation.
+  // Reserve the natural form height so changing its presentation cannot make
+  // underlying publication rows jump during ordinary page scrolling.
   const facets=controls.querySelector('.pub-facets');
   const yearButtons=controls.querySelector('[data-year-buttons]');
   chooser.id='pub-sticky-tracks';
@@ -313,36 +316,74 @@
     indicator.textContent=String(active);
     stickyToggle.setAttribute('aria-label',active?'Filters, '+active+' active':'Filters');
   };
-  stickyToggle.addEventListener('click',()=>{
-    const expanded=!controls.classList.contains('is-expanded');
+  const setExpanded=expanded=>{
     controls.classList.toggle('is-expanded',expanded);
     stickyToggle.setAttribute('aria-expanded',String(expanded));
+  };
+  stickyToggle.addEventListener('click',()=>setExpanded(!controls.classList.contains('is-expanded')));
+  controls.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&controls.classList.contains('is-expanded')){
+      setExpanded(false);stickyToggle.focus();
+    }
   });
-  const sentinel=document.createElement('div');
+  const sentinel=document.createElement('span');
   sentinel.className='pub-sticky-sentinel';
   sentinel.setAttribute('aria-hidden','true');
   controls.before(sentinel);
-  const setStuck=stuck=>{
-    controls.classList.toggle('is-stuck',stuck);
-    if(!stuck){
-      controls.classList.remove('is-expanded');
-      stickyToggle.setAttribute('aria-expanded','false');
-    }
+  const spacer=document.createElement('div');
+  spacer.className='pub-sticky-spacer';
+  spacer.setAttribute('aria-hidden','true');
+  controls.after(spacer);
+  const siteHeader=document.querySelector('.site-header');
+  let headerBottom=0,normalMarginTop=0,normalSpace=0,stuck=false,stickyRaf=0;
+  const margins=()=>{
+    const style=getComputedStyle(controls);
+    return {top:parseFloat(style.marginTop)||0,bottom:parseFloat(style.marginBottom)||0};
   };
-  if('IntersectionObserver' in window){
-    const observer=new IntersectionObserver(changes=>{
-      const entry=changes[0];
-      setStuck(!entry.isIntersecting&&entry.boundingClientRect.top<74);
-    },{rootMargin:'-73px 0px 0px 0px',threshold:0});
-    observer.observe(sentinel);
-  }else{
-    const checkStuck=()=>setStuck(sentinel.getBoundingClientRect().top<73);
-    window.addEventListener('scroll',checkStuck,{passive:true});
-    window.addEventListener('resize',checkStuck,{passive:true});
-    checkStuck();
+  const readNormalSpace=()=>{
+    const m=margins();
+    normalMarginTop=m.top;
+    normalSpace=controls.getBoundingClientRect().height+m.top+m.bottom;
+  };
+  const updateSpacer=()=>{
+    if(!stuck){spacer.style.height='0px';return;}
+    const m=margins();
+    const compactSpace=controls.getBoundingClientRect().height+m.top+m.bottom;
+    spacer.style.height=Math.max(0,normalSpace-compactSpace).toFixed(2)+'px';
+  };
+  const updateHeader=()=>{
+    headerBottom=siteHeader?Math.max(0,Math.ceil(siteHeader.getBoundingClientRect().bottom)):0;
+    document.documentElement.style.setProperty('--pub-nav-bottom',headerBottom+'px');
+  };
+  const checkSticky=()=>{
+    stickyRaf=0;
+    updateHeader();
+    const next=sentinel.getBoundingClientRect().top+normalMarginTop<=headerBottom+1;
+    if(next!==stuck){
+      if(next)readNormalSpace();
+      stuck=next;
+      controls.classList.toggle('is-stuck',next);
+      if(!next)setExpanded(false);
+    }else if(!stuck){
+      readNormalSpace();
+    }
+    updateSpacer();
+  };
+  const scheduleSticky=()=>{
+    if(stickyRaf)return;
+    stickyRaf=requestAnimationFrame(checkSticky);
+  };
+  readNormalSpace();
+  updateHeader();
+  window.addEventListener('scroll',scheduleSticky,{passive:true});
+  window.addEventListener('resize',scheduleSticky,{passive:true});
+  if('ResizeObserver' in window){
+    const sizes=new ResizeObserver(scheduleSticky);
+    if(siteHeader)sizes.observe(siteHeader);
+    sizes.observe(controls);
   }
   document.addEventListener('wct-publication-filter',syncFilterBadge);
   syncFilterBadge();
+  checkSticky();
 
-  document.documentElement.classList.add('pub-enhanced');
 })();
