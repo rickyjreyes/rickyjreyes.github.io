@@ -1190,37 +1190,54 @@
 
   const updatePrioritySpine=()=>{
     if(!prioritySpine||!priorityItems.length)return;
+
+    const vh=innerHeight||1;
+    const anchor=vh*.58;
+    // Read geometry together, before updating classes or CSS variables.
+    const spineRect=prioritySpine.getBoundingClientRect();
+    const rects=priorityItems.map(item=>item.getBoundingClientRect());
+    const firstY=rects[0].top+rects[0].height*.5;
+    const last=rects[rects.length-1];
+    const lastY=last.top+last.height*.5;
+    const span=Math.max(1,lastY-firstY);
+    prioritySpine.style.setProperty('--spine-start',Math.max(0,firstY-spineRect.top).toFixed(1)+'px');
+    prioritySpine.style.setProperty('--spine-end',Math.max(0,spineRect.bottom-lastY).toFixed(1)+'px');
+
     if(reduced.matches){
       prioritySpine.style.setProperty('--spine-progress','1');
       priorityItems.forEach((item,i)=>{
+        item.style.removeProperty('--priority-parallax-y');
         item.classList.add('spine-reached');
         item.classList.toggle('spine-current',i===priorityItems.length-1);
       });
       return;
     }
 
-    const vh=innerHeight||1;
-    const anchor=vh*.58;
-    const spineRect=prioritySpine.getBoundingClientRect();
-    const firstRect=priorityItems[0].getBoundingClientRect();
-    const lastRect=priorityItems[priorityItems.length-1].getBoundingClientRect();
-    const firstY=firstRect.top+firstRect.height*.5;
-    const lastY=lastRect.top+lastRect.height*.5;
-    const span=Math.max(1,lastY-firstY);
     const progress=clamp((anchor-firstY)/span);
     prioritySpine.style.setProperty('--spine-progress',progress.toFixed(4));
 
     let current=0;
     let currentDist=Infinity;
-    priorityItems.forEach((item,i)=>{
-      const r=item.getBoundingClientRect();
+    rects.forEach((r,i)=>{
       const center=r.top+r.height*.5;
-      const reached=center<=anchor+1;
-      item.classList.toggle('spine-reached',reached);
       const d=Math.abs(center-anchor);
       if(d<currentDist){currentDist=d;current=i}
     });
-    priorityItems.forEach((item,i)=>item.classList.toggle('spine-current',i===current));
+
+    priorityItems.forEach((item,i)=>{
+      const r=rects[i];
+      const center=r.top+r.height*.5;
+      item.classList.toggle('spine-reached',center<=anchor+1);
+      item.classList.toggle('spine-current',i===current);
+      // Small bounded depth shift on visible images only. No pinning, layout
+      // transforms, timers or extra scroll handler; shares the existing RAF.
+      if(r.bottom>0&&r.top<vh){
+        const mobile=innerWidth<=760;
+        const amount=clamp((anchor-center)/(vh+r.height),-1,1)*(mobile?30:60);
+        const cap=mobile?12:26;
+        item.style.setProperty('--priority-parallax-y',Math.max(-cap,Math.min(cap,amount)).toFixed(1)+'px');
+      }
+    });
   };
 
   const updateScroll=()=>{

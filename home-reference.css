@@ -1102,107 +1102,10 @@
   .theory-scene,.wct-theory-step,.priority-highlight,.wct-theory-progress span,.wct-equation-chain article{transition:none!important}
 }
 
-/* Priority-spine imagery: add after the existing priority rules.
-   The original spine, node colors, current/reached states and scrolling JS remain intact. */
-.priority-spine .priority-highlight{
-  isolation:isolate;
-  min-height:clamp(310px,35vw,395px);
-  /* Do not set overflow:hidden here: the original timeline nodes extend outside the card. */
-}
-.priority-spine .priority-highlight::before,
-.priority-spine .priority-highlight::after{z-index:3}
-.priority-highlight-media{
-  position:absolute;
-  z-index:0;
-  top:1px;
-  right:1px;
-  bottom:1px;
-  width:56%;
-  height:calc(100% - 2px);
-  display:block;
-  object-fit:cover;
-  object-position:center;
-  border-radius:0 var(--radius) var(--radius) 0;
-  opacity:.63;
-  pointer-events:none;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 24%);
-  mask-image:linear-gradient(90deg,transparent 0%,#000 24%);
-  transition:opacity 180ms ease;
-}
-.priority-highlight-wash{
-  position:absolute;
-  z-index:1;
-  inset:1px;
-  border-radius:inherit;
-  pointer-events:none;
-  background:linear-gradient(90deg,
-    rgba(7,17,29,.43) 0%,
-    rgba(7,17,29,.32) 40%,
-    rgba(7,17,29,.12) 67%,
-    transparent 100%);
-}
-.priority-highlight-copy{
-  position:relative;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:center;
-  width:min(64%,610px);
-  min-width:0;
-  flex:1 1 auto;
-}
-.priority-spine .priority-highlight h3{max-width:24ch}
-.priority-spine .priority-highlight p{max-width:55ch}
-.priority-spine .priority-highlight .text-link{position:relative;z-index:2}
-.priority-highlight-visual-note{
-  position:absolute;
-  z-index:2;
-  bottom:14px;
-  right:16px;
-  color:rgba(232,240,248,.67);
-  font-size:.56rem;
-  font-weight:700;
-  letter-spacing:.12em;
-  line-height:1;
-  text-transform:uppercase;
-  pointer-events:none;
-  text-shadow:0 1px 5px rgba(0,0,0,.9);
-}
-.priority-highlight.spine-current .priority-highlight-media,
-.priority-highlight:hover .priority-highlight-media,
-.priority-highlight:focus-visible .priority-highlight-media{opacity:.92}
-
-@media(max-width:760px){
-  .priority-spine .priority-highlight{min-height:0}
-  .priority-highlight-media{
-    top:1px;
-    left:1px;
-    right:1px;
-    bottom:auto;
-    width:calc(100% - 2px);
-    height:206px;
-    border-radius:var(--radius) var(--radius) 0 0;
-    object-position:center 45%;
-    -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 28%,transparent 100%);
-    mask-image:linear-gradient(180deg,#000 0%,#000 28%,transparent 100%);
-  }
-  .priority-highlight-wash{
-    background:linear-gradient(180deg,rgba(7,17,29,.03),rgba(7,17,29,.48) 120px,rgba(7,17,29,.9) 215px,transparent 300px);
-  }
-  .priority-highlight-copy{width:100%;padding-top:145px}
-  .priority-highlight-visual-note{top:14px;bottom:auto;right:14px}
-}
-@media(prefers-reduced-motion:reduce){
-  .priority-highlight-media{transition:none!important}
-}
-
-/* Full-viewport priority chapters.
-   Background images remain DOM images for native responsive loading, but are
-   decorative and absolutely fill each chapter. The scroll-spine JS is unchanged.
-   Use 100vw with a 100% ceiling to avoid horizontal scrollbar overflow. */
+/* Priority scroll: full-bleed, compact, content-aware chapters with subtle depth.
+   No scroll snapping, fixed backgrounds or pinned panels. */
 .priority-home.section-shell{
-  width:100vw;
+  width:100%;
   max-width:100%;
   margin-inline:0;
   padding-inline:0;
@@ -1221,25 +1124,28 @@
 .priority-home>a.text-link{margin-top:20px}
 .priority-home .priority-spine{
   --spine-x:clamp(26px,3.35vw,54px);
-  width:100vw;
+  --spine-start:215px;
+  --spine-end:215px;
+  width:100%;
   max-width:100%;
-  padding:0;
   margin:0;
+  padding:0;
 }
 .priority-home .priority-spine::before,
 .priority-home .priority-spine::after{
   left:var(--spine-x);
-  top:50svh;
-  bottom:50svh;
+  top:var(--spine-start);
+  bottom:var(--spine-end);
   z-index:6;
 }
 .priority-home .priority-spine .priority-highlight{
   position:relative;
   isolation:isolate;
   width:100%;
-  min-height:100svh;
+  min-height:clamp(390px,62svh,620px);
   margin:0;
-  padding:clamp(80px,9vh,120px) clamp(52px,9vw,154px);
+  padding:clamp(38px,6vh,68px) clamp(65px,8vw,134px);
+  display:flex;
   justify-content:center;
   overflow:hidden;
   border:0;
@@ -1247,6 +1153,7 @@
   border-radius:0;
   background:#050d17;
   opacity:1;
+  box-shadow:none;
   transition:box-shadow 180ms ease;
 }
 .priority-home .priority-spine .priority-highlight:last-child{margin-bottom:0}
@@ -1274,18 +1181,19 @@
 .priority-home .priority-highlight-media{
   position:absolute;
   z-index:0;
-  inset:0;
+  inset:-10% 0;
   display:block;
   width:100%;
-  height:100%;
+  height:120%;
   object-fit:cover;
   object-position:center;
   border-radius:0;
   -webkit-mask-image:none;
   mask-image:none;
-  opacity:.66;
   pointer-events:none;
-  transition:opacity 240ms ease;
+  opacity:.69;
+  transform:translate3d(0,var(--priority-parallax-y,0px),0);
+  transition:opacity 230ms ease;
 }
 .priority-home .highlight-gwtc .priority-highlight-media{object-position:center 46%}
 .priority-home .highlight-cms .priority-highlight-media{object-position:center}
@@ -1301,79 +1209,77 @@
   z-index:1;
   inset:0;
   border-radius:0;
+  pointer-events:none;
   background:
     linear-gradient(90deg,
-      rgba(3,9,18,.97) 0%,
-      rgba(3,9,18,.90) 20%,
-      rgba(3,9,18,.70) 40%,
-      rgba(3,9,18,.36) 67%,
-      rgba(3,9,18,.14) 100%),
-    linear-gradient(0deg,rgba(3,9,18,.3),transparent 30%);
-  pointer-events:none;
+      rgba(3,9,18,.96) 0%,
+      rgba(3,9,18,.86) 22%,
+      rgba(3,9,18,.62) 43%,
+      rgba(3,9,18,.29) 70%,
+      rgba(3,9,18,.12) 100%),
+    linear-gradient(0deg,rgba(3,9,18,.25),transparent 32%);
 }
 .priority-home .priority-highlight-copy{
   position:relative;
   z-index:2;
-  width:min(57%,690px);
+  width:min(59%,650px);
   min-width:0;
   flex:0 1 auto;
   padding:0;
   align-items:flex-start;
+  opacity:.86;
+  transition:opacity 230ms ease;
 }
+.priority-home .priority-highlight.spine-current .priority-highlight-copy,
+.priority-home .priority-highlight:hover .priority-highlight-copy,
+.priority-home .priority-highlight:focus-visible .priority-highlight-copy{opacity:1}
 .priority-home .priority-highlight-index{
-  font-size:.75rem;
-  letter-spacing:.14em;
+  font-size:.71rem;
+  letter-spacing:.13em;
 }
 .priority-home .priority-spine .priority-highlight h3{
-  max-width:20ch;
-  margin:18px 0 18px;
-  font-size:clamp(2.25rem,4.8vw,4.75rem);
-  letter-spacing:-.037em;
-  line-height:1.09;
+  max-width:23ch;
+  margin:13px 0 13px;
+  font-size:clamp(1.8rem,3.25vw,3.25rem);
+  letter-spacing:-.028em;
+  line-height:1.13;
   text-wrap:balance;
 }
 .priority-home .priority-spine .priority-highlight p{
-  max-width:57ch;
+  max-width:58ch;
   color:#d2deea;
-  font-size:clamp(.96rem,1.18vw,1.12rem);
-  line-height:1.7;
+  font-size:clamp(.9rem,1.05vw,1.03rem);
+  line-height:1.64;
 }
 .priority-home .priority-highlight .text-link{
-  margin-top:24px;
+  position:relative;
+  z-index:2;
+  margin-top:18px;
   text-shadow:0 1px 8px rgba(0,0,0,.65);
-}
-.priority-home .priority-highlight-visual-note{
-  top:auto;
-  bottom:22px;
-  right:clamp(24px,3.5vw,62px);
-  color:rgba(232,240,248,.77);
 }
 @media(max-width:760px){
   .priority-home .priority-spine{--spine-x:20px}
   .priority-home .priority-spine .priority-highlight{
-    min-height:100svh;
+    min-height:clamp(400px,70svh,600px);
+    padding:clamp(94px,21svh,165px) 22px 38px 53px;
     justify-content:flex-end;
-    padding:clamp(105px,32svh,260px) 22px 64px 53px;
   }
   .priority-home .priority-highlight::after{
     left:32px;
     width:16px;
   }
   .priority-home .priority-highlight-media{
-    inset:0;
+    inset:-10% 0;
     width:100%;
-    height:100%;
-    border-radius:0;
+    height:120%;
     object-position:55% 40%;
-    -webkit-mask-image:none;
-    mask-image:none;
   }
   .priority-home .priority-highlight-wash{
     background:linear-gradient(180deg,
-      rgba(3,9,18,.12) 0%,
-      rgba(3,9,18,.35) 24%,
-      rgba(3,9,18,.83) 49%,
-      rgba(3,9,18,.96) 79%,
+      rgba(3,9,18,.15) 0%,
+      rgba(3,9,18,.45) 24%,
+      rgba(3,9,18,.83) 48%,
+      rgba(3,9,18,.95) 76%,
       rgba(3,9,18,.98) 100%);
   }
   .priority-home .priority-highlight-copy{
@@ -1382,28 +1288,27 @@
     padding:0;
   }
   .priority-home .priority-spine .priority-highlight h3{
-    max-width:22ch;
-    margin:12px 0;
-    font-size:clamp(1.8rem,7vw,3rem);
-    line-height:1.13;
+    max-width:23ch;
+    margin:10px 0;
+    font-size:clamp(1.65rem,6vw,2.4rem);
+    line-height:1.14;
   }
   .priority-home .priority-spine .priority-highlight p{
-    font-size:.9rem;
-    line-height:1.62;
+    font-size:.88rem;
+    line-height:1.56;
   }
-  .priority-home .priority-highlight .text-link{margin-top:17px}
-  .priority-home .priority-highlight-visual-note{
-    top:18px;
-    right:18px;
-    bottom:auto;
-  }
+  .priority-home .priority-highlight .text-link{margin-top:14px}
 }
 @media(max-width:380px){
-  .priority-home .priority-spine .priority-highlight{padding-left:49px;padding-right:16px}
-  .priority-home .priority-spine .priority-highlight h3{font-size:1.68rem}
-  .priority-home .priority-spine .priority-highlight p{font-size:.84rem}
+  .priority-home .priority-spine .priority-highlight{
+    padding-left:49px;
+    padding-right:16px;
+  }
+  .priority-home .priority-spine .priority-highlight h3{font-size:1.6rem}
+  .priority-home .priority-spine .priority-highlight p{font-size:.83rem}
 }
 @media(prefers-reduced-motion:reduce){
-  .priority-home .priority-highlight-media,
-  .priority-home .priority-spine .priority-highlight{transition:none!important}
+  .priority-home .priority-highlight-media{transform:none!important;transition:none!important}
+  .priority-home .priority-highlight-copy,
+  .priority-home .priority-spine .priority-highlight{transition:none!important;opacity:1}
 }
