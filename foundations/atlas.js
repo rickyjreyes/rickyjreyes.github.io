@@ -100,7 +100,24 @@
   const tickHTML=tickYears.map(y=>'<span style="--tx:'+(3+(y-1872)/(2010-1872)*94).toFixed(3)+'%">'+y+'</span>').join('');
   chart.appendChild(make('div','timeline-axis','<span></span><div class="timeline-ticks">'+tickHTML+'</div>'));
   scroll.appendChild(chart);timeline.appendChild(scroll);
-  timeline.appendChild(make('p','timeline-hint','Swipe horizontally on narrow screens. Timeline markers and every source entry are keyboard accessible.'));
+  // On narrow screens, replace the cramped sideways chart with native-flow,
+  // grouped source buttons; the underlying 33 records and chart stay intact.
+  const mobile=make('div','timeline-mobile');
+  mobile.setAttribute('aria-label','Foundational source chronology by discipline');
+  groups.forEach(g=>{
+    const details=make('details','timeline-mobile-group');
+    details.innerHTML='<summary><span class="timeline-mobile-name">'+esc(names[g.id])+'</span><span class="timeline-mobile-count">'+g.rows.length+' sources</span></summary>';
+    const list=make('ol','timeline-mobile-list');
+    all.filter(item=>item.group===g.id).sort((x,y)=>x.year-y.year||x.title.localeCompare(y.title)).forEach(item=>{
+      const li=make('li','timeline-mobile-item');
+      const btn=make('button','timeline-mobile-link','<time>'+esc(item.year)+'</time><span>'+esc(item.title)+'</span><span class="timeline-mobile-jump" aria-hidden="true">↗</span>');
+      btn.type='button';btn.dataset.jump=item.id;
+      li.appendChild(btn);list.appendChild(li);item.mobile=li;
+    });
+    details.appendChild(list);mobile.appendChild(details);
+  });
+  timeline.appendChild(mobile);
+  timeline.appendChild(make('p','timeline-hint','Select a chart marker or, on narrow screens, expand a discipline to jump to a source. Ordinary page scrolling remains enabled.'));
 
   const explorer=make('section','foundation-explorer foundation-atlas');
   explorer.id='source-explorer';
@@ -129,7 +146,7 @@
       let n=0;
       all.filter(x=>x.group===g.id).forEach(x=>{
         const match=(facet==='all'||x.group===facet)&&tokens.every(t=>x.node.dataset.search.includes(t));
-        x.node.hidden=!match;x.dot?.classList.toggle('is-muted',!match);
+        x.node.hidden=!match;x.dot?.classList.toggle('is-muted',!match);if(x.mobile)x.mobile.hidden=!match;
         if(match){n++;visible++;}
       });
       const sec=root.querySelector('#'+g.id);
@@ -150,7 +167,7 @@
     filter.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.facet==='all')));
     refresh();search.focus();
   });
-  chart.addEventListener('click',e=>{
+  timeline.addEventListener('click',e=>{
     const dot=e.target.closest('button[data-jump]');if(!dot)return;
     if(facet!=='all'||search.value){
       search.value='';facet='all';
