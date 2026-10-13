@@ -255,7 +255,7 @@
     b.innerHTML='<span class="pub-track-dot" aria-hidden="true"></span>'+esc(name)+' <span class="pub-track-number">'+count+'</span>';
     buttons.appendChild(b);
   };
-  addButton('','All releases',28,'#67d4ff');
+  addButton('','All',28,'#67d4ff');
   tracks.forEach(t=>addButton(t.id,t.name,t.expected,t.color));
   controls.prepend(chooser);
   const q=document.querySelector('[data-search-input]');
