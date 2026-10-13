@@ -124,3 +124,27 @@
 @media(prefers-reduced-motion:reduce){
   .foundation-upgraded .wct-core-card,.foundation-source,.timeline-mark{transition:none!important}
 }
+
+/* Native scrolling / readable chronology on narrow screens. No body or wheel lock. */
+.foundation-upgraded .foundation-shell,.foundation-timeline,.foundation-explorer{min-width:0}
+.timeline-scroll{overscroll-behavior:auto;touch-action:pan-x pan-y}
+.timeline-mobile{display:none}
+@media(max-width:760px){
+  .timeline-scroll{display:none}
+  .timeline-mobile{display:grid;gap:9px}
+  .timeline-mobile-group{min-width:0;border:1px solid var(--fa-line);border-radius:9px;background:rgba(3,12,24,.36)}
+  .timeline-mobile-group summary{display:flex;align-items:center;gap:12px;justify-content:space-between;min-height:49px;padding:12px 14px;cursor:pointer;color:var(--text);font-size:.84rem;font-weight:750;line-height:1.45}
+  .timeline-mobile-group summary:focus-visible{outline:2px solid var(--fa-cyan);outline-offset:3px}
+  .timeline-mobile-name{min-width:0;overflow-wrap:anywhere}
+  .timeline-mobile-count{flex:none;color:var(--muted-2);font:.7rem/1.2 ui-monospace,monospace}
+  .timeline-mobile-list{margin:0;padding:0 9px 9px;list-style:none}
+  .timeline-mobile-item[hidden]{display:none}
+  .timeline-mobile-link{display:grid;grid-template-columns:46px minmax(0,1fr) 16px;align-items:start;gap:10px;width:100%;min-height:45px;padding:10px 5px;border:0;border-top:1px solid var(--fa-line);background:transparent;text-align:left;cursor:pointer;color:var(--text);font:600 .77rem/1.48 system-ui,sans-serif}
+  .timeline-mobile-link time{font:750 .68rem/1.5 ui-monospace,monospace;color:var(--fa-cyan)}
+  .timeline-mobile-link span:nth-child(2){min-width:0;overflow-wrap:anywhere}
+  .timeline-mobile-jump{color:var(--fa-cyan)}
+  .timeline-mobile-link:focus-visible{outline:2px solid var(--fa-cyan);outline-offset:2px}
+  .foundation-upgraded .foundation-head .actions,.foundation-filter{flex-wrap:wrap;overflow:visible;overscroll-behavior:auto}
+  .foundation-upgraded .foundation-head .actions a{white-space:normal}
+  .foundation-filter{padding-bottom:0}
+}
