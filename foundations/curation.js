@@ -151,13 +151,13 @@
       const link=document.createElement('link');
       link.id='wct-foundation-atlas-css';
       link.rel='stylesheet';
-      link.href='/foundations/atlas.css?v=20261013-2';
+      link.href='/foundations/atlas.css?v=20261013-scrollfix3';
       document.head.appendChild(link);
     }
     if (!document.getElementById('wct-foundation-atlas-js')) {
       const script=document.createElement('script');
       script.id='wct-foundation-atlas-js';
-      script.src='/foundations/atlas.js?v=20261013-2';
+      script.src='/foundations/atlas.js?v=20261013-scrollfix3';
       script.async=false;
       document.head.appendChild(script);
     }
