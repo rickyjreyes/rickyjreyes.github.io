@@ -1,0 +1,63 @@
+/* Additive Publications polish. The original paper list, animated vertical rail and controls are preserved. */
+html.pub-enhanced .paper-shell{width:min(calc(100% - 40px),980px)}
+.pub-date-atlas{min-width:0;padding:28px 0 26px;margin:0;border-bottom:1px solid var(--line)}
+.pub-atlas-head{display:flex;align-items:end;justify-content:space-between;gap:22px}
+.pub-atlas-head .paper-kicker{margin-bottom:10px;font-size:.66rem}
+.pub-atlas-head h2{font:500 clamp(1.65rem,3vw,2.35rem)/1.09 Georgia,serif;letter-spacing:-.034em;margin:0}
+.pub-atlas-head>p{max-width:43ch;margin:0 0 2px;color:var(--muted);font-size:.84rem;line-height:1.58}
+.pub-atlas-summary{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;padding:19px 0 17px;color:var(--muted);font-size:.74rem;border-bottom:1px solid var(--line)}
+.pub-atlas-summary span{display:inline-flex;align-items:baseline;gap:7px}
+.pub-atlas-summary strong{font:700 1rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent-3);letter-spacing:.02em}
+.pub-atlas-scroll{max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;padding:13px 0 6px}
+.pub-atlas-scroll:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.pub-atlas-years{min-width:685px;display:grid;gap:9px}
+.pub-atlas-year{display:grid;grid-template-columns:110px minmax(0,1fr);gap:9px;align-items:stretch}
+.pub-atlas-year-head{display:flex;flex-direction:column;justify-content:center;gap:5px;padding:0 6px 18px 0}
+.pub-atlas-year-head strong{font:700 1.04rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--text)}
+.pub-atlas-year-head span{font-size:.65rem;color:var(--muted-2)}
+.pub-atlas-lane{min-width:0}
+.pub-atlas-marks{height:86px;position:relative;border-bottom:1px solid rgba(170,201,225,.19);background:repeating-linear-gradient(90deg,rgba(170,201,225,.10) 0 1px,transparent 1px calc(100% / 9))}
+.pub-atlas-marks::after{content:"";position:absolute;left:0;right:0;bottom:-1px;border-bottom:1px solid rgba(170,201,225,.08);pointer-events:none}
+.pub-atlas-mark{position:absolute;left:var(--pub-x);top:var(--pub-y);display:block;width:32px;height:32px;border:0;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,var(--pub-mark) 0 5px,rgba(7,17,31,.96) 5.7px 7.8px,transparent 8px);color:var(--text);cursor:pointer;z-index:1;transition:transform .15s ease,filter .15s ease}
+.pub-atlas-mark:hover,.pub-atlas-mark:focus-visible{transform:translate(-50%,-50%) scale(1.26);filter:drop-shadow(0 0 7px var(--pub-mark));z-index:3}
+.pub-atlas-mark:focus-visible{outline:2px solid var(--pub-mark);outline-offset:-1px}
+.pub-atlas-months{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));padding-top:8px}
+.pub-atlas-months>span{text-align:center;color:var(--muted-2);font:700 .66rem/1.2 ui-monospace,Menlo,monospace}
+.pub-atlas-note{max-width:105ch;color:var(--muted-2);font-size:.72rem;line-height:1.55;margin:10px 0 0}
+.pub-track-chooser{border:0;padding:0;margin:0;min-width:0}
+.pub-track-chooser legend{margin:0 0 10px;padding:0;color:var(--muted-2);font-weight:800;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase}
+.pub-track-buttons{display:flex;flex-wrap:wrap;gap:7px}
+.pub-track-buttons button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.018);font:700 .74rem/1.3 system-ui,sans-serif;cursor:pointer;transition:background .18s ease,border-color .18s ease}
+.pub-track-dot{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:var(--pub-track-color)}
+.pub-track-buttons button[aria-pressed="true"]{color:var(--text);border-color:var(--pub-track-color);background:color-mix(in srgb,var(--pub-track-color) 10%,transparent)}
+.pub-track-buttons button:hover{border-color:var(--pub-track-color);color:var(--text)}
+.pub-track-number{font:700 .67rem/1.1 ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums;color:var(--muted-2)}
+.pub-track-buttons button[aria-pressed="true"] .pub-track-number{color:var(--text)}
+.pub-track-buttons button:focus-visible,.pub-index-item a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+html.pub-enhanced .pub-controls{margin-top:23px;gap:20px}
+html.pub-enhanced .pub-index-item>div{border-left:2px solid transparent;padding-left:9px;margin-left:-11px;border-radius:0 8px 8px 0;transition:background .18s ease,border-color .18s ease}
+html.pub-enhanced .pub-index-item>div:hover,html.pub-enhanced .pub-index-item:focus-within>div{background:linear-gradient(90deg,rgba(103,212,255,.043),transparent 76%);border-left-color:var(--pub-track-color,var(--accent));cursor:pointer}
+html.pub-enhanced .pub-index-item.pub-current>div{border-left-color:var(--pub-track-color,var(--accent))}
+html.pub-enhanced .pub-index-item code a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}
+html.pub-enhanced .pub-index-item code a:hover{text-decoration:underline}
+html.pub-enhanced .pub-index-item h2 a{display:inline;color:var(--text)}
+html.pub-enhanced .pub-index-item h2 a:hover{color:var(--accent)}
+html.pub-enhanced .pub-index-item .pub-index-cat{color:var(--pub-track-color,var(--accent))}
+html.pub-enhanced .pub-index-item h2{max-width:68ch}
+html.pub-enhanced .pub-index-item[hidden]{display:none}
+@media(max-width:760px){
+  html.pub-enhanced .paper-shell{width:min(calc(100% - 28px),980px)}
+  .pub-date-atlas{padding-top:23px}
+  .pub-atlas-head{display:block}
+  .pub-atlas-head>p{margin-top:10px}
+  .pub-atlas-summary{gap:8px 15px}
+  .pub-atlas-summary span{font-size:.69rem}
+  .pub-track-buttons{display:flex;flex-wrap:nowrap;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;padding:3px 2px 11px}
+  .pub-track-buttons button{flex:0 0 auto;min-height:44px}
+  .pub-atlas-scroll{padding-bottom:14px}
+  .pub-atlas-note{font-size:.71rem}
+  html.pub-enhanced .pub-index-item>div{padding-left:6px;margin-left:-8px}
+}
+@media(prefers-reduced-motion:reduce){
+  .pub-atlas-mark,.pub-track-buttons button,html.pub-enhanced .pub-index-item>div{transition:none!important}
+}
