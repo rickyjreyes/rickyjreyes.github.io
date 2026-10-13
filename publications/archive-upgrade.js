@@ -107,10 +107,14 @@
         if(matches.length){
           const btn=makeDayButton(matches,String(day),matches[0].dateText,false);
           btn.dataset.pubDate=dayKey(year,mo,day);
+          btn.style.setProperty('--pub-delay',Math.min(390,(mo-first)*43+day*2)+'ms');
           days.appendChild(btn);
         }else{
           const span=document.createElement('span');span.className='pub-calendar-day is-empty';span.textContent=String(day);span.setAttribute('aria-hidden','true');days.appendChild(span);
         }
+      }
+      for(let tail=firstWeekday+nDays;tail<42;tail++){
+        const space=document.createElement('span');space.className='pub-calendar-blank';space.setAttribute('aria-hidden','true');days.appendChild(space);
       }
       month.appendChild(days);
       const monthOnly=inMonth.filter(e=>e.date.monthOnly);
