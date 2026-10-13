@@ -558,7 +558,7 @@
 
   <script src="overlap-data-1.js"></script>
   <script src="overlap-data-2.js"></script>
-  <script src="overlap-data-3.js?v=20261013-links"></script>
+  <script src="overlap-data-3.js?v=20261013-pdf-render"></script>
   <script src="overlap-data-4.js"></script>
   <script src="overlap-data-5.js"></script>
   <script src="overlap-data-6.js"></script>
@@ -569,9 +569,26 @@
   <script src="relationship-data.js?v=20261013-links"></script>
   <script src="relationship-data-2.js?v=20261007-3"></script>
   <script>
+    // Canonical primary document links. Normalize even when an older overlap-data-3.js
+    // is still cached by a visitor, so the rendered title and identifier agree.
+    const directPdfByTitle={
+      'The GenAI Divide: State of AI in Business 2025':'https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf',
+      'Temporal Blind Spot Failure in Serverless Cloud Systems: How AI Agents Cause Cloud Disasters':'https://www.tdcommons.org/cgi/viewcontent.cgi?article=11197&context=dpubs_series'
+    };
     const records=window.overlapRecords||[];
     const relationshipByUrl=window.overlapRelationshipByUrl||{};
     const verifiedDateByKey=window.overlapDateByKey||{};
+    records.forEach(r=>{
+      const primaryPdf=directPdfByTitle[r[1]];
+      if(!primaryPdf)return;
+      const oldUrl=r[2];
+      if(oldUrl!==primaryPdf){
+        if(relationshipByUrl[oldUrl]&&!relationshipByUrl[primaryPdf])relationshipByUrl[primaryPdf]=relationshipByUrl[oldUrl];
+        if(verifiedDateByKey[oldUrl]&&!verifiedDateByKey[primaryPdf])verifiedDateByKey[primaryPdf]=verifiedDateByKey[oldUrl];
+      }
+      r[2]=primaryPdf;
+      r[8]=primaryPdf;
+    });
     const dateChecked=new Set(["https://arxiv.org/abs/2606.25064","https://arxiv.org/abs/2606.25687","https://arxiv.org/abs/2607.07340","https://arxiv.org/abs/2607.19840","https://arxiv.org/abs/2607.29309","https://doi.org/10.1364/OL.603068"]);
     const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
@@ -659,7 +676,9 @@
     function rowHtml(r,displayRank){
       const dateMeta=recordDateMeta(r);
       const dateTitle=dateMeta?.source?` title="${esc(`Date basis: ${dateMeta.source}${dateMeta.note?` · ${dateMeta.note}`:''}`)}"`:'';
-      return `<tr><td class="rank">${displayRank}</td><td class="work"><a class="paper" href="${esc(r[2])}" target="_blank" rel="noopener noreferrer">${esc(r[1])}</a><span class="source">${esc(r[5])}</span></td><td class="authors">${esc(r[6])}</td><td class="identifier"><a href="${esc(r[8])}" target="_blank" rel="noopener noreferrer">${esc(r[7])}</a></td><td class="date"${dateTitle}>${esc(recordDateLabel(r))}</td><td class="score">${r[3].toFixed(1)}</td><td class="relationship">${relationshipHtml(r)}</td></tr>`;
+      const directPdf=directPdfByTitle[r[1]];
+      const pdfLink=directPdf?` · <a class="source-pdf" href="${esc(directPdf)}" target="_blank" rel="noopener noreferrer" aria-label="Open full PDF: ${esc(r[1])}">Full PDF ↗</a>`:'';
+      return `<tr><td class="rank">${displayRank}</td><td class="work"><a class="paper" href="${esc(r[2])}" target="_blank" rel="noopener noreferrer">${esc(r[1])}</a><span class="source">${esc(r[5])}${pdfLink}</span></td><td class="authors">${esc(r[6])}</td><td class="identifier"><a href="${esc(r[8])}" target="_blank" rel="noopener noreferrer">${esc(r[7])}</a></td><td class="date"${dateTitle}>${esc(recordDateLabel(r))}</td><td class="score">${r[3].toFixed(1)}</td><td class="relationship">${relationshipHtml(r)}</td></tr>`;
     }
 
     const trackMeta={
