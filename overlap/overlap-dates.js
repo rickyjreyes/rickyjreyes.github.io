@@ -461,14 +461,14 @@ window.overlapDateByKey = Object.assign(window.overlapDateByKey || {}, {
     "status": "verified",
     "source": "Apollo Research"
   },
-  "https://www.media.mit.edu/groups/nanda/overview/": {
+  "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf": {
     "date": "2025-07",
     "precision": "month",
     "status": "verified-month",
     "source": "MIT Project NANDA report",
     "note": "Report is dated July 2025; no day is stated in the report date."
   },
-  "https://www.tdcommons.org/2026.html": {
+  "https://www.tdcommons.org/cgi/viewcontent.cgi?article=11197&context=dpubs_series": {
     "date": "2026-04",
     "precision": "month",
     "status": "verified-month",
