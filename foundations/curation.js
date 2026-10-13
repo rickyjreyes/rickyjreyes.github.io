@@ -145,6 +145,22 @@
       @media(max-width:820px){.foundation-shell{width:calc(100% - 24px);padding-top:48px}.tier-head,.wct-core-grid{grid-template-columns:1fr}.tier-head{gap:10px}.tier{margin-top:42px}}
     `;
     document.head.appendChild(style);
+    // Share only the already curated, public bibliographic arrays with the progressive atlas.
+    window.__wctFoundationAtlas={coreWct,groups};
+    if (!document.getElementById('wct-foundation-atlas-css')) {
+      const link=document.createElement('link');
+      link.id='wct-foundation-atlas-css';
+      link.rel='stylesheet';
+      link.href='/foundations/atlas.css?v=20261013-1';
+      document.head.appendChild(link);
+    }
+    if (!document.getElementById('wct-foundation-atlas-js')) {
+      const script=document.createElement('script');
+      script.id='wct-foundation-atlas-js';
+      script.src='/foundations/atlas.js?v=20261013-1';
+      script.async=false;
+      document.head.appendChild(script);
+    }
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run, {once:true});
