@@ -1101,3 +1101,98 @@
 @media(prefers-reduced-motion:reduce){
   .theory-scene,.wct-theory-step,.priority-highlight,.wct-theory-progress span,.wct-equation-chain article{transition:none!important}
 }
+
+/* Priority-spine imagery: add after the existing priority rules.
+   The original spine, node colors, current/reached states and scrolling JS remain intact. */
+.priority-spine .priority-highlight{
+  isolation:isolate;
+  min-height:clamp(310px,35vw,395px);
+  /* Do not set overflow:hidden here: the original timeline nodes extend outside the card. */
+}
+.priority-spine .priority-highlight::before,
+.priority-spine .priority-highlight::after{z-index:3}
+.priority-highlight-media{
+  position:absolute;
+  z-index:0;
+  top:1px;
+  right:1px;
+  bottom:1px;
+  width:56%;
+  height:calc(100% - 2px);
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  border-radius:0 var(--radius) var(--radius) 0;
+  opacity:.63;
+  pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 24%);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 24%);
+  transition:opacity 180ms ease;
+}
+.priority-highlight-wash{
+  position:absolute;
+  z-index:1;
+  inset:1px;
+  border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(90deg,
+    rgba(7,17,29,.43) 0%,
+    rgba(7,17,29,.32) 40%,
+    rgba(7,17,29,.12) 67%,
+    transparent 100%);
+}
+.priority-highlight-copy{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  width:min(64%,610px);
+  min-width:0;
+  flex:1 1 auto;
+}
+.priority-spine .priority-highlight h3{max-width:24ch}
+.priority-spine .priority-highlight p{max-width:55ch}
+.priority-spine .priority-highlight .text-link{position:relative;z-index:2}
+.priority-highlight-visual-note{
+  position:absolute;
+  z-index:2;
+  bottom:14px;
+  right:16px;
+  color:rgba(232,240,248,.67);
+  font-size:.56rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  line-height:1;
+  text-transform:uppercase;
+  pointer-events:none;
+  text-shadow:0 1px 5px rgba(0,0,0,.9);
+}
+.priority-highlight.spine-current .priority-highlight-media,
+.priority-highlight:hover .priority-highlight-media,
+.priority-highlight:focus-visible .priority-highlight-media{opacity:.92}
+
+@media(max-width:760px){
+  .priority-spine .priority-highlight{min-height:0}
+  .priority-highlight-media{
+    top:1px;
+    left:1px;
+    right:1px;
+    bottom:auto;
+    width:calc(100% - 2px);
+    height:206px;
+    border-radius:var(--radius) var(--radius) 0 0;
+    object-position:center 45%;
+    -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 28%,transparent 100%);
+    mask-image:linear-gradient(180deg,#000 0%,#000 28%,transparent 100%);
+  }
+  .priority-highlight-wash{
+    background:linear-gradient(180deg,rgba(7,17,29,.03),rgba(7,17,29,.48) 120px,rgba(7,17,29,.9) 215px,transparent 300px);
+  }
+  .priority-highlight-copy{width:100%;padding-top:145px}
+  .priority-highlight-visual-note{top:14px;bottom:auto;right:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .priority-highlight-media{transition:none!important}
+}
