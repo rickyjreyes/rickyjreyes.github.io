@@ -34,6 +34,8 @@
   };
   const entries=grouped.map(({row,track})=>({
     row,track,title:label(row.querySelector('h2 a')),
+    status:label(row.querySelector('.pub-status')),
+    abstract:label(row.querySelector('.pub-preview-abstract')),
     dateText:originalDate(row),
     date:parseDate(originalDate(row)),
     id:label(row.querySelector('.pub-index-number')).replace(/^Release\s*/,'')||label(row.querySelector(':scope > span'))
@@ -65,7 +67,7 @@
     btn.setAttribute('aria-label',matches.length===1?
       'Open release '+matches[0].id+': '+matches[0].title+', '+dayLabel+note:
       'Choose among '+matches.length+' publications dated '+dayLabel+note);
-    btn.title=matches.map(e=>'Release '+e.id+' · '+e.title).join('\n')+' · '+dayLabel+note;
+    // A styled, keyboard-accessible hover preview is rendered below; no duplicate native tooltip.
     if(monthOnly){
       btn.innerHTML='<span class="pub-calendar-month-only-label">Month only</span><strong>'+matches.map(e=>'#'+esc(e.id)).join(' · ')+'</strong>';
     }else{
@@ -135,6 +137,60 @@
   mapNote.textContent='Filled squares are recorded release days, colored by research track. Month-only entries appear separately without an invented day. The documented chronology may differ from later Zenodo deposits or revisions; the source archive order is preserved.';
   atlas.appendChild(mapNote);
   header.after(atlas);
+
+  // One lightweight floating preview for all 28 release cells. The content is
+  // taken from their existing canonical publication rows, not invented copy.
+  const hover=document.createElement('div');
+  hover.id='pub-calendar-hover';
+  hover.className='pub-calendar-hover';
+  hover.setAttribute('role','tooltip');
+  hover.hidden=true;
+  document.body.appendChild(hover);
+  let hoverTarget=null;
+  const hideHover=()=>{
+    if(hoverTarget)hoverTarget.removeAttribute('aria-describedby');
+    hoverTarget=null;
+    hover.hidden=true;
+  };
+  const showHover=btn=>{
+    const matches=calendarDayEntries.get(btn)||[];
+    if(!matches.length)return;
+    if(hoverTarget&&hoverTarget!==btn)hoverTarget.removeAttribute('aria-describedby');
+    hoverTarget=btn;
+    btn.setAttribute('aria-describedby','pub-calendar-hover');
+    hover.style.setProperty('--hover-track',matches[0].track.color);
+    hover.innerHTML='<div class="pub-hover-head"><strong>'+esc(matches[0].dateText)+'</strong><span>'+matches.length+' '+(matches.length===1?'release':'releases')+'</span></div>'+
+      matches.map(entry=>
+        '<div class="pub-hover-item" style="--hover-track:'+esc(entry.track.color)+'">'+
+          '<div class="pub-hover-meta"><span>Release '+esc(entry.id)+'</span><span>'+esc(entry.track.name)+'</span></div>'+
+          '<strong class="pub-hover-title">'+esc(entry.title)+'</strong>'+
+          '<p class="pub-hover-status">'+esc(entry.status)+'</p>'+
+          '<p class="pub-hover-abstract">'+esc(entry.abstract)+'</p>'+
+        '</div>'
+      ).join('')+
+      '<p class="pub-hover-hint">'+(matches.length===1?'Select the date to view the publication.':'Select the date to choose a publication.')+'</p>';
+    hover.hidden=false;
+    const rect=btn.getBoundingClientRect();
+    const width=hover.offsetWidth,height=hover.offsetHeight;
+    const margin=12;
+    const roomRight=window.innerWidth-rect.right;
+    const left=roomRight>=width+margin ? rect.right+margin :
+      rect.left>=width+margin ? rect.left-width-margin :
+      Math.min(Math.max(margin,rect.left+rect.width/2-width/2),Math.max(margin,window.innerWidth-width-margin));
+    const top=Math.min(Math.max(margin,rect.top-14),Math.max(margin,window.innerHeight-height-margin));
+    hover.style.left=Math.round(left)+'px';
+    hover.style.top=Math.round(top)+'px';
+  };
+  calendarDayEntries.forEach((matches,btn)=>{
+    btn.addEventListener('mouseenter',()=>showHover(btn));
+    btn.addEventListener('mouseleave',()=>{if(hoverTarget===btn)hideHover();});
+    btn.addEventListener('focus',()=>showHover(btn));
+    btn.addEventListener('blur',()=>{if(hoverTarget===btn)hideHover();});
+    btn.addEventListener('pointerdown',hideHover,{passive:true});
+  });
+  window.addEventListener('scroll',hideHover,{passive:true});
+  window.addEventListener('resize',hideHover,{passive:true});
+
   const syncCalendar=()=>{
     const active=label(archive.querySelector('.pub-index-item.pub-current .pub-index-number')).replace(/^Release\s*/,'');
     calendarCells.forEach((cell,id)=>{
