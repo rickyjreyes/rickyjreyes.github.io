@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f">
-<title>Pre-2025 Scientific Foundations | Richard J. Reyes</title>
-<meta name="description" content="Ranked pre-2025 scientific literature most relevant to Wave Confinement Theory, with verified DOI, publisher, archival, or official-record links.">
+<title>Scientific Foundations of Wave Confinement Theory | Richard J. Reyes</title>
+<meta name="description" content="Explore the eight canonical WCT Core papers and 33 curated external sources across nonlinear PDE, geometry, physics and information theory, with a source timeline and research connections.">
 <meta name="author" content="Richard J. Reyes">
 <meta name="robots" content="index,follow,max-snippet:-1">
 <link rel="canonical" href="https://rickyjreyes.github.io/foundations/">
@@ -93,6 +93,6 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 function row(r){const extra=r[8]?`<a href="${esc(r[8])}" target="_blank" rel="noopener noreferrer">${esc(r[9])}</a>`:'';return `<tr><td class="rank">${r[0]}</td><td class="work"><a href="${esc(r[5])}" target="_blank" rel="noopener noreferrer">${esc(r[1])}</a><span>${esc(r[2])}</span></td><td class="year">${esc(r[3])}</td><td class="relevance">${esc(r[4])}</td><td class="source"><a href="${esc(r[5])}" target="_blank" rel="noopener noreferrer">${esc(r[6])}</a>${extra}<span class="tag">${esc(r[7])}</span></td></tr>`}
 const groups={core:[1,10],geometry:[11,20],dynamics:[21,30],empirical:[31,37],background:[38,47]};Object.entries(groups).forEach(([id,[a,b]])=>document.getElementById(id+'-body').innerHTML=R.filter(r=>r[0]>=a&&r[0]<=b).map(row).join(''));
 </script>
-<script src="../site-nav.js" defer></script>
+<script src="../site-nav.js?v=20261013-foundations-atlas" defer></script>
 </body>
 </html>
