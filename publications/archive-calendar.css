@@ -83,3 +83,47 @@ html.pub-enhanced .pub-index-item.pub-current>div{border-left-color:var(--pub-tr
  button.pub-calendar-day.is-release{opacity:1;transform:none}
  button.pub-calendar-day.is-release.is-active,.pub-calendar-month-only.is-active{animation:none!important}
 }
+
+
+/* Parallel year panels at desktop width; each holds a compact three-column
+   calendar. Stack naturally before the day squares become too small. */
+.pub-calendar-years{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:16px}
+.pub-calendar-year{padding:14px 10px 13px;border:1px solid var(--line);border-radius:7px;background:rgba(255,255,255,.012)}
+.pub-calendar-months{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.pub-calendar-month{padding:8px 6px 7px}
+.pub-calendar-weekdays,.pub-calendar-days{gap:2px}
+.pub-calendar-year-head{align-items:center;justify-content:space-between;gap:9px}
+.pub-calendar-year-head h3{font-size:clamp(2.8rem,5vw,3.55rem)}
+.pub-calendar-year-head>span{text-align:right}
+.pub-calendar-day,.pub-calendar-blank{font-size:.56rem}
+.pub-calendar-month-head span{font-size:.54rem}
+/* Flat, track-colored hover/focus detail. No glow, no wheel interception. */
+.pub-calendar-hover{position:fixed;z-index:120;width:min(365px,calc(100vw - 24px));max-height:min(80vh,530px);padding:13px 14px 11px;overflow:hidden;border:1px solid var(--hover-track,var(--line-strong));border-radius:7px;background:#0b1929;color:var(--text);pointer-events:none;box-shadow:none}
+.pub-calendar-hover[hidden]{display:none}
+.pub-hover-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 10px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.pub-hover-head strong{font:650 1rem/1.2 Georgia,serif}
+.pub-hover-head>span{font:.66rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted-2)}
+.pub-hover-item{padding:10px 0 11px;border-bottom:1px solid var(--line);border-left:2px solid var(--hover-track);padding-left:9px}
+.pub-hover-meta{display:flex;flex-wrap:wrap;gap:5px 10px;color:var(--hover-track);font:750 .62rem/1.35 ui-monospace,SFMono-Regular,Menlo,monospace}
+.pub-hover-title{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden;margin-top:5px;font:650 .8rem/1.4 system-ui,sans-serif}
+.pub-hover-status{margin:6px 0 0;color:var(--muted);font:700 .6rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.045em;text-transform:uppercase}
+.pub-hover-abstract{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;margin:6px 0 0;color:var(--muted);font-size:.72rem;line-height:1.55}
+.pub-hover-hint{margin:9px 0 0;color:var(--muted-2);font-size:.65rem;line-height:1.4}
+.pub-calendar-day.is-release:hover,.pub-calendar-month-only:hover{background:color-mix(in srgb,var(--pub-mark) 30%,#07111f);border-color:var(--pub-mark)}
+@media(max-width:880px){
+ .pub-calendar-years{grid-template-columns:1fr;gap:22px}
+ .pub-calendar-year{padding:13px}
+ .pub-calendar-months{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+ .pub-calendar-month{padding:10px 9px 9px}
+ .pub-calendar-day,.pub-calendar-blank{font-size:.62rem}
+}
+@media(max-width:500px){
+ .pub-calendar-year{padding:9px}
+ .pub-calendar-months{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .pub-calendar-month{padding:9px}
+ .pub-calendar-year-head h3{font-size:2.75rem}
+ .pub-calendar-day,.pub-calendar-blank{font-size:.62rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .pub-calendar-hover *{transition:none!important;animation:none!important}
+}
