@@ -606,7 +606,11 @@ def build_json(pubs: list[dict]) -> str:
     return json.dumps(
         {"schemaVersion": "1.0", "author": AUTHOR, "orcid": ORCID, "works": works},
         ensure_ascii=False,
-        indent=def git_lastmod(relative_path: str) -> str | None:
+        indent=2,
+    ) + "\n"
+
+
+def git_lastmod(relative_path: str) -> str | None:
     """Use the last committed content change, not the build/recrawl date."""
     try:
         result = subprocess.run(
@@ -652,10 +656,6 @@ def build_sitemap(pubs: list[dict]) -> str:
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "\n".join(body)
         + "\n</urlset>\n"
-    )
-
-
-rlset>\n"
     )
 
 
