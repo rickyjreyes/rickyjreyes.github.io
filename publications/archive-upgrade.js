@@ -112,7 +112,7 @@
   const sync=()=>buttons.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.pubTrack===window.__wctPubTrack)));
   const apply=()=>q?.dispatchEvent(new Event('input',{bubbles:true}));
   buttons.addEventListener('click',e=>{
-    const b=e.target.closest('button[data-pub-track],button[data-pub-track]');if(!b)return;
+    const b=e.target.closest('button[data-pub-track]');if(!b)return;
     window.__wctPubTrack=b.dataset.pubTrack;
     if(cat)cat.value=''; // avoid contradictory broad-track and exact-category facets
     sync();apply();
