@@ -1196,3 +1196,214 @@
 @media(prefers-reduced-motion:reduce){
   .priority-highlight-media{transition:none!important}
 }
+
+/* Full-viewport priority chapters.
+   Background images remain DOM images for native responsive loading, but are
+   decorative and absolutely fill each chapter. The scroll-spine JS is unchanged.
+   Use 100vw with a 100% ceiling to avoid horizontal scrollbar overflow. */
+.priority-home.section-shell{
+  width:100vw;
+  max-width:100%;
+  margin-inline:0;
+  padding-inline:0;
+}
+.priority-home>.section-heading{
+  width:min(calc(100% - 40px),900px);
+  margin-inline:auto;
+}
+.priority-home>.status-note,
+.priority-home>a.text-link{
+  display:block;
+  width:min(calc(100% - 40px),var(--max));
+  margin-inline:auto;
+}
+.priority-home>.status-note{margin-top:30px}
+.priority-home>a.text-link{margin-top:20px}
+.priority-home .priority-spine{
+  --spine-x:clamp(26px,3.35vw,54px);
+  width:100vw;
+  max-width:100%;
+  padding:0;
+  margin:0;
+}
+.priority-home .priority-spine::before,
+.priority-home .priority-spine::after{
+  left:var(--spine-x);
+  top:50svh;
+  bottom:50svh;
+  z-index:6;
+}
+.priority-home .priority-spine .priority-highlight{
+  position:relative;
+  isolation:isolate;
+  width:100%;
+  min-height:100svh;
+  margin:0;
+  padding:clamp(80px,9vh,120px) clamp(52px,9vw,154px);
+  justify-content:center;
+  overflow:hidden;
+  border:0;
+  border-top:1px solid rgba(170,201,225,.14);
+  border-radius:0;
+  background:#050d17;
+  opacity:1;
+  transition:box-shadow 180ms ease;
+}
+.priority-home .priority-spine .priority-highlight:last-child{margin-bottom:0}
+.priority-home .priority-spine .priority-highlight.spine-reached,
+.priority-home .priority-spine .priority-highlight.spine-current{
+  opacity:1;
+  background:#050d17;
+}
+.priority-home .priority-spine .priority-highlight.spine-current{
+  box-shadow:inset 4px 0 0 var(--node-color);
+}
+.priority-home .priority-spine .priority-highlight:focus-visible{
+  outline:2px solid var(--node-color);
+  outline-offset:-2px;
+}
+.priority-home .priority-highlight::before{
+  left:calc(var(--spine-x) - 6px);
+  z-index:7;
+}
+.priority-home .priority-highlight::after{
+  left:calc(var(--spine-x) + 12px);
+  width:clamp(23px,3vw,47px);
+  z-index:7;
+}
+.priority-home .priority-highlight-media{
+  position:absolute;
+  z-index:0;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  border-radius:0;
+  -webkit-mask-image:none;
+  mask-image:none;
+  opacity:.66;
+  pointer-events:none;
+  transition:opacity 240ms ease;
+}
+.priority-home .highlight-gwtc .priority-highlight-media{object-position:center 46%}
+.priority-home .highlight-cms .priority-highlight-media{object-position:center}
+.priority-home .highlight-nist .priority-highlight-media{object-position:center 47%}
+.priority-home .highlight-lhcb .priority-highlight-media{object-position:center}
+.priority-home .highlight-juno .priority-highlight-media{object-position:center 44%}
+.priority-home .priority-highlight.spine-reached .priority-highlight-media{opacity:.84}
+.priority-home .priority-highlight.spine-current .priority-highlight-media,
+.priority-home .priority-highlight:hover .priority-highlight-media,
+.priority-home .priority-highlight:focus-visible .priority-highlight-media{opacity:1}
+.priority-home .priority-highlight-wash{
+  position:absolute;
+  z-index:1;
+  inset:0;
+  border-radius:0;
+  background:
+    linear-gradient(90deg,
+      rgba(3,9,18,.97) 0%,
+      rgba(3,9,18,.90) 20%,
+      rgba(3,9,18,.70) 40%,
+      rgba(3,9,18,.36) 67%,
+      rgba(3,9,18,.14) 100%),
+    linear-gradient(0deg,rgba(3,9,18,.3),transparent 30%);
+  pointer-events:none;
+}
+.priority-home .priority-highlight-copy{
+  position:relative;
+  z-index:2;
+  width:min(57%,690px);
+  min-width:0;
+  flex:0 1 auto;
+  padding:0;
+  align-items:flex-start;
+}
+.priority-home .priority-highlight-index{
+  font-size:.75rem;
+  letter-spacing:.14em;
+}
+.priority-home .priority-spine .priority-highlight h3{
+  max-width:20ch;
+  margin:18px 0 18px;
+  font-size:clamp(2.25rem,4.8vw,4.75rem);
+  letter-spacing:-.037em;
+  line-height:1.09;
+  text-wrap:balance;
+}
+.priority-home .priority-spine .priority-highlight p{
+  max-width:57ch;
+  color:#d2deea;
+  font-size:clamp(.96rem,1.18vw,1.12rem);
+  line-height:1.7;
+}
+.priority-home .priority-highlight .text-link{
+  margin-top:24px;
+  text-shadow:0 1px 8px rgba(0,0,0,.65);
+}
+.priority-home .priority-highlight-visual-note{
+  top:auto;
+  bottom:22px;
+  right:clamp(24px,3.5vw,62px);
+  color:rgba(232,240,248,.77);
+}
+@media(max-width:760px){
+  .priority-home .priority-spine{--spine-x:20px}
+  .priority-home .priority-spine .priority-highlight{
+    min-height:100svh;
+    justify-content:flex-end;
+    padding:clamp(105px,32svh,260px) 22px 64px 53px;
+  }
+  .priority-home .priority-highlight::after{
+    left:32px;
+    width:16px;
+  }
+  .priority-home .priority-highlight-media{
+    inset:0;
+    width:100%;
+    height:100%;
+    border-radius:0;
+    object-position:55% 40%;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+  .priority-home .priority-highlight-wash{
+    background:linear-gradient(180deg,
+      rgba(3,9,18,.12) 0%,
+      rgba(3,9,18,.35) 24%,
+      rgba(3,9,18,.83) 49%,
+      rgba(3,9,18,.96) 79%,
+      rgba(3,9,18,.98) 100%);
+  }
+  .priority-home .priority-highlight-copy{
+    width:100%;
+    max-width:600px;
+    padding:0;
+  }
+  .priority-home .priority-spine .priority-highlight h3{
+    max-width:22ch;
+    margin:12px 0;
+    font-size:clamp(1.8rem,7vw,3rem);
+    line-height:1.13;
+  }
+  .priority-home .priority-spine .priority-highlight p{
+    font-size:.9rem;
+    line-height:1.62;
+  }
+  .priority-home .priority-highlight .text-link{margin-top:17px}
+  .priority-home .priority-highlight-visual-note{
+    top:18px;
+    right:18px;
+    bottom:auto;
+  }
+}
+@media(max-width:380px){
+  .priority-home .priority-spine .priority-highlight{padding-left:49px;padding-right:16px}
+  .priority-home .priority-spine .priority-highlight h3{font-size:1.68rem}
+  .priority-home .priority-spine .priority-highlight p{font-size:.84rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .priority-home .priority-highlight-media,
+  .priority-home .priority-spine .priority-highlight{transition:none!important}
+}
