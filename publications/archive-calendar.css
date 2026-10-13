@@ -1,0 +1,85 @@
+/* Calendar chronology / square dates. Only Publications; natural page scrolling. */
+.pub-calendar-atlas{min-width:0}
+.pub-calendar-years{display:grid;gap:26px;margin-top:21px}
+.pub-calendar-year{min-width:0}
+.pub-calendar-year-head{display:flex;align-items:baseline;gap:15px;flex-wrap:wrap;margin:0 0 13px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.pub-calendar-year-head h3{margin:0;color:var(--pub-year-active,var(--text));font:500 clamp(2.7rem,5vw,3.6rem)/1 Georgia,serif;letter-spacing:-.052em;font-variant-numeric:tabular-nums;transition:color .23s ease}
+.pub-calendar-year-head>span{color:var(--muted-2);font:.72rem/1.45 ui-monospace,SFMono-Regular,Menlo,monospace}
+.pub-calendar-months{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.pub-calendar-month{min-width:0;padding:10px 9px 9px;border:1px solid var(--line);border-radius:5px;background:rgba(255,255,255,.015)}
+.pub-calendar-month-head{display:flex;align-items:baseline;justify-content:space-between;gap:3px;min-height:21px;margin:0 0 7px}
+.pub-calendar-month-head h4{margin:0;color:var(--text);font:750 .79rem/1.1 ui-monospace,Menlo,monospace}
+.pub-calendar-month-head span{color:var(--muted-2);font:.59rem/1.2 ui-monospace,Menlo,monospace;text-align:right}
+.pub-calendar-weekdays,.pub-calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px}
+.pub-calendar-weekdays{margin-bottom:4px}
+.pub-calendar-weekdays span{min-width:0;color:var(--muted-2);font:650 .53rem/1.1 ui-monospace,Menlo,monospace;text-align:center}
+.pub-calendar-day,.pub-calendar-blank{position:relative;display:grid;place-items:center;min-width:0;width:100%;aspect-ratio:1;border:1px solid transparent;border-radius:2px;background:rgba(170,201,225,.055);color:var(--muted-2);font:650 .58rem/1 ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.pub-calendar-blank{background:transparent}
+.pub-calendar-day.is-empty{opacity:.52}
+button.pub-calendar-day.is-release{padding:0;border-color:color-mix(in srgb,var(--pub-mark) 62%,transparent);background:color-mix(in srgb,var(--pub-mark) 18%,#07111f);color:var(--pub-mark);font-weight:800;cursor:pointer;opacity:.35;transform:translateY(4px) scale(.93);transition:opacity .32s ease,transform .32s ease,background .22s ease,color .22s ease,border-color .22s ease}
+.pub-calendar-atlas.is-revealed button.pub-calendar-day.is-release{opacity:1;transform:none;transition-delay:var(--pub-delay,0ms),var(--pub-delay,0ms),0ms,0ms,0ms}
+button.pub-calendar-day.is-release:hover,button.pub-calendar-day.is-release:focus-visible{border-color:var(--pub-mark);background:color-mix(in srgb,var(--pub-mark) 37%,#07111f);color:var(--text);outline-offset:2px}
+button.pub-calendar-day.is-release:focus-visible{outline:2px solid var(--pub-mark)}
+button.pub-calendar-day.is-release.is-active{border-color:var(--pub-mark);background:var(--pub-mark);color:#07111f;transition-delay:0ms;animation:pub-calendar-land .25s cubic-bezier(.18,.85,.25,1) both}
+.pub-calendar-day-number{position:relative;z-index:1}
+.pub-calendar-multi{position:absolute;z-index:2;top:-4px;right:-5px;display:grid;place-items:center;min-width:10px;height:10px;padding:0 1px;border:1px solid var(--pub-mark);border-radius:2px;background:#07111f;color:var(--pub-mark);font:800 .48rem/1 ui-monospace,monospace}
+.pub-calendar-day.is-active .pub-calendar-multi{border-color:#07111f;background:#07111f;color:var(--pub-mark)}
+.pub-calendar-month-only{display:flex;align-items:center;justify-content:space-between;gap:4px;min-height:27px;width:100%;margin-top:6px;padding:4px 5px;border:1px solid var(--pub-mark);border-radius:3px;background:color-mix(in srgb,var(--pub-mark) 12%,#07111f);color:var(--pub-mark);cursor:pointer;text-align:left}
+.pub-calendar-month-only-label{font:650 .55rem/1.2 ui-monospace,monospace}
+.pub-calendar-month-only strong{font:750 .55rem/1.2 ui-monospace,monospace}
+.pub-calendar-month-only.is-active{background:var(--pub-mark);color:#07111f;animation:pub-calendar-land .25s ease-out both}
+.pub-calendar-month-only.is-filtered-out,button.pub-calendar-day.is-release.is-filtered-out{opacity:.2}
+.pub-calendar-month-only:focus-visible{outline:2px solid var(--pub-mark);outline-offset:3px}
+.pub-calendar-picker{min-width:0;margin-top:17px;padding:12px 14px;border:1px solid var(--line-strong);border-radius:6px;background:rgba(8,22,38,.95)}
+.pub-calendar-picker[hidden]{display:none}
+.pub-calendar-picker-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:7px 14px}
+.pub-calendar-picker-head strong{color:var(--text);font:650 1rem/1.3 Georgia,serif}
+.pub-calendar-picker-head span{color:var(--muted);font-size:.72rem}
+.pub-calendar-picker-close{margin-left:auto;min-width:30px;min-height:30px;padding:0;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--text);cursor:pointer;font-size:1.13rem}
+.pub-calendar-picker-items{display:grid;gap:5px;margin-top:10px}
+.pub-calendar-picker-items button{display:grid;grid-template-columns:85px minmax(0,1fr);align-items:baseline;gap:12px;min-height:45px;padding:10px;border:1px solid var(--line);border-left:3px solid var(--pub-mark);border-radius:3px;background:rgba(255,255,255,.018);color:var(--text);text-align:left;cursor:pointer}
+.pub-calendar-picker-items button:hover{background:color-mix(in srgb,var(--pub-mark) 10%,transparent)}
+.pub-calendar-picker-items button span{color:var(--pub-mark);font:.7rem/1.35 ui-monospace,monospace}
+.pub-calendar-picker-items button strong{min-width:0;font:.76rem/1.48 system-ui,sans-serif;overflow-wrap:anywhere}
+.pub-calendar-picker button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.pub-date-atlas .pub-atlas-note{margin-top:15px;line-height:1.6}
+.pub-track-dot{border-radius:1px;width:8px;height:8px;flex-basis:8px}
+/* Replace the glowing progress dot/line with quiet square track-colored date cards. */
+.pub-index-list::before{background:rgba(170,201,225,.22);border-radius:0}
+.pub-index-list::after,.pub-timeline-cursor{display:none!important}
+.pub-index-item>span.pub-rail-date{border-radius:3px;box-shadow:none!important}
+.pub-index-item.pub-past>span.pub-rail-date{color:var(--pub-track-color,var(--accent));border-color:color-mix(in srgb,var(--pub-track-color,var(--accent)) 55%,var(--line));background:var(--bg-deep);box-shadow:none!important}
+.pub-index-item.pub-current>span.pub-rail-date{color:var(--pub-track-color,var(--accent));border-color:var(--pub-track-color,var(--accent));background:color-mix(in srgb,var(--pub-track-color,var(--accent)) 12%,var(--bg-deep));box-shadow:none!important;transform:none}
+.pub-rail-date time{gap:4px}
+.pub-rail-date strong{font-size:.72rem;line-height:1.12}
+.pub-rail-date em{font:750 1.12rem/1.05 Georgia,serif!important;letter-spacing:-.02em;color:var(--text);font-variant-numeric:tabular-nums}
+.pub-index-item.pub-current .pub-rail-date em{color:var(--pub-track-color,var(--accent))}
+.pub-index-item.pub-current>div{background:transparent}
+html.pub-enhanced .pub-index-item.pub-current>div{border-left-color:var(--pub-track-color,var(--accent))}
+.pub-index-item.pub-current .pub-index-number{border-color:var(--pub-track-color,var(--accent));background:color-mix(in srgb,var(--pub-track-color,var(--accent)) 10%,transparent)}
+@keyframes pub-calendar-land{from{transform:translateY(-5px) scale(.85)}to{transform:translateY(0) scale(1)}}
+@media(max-width:900px){
+ .pub-calendar-months{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:650px){
+ .pub-calendar-months{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .pub-calendar-month{padding:8px 6px 7px}
+ .pub-calendar-year-head h3{font-size:2.7rem}
+ .pub-calendar-day,.pub-calendar-blank{font-size:.52rem}
+ .pub-calendar-month-head h4{font-size:.73rem}
+ .pub-calendar-month-head span{font-size:.52rem}
+ .pub-index-item>span.pub-rail-date{min-height:56px}
+ .pub-rail-date strong{font-size:.62rem}
+ .pub-rail-date em{font-size:1.04rem!important}
+}
+@media(max-width:380px){
+ .pub-calendar-months{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .pub-calendar-month{padding:9px}
+ .pub-calendar-day,.pub-calendar-blank{font-size:.6rem}
+ .pub-calendar-picker-items button{grid-template-columns:1fr;gap:3px}
+}
+@media(prefers-reduced-motion:reduce){
+ .pub-calendar-year-head h3,button.pub-calendar-day.is-release{transition:none!important;transition-delay:0ms!important}
+ button.pub-calendar-day.is-release{opacity:1;transform:none}
+ button.pub-calendar-day.is-release.is-active,.pub-calendar-month-only.is-active{animation:none!important}
+}

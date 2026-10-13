@@ -50,6 +50,7 @@
 @media(prefers-reduced-motion:reduce){.pub-index-list::after,.pub-timeline-cursor,.pub-index-item>span,.pub-index-item>div,.pub-index-date{transition:none}}</style>
 <link rel="stylesheet" href="archive-upgrade.css?v=20261013-scrollfix3">
 <link rel="stylesheet" href="archive-previews.css?v=20261013-1">
+<link rel="stylesheet" href="archive-calendar.css?v=20261013-1">
 </head><body>
 <a class="skip-link" href="#archive">Skip to publication list</a>
 <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
@@ -114,13 +115,7 @@
   var total=items.length;
   var year='';
   var railRaf=0;
-  var cursor=null;
-  if(archive){
-    cursor=document.createElement('span');
-    cursor.className='pub-timeline-cursor';
-    cursor.setAttribute('aria-hidden','true');
-    archive.prepend(cursor);
-  }
+  var lastCalendarRelease=null;
   function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
   function nodeCenter(item,archiveRect){
     var node=item.querySelector(':scope > span');
@@ -135,6 +130,7 @@
       archive.classList.remove('timeline-active');
       archive.style.setProperty('--pub-line-span','0px');
       archive.style.setProperty('--pub-fill-height','0px');
+      if(lastCalendarRelease!==''){lastCalendarRelease='';document.dispatchEvent(new Event('wct-publication-active'));}
       return;
     }
 
@@ -167,6 +163,9 @@
     });
     if(remaining<3)current=shown.length-1;
     shown[current].classList.add('pub-current','pub-past');
+    var activeNumber=shown[current].querySelector('.pub-index-number');
+    var currentId=(activeNumber?activeNumber.textContent:'').replace(/^Release\s*/,'').trim();
+    if(currentId!==lastCalendarRelease){lastCalendarRelease=currentId;document.dispatchEvent(new Event('wct-publication-active'));}
   }
   function scheduleDateRail(){
     if(railRaf)return;
@@ -185,6 +184,7 @@
     });
     if(empty)empty.hidden=shown!==0;
     if(count)count.textContent=shown===total?('Showing all '+total+' releases.'):('Showing '+shown+' of '+total+' releases.');
+    document.dispatchEvent(new Event('wct-publication-filter'));
     scheduleDateRail();
   }
   q&&q.addEventListener('input',apply);
@@ -208,6 +208,6 @@
   updateDateRail();
 })();
 </script>
-<script src="archive-upgrade.js?v=20261013-scrollfix3" defer></script>
+<script src="archive-upgrade.js?v=20261013-calendar1" defer></script>
 <script src="../site-nav.js" defer></script>
 </body></html>

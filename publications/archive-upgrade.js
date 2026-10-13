@@ -40,64 +40,152 @@
   }));
   if(entries.some(e=>!e.date))return;
 
-  // Independent compact map; plot month-only entries at month midpoint for drawing only.
+  // Real monthly calendars. Use release dates as documented: never assign an
+  // invented day to a month-only record or collapse multiple releases on one day.
   const atlas=document.createElement('section');
-  atlas.className='pub-date-atlas';
+  atlas.className='pub-date-atlas pub-calendar-atlas';
   atlas.id='pub-date-atlas';
   atlas.setAttribute('aria-labelledby','pub-atlas-title');
-  atlas.innerHTML='<div class="pub-atlas-head"><div><p class="paper-kicker">Release chronology</p><h2 id="pub-atlas-title">An archive in time.</h2></div><p>Explore the original release dates, then continue down the full publication rail. Select any marker to jump to its record.</p></div>'+
+  atlas.innerHTML='<div class="pub-atlas-head"><div><p class="paper-kicker">Release chronology</p><h2 id="pub-atlas-title">The research calendar.</h2></div><p>Each colored calendar square marks a release date in its research track. Select a day to open that publication below.</p></div>'+
     '<div class="pub-atlas-summary"><span><strong>28</strong> research releases</span><span><strong>06</strong> research tracks</span><span><strong>2025—26</strong> chronology range</span></div>';
-  const viewport=document.createElement('div');
-  viewport.className='pub-atlas-scroll';
-  viewport.tabIndex=0;
-  viewport.setAttribute('role','region');
-  viewport.setAttribute('aria-label','2025 to 2026 research release chronology');
-  const grid=document.createElement('div');grid.className='pub-atlas-years';
-  [2025,2026].forEach(year=>{
-    const first=year===2025?3:0;
-    const group=document.createElement('div');
-    group.className='pub-atlas-year';
-    group.innerHTML='<div class="pub-atlas-year-head"><strong>'+year+'</strong><span>'+(year===2025?'April—December':'January—September')+'</span></div>';
-    const lane=document.createElement('div');lane.className='pub-atlas-lane';
-    const monthRow=document.createElement('div');monthRow.className='pub-atlas-months';
-    for(let i=0;i<9;i++){
-      const div=document.createElement('span');div.textContent=months[first+i];monthRow.appendChild(div);
+  const grid=document.createElement('div');
+  grid.className='pub-calendar-years';
+  grid.setAttribute('aria-label','Release calendars for 2025 and 2026');
+  const calendarCells=new Map();
+  const calendarDayEntries=new Map();
+  const weekdayNames=['M','T','W','T','F','S','S'];
+  const dayKey=(year,mo,day)=>year+'-'+String(mo+1).padStart(2,'0')+'-'+String(day).padStart(2,'0');
+  const makeDayButton=(matches,dayText,dayLabel,monthOnly)=>{
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className=monthOnly?'pub-calendar-month-only':'pub-calendar-day is-release';
+    btn.dataset.pubIds=matches.map(e=>e.id).join(',');
+    btn.style.setProperty('--pub-mark',matches[0].track.color);
+    const note=monthOnly?' (only the month is recorded; no day is assigned)':'';
+    btn.setAttribute('aria-label',matches.length===1?
+      'Open release '+matches[0].id+': '+matches[0].title+', '+dayLabel+note:
+      'Choose among '+matches.length+' publications dated '+dayLabel+note);
+    btn.title=matches.map(e=>'Release '+e.id+' · '+e.title).join('\n')+' · '+dayLabel+note;
+    if(monthOnly){
+      btn.innerHTML='<span class="pub-calendar-month-only-label">Month only</span><strong>'+matches.map(e=>'#'+esc(e.id)).join(' · ')+'</strong>';
+    }else{
+      btn.innerHTML='<span class="pub-calendar-day-number">'+dayText+'</span>'+(matches.length>1?'<span class="pub-calendar-multi">'+matches.length+'</span>':'');
     }
-    const marks=document.createElement('div');marks.className='pub-atlas-marks';
-    const occupancy={};
-    entries.filter(e=>e.date.year===year).forEach(e=>{
-      const slot=e.date.mo-first;
-      const n=occupancy[slot]||0;occupancy[slot]=n+1;
-      const days=new Date(year,e.date.mo+1,0).getDate();
-      const fraction=e.date.monthOnly?.5:(e.date.day-.5)/days;
-      const x=(slot+fraction)/9*100;
-      const y=[19,43,67,30,56][n%5];
-      const btn=document.createElement('button');
-      btn.type='button';btn.className='pub-atlas-mark';btn.dataset.pubJump=e.id;
-      btn.style.setProperty('--pub-x',x.toFixed(3)+'%');
-      btn.style.setProperty('--pub-y',y+'px');
-      btn.style.setProperty('--pub-mark',e.track.color);
-      const note=e.date.monthOnly?' (month-only chronology; marker position approximate)':'';
-      btn.setAttribute('aria-label','Go to '+e.title+', '+e.dateText+note);
-      btn.title=e.dateText+' · '+e.title+note;
-      marks.appendChild(btn);
-    });
-    lane.append(marks,monthRow);group.appendChild(lane);
-    // Native-flow chronology on mobile; share the same unique release IDs as desktop.
-    const yearEntries=entries.filter(e=>e.date.year===year)
-      .sort((a,b)=>a.date.mo-b.date.mo||((a.date.day??15)-(b.date.day??15))||a.id.localeCompare(b.id));
-    const mobile=document.createElement('details');
-    mobile.className='pub-atlas-mobile-year';
-    mobile.innerHTML='<summary><span>'+year+'</span><span>'+yearEntries.length+' releases</span></summary><ol>'+
-      yearEntries.map(e=>'<li><button type="button" data-pub-jump="'+esc(e.id)+'"><time>'+esc(e.dateText)+'</time><span>'+esc(e.title)+'</span><small>Release '+esc(e.id)+'</small></button></li>').join('')+'</ol>';
-    group.appendChild(mobile);grid.appendChild(group);
+    matches.forEach(e=>calendarCells.set(e.id,btn));
+    calendarDayEntries.set(btn,matches);
+    return btn;
+  };
+  [2025,2026].forEach(year=>{
+    const yearEntries=entries.filter(e=>e.date.year===year);
+    const section=document.createElement('section');
+    section.className='pub-calendar-year';
+    section.dataset.pubYear=String(year);
+    section.innerHTML='<div class="pub-calendar-year-head"><h3>'+year+'</h3><span>'+yearEntries.length+' releases · '+(year===2025?'April—December':'January—September')+'</span></div>';
+    const monthsGrid=document.createElement('div');
+    monthsGrid.className='pub-calendar-months';
+    const first=year===2025?3:0;
+    for(let mo=first;mo<first+9;mo++){
+      const inMonth=yearEntries.filter(e=>e.date.mo===mo);
+      const month=document.createElement('article');
+      month.className='pub-calendar-month';
+      month.dataset.pubMonth=year+'-'+String(mo+1).padStart(2,'0');
+      month.innerHTML='<div class="pub-calendar-month-head"><h4>'+months[mo]+'</h4><span>'+inMonth.length+' '+(inMonth.length===1?'release':'releases')+'</span></div>';
+      const weekday=document.createElement('div');
+      weekday.className='pub-calendar-weekdays';
+      weekday.setAttribute('aria-hidden','true');
+      weekdayNames.forEach(n=>{const span=document.createElement('span');span.textContent=n;weekday.appendChild(span);});
+      month.appendChild(weekday);
+      const days=document.createElement('div');
+      days.className='pub-calendar-days';
+      const firstWeekday=(new Date(Date.UTC(year,mo,1)).getUTCDay()+6)%7;
+      for(let blank=0;blank<firstWeekday;blank++){
+        const space=document.createElement('span');space.className='pub-calendar-blank';space.setAttribute('aria-hidden','true');days.appendChild(space);
+      }
+      const nDays=new Date(Date.UTC(year,mo+1,0)).getUTCDate();
+      for(let day=1;day<=nDays;day++){
+        const matches=inMonth.filter(e=>e.date.day===day);
+        if(matches.length){
+          const btn=makeDayButton(matches,String(day),matches[0].dateText,false);
+          btn.dataset.pubDate=dayKey(year,mo,day);
+          btn.style.setProperty('--pub-delay',Math.min(390,(mo-first)*43+day*2)+'ms');
+          days.appendChild(btn);
+        }else{
+          const span=document.createElement('span');span.className='pub-calendar-day is-empty';span.textContent=String(day);span.setAttribute('aria-hidden','true');days.appendChild(span);
+        }
+      }
+      for(let tail=firstWeekday+nDays;tail<42;tail++){
+        const space=document.createElement('span');space.className='pub-calendar-blank';space.setAttribute('aria-hidden','true');days.appendChild(space);
+      }
+      month.appendChild(days);
+      const monthOnly=inMonth.filter(e=>e.date.monthOnly);
+      if(monthOnly.length)month.appendChild(makeDayButton(monthOnly,'',monthOnly[0].dateText,true));
+      monthsGrid.appendChild(month);
+    }
+    section.appendChild(monthsGrid);grid.appendChild(section);
   });
-  viewport.appendChild(grid);atlas.appendChild(viewport);
+  atlas.appendChild(grid);
+  const picker=document.createElement('div');
+  picker.className='pub-calendar-picker';
+  picker.hidden=true;
+  picker.setAttribute('role','region');
+  picker.setAttribute('aria-label','Choose a publication sharing a release date');
+  atlas.appendChild(picker);
   const mapNote=document.createElement('p');
   mapNote.className='pub-atlas-note';
-  mapNote.textContent='Positions follow the stated chronology dates; month-only entries are positioned approximately. DOI deposit dates and later revisions may differ. The original archive order below is preserved.';
+  mapNote.textContent='Filled squares are recorded release days, colored by research track. Month-only entries appear separately without an invented day. The documented chronology may differ from later Zenodo deposits or revisions; the source archive order is preserved.';
   atlas.appendChild(mapNote);
   header.after(atlas);
+  const syncCalendar=()=>{
+    const active=label(archive.querySelector('.pub-index-item.pub-current .pub-index-number')).replace(/^Release\s*/,'');
+    calendarCells.forEach((cell,id)=>{
+      cell.classList.toggle('is-active',id===active || calendarDayEntries.get(cell)?.some(e=>e.id===active));
+      cell.classList.toggle('is-filtered-out',calendarDayEntries.get(cell)?.every(e=>e.row.hidden));
+    });
+    atlas.querySelectorAll('.pub-calendar-year').forEach(yearSection=>{
+      const entry=entries.find(e=>e.id===active);
+      const selected=!!entry&&String(entry.date.year)===yearSection.dataset.pubYear;
+      yearSection.classList.toggle('is-active',selected);
+      yearSection.style.setProperty('--pub-year-active',selected?entry.track.color:'var(--text)');
+    });
+  };
+  const activePicker=(matches)=>{
+    picker.hidden=false;
+    picker.innerHTML='<div class="pub-calendar-picker-head"><strong>'+esc(matches[0].dateText)+'</strong><span>'+matches.length+' releases on this date</span><button type="button" class="pub-calendar-picker-close" aria-label="Close publication choices">×</button></div><div class="pub-calendar-picker-items">'+
+      matches.map(e=>'<button type="button" data-pub-jump="'+esc(e.id)+'" style="--pub-mark:'+esc(e.track.color)+'"><span>Release '+esc(e.id)+'</span><strong>'+esc(e.title)+'</strong></button>').join('')+'</div>';
+    picker.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});
+    picker.querySelector('[data-pub-jump]')?.focus({preventScroll:true});
+  };
+  const jumpTo=(entry)=>{
+    if(entry.row.hidden)reset?.click();
+    picker.hidden=true;
+    requestAnimationFrame(()=>{
+      entry.row.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+    });
+  };
+  grid.addEventListener('click',e=>{
+    const btn=e.target.closest('button[data-pub-ids]');if(!btn)return;
+    const matches=calendarDayEntries.get(btn)||[];
+    if(matches.length===1)jumpTo(matches[0]);
+    else if(matches.length>1)activePicker(matches);
+  });
+  picker.addEventListener('click',e=>{
+    if(e.target.closest('.pub-calendar-picker-close')){picker.hidden=true;return;}
+    const btn=e.target.closest('button[data-pub-jump]');if(!btn)return;
+    const entry=entries.find(x=>x.id===btn.dataset.pubJump);if(entry)jumpTo(entry);
+  });
+  document.addEventListener('wct-publication-active',syncCalendar);
+  document.addEventListener('wct-publication-filter',syncCalendar);
+  syncCalendar();
+  // The calendar highlights are a passive visual response to native page scroll.
+  // Reveal the date squares upon entrance, never intercept wheel/touch gestures.
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(changes=>{
+      if(changes.some(change=>change.isIntersecting)){
+        atlas.classList.add('is-revealed');observer.disconnect();
+      }
+    },{threshold:0.08});
+    observer.observe(grid);
+  }else atlas.classList.add('is-revealed');
 
   // Research-track shortcuts enhance, rather than replace, existing detailed filters.
   const chooser=document.createElement('fieldset');
@@ -129,17 +217,6 @@
   // Original reset and exact-category controls remain in charge of the baseline filters.
   reset?.addEventListener('click',()=>{window.__wctPubTrack='';sync();},true);
   cat?.addEventListener('change',()=>{window.__wctPubTrack='';sync();},true);
-  grid.addEventListener('click',e=>{
-    const mark=e.target.closest('button[data-pub-jump]');
-    if(!mark)return;
-    const entry=entries.find(x=>x.id===mark.dataset.pubJump);
-    if(!entry)return;
-    if(entry.row.hidden)reset?.click(); // reveal hidden target without altering source order
-    requestAnimationFrame(()=>{
-      entry.row.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
-    });
-  });
-
   // Make the original row surface clickable, while keeping its title anchor canonical.
   archive.addEventListener('click',e=>{
     const row=e.target.closest('.pub-index-item');if(!row||e.target.closest('a,button,input,select,summary,details'))return;
