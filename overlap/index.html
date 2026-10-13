@@ -677,7 +677,7 @@
       const dateMeta=recordDateMeta(r);
       const dateTitle=dateMeta?.source?` title="${esc(`Date basis: ${dateMeta.source}${dateMeta.note?` · ${dateMeta.note}`:''}`)}"`:'';
       const directPdf=directPdfByTitle[r[1]];
-      const pdfLink=directPdf?` · <a class="source-pdf" href="${esc(directPdf)}" target="_blank" rel="noopener noreferrer" aria-label="Open full PDF: ${esc(r[1])}">Full PDF ↗</a>`:'';
+      const pdfLink=directPdf?`<span class="source-pdf-line">Full PDF: <a class="source-pdf" href="${esc(directPdf)}" target="_blank" rel="noopener noreferrer" aria-label="Open full PDF: ${esc(r[1])}">${esc(directPdf)}</a></span>`:'';
       return `<tr><td class="rank">${displayRank}</td><td class="work"><a class="paper" href="${esc(r[2])}" target="_blank" rel="noopener noreferrer">${esc(r[1])}</a><span class="source">${esc(r[5])}${pdfLink}</span></td><td class="authors">${esc(r[6])}</td><td class="identifier"><a href="${esc(r[8])}" target="_blank" rel="noopener noreferrer">${esc(r[7])}</a></td><td class="date"${dateTitle}>${esc(recordDateLabel(r))}</td><td class="score">${r[3].toFixed(1)}</td><td class="relationship">${relationshipHtml(r)}</td></tr>`;
     }
 
