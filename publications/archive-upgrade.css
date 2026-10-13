@@ -1,5 +1,4 @@
 /* Additive Publications polish. The original paper list, animated vertical rail and controls are preserved. */
-html.pub-enhanced .paper-shell{width:min(calc(100% - 40px),980px)}
 .pub-date-atlas{min-width:0;padding:28px 0 26px;margin:0;border-bottom:1px solid var(--line)}
 .pub-atlas-head{display:flex;align-items:end;justify-content:space-between;gap:22px}
 .pub-atlas-head .paper-kicker{margin-bottom:10px;font-size:.66rem}
@@ -46,7 +45,6 @@ html.pub-enhanced .pub-index-item .pub-index-cat{color:var(--pub-track-color,var
 html.pub-enhanced .pub-index-item h2{max-width:68ch}
 html.pub-enhanced .pub-index-item[hidden]{display:none}
 @media(max-width:760px){
-  html.pub-enhanced .paper-shell{width:min(calc(100% - 28px),980px)}
   .pub-date-atlas{padding-top:23px}
   .pub-atlas-head{display:block}
   .pub-atlas-head>p{margin-top:10px}
