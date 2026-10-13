@@ -4,6 +4,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -609,18 +610,49 @@ def build_json(pubs: list[dict]) -> str:
     ) + "\n"
 
 
+def git_lastmod(relative_path: str) -> str | None:
+    """Use the last committed content change, not the build/recrawl date."""
+    try:
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%cs", "--", relative_path],
+            cwd=ROOT, capture_output=True, text=True, check=False,
+        )
+    except OSError:
+        return None
+    value = result.stdout.strip()
+    return value if result.returncode == 0 and re.fullmatch(r"\d{4}-\d{2}-\d{2}", value) else None
+
+
+def newer_date(*values: str | None) -> str | None:
+    known = [value for value in values if value]
+    return max(known) if known else None
+
+
 def build_sitemap(pubs: list[dict]) -> str:
-    urls = [SITE, f"{SITE}publications/"] + [local_url(p["slug"]) for p in pubs]
+    """Publish truthful page modification dates; do not stamp unchanged pages."""
+    archive_date = newer_date(
+        git_lastmod("publications/index.html"),
+        *(pub.get("pageLastmod") for pub in pubs),
+    )
+    urls = [
+        (SITE, git_lastmod("index.html"), "monthly", "1.0"),
+        (f"{SITE}publications/", archive_date, "monthly", "0.8"),
+        (f"{SITE}priority/", newer_date(git_lastmod("priority/index.html"), git_lastmod("priority/claims.json")), "monthly", "0.9"),
+        (f"{SITE}reproduce/", git_lastmod("reproduce/index.html"), "monthly", "0.7"),
+    ]
+    for pub in pubs:
+        relative = f"publications/{pub['slug']}.html"
+        lastmod = newer_date(git_lastmod(relative), pub.get("pageLastmod"))
+        urls.append((local_url(pub["slug"]), lastmod, "yearly", "0.8"))
     body = []
-    for url in urls:
-        change = "monthly" if url.endswith("/") else "yearly"
-        priority = "1.0" if url == SITE else "0.8"
+    for url, lastmod, change, priority in urls:
+        stamp = f"<lastmod>{lastmod}</lastmod>" if lastmod else ""
         body.append(
-            f"  <url><loc>{url}</loc><lastmod>2026-06-24</lastmod>"
+            f"  <url><loc>{url}</loc>{stamp}"
             f"<changefreq>{change}</changefreq><priority>{priority}</priority></url>"
         )
     return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<?xml version="1.0" encoding="UTF-8">\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "\n".join(body)
         + "\n</urlset>\n"

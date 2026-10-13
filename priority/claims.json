@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "updated": "2026-10-06",
+  "updated": "2026-10-13",
   "title": "Richard J. Reyes / WCT Current Claims and Evidence Ledger",
   "scope": "Program-level status summary. Statistical results apply only to their stated datasets, analysis choices, nulls, and background models.",
   "interpretationRules": [
@@ -25,12 +25,49 @@
         "p": 0.0012998700129987
       },
       "supportingResult": "A separately formulated KDE analysis selected k=9.7941176 and returned p=0.00089991 on the same holdout; because the holdout had already been inspected by the primary analysis, this is supporting analysis rather than an independent holdout.",
-      "limitation": "No independent catalog/dataset replication is recorded here; this result does not by itself establish WCT as the physical cause.",
+      "limitation": "V1 is author-run, and V3/V4 reuse an already-inspected holdout: V4 is a structured-null robustness challenge, not independent future-catalog replication. Its phenomenological population and approximate selection models do not replace posterior-aware LVK hierarchical inference with injection-calibrated selection; WCT physical attribution is unestablished.",
       "sources": [
         "https://github.com/rickyjreyes/GWTC/blob/main/RESULTS.md",
         "https://github.com/rickyjreyes/GWTC/blob/main/tables/gwtc_frozen_holdout_result.csv",
+        "https://github.com/rickyjreyes/GWTC/blob/main/GWTC_V4_STRUCTURED_NULL_RESULT.md",
+        "https://github.com/rickyjreyes/GWTC/blob/main/V4_REPRODUCE.md",
         "https://doi.org/10.5281/zenodo.22256802"
-      ]
+      ],
+      "robustnessV4": {
+        "classification": "PASS_ALL_STRUCTURED_NULLS",
+        "relationshipToV1": "V4 tests a V2/V3-informed fixed mode on the already-inspected 104-event GWTC-5 holdout; robustness/source-discrimination only, not a new independent holdout.",
+        "frozenSignal": {
+          "coordinate": "log(M_chirp)",
+          "k": 9.7,
+          "amplitude": 0.38534801946867075,
+          "phaseRadians": 1.0982350914698238,
+          "holdoutN": 104,
+          "delta2LogL": 9.950185579607101
+        },
+        "nullFamily": "Training-fitted continuous broken power law plus truncated Gaussian peak and monotone selection weighting (Mchirp/Mchirp_max)^gamma, without a periodic term.",
+        "nullScenarios": [
+          {
+            "gamma": 0,
+            "exceedances": 55,
+            "simulations": 10000,
+            "p": 0.005599440055994401
+          },
+          {
+            "gamma": 1.5,
+            "exceedances": 1,
+            "simulations": 10000,
+            "p": 0.00019998000199980003
+          },
+          {
+            "gamma": 2.5,
+            "exceedances": 2,
+            "simulations": 10000,
+            "p": 0.00029997000299970003
+          }
+        ],
+        "worstCaseP": 0.005599440055994401,
+        "remainingObligation": "Full posterior-aware LVK hierarchical population inference with injection-calibrated selection; genuinely unseen future-catalog evaluation against a prior frozen prediction."
+      }
     },
     {
       "id": "EMP-CMS-001",
@@ -44,8 +81,19 @@
       "limitation": "The apparent significance is strongly background-model dependent; alternative smooth backgrounds reduce it substantially, and detector/reconstruction versus physical origin remains unresolved.",
       "sources": [
         "https://github.com/rickyjreyes/wct-cms",
+        "https://github.com/rickyjreyes/wct-cms/blob/main/docs/CMS_INDEPENDENT_ADVERSARIAL_AUDIT.md",
         "https://doi.org/10.5281/zenodo.22257067"
-      ]
+      ],
+      "adversarialAudit": {
+        "observedHistoricalPairScore": 108.43746,
+        "reproducedLockedG2Score": 126.275,
+        "alternativeSmoothNullExceedancesPer1000": {
+          "spline_s1": 442,
+          "logPolynomialDegree12": 359,
+          "penalizedSpline16Knots": 405
+        },
+        "interpretation": "Declared-pipeline recurrence is reproducible; significance across reasonable smooth-background models is not established."
+      }
     },
     {
       "id": "EMP-ATLAS-001",
