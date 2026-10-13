@@ -349,7 +349,7 @@
     .rca-tick line{stroke:rgba(170,201,225,.4)} .rca-tick text{fill:var(--muted-2);font:600 10px ui-monospace,SFMono-Regular,Menlo,monospace;text-anchor:middle}
     .rca-today{stroke:var(--accent-3);stroke-dasharray:3 5}.rca-today-label{fill:var(--accent-3);font-size:10px;font-weight:850;letter-spacing:.12em;text-anchor:middle}
     .rca-arc{fill:none;stroke-width:1.6;stroke-dasharray:1 1}
-    .rca-node-label{font-size:10.5px;font-weight:650}.rca-node-dot{stroke-width:1.6}.rca-node-ring{fill:none;stroke-width:1.2}
+    .rca-node-label{font-size:10.5px;font-weight:650}.rca-tier text,.rca-node-label,.rca-mechanisms text,.rca-event-chips text{paint-order:stroke;stroke:#07111f;stroke-width:2.4px;stroke-linejoin:round}.rca-node-dot{stroke-width:1.6}.rca-node-ring{fill:none;stroke-width:1.2}
     .rca-mechanisms text{fill:var(--muted);font-size:10.5px;font-weight:650}
     .origin-dot{fill:var(--accent-3)}.origin-ring{fill:none;stroke:var(--accent-3)}.rca-origin text{fill:var(--accent-3);font-size:10.5px;font-weight:850;letter-spacing:.06em;text-anchor:middle}
     .rca-event-chips text{fill:var(--text);font-size:10.5px;font-weight:650;text-anchor:end}.rca-event-chips line{stroke:rgba(182,255,218,.35)}
@@ -676,10 +676,10 @@
                 <text data-rca-origin-label y="512">RCA · 2025-06-11</text>
               </g>
               <g class="rca-event-chips" data-rca-chips>
-                <g data-rca-chip="0"><line x1="362" y1="60" y2="120"></line><text x="356" y="64">unauthorized communication</text></g>
-                <g data-rca-chip="1"><line x1="362" y1="79" y2="120"></line><text x="356" y="83">coordination / propagation</text></g>
-                <g data-rca-chip="2"><line x1="362" y1="98" y2="120"></line><text x="356" y="102">internet / boundary crossing</text></g>
-                <g data-rca-chip="3"><line x1="362" y1="117" y2="120"></line><text x="356" y="121">evaluation-scorer pursuit</text></g>
+                <g data-rca-chip="0"><line x1="362" y1="25" y2="120"></line><text x="356" y="29">unauthorized communication</text></g>
+                <g data-rca-chip="1"><line x1="362" y1="43" y2="120"></line><text x="356" y="47">coordination / propagation</text></g>
+                <g data-rca-chip="2"><line x1="362" y1="61" y2="120"></line><text x="356" y="65">internet / boundary crossing</text></g>
+                <g data-rca-chip="3"><line x1="362" y1="79" y2="120"></line><text x="356" y="83">evaluation-scorer pursuit</text></g>
               </g>
               <g class="rca-quant-panel" data-rca-quant>
                 <rect x="108" y="168" width="244" height="104" rx="12"></rect>
@@ -1193,15 +1193,15 @@
     const setOp=(el,v)=>{if(el)el.style.opacity=String(cl(v))};
 
     const RCA_NODE_DATA=[
-      {step:1,date:dec(2026,8,26),y:120,r:9,c:'#b6ffda',label:'OpenAI/HF event + METR · 2026-08-26',anchor:'start',ring:true,ldy:-14},
+      {step:1,date:dec(2026,8,26),y:120,r:9,c:'#b6ffda',label:'OpenAI/HF event + METR · 2026-08-26',lines:['OpenAI/HF event + METR','2026-08-26'],anchor:'start',ring:true,ldy:-26},
       {step:3,date:dec(2026,9,9),y:205,r:7,c:'#b6ffda',label:'Anthropic · 2026-09-09',anchor:'end'},
-      {step:3,date:dec(2026,9,16),y:205,r:7,c:'#b6ffda',label:'OpenAI · 2026-09-16',anchor:'start'},
+      {step:3,date:dec(2026,9,16),y:230,r:7,c:'#b6ffda',label:'OpenAI · 2026-09-16',anchor:'start'},
       {step:4,date:dec(2026,3,15),y:290,r:7,c:'#67d4ff',label:'SafetyDrift · Mar 2026',anchor:'end'},
       {step:4,date:dec(2026,5,15),y:290,r:7,c:'#67d4ff',label:'Remembering More, Risking More · May 2026',anchor:'start',ldy:22},
       {step:5,date:dec(2026,6,18),y:360,r:7,c:'#ffcd5c',label:'DeepMind · 2026-06-18',anchor:'end',weak:true},
       {step:6,date:2027.5,y:420,r:7,c:'#8b7cff',label:'2027',anchor:'start',hollow:true,dash:'2 2',noArc:true,ldy:-14},
       {step:6,date:2028.5,y:420,r:7,c:'#8b7cff',label:'2028',anchor:'start',hollow:true,dash:'2 2',noArc:true,ldy:-14},
-      {step:6,date:2030,y:420,r:7,c:'#8b7cff',label:'2029–30',anchor:'start',hollow:true,dash:'2 2',noArc:true,ldy:-14}
+      {step:6,date:2030,y:420,r:7,c:'#8b7cff',label:'2029–30',anchor:'start',edgeSafe:true,hollow:true,dash:'2 2',noArc:true,ldy:-14}
     ];
 
     const DET_ROWS=[
@@ -1269,10 +1269,15 @@
         const ring=svgEl('circle',{class:'rca-node-ring',cx:x,cy:cfg.y,r:cfg.r+6,stroke:cfg.c});
         const dot=svgEl('circle',{class:'rca-node-dot',cx:x,cy:cfg.y,r:0,fill:cfg.hollow?'#07111f':cfg.c,stroke:cfg.c,'stroke-dasharray':cfg.dash||'0'});
         let anchor=cfg.anchor;
-        if(anchor==='start'&&x>560)anchor='end';
+        if(anchor==='start'&&x>560&&!cfg.edgeSafe)anchor='end';
         const lx=anchor==='end'?x-cfg.r-8:x+cfg.r+8;
         const label=svgEl('text',{class:'rca-node-label',x:lx,y:cfg.y+(cfg.ldy??4),'text-anchor':anchor,fill:cfg.c});
-        label.textContent=cfg.label;
+        if(cfg.lines){
+          cfg.lines.forEach((line,i)=>{
+            const tspan=svgEl('tspan',{x:lx,dy:i===0?0:13});
+            tspan.textContent=line;label.appendChild(tspan);
+          });
+        }else label.textContent=cfg.label;
         g.append(ring,dot,label);nodes.appendChild(g);
         return {cfg,x,arc,g,ring,dot,label};
       });
@@ -1372,7 +1377,8 @@
       state.originDot.setAttribute('r',(9*(o<1?o*(1+.35*Math.sin(Math.PI*o)):1)).toFixed(1));
       state.originRing.setAttribute('r',(9+14*cl((t+.2)/.6)).toFixed(1));
       setOp(state.originRing,(1-cl((t+.2)/.6))*o);
-      const mechOp=o*(t<.6?1:.38);state.mech.forEach(el=>setOp(el,mechOp));
+      // Origin-only mechanism words must not persist beneath later tier titles.
+      const mechOp=o*(1-cl((t-.35)/.35));state.mech.forEach(el=>setOp(el,mechOp));
 
       state.rcaNodes.forEach(n=>{
         const {cfg}=n;
