@@ -52,7 +52,7 @@
     const foot=make('div','core-foot','<span>R. J. REYES / CANONICAL WCT '+String(i+1).padStart(2,'0')+'</span><span>Open DOI ↗</span>');
     card.appendChild(foot);
   });
-  head.querySelector('.actions')?.insertAdjacentHTML('beforeend','<a href="#foundation-connections">How it connects</a><a href="#foundation-timeline">Timeline</a><a href="#source-explorer">Search 33 sources</a>');
+  head.querySelector('.actions')?.insertAdjacentHTML('beforeend','<a href="#foundation-timeline">Timeline</a><a href="#source-explorer">Search 33 sources</a>');
   const overview=make('section','foundation-overview foundation-atlas',
     '<div class="overview-statement"><span class="overview-kicker">An indexed research substrate, not a validation claim</span>'+
     '<h2>From established mathematics to testable WCT constructions.</h2>'+
@@ -64,28 +64,6 @@
     '<div class="foundation-metric"><strong>1872–2010</strong><span>External source publication range</span></div></div>');
   overview.id='foundation-atlas-overview';
   head.after(overview);
-
-  const bridges=[
-    {n:'01',title:'Can a confined state exist and persist?',est:'Derrick and Pohozaev constrain candidate stationary states. Lions and Sobolev analysis supply tools for localization and compactness.',wct:'The Geometry of Resonance, dimensionality arguments, and PFF posit a confinement framework.',open:'WCT-specific existence, coercivity, stability, and dynamical lifetime require their own proofs and tests.',ext:'math',core:1},
-    {n:'02',title:'What selects a finite wavelength?',est:'Swift–Hohenberg and nonlinear pattern-formation theory establish mechanisms for finite-wavenumber selection and mode competition.',wct:'PFF, Self-Emergent Fourier Cymatics, and Resonant Cavity of Vector Fields propose corresponding WCT constructions.',open:'An external analogue does not independently establish the proposed WCT selection mechanism or validate a predicted spectrum.',ext:'math',core:4},
-    {n:'03',title:'How do geometry and phase constrain a loop?',est:'Fenchel, Fáry–Milnor, Berry, and gauge-phase literature provide rigorous curvature, topology, and geometric-phase precedents.',wct:'Solenoidal effective mass and density-weighted loop-curvature papers formulate WCT geometric mappings.',open:'Deriving physical mass scales, uniqueness, and empirical agreement remains a separate WCT obligation.',ext:'geometry',core:7},
-    {n:'04',title:'Which physical limits must be recovered?',est:'Planck, Einstein, de Broglie, Schrödinger, Dirac, and quantum field theory establish the physical benchmark.',wct:'The constants and geometric mass papers attempt interpretations or derivations in terms of confinement.',open:'Matching accepted limits and independently predictive measurements cannot be inferred from historical conceptual overlap.',ext:'physics',core:2}
-  ];
-  const bridge=make('section','foundation-bridge foundation-atlas');
-  bridge.id='foundation-connections';
-  bridge.innerHTML='<div class="atlas-head"><div><p class="eyebrow">READING GUIDE / CONSTRAINT → CONSTRUCTION → TEST</p><h2>How the foundations connect</h2></div><p>These are conceptual and methodological links—not claims that established papers proved WCT.</p></div>';
-  const bridgeGrid=make('div','bridge-grid');
-  bridges.forEach(b=>{
-    const card=make('article','bridge-card',
-      '<span class="bridge-index">'+b.n+' / RESEARCH QUESTION</span><h3>'+esc(b.title)+'</h3>'+
-      '<div class="bridge-lines">'+
-      '<div class="bridge-line established"><strong>Established substrate</strong><p>'+esc(b.est)+'</p></div>'+
-      '<div class="bridge-line proposed"><strong>WCT formulation</strong><p>'+esc(b.wct)+'</p></div>'+
-      '<div class="bridge-line open"><strong>Verification boundary</strong><p>'+esc(b.open)+'</p></div></div>'+
-      '<div class="bridge-links"><a href="#'+b.ext+'">Explore prior literature ↗</a><a href="#wct-anchor-'+b.core+'">See WCT paper ↗</a></div>');
-    bridgeGrid.appendChild(card);
-  });
-  bridge.appendChild(bridgeGrid);
 
   const timeline=make('section','foundation-timeline foundation-atlas');
   timeline.id='foundation-timeline';
@@ -141,7 +119,7 @@
   const empty=make('p','foundation-empty','No references match these filters. Try a broader term or reset the domain.');empty.hidden=true;explorer.appendChild(empty);
 
   const coreSection=root.querySelector('#wct-core');
-  if(coreSection)coreSection.after(bridge,timeline,explorer);
+  if(coreSection)coreSection.after(timeline,explorer);
   let facet='all';
   const search=searchLabel.querySelector('input');
   const refresh=()=>{
