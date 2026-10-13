@@ -94,5 +94,6 @@ function row(r){const extra=r[8]?`<a href="${esc(r[8])}" target="_blank" rel="no
 const groups={core:[1,10],geometry:[11,20],dynamics:[21,30],empirical:[31,37],background:[38,47]};Object.entries(groups).forEach(([id,[a,b]])=>document.getElementById(id+'-body').innerHTML=R.filter(r=>r[0]>=a&&r[0]<=b).map(row).join(''));
 </script>
 <script src="../site-nav.js?v=20261013-foundations-scrollfix3" defer></script>
+<script src="../site-nav.js" defer></script>
 </body>
 </html>

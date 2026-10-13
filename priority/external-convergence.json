@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "1.8",
-  "updated": "2026-10-09",
+  "schemaVersion": "1.6",
+  "updated": "2026-10-13",
   "title": "WCT External Literature Convergence Audit and Full Post-Date Overlap Ledger",
   "canonical": "https://rickyjreyes.github.io/priority/#convergence-title",
   "registry": "https://rickyjreyes.github.io/priority/",
@@ -44,11 +44,10 @@
     "aiRecords": 68,
     "dateChecked": 6,
     "chronologyPriorArtReview": 4,
-    "ledgerOnly": 219,
+    "ledgerOnly": 232,
     "verifiedCases": 6,
     "auditCandidates": 4,
-    "priorArtControls": 3,
-    "postDateReviewed": 13
+    "priorArtControls": 3
   },
   "statusVocabulary": {
     "ledger": "Present in the public overlap ledger; chronology and prior-art normalization have not yet been promoted to the verified subset.",
@@ -57,17 +56,13 @@
     "not_normalized": "No promoted chronology conclusion is asserted for this ledger record.",
     "unresolved": "No conclusion is asserted.",
     "not_assessed": "This audit does not assess the field.",
-    "reyes_disclosure_precedes": "A dated Richard J. Reyes / WCT public disclosure recorded in this audit predates the external work.",
-    "post_date_reviewed": "2026 external manuscript date checked against an earlier dated Reyes claim in the public claim registry. Specific source-version claim matching and full promotion remain open; scientific validation or influence is not implied.",
-    "post_date_chronology_reviewed": "The source's external publication date follows the earlier dated claim-registry anchor. This does not assert derivation, influence or mechanism equivalence."
+    "reyes_disclosure_precedes": "A dated Richard J. Reyes / WCT public disclosure recorded in this audit predates the external work."
   },
   "recordFieldSemantics": {
     "ledgerRank": "Sequential display rank derived from domain ordering and descending Post-Date Overlap Score; it is not a stable research identifier.",
     "overlapScore": "Heuristic 0-10 comparison score for density and specificity of technical correspondence; it is not a probability.",
     "wctAnchors": "Exact dated WCT claim anchors only when chronology normalization has recorded them; an empty array means not yet normalized.",
-    "verificationStatus": "Machine-readable audit state for this record.",
-    "displayRelationship": "Public evidence-category label used by the /overlap interface; separate from the stricter audit relationship field and does not by itself establish derivation, influence, or completion of prior-art normalization.",
-    "postDateReview": "Reviewed post-date technical correspondence and explicit limits, distinct from the fully promoted date_checked class."
+    "verificationStatus": "Machine-readable audit state for this record."
   },
   "records": [
     {
@@ -175,14 +170,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08-29",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Nature Communications"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 4,
@@ -204,15 +192,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-07-04",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "secondary-date",
-        "dateSource": "ResearchGate author-upload mirror",
-        "dateNote": "Exact Zenodo record metadata was not retrievable during this audit; this is the dated author-upload copy."
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 5,
@@ -304,14 +284,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08-24",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review A"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 8,
@@ -325,42 +298,15 @@
       "identifier": "10.48550/arXiv.2605.10245",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2605.10245",
       "overlapScore": 9.7,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-KOIDE-001",
-          "title": "Wave Confinement Theory Predicts the Koide Mass Relation",
-          "date": "2025-12-10",
-          "doi": "10.5281/zenodo.17887562",
-          "url": "https://doi.org/10.5281/zenodo.17887562",
-          "dateBasis": "claim_registry_dated_manuscript"
-        }
-      ],
-      "correspondence": [
-        "Charged-lepton Koide geometry, compact phase cycles, and a 45-degree mass-vector cone."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-07",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-05-11",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2605.10245"
-      },
-      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
-      "postDateReview": {
-        "correspondenceType": "physics_structural_correspondence",
-        "mechanism": "Charged-lepton Koide geometry, compact phase cycles, and a 45-degree mass-vector cone.",
-        "limitations": "Both address Koide geometry but adopt different assumptions and do not derive one another. The external paper's current v2 was revised October 5, 2026.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": "Comparison to current arXiv v2; verify details against v1 before any stronger priority claim."
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 9,
@@ -384,14 +330,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08-25",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review Research"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 10,
@@ -478,42 +417,15 @@
       "identifier": "10.48550/arXiv.2606.03725",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2606.03725",
       "overlapScore": 9.6,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-MASS-001",
-          "title": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
-          "date": "2025-10-27",
-          "doi": "10.5281/zenodo.17459463",
-          "url": "https://doi.org/10.5281/zenodo.17459463",
-          "dateBasis": "claim_registry_dated_manuscript"
-        }
-      ],
-      "correspondence": [
-        "Frenet-frame torsion, geometry-induced effective gauge potential, and closed-curve holonomy."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-08",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-06-02",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2606.03725"
-      },
-      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
-      "postDateReview": {
-        "correspondenceType": "physics_structural_correspondence",
-        "mechanism": "Frenet-frame torsion, geometry-induced effective gauge potential, and closed-curve holonomy.",
-        "limitations": "Thin-waveguide derivation has its own assumptions and does not establish WCT's effective-mass or emergent-spacetime relation.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": null
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 13,
@@ -576,14 +488,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-07",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 15,
@@ -609,16 +514,10 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-05",
-        "dateLabel": "May 2–6, 2026",
-        "datePrecision": "month",
-        "dateStatus": "conference-date",
-        "dateSource": "CLEO 2026 / Optica"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
+      "ledgerRank": 16,
       "domain": "physics",
       "title": "Carrier drift modulation and hyperbolic time crystals",
       "primaryUrl": "https://doi.org/10.1038/s44455-026-00043-8",
@@ -638,15 +537,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "displayRelationship": "POST-DATE CONVERGENCE",
-      "relationshipRationale": "Carrier-drift modulation creates temporal boundaries, a hyperbolic photonic time-crystal regime, and parametric gain that can compensate intrinsic loss.",
-      "relationshipLastReviewed": "2026-10-08",
-      "externalChronology": {
-        "publicationDate": "2026-10-05",
-        "datePrecision": "day"
-      },
-      "ledgerRank": 16
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 17,
@@ -760,14 +651,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-07-17",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Chaos / AIP"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 21,
@@ -789,14 +673,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-09-18",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "European Physical Journal D / Springer"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 22,
@@ -822,14 +699,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-05",
-        "dateLabel": "May 2–6, 2026",
-        "datePrecision": "month",
-        "dateStatus": "conference-date",
-        "dateSource": "CLEO 2026 / Optica"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 23,
@@ -853,14 +723,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-25",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review Letters"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 24,
@@ -885,6 +748,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
+      "ledgerRank": 25,
       "domain": "physics",
       "title": "Real-Time Observation of Soliton Buildup and Self-Organization in a GHz Harmonic Mode Locked Fiber Laser",
       "primaryUrl": "https://doi.org/10.1002/lpor.72012",
@@ -909,15 +773,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "displayRelationship": "EMPIRICAL CONVERGENCE",
-      "relationshipRationale": "Real-time experiment tracks more than one hundred intracavity solitons from nonlinear generation through repulsive self-organization into a stationary harmonic mode-locked state.",
-      "relationshipLastReviewed": "2026-10-08",
-      "externalChronology": {
-        "publicationDate": "2026-10-03",
-        "datePrecision": "day"
-      },
-      "ledgerRank": 25
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 26,
@@ -1000,14 +856,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-07-29",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Nature"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 28,
@@ -1029,14 +878,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-05-15",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physics Letters A / ScienceDirect"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 29,
@@ -1081,14 +923,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-16",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review E"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 31,
@@ -1139,14 +974,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-09-23",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Nonlinear Dynamics / Springer"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 33,
@@ -1200,14 +1028,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-07-29",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "CEA IRAMIS"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 35,
@@ -1288,6 +1109,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
+      "ledgerRank": 38,
       "domain": "physics",
       "title": "Single-pump thermally stabilized access to dissipative Kerr solitons via orthogonally polarized fundamental modes",
       "primaryUrl": "https://doi.org/10.1063/5.0339700",
@@ -1310,15 +1132,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "displayRelationship": "EMPIRICAL CONVERGENCE",
-      "relationshipRationale": "Experiment and thermally augmented coupled Lugiato-Lefever simulations identify a finite dynamically stabilized existence window for dissipative Kerr solitons.",
-      "relationshipLastReviewed": "2026-10-08",
-      "externalChronology": {
-        "publicationDate": "2026-10-01",
-        "datePrecision": "day"
-      },
-      "ledgerRank": 38
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 39,
@@ -1364,11 +1178,7 @@
       "externalChronology": {
         "manuscriptDate": "2026-04-22",
         "publicationDate": "2026-07-13",
-        "doi": "10.1364/OL.603068",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Optics Letters"
+        "doi": "10.1364/OL.603068"
       },
       "priorityDirection": "REYES_WCT_BEFORE_EXTERNAL",
       "chronologyAssertion": "A cited Richard J. Reyes / WCT public disclosure predates this external work."
@@ -1444,14 +1254,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-04-01",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Chinese Physics Letters"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 43,
@@ -1473,14 +1276,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-17",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Zenodo"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 44,
@@ -1566,14 +1362,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-03-25",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Nature"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 47,
@@ -1597,14 +1386,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-08",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Preprints.org"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 48,
@@ -1636,14 +1418,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08-25",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review Letters"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 49,
@@ -1903,14 +1678,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-09-01",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review Letters"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 59,
@@ -1934,14 +1702,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-09-01",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Optics Letters"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 60,
@@ -1964,14 +1725,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-09",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "Physica D / ScienceDirect"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 61,
@@ -1993,14 +1747,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-05-08",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Zenodo"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 62,
@@ -2020,7 +1767,7 @@
       ],
       "identifier": "10.48550/arXiv.2602.14549",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2602.14549",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "chronology_prior_art_review",
       "relationship": "candidate_structural_overlap",
       "chronologyStatus": "chronology_prior_art_review",
@@ -2062,7 +1809,7 @@
       ],
       "identifier": "10.48550/arXiv.2607.29174",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2607.29174",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2084,7 +1831,7 @@
       ],
       "identifier": "10.48550/arXiv.2606.10405",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2606.10405",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2112,7 +1859,7 @@
       ],
       "identifier": "10.1103/316q-596d",
       "identifierUrl": "https://doi.org/10.1103/316q-596d",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2121,14 +1868,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-05-21",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review A"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 66,
@@ -2145,7 +1885,7 @@
       ],
       "identifier": "10.48550/arXiv.2608.20867",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2608.20867",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2171,7 +1911,7 @@
       ],
       "identifier": "10.1038/s42005-026-02623-6",
       "identifierUrl": "https://doi.org/10.1038/s42005-026-02623-6",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2180,14 +1920,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-04-15",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Communications Physics"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 68,
@@ -2201,7 +1934,7 @@
       ],
       "identifier": "10.1103/xb4r-9wxk",
       "identifierUrl": "https://doi.org/10.1103/xb4r-9wxk",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2210,14 +1943,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-09-03",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review Research"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 69,
@@ -2234,7 +1960,7 @@
       ],
       "identifier": "10.1103/2h27-c8sp",
       "identifierUrl": "https://doi.org/10.1103/2h27-c8sp",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2243,14 +1969,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-09-30",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review A"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 70,
@@ -2270,7 +1989,7 @@
       ],
       "identifier": "10.48550/arXiv.2609.18883",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.18883",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2294,7 +2013,7 @@
       ],
       "identifier": "10.48550/arXiv.2609.24063",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.24063",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2319,7 +2038,7 @@
       ],
       "identifier": "10.48550/arXiv.2609.19348",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.19348",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2344,7 +2063,7 @@
       ],
       "identifier": "Institutional research programme",
       "identifierUrl": "https://www.southampton.ac.uk/study/postgraduate-research/projects/photonic-time-crystals-timetronics",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2353,15 +2072,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-07-07",
-        "dateLabel": "Public by Jul 7, 2026",
-        "datePrecision": "day",
-        "dateStatus": "public-by-date",
-        "dateSource": "AcademicJobs mirror of University of Southampton project listing",
-        "dateNote": "The University of Southampton project page does not expose a posting/publication date. A matching indexed listing with the same project title, supervisors, and description shows Applications Close: Jul 7, 2026, establishing that the programme was public no later than this date."
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 74,
@@ -2438,14 +2149,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "Optics & Laser Technology / ScienceDirect"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 77,
@@ -2472,14 +2176,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "Optics & Laser Technology / ScienceDirect"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 78,
@@ -2529,14 +2226,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08-28",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review D"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 80,
@@ -2591,6 +2281,7 @@
       "priorityDirection": "NOT_VERIFIED"
     },
     {
+      "ledgerRank": 82,
       "domain": "physics",
       "title": "Q-balls, neural networks, and galaxy rotation curves",
       "primaryUrl": "https://doi.org/10.1103/tz41-5qcp",
@@ -2611,15 +2302,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "displayRelationship": "STRUCTURAL OVERLAP",
-      "relationshipRationale": "Dynamically robust nonlinear scalar solitons acquire a toroidal density profile under angular momentum, providing a confinement/topology comparison without sharing the WCT operator.",
-      "relationshipLastReviewed": "2026-10-08",
-      "externalChronology": {
-        "publicationDate": "2026-10-07",
-        "datePrecision": "day"
-      },
-      "ledgerRank": 82
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 83,
@@ -2743,14 +2426,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-05",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review Research"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 88,
@@ -2775,14 +2451,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-05-20",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review Research"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 89,
@@ -2964,14 +2633,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2025-04-06",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Scientific Reports"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 95,
@@ -3061,14 +2723,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-04-29",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review Letters"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 98,
@@ -3099,14 +2754,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-04",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review A"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 99,
@@ -3129,14 +2777,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-07-08",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review B"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 100,
@@ -3238,14 +2879,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-02-18",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Light: Science & Applications"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 104,
@@ -3347,14 +2981,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-04-29",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physical Review A"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 108,
@@ -3563,14 +3190,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-04",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Nature Photonics"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 116,
@@ -3600,14 +3220,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2025-09-19",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Nature Communications"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 117,
@@ -3812,14 +3425,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 124,
@@ -3870,14 +3476,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 126,
@@ -4013,14 +3612,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-02-02",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Nature Photonics"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 131,
@@ -4144,14 +3736,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 136,
@@ -4198,14 +3783,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-03-24",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Nature Communications"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 138,
@@ -4227,14 +3805,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-03-18",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Communications Physics"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 139,
@@ -4289,14 +3860,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 141,
@@ -4508,14 +4072,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "Chaos, Solitons & Fractals / ScienceDirect"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 149,
@@ -4793,14 +4350,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-21",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "npj Nanophotonics"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 160,
@@ -4820,7 +4370,7 @@
       ],
       "identifier": "10.48550/arXiv.2606.28178",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2606.28178",
-      "overlapScore": 7,
+      "overlapScore": 7.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4845,7 +4395,7 @@
       ],
       "identifier": "10.1063/5.0336210",
       "identifierUrl": "https://doi.org/10.1063/5.0336210",
-      "overlapScore": 7,
+      "overlapScore": 7.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4854,14 +4404,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-05-22",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Chaos / AIP"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 162,
@@ -4885,14 +4428,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-02-23",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Physica Scripta / IOP"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 163,
@@ -4963,14 +4499,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-16",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Archive for Rational Mechanics and Analysis / Springer"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 166,
@@ -4997,14 +4526,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-03-30",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Journal of Plasma Physics / Cambridge"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 167,
@@ -5053,14 +4575,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-16",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "European Physical Journal C / Springer"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 169,
@@ -5083,14 +4598,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-15",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Computational and Applied Mathematics / Springer"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 170,
@@ -5185,7 +4693,7 @@
       ],
       "identifier": "10.1007/s10915-026-03242-7",
       "identifierUrl": "https://doi.org/10.1007/s10915-026-03242-7",
-      "overlapScore": 6,
+      "overlapScore": 6.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5194,14 +4702,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-03-18",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Journal of Scientific Computing / Springer"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 174,
@@ -5239,7 +4740,7 @@
       ],
       "identifier": "METR incident investigation · 2026-08-26",
       "identifierUrl": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
-      "overlapScore": 10,
+      "overlapScore": 10.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5248,14 +4749,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08-26",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "METR / Redwood Research"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 176,
@@ -5270,44 +4764,15 @@
       "identifier": "10.48550/arXiv.2605.02812",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2605.02812",
       "overlapScore": 9.9,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "Persistent agent files and scheduled re-entry carry attacker-influenced instructions across restarts, agent boundaries and platforms; external gating of memory promotion and capabilities interrupts propagation."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-09",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-05-04",
-        "datePrecision": "day",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2605.02812"
-      },
-      "chronologyAssertion": "This external publication follows the RCA dated claim registry anchor; earliest identified RCA public archive is 2025-06-13. Source-version comparison remains open. Chronology and correspondence alone do not establish influence, adoption, copying, or independent RCA/WCT validation.",
-      "postDateReview": {
-        "correspondenceType": "empirical_ai_security",
-        "mechanism": "Persistent agent files and scheduled re-entry carry attacker-influenced instructions across restarts, agent boundaries and platforms; external gating of memory promotion and capabilities interrupts propagation.",
-        "limitations": "The paper studies adversarial worms and mitigation in agent frameworks. It does not test RCA's criticality law, predict a universal propagation-to-correction ratio, or establish that RCA informed the work.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": null
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 177,
@@ -5329,14 +4794,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08-26",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "OpenAI"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 178,
@@ -5364,43 +4822,15 @@
       "identifier": "10.48550/arXiv.2609.28614",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.28614",
       "overlapScore": 9.9,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "Reward hacking in autonomous research loops, evaluator feedback, and iterative evasion."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-04",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-09-23",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2609.28614"
-      },
-      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
-      "postDateReview": {
-        "correspondenceType": "empirical_ai_failure",
-        "mechanism": "Reward hacking in autonomous research loops, evaluator feedback, and iterative evasion.",
-        "limitations": "Empirical evidence of an RCA-relevant failure class; not a test of RCA prediction ratios or physical mitigation.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": null
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 179,
@@ -5422,14 +4852,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-09-16",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "OpenAI"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 180,
@@ -5452,43 +4875,15 @@
       "identifier": "10.48550/arXiv.2603.15727",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2603.15727",
       "overlapScore": 9.8,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "Autonomous agent propagation, persistent compromise across restarts, and tool-mediated cross-agent infection."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-05",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-03-16",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2603.15727"
-      },
-      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
-      "postDateReview": {
-        "correspondenceType": "empirical_ai_failure",
-        "mechanism": "Autonomous agent propagation, persistent compromise across restarts, and tool-mediated cross-agent infection.",
-        "limitations": "Security experiment; not evidence of access to RCA or proof that all propagation is uncontrollable.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": null
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 181,
@@ -5510,14 +4905,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-07-21",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "OpenAI"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 182,
@@ -5562,45 +4950,15 @@
       "identifier": "10.48550/arXiv.2606.05976",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2606.05976",
       "overlapScore": 9.8,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "Failure to flag self-generated errors under some role labels, with substantially different outcomes under role relabeling."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-06",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-06-04",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2606.05976"
-      },
-      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
-      "postDateReview": {
-        "correspondenceType": "empirical_ai_failure",
-        "mechanism": "Failure to flag self-generated errors under some role labels, with substantially different outcomes under role relabeling.",
-        "limitations": "Role-label experiments isolate one self-correction limitation; do not measure RCA anchor decay or collapse thresholds.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": "Current arXiv v2 title differs from earlier ledger title."
-      },
-      "currentExternalTitle": "The Self-Correction Illusion: Role Relabeling Gates Explicit Error Flagging in Large Language Models",
-      "originalLedgerTitle": "The Self-Correction Illusion: LLMs Correct Others but Not Themselves"
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 184,
@@ -5618,43 +4976,15 @@
       "identifier": "10.48550/arXiv.2605.10721",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2605.10721",
       "overlapScore": 9.8,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "Collective misalignment from individually aligned interacting agents, conformity, and persistent misaligned group states."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-02",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-05-11",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2605.10721"
-      },
-      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
-      "postDateReview": {
-        "correspondenceType": "empirical_ai_failure",
-        "mechanism": "Collective misalignment from individually aligned interacting agents, conformity, and persistent misaligned group states.",
-        "limitations": "Statistical-physics model of agent opinion dynamics, not experimental validation of the RCA substrate.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": null
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 185,
@@ -5674,44 +5004,15 @@
       "identifier": "10.48550/arXiv.2609.00595",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.00595",
       "overlapScore": 9.7,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "Individually checked agents can still form unsafe multi-agent execution paths when information, authority and state cross trust boundaries; path closure and recovery require system-level evaluation."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-13",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-09-01",
-        "datePrecision": "day",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2609.00595"
-      },
-      "chronologyAssertion": "This external publication follows the RCA dated claim registry anchor; earliest identified RCA public archive is 2025-06-13. Source-version comparison remains open. Chronology and correspondence alone do not establish influence, adoption, copying, or independent RCA/WCT validation.",
-      "postDateReview": {
-        "correspondenceType": "literature_structural_correspondence",
-        "mechanism": "Individually checked agents can still form unsafe multi-agent execution paths when information, authority and state cross trust boundaries; path closure and recovery require system-level evaluation.",
-        "limitations": "This is a systematization of earlier multi-agent security literature, not a new RCA-specific experiment or independently confirmed causal adoption of RCA. It does not validate the RCA ratio.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": null
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 186,
@@ -5725,45 +5026,15 @@
       "identifier": "OWASP Top 10 for Agentic Applications 2026",
       "identifierUrl": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
       "overlapScore": 9.7,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "OWASP ASI08 names cascading failures in agentic applications as an operational security risk, highlighting chains of faults or compromised inputs propagating across automated agent workflows."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "externalChronology": {
-        "publicationDate": "2025-12-09",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
-      },
-      "auditId": "PD-11",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "chronologyAssertion": "This external publication follows the RCA dated claim registry anchor; earliest identified RCA public archive is 2025-06-13. Source-version comparison remains open. Chronology and correspondence alone do not establish influence, adoption, copying, or independent RCA/WCT validation.",
-      "postDateReview": {
-        "correspondenceType": "institutional_security_taxonomy",
-        "mechanism": "OWASP ASI08 names cascading failures in agentic applications as an operational security risk, highlighting chains of faults or compromised inputs propagating across automated agent workflows.",
-        "limitations": "This is an institutional risk taxonomy assembled from broader community security experience. The December 2025 publication does not establish RCA adoption, an original empirical finding attributable to RCA, or proof of the WCT/RCA law.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": "OWASP institutional risk framework dated 2025-12-09, not a standalone scientific experiment."
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 187,
@@ -5781,44 +5052,15 @@
       "identifier": "10.48550/arXiv.2605.19240",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2605.19240",
       "overlapScore": 9.7,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "Agent-to-agent influence cascades across interaction channels; cross-channel monitoring of emerging causal propagation routes identifies bridge and amplifier agents before locally benign events become system-level failure."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-10",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-05-19",
-        "datePrecision": "day",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2605.19240"
-      },
-      "chronologyAssertion": "This external publication follows the RCA dated claim registry anchor; earliest identified RCA public archive is 2025-06-13. Source-version comparison remains open. Chronology and correspondence alone do not establish influence, adoption, copying, or independent RCA/WCT validation.",
-      "postDateReview": {
-        "correspondenceType": "empirical_ai_failure",
-        "mechanism": "Agent-to-agent influence cascades across interaction channels; cross-channel monitoring of emerging causal propagation routes identifies bridge and amplifier agents before locally benign events become system-level failure.",
-        "limitations": "CASPIAN introduces its own transfer-entropy influence matrix and benchmarks detection; no derivation from RCA's field model or independent measurement of its numerical propagation/correction ratio.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": null
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 188,
@@ -5840,44 +5082,15 @@
       "identifier": "10.48550/arXiv.2604.07775",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2604.07775",
       "overlapScore": 9.7,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "A compromised agent exploits inter-agent trust to cascade malicious instructions, with attack transfer depending on roles, communication surfaces and defensive boundaries rather than single-agent behavior alone."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-12",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-04-09",
-        "datePrecision": "day",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2604.07775"
-      },
-      "chronologyAssertion": "This external publication follows the RCA dated claim registry anchor; earliest identified RCA public archive is 2025-06-13. Source-version comparison remains open. Chronology and correspondence alone do not establish influence, adoption, copying, or independent RCA/WCT validation.",
-      "postDateReview": {
-        "correspondenceType": "empirical_ai_security",
-        "mechanism": "A compromised agent exploits inter-agent trust to cascade malicious instructions, with attack transfer depending on roles, communication surfaces and defensive boundaries rather than single-agent behavior alone.",
-        "limitations": "ACIArena is a security benchmark for injection across agent interfaces. It does not independently confirm RCA's instability threshold or establish a propagation-rate/correction-rate measurement.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": null
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 189,
@@ -5952,14 +5165,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-09-09",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Anthropic"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 192,
@@ -6003,43 +5209,15 @@
       "identifier": "10.48550/arXiv.2603.04474",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2603.04474",
       "overlapScore": 9.6,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "Multi-agent error cascades through dependency graphs, amplified false consensus, and suppression by an external monitoring layer."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "auditId": "PD-01",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-03-04",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2603.04474"
-      },
-      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
-      "postDateReview": {
-        "correspondenceType": "empirical_ai_failure",
-        "mechanism": "Multi-agent error cascades through dependency graphs, amplified false consensus, and suppression by an external monitoring layer.",
-        "limitations": "Models injected errors and defenses in multi-agent collaboration; does not evaluate RCA's quantitative criticality ratio.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": null
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 194,
@@ -6061,15 +5239,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-05-19",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "last-updated",
-        "dateSource": "METR",
-        "dateNote": "Maintained catalogue; source states LAST UPDATED May 19, 2026."
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 195,
@@ -6200,46 +5370,15 @@
       "identifier": "10.48550/arXiv.2605.03228",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2605.03228",
       "overlapScore": 9.4,
-      "verificationStatus": "post_date_reviewed",
-      "relationship": "later_structural_overlap",
-      "chronologyStatus": "post_date_chronology_reviewed",
+      "verificationStatus": "ledger",
+      "relationship": "potential_technical_overlap",
+      "chronologyStatus": "not_normalized",
       "influenceStatus": "unresolved",
       "derivationStatus": "unresolved",
       "patentScopeStatus": "not_assessed",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": [
-        "Persistent safety-focused shadow memory, long-horizon deviation detection, and pre-action protection."
-      ],
-      "priorityDirection": "REYES_RECORDED_CLAIM_DATE_BEFORE_EXTERNAL",
-      "displayRelationship": "EMPIRICAL CONVERGENCE",
-      "relationshipRationale": "Long-horizon threat evaluation with persistent shadow memory and experimentally evaluated detection/mitigation.",
-      "relationshipLastReviewed": "2026-10-07",
-      "auditId": "PD-03",
-      "auditClass": "post_date_documented_correspondence",
-      "lastVerified": "2026-10-09",
-      "externalChronology": {
-        "manuscriptDate": "2026-05-04",
-        "dateStatus": "external_initial_arxiv_submission_checked",
-        "dateSource": "https://arxiv.org/abs/2605.03228"
-      },
-      "chronologyAssertion": "The external work's initial 2026 public submission follows the dated earlier Reyes claim in the claim registry. This is a chronology comparison, not evidence of influence, copying, identical mechanism, or independent WCT/RCA validation.",
-      "postDateReview": {
-        "correspondenceType": "defensive_method_correspondence",
-        "mechanism": "Persistent safety-focused shadow memory, long-horizon deviation detection, and pre-action protection.",
-        "limitations": "A distinct safety defense with functional resemblance to RCA's external anchoring; mechanisms and implementations differ.",
-        "originalClaimArchiveVerification": "not_promoted",
-        "externalPaperVersionNote": null
-      }
+      "wctAnchors": [],
+      "correspondence": [],
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 200,
@@ -6263,10 +5402,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "displayRelationship": "POST-DATE CONVERGENCE",
-      "relationshipRationale": "Closed-loop recursive self-improvement and autonomous research loops materially correspond to the RCA recursive-agent mechanism class.",
-      "relationshipLastReviewed": "2026-10-07"
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 201,
@@ -6320,14 +5456,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-07-13",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Anthropic Alignment Science"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 203,
@@ -6352,10 +5481,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "displayRelationship": "POST-DATE CONVERGENCE",
-      "relationshipRationale": "Later synthesis explicitly covers persistent state corruption, multi-agent propagation, tool-mediated control, and long-horizon agent risks.",
-      "relationshipLastReviewed": "2026-10-07"
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 204,
@@ -6378,14 +5504,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-18",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Google DeepMind"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 205,
@@ -6431,10 +5550,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "displayRelationship": "POST-DATE CONVERGENCE",
-      "relationshipRationale": "Later survey centers persistence, statefulness, propagation, rollback, provenance, and governance across agent memory lifecycles.",
-      "relationshipLastReviewed": "2026-10-07"
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 207,
@@ -6457,14 +5573,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-03-16",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Apollo Research"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 208,
@@ -6516,10 +5625,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "displayRelationship": "POST-DATE CONVERGENCE",
-      "relationshipRationale": "Later work explicitly connects memory poisoning with persistent memory and risks arising from interactions between agents.",
-      "relationshipLastReviewed": "2026-10-07"
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 210,
@@ -6541,10 +5647,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "displayRelationship": "POST-DATE CONVERGENCE",
-      "relationshipRationale": "Later system implements a closed-loop self-evolving multi-agent protocol with persistent/versioned state, assessment, and rollback.",
-      "relationshipLastReviewed": "2026-10-07"
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 211,
@@ -6590,7 +5693,7 @@
       ],
       "identifier": "10.48550/arXiv.2603.27148",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2603.27148",
-      "overlapScore": 9,
+      "overlapScore": 9.0,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -6684,14 +5787,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-03-19",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "OpenAI"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 216,
@@ -6925,15 +6021,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-08-28",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "first-public-version",
-        "dateSource": "arXiv first public version / Anthropic Alignment Science",
-        "dateNote": "First public version of arXiv:2608.28945 dated August 28, 2026."
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 225,
@@ -6959,14 +6047,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-06-11",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Google DeepMind"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 226,
@@ -7015,15 +6096,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2025-09-22",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "first-publication",
-        "dateSource": "Google DeepMind",
-        "dateNote": "Original publication September 22, 2025; page updated April 17, 2026."
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 228,
@@ -7120,14 +6193,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-03-05",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "OpenAI"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 232,
@@ -7149,14 +6215,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-07-05",
-        "dateLabel": null,
-        "datePrecision": "day",
-        "dateStatus": "verified",
-        "dateSource": "Apollo Research"
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 233,
@@ -7401,15 +6460,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2025-07",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "MIT Project NANDA report",
-        "dateNote": "Report is dated July 2025; no day is stated in the report date."
-      }
+      "priorityDirection": "NOT_VERIFIED"
     },
     {
       "ledgerRank": 242,
@@ -7431,15 +6482,7 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED",
-      "externalChronology": {
-        "publicationDate": "2026-04",
-        "dateLabel": null,
-        "datePrecision": "month",
-        "dateStatus": "verified-month",
-        "dateSource": "Technical Disclosure Commons / Digital Commons Network",
-        "dateNote": "The indexed defensive-publication record is dated April 2026; no day was established."
-      }
+      "priorityDirection": "NOT_VERIFIED"
     }
   ],
   "verifiedCases": [
@@ -7840,344 +6883,5 @@
     "Older prior art for component concepts erases a later Reyes-specific synthesis, formulation, architecture, or prediction's documented priority.",
     "Unresolved influence is equivalent to demonstrated independent discovery.",
     "A later external publication may be presented as the origin of a Reyes-specific claim when the registry records an earlier Reyes/WCT public disclosure."
-  ],
-  "postDateReviewedCases": [
-    {
-      "id": "PD-01",
-      "ledgerRank": 193,
-      "domain": "ai",
-      "externalTitle": "From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration",
-      "externalUrl": "https://arxiv.org/abs/2603.04474",
-      "externalDate": "2026-03-04",
-      "dateSource": "https://arxiv.org/abs/2603.04474",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "Multi-agent error cascades through dependency graphs, amplified false consensus, and suppression by an external monitoring layer.",
-      "limitations": "Models injected errors and defenses in multi-agent collaboration; does not evaluate RCA's quantitative criticality ratio.",
-      "correspondenceType": "empirical_ai_failure",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": null,
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-02",
-      "ledgerRank": 184,
-      "domain": "ai",
-      "externalTitle": "Conformity Generates Collective Misalignment in AI Agents Societies",
-      "externalUrl": "https://arxiv.org/abs/2605.10721",
-      "externalDate": "2026-05-11",
-      "dateSource": "https://arxiv.org/abs/2605.10721",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "Collective misalignment from individually aligned interacting agents, conformity, and persistent misaligned group states.",
-      "limitations": "Statistical-physics model of agent opinion dynamics, not experimental validation of the RCA substrate.",
-      "correspondenceType": "empirical_ai_failure",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": null,
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-03",
-      "ledgerRank": 199,
-      "domain": "ai",
-      "externalTitle": "MAGE: Safeguarding LLM Agents against Long-Horizon Threats via Shadow Memory",
-      "externalUrl": "https://arxiv.org/abs/2605.03228",
-      "externalDate": "2026-05-04",
-      "dateSource": "https://arxiv.org/abs/2605.03228",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "Persistent safety-focused shadow memory, long-horizon deviation detection, and pre-action protection.",
-      "limitations": "A distinct safety defense with functional resemblance to RCA's external anchoring; mechanisms and implementations differ.",
-      "correspondenceType": "defensive_method_correspondence",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": null,
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-04",
-      "ledgerRank": 178,
-      "domain": "ai",
-      "externalTitle": "Reward Hacking Challenges Oversight of Autonomous Research Agents",
-      "externalUrl": "https://arxiv.org/abs/2609.28614",
-      "externalDate": "2026-09-23",
-      "dateSource": "https://arxiv.org/abs/2609.28614",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "Reward hacking in autonomous research loops, evaluator feedback, and iterative evasion.",
-      "limitations": "Empirical evidence of an RCA-relevant failure class; not a test of RCA prediction ratios or physical mitigation.",
-      "correspondenceType": "empirical_ai_failure",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": null,
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-05",
-      "ledgerRank": 180,
-      "domain": "ai",
-      "externalTitle": "AgentWorm: Self-Propagating Attacks Across LLM Agent Ecosystems",
-      "externalUrl": "https://arxiv.org/abs/2603.15727",
-      "externalDate": "2026-03-16",
-      "dateSource": "https://arxiv.org/abs/2603.15727",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "Autonomous agent propagation, persistent compromise across restarts, and tool-mediated cross-agent infection.",
-      "limitations": "Security experiment; not evidence of access to RCA or proof that all propagation is uncontrollable.",
-      "correspondenceType": "empirical_ai_failure",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": null,
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-06",
-      "ledgerRank": 183,
-      "domain": "ai",
-      "externalTitle": "The Self-Correction Illusion: Role Relabeling Gates Explicit Error Flagging in Large Language Models",
-      "externalUrl": "https://arxiv.org/abs/2606.05976",
-      "externalDate": "2026-06-04",
-      "dateSource": "https://arxiv.org/abs/2606.05976",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "Failure to flag self-generated errors under some role labels, with substantially different outcomes under role relabeling.",
-      "limitations": "Role-label experiments isolate one self-correction limitation; do not measure RCA anchor decay or collapse thresholds.",
-      "correspondenceType": "empirical_ai_failure",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": "Current arXiv v2 title differs from earlier ledger title.",
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-07",
-      "ledgerRank": 8,
-      "domain": "physics",
-      "externalTitle": "Charged-Lepton Koide Geometry from a Green-Dressed Compact Family Cycle",
-      "externalUrl": "https://arxiv.org/abs/2605.10245",
-      "externalDate": "2026-05-11",
-      "dateSource": "https://arxiv.org/abs/2605.10245",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-KOIDE-001",
-          "title": "Wave Confinement Theory Predicts the Koide Mass Relation",
-          "date": "2025-12-10",
-          "doi": "10.5281/zenodo.17887562",
-          "url": "https://doi.org/10.5281/zenodo.17887562",
-          "dateBasis": "claim_registry_dated_manuscript"
-        }
-      ],
-      "correspondence": "Charged-lepton Koide geometry, compact phase cycles, and a 45-degree mass-vector cone.",
-      "limitations": "Both address Koide geometry but adopt different assumptions and do not derive one another. The external paper's current v2 was revised October 5, 2026.",
-      "correspondenceType": "physics_structural_correspondence",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": "Comparison to current arXiv v2; verify details against v1 before any stronger priority claim.",
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-08",
-      "ledgerRank": 12,
-      "domain": "physics",
-      "externalTitle": "Torsion-induced gauge structure in curved quantum waveguides",
-      "externalUrl": "https://arxiv.org/abs/2606.03725",
-      "externalDate": "2026-06-02",
-      "dateSource": "https://arxiv.org/abs/2606.03725",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-MASS-001",
-          "title": "Emergence of Effective Mass: Solenoidal Topology of Vibrational Energy",
-          "date": "2025-10-27",
-          "doi": "10.5281/zenodo.17459463",
-          "url": "https://doi.org/10.5281/zenodo.17459463",
-          "dateBasis": "claim_registry_dated_manuscript"
-        }
-      ],
-      "correspondence": "Frenet-frame torsion, geometry-induced effective gauge potential, and closed-curve holonomy.",
-      "limitations": "Thin-waveguide derivation has its own assumptions and does not establish WCT's effective-mass or emergent-spacetime relation.",
-      "correspondenceType": "physics_structural_correspondence",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": null,
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-09",
-      "ledgerRank": 176,
-      "domain": "ai",
-      "externalTitle": "Autonomous LLM Agent Worms: Cross-Platform Propagation, Automated Discovery and Temporal Re-Entry Defense",
-      "externalUrl": "https://arxiv.org/abs/2605.02812",
-      "externalDate": "2026-05-04",
-      "dateSource": "https://arxiv.org/abs/2605.02812",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "Persistent agent files and scheduled re-entry carry attacker-influenced instructions across restarts, agent boundaries and platforms; external gating of memory promotion and capabilities interrupts propagation.",
-      "limitations": "The paper studies adversarial worms and mitigation in agent frameworks. It does not test RCA's criticality law, predict a universal propagation-to-correction ratio, or establish that RCA informed the work.",
-      "correspondenceType": "empirical_ai_security",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": null,
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-10",
-      "ledgerRank": 187,
-      "domain": "ai",
-      "externalTitle": "CASPIAN: Online Detection and Attribution of Cascade Attacks in LLM Multi-Agent Systems via Cross-Channel Causal Monitoring",
-      "externalUrl": "https://arxiv.org/abs/2605.19240",
-      "externalDate": "2026-05-19",
-      "dateSource": "https://arxiv.org/abs/2605.19240",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "Agent-to-agent influence cascades across interaction channels; cross-channel monitoring of emerging causal propagation routes identifies bridge and amplifier agents before locally benign events become system-level failure.",
-      "limitations": "CASPIAN introduces its own transfer-entropy influence matrix and benchmarks detection; no derivation from RCA's field model or independent measurement of its numerical propagation/correction ratio.",
-      "correspondenceType": "empirical_ai_failure",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": null,
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-11",
-      "ledgerRank": 186,
-      "domain": "ai",
-      "externalTitle": "OWASP Top 10 for Agentic Applications for 2026 — ASI08 Cascading Failures",
-      "externalUrl": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
-      "externalDate": "2025-12-09",
-      "dateSource": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "OWASP ASI08 names cascading failures in agentic applications as an operational security risk, highlighting chains of faults or compromised inputs propagating across automated agent workflows.",
-      "limitations": "This is an institutional risk taxonomy assembled from broader community security experience. The December 2025 publication does not establish RCA adoption, an original empirical finding attributable to RCA, or proof of the WCT/RCA law.",
-      "correspondenceType": "institutional_security_taxonomy",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": "Institutional ASI08 classification; no claim of OWASP adoption of RCA.",
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-12",
-      "ledgerRank": 188,
-      "domain": "ai",
-      "externalTitle": "ACIArena: Toward Unified Evaluation for Agent Cascading Injection",
-      "externalUrl": "https://arxiv.org/abs/2604.07775",
-      "externalDate": "2026-04-09",
-      "dateSource": "https://arxiv.org/abs/2604.07775",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "A compromised agent exploits inter-agent trust to cascade malicious instructions, with attack transfer depending on roles, communication surfaces and defensive boundaries rather than single-agent behavior alone.",
-      "limitations": "ACIArena is a security benchmark for injection across agent interfaces. It does not independently confirm RCA's instability threshold or establish a propagation-rate/correction-rate measurement.",
-      "correspondenceType": "empirical_ai_security",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": null,
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "id": "PD-13",
-      "ledgerRank": 185,
-      "domain": "ai",
-      "externalTitle": "SoK: When Safe Agents Fail Together: The Security of Multi Agent LLM Systems",
-      "externalUrl": "https://arxiv.org/abs/2609.00595",
-      "externalDate": "2026-09-01",
-      "dateSource": "https://arxiv.org/abs/2609.00595",
-      "wctAnchors": [
-        {
-          "claimId": "WCT-AI-001",
-          "title": "Resonance-Confinement Architecture: A Physically Bounded Substrate for Safe Superintelligence",
-          "date": "2025-06-11",
-          "doi": "10.5281/zenodo.17732661",
-          "url": "https://doi.org/10.5281/zenodo.17732661",
-          "dateBasis": "claim_registry_dated_manuscript",
-          "earliestIdentifiedPublicArchiveDate": "2025-06-13"
-        }
-      ],
-      "correspondence": "Individually checked agents can still form unsafe multi-agent execution paths when information, authority and state cross trust boundaries; path closure and recovery require system-level evaluation.",
-      "limitations": "This is a systematization of earlier multi-agent security literature, not a new RCA-specific experiment or independently confirmed causal adoption of RCA. It does not validate the RCA ratio.",
-      "correspondenceType": "literature_structural_correspondence",
-      "verificationStatus": "post_date_reviewed",
-      "versionNote": null,
-      "lastVerified": "2026-10-09"
-    }
-  ],
-  "postDateReviewRule": "Post-date review checks the later publication's initial date and articulates the narrower correspondence to a dated earlier Reyes claim. It does not replace the separate source-version and full-promotion requirements."
+  ]
 }

@@ -461,7 +461,7 @@
       "landingPage": "https://rickyjreyes.github.io/publications/gwtc-log-periodic-chirp-mass.html",
       "category": "Gravitational-wave open-data analysis",
       "status": "Open-data analysis",
-      "abstract": "This open-data study tests a WCT-motivated log-periodic mode in GWTC chirp masses using a frozen holdout design, unbinned robustness checks, structured non-periodic population nulls, and a prospective prediction for future catalogs."
+      "abstract": "GWTC chirp-mass analysis: training N=173 selected k=9.602325620315224; a frozen 104-event holdout returned Δ2lnL=10.035425 and Monte Carlo p=0.00129987 under its declared smooth null. An unbinned training-only KDE robustness check returned p=0.00089991 on the same already-inspected holdout. V4 fixed k=9.7, amplitude, and phase before a structured non-periodic population-null evaluation; empirical p-values were 0.00559944, 0.00019998, and 0.00029997 for selection exponents γ=0, 1.5, and 2.5. These are conditional tests, not independent future-catalog replication or WCT physical attribution."
     },
     {
       "id": 24,
@@ -481,7 +481,7 @@
       "landingPage": "https://rickyjreyes.github.io/publications/cms-log-periodic-dimuon-residual.html",
       "category": "Collider open-data analysis",
       "status": "Open-data analysis",
-      "abstract": "This CMS Run-2 open-data study follows a fixed-frequency dimuon residual through independent-file replication, cross-period replication, and a prospective phase-locked holdout, then audits the result against flexible smooth-background alternatives."
+      "abstract": "CMS Run-2 dimuon residual: a frozen log-frequency selected in Run2016H reproduced across independent-file and cross-period tests; a prospective Run2016G G2 phase-locked holdout returned positive amplitude A=0.9708618 and Δχ²=126.2832 under the declared background procedure. An independent adversarial audit reproduced the locked score but found 359–442 exceedances per 1,000 trials under defensible alternative smooth-background generators. Recurrence under the historical pipeline is reproducible; model-robust discovery significance and physical attribution remain unresolved."
     },
     {
       "id": 25,
