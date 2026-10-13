@@ -118,7 +118,9 @@
     });
     lane.appendChild(line);chart.appendChild(lane);
   });
-  chart.appendChild(make('div','timeline-axis','<span></span><div class="timeline-ticks"><span>1872</span><span>1900</span><span>1925</span><span>1950</span><span>1975</span><span>2000</span><span>2010</span></div>'));
+  const tickYears=[1872,1900,1925,1950,1975,2000,2010];
+  const tickHTML=tickYears.map(y=>'<span style="--tx:'+(3+(y-1872)/(2010-1872)*94).toFixed(3)+'%">'+y+'</span>').join('');
+  chart.appendChild(make('div','timeline-axis','<span></span><div class="timeline-ticks">'+tickHTML+'</div>'));
   scroll.appendChild(chart);timeline.appendChild(scroll);
   timeline.appendChild(make('p','timeline-hint','Swipe horizontally on narrow screens. Timeline markers and every source entry are keyboard accessible.'));
 
