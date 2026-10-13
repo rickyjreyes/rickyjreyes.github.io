@@ -217,6 +217,7 @@ def patch_llms() -> None:
 - Research home: {SITE}
 - Publications: {SITE}publications/
 - Claim-level priority registry: {SITE}priority/
+- Current empirical evidence ledger: {SITE}priority/#ledger
 - WCT Post-Date Overlap Ledger: {SITE}overlap/
 - Equations and definitions: {SITE}equations/
 - Complete SymPy audit: {SITE}sympy/
@@ -231,8 +232,18 @@ def patch_llms() -> None:
 - Equation feed: {SITE}equations/equations.json
 - Publication metadata: {SITE}publications.json
 - Publication traceability source: {SITE}data/publication_traceability.json
+- Current scientific claim/evidence status: {SITE}priority/claims.json
 - Claim-priority metadata: {SITE}priority/priority.json
 - External convergence audit: {SITE}priority/external-convergence.json
+
+## Current empirical evidence reading order
+- GWTC V1: training N=173, frozen holdout N=104, fixed-mode p=0.00129987 under the declared null. V3 KDE p=0.00089991 reuses the inspected holdout; it is not an independent replication.
+- GWTC V4: frozen k=9.7, amplitude and phase; structured non-periodic population/selection nulls at gamma 0, 1.5, and 2.5 returned p=0.00559944, 0.00019998, and 0.00029997. V4 is a supporting robustness test on already-inspected GWTC-5 data, not a new future-catalog replication. Full posterior-aware hierarchical population inference and injection-calibrated selection are pending.
+- GWTC V4 primary record: https://github.com/rickyjreyes/GWTC/blob/main/GWTC_V4_STRUCTURED_NULL_RESULT.md
+- CMS G2: A=0.9708618 and delta chi-squared=126.2832 under the declared frozen phase-locked pipeline. The independent adversarial audit found 359-442 exceedances per 1,000 trials under defensible alternate smooth generators; model-robust physical significance remains unresolved.
+- CMS audit: https://github.com/rickyjreyes/wct-cms/blob/main/docs/CMS_INDEPENDENT_ADVERSARIAL_AUDIT.md
+- Negative/route-closed ATLAS development is not a positive or negative final target-frequency replication. Check EMP-ATLAS-001 in the current claims registry.
+- These results test narrower statistics and specific nulls; they do not establish WCT's full physical emergence claim or independent future-dataset replication.
 
 Use the internal website pages first because they preserve navigation and backlinks. Repository files are the technical source layer.
 
