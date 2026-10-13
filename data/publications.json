@@ -659,25 +659,27 @@
       "doi": "10.5281/zenodo.22256802",
       "category": "Gravitational-wave open-data analysis",
       "status": "Open-data analysis",
-      "summary": "This open-data study tests a WCT-motivated log-periodic mode in GWTC chirp masses using a frozen holdout design, unbinned robustness checks, structured non-periodic population nulls, and a prospective prediction for future catalogs.",
+      "summary": "GWTC chirp-mass analysis: training N=173 selected k=9.602325620315224; a frozen 104-event holdout returned Δ2lnL=10.035425 and Monte Carlo p=0.00129987 under its declared smooth null. An unbinned training-only KDE robustness check returned p=0.00089991 on the same already-inspected holdout. V4 fixed k=9.7, amplitude, and phase before a structured non-periodic population-null evaluation; empirical p-values were 0.00559944, 0.00019998, and 0.00029997 for selection exponents γ=0, 1.5, and 2.5. These are conditional tests, not independent future-catalog replication or WCT physical attribution.",
       "question": "Does a frequency selected on training data recur in held-out GWTC chirp-mass data and survive stronger non-periodic population nulls?",
       "contributions": [
-        "Freezes a chirp-mass log-frequency before holdout evaluation and reports the resulting holdout statistic.",
-        "Adds unbinned robustness and structured non-periodic population-null tests while preserving a future-catalog prediction."
+        "Reports training N=173, frozen holdout N=104, Δ2lnL=10.035425 and empirical p=0.00129987 under the V1 specified null.",
+        "Separately documents V3 unbinned KDE robustness (p=0.00089991 on the already-inspected holdout) and V4 frozen structured non-periodic population-null challenge (worst-case empirical p=0.00559944).",
+        "Preserves a genuinely unseen future-catalog prediction as a distinct pending test."
       ],
       "evidence": [
         "Public-data analysis",
         "Frozen holdout",
         "Structured-null robustness"
       ],
-      "limitations": "The result remains author-run and does not replace LVK hierarchical population inference with posterior propagation and injection-calibrated selection effects.",
+      "limitations": "All tests are author-run. V3 and V4 reuse the GWTC-5 holdout after prior inspection and are supporting robustness analyses, not additional independent holdouts. V4 uses a phenomenological structured population and approximate selection weights rather than event-posteriors and injection-calibrated LVK hierarchical selection. A genuinely future-catalog test and physical-cause discrimination remain open.",
       "repo": "https://github.com/rickyjreyes/GWTC",
       "related": [
         {
           "slug": "curvature-log-periodic-c9-deformation",
           "relation": "Related log-periodic phenomenology"
         }
-      ]
+      ],
+      "pageLastmod": "2026-10-13"
     },
     {
       "n": 24,
@@ -688,25 +690,27 @@
       "doi": "10.5281/zenodo.22257067",
       "category": "Collider open-data analysis",
       "status": "Open-data analysis",
-      "summary": "This CMS Run-2 open-data study follows a fixed-frequency dimuon residual through independent-file replication, cross-period replication, and a prospective phase-locked holdout, then audits the result against flexible smooth-background alternatives.",
+      "summary": "CMS Run-2 dimuon residual: a frozen log-frequency selected in Run2016H reproduced across independent-file and cross-period tests; a prospective Run2016G G2 phase-locked holdout returned positive amplitude A=0.9708618 and Δχ²=126.2832 under the declared background procedure. An independent adversarial audit reproduced the locked score but found 359–442 exceedances per 1,000 trials under defensible alternative smooth-background generators. Recurrence under the historical pipeline is reproducible; model-robust discovery significance and physical attribution remain unresolved.",
       "question": "Does a fixed log-periodic dimuon residual recur across independent CMS Run-2 files and periods when frequency, phase, and sign are progressively frozen?",
       "contributions": [
-        "Reports independent-file and cross-period recurrence of a frozen dimuon log-frequency.",
-        "Tests a prospectively phase-locked holdout and documents the later background-identifiability audit."
+        "Documents frozen-frequency independent-file and cross-period recurrence and the prospective G2 fixed-frequency, fixed-phase, positive-amplitude holdout (A=0.9708618; Δχ²=126.2832).",
+        "Preserves the independent adversarial audit: alternative smooth-null generators yielded 359/1000 (degree-12 log-polynomial), 405/1000 (penalized spline), and 442/1000 (spline s=1) exceedances.",
+        "Distinguishes conditional historical significance from model-robust significance, detector/systematic alternatives, and WCT attribution."
       ],
       "evidence": [
         "Public-data analysis",
         "Prospective holdout",
         "Adversarial background audit"
       ],
-      "limitations": "The recurring residual is reproducible under the declared pipeline, but model-robust significance and physical attribution remain unresolved because reasonable smooth backgrounds can generate comparable scores.",
+      "limitations": "The recurring residual is reproducible under the declared pipeline, but several defensible smooth-background models generate comparable scores in 359–442 of 1,000 trials. Conversely, flexible backgrounds can also absorb injected signals; neither disappearance nor recurrence establishes the physical cause. No validated model-robust global p-value or WCT attribution is claimed.",
       "repo": "https://github.com/rickyjreyes/wct-cms",
       "related": [
         {
           "slug": "lhcb-log-spectral-koide-winding",
           "relation": "Related collider analysis"
         }
-      ]
+      ],
+      "pageLastmod": "2026-10-13"
     },
     {
       "n": 25,
