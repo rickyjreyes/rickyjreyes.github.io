@@ -189,6 +189,7 @@ def patch_sitemap() -> None:
         "equations/equations.json",
         "llms.txt",
         "priority/priority.json",
+        "priority/claims.json",
         "publications.json",
     ]
     additions = []
