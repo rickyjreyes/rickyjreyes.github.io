@@ -811,6 +811,7 @@ def preserve_custom_publications_index(pubs: list[dict]) -> None:
             f"Customized archive has {len(rows)} rows but publication source has "
             f"{len(pubs)}. Reconcile its chronology before rebuilding."
         )
+    refreshed = []
     for number, (row, pub) in enumerate(zip(rows, pubs), start=1):
         link = re.search(r'<h2><a href="([^"]+)">([^<]+)</a></h2>', row)
         if (link is None
@@ -823,7 +824,29 @@ def preserve_custom_publications_index(pubs: list[dict]) -> None:
                 "title, link, category or status. Reconcile it manually rather "
                 "than silently regenerating the original template."
             )
-    print(f"Preserved curated Publications archive with {len(rows)} verified releases.")
+        abstract = re.search(
+            r'(<p class="pub-preview-abstract">)([\s\S]*?)(</p>)', row
+        )
+        if abstract is None:
+            raise RuntimeError(
+                f"Customized archive release {number:02d} is missing its "
+                "canonical abstract preview. Refusing legacy regeneration."
+            )
+        if html.unescape(abstract.group(2)) != pub["summary"]:
+            updated = (
+                row[:abstract.start(2)] + esc(pub["summary"])
+                + row[abstract.end(2):]
+            )
+            refreshed.append((row, updated))
+
+    for original_row, updated_row in refreshed:
+        page = page.replace(original_row, updated_row, 1)
+    if refreshed:
+        archive_path.write_text(page, encoding="utf-8")
+    print(
+        f"Preserved curated Publications archive with {len(rows)} verified releases; "
+        f"updated {len(refreshed)} abstract previews from canonical metadata."
+    )
 
 
 def main() -> None:
