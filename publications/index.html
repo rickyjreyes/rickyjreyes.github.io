@@ -48,6 +48,7 @@
 .pub-empty{padding:40px 0;color:var(--muted)}
 @media(max-width:600px){.pub-index-date{font-size:.76rem;padding:4px 8px}.pub-index-list{--pub-line-x:26px}.pub-index-item{grid-template-columns:52px minmax(0,1fr);gap:14px;padding-top:21px}.pub-index-item>span{width:38px;height:26px;font-size:.64rem}.pub-index-item>div{padding-bottom:22px}}
 @media(prefers-reduced-motion:reduce){.pub-index-list::after,.pub-timeline-cursor,.pub-index-item>span,.pub-index-item>div,.pub-index-date{transition:none}}</style>
+<link rel="stylesheet" href="archive-upgrade.css?v=20261013-1">
 </head><body>
 <a class="skip-link" href="#archive">Skip to publication list</a>
 <header class="site-header"><div class="nav-wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
@@ -179,7 +180,8 @@
       var ok=(!term||it.dataset.search.indexOf(term)>-1)
         &&(!c||it.dataset.category===c)
         &&(!s||it.dataset.status===s)
-        &&(!year||it.dataset.year===year);
+        &&(!year||it.dataset.year===year)
+        &&(!(window.__wctPubTrack||'')||it.dataset.track===window.__wctPubTrack);
       it.hidden=!ok;if(ok)shown++;
     });
     if(empty)empty.hidden=shown!==0;
@@ -242,5 +244,6 @@
   updateDateRail();
 })();
 </script>
+<script src="archive-upgrade.js?v=20261013-1" defer></script>
 <script src="../site-nav.js" defer></script>
 </body></html>
