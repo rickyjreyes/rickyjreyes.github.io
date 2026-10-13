@@ -830,12 +830,12 @@ def main() -> None:
     data = json.loads(SOURCE.read_text(encoding="utf-8"))
     pubs = data["publications"]
     PUB_DIR.mkdir(parents=True, exist_ok=True)
+    preserve_custom_publications_index(pubs)  # Verify before writing any generated files.
 
     titles = {p["slug"]: p["title"] for p in pubs}
     for pub in pubs:
         (PUB_DIR / f"{pub['slug']}.html").write_text(paper_page(pub, titles), encoding="utf-8")
     (PUB_DIR / "paper.css").write_text(PAPER_CSS, encoding="utf-8")
-    preserve_custom_publications_index(pubs)
 
     (ROOT / "publications.bib").write_text(build_bibtex(pubs), encoding="utf-8")
     (ROOT / "publications.ris").write_text(build_ris(pubs), encoding="utf-8")
