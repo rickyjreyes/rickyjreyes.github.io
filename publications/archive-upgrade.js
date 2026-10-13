@@ -21,6 +21,7 @@
   if(grouped.some(x=>!x.track)||tracks.some(t=>grouped.filter(x=>x.track===t).length!==t.expected))return;
   grouped.forEach(x=>{x.row.dataset.track=x.track.id;x.row.style.setProperty('--pub-track-color',x.track.color);});
   const label=(node)=>node?.textContent?.trim()||'';
+  const originalDate=row=>row.querySelector('.pub-rail-date time')?.getAttribute('aria-label')||label(row.querySelector('.pub-index-date'));
   const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const fullMonths=['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -33,8 +34,8 @@
   };
   const entries=grouped.map(({row,track})=>({
     row,track,title:label(row.querySelector('h2 a')),
-    dateText:label(row.querySelector('.pub-index-date')),
-    date:parseDate(label(row.querySelector('.pub-index-date'))),
+    dateText:originalDate(row),
+    date:parseDate(originalDate(row)),
     id:label(row.querySelector(':scope > span'))
   }));
   if(entries.some(e=>!e.date))return;
@@ -133,7 +134,7 @@
 
   // Make the original row surface clickable, while keeping its title anchor canonical.
   archive.addEventListener('click',e=>{
-    const row=e.target.closest('.pub-index-item');if(!row||e.target.closest('a,button,input,select,summary'))return;
+    const row=e.target.closest('.pub-index-item');if(!row||e.target.closest('a,button,input,select,summary,details'))return;
     const selection=window.getSelection?.();if(selection&&String(selection).trim())return;
     const anchor=row.querySelector('h2 a');if(anchor)window.location.assign(anchor.href);
   });
