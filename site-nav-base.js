@@ -455,7 +455,7 @@
     const mobileCSS = document.createElement('link');
     mobileCSS.id = 'wct-mobile-ready-css';
     mobileCSS.rel = 'stylesheet';
-    mobileCSS.href = '/mobile-ready.css?v=20261012-mobile-nav';
+    mobileCSS.href = '/mobile-ready.css?v=20261013-mobile-chapters';
     document.head.appendChild(mobileCSS);
   }
   if (!document.getElementById('wct-mobile-ready-script')) {
