@@ -36,7 +36,7 @@
     row,track,title:label(row.querySelector('h2 a')),
     dateText:originalDate(row),
     date:parseDate(originalDate(row)),
-    id:label(row.querySelector(':scope > span'))
+    id:label(row.querySelector('.pub-index-number')).replace(/^Release\s*/,'')||label(row.querySelector(':scope > span'))
   }));
   if(entries.some(e=>!e.date))return;
 
@@ -51,7 +51,7 @@
   viewport.className='pub-atlas-scroll';
   viewport.tabIndex=0;
   viewport.setAttribute('role','region');
-  viewport.setAttribute('aria-label','Scrollable 2025 to 2026 research release timeline');
+  viewport.setAttribute('aria-label','2025 to 2026 research release chronology');
   const grid=document.createElement('div');grid.className='pub-atlas-years';
   [2025,2026].forEach(year=>{
     const first=year===2025?3:0;
@@ -82,7 +82,15 @@
       btn.title=e.dateText+' · '+e.title+note;
       marks.appendChild(btn);
     });
-    lane.append(marks,monthRow);group.appendChild(lane);grid.appendChild(group);
+    lane.append(marks,monthRow);group.appendChild(lane);
+    // Native-flow chronology on mobile; share the same unique release IDs as desktop.
+    const yearEntries=entries.filter(e=>e.date.year===year)
+      .sort((a,b)=>a.date.mo-b.date.mo||((a.date.day??15)-(b.date.day??15))||a.id.localeCompare(b.id));
+    const mobile=document.createElement('details');
+    mobile.className='pub-atlas-mobile-year';
+    mobile.innerHTML='<summary><span>'+year+'</span><span>'+yearEntries.length+' releases</span></summary><ol>'+
+      yearEntries.map(e=>'<li><button type="button" data-pub-jump="'+esc(e.id)+'"><time>'+esc(e.dateText)+'</time><span>'+esc(e.title)+'</span><small>Release '+esc(e.id)+'</small></button></li>').join('')+'</ol>';
+    group.appendChild(mobile);grid.appendChild(group);
   });
   viewport.appendChild(grid);atlas.appendChild(viewport);
   const mapNote=document.createElement('p');

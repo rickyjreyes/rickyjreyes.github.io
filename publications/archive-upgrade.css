@@ -59,3 +59,25 @@ html.pub-enhanced .pub-index-item[hidden]{display:none}
 @media(prefers-reduced-motion:reduce){
   .pub-atlas-mark,.pub-track-buttons button,html.pub-enhanced .pub-index-item>div{transition:none!important}
 }
+
+/* Preserve full desktop chronology. Phones use native-flow release lists. */
+.pub-atlas-scroll{overscroll-behavior:auto;touch-action:pan-x pan-y}
+.pub-atlas-mobile-year{display:none}
+@media(max-width:760px){
+ .pub-atlas-scroll{overflow:visible;max-width:100%;padding:10px 0 0;scrollbar-width:auto}
+ .pub-atlas-years{min-width:0;width:100%;grid-template-columns:1fr;gap:9px}
+ .pub-atlas-year{display:block;min-width:0}
+ .pub-atlas-year-head,.pub-atlas-lane{display:none}
+ .pub-atlas-mobile-year{display:block;min-width:0;border:1px solid var(--line);border-radius:9px;background:rgba(4,12,23,.46)}
+ .pub-atlas-mobile-year summary{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:49px;padding:11px 13px;color:var(--text);font:750 .86rem/1.4 system-ui,sans-serif;cursor:pointer}
+ .pub-atlas-mobile-year summary span:last-child{flex:none;color:var(--muted-2);font:.71rem/1.3 ui-monospace,monospace}
+ .pub-atlas-mobile-year summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+ .pub-atlas-mobile-year ol{margin:0;padding:0 8px 8px;list-style:none}
+ .pub-atlas-mobile-year li button{display:grid;grid-template-columns:91px minmax(0,1fr);gap:5px 12px;width:100%;min-height:48px;padding:10px 4px;border:0;border-top:1px solid var(--line);color:var(--text);background:transparent;text-align:left;cursor:pointer}
+ .pub-atlas-mobile-year li button:hover,.pub-atlas-mobile-year li button:focus-visible{background:rgba(103,212,255,.045)}
+ .pub-atlas-mobile-year li button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+ .pub-atlas-mobile-year time{grid-row:1 / 3;color:var(--accent-3);font:800 .66rem/1.5 ui-monospace,monospace;white-space:normal}
+ .pub-atlas-mobile-year li button span{min-width:0;font-size:.77rem;line-height:1.5;overflow-wrap:anywhere}
+ .pub-atlas-mobile-year li button small{grid-column:2;color:var(--muted-2);font:.65rem/1.3 ui-monospace,monospace}
+ .pub-track-buttons{flex-wrap:wrap;max-width:100%;overflow:visible;overscroll-behavior:auto;padding-bottom:3px}
+}

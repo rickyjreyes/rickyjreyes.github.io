@@ -55,6 +55,21 @@
 
   const chart=document.getElementById('pd-chart');
   const groups=document.getElementById('pd-groups');
+  // A tap-to-jump list replaces crowded overlapping chart marks on phones.
+  // The 13 source records, day offsets and the wide-screen chart are unchanged.
+  const mobile=document.createElement('div');
+  mobile.className='pd-mobile-chronology';
+  mobile.setAttribute('aria-label','Thirteen post-date records as a readable timeline');
+  ['rca','wct'].forEach(kind=>{
+    const lane=document.createElement('details');
+    lane.className='pd-mobile-group';
+    lane.dataset.pdMobileKind=kind;
+    const data=records.filter(r=>r.kind===kind).sort((a,b)=>a.days-b.days||a.id.localeCompare(b.id));
+    lane.innerHTML='<summary><span>'+esc(kind==='rca'?'RCA · later AI research':'WCT · later physics')+'</span><span>'+data.length+' records</span></summary>'+
+      '<ol>'+data.map(r=>'<li><button type="button" data-pd-select="'+esc(r.id)+'"><strong>+'+r.days+' days</strong><span>'+esc(r.id+' · '+r.title)+'</span><small>'+esc(r.date)+'</small></button></li>').join('')+'</ol>';
+    mobile.appendChild(lane);
+  });
+  document.querySelector('.pd-chartscroll')?.insertAdjacentElement('afterend',mobile);
   const prettyDate = d => new Date(d+'T12:00:00Z').toLocaleDateString('en-US',{year:'numeric',month:'short',day:'2-digit',timeZone:'UTC'});
   const pos = days => (days / 480 * 100).toFixed(3)+'%';
   const sorted = data => data.slice().sort(sort === 'date'
@@ -111,6 +126,8 @@
     shell.querySelectorAll('[data-pd-filter]').forEach(b=>{const active=b.dataset.pdFilter===filter;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active));});
     shell.querySelectorAll('[data-pd-sort]').forEach(b=>{const active=b.dataset.pdSort===sort;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active));});
     makeChart();
+    mobile.querySelectorAll('[data-pd-mobile-kind]').forEach(lane=>{lane.hidden=filter!=='all'&&lane.dataset.pdMobileKind!==filter;});
+    mobile.querySelectorAll('[data-pd-select]').forEach(b=>b.classList.toggle('is-selected',b.dataset.pdSelect===selected));
     groups.innerHTML=(filter==='all'||filter==='rca'?makeGroup('rca'):'')+(filter==='all'||filter==='wct'?makeGroup('wct'):'');
   }
   shell.addEventListener('click',event=>{
