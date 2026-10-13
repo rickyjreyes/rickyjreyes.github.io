@@ -293,97 +293,53 @@
 
   document.documentElement.classList.add('pub-enhanced');
 
-  // Keep the original filter inputs. Compact them when their normal position
-  // reaches the *measured* WCT header, not a hard-coded 72px approximation.
-  // Reserve the natural form height so changing its presentation cannot make
-  // underlying publication rows jump during ordinary page scrolling.
+  // One stable DOM/layout in both natural and sticky positions. No sentinel,
+  // class switching or spacer: CSS position:sticky handles the whole form.
   const facets=controls.querySelector('.pub-facets');
   const yearButtons=controls.querySelector('[data-year-buttons]');
+  const resultCount=document.querySelector('[data-pub-count]');
   chooser.id='pub-sticky-tracks';
-  if(facets)facets.id='pub-sticky-facets';
-  const stickyToggle=document.createElement('button');
-  stickyToggle.type='button';
-  stickyToggle.className='pub-sticky-toggle';
-  stickyToggle.setAttribute('aria-expanded','false');
-  stickyToggle.setAttribute('aria-controls','pub-sticky-tracks pub-sticky-facets');
-  stickyToggle.innerHTML='<span>Filters</span><span class="pub-sticky-count" hidden>0</span><span class="pub-sticky-caret" aria-hidden="true">⌄</span>';
-  controls.prepend(stickyToggle);
-  const syncFilterBadge=()=>{
-    const selectedYear=yearButtons?.querySelector('button[aria-pressed="true"]')?.dataset.year||'';
-    const active=[window.__wctPubTrack,cat?.value,controls.querySelector('[data-filter-status]')?.value,selectedYear].filter(Boolean).length;
-    const indicator=stickyToggle.querySelector('.pub-sticky-count');
-    indicator.hidden=!active;
-    indicator.textContent=String(active);
-    stickyToggle.setAttribute('aria-label',active?'Filters, '+active+' active':'Filters');
-  };
+  facets.id='pub-sticky-facets';
+  const bottom=document.createElement('div');
+  bottom.className='pub-filter-bottom';
+  controls.appendChild(bottom);
+  bottom.append(facets,resultCount);
+  const filterToggle=document.createElement('button');
+  filterToggle.type='button';
+  filterToggle.className='pub-sticky-toggle';
+  filterToggle.setAttribute('aria-expanded','false');
+  filterToggle.setAttribute('aria-controls','pub-sticky-tracks pub-sticky-facets');
+  filterToggle.innerHTML='<span>Filters</span><span class="pub-sticky-count" hidden>0</span><span class="pub-sticky-caret" aria-hidden="true">⌄</span>';
+  controls.appendChild(filterToggle);
   const setExpanded=expanded=>{
     controls.classList.toggle('is-expanded',expanded);
-    stickyToggle.setAttribute('aria-expanded',String(expanded));
+    filterToggle.setAttribute('aria-expanded',String(expanded));
   };
-  stickyToggle.addEventListener('click',()=>setExpanded(!controls.classList.contains('is-expanded')));
+  filterToggle.addEventListener('click',()=>setExpanded(!controls.classList.contains('is-expanded')));
   controls.addEventListener('keydown',event=>{
     if(event.key==='Escape'&&controls.classList.contains('is-expanded')){
-      setExpanded(false);stickyToggle.focus();
+      setExpanded(false);filterToggle.focus();
     }
   });
-  const sentinel=document.createElement('span');
-  sentinel.className='pub-sticky-sentinel';
-  sentinel.setAttribute('aria-hidden','true');
-  controls.before(sentinel);
-  const spacer=document.createElement('div');
-  spacer.className='pub-sticky-spacer';
-  spacer.setAttribute('aria-hidden','true');
-  controls.after(spacer);
-  const siteHeader=document.querySelector('.site-header');
-  let headerBottom=0,normalMarginTop=0,normalSpace=0,stuck=false,stickyRaf=0;
-  const margins=()=>{
-    const style=getComputedStyle(controls);
-    return {top:parseFloat(style.marginTop)||0,bottom:parseFloat(style.marginBottom)||0};
+  const syncFilterBadge=()=>{
+    const selectedYear=yearButtons.querySelector('button[aria-pressed="true"]')?.dataset.year||'';
+    const active=[(q?.value||'').trim(),window.__wctPubTrack,cat?.value,controls.querySelector('[data-filter-status]')?.value,selectedYear].filter(Boolean).length;
+    const indicator=filterToggle.querySelector('.pub-sticky-count');
+    indicator.hidden=active===0;
+    indicator.textContent=String(active);
+    filterToggle.setAttribute('aria-label',active?'Filters, '+active+' active':'Filters');
   };
-  const readNormalSpace=()=>{
-    const m=margins();
-    normalMarginTop=m.top;
-    normalSpace=controls.getBoundingClientRect().height+m.top+m.bottom;
-  };
-  const updateSpacer=()=>{
-    if(!stuck){spacer.style.height='0px';return;}
-    const m=margins();
-    const compactSpace=controls.getBoundingClientRect().height+m.top+m.bottom;
-    spacer.style.height=Math.max(0,normalSpace-compactSpace).toFixed(2)+'px';
-  };
-  const updateHeader=()=>{
-    headerBottom=siteHeader?Math.max(0,Math.ceil(siteHeader.getBoundingClientRect().bottom)):0;
-    document.documentElement.style.setProperty('--pub-nav-bottom',headerBottom+'px');
-  };
-  const checkSticky=()=>{
-    stickyRaf=0;
-    updateHeader();
-    const next=sentinel.getBoundingClientRect().top+normalMarginTop<=headerBottom+1;
-    if(next!==stuck){
-      if(next)readNormalSpace();
-      stuck=next;
-      controls.classList.toggle('is-stuck',next);
-      if(!next)setExpanded(false);
-    }else if(!stuck){
-      readNormalSpace();
-    }
-    updateSpacer();
-  };
-  const scheduleSticky=()=>{
-    if(stickyRaf)return;
-    stickyRaf=requestAnimationFrame(checkSticky);
-  };
-  readNormalSpace();
-  updateHeader();
-  window.addEventListener('scroll',scheduleSticky,{passive:true});
-  window.addEventListener('resize',scheduleSticky,{passive:true});
-  if('ResizeObserver' in window){
-    const sizes=new ResizeObserver(scheduleSticky);
-    if(siteHeader)sizes.observe(siteHeader);
-    sizes.observe(controls);
-  }
   document.addEventListener('wct-publication-filter',syncFilterBadge);
   syncFilterBadge();
-  checkSticky();
+  // The shared site navigation upgrades asynchronously and can resize.
+  // Measure its actual bottom; sticky placement never depends on a 72px guess.
+  const siteHeader=document.querySelector('.site-header');
+  const syncHeader=()=>{
+    const bottom=siteHeader?Math.ceil(siteHeader.getBoundingClientRect().bottom):142;
+    document.documentElement.style.setProperty('--pub-nav-bottom',Math.max(0,bottom)+'px');
+  };
+  syncHeader();
+  window.addEventListener('resize',syncHeader,{passive:true});
+  if('ResizeObserver' in window&&siteHeader)new ResizeObserver(syncHeader).observe(siteHeader);
 
 })();
