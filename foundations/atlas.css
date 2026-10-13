@@ -129,7 +129,7 @@
 .foundation-upgraded .foundation-shell,.foundation-timeline,.foundation-explorer{min-width:0}
 .timeline-scroll{overscroll-behavior:auto;touch-action:pan-x pan-y}
 .timeline-mobile{display:none}
-@media(max-width:760px){
+@media(max-width:1100px){
   .timeline-scroll{display:none}
   .timeline-mobile{display:grid;gap:9px}
   .timeline-mobile-group{min-width:0;border:1px solid var(--fa-line);border-radius:9px;background:rgba(3,12,24,.36)}
