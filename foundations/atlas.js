@@ -106,6 +106,7 @@
   mobile.setAttribute('aria-label','Foundational source chronology by discipline');
   groups.forEach(g=>{
     const details=make('details','timeline-mobile-group');
+    details.dataset.foundationGroup=g.id;
     details.innerHTML='<summary><span class="timeline-mobile-name">'+esc(names[g.id])+'</span><span class="timeline-mobile-count">'+g.rows.length+' sources</span></summary>';
     const list=make('ol','timeline-mobile-list');
     all.filter(item=>item.group===g.id).sort((x,y)=>x.year-y.year||x.title.localeCompare(y.title)).forEach(item=>{
@@ -151,6 +152,8 @@
       });
       const sec=root.querySelector('#'+g.id);
       if(sec)sec.hidden=n===0;
+      const mobileGroup=mobile.querySelector('[data-foundation-group="'+g.id+'"]');
+      if(mobileGroup){mobileGroup.hidden=n===0;const counter=mobileGroup.querySelector('.timeline-mobile-count');if(counter)counter.textContent=n+' sources';}
     });
     result.textContent=visible+' of 33 external references visible';
     empty.hidden=visible!==0;
