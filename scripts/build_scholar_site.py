@@ -775,6 +775,57 @@ def patch_home() -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def preserve_custom_publications_index(pubs: list[dict]) -> None:
+    """Fail closed rather than overwrite the maintained, enhanced archive.
+
+    Individual landing pages, citations and feeds are generated from
+    data/publications.json. publications/index.html is independently curated:
+    its calendar, date rail, abstracts, visuals and research filters are not
+    represented in the legacy publications_index() template.
+    """
+    archive_path = PUB_DIR / "index.html"
+    if not archive_path.exists():
+        raise RuntimeError(
+            "Customized publications/index.html is missing. Refusing to recreate "
+            "it using the obsolete minimal archive template."
+        )
+
+    page = archive_path.read_text(encoding="utf-8")
+    required = (
+        "archive-upgrade.css", "archive-previews.css", "archive-calendar.css",
+        "archive-sticky.css", "archive-upgrade.js", "pub-rail-date", "pub-preview",
+    )
+    missing = [marker for marker in required if marker not in page]
+    if missing:
+        raise RuntimeError(
+            "Customized publications archive markers missing: "
+            + ", ".join(missing)
+            + ". Refusing to overwrite the maintained page."
+        )
+
+    rows = re.findall(
+        r'<article class="pub-index-item"[\s\S]*?</article>', page
+    )
+    if len(rows) != len(pubs):
+        raise RuntimeError(
+            f"Customized archive has {len(rows)} rows but publication source has "
+            f"{len(pubs)}. Reconcile its chronology before rebuilding."
+        )
+    for number, (row, pub) in enumerate(zip(rows, pubs), start=1):
+        link = re.search(r'<h2><a href="([^"]+)">([^<]+)</a></h2>', row)
+        if (link is None
+                or link.group(1) != f"{pub['slug']}.html"
+                or html.unescape(link.group(2)) != pub["title"]
+                or f'data-category="{esc(pub["category"])}"' not in row
+                or f'data-status="{esc(pub.get("status", "Preprint"))}"' not in row):
+            raise RuntimeError(
+                f"Customized archive release {number:02d} differs from current "
+                "title, link, category or status. Reconcile it manually rather "
+                "than silently regenerating the original template."
+            )
+    print(f"Preserved curated Publications archive with {len(rows)} verified releases.")
+
+
 def main() -> None:
     data = json.loads(SOURCE.read_text(encoding="utf-8"))
     pubs = data["publications"]
@@ -784,7 +835,7 @@ def main() -> None:
     for pub in pubs:
         (PUB_DIR / f"{pub['slug']}.html").write_text(paper_page(pub, titles), encoding="utf-8")
     (PUB_DIR / "paper.css").write_text(PAPER_CSS, encoding="utf-8")
-    (PUB_DIR / "index.html").write_text(publications_index(pubs), encoding="utf-8")
+    preserve_custom_publications_index(pubs)
 
     (ROOT / "publications.bib").write_text(build_bibtex(pubs), encoding="utf-8")
     (ROOT / "publications.ris").write_text(build_ris(pubs), encoding="utf-8")
