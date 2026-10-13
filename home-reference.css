@@ -1103,9 +1103,32 @@
 }
 
 /* Full-width alternating priority editorial gallery. Original scroll RAF/parallax retained. */
-.priority-home.section-shell{width:100%;max-width:100%;margin-inline:0;padding-inline:0}
-.priority-home>.section-heading{width:min(calc(100% - 40px),900px);margin-inline:auto}
-.priority-home>a.text-link{display:block;width:min(calc(100% - 40px),var(--max));margin:26px auto 0}
+.priority-home.section-shell{
+  width:100%;max-width:100%;margin-inline:0;padding-inline:0;
+  /* The shared .section rule adds up to 148px above and below this gallery;
+     keep the editorial heading breathable without two giant transition gaps. */
+  padding-top:clamp(52px,6vw,88px);
+  padding-bottom:clamp(44px,5vw,72px);
+}
+.priority-home>.section-heading{
+  width:min(calc(100% - 40px),900px);margin-inline:auto;
+  margin-bottom:clamp(28px,3vw,44px);
+}
+.priority-home .priority-evidence-links{
+  display:flex;align-items:center;flex-wrap:wrap;
+  width:min(calc(100% - 40px),var(--max));
+  margin:clamp(22px,3vw,34px) auto 0;
+  column-gap:clamp(18px,3vw,38px);row-gap:6px;
+}
+.priority-home .priority-evidence-links .text-link{
+  display:inline-flex;align-items:center;min-height:32px;margin:0;
+}
+.wct-theory-section.section{padding-top:clamp(56px,6vw,88px)}
+@media(max-width:760px){
+  .priority-home.section-shell{padding-top:46px;padding-bottom:44px}
+  .wct-theory-section.section{padding-top:56px}
+  .priority-home .priority-evidence-links{width:min(calc(100% - 28px),var(--max))}
+}
 .priority-home .priority-spine{--spine-x:clamp(26px,3.35vw,54px);--spine-start:190px;--spine-end:190px;width:100%;max-width:100%;margin:0;padding:0}
 .priority-home .priority-spine::before,.priority-home .priority-spine::after{left:var(--spine-x);top:var(--spine-start);bottom:var(--spine-end);z-index:6}
 .priority-home .priority-spine .priority-highlight{
