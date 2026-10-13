@@ -12,7 +12,7 @@
   <link rel="author" href="https://orcid.org/0009-0005-5975-8718">
 <link rel="alternate" type="application/json" title="Publication traceability metadata" href="../data/publication_traceability.json">
   <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="post-date-chronology.css?v=20261013-scrollfix2">
+  <link rel="stylesheet" href="post-date-chronology.css?v=20261013-popreveal1">
   <style>
     .priority-shell{width:min(1680px,calc(100% - 48px));margin:0 auto;padding:72px 0 96px}
     .priority-head{max-width:1200px;margin-bottom:36px}
@@ -478,10 +478,6 @@
 .priority-metric{padding:18px 18px 17px;border-right:1px solid var(--line)}
 .priority-metric:last-child{border-right:0}.priority-metric strong{display:block;color:var(--text);font:500 2rem/1 Georgia,serif}
 .priority-metric span{display:block;margin-top:7px;color:var(--muted-2);font-size:.72rem;line-height:1.4}
-.priority-jump-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.priority-jump-nav a{display:inline-flex;align-items:center;min-height:34px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.012);color:var(--muted);font-size:.76rem;font-weight:700;text-decoration:none}
-.priority-jump-nav a:hover{border-color:rgba(103,212,255,.42);background:rgba(103,212,255,.055);color:var(--text)}
-.priority-boundary{max-width:1000px;margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);color:var(--muted-2);font-size:.76rem;line-height:1.55}
 .priority-redesign-section{width:min(100%,1180px);padding:58px 0 66px;border-top:1px solid var(--line)}
 .priority-redesign-head{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:18px 54px;align-items:end}
 .priority-redesign-head h2{margin:0;font:500 clamp(1.9rem,3.7vw,3rem)/1.06 Georgia,serif;letter-spacing:-.035em}
@@ -636,17 +632,6 @@
     <div class="priority-metric"><strong>242</strong><span>external evidence / convergence records</span></div>
     <div class="priority-metric"><strong>4</strong><span>filed patent families</span></div>
   </div>
-  <nav class="priority-jump-nav" aria-label="Priority registry sections">
-    <a href="#rca-confirmation">RCA high-specificity evidence</a>
-    <a href="#patents">Patent chronology</a>
-    <a href="#detector-evidence">Detector evidence</a>
-    <a href="#post-date-convergence">Post-date convergence</a>
-    <a href="#rca-independent-anchor-validation">RCA external experiments</a>
-    <a href="#rca-audit">RCA audit</a>
-    <a href="#priority-anchors">Priority anchors</a>
-    <a href="#claims">Full claim registry</a>
-  </nav>
-  <p class="priority-boundary"><strong>Registry boundary.</strong> Chronology and structural correspondence support provenance and comparison analysis; they do not by themselves establish copying, infringement, patent validity, or physical truth. Canonical DOI/version lineage, patent-family details, and source links remain in the registries below.</p>
 </header>
 
     
@@ -1757,7 +1742,7 @@
   window.addEventListener('scroll',()=>updateMechanismFromScroll(false),{passive:true});
   window.addEventListener('resize',()=>updateMechanismFromScroll(false),{passive:true});
 })();</script>
-<script src="post-date-chronology.js?v=20261013-scrollfix2" defer></script>
+<script src="post-date-chronology.js?v=20261013-popreveal1" defer></script>
 <script src="../site-nav.js?v=20261013-mobile-chapters" defer></script>
 </body>
 </html>
