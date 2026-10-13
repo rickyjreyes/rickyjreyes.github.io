@@ -67,7 +67,7 @@
 .timeline-lane-label{font-size:.75rem;color:var(--text);line-height:1.25}
 .timeline-line{position:relative;min-height:43px;background:none;border-bottom:1px solid rgba(170,201,225,.12)}
 .timeline-line:before{content:"";position:absolute;left:0;right:0;top:21px;border-top:1px solid rgba(170,201,225,.17)}
-.timeline-mark{position:absolute;top:calc(21px + var(--offset,0px));left:var(--x);width:13px;height:13px;transform:translate(-50%,-50%);border:2px solid #07111f;border-radius:50%;background:var(--dot);box-shadow:0 0 0 1px var(--dot);cursor:pointer;padding:0;z-index:1;transition:transform .15s ease}
+.timeline-mark{position:absolute;top:calc(21px + var(--offset,0px));left:var(--x);width:29px;height:29px;transform:translate(-50%,-50%);border:0;border-radius:50%;background:radial-gradient(circle,var(--dot) 0 5px,transparent 6px);cursor:pointer;padding:0;z-index:1;transition:transform .15s ease}
 .timeline-mark:hover,.timeline-mark:focus-visible{transform:translate(-50%,-50%) scale(1.45);z-index:5}
 .timeline-mark.is-muted{opacity:.18}
 .timeline-axis{display:grid;grid-template-columns:155px minmax(0,1fr);gap:8px;margin-top:11px}
