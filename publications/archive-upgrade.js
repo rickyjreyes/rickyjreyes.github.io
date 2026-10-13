@@ -291,6 +291,8 @@
     code.replaceChildren(a);
   });
 
+  document.documentElement.classList.add('pub-enhanced');
+
   // Keep the original filter inputs. Compact them when their normal position
   // reaches the *measured* WCT header, not a hard-coded 72px approximation.
   // Reserve the natural form height so changing its presentation cannot make
@@ -384,5 +386,4 @@
   syncFilterBadge();
   checkSticky();
 
-  document.documentElement.classList.add('pub-enhanced');
 })();
