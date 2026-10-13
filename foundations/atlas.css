@@ -148,3 +148,7 @@
   .foundation-upgraded .foundation-head .actions a{white-space:normal}
   .foundation-filter{padding-bottom:0}
 }
+
+/* More room between historical year labels on the full-width chart. */
+.timeline-chart{min-width:980px}
+.timeline-mobile-group[hidden]{display:none}
