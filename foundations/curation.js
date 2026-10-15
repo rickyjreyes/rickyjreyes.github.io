@@ -178,6 +178,7 @@
     const suffix='[B'+String(n).padStart(2,'0')+'] ';
     target.rows.push([suffix+l[1],l[2],l[3],l[4]+' Relationship: '+l[7]+'.',l[5],l[6],l[7],l[8]||'']);
   });
+  groups.forEach(g=>{g.kicker=(g.id==='supporting'?'Extended bibliography':g.id==='rca'?'RCA-specific literature':'Established prior literature')+' · '+g.rows.length+' sources';});
   const totalExternal=groups.reduce((n,g)=>n+g.rows.length,0);
 
   const esc = (s) => String(s).replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -188,7 +189,7 @@
     const head = document.querySelector('.foundation-head');
     if (!main || !head || document.getElementById('wct-foundation-curated')) return;
     document.documentElement.dataset.foundationCurated = 'true';
-    document.title = 'Scientific Foundations of Wave Confinement Theory | Richard J. Reyes';
+    document.title = 'Scientific Foundations of WCT and RCA | Richard J. Reyes';
 
     const eyebrow = head.querySelector('.eyebrow');
     const h1 = head.querySelector('h1');
