@@ -154,7 +154,7 @@
     if (path !== '/foundations/' || document.getElementById('wct-foundation-curation')) return;
     const script = document.createElement('script');
     script.id = 'wct-foundation-curation';
-    script.src = '/foundations/curation.js?v=20261013-scrollfix3';
+    script.src = '/foundations/curation.js?v=20261015-backcite1';
     script.defer = true;
     document.head.appendChild(script);
   };
