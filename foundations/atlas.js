@@ -5,10 +5,11 @@
   const head=document.querySelector('.foundation-head');
   if(!data || !root || !head || document.getElementById('foundation-atlas-overview')) return;
   const groups=data.groups, core=data.coreWct;
-  if(core.length!==8 || groups.length!==4 || groups.reduce((n,g)=>n+g.rows.length,0)!==33) return;
+  if(core.length!==8 || !groups.length) return;
+  const total=groups.reduce((n,g)=>n+g.rows.length,0);
   const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const accents={math:'#67d4ff',geometry:'#b6ffda',physics:'#ffcd5c',information:'#a899ff'};
-  const names={math:'PDE & nonlinear waves',geometry:'Geometry & topology',physics:'Physics substrate',information:'Information & entropy'};
+  const accents={math:'#67d4ff',geometry:'#b6ffda',physics:'#ffcd5c',information:'#a899ff',dynamics:'#ffad85',empirical:'#91b9ff',supporting:'#bcb9ce',rca:'#f2b6d2'};
+  const names={math:'PDE & stability',geometry:'Geometry & topology',physics:'Physics substrate',information:'Information & entropy',dynamics:'Confinement mechanisms',empirical:'Empirical methods',supporting:'Further reading',rca:'RCA & system safety'};
   const all=[];
   const make=(tag,cls,html)=>{
     const el=document.createElement(tag);
@@ -30,20 +31,22 @@
       const li=make('li','foundation-source');
       li.id=id;
       li.dataset.group=g.id;
-      li.dataset.search=[r[0],r[1],r[2],r[3],r[5],names[g.id]].join(' ').toLocaleLowerCase();
+      li.dataset.search=[r[0],r[1],r[2],r[3],r[5],r[6]||'',names[g.id]].join(' ').toLocaleLowerCase();
       const number=String(i+1).padStart(2,'0');
       li.innerHTML='<span class="source-no">'+number+'</span>'+
         '<time datetime="'+esc(r[2])+'">'+esc(r[2])+'</time>'+
         '<div class="source-main"><h3><a href="'+esc(r[4])+'" target="_blank" rel="noopener noreferrer">'+esc(r[0])+' ↗</a></h3>'+
-        '<p class="source-authors">'+esc(r[1])+'</p><span class="source-domain">'+esc(r[5])+'</span></div>'+
+        '<p class="source-authors">'+esc(r[1])+'</p><span class="source-domain">'+esc(r[5])+'</span>'+(r[7]?'<a class="source-companion" href="'+esc(r[7])+'" target="_blank" rel="noopener noreferrer">Companion paper ↗</a>':'')+'</div>'+
         '<p class="source-why">'+esc(r[3])+'</p>';
       list.appendChild(li);
-      all.push({id,group:g.id,year:Number(r[2]),title:r[0],authors:r[1],node:li});
+      all.push({id,group:g.id,year:parseInt(r[2],10),title:r[0],authors:r[1],node:li});
     });
     const table=sec.querySelector('.table-wrap');
     if(table)table.replaceWith(list);else sec.appendChild(list);
   });
-  if(all.length!==33)return;
+  if(all.length!==total)return;
+  const startYear=Math.min(...all.map(x=>x.year)),endYear=Math.max(...all.map(x=>x.year));
+  const spanYears=Math.max(1,endYear-startYear);
 
   root.querySelectorAll('.wct-core-card').forEach((card,i)=>{
     card.id='wct-anchor-'+(i+1);
@@ -52,22 +55,22 @@
     const foot=make('div','core-foot','<span>R. J. REYES / CANONICAL WCT '+String(i+1).padStart(2,'0')+'</span><span>Open DOI ↗</span>');
     card.appendChild(foot);
   });
-  head.querySelector('.actions')?.insertAdjacentHTML('beforeend','<a href="#foundation-timeline">Timeline</a><a href="#source-explorer">Search 33 sources</a>');
+  head.querySelector('.actions')?.insertAdjacentHTML('beforeend','<a href="#foundation-timeline">Timeline</a><a href="#source-explorer">Search '+total+' sources</a>');
   const overview=make('section','foundation-overview foundation-atlas',
     '<div class="overview-statement"><span class="overview-kicker">An indexed research substrate, not a validation claim</span>'+
     '<h2>From established mathematics to testable WCT constructions.</h2>'+
     '<p>Read the established literature as the constraints, tools, and physical reference points for WCT. The eight Reyes records define the author’s research program; their inclusion does not promote a proposal to a proven theorem or independently confirmed physical result.</p></div>'+
     '<div class="foundation-metrics">'+
     '<div class="foundation-metric"><strong>08</strong><span>Canonical WCT papers</span></div>'+
-    '<div class="foundation-metric"><strong>33</strong><span>External source records</span></div>'+
-    '<div class="foundation-metric"><strong>04</strong><span>Established-literature domains</span></div>'+
-    '<div class="foundation-metric"><strong>1872–2010</strong><span>External source publication range</span></div></div>');
+    '<div class="foundation-metric"><strong>'+total+'</strong><span>External source records</span></div>'+
+    '<div class="foundation-metric"><strong>'+String(groups.length).padStart(2,'0')+'</strong><span>Research domains / groupings</span></div>'+
+    '<div class="foundation-metric"><strong>'+startYear+'–'+endYear+'</strong><span>External source publication range</span></div></div>');
   overview.id='foundation-atlas-overview';
   head.after(overview);
 
   const timeline=make('section','foundation-timeline foundation-atlas');
   timeline.id='foundation-timeline';
-  timeline.innerHTML='<div class="atlas-head"><div><p class="eyebrow">ESTABLISHED PRIOR LITERATURE / 1872–2010</p><h2>Source chronology</h2></div>'+
+  timeline.innerHTML='<div class="atlas-head"><div><p class="eyebrow">PRIOR LITERATURE / '+startYear+'–'+endYear+'</p><h2>Source chronology</h2></div>'+
     '<p>Every marker is an existing bibliographic record. Select a point to jump to its full citation and role below.</p></div>';
   const legend=make('div','timeline-legend');
   groups.forEach(g=>legend.innerHTML+='<span style="--dot:'+accents[g.id]+'"><i aria-hidden="true"></i>'+esc(names[g.id])+'</span>');
@@ -86,7 +89,7 @@
       const j=collisions[key]||0;collisions[key]=j+1;
       const dot=make('button','timeline-mark');
       dot.type='button';dot.dataset.jump=item.id;
-      dot.style.setProperty('--x',(3+(item.year-1872)/(2010-1872)*94).toFixed(3)+'%');
+      dot.style.setProperty('--x',(3+(item.year-startYear)/spanYears*94).toFixed(3)+'%');
       dot.style.setProperty('--dot',accents[g.id]);
       dot.style.setProperty('--offset',[0,-11,11,-5,5][j%5]+'px');
       dot.title=item.year+' · '+item.title;
@@ -96,12 +99,12 @@
     });
     lane.appendChild(line);chart.appendChild(lane);
   });
-  const tickYears=[1872,1900,1925,1950,1975,2000,2010];
-  const tickHTML=tickYears.map(y=>'<span style="--tx:'+(3+(y-1872)/(2010-1872)*94).toFixed(3)+'%">'+y+'</span>').join('');
+  const tickYears=[startYear,1900,1925,1950,1975,2000,endYear].filter((y,i,a)=>y>=startYear&&y<=endYear&&a.indexOf(y)===i);
+  const tickHTML=tickYears.map(y=>'<span style="--tx:'+(3+(y-startYear)/spanYears*94).toFixed(3)+'%">'+y+'</span>').join('');
   chart.appendChild(make('div','timeline-axis','<span></span><div class="timeline-ticks">'+tickHTML+'</div>'));
   scroll.appendChild(chart);timeline.appendChild(scroll);
   // On narrow screens, replace the cramped sideways chart with native-flow,
-  // grouped source buttons; the underlying 33 records and chart stay intact.
+  // grouped source buttons; the underlying source records and chart stay intact.
   const mobile=make('div','timeline-mobile');
   mobile.setAttribute('aria-label','Foundational source chronology by discipline');
   groups.forEach(g=>{
@@ -123,17 +126,17 @@
   const explorer=make('section','foundation-explorer foundation-atlas');
   explorer.id='source-explorer';
   explorer.innerHTML='<div class="atlas-head"><div><p class="eyebrow">EXTERNAL SOURCE INDEX</p><h2>Find the underlying work</h2></div>'+
-    '<p>Search by author, title, mathematical role, year, or domain. All 33 primary links remain directly accessible.</p></div>';
+    '<p>Search by author, title, methodological role, year, or domain. All '+total+' primary links remain directly accessible.</p></div>';
   const controls=make('div','explorer-controls');
   const searchLabel=make('label','foundation-search','<span aria-hidden="true">⌕</span><input id="foundation-source-search" type="search" placeholder="Search names, concepts, dates…" autocomplete="off" aria-label="Search foundational sources">');
   const filter=make('div','foundation-filter');
   filter.setAttribute('role','group');filter.setAttribute('aria-label','Filter by foundation domain');
-  [['all','All 33'],['math','PDE & waves'],['geometry','Geometry'],['physics','Physics'],['information','Information']].forEach((p,i)=>{
+  [['all','All '+total],...groups.map(g=>[g.id,names[g.id]])].forEach((p,i)=>{
     const b=make('button','',esc(p[1]));b.type='button';b.dataset.facet=p[0];b.setAttribute('aria-pressed',i===0?'true':'false');filter.appendChild(b);
   });
   const reset=make('button','foundation-reset','Reset');reset.type='button';
   controls.append(searchLabel,filter,reset);explorer.appendChild(controls);
-  const result=make('p','foundation-results','33 of 33 external references visible');result.setAttribute('role','status');result.setAttribute('aria-live','polite');explorer.appendChild(result);
+  const result=make('p','foundation-results',total+' of '+total+' external references visible');result.setAttribute('role','status');result.setAttribute('aria-live','polite');explorer.appendChild(result);
   const empty=make('p','foundation-empty','No references match these filters. Try a broader term or reset the domain.');empty.hidden=true;explorer.appendChild(empty);
 
   const coreSection=root.querySelector('#wct-core');
@@ -155,7 +158,7 @@
       const mobileGroup=mobile.querySelector('[data-foundation-group="'+g.id+'"]');
       if(mobileGroup){mobileGroup.hidden=n===0;const counter=mobileGroup.querySelector('.timeline-mobile-count');if(counter)counter.textContent=n+' sources';}
     });
-    result.textContent=visible+' of 33 external references visible';
+    result.textContent=visible+' of '+total+' external references visible';
     empty.hidden=visible!==0;
   };
   filter.addEventListener('click',e=>{
