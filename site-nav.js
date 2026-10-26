@@ -97,13 +97,13 @@
       const link = document.createElement('link');
       link.id = 'wct-glossary-binary-priority';
       link.rel = 'stylesheet';
-      link.href = '/tools/glossary/binary-priority.css?v=20261026-blue-clean-v8';
+      link.href = '/tools/glossary/binary-priority.css?v=20261026-expanded-blue-v9';
       document.head.appendChild(link);
     }
     if (!document.getElementById('wct-glossary-binary-priority-js')) {
       const script = document.createElement('script');
       script.id = 'wct-glossary-binary-priority-js';
-      script.src = '/tools/glossary/binary-priority.js?v=20261026-blue-clean-v8';
+      script.src = '/tools/glossary/binary-priority.js?v=20261026-expanded-blue-v9';
       script.defer = true;
       document.head.appendChild(script);
     }
