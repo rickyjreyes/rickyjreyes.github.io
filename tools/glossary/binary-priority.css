@@ -67,3 +67,116 @@
   .glossary-provenance-guide.term-class-selector>button{min-height:105px;padding:14px}
 }
 @media(max-width:460px){.glossary-provenance-guide.term-class-selector{grid-template-columns:1fr!important}}
+
+
+/* Readability revision: simple, high-contrast bibliography cards instead of dense two-column panels. */
+#glossary .tool-head{align-items:start;flex-wrap:wrap}
+#glossary .tool-head h2{font-size:clamp(1.65rem,3vw,2.4rem)}
+#glossary .tool-head p{max-width:690px;line-height:1.6}
+#glossaryGrid{max-width:100%;margin:0 auto}
+#glossaryGrid .glossary-card {
+  display:block!important;
+  grid-template-columns:none!important;
+  grid-template-areas:none!important;
+  padding:20px 24px!important;
+  margin-bottom:12px!important;
+  border-radius:12px!important;
+  background:#0b1727!important;
+  border:1px solid rgba(190,214,235,.22)!important;
+  box-shadow:none!important;
+  color:#e9f0f6!important;
+  opacity:1!important;
+}
+#glossaryGrid .glossary-card.priority-coinage {border-left:4px solid #8ee6d5!important}
+#glossaryGrid .glossary-card.priority-survivor {border-left:4px solid #67d4ff!important}
+#glossaryGrid .glossary-card.wct-term:not(.priority-survivor):not(.priority-coinage){border-left:3px solid #a99cfe!important}
+#glossaryGrid .glossary-card.standard-term {border-left:3px solid #71869a!important}
+#glossaryGrid .glossary-card::before,#glossaryGrid .glossary-card::after{display:none!important}
+#glossaryGrid .glossary-identity,#glossaryGrid .glossary-body{display:block!important;grid-area:auto!important}
+#glossaryGrid .glossary-identity {margin-bottom:10px!important}
+#glossaryGrid .glossary-identity h3{
+  margin:8px 0!important;
+  max-width:none!important;
+  font:600 clamp(1.18rem,2vw,1.38rem)/1.35 Georgia,serif!important;
+  color:#f5f8fb!important;
+}
+#glossaryGrid .glossary-badges{gap:7px!important;margin:0 0 7px!important}
+#glossaryGrid .glossary-badges .tool-tag{display:none!important}
+#glossaryGrid .glossary-badges .term-origin,#glossaryGrid .glossary-badges .term-priority-status,
+#glossaryGrid .glossary-badges .term-release{
+  font-size:.66rem!important;font-weight:650!important;
+  letter-spacing:0!important;text-transform:none!important;
+  padding:3px 7px!important;line-height:1.35!important;
+}
+#glossaryGrid .glossary-anchor{margin:0!important;color:#b7c8d7!important;font-size:.72rem!important}
+#glossaryGrid .glossary-definition{
+  margin:0!important;max-width:80ch!important;
+  font-size:1.02rem!important;line-height:1.6!important;
+  color:#e9f0f6!important;opacity:1!important;
+}
+#glossaryGrid .glossary-compact-meta{
+  margin:12px 0 0!important;padding-top:9px!important;
+  gap:7px 16px!important;
+  border-top:1px solid rgba(190,214,235,.13)!important;
+  color:#c8d7e3!important;
+}
+#glossaryGrid .glossary-compact-meta .glossary-notation{font-size:.8rem!important}
+#glossaryGrid .glossary-compact-meta .glossary-notation code{color:#b4e2fb!important}
+#glossaryGrid .glossary-equation-link{font-size:.82rem!important}
+#glossaryGrid .glossary-evidence{
+  display:block!important;padding:0 0 0!important;margin:12px 0 0!important;
+  border:1px solid rgba(190,214,235,.18)!important;
+  border-radius:9px!important;background:#101f31!important;
+}
+#glossaryGrid .glossary-evidence summary{
+  display:list-item!important;cursor:pointer;
+  padding:10px 14px!important;
+  margin:0!important;font-size:.81rem!important;
+  letter-spacing:0!important;text-transform:none!important;
+  color:#dceef9!important;
+}
+#glossaryGrid .glossary-evidence[open]{padding:0 14px 13px!important}
+#glossaryGrid .glossary-evidence[open] summary{margin:0 -14px 12px!important;border-bottom:1px solid rgba(190,214,235,.15)}
+#glossaryGrid .glossary-evidence-paper{font-size:.9rem!important;line-height:1.5!important}
+#glossaryGrid .glossary-evidence-links a{font-size:.85rem!important;color:#92dcff!important}
+#glossaryGrid .glossary-evidence-note{font-size:.84rem!important;color:#b7c8d7!important}
+.glossary-provenance-guide.term-class-selector {grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.glossary-provenance-guide.term-class-selector>button{min-height:92px!important;padding:12px 16px!important}
+.glossary-provenance-guide.term-class-selector>button strong{font-size:.9rem!important;margin-bottom:4px!important}
+.glossary-provenance-guide.term-class-selector>button span{font-size:.79rem!important}
+.glossary-registry-summary{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+.glossary-summary-item{padding:12px!important;background:transparent!important}
+.glossary-summary-item strong{font-size:1.25rem!important}
+.glossary-discovery{background:transparent!important;border-color:var(--line-strong)!important}
+.glossary-discovery-links{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+.glossary-discovery-row{display:grid;gap:4px;padding:13px 0;border-bottom:1px solid var(--line)}
+.glossary-discovery-row strong{font-size:.91rem;color:var(--text)}
+.glossary-discovery-row span{color:var(--muted);font-size:.83rem;line-height:1.45}
+.glossary-discovery-actions{display:flex;flex-wrap:wrap;gap:5px 15px;margin-top:5px}
+.glossary-discovery-actions a{font-size:.8rem;line-height:1.45;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.glossary-claim-guide{margin:24px 0 30px;max-width:1050px}
+.glossary-claim-guide h2{font:500 clamp(1.55rem,3vw,2.2rem)/1.2 Georgia,serif;margin:0 0 13px}
+.glossary-claim-guide p{max-width:88ch;color:var(--muted);font-size:.94rem;line-height:1.7}
+.glossary-claim-guide .claim-tier{padding:15px 17px;margin:8px 0;border:1px solid var(--line);border-radius:11px}
+.glossary-claim-guide .claim-tier strong{color:var(--text)}
+.glossary-claim-guide .claim-tier p{margin:5px 0 0}
+.glossary-claim-guide .coined-list{columns:2;column-gap:32px;padding-left:21px;margin:15px 0}
+.glossary-claim-guide .coined-list li{break-inside:avoid;padding:4px 0;color:var(--text)}
+.glossary-claim-guide .coined-list a,.glossary-claim-guide a{color:var(--accent)}
+.glossary-new-work{margin:20px 0 27px;padding:18px;border:1px solid var(--line);border-radius:13px}
+.glossary-new-work h3{font-size:1.15rem;margin:0 0 10px}
+.glossary-new-work ul{columns:2;column-gap:24px;margin:8px 0;padding-left:20px}
+.glossary-new-work li{break-inside:avoid;margin:5px 0;font-size:.87rem;line-height:1.45}
+.glossary-new-work a{color:var(--accent)}
+@media(max-width:800px){
+ .glossary-registry-summary{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .glossary-claim-guide .coined-list,.glossary-new-work ul{columns:1}
+}
+@media(max-width:580px){
+ #glossaryGrid .glossary-card{padding:15px 16px!important}
+ #glossaryGrid .glossary-definition{font-size:.98rem!important}
+ .glossary-provenance-guide.term-class-selector{grid-template-columns:1fr!important}
+ .glossary-provenance-guide.term-class-selector>button{min-height:0!important}
+ #glossary .tool-toolbar{display:flex!important;flex-direction:column}
+ #glossary .tool-toolbar input,#glossary .tool-toolbar select{width:100%;flex:auto}
+}
