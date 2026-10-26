@@ -113,3 +113,14 @@
  #glossary .tool-toolbar input,#glossary .tool-toolbar select{width:100%;flex:auto}
 }
 @media(max-width:460px){.wct-origin-grid{grid-template-columns:1fr 1fr;gap:7px}.wct-origin-grid .wct-origin-card{min-height:92px;padding:11px}.wct-origin-card strong{font-size:.85rem}}
+
+/* Attribution outcome is visible as quiet metadata, never as a bright card fill. */
+.wct-origin-card[data-test-status] .wct-origin-card-label{
+  display:block;min-height:1.1em;font-size:.72rem;letter-spacing:0;
+  line-height:1.35;color:#b9cbd8!important;font-weight:500;
+}
+.wct-origin-card[data-test-status="named"]{border-left:2px solid #7fb6bd!important}
+.wct-origin-card[data-test-status="linked"]{border-left:2px solid #8c91b6!important}
+.wct-origin-card[data-test-status="generic"],
+.wct-origin-card[data-test-status="incorrect"]{border-left:2px solid #b6a58a!important}
+.wct-origin-card[data-test-status="untested"]{border-left:2px solid rgba(165,194,219,.16)!important}
