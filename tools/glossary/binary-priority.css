@@ -1,307 +1,349 @@
-/* Compact discoverability and attribution view. Calm surfaces; no gradients. */
-.wct-origin-index{margin:12px auto 24px;padding:0;background:none!important;border:0!important;box-shadow:none!important}
-.wct-origin-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:0 0 13px}
-.wct-origin-heading h2{margin:2px 0 0;font:500 clamp(1.45rem,2.4vw,2rem)/1.2 Georgia,serif;color:#eaf3fa}
-.wct-origin-heading p{margin:0;font-size:.82rem;color:#afc1d0;line-height:1.4}
-.wct-origin-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
-.wct-origin-grid .wct-origin-card{
- display:flex;flex-direction:column;justify-content:space-between;gap:7px;
- min-width:0;min-height:100px;padding:13px 14px;
- border:1px solid rgba(165,194,219,.20)!important;border-radius:10px!important;
- background:rgba(255,255,255,.015)!important;background-image:none!important;
- box-shadow:none!important;color:#eaf3fa!important;
- text-decoration:none!important;transition:border-color .16s,background-color .16s;
+/* WCT glossary — unified Material Blue cards.
+   One native details/summary per card, no nested source accordions.
+   Primary content and source links are visible on a single expansion. */
+:root {
+  --wct-blue-700: #1565c0;
+  --wct-blue-600: #1976d2;
+  --wct-blue-500: #2196f3;
+  --wct-blue-300: #90caf9;
+  --wct-blue-100: #e3f2fd;
+  --wct-card-shadow: 0 4px 14px rgba(0,0,0,.16);
+  --wct-card-shadow-hover: 0 12px 28px rgba(0,0,0,.23);
 }
-.wct-origin-grid .wct-origin-card:hover,.wct-origin-grid .wct-origin-card:focus-visible{
- background:rgba(103,212,255,.045)!important;border-color:rgba(103,212,255,.56)!important;
+.wct-origin-index {
+  margin: 8px auto 30px;
+  padding: 0;
+  background: none;
+  border: none;
 }
-.wct-origin-grid .wct-origin-card:focus-visible{outline:2px solid #67d4ff;outline-offset:2px}
-.wct-origin-card-label{font-size:.68rem;color:#9db2c4;line-height:1.32}
-.wct-origin-card strong{font-size:.97rem;line-height:1.3;font-weight:650;color:#f0f5fb;overflow-wrap:anywhere}
-.wct-origin-card-action{font-size:.75rem;color:#83d9ff;line-height:1.25;font-weight:600}
-#glossary .tool-head{align-items:start!important;flex-wrap:wrap;gap:15px!important}
-#glossary .tool-head h2{font-size:clamp(1.55rem,2.7vw,2.25rem)!important}
-#glossary .tool-head p{line-height:1.5!important}
-#glossary .tool-toolbar{display:flex!important;flex-wrap:wrap;align-items:center;gap:9px}
-#glossary .tool-toolbar input{flex:1 1 280px}
-#glossary .tool-toolbar select{flex:0 1 200px}
-#termOrigin,#termPriority{display:none!important}
-#glossaryGrid .glossary-card[hidden],#glossaryGrid .glossary-letter[hidden],
-#glossaryNoResults[hidden]{display:none!important}
-#glossary #glossaryGrid .glossary-card{
- display:block!important;grid-template-columns:none!important;grid-template-areas:none!important;
- width:100%;margin:0 0 8px!important;padding:16px 20px!important;
- border:1px solid rgba(165,194,219,.20)!important;border-radius:11px!important;
- background:rgba(255,255,255,.012)!important;background-color:#0a1727!important;
- background-image:none!important;box-shadow:none!important;opacity:1!important;
- filter:none!important;color:#ecf4fb!important;scroll-margin-top:100px;
+.wct-origin-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
 }
-#glossary #glossaryGrid .glossary-card.priority-coinage{border-left:3px solid #97ddc9!important}
-#glossary #glossaryGrid .glossary-card.priority-survivor{border-left:3px solid #67bfe6!important}
-#glossary #glossaryGrid .glossary-card.wct-term:not(.priority-survivor):not(.priority-coinage){border-left:3px solid #a298d4!important}
-#glossary #glossaryGrid .glossary-card.standard-term{border-left:3px solid #63798a!important}
-#glossary #glossaryGrid .glossary-card::before,#glossary #glossaryGrid .glossary-card::after{
- content:none!important;display:none!important;background:none!important
+.wct-origin-heading h2 {
+  margin: 3px 0 0;
+  font: 500 clamp(1.55rem,2.5vw,2.15rem)/1.16 Georgia,serif;
+  color: #edf6ff;
 }
-#glossaryGrid .glossary-identity,#glossaryGrid .glossary-body{
- display:block!important;grid-area:auto!important;min-width:0
+.wct-origin-heading p {
+  margin: 0;
+  max-width: 370px;
+  line-height: 1.5;
+  color: #bbd0e1;
+  font-size: .86rem;
 }
-#glossaryGrid .glossary-identity{margin:0 0 8px!important}
-#glossaryGrid .glossary-identity h3{
- margin:6px 0!important;font:600 clamp(1.1rem,1.8vw,1.33rem)/1.36 Georgia,serif!important;
- color:#f0f6ff!important;letter-spacing:-.012em!important
+/* Two-wide cards make the titles and opened descriptions legible. */
+.wct-origin-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+  align-items: start;
 }
-#glossaryGrid .glossary-definition{
- color:#e8f0f8!important;opacity:1!important;font-size:1rem!important;
- line-height:1.6!important;margin:0!important;max-width:100ch!important
+.wct-origin-grid > details.wct-origin-card {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(123,188,251,.57);
+  background: #10437f;
+  background-image: none;
+  box-shadow: var(--wct-card-shadow);
+  color: #fff;
+  transition: background-color .18s ease, border-color .18s ease,
+              transform .18s ease, box-shadow .18s ease;
 }
-#glossaryGrid .glossary-anchor{margin:0!important;font-size:.72rem!important;color:#b6d5e6!important}
-#glossaryGrid .glossary-badges{display:flex;flex-wrap:wrap;gap:6px!important;margin:0 0 5px!important}
-#glossaryGrid .glossary-badges .tool-tag{display:none!important}
-#glossaryGrid .term-origin,#glossaryGrid .term-priority-status,#glossaryGrid .term-release{
- display:inline-flex!important;padding:2px 7px!important;border:1px solid rgba(180,210,230,.18)!important;
- background:none!important;color:#bacddd!important;font-size:.65rem!important;
- line-height:1.35!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important
+.wct-origin-grid > details.wct-origin-card:hover,
+.wct-origin-grid > details.wct-origin-card:focus-within {
+  background: #1556a2;
+  border-color: var(--wct-blue-300);
+  box-shadow: var(--wct-card-shadow-hover);
+  transform: translateY(-2px);
 }
-#glossaryGrid .glossary-compact-meta{
- display:flex;flex-wrap:wrap;gap:5px 15px;margin:12px 0 0!important;
- padding:10px 0 0!important;border-top:1px solid rgba(165,194,219,.14)!important
+.wct-origin-grid > details.wct-origin-card[open] {
+  background: var(--wct-blue-700);
+  border-color: #acd9ff;
+  box-shadow: var(--wct-card-shadow-hover);
 }
-#glossaryGrid .glossary-compact-meta .glossary-notation{color:#c3d6e5!important;font-size:.79rem!important}
-#glossaryGrid .glossary-compact-meta a{color:#8dd9ff!important;text-decoration:underline!important}
-#glossaryGrid .glossary-compact-meta code{color:#c3e6fb!important;font-size:.78rem!important;overflow-wrap:anywhere}
-#glossaryGrid .glossary-evidence{
- margin:10px 0 0!important;padding:0!important;
- border:1px solid rgba(165,194,219,.18)!important;border-radius:8px!important;
- background:rgba(255,255,255,.013)!important;background-image:none!important
+.wct-origin-grid .wct-origin-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 23px;
+  min-height: 152px;
+  outline: 0;
 }
-#glossaryGrid .glossary-evidence summary{
- display:list-item!important;margin:0!important;padding:9px 12px!important;cursor:pointer;
- color:#cde0ef!important;font-size:.79rem!important;letter-spacing:0!important;text-transform:none!important
+.wct-origin-grid .wct-origin-summary::-webkit-details-marker {display:none}
+.wct-origin-grid .wct-origin-summary::marker {content:""}
+.wct-origin-grid .wct-origin-summary:focus-visible {
+  outline: 3px solid #bbdefb;
+  outline-offset: -5px;
+  border-radius: 13px;
 }
-#glossaryGrid .glossary-evidence[open]{padding:0 12px 12px!important}
-#glossaryGrid .glossary-evidence[open] summary{
- border-bottom:1px solid rgba(165,194,219,.14)!important;margin:0 -12px 11px!important
+.wct-origin-grid .wct-origin-summary strong {
+  color: #fff;
+  font: 650 clamp(1.07rem,1.5vw,1.26rem)/1.34 Roboto,Arial,system-ui,sans-serif;
+  letter-spacing: .005em;
+  overflow-wrap: anywhere;
+  flex: 1;
 }
-#glossaryGrid .glossary-evidence-paper{font-size:.85rem!important;color:#eaf3fb!important;line-height:1.5!important}
-#glossaryGrid .glossary-evidence-links{display:flex;flex-wrap:wrap;gap:7px 14px}
-#glossaryGrid .glossary-evidence-links a,#glossaryGrid .glossary-paper-comparisons a{color:#88d5fa!important;font-size:.8rem!important}
-#glossaryGrid .glossary-evidence-note{color:#b9ccdc!important;font-size:.79rem!important;line-height:1.5!important}
-#glossaryGrid .glossary-paper-comparisons details{padding:9px;border:1px solid rgba(165,194,219,.14);border-radius:8px}
-#glossaryGrid .glossary-letter{margin:22px 0 8px!important}
-.glossary-provenance-guide.term-class-selector{
- display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
- gap:8px!important;margin:12px 0 20px!important
+.wct-origin-chip-row {display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.wct-origin-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font: 650 .71rem/1.3 Roboto,Arial,system-ui,sans-serif;
+  white-space: nowrap;
+  letter-spacing: .005em;
 }
-.glossary-provenance-guide.term-class-selector>button{
- display:block;min-height:75px!important;padding:12px!important;
- background:rgba(255,255,255,.012)!important;background-image:none!important;
- color:#eaf3fa!important;border:1px solid rgba(165,194,219,.20)!important;
- border-radius:9px!important;text-align:left;cursor:pointer;box-shadow:none!important
+.wct-origin-chip-status {background: #d9edff;color: #094681}
+.wct-origin-chip-year {background: rgba(255,255,255,.17);color: #fff;border:1px solid rgba(255,255,255,.27)}
+.wct-origin-card[data-test-status="linked"] .wct-origin-chip-status {background:#e0dcff;color:#373187}
+.wct-origin-card[data-test-status="generic"] .wct-origin-chip-status,
+.wct-origin-card[data-test-status="untested"] .wct-origin-chip-status {background:#e6edf4;color:#354861}
+.wct-origin-card[data-test-status="incorrect"] .wct-origin-chip-status {background:#ffe0b2;color:#7c3b00}
+.wct-origin-grid .wct-origin-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #e3f2fd;
+  font: 650 .85rem/1.2 Roboto,Arial,system-ui,sans-serif;
 }
-.glossary-provenance-guide.term-class-selector>button:hover{border-color:rgba(103,212,255,.45)!important}
-.glossary-provenance-guide.term-class-selector>button.active{border-color:#67d4ff!important;background:rgba(103,212,255,.044)!important}
-.glossary-provenance-guide.term-class-selector>button:focus-visible{outline:2px solid #67d4ff;outline-offset:2px}
-.glossary-provenance-guide.term-class-selector>button strong{display:block;color:#eaf3fb;font-size:.86rem!important;margin:0 0 4px!important}
-.glossary-provenance-guide.term-class-selector>button span{display:block;font-size:.73rem!important;line-height:1.4!important;color:#b7cad8!important}
-@media(max-width:1050px){.wct-origin-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.glossary-provenance-guide.term-class-selector{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:670px){
- .wct-origin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .wct-origin-heading{display:block}.wct-origin-heading p{margin-top:5px}
- #glossary #glossaryGrid .glossary-card{padding:14px!important}
- #glossary .tool-toolbar{flex-direction:column;align-items:stretch}
- #glossary .tool-toolbar input,#glossary .tool-toolbar select{width:100%;flex:auto}
+.wct-origin-card-action span,
+.glossary-expand-arrow {display:inline-block;transition:transform .18s ease}
+.wct-origin-grid > details.wct-origin-card[open] .wct-origin-card-action span,
+#glossaryGrid details.glossary-card[open] .glossary-expand-arrow {
+  transform: rotate(180deg);
 }
-@media(max-width:460px){.wct-origin-grid{grid-template-columns:1fr 1fr;gap:7px}.wct-origin-grid .wct-origin-card{min-height:92px;padding:11px}.wct-origin-card strong{font-size:.85rem}}
-
-/* Attribution outcome is visible as quiet metadata, never as a bright card fill. */
-.wct-origin-card[data-test-status] .wct-origin-card-label{
-  display:block;min-height:1.1em;font-size:.72rem;letter-spacing:0;
-  line-height:1.35;color:#b9cbd8!important;font-weight:500;
+.wct-origin-grid .wct-origin-details {
+  border-top: 1px solid rgba(255,255,255,.27);
+  padding: 17px 23px 20px;
+  color: #f3f9ff;
+  background: rgba(1,27,62,.18);
 }
-.wct-origin-card[data-test-status="named"]{border-left:2px solid #7fb6bd!important}
-.wct-origin-card[data-test-status="linked"]{border-left:2px solid #8c91b6!important}
-.wct-origin-card[data-test-status="generic"],
-.wct-origin-card[data-test-status="incorrect"]{border-left:2px solid #b6a58a!important}
-.wct-origin-card[data-test-status="untested"]{border-left:2px solid rgba(165,194,219,.16)!important}
-
-/* Exactly two views. Standard terms stay visibly distinct when All terms is selected. */
+.wct-origin-grid details.wct-origin-card:not([open])>.wct-origin-details {display:none}
+.wct-origin-details p {margin: 0 0 16px;font-size:.94rem;line-height:1.65;color:#f0f6ff}
+.wct-origin-actions {display:flex;flex-wrap:wrap;gap:9px}
+.wct-origin-actions a,
+#glossaryGrid .glossary-source-button,
+#glossaryGrid .glossary-card-links a {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:7px 12px;
+  border-radius:9px;
+  border:1px solid rgba(187,222,251,.68);
+  background:#e3f2fd;
+  color:#0d47a1 !important;
+  font:650 .79rem/1.3 Roboto,Arial,system-ui,sans-serif;
+  text-decoration:none !important;
+  transition:background-color .14s ease, box-shadow .14s ease;
+}
+.wct-origin-actions a:hover,
+.wct-origin-actions a:focus-visible,
+#glossaryGrid .glossary-source-button:hover,
+#glossaryGrid .glossary-card-links a:hover {
+  background:#fff;
+  box-shadow:0 0 0 2px rgba(144,202,249,.24);
+}
+#glossary .tool-head{align-items:start;flex-wrap:wrap;gap:15px}
+#glossary .tool-head h2{font-size:clamp(1.55rem,2.7vw,2.25rem)}
+#glossary .tool-head p{max-width:640px;line-height:1.5}
+#glossary .tool-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+#glossary .tool-toolbar input{flex:1 1 260px}
+#glossary .tool-toolbar select{flex:0 1 210px}
+#termOrigin,#termPriority {display:none !important}
+/* Two minimal filters */
 #glossary .glossary-provenance-guide.term-class-selector {
- display:grid!important;
- grid-template-columns:repeat(2,minmax(0,1fr))!important;
- max-width:720px;gap:10px!important;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+  max-width:640px;
+  margin:17px 0 20px;
 }
-#glossary .glossary-provenance-guide.term-class-selector>button {
- min-height:72px!important; padding:13px 16px!important;
+#glossary .term-class-selector>button {
+  appearance:none;
+  text-align:left;
+  display:block;
+  padding:12px 17px;
+  min-height:72px;
+  border-radius:12px;
+  border:1px solid rgba(103,166,224,.42);
+  color:#dbeeff;
+  background:#112943;
+  cursor:pointer;
+  transition:background-color .16s,border-color .16s;
 }
-#glossary #glossaryGrid .term-origin.external {
- display:inline-flex!important;
- color:#c7d2de!important;
- border-color:rgba(155,172,190,.42)!important;
- background:rgba(155,172,190,.055)!important;
+#glossary .term-class-selector>button strong {
+  display:block;
+  color:#f5faff;
+  font:650 .9rem/1.35 Roboto,Arial,system-ui,sans-serif;
 }
-#glossary #glossaryGrid .term-origin.coined,
-#glossary #glossaryGrid .term-origin.wct {
- display:inline-flex!important;
- color:#9cdaee!important;
- border-color:rgba(109,196,222,.36)!important;
- background:rgba(109,196,222,.035)!important;
+#glossary .term-class-selector>button span{
+  display:block;margin-top:4px;font:.78rem/1.4 Roboto,Arial,system-ui,sans-serif;color:#bcd1e6;
 }
-#glossary #glossaryGrid .term-priority-status{display:none!important}
-#glossary #glossaryGrid .standard-term{
- border-left:3px solid #687d90!important;
- background-color:#0d1826!important;
+#glossary .term-class-selector>button.active{
+  border-color:var(--wct-blue-300);
+  background:#1556a2;
 }
-#glossary #glossaryGrid .standard-term .glossary-definition{
- color:#d8e0e9!important;
+#glossary .term-class-selector>button:hover{border-color:var(--wct-blue-300);background:#154578}
+#glossary .term-class-selector>button:focus-visible{outline:2px solid #90caf9;outline-offset:2px}
+/* One blue row per glossary term, also a single native disclosure. */
+#glossaryGrid .glossary-letter{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  margin:25px 0 11px;
+  color:#90caf9;
 }
-@media(max-width:440px){
- #glossary .glossary-provenance-guide.term-class-selector {grid-template-columns:repeat(2,minmax(0,1fr))!important}
- #glossary .glossary-provenance-guide.term-class-selector>button{min-height:70px!important;padding:10px!important}
+#glossaryGrid .glossary-card[hidden],
+#glossaryGrid .glossary-letter[hidden],
+#glossaryNoResults[hidden]{display:none!important}
+#glossary #glossaryGrid details.glossary-card {
+  display:block;
+  grid-template-columns:none;
+  grid-template-areas:none;
+  width:100%;
+  margin:0 0 10px;
+  padding:0;
+  overflow:hidden;
+  background:#10437f;
+  background-image:none;
+  border:1px solid rgba(123,188,251,.50);
+  border-radius:12px;
+  color:#fff;
+  box-shadow:var(--wct-card-shadow);
+  opacity:1;
+  transition:background-color .16s,border-color .16s,
+             transform .16s,box-shadow .16s;
 }
-
-/* Material-style blue expansion. Flat dark surfaces; no gradients or bright card fills. */
-:root{
- --wct-mui-blue:#2196f3;
- --wct-mui-blue-hover:#42a5f5;
- --wct-mui-blue-muted:rgba(33,150,243,.07);
- --wct-mui-outline:rgba(33,150,243,.74);
-}
-.wct-origin-grid details.wct-origin-card{
- display:block!important;min-height:0!important;
- width:100%;padding:0!important;overflow:hidden;
- background:#0c1a2b!important;background-image:none!important;
- border:1px solid rgba(129,170,205,.27)!important;border-radius:12px!important;
- color:#eaf3fc!important;box-shadow:0 1px 3px rgba(0,0,0,.18)!important;
- transition:border-color .18s ease,background-color .18s ease,transform .18s ease,box-shadow .18s ease;
-}
-.wct-origin-grid details.wct-origin-card:hover,
-.wct-origin-grid details.wct-origin-card:focus-within{
- border-color:var(--wct-mui-blue-hover)!important;
- background:#102239!important;
- box-shadow:0 6px 17px rgba(0,0,0,.22),0 0 0 1px rgba(33,150,243,.14)!important;
- transform:translateY(-2px);
-}
-.wct-origin-grid details.wct-origin-card[open]{
- border-color:var(--wct-mui-blue)!important;
- background:#0e2035!important;
- box-shadow:0 7px 20px rgba(0,0,0,.25)!important;
-}
-.wct-origin-grid details.wct-origin-card:not([open])>.wct-origin-details{display:none!important}
-.wct-origin-grid .wct-origin-summary{
- display:flex;flex-direction:column;justify-content:space-between;gap:8px;
- min-height:110px;list-style:none;cursor:pointer;padding:15px 16px;
- color:#edf5fc;outline:0;
-}
-.wct-origin-grid .wct-origin-summary::-webkit-details-marker{display:none}
-.wct-origin-grid .wct-origin-summary::marker{content:""}
-.wct-origin-grid .wct-origin-summary:focus-visible{
- outline:2px solid var(--wct-mui-blue-hover);outline-offset:-3px;border-radius:11px;
-}
-.wct-origin-grid .wct-origin-summary strong{
- font-family:Roboto,Arial,system-ui,sans-serif;font-size:.98rem;line-height:1.32;
- font-weight:600;color:#f0f6fd;letter-spacing:.005em;
-}
-.wct-origin-grid .wct-origin-summary .wct-origin-card-action{
- display:flex;gap:7px;align-items:center;color:#64b5f6!important;font-size:.78rem;
-}
-.wct-origin-grid .wct-origin-summary .wct-origin-card-action span{
- display:inline-block;transition:transform .2s ease;font-size:1.18rem;line-height:.75;
-}
-.wct-origin-grid details.wct-origin-card[open] .wct-origin-card-action span{
- transform:rotate(180deg);
-}
-.wct-origin-grid .wct-origin-details{
- display:block;padding:1px 16px 16px!important;
- border-top:1px solid rgba(33,150,243,.26);
- background:rgba(33,150,243,.035);color:#dae7f2;
-}
-.wct-origin-grid .wct-origin-details p{
- margin:11px 0;font-size:.88rem;line-height:1.58;color:#d8e7f4;
-}
-.wct-origin-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.wct-origin-grid .wct-origin-actions a{
- display:inline-flex;align-items:center;min-height:31px;padding:5px 10px;
- border:1px solid rgba(33,150,243,.45);border-radius:7px;
- color:#90caf9!important;background:rgba(33,150,243,.06);
- text-decoration:none!important;font:600 .77rem/1.4 Roboto,Arial,system-ui,sans-serif;
-}
-.wct-origin-grid .wct-origin-actions a:hover,
-.wct-origin-grid .wct-origin-actions a:focus-visible{
- background:rgba(33,150,243,.16);border-color:#42a5f5;color:#e6f3ff!important;
- outline:none;
-}
-/* The A-Z entries also expand; classification stays visible in each closed row. */
-#glossary #glossaryGrid details.glossary-card{
- border-radius:12px!important;
- transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease,transform .18s ease;
- box-shadow:0 1px 3px rgba(0,0,0,.16)!important;
- overflow:hidden;
+#glossary #glossaryGrid details.glossary-card.standard-term {
+  background:#183653;
+  border-color:rgba(147,178,202,.45);
 }
 #glossary #glossaryGrid details.glossary-card:hover,
 #glossary #glossaryGrid details.glossary-card:focus-within{
- border-color:var(--wct-mui-blue-hover)!important;
- background:#102239!important;
- box-shadow:0 5px 18px rgba(0,0,0,.21)!important;
- transform:translateY(-1px);
+  background:#1556a2;
+  border-color:#90caf9;
+  box-shadow:var(--wct-card-shadow-hover);
+  transform:translateY(-1px);
 }
 #glossary #glossaryGrid details.glossary-card[open]{
- border-color:var(--wct-mui-blue)!important;
- background:#0e2035!important;
+  background:var(--wct-blue-700);
+  border-color:#bbdefb;
 }
-#glossary #glossaryGrid details.glossary-card:not([open])>.glossary-body{
- display:none!important;
+#glossary #glossaryGrid details.glossary-card::after,
+#glossary #glossaryGrid details.glossary-card::before{
+  display:none;
+  content:none;
 }
-#glossary #glossaryGrid .glossary-card-summary{
- display:flex!important;align-items:center;justify-content:space-between;gap:16px;
- cursor:pointer;list-style:none;min-width:0;outline:none;
- font-family:Roboto,Arial,system-ui,sans-serif;
+#glossaryGrid .glossary-card-summary {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  list-style:none;
+  gap:15px;
+  padding:16px 21px;
+  cursor:pointer;
 }
-#glossary #glossaryGrid .glossary-card-summary::-webkit-details-marker{display:none}
-#glossary #glossaryGrid .glossary-card-summary::marker{content:""}
-#glossary #glossaryGrid .glossary-card-summary:focus-visible{
- outline:2px solid var(--wct-mui-blue-hover);outline-offset:4px;border-radius:5px;
+#glossaryGrid .glossary-card-summary::-webkit-details-marker{display:none}
+#glossaryGrid .glossary-card-summary::marker{content:""}
+#glossaryGrid .glossary-card-summary:focus-visible{outline:3px solid #bbdefb;outline-offset:-5px;border-radius:9px}
+#glossaryGrid .glossary-identity {min-width:0;flex:1;grid-area:auto;margin:0}
+#glossaryGrid .glossary-card-summary h3{
+  margin:8px 0 0;
+  color:#fff;
+  font:650 clamp(1rem,1.4vw,1.19rem)/1.4 Roboto,Arial,system-ui,sans-serif;
+  letter-spacing:0;
 }
-#glossary #glossaryGrid .glossary-card-summary .glossary-identity{
- min-width:0;flex:1 1 auto;margin:0!important;
+#glossaryGrid .glossary-expand-label{
+  display:inline-flex;align-items:center;gap:7px;
+  flex:none;
+  color:#e3f2fd;
+  font:650 .82rem/1.2 Roboto,Arial,system-ui,sans-serif;
 }
-#glossary #glossaryGrid .glossary-card-summary h3{
- font-family:Roboto,Arial,system-ui,sans-serif!important;
- font-size:clamp(1rem,1.5vw,1.17rem)!important;font-weight:600!important;
- letter-spacing:0!important;line-height:1.38!important;margin:5px 0 0!important;
+#glossaryGrid .glossary-badges {display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+#glossaryGrid .glossary-badges .term-origin,
+#glossaryGrid .glossary-badges .tool-tag {
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  padding:4px 11px;
+  border:0;
+  letter-spacing:0;
+  text-transform:none;
+  font:650 .7rem/1.2 Roboto,Arial,system-ui,sans-serif;
 }
-#glossary #glossaryGrid .glossary-expand-label{
- display:inline-flex;align-items:center;gap:7px;flex:none;color:#64b5f6;
- font:600 .79rem Roboto,Arial,system-ui,sans-serif;
+#glossaryGrid .glossary-badges .term-origin.coined,
+#glossaryGrid .glossary-badges .term-origin.wct {background:#d9edff;color:#104780}
+#glossaryGrid .glossary-badges .term-origin.external {background:#dce3ea;color:#34485c}
+#glossaryGrid .glossary-badges .tool-tag {background:rgba(255,255,255,.19);color:#fff}
+#glossaryGrid details.glossary-card:not([open])>.glossary-body{display:none}
+#glossaryGrid details.glossary-card[open]>.glossary-body{
+  display:block;
+  padding:19px 21px 22px;
+  margin:0;
+  background:rgba(1,27,62,.18);
+  border-top:1px solid rgba(255,255,255,.26);
 }
-#glossary #glossaryGrid .glossary-expand-arrow{
- display:inline-block;transition:transform .2s ease;font-size:1.2rem;
+#glossaryGrid .glossary-definition {
+  color:#f2f7ff;
+  margin:0 0 16px;
+  font-size:1rem;
+  line-height:1.7;
 }
-#glossary #glossaryGrid details.glossary-card[open] .glossary-expand-arrow{
- transform:rotate(180deg);
+#glossaryGrid .glossary-notation {display:flex;gap:9px;flex-wrap:wrap;margin:11px 0;color:#eef5ff;font-size:.84rem}
+#glossaryGrid .glossary-notation strong {color:#c6e4ff;font-weight:700}
+#glossaryGrid .glossary-notation code {
+  color:#f1f7ff;
+  font-size:.85rem;
+  white-space:normal;
+  overflow-wrap:anywhere;
 }
-#glossary #glossaryGrid details.glossary-card[open]>.glossary-body{
- display:block!important;
- margin-top:15px;padding-top:14px;
- border-top:1px solid rgba(33,150,243,.24);
+#glossaryGrid .glossary-source-info {
+  display:flex;flex-wrap:wrap;align-items:center;
+  gap:8px 14px;margin:14px 0;
+  border-top:1px solid rgba(255,255,255,.19);
+  padding-top:14px;color:#eef5ff;
 }
-#glossary #glossaryGrid details.glossary-card[open]>.glossary-body .glossary-definition{
- color:#ecf5ff!important;
+#glossaryGrid .glossary-source-info>strong {font-weight:600;font-size:.9rem;flex:1 1 290px;line-height:1.5}
+#glossaryGrid .glossary-source-caption,
+#glossaryGrid .glossary-source-date {
+  display:inline-flex;
+  border-radius:999px;
+  padding:4px 9px;
+  background:rgba(255,255,255,.17);
+  color:#fff;font:650 .74rem/1.35 Roboto,Arial,system-ui,sans-serif;
 }
-#glossary #glossaryGrid .glossary-card-summary:hover h3,
-#glossary #glossaryGrid .glossary-card-summary:focus-visible h3{
- color:#bbdefb!important;
+#glossaryGrid .glossary-card-links{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+#glossaryGrid .glossary-card-links a {min-height:31px}
+@media(max-width:760px){
+  .wct-origin-grid{grid-template-columns:1fr}
+  .wct-origin-heading{display:block}
+  .wct-origin-heading p{margin-top:10px}
+  .wct-origin-grid .wct-origin-summary{min-height:126px}
+  #glossary .tool-toolbar{flex-direction:column;align-items:stretch}
+  #glossary .tool-toolbar input,#glossary .tool-toolbar select{width:100%;flex:auto}
 }
-@media(max-width:700px){
- .wct-origin-grid .wct-origin-summary{min-height:93px;padding:12px}
- .wct-origin-grid .wct-origin-details{padding:1px 12px 12px!important}
- #glossary #glossaryGrid .glossary-card-summary{gap:9px}
- #glossary #glossaryGrid .glossary-expand-label{font-size:.75rem}
+@media(max-width:440px){
+  .wct-origin-grid .wct-origin-summary{padding:16px}
+  .wct-origin-grid .wct-origin-details{padding:15px 16px}
+  #glossary .term-class-selector>button{padding:11px 12px}
+  #glossaryGrid .glossary-card-summary{padding:15px;gap:8px}
+  #glossaryGrid .glossary-expand-label{font-size:.73rem}
+  #glossaryGrid details.glossary-card[open]>.glossary-body{padding:16px}
 }
 @media(prefers-reduced-motion:reduce){
- .wct-origin-grid details.wct-origin-card,
- #glossary #glossaryGrid details.glossary-card,
- .wct-origin-card-action span,.glossary-expand-arrow{
-  transition:none!important;transform:none!important;
- }
+  .wct-origin-grid > details.wct-origin-card,
+  #glossary #glossaryGrid details.glossary-card,
+  .wct-origin-card-action span,.glossary-expand-arrow{transition:none;transform:none}
 }
