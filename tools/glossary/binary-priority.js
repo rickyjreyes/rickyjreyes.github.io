@@ -265,6 +265,7 @@
     try { card = document.querySelector(hash); } catch (_) { return; }
     if (!card || !card.classList.contains('glossary-card')) return;
     if (card.hidden) setView(original(card) ? 'original' : 'all');
+    card.open = true;
     requestAnimationFrame(() => card.scrollIntoView({block:'start'}));
   }
 
