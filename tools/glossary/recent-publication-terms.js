@@ -1,0 +1,267 @@
+// Terms supported by the six publications omitted from the archived 22-release terminology audit.
+// Attribution is to Reyes's publication-specific use, not to exclusive ownership of these words.
+(()=>{
+const incoming = [
+  {
+    "name": "GWTC Chirp-Mass Frozen Holdout",
+    "definition": "A training-selected log-periodic frequency tested on a withheld 104-event chirp-mass sample under a declared smooth population null.",
+    "family": "Evidence",
+    "provenance": "WCT-defined",
+    "release": 23,
+    "source_title": "Log-Periodic Structure in the GWTC Chirp-Mass Distribution: Frozen Holdout Evidence and a Prospective Prediction",
+    "public_record_date": "2026-08-26",
+    "doi": "10.5281/zenodo.22256802",
+    "priority_record": "https://rickyjreyes.github.io/publications/gwtc-log-periodic-chirp-mass.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Open-data analysis",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Selection-Exponent Robustness Tests",
+    "definition": "The GWTC follow-up examination of a locked spectral frequency under structured nonperiodic population nulls and alternative selection exponents.",
+    "family": "Evidence",
+    "provenance": "WCT-defined",
+    "release": 23,
+    "source_title": "Log-Periodic Structure in the GWTC Chirp-Mass Distribution: Frozen Holdout Evidence and a Prospective Prediction",
+    "public_record_date": "2026-08-26",
+    "doi": "10.5281/zenodo.22256802",
+    "priority_record": "https://rickyjreyes.github.io/publications/gwtc-log-periodic-chirp-mass.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Open-data analysis",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Prospective GWTC Catalog Prediction",
+    "definition": "A proposed later-catalog test of a frozen chirp-mass frequency, distinct from reusing an inspected holdout.",
+    "family": "Evidence",
+    "provenance": "WCT-defined",
+    "release": 23,
+    "source_title": "Log-Periodic Structure in the GWTC Chirp-Mass Distribution: Frozen Holdout Evidence and a Prospective Prediction",
+    "public_record_date": "2026-08-26",
+    "doi": "10.5281/zenodo.22256802",
+    "priority_record": "https://rickyjreyes.github.io/publications/gwtc-log-periodic-chirp-mass.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Open-data analysis",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "CMS Phase-Locked Dimuon Holdout",
+    "definition": "The CMS dimuon residual evaluated on a later held-out subset with phase and log-frequency fixed by the development protocol.",
+    "family": "Evidence",
+    "provenance": "WCT-defined",
+    "release": 24,
+    "source_title": "Log-Periodic Dimuon Residual in CMS Open Data: Cross-Period Replication and a Prospective Phase-Locked Holdout",
+    "public_record_date": "2026-08-31",
+    "doi": "10.5281/zenodo.22257067",
+    "priority_record": "https://rickyjreyes.github.io/publications/cms-log-periodic-dimuon-residual.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Open-data analysis",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Cross-Period Dimuon Log-Residual",
+    "definition": "An oscillatory residual in the logarithm of the dimuon invariant mass checked for recurrence between CMS data periods.",
+    "family": "Evidence",
+    "provenance": "WCT-defined",
+    "release": 24,
+    "source_title": "Log-Periodic Dimuon Residual in CMS Open Data: Cross-Period Replication and a Prospective Phase-Locked Holdout",
+    "public_record_date": "2026-08-31",
+    "doi": "10.5281/zenodo.22257067",
+    "priority_record": "https://rickyjreyes.github.io/publications/cms-log-periodic-dimuon-residual.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Open-data analysis",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "CMS Background-Model Sensitivity",
+    "definition": "The dependence of the locked dimuon residual significance on defensible alternative smooth-background generators.",
+    "family": "Evidence",
+    "provenance": "WCT-defined",
+    "release": 24,
+    "source_title": "Log-Periodic Dimuon Residual in CMS Open Data: Cross-Period Replication and a Prospective Phase-Locked Holdout",
+    "public_record_date": "2026-08-31",
+    "doi": "10.5281/zenodo.22257067",
+    "priority_record": "https://rickyjreyes.github.io/publications/cms-log-periodic-dimuon-residual.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Open-data analysis",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Exact Scale–Winding Bijection",
+    "definition": "The paper's mapping between discrete scale changes in logarithmic coordinates and integer phase winding over an active domain.",
+    "family": "Topology",
+    "provenance": "WCT-defined",
+    "release": 25,
+    "source_title": "Exact Scale-Winding Bijection Between Discrete Scale Invariance and WCT Active-Domain Phase Closure",
+    "public_record_date": "2026-09-08",
+    "doi": "10.5281/zenodo.22665914",
+    "priority_record": "https://rickyjreyes.github.io/publications/exact-scale-winding-bijection.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Mathematical derivation",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Active-Domain Phase Closure",
+    "definition": "A closed phase-winding condition defined on the retained physical domain after exclusions or boundaries.",
+    "family": "Topology",
+    "provenance": "WCT-defined",
+    "release": 25,
+    "source_title": "Exact Scale-Winding Bijection Between Discrete Scale Invariance and WCT Active-Domain Phase Closure",
+    "public_record_date": "2026-09-08",
+    "doi": "10.5281/zenodo.22665914",
+    "priority_record": "https://rickyjreyes.github.io/publications/exact-scale-winding-bijection.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Mathematical derivation",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Logarithmic Scale–Phase Correspondence",
+    "definition": "The mathematical correspondence between log-coordinate periodicity and accumulated phase change formulated in the scale-winding paper.",
+    "family": "Spectral",
+    "provenance": "WCT-defined",
+    "release": 25,
+    "source_title": "Exact Scale-Winding Bijection Between Discrete Scale Invariance and WCT Active-Domain Phase Closure",
+    "public_record_date": "2026-09-08",
+    "doi": "10.5281/zenodo.22665914",
+    "priority_record": "https://rickyjreyes.github.io/publications/exact-scale-winding-bijection.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Mathematical derivation",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Filament Reduction of Curvature-Locked Modes",
+    "definition": "An effective lower-dimensional filament description extracted from curvature-locked field structure.",
+    "family": "Core field",
+    "provenance": "WCT-defined",
+    "release": 26,
+    "source_title": "Filament Reduction and Phase Quantization of Curvature-Locked Modes",
+    "public_record_date": "2026-09-08",
+    "doi": "10.5281/zenodo.22666758",
+    "priority_record": "https://rickyjreyes.github.io/publications/filament-reduction-phase-quantization.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Mathematical derivation",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Filament Phase Quantization Condition",
+    "definition": "The phase-closure restriction derived for localized modes in the filament reduction framework.",
+    "family": "Topology",
+    "provenance": "WCT-defined",
+    "release": 26,
+    "source_title": "Filament Reduction and Phase Quantization of Curvature-Locked Modes",
+    "public_record_date": "2026-09-08",
+    "doi": "10.5281/zenodo.22666758",
+    "priority_record": "https://rickyjreyes.github.io/publications/filament-reduction-phase-quantization.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Mathematical derivation",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Curvature-Locked Mode Reduction",
+    "definition": "A WCT-specific reduction connecting a curvature-confined field description to filament-mode dynamics.",
+    "family": "Curvature",
+    "provenance": "WCT-defined",
+    "release": 26,
+    "source_title": "Filament Reduction and Phase Quantization of Curvature-Locked Modes",
+    "public_record_date": "2026-09-08",
+    "doi": "10.5281/zenodo.22666758",
+    "priority_record": "https://rickyjreyes.github.io/publications/filament-reduction-phase-quantization.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Mathematical derivation",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "WCT Geometric Turbulence",
+    "definition": "The numerical-study regime of driven nonlinear dynamics featuring phase-locked curvature filaments.",
+    "family": "Spectral",
+    "provenance": "WCT-defined",
+    "release": 27,
+    "source_title": "Geometric Turbulence in Wave Confinement Theory: Phase-Locked Curvature Filaments and the Soliton-Gas Regime",
+    "public_record_date": "2026-09-08",
+    "doi": "10.5281/zenodo.22666935",
+    "priority_record": "https://rickyjreyes.github.io/publications/geometric-turbulence-soliton-gas.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Numerical study",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Phase-Locked Curvature Filament Gas",
+    "definition": "An ensemble of persistent localized curvature filaments interpreted as a soliton-gas regime in the WCT numerical study.",
+    "family": "Spectral",
+    "provenance": "WCT-defined",
+    "release": 27,
+    "source_title": "Geometric Turbulence in Wave Confinement Theory: Phase-Locked Curvature Filaments and the Soliton-Gas Regime",
+    "public_record_date": "2026-09-08",
+    "doi": "10.5281/zenodo.22666935",
+    "priority_record": "https://rickyjreyes.github.io/publications/geometric-turbulence-soliton-gas.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Numerical study",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Filament-Length Distribution Diagnostic",
+    "definition": "The distribution of localized filament lengths tracked as a characteristic statistic in the geometric turbulence simulations.",
+    "family": "Evidence",
+    "provenance": "WCT-defined",
+    "release": 27,
+    "source_title": "Geometric Turbulence in Wave Confinement Theory: Phase-Locked Curvature Filaments and the Soliton-Gas Regime",
+    "public_record_date": "2026-09-08",
+    "doi": "10.5281/zenodo.22666935",
+    "priority_record": "https://rickyjreyes.github.io/publications/geometric-turbulence-soliton-gas.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Numerical study",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Recursive Propagation–Correction Criticality Law",
+    "definition": "An RCA relation comparing recursive propagation of error or destabilizing change with available corrective capacity.",
+    "family": "AI / drift",
+    "provenance": "WCT-defined",
+    "release": 28,
+    "source_title": "From Wave Confinement to Recursive AI Instability: A Propagation-Correction Criticality Law and Successful Prospective Prediction",
+    "public_record_date": "2026-09-14",
+    "doi": "10.5281/zenodo.22757003",
+    "priority_record": "https://rickyjreyes.github.io/publications/recursive-ai-propagation-correction-criticality.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Mathematical derivation",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Prospective RCA Prediction Audit",
+    "definition": "A paper-specific comparison of an earlier RCA quantitative prediction with a later observed incident, with mechanism and timing claims evaluated separately.",
+    "family": "AI / drift",
+    "provenance": "WCT-defined",
+    "release": 28,
+    "source_title": "From Wave Confinement to Recursive AI Instability: A Propagation-Correction Criticality Law and Successful Prospective Prediction",
+    "public_record_date": "2026-09-14",
+    "doi": "10.5281/zenodo.22757003",
+    "priority_record": "https://rickyjreyes.github.io/publications/recursive-ai-propagation-correction-criticality.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Mathematical derivation",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  },
+  {
+    "name": "Correction-Capacity Threshold",
+    "definition": "The proposed RCA boundary at which propagation outpaces the architecture's ability to correct recursive failures.",
+    "family": "AI / drift",
+    "provenance": "WCT-defined",
+    "release": 28,
+    "source_title": "From Wave Confinement to Recursive AI Instability: A Propagation-Correction Criticality Law and Successful Prospective Prediction",
+    "public_record_date": "2026-09-14",
+    "doi": "10.5281/zenodo.22757003",
+    "priority_record": "https://rickyjreyes.github.io/publications/recursive-ai-propagation-correction-criticality.html",
+    "lexical_audit_status": "not_audited",
+    "source_status": "Mathematical derivation",
+    "claim_scope": "Named or descriptive concept from publication. Not included in 22-release exact-phrase audit."
+  }
+];
+const base = window.WCT_GLOSSARY_ALL || [];
+const by = new Map(base.map(t=>[String(t.name||'').toLowerCase(),t]));
+for (const term of incoming) {const key=term.name.toLowerCase();const old=by.get(key);
+if(old){if(!old.release || old.release>22){Object.assign(old,{...term,definition:old.definition||term.definition});}continue;}
+base.push(term);by.set(key,term);
+}
+base.sort((a,b)=>String(a.name).localeCompare(String(b.name),'en',{sensitivity:'base'}));
+window.WCT_GLOSSARY_ALL=base;
+window.WCT_GLOSSARY_META={...(window.WCT_GLOSSARY_META||{}),publication_count:28,additional_publication_coverage_count:6,publication_extension_terms:incoming.length};
+})();
