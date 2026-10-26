@@ -10,6 +10,20 @@
   const registry = window.WCT_TERMINOLOGY_PRIORITY || {};
   const registryTerms = Array.isArray(registry.terms) ? registry.terms : [];
   const byTerm = new Map(registryTerms.map(r => [String(r.term || '').toLocaleLowerCase(), r]));
+  const auditedNames = new Set(byTerm.keys());
+  for (const t of (window.WCT_GLOSSARY_ALL || [])) {
+    const key = String(t.name || '').toLocaleLowerCase();
+    if (!key || byTerm.has(key) || !t.doi) continue;
+    byTerm.set(key, {
+      term:t.name,
+      doi:t.doi,
+      sourceTitle:t.source_title || '',
+      sourceUrl: /^https?:\/\//.test(t.priority_record || '') ? t.priority_record : '',
+      publicRecordDate:t.public_record_date || '',
+      lexicalAuditStatus:t.lexical_audit_status === 'not_audited'
+        ? 'not_audited' : 'not_in_exact_phrase_survivor_set'
+    });
+  }
   const audit = registry.audit || {};
   const choices = [
     {value:'original', name:'WCT / RCA contributions', help:'Project-defined and explicitly coined terminology. Default view.'},
@@ -44,7 +58,8 @@
     strong_explicit_coinage:'Reyes explicitly claims this phrase as his coinage in the archived audit. No earlier indexed exact use was located',
     exact_phrase_survivor:'No earlier indexed exact-phrase occurrence located',
     prior_phrase_found:'Earlier unrelated phrase use found; WCT definition is separate',
-    not_in_exact_phrase_survivor_set:'Reyes-defined or specialized use; no lexical-priority assertion'
+    not_in_exact_phrase_survivor_set:'Reyes-defined or specialized use; no lexical-priority assertion',
+    not_audited:'Named in a newer Reyes publication; not yet included in the archived 22-release lexical audit'
   })[status] || 'Dated WCT definition; lexical priority not established';
 
   function decorateCard(card) {
@@ -76,7 +91,7 @@
     links.className = 'glossary-evidence-links';
     appendLink(links, 'Publication record', record.sourceUrl);
     if (record.doi) appendLink(links, 'Zenodo DOI', 'https://doi.org/' + doiKey(record.doi));
-    appendLink(links, 'Priority audit', 'https://rickyjreyes.github.io/priority/terminology/#term-' + slug(record.term));
+    if (auditedNames.has(name.toLocaleLowerCase())) appendLink(links, 'Priority audit', 'https://rickyjreyes.github.io/priority/terminology/#term-' + slug(record.term));
     section.appendChild(links);
 
     const detail = document.createElement('p');
