@@ -159,3 +159,149 @@
  #glossary .glossary-provenance-guide.term-class-selector {grid-template-columns:repeat(2,minmax(0,1fr))!important}
  #glossary .glossary-provenance-guide.term-class-selector>button{min-height:70px!important;padding:10px!important}
 }
+
+/* Material-style blue expansion. Flat dark surfaces; no gradients or bright card fills. */
+:root{
+ --wct-mui-blue:#2196f3;
+ --wct-mui-blue-hover:#42a5f5;
+ --wct-mui-blue-muted:rgba(33,150,243,.07);
+ --wct-mui-outline:rgba(33,150,243,.74);
+}
+.wct-origin-grid details.wct-origin-card{
+ display:block!important;min-height:0!important;
+ width:100%;padding:0!important;overflow:hidden;
+ background:#0c1a2b!important;background-image:none!important;
+ border:1px solid rgba(129,170,205,.27)!important;border-radius:12px!important;
+ color:#eaf3fc!important;box-shadow:0 1px 3px rgba(0,0,0,.18)!important;
+ transition:border-color .18s ease,background-color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.wct-origin-grid details.wct-origin-card:hover,
+.wct-origin-grid details.wct-origin-card:focus-within{
+ border-color:var(--wct-mui-blue-hover)!important;
+ background:#102239!important;
+ box-shadow:0 6px 17px rgba(0,0,0,.22),0 0 0 1px rgba(33,150,243,.14)!important;
+ transform:translateY(-2px);
+}
+.wct-origin-grid details.wct-origin-card[open]{
+ border-color:var(--wct-mui-blue)!important;
+ background:#0e2035!important;
+ box-shadow:0 7px 20px rgba(0,0,0,.25)!important;
+}
+.wct-origin-grid details.wct-origin-card:not([open])>.wct-origin-details{display:none!important}
+.wct-origin-grid .wct-origin-summary{
+ display:flex;flex-direction:column;justify-content:space-between;gap:8px;
+ min-height:110px;list-style:none;cursor:pointer;padding:15px 16px;
+ color:#edf5fc;outline:0;
+}
+.wct-origin-grid .wct-origin-summary::-webkit-details-marker{display:none}
+.wct-origin-grid .wct-origin-summary::marker{content:""}
+.wct-origin-grid .wct-origin-summary:focus-visible{
+ outline:2px solid var(--wct-mui-blue-hover);outline-offset:-3px;border-radius:11px;
+}
+.wct-origin-grid .wct-origin-summary strong{
+ font-family:Roboto,Arial,system-ui,sans-serif;font-size:.98rem;line-height:1.32;
+ font-weight:600;color:#f0f6fd;letter-spacing:.005em;
+}
+.wct-origin-grid .wct-origin-summary .wct-origin-card-action{
+ display:flex;gap:7px;align-items:center;color:#64b5f6!important;font-size:.78rem;
+}
+.wct-origin-grid .wct-origin-summary .wct-origin-card-action span{
+ display:inline-block;transition:transform .2s ease;font-size:1.18rem;line-height:.75;
+}
+.wct-origin-grid details.wct-origin-card[open] .wct-origin-card-action span{
+ transform:rotate(180deg);
+}
+.wct-origin-grid .wct-origin-details{
+ display:block;padding:1px 16px 16px!important;
+ border-top:1px solid rgba(33,150,243,.26);
+ background:rgba(33,150,243,.035);color:#dae7f2;
+}
+.wct-origin-grid .wct-origin-details p{
+ margin:11px 0;font-size:.88rem;line-height:1.58;color:#d8e7f4;
+}
+.wct-origin-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.wct-origin-grid .wct-origin-actions a{
+ display:inline-flex;align-items:center;min-height:31px;padding:5px 10px;
+ border:1px solid rgba(33,150,243,.45);border-radius:7px;
+ color:#90caf9!important;background:rgba(33,150,243,.06);
+ text-decoration:none!important;font:600 .77rem/1.4 Roboto,Arial,system-ui,sans-serif;
+}
+.wct-origin-grid .wct-origin-actions a:hover,
+.wct-origin-grid .wct-origin-actions a:focus-visible{
+ background:rgba(33,150,243,.16);border-color:#42a5f5;color:#e6f3ff!important;
+ outline:none;
+}
+/* The A-Z entries also expand; classification stays visible in each closed row. */
+#glossary #glossaryGrid details.glossary-card{
+ border-radius:12px!important;
+ transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease,transform .18s ease;
+ box-shadow:0 1px 3px rgba(0,0,0,.16)!important;
+ overflow:hidden;
+}
+#glossary #glossaryGrid details.glossary-card:hover,
+#glossary #glossaryGrid details.glossary-card:focus-within{
+ border-color:var(--wct-mui-blue-hover)!important;
+ background:#102239!important;
+ box-shadow:0 5px 18px rgba(0,0,0,.21)!important;
+ transform:translateY(-1px);
+}
+#glossary #glossaryGrid details.glossary-card[open]{
+ border-color:var(--wct-mui-blue)!important;
+ background:#0e2035!important;
+}
+#glossary #glossaryGrid details.glossary-card:not([open])>.glossary-body{
+ display:none!important;
+}
+#glossary #glossaryGrid .glossary-card-summary{
+ display:flex!important;align-items:center;justify-content:space-between;gap:16px;
+ cursor:pointer;list-style:none;min-width:0;outline:none;
+ font-family:Roboto,Arial,system-ui,sans-serif;
+}
+#glossary #glossaryGrid .glossary-card-summary::-webkit-details-marker{display:none}
+#glossary #glossaryGrid .glossary-card-summary::marker{content:""}
+#glossary #glossaryGrid .glossary-card-summary:focus-visible{
+ outline:2px solid var(--wct-mui-blue-hover);outline-offset:4px;border-radius:5px;
+}
+#glossary #glossaryGrid .glossary-card-summary .glossary-identity{
+ min-width:0;flex:1 1 auto;margin:0!important;
+}
+#glossary #glossaryGrid .glossary-card-summary h3{
+ font-family:Roboto,Arial,system-ui,sans-serif!important;
+ font-size:clamp(1rem,1.5vw,1.17rem)!important;font-weight:600!important;
+ letter-spacing:0!important;line-height:1.38!important;margin:5px 0 0!important;
+}
+#glossary #glossaryGrid .glossary-expand-label{
+ display:inline-flex;align-items:center;gap:7px;flex:none;color:#64b5f6;
+ font:600 .79rem Roboto,Arial,system-ui,sans-serif;
+}
+#glossary #glossaryGrid .glossary-expand-arrow{
+ display:inline-block;transition:transform .2s ease;font-size:1.2rem;
+}
+#glossary #glossaryGrid details.glossary-card[open] .glossary-expand-arrow{
+ transform:rotate(180deg);
+}
+#glossary #glossaryGrid details.glossary-card[open]>.glossary-body{
+ display:block!important;
+ margin-top:15px;padding-top:14px;
+ border-top:1px solid rgba(33,150,243,.24);
+}
+#glossary #glossaryGrid details.glossary-card[open]>.glossary-body .glossary-definition{
+ color:#ecf5ff!important;
+}
+#glossary #glossaryGrid .glossary-card-summary:hover h3,
+#glossary #glossaryGrid .glossary-card-summary:focus-visible h3{
+ color:#bbdefb!important;
+}
+@media(max-width:700px){
+ .wct-origin-grid .wct-origin-summary{min-height:93px;padding:12px}
+ .wct-origin-grid .wct-origin-details{padding:1px 12px 12px!important}
+ #glossary #glossaryGrid .glossary-card-summary{gap:9px}
+ #glossary #glossaryGrid .glossary-expand-label{font-size:.75rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .wct-origin-grid details.wct-origin-card,
+ #glossary #glossaryGrid details.glossary-card,
+ .wct-origin-card-action span,.glossary-expand-arrow{
+  transition:none!important;transform:none!important;
+ }
+}
