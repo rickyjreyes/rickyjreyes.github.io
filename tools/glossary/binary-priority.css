@@ -180,3 +180,17 @@
  #glossary .tool-toolbar{display:flex!important;flex-direction:column}
  #glossary .tool-toolbar input,#glossary .tool-toolbar select{width:100%;flex:auto}
 }
+
+/* Explicit discipline-to-WCT DOI mapping, visible to readers without Google searches. */
+.glossary-concept-crosswalk {margin:20px 0 28px;padding:18px 20px;border:1px solid var(--line-strong);border-radius:13px;background:#0b1727}
+.glossary-concept-crosswalk h3 {font:500 1.32rem/1.35 Georgia,serif;margin:0 0 9px;color:var(--text)}
+.glossary-concept-crosswalk p {max-width:86ch;margin:0 0 14px;font-size:.88rem;color:var(--muted);line-height:1.6}
+.glossary-crosswalk-scroll {overflow-x:auto}
+.glossary-concept-crosswalk table {width:100%;border-collapse:collapse;text-align:left}
+.glossary-concept-crosswalk th {font-size:.74rem;text-transform:uppercase;letter-spacing:.025em;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line-strong)}
+.glossary-concept-crosswalk td {padding:10px 12px;vertical-align:top;border-bottom:1px solid rgba(180,210,231,.13);color:var(--text);font-size:.86rem;line-height:1.46}
+.glossary-concept-crosswalk td:first-child {font-weight:700;width:32%}
+.glossary-concept-crosswalk td:last-child {white-space:nowrap}
+.glossary-concept-crosswalk a {color:#8edbfb;text-decoration:underline}
+.glossary-claim-guide{max-width:none!important}
+@media(max-width:650px){.glossary-concept-crosswalk{padding:12px}.glossary-concept-crosswalk td{min-width:130px;padding:8px;font-size:.79rem}.glossary-concept-crosswalk td:last-child{min-width:100px}}
