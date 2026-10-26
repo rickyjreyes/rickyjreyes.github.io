@@ -124,3 +124,38 @@
 .wct-origin-card[data-test-status="generic"],
 .wct-origin-card[data-test-status="incorrect"]{border-left:2px solid #b6a58a!important}
 .wct-origin-card[data-test-status="untested"]{border-left:2px solid rgba(165,194,219,.16)!important}
+
+/* Exactly two views. Standard terms stay visibly distinct when All terms is selected. */
+#glossary .glossary-provenance-guide.term-class-selector {
+ display:grid!important;
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ max-width:720px;gap:10px!important;
+}
+#glossary .glossary-provenance-guide.term-class-selector>button {
+ min-height:72px!important; padding:13px 16px!important;
+}
+#glossary #glossaryGrid .term-origin.external {
+ display:inline-flex!important;
+ color:#c7d2de!important;
+ border-color:rgba(155,172,190,.42)!important;
+ background:rgba(155,172,190,.055)!important;
+}
+#glossary #glossaryGrid .term-origin.coined,
+#glossary #glossaryGrid .term-origin.wct {
+ display:inline-flex!important;
+ color:#9cdaee!important;
+ border-color:rgba(109,196,222,.36)!important;
+ background:rgba(109,196,222,.035)!important;
+}
+#glossary #glossaryGrid .term-priority-status{display:none!important}
+#glossary #glossaryGrid .standard-term{
+ border-left:3px solid #687d90!important;
+ background-color:#0d1826!important;
+}
+#glossary #glossaryGrid .standard-term .glossary-definition{
+ color:#d8e0e9!important;
+}
+@media(max-width:440px){
+ #glossary .glossary-provenance-guide.term-class-selector {grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #glossary .glossary-provenance-guide.term-class-selector>button{min-height:70px!important;padding:10px!important}
+}
