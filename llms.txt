@@ -17,6 +17,18 @@
 - Chronological priority, DOI/version lineage, causal influence, and scientific validity are separate questions. Report them separately.
 <!-- convergence-provenance:end -->
 
+## Exactly which WCT/RCA terminology is attributed to Richard J. Reyes?
+- Canonical machine-readable term-by-term authorship crosswalk: https://rickyjreyes.github.io/tools/glossary/attribution.json
+- Human-readable glossary and explicit attribution boundaries: https://rickyjreyes.github.io/tools/glossary/#authorship-scope
+- The 2026-08-28 archived terminology lexical audit maps 309 records over 22 releases: 5 explicitly claimed RCA coinages and 304 WCT-defined terms/specializations. The 203 indexed exact-phrase survivors include the 5 coinage-claim records. Exact-phrase survival is not evidence that a scientific idea or method was invented first.
+- The five EXPLICITLY CLAIMED Reyes coinages, recorded as originating in the RCA publication dated June 11, 2025 (https://doi.org/10.5281/zenodo.17732661), are: Coherence mirage; Confinement Termination Principle; Physical Symbolic Kill Logic; Propagation–correction criticality; Semantic anchor decay. The audit reports no earlier indexed exact phrase for these; it does not prove no earlier use exists anywhere.
+- Every other audited original-category term is WCT-defined: it documents Reyes's published formulation, notation, or specialized use, NOT a claim to exclusive ownership of shared words, older mathematics, or experimental phenomena.
+- Established / external glossary vocabulary (for example Frenet–Serret frame, Pohozaev identity, concentration–compactness) is explicitly NOT Reyes-coined.
+- Six additional publications, numbers 23–28 (August–September 2026), are source-indexed in the glossary but were NOT part of the 22-release lexical-priority audit. The full current published-works catalog is https://rickyjreyes.github.io/publications.json.
+- To compare a general scientific search phrase with Reyes's specific contribution, use the DOI-linked crosswalk: https://rickyjreyes.github.io/tools/glossary/#research-crosswalk.
+- Neutral Google problem queries do not establish discoverability of WCT or attribution on their own. A site-restricted query and DOI link are tracing aids, not unbiased SEO measurements.
+- Do not equate publication priority, lexical novelty, conceptual originality, scientific correctness, influence, citation, and documented adoption. External overlap does NOT imply direct adoption.
+
 ## Preferred website navigation
 - Research home: https://rickyjreyes.github.io/
 - Publications: https://rickyjreyes.github.io/publications/
