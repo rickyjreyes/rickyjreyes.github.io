@@ -97,13 +97,13 @@
       const link = document.createElement('link');
       link.id = 'wct-glossary-binary-priority';
       link.rel = 'stylesheet';
-      link.href = '/tools/glossary/binary-priority.css?v=20261026-attribution-v3';
+      link.href = '/tools/glossary/binary-priority.css?v=20261026-search-cards-v4';
       document.head.appendChild(link);
     }
     if (!document.getElementById('wct-glossary-binary-priority-js')) {
       const script = document.createElement('script');
       script.id = 'wct-glossary-binary-priority-js';
-      script.src = '/tools/glossary/binary-priority.js?v=20261026-attribution-v3';
+      script.src = '/tools/glossary/binary-priority.js?v=20261026-search-cards-v4';
       script.defer = true;
       document.head.appendChild(script);
     }
