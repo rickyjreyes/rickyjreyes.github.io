@@ -347,3 +347,58 @@
   #glossary #glossaryGrid details.glossary-card,
   .wct-origin-card-action span,.glossary-expand-arrow{transition:none;transform:none}
 }
+
+/* Expanded A-Z glossary: Reyes cards use exactly the featured Material Blue palette.
+   Include priority-coinage and priority-survivor: both are Reyes entries. */
+#glossary #glossaryGrid details.glossary-card:not(.standard-term) {
+  background: #10437f !important;
+  background-image: none !important;
+  border: 1px solid rgba(123,188,251,.57) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--wct-card-shadow) !important;
+}
+#glossary #glossaryGrid details.glossary-card:not(.standard-term):hover,
+#glossary #glossaryGrid details.glossary-card:not(.standard-term):focus-within {
+  background: #1556a2 !important;
+  border-color: var(--wct-blue-300) !important;
+  box-shadow: var(--wct-card-shadow-hover) !important;
+}
+#glossary #glossaryGrid details.glossary-card:not(.standard-term)[open] {
+  background: var(--wct-blue-700) !important;
+  border-color: #acd9ff !important;
+}
+#glossary #glossaryGrid details.glossary-card.standard-term {
+  background: #183653 !important;
+  border: 1px solid rgba(147,178,202,.45) !important;
+}
+#glossary #glossaryGrid details.glossary-card.standard-term[open] {
+  background: #244563 !important;
+  border-color: #93b2ca !important;
+}
+#glossary #glossaryGrid .glossary-badges .term-origin.coined,
+#glossary #glossaryGrid .glossary-badges .term-origin.wct {
+  background: #d9edff !important;
+  color: #094681 !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 4px 11px !important;
+}
+#glossary #glossaryGrid .glossary-badges .term-origin.external {
+  background: #dce3ea !important;
+  color: #34485c !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 4px 11px !important;
+}
+#glossary #glossaryGrid .glossary-badges .tool-tag {
+  background: rgba(255,255,255,.19) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 4px 11px !important;
+}
+#glossary #glossaryGrid .glossary-label-when-closed { display: none }
+#glossary #glossaryGrid details.glossary-card:not([open]) .glossary-label-when-closed { display: inline }
+#glossary #glossaryGrid details.glossary-card:not([open]) .glossary-label-when-open { display: none }
+#glossary #glossaryGrid details.glossary-card[open] .glossary-label-when-open { display: inline }
+#glossary #glossaryGrid details.glossary-card[open] .glossary-label-when-closed { display: none }
