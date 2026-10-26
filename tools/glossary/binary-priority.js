@@ -26,10 +26,10 @@
   }
   const audit = registry.audit || {};
   const choices = [
-    {value:'original', name:'WCT / RCA contributions', help:'Project-defined and explicitly coined terminology. Default view.'},
-    {value:'lexical', name:'Exact-phrase priority', help:'Records with no earlier indexed exact phrase located in the dated audit.'},
-    {value:'external', name:'Established vocabulary', help:'Existing scientific terms, separately labeled; no WCT originality claim.'},
-    {value:'all', name:'Complete A–Z inventory', help:'All terms, including background reference vocabulary.'}
+    {value:'original', name:'Reyes terms', help:'WCT / RCA definitions'},
+    {value:'lexical', name:'Phrase matches', help:'Indexed exact-phrase records'},
+    {value:'external', name:'Standard science', help:'Established terminology'},
+    {value:'all', name:'All terms', help:'Complete A–Z glossary'}
   ];
   let selected = 'original';
   let paperComparisons = new Map();
@@ -96,8 +96,7 @@
 
     const detail = document.createElement('p');
     detail.className = 'glossary-evidence-note';
-    detail.textContent = (record.publicRecordDate ? 'Mapped public record: ' + record.publicRecordDate + '. ' : '') +
-      statusText(record.lexicalAuditStatus) + '. Publication chronology, lexical priority, scientific validity, and independent adoption are distinct questions.';
+    detail.textContent = (record.publicRecordDate ? 'Richard J. Reyes · ' + record.publicRecordDate : 'Richard J. Reyes');
     section.appendChild(detail);
     const comparisonSlot = document.createElement('div');
     comparisonSlot.className = 'glossary-paper-comparisons';
@@ -118,7 +117,7 @@
     details.appendChild(summary);
     const note = document.createElement('p');
     note.className = 'glossary-evidence-note';
-    note.textContent = 'Linked by WCT source DOI in the curated chronology audit, not by demonstrated use of this individual term. No claim of citation, borrowing, or adoption is inferred.';
+    note.textContent = 'Related paper-level records';
     details.appendChild(note);
     const ul = document.createElement('ul');
     for (const r of records.slice(0, 5)) {
@@ -226,7 +225,7 @@
     set('registryReleaseCount', audit.releaseCount ?? '—');
     const stamp = document.getElementById('registryAuditDate');
     if (stamp && registry.auditTimestamp) {
-      stamp.textContent = 'Terminology audit: ' + registry.auditTimestamp.slice(0,10) + '. Counts reflect this archived audit, not a newly performed web search.';
+      stamp.textContent = 'Audit: ' + registry.auditTimestamp.slice(0,10);
     }
   }
 
