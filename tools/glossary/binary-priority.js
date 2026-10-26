@@ -1,6 +1,4 @@
-/* WCT glossary attribution view: original work first, lexical priority separately,
-   and established vocabulary in its own reference view. This replaces the old
-   binary exact-phrase vs general distinction. */
+/* Two glossary views: Reyes terms (default) and All terms. Source details remain intact. */
 (() => {
   if (!/^\/tools\/glossary(?:\/|$)/.test(location.pathname)) return;
   const grid = document.getElementById('glossaryGrid');
@@ -26,21 +24,13 @@
   }
   const audit = registry.audit || {};
   const choices = [
-    {value:'original', name:'Reyes terms', help:'WCT / RCA definitions'},
-    {value:'lexical', name:'Phrase matches', help:'Indexed exact-phrase records'},
-    {value:'external', name:'Standard science', help:'Established terminology'},
-    {value:'all', name:'All terms', help:'Complete A–Z glossary'}
+    {value:'original', name:'Reyes terms', help:'WCT / RCA terms only'},
+    {value:'all', name:'All terms', help:'Reyes + standard scientific terms'}
   ];
   let selected = 'original';
   let paperComparisons = new Map();
 
-  const originFor = card => card.querySelector('.term-origin')?.textContent.trim() || '';
-  const original = card => ['Coined by Reyes','WCT-defined'].includes(originFor(card));
-  const priority = card => {
-    const s = byTerm.get((card.querySelector('h3')?.textContent || '').trim().toLocaleLowerCase())?.lexicalAuditStatus;
-    return ['strong_explicit_coinage','exact_phrase_survivor'].includes(s) ||
-      card.classList.contains('priority-coinage') || card.classList.contains('priority-survivor');
-  };
+  const original = card => !card.querySelector('.term-origin')?.classList.contains('external');
   const slug = value => String(value || '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
   const doiKey = value => String(value || '').trim().replace(/^https?:\/\/(?:dx\.)?doi\.org\//i,'').toLowerCase();
   const allowedUrl = value => typeof value === 'string' && /^https?:\/\//i.test(value) ? value : '';
@@ -144,9 +134,7 @@
     for (const card of all) {
       decorateCard(card);
       const isOriginal = original(card);
-      const show = selected === 'all' || (selected === 'original' && isOriginal) ||
-        (selected === 'lexical' && isOriginal && priority(card)) ||
-        (selected === 'external' && !isOriginal);
+      const show = selected === 'all' || isOriginal;
       card.hidden = !show;
       if (show) visible++;
     }
@@ -160,7 +148,8 @@
     }
     finishHeading();
     const count = document.getElementById('termCount');
-    if (count) count.textContent = visible + ' shown · ' + all.length + ' match search and family filters';
+    if (count) count.textContent = visible + (selected === 'original' ? ' Reyes terms' : ' total terms') +
+      (all.length !== visible && selected === 'original' ? ' shown' : '');
     const empty = document.getElementById('glossaryNoResults');
     if (empty) empty.hidden = visible !== 0;
   }
@@ -275,7 +264,7 @@
     let card = null;
     try { card = document.querySelector(hash); } catch (_) { return; }
     if (!card || !card.classList.contains('glossary-card')) return;
-    if (card.hidden) setView(original(card) ? 'original' : 'external');
+    if (card.hidden) setView(original(card) ? 'original' : 'all');
     requestAnimationFrame(() => card.scrollIntoView({block:'start'}));
   }
 
