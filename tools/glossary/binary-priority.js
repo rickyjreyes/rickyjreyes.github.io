@@ -41,10 +41,10 @@
     parent.appendChild(a);
   };
   const statusText = status => ({
-    strong_explicit_coinage:'Explicit coinage claim; exact-phrase audit survivor',
+    strong_explicit_coinage:'Reyes explicitly claims this phrase as his coinage in the archived audit. No earlier indexed exact use was located',
     exact_phrase_survivor:'No earlier indexed exact-phrase occurrence located',
     prior_phrase_found:'Earlier unrelated phrase use found; WCT definition is separate',
-    not_in_exact_phrase_survivor_set:'Dated WCT definition; no lexical-priority assertion'
+    not_in_exact_phrase_survivor_set:'Reyes-defined or specialized use; no lexical-priority assertion'
   })[status] || 'Dated WCT definition; lexical priority not established';
 
   function decorateCard(card) {
@@ -52,15 +52,20 @@
     card.dataset.attributionReady = 'true';
     const name = card.querySelector('h3')?.textContent.trim() || '';
     const record = byTerm.get(name.toLocaleLowerCase());
-    if (!record || !original(card)) return;
+    if (!original(card)) return;
+    if (!record) {
+      const term = card.querySelector('h3')?.textContent || '';
+      if (term) card.setAttribute('title', 'WCT-defined term; see the mapped publication record where available.');
+      return;
+    }
 
     const body = card.querySelector('.glossary-body');
     if (!body) return;
-    const section = document.createElement('div');
+    const section = document.createElement('details');
     section.className = 'glossary-evidence';
-    const label = document.createElement('p');
+    const label = document.createElement('summary');
     label.className = 'glossary-evidence-label';
-    label.textContent = 'Dated source & attribution';
+    label.textContent = 'Source, DOI & attribution evidence';
     section.appendChild(label);
     const heading = document.createElement('p');
     heading.className = 'glossary-evidence-paper';
@@ -213,25 +218,40 @@
   function buildDiscoverySearches() {
     const host = document.getElementById('nameBlindQueries');
     if (!host) return;
-    const queries = [
-      'effective rest mass from curvature of confined wavefields',
-      'Frenet Serret curvature torsion geometric soliton mass',
-      'strict subadditivity concentration compactness nonlinear ground states',
-      'orbital stability mass constrained solitary waves',
-      'finite wavenumber Lyapunov spectral selection',
-      'log periodic residuals atomic spectral line lists',
-      'JUNO reactor antineutrino logarithmic energy modulation',
-      'log periodic gravitational wave population residuals',
-      'recursive AI context compaction constraint retention',
-      'tokamak coherence feedback transport control'
+    host.replaceChildren();
+    const pairs = [
+      ['Curvature-derived rest mass','effective rest mass from curvature of confined wavefields','Density-Weighted Loop Curvature','10.5281/zenodo.20533537'],
+      ['Geometric curvature and torsion','Frenet Serret curvature torsion geometric soliton mass','Geometric Curvature Rate','10.5281/zenodo.20533537'],
+      ['Mass-constrained soliton stability','strict subadditivity concentration compactness nonlinear ground states','Wave Confinement Theory','10.5281/zenodo.15644222'],
+      ['Finite-band spectral selection','finite wavenumber Lyapunov spectral selection','Finite-k Lyapunov band-pass','10.5281/zenodo.17578766'],
+      ['Atomic log-periodicity','log periodic residuals atomic spectral line lists','Bin-Stable Log-Periodic Structure','10.5281/zenodo.20435463'],
+      ['Reactor antineutrino fine structure','JUNO reactor antineutrino logarithmic energy modulation','Ghost-mode modulation','10.5281/zenodo.17715872'],
+      ['GWTC chirp-mass modulation','log periodic gravitational wave population residuals','GWTC Chirp-Mass Frozen Holdout','10.5281/zenodo.22256802'],
+      ['CMS dimuon residuals','log periodic dimuon mass spectral residual CMS','CMS Phase-Locked Dimuon Holdout','10.5281/zenodo.22257067'],
+      ['Scale–winding correspondence','discrete scale invariance integer phase winding log periodic','Exact Scale–Winding Bijection','10.5281/zenodo.22665914'],
+      ['AI constraint and correction failure','recursive AI context compaction constraint retention','Propagation–correction criticality','10.5281/zenodo.17732661']
     ];
-    for (const q of queries) {
-      const a = document.createElement('a');
-      a.href = 'https://www.google.com/search?q=' + encodeURIComponent(q);
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      a.textContent = q;
-      host.appendChild(a);
+    const slug = s => String(s).toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+    for (const [title,neutral,term,doi] of pairs) {
+      const row = document.createElement('div');
+      row.className = 'glossary-discovery-row';
+      const heading = document.createElement('strong');
+      heading.textContent = title;
+      const desc = document.createElement('span');
+      desc.textContent = neutral;
+      const links = document.createElement('div');
+      links.className = 'glossary-discovery-actions';
+      const make = (label,url,isExternal) => {
+        const a = document.createElement('a');a.textContent=label;a.href=url;
+        if(isExternal){a.target='_blank';a.rel='noopener noreferrer';}
+        links.appendChild(a);
+      };
+      make('Neutral Google test','https://www.google.com/search?q='+encodeURIComponent(neutral),true);
+      make('WCT glossary source','#term-'+slug(term),false);
+      make('Original publication DOI','https://doi.org/'+doi,true);
+      make('WCT-restricted Google check','https://www.google.com/search?q='+encodeURIComponent('site:rickyjreyes.github.io '+neutral.split(' ').slice(0,5).join(' ')),true);
+      row.append(heading,desc,links);
+      host.appendChild(row);
     }
   }
 
