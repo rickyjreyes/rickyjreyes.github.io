@@ -1,0 +1,587 @@
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-10-26",
+  "dateBasis": "arXiv v1 submission date, UTC",
+  "dateFieldPrecision": "day",
+  "scoreType": "Provisional qualitative correspondence score; not a probability, percentage, plagiarism measure, or validation of WCT",
+  "scoreRubric": {
+    "mathematicalOperator": [
+      0,
+      3
+    ],
+    "geometryLocalization": [
+      0,
+      3
+    ],
+    "stabilityDynamics": [
+      0,
+      2
+    ],
+    "relatedObservationalMethodologicalEvidence": [
+      0,
+      2
+    ]
+  },
+  "scoreLimitations": "Scores reflect informed abstract-level judgments. Full mathematical operator-to-operator and WCT-prediction comparisons have not been established. No source is claimed to cite or validate WCT.",
+  "records": {
+    "2610.26449": {
+      "arxivUrl": "https://arxiv.org/abs/2610.26449",
+      "submitted": "2026-10-19",
+      "authors": "Yue Zhang et al.",
+      "score": 7.1,
+      "components": {
+        "mathematicalOperator": 1.6,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.5,
+        "relatedObservationalMethodologicalEvidence": 1.6
+      },
+      "rationale": "Quasi-2D self-bound droplets experimentally observed; WCT-specific operator untested"
+    },
+    "2610.26281": {
+      "arxivUrl": "https://arxiv.org/abs/2610.26281",
+      "submitted": "2026-10-19",
+      "authors": "I. V. Barashenkov et al.",
+      "score": 7.2,
+      "components": {
+        "mathematicalOperator": 2.3,
+        "geometryLocalization": 2.5,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0.5
+      },
+      "rationale": "Variational localized 3D oscillon dynamics with finite-radius radiation leakage"
+    },
+    "2610.26289": {
+      "arxivUrl": "https://arxiv.org/abs/2610.26289",
+      "submitted": "2026-10-19",
+      "authors": "José R. Salgueiro et al.",
+      "score": 7.8,
+      "components": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 2.9,
+        "stabilityDynamics": 1.8,
+        "relatedObservationalMethodologicalEvidence": 0.6
+      },
+      "rationale": "3D toroidal vortex-soliton branches and geometry-dependent stability"
+    },
+    "2610.24261": {
+      "arxivUrl": "https://arxiv.org/abs/2610.24261",
+      "submitted": "2026-10-16",
+      "authors": "Michał Kowalczyk et al.",
+      "score": 7,
+      "components": {
+        "mathematicalOperator": 2.8,
+        "geometryLocalization": 2.2,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Rigorous Gross–Pitaevskii orbital stability for a different PDE"
+    },
+    "2610.25222": {
+      "arxivUrl": "https://arxiv.org/abs/2610.25222",
+      "submitted": "2026-10-18",
+      "authors": "Subhendu Saha; Raka Dasgupta",
+      "score": 6.6,
+      "components": {
+        "mathematicalOperator": 1.9,
+        "geometryLocalization": 2,
+        "stabilityDynamics": 1.7,
+        "relatedObservationalMethodologicalEvidence": 1
+      },
+      "rationale": "Dissipative transient self-trapping, distinct Liouvillian mechanism"
+    },
+    "2610.24244": {
+      "arxivUrl": "https://arxiv.org/abs/2610.24244",
+      "submitted": "2026-10-16",
+      "authors": "Ngoc Uyen Cong Nguyen; Van Duong Dinh",
+      "score": 6.8,
+      "components": {
+        "mathematicalOperator": 2.8,
+        "geometryLocalization": 2,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Fourth-order NLS finite-time collapse and localized virial method"
+    },
+    "2610.24565": {
+      "arxivUrl": "https://arxiv.org/abs/2610.24565",
+      "submitted": "2026-10-17",
+      "authors": "Bao-Duy Le",
+      "score": 7.4,
+      "components": {
+        "mathematicalOperator": 2.6,
+        "geometryLocalization": 2.7,
+        "stabilityDynamics": 1.7,
+        "relatedObservationalMethodologicalEvidence": 0.4
+      },
+      "rationale": "Self-bound superfluid gradient energy and vortex/surface excitation thresholds"
+    },
+    "2610.26499": {
+      "arxivUrl": "https://arxiv.org/abs/2610.26499",
+      "submitted": "2026-10-19",
+      "authors": "Stepan Baryshev et al.",
+      "score": 6,
+      "components": {
+        "mathematicalOperator": 1,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.2,
+        "relatedObservationalMethodologicalEvidence": 1.4
+      },
+      "rationale": "Polariton condensate synchronization and coherence, different feedback"
+    },
+    "2610.28308": {
+      "arxivUrl": "https://arxiv.org/abs/2610.28308",
+      "submitted": "2026-10-20",
+      "authors": "Jiahong Wu et al.",
+      "score": 5.7,
+      "components": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 1.3,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Global nonlinear H2 stability in horizontally dissipative MHD"
+    },
+    "2610.28466": {
+      "arxivUrl": "https://arxiv.org/abs/2610.28466",
+      "submitted": "2026-10-20",
+      "authors": "W. Sengupta et al.",
+      "score": 6.5,
+      "components": {
+        "mathematicalOperator": 2.7,
+        "geometryLocalization": 3,
+        "stabilityDynamics": 0.8,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Exact nested toroidal vacuum fields; not nonlinear localization"
+    },
+    "2610.27771": {
+      "arxivUrl": "https://arxiv.org/abs/2610.27771",
+      "submitted": "2026-10-20",
+      "authors": "Ramón G. Plaza; Miguel A. Sánchez-Alcántara",
+      "score": 7.1,
+      "components": {
+        "mathematicalOperator": 2.9,
+        "geometryLocalization": 2.2,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Concentration-compactness and orbital stability for trapped fractional NLS"
+    },
+    "2610.27878": {
+      "arxivUrl": "https://arxiv.org/abs/2610.27878",
+      "submitted": "2026-10-20",
+      "authors": "Fu Zheng; Wei Liu; Xu Qian",
+      "score": 6.8,
+      "components": {
+        "mathematicalOperator": 2.4,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.8,
+        "relatedObservationalMethodologicalEvidence": 0.2
+      },
+      "rationale": "Constrained nonlocal GP excited-state computation and stability"
+    },
+    "2610.27589": {
+      "arxivUrl": "https://arxiv.org/abs/2610.27589",
+      "submitted": "2026-10-20",
+      "authors": "Haimi Nguyen; David R. Reichman",
+      "score": 5.9,
+      "components": {
+        "mathematicalOperator": 1.4,
+        "geometryLocalization": 1.8,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0.8
+      },
+      "rationale": "Finite-size transient time-crystalline cavity modes"
+    },
+    "2610.28130": {
+      "arxivUrl": "https://arxiv.org/abs/2610.28130",
+      "submitted": "2026-10-20",
+      "authors": "Xingyu Li",
+      "score": 3.7,
+      "components": {
+        "mathematicalOperator": 2.3,
+        "geometryLocalization": 0.8,
+        "stabilityDynamics": 0.6,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Weak Navier–Stokes nonuniqueness; no deterministic WCT irreversibility result"
+    },
+    "2610.28494": {
+      "arxivUrl": "https://arxiv.org/abs/2610.28494",
+      "submitted": "2026-10-20",
+      "authors": "Carlos Pérez-Arancibia; Tao Yin",
+      "score": 6,
+      "components": {
+        "mathematicalOperator": 2.7,
+        "geometryLocalization": 2.2,
+        "stabilityDynamics": 1.1,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Bloch spectral operator, Fredholm analysis and spurious mode rejection"
+    },
+    "2610.27500": {
+      "arxivUrl": "https://arxiv.org/abs/2610.27500",
+      "submitted": "2026-10-20",
+      "authors": "Chandler Haight et al.",
+      "score": 5.3,
+      "components": {
+        "mathematicalOperator": 1.8,
+        "geometryLocalization": 2,
+        "stabilityDynamics": 1.5,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Constrained variational numerical soliton profiles in 1D"
+    },
+    "2610.28621": {
+      "arxivUrl": "https://arxiv.org/abs/2610.28621",
+      "submitted": "2026-10-20",
+      "authors": "Julian Kusch et al.",
+      "score": 6.8,
+      "components": {
+        "mathematicalOperator": 1.9,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.8,
+        "relatedObservationalMethodologicalEvidence": 0.7
+      },
+      "rationale": "Dipolar GP supersolid stripes and droplet pattern selection"
+    },
+    "2610.29218": {
+      "arxivUrl": "https://arxiv.org/abs/2610.29218",
+      "submitted": "2026-10-21",
+      "authors": "Wei-can Yang et al.",
+      "score": 7.4,
+      "components": {
+        "mathematicalOperator": 2.3,
+        "geometryLocalization": 3,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0.2
+      },
+      "rationale": "Four-dimensional geometric resonance zeros in Kelvin-wave interactions"
+    },
+    "2610.29353": {
+      "arxivUrl": "https://arxiv.org/abs/2610.29353",
+      "submitted": "2026-10-21",
+      "authors": "Masashi Aiki; Mitsuo Higaki",
+      "score": 7.2,
+      "components": {
+        "mathematicalOperator": 2.9,
+        "geometryLocalization": 2.3,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Conserved curvature-energy based H2 vortex filament orbital stability"
+    },
+    "2610.30079": {
+      "arxivUrl": "https://arxiv.org/abs/2610.30079",
+      "submitted": "2026-10-21",
+      "authors": "Benjamin K. Gutierrez et al.",
+      "score": 6.9,
+      "components": {
+        "mathematicalOperator": 1.9,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.1,
+        "relatedObservationalMethodologicalEvidence": 1.5
+      },
+      "rationale": "Experimental integrated quadratic dissipative optical solitons"
+    },
+    "2610.29921": {
+      "arxivUrl": "https://arxiv.org/abs/2610.29921",
+      "submitted": "2026-10-21",
+      "authors": "Omar E. López",
+      "score": 6.5,
+      "components": {
+        "mathematicalOperator": 2.7,
+        "geometryLocalization": 3,
+        "stabilityDynamics": 0.8,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Exact nonsymmetric toroidal vacuum field with nonzero transform"
+    },
+    "2610.29307": {
+      "arxivUrl": "https://arxiv.org/abs/2610.29307",
+      "submitted": "2026-10-21",
+      "authors": "Bingqi Yu; Yong Li",
+      "score": 5.8,
+      "components": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 1.6,
+        "stabilityDynamics": 1.7,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Effective longevity bounds for Hamiltonian PDEs on the circle"
+    },
+    "2610.29301": {
+      "arxivUrl": "https://arxiv.org/abs/2610.29301",
+      "submitted": "2026-10-21",
+      "authors": "Ning Mao; Guang-Can Guo; Xi-Wang Luo",
+      "score": 6.3,
+      "components": {
+        "mathematicalOperator": 1.8,
+        "geometryLocalization": 2.1,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0.5
+      },
+      "rationale": "Driven-lattice pumped nonlinear soliton collision dynamics"
+    },
+    "2610.29251": {
+      "arxivUrl": "https://arxiv.org/abs/2610.29251",
+      "submitted": "2026-10-21",
+      "authors": "Limin Song et al.",
+      "score": 5.7,
+      "components": {
+        "mathematicalOperator": 1.5,
+        "geometryLocalization": 2.5,
+        "stabilityDynamics": 0.5,
+        "relatedObservationalMethodologicalEvidence": 1.2
+      },
+      "rationale": "Experimental lattice-localized photonic boundary modes, linear topology"
+    },
+    "2610.29709": {
+      "arxivUrl": "https://arxiv.org/abs/2610.29709",
+      "submitted": "2026-10-21",
+      "authors": "Fabio Moretti et al.",
+      "score": 4.9,
+      "components": {
+        "mathematicalOperator": 2.2,
+        "geometryLocalization": 1,
+        "stabilityDynamics": 1.7,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Kinetic effective dissipation from Landau damping, different model"
+    },
+    "2610.29562": {
+      "arxivUrl": "https://arxiv.org/abs/2610.29562",
+      "submitted": "2026-10-21",
+      "authors": "Sriganapathy Raghav; Utpal Roy",
+      "score": 6.9,
+      "components": {
+        "mathematicalOperator": 1.8,
+        "geometryLocalization": 3,
+        "stabilityDynamics": 1.5,
+        "relatedObservationalMethodologicalEvidence": 0.6
+      },
+      "rationale": "Ring-waveguide nonlinear fractional revival and squeezing"
+    },
+    "2610.31581": {
+      "arxivUrl": "https://arxiv.org/abs/2610.31581",
+      "submitted": "2026-10-22",
+      "authors": "Marko Korda et al.",
+      "score": 7.8,
+      "components": {
+        "mathematicalOperator": 2.2,
+        "geometryLocalization": 2.7,
+        "stabilityDynamics": 1.7,
+        "relatedObservationalMethodologicalEvidence": 1.2
+      },
+      "rationale": "Dimension-changing droplet collective modes and binding thresholds"
+    },
+    "2610.30833": {
+      "arxivUrl": "https://arxiv.org/abs/2610.30833",
+      "submitted": "2026-10-22",
+      "authors": "Giancarlo Reali",
+      "score": 3.9,
+      "components": {
+        "mathematicalOperator": 1.8,
+        "geometryLocalization": 1.2,
+        "stabilityDynamics": 0.9,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Independent numerical cross-validation method, different linear optics"
+    },
+    "2610.31634": {
+      "arxivUrl": "https://arxiv.org/abs/2610.31634",
+      "submitted": "2026-10-22",
+      "authors": "Comlan Edmond Koudjinan",
+      "score": 4.8,
+      "components": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 0.9,
+        "stabilityDynamics": 1.4,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Invariant-preserving constructive KdV flow, different equation"
+    },
+    "2610.30266": {
+      "arxivUrl": "https://arxiv.org/abs/2610.30266",
+      "submitted": "2026-10-21",
+      "authors": "Zuo Wang et al.",
+      "score": 5.9,
+      "components": {
+        "mathematicalOperator": 1.7,
+        "geometryLocalization": 1.9,
+        "stabilityDynamics": 1.8,
+        "relatedObservationalMethodologicalEvidence": 0.5
+      },
+      "rationale": "Metastable period-doubled dynamics and time soliton defects"
+    },
+    "2610.30381": {
+      "arxivUrl": "https://arxiv.org/abs/2610.30381",
+      "submitted": "2026-10-21",
+      "authors": "Fabio Cinti et al.",
+      "score": 7,
+      "components": {
+        "mathematicalOperator": 1.7,
+        "geometryLocalization": 2.9,
+        "stabilityDynamics": 1.6,
+        "relatedObservationalMethodologicalEvidence": 0.8
+      },
+      "rationale": "Curved bubble-confinement boson layering and residual superfluidity"
+    },
+    "2610.30638": {
+      "arxivUrl": "https://arxiv.org/abs/2610.30638",
+      "submitted": "2026-10-22",
+      "authors": "F. Chen et al.",
+      "score": 5.3,
+      "components": {
+        "mathematicalOperator": 1,
+        "geometryLocalization": 2,
+        "stabilityDynamics": 0.7,
+        "relatedObservationalMethodologicalEvidence": 1.6
+      },
+      "rationale": "Experimental tokamak nonlinear cross-scale energy transfer"
+    },
+    "2610.30550": {
+      "arxivUrl": "https://arxiv.org/abs/2610.30550",
+      "submitted": "2026-10-22",
+      "authors": "Fangwei Ye et al.",
+      "score": 6.1,
+      "components": {
+        "mathematicalOperator": 2,
+        "geometryLocalization": 2.1,
+        "stabilityDynamics": 1.8,
+        "relatedObservationalMethodologicalEvidence": 0.2
+      },
+      "rationale": "Stability-dependent transport of nonlinear dark solitons"
+    },
+    "2610.31185": {
+      "arxivUrl": "https://arxiv.org/abs/2610.31185",
+      "submitted": "2026-10-22",
+      "authors": "Wan-Ling Yang et al.",
+      "score": 5.2,
+      "components": {
+        "mathematicalOperator": 1,
+        "geometryLocalization": 2.1,
+        "stabilityDynamics": 0.9,
+        "relatedObservationalMethodologicalEvidence": 1.2
+      },
+      "rationale": "Experimental coherent superfluid flow, not passive cavity memory"
+    },
+    "2610.32249": {
+      "arxivUrl": "https://arxiv.org/abs/2610.32249",
+      "submitted": "2026-10-23",
+      "authors": "Alexander Wolf; Vladimir V. Konotop; Maxim A. Efremov",
+      "score": 8.2,
+      "components": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 3,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0.8
+      },
+      "rationale": "Nonlinear spherical-harmonic branches and curved-mode stability"
+    },
+    "2610.32600": {
+      "arxivUrl": "https://arxiv.org/abs/2610.32600",
+      "submitted": "2026-10-23",
+      "authors": "Filip Ficek; Maciej Maliborski",
+      "score": 7.3,
+      "components": {
+        "mathematicalOperator": 2.9,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Computer-assisted proof of periodic nonlinear waves on S3"
+    },
+    "2610.32173": {
+      "arxivUrl": "https://arxiv.org/abs/2610.32173",
+      "submitted": "2026-10-23",
+      "authors": "Mayukh Mukherjee; Utsab Sarkar",
+      "score": 7.5,
+      "components": {
+        "mathematicalOperator": 3,
+        "geometryLocalization": 2.5,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Geometry-sensitive variational extremals, compactness and critical thresholds"
+    },
+    "2610.32100": {
+      "arxivUrl": "https://arxiv.org/abs/2610.32100",
+      "submitted": "2026-10-23",
+      "authors": "T. N. Bernard et al.",
+      "score": 6,
+      "components": {
+        "mathematicalOperator": 1.5,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.2,
+        "relatedObservationalMethodologicalEvidence": 0.9
+      },
+      "rationale": "Geometry-dependent tokamak edge confinement from gyrokinetics"
+    },
+    "2610.31782": {
+      "arxivUrl": "https://arxiv.org/abs/2610.31782",
+      "submitted": "2026-10-22",
+      "authors": "N. Leuthold et al.",
+      "score": 5.3,
+      "components": {
+        "mathematicalOperator": 1,
+        "geometryLocalization": 1.8,
+        "stabilityDynamics": 0.9,
+        "relatedObservationalMethodologicalEvidence": 1.6
+      },
+      "rationale": "Measured EDA/QCE tokamak confinement, unrelated equations"
+    },
+    "2610.31021": {
+      "arxivUrl": "https://arxiv.org/abs/2610.31021",
+      "submitted": "2026-10-22",
+      "authors": "Hugo Bergerioux; Mario Merino",
+      "score": 5.5,
+      "components": {
+        "mathematicalOperator": 2.3,
+        "geometryLocalization": 2,
+        "stabilityDynamics": 1.2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Finite-element resonance artifacts and eigenmode verification methodology"
+    },
+    "2610.32274": {
+      "arxivUrl": "https://arxiv.org/abs/2610.32274",
+      "submitted": "2026-10-23",
+      "authors": "Jiangbo Han; Runzhang Xu; Chao Yang",
+      "score": 6.2,
+      "components": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 1.8,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "rationale": "Variational global-existence vs blow-up criteria in different NLS"
+    },
+    "2610.32032": {
+      "arxivUrl": "https://arxiv.org/abs/2610.32032",
+      "submitted": "2026-10-23",
+      "authors": "Eva Conour et al.",
+      "score": 5.2,
+      "components": {
+        "mathematicalOperator": 1,
+        "geometryLocalization": 1.3,
+        "stabilityDynamics": 1.5,
+        "relatedObservationalMethodologicalEvidence": 1.4
+      },
+      "rationale": "Experimental photon-avalanche optical bistability, distinct feedback"
+    },
+    "2610.32264": {
+      "arxivUrl": "https://arxiv.org/abs/2610.32264",
+      "submitted": "2026-10-23",
+      "authors": "Nathaniel Chen et al.",
+      "score": 3.3,
+      "components": {
+        "mathematicalOperator": 0.5,
+        "geometryLocalization": 1.4,
+        "stabilityDynamics": 0.6,
+        "relatedObservationalMethodologicalEvidence": 0.8
+      },
+      "rationale": "Labeled tokamak dataset useful for testing, not supporting prediction"
+    }
+  }
+}
