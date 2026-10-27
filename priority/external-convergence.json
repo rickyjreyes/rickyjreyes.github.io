@@ -1768,7 +1768,7 @@
       ],
       "identifier": "10.48550/arXiv.2602.14549",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2602.14549",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "chronology_prior_art_review",
       "relationship": "candidate_structural_overlap",
       "chronologyStatus": "chronology_prior_art_review",
@@ -1810,7 +1810,7 @@
       ],
       "identifier": "10.48550/arXiv.2607.29174",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2607.29174",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1832,7 +1832,7 @@
       ],
       "identifier": "10.48550/arXiv.2606.10405",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2606.10405",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1860,7 +1860,7 @@
       ],
       "identifier": "10.1103/316q-596d",
       "identifierUrl": "https://doi.org/10.1103/316q-596d",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1886,7 +1886,7 @@
       ],
       "identifier": "10.48550/arXiv.2608.20867",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2608.20867",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1912,7 +1912,7 @@
       ],
       "identifier": "10.1038/s42005-026-02623-6",
       "identifierUrl": "https://doi.org/10.1038/s42005-026-02623-6",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1935,7 +1935,7 @@
       ],
       "identifier": "10.1103/xb4r-9wxk",
       "identifierUrl": "https://doi.org/10.1103/xb4r-9wxk",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1961,7 +1961,7 @@
       ],
       "identifier": "10.1103/2h27-c8sp",
       "identifierUrl": "https://doi.org/10.1103/2h27-c8sp",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -1990,7 +1990,7 @@
       ],
       "identifier": "10.48550/arXiv.2609.18883",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.18883",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2014,7 +2014,7 @@
       ],
       "identifier": "10.48550/arXiv.2609.24063",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.24063",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2039,7 +2039,7 @@
       ],
       "identifier": "10.48550/arXiv.2609.19348",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2609.19348",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -2064,7 +2064,7 @@
       ],
       "identifier": "Institutional research programme",
       "identifierUrl": "https://www.southampton.ac.uk/study/postgraduate-research/projects/photonic-time-crystals-timetronics",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4371,7 +4371,7 @@
       ],
       "identifier": "10.48550/arXiv.2606.28178",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2606.28178",
-      "overlapScore": 7.0,
+      "overlapScore": 7,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4396,7 +4396,7 @@
       ],
       "identifier": "10.1063/5.0336210",
       "identifierUrl": "https://doi.org/10.1063/5.0336210",
-      "overlapScore": 7.0,
+      "overlapScore": 7,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4655,10 +4655,12 @@
       "title": "Two-Dimensional Quantum Droplets in a Mixture of Bose-Einstein Condensates",
       "primaryUrl": "https://arxiv.org/abs/2610.26449",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Yue Zhang et al."
+      ],
       "identifier": "10.48550/arXiv.2610.26449",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.26449",
-      "overlapScore": 6.5,
+      "overlapScore": 7.1,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4667,7 +4669,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-19",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.6,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.5,
+        "relatedObservationalMethodologicalEvidence": 1.6
+      },
+      "scoreRationale": "Quasi-2D self-bound droplets experimentally observed; WCT-specific operator untested"
     },
     {
       "ledgerRank": 173,
@@ -4675,10 +4687,12 @@
       "title": "Non-local Stabilization and Synchronization of Larmor Precession in Trapped Polariton Condensate Dimer",
       "primaryUrl": "https://arxiv.org/abs/2610.26499",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Stepan Baryshev et al."
+      ],
       "identifier": "10.48550/arXiv.2610.26499",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.26499",
-      "overlapScore": 6.5,
+      "overlapScore": 6,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4687,7 +4701,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-19",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.2,
+        "relatedObservationalMethodologicalEvidence": 1.4
+      },
+      "scoreRationale": "Polariton condensate synchronization and coherence, different feedback"
     },
     {
       "ledgerRank": 174,
@@ -4695,10 +4719,12 @@
       "title": "Electrically Pumped Quadratic-Soliton Mode-Locked Laser in Lithium Niobate Nanophotonics",
       "primaryUrl": "https://arxiv.org/abs/2610.30079",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Benjamin K. Gutierrez et al."
+      ],
       "identifier": "10.48550/arXiv.2610.30079",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.30079",
-      "overlapScore": 6.5,
+      "overlapScore": 6.9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4707,7 +4733,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.9,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.1,
+        "relatedObservationalMethodologicalEvidence": 1.5
+      },
+      "scoreRationale": "Experimental integrated quadratic dissipative optical solitons"
     },
     {
       "ledgerRank": 175,
@@ -4715,10 +4751,12 @@
       "title": "Higher-Order Flatband-Touching Points Mediate Unconventional Bulk-Boundary Correspondence",
       "primaryUrl": "https://arxiv.org/abs/2610.29251",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Limin Song et al."
+      ],
       "identifier": "10.48550/arXiv.2610.29251",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.29251",
-      "overlapScore": 6.5,
+      "overlapScore": 5.7,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4727,7 +4765,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.5,
+        "geometryLocalization": 2.5,
+        "stabilityDynamics": 0.5,
+        "relatedObservationalMethodologicalEvidence": 1.2
+      },
+      "scoreRationale": "Experimental lattice-localized photonic boundary modes, linear topology"
     },
     {
       "ledgerRank": 176,
@@ -4735,10 +4783,12 @@
       "title": "Experimental evidence of forward energy transfer induced by core-edge coupling in multiscale tokamak turbulence",
       "primaryUrl": "https://arxiv.org/abs/2610.30638",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "F. Chen et al."
+      ],
       "identifier": "10.48550/arXiv.2610.30638",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.30638",
-      "overlapScore": 6.5,
+      "overlapScore": 5.3,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4747,7 +4797,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-22",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1,
+        "geometryLocalization": 2,
+        "stabilityDynamics": 0.7,
+        "relatedObservationalMethodologicalEvidence": 1.6
+      },
+      "scoreRationale": "Experimental tokamak nonlinear cross-scale energy transfer"
     },
     {
       "ledgerRank": 177,
@@ -4755,10 +4815,12 @@
       "title": "Realization of a Superleak in a Quantum Gas",
       "primaryUrl": "https://arxiv.org/abs/2610.31185",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Wan-Ling Yang et al."
+      ],
       "identifier": "10.48550/arXiv.2610.31185",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.31185",
-      "overlapScore": 6.5,
+      "overlapScore": 5.2,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4767,7 +4829,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-22",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1,
+        "geometryLocalization": 2.1,
+        "stabilityDynamics": 0.9,
+        "relatedObservationalMethodologicalEvidence": 1.2
+      },
+      "scoreRationale": "Experimental coherent superfluid flow, not passive cavity memory"
     },
     {
       "ledgerRank": 178,
@@ -4775,10 +4847,12 @@
       "title": "Overview of Enhanced D-alpha and Quasi Continuous Exhaust H-modes at DIII-D",
       "primaryUrl": "https://arxiv.org/abs/2610.31782",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "N. Leuthold et al."
+      ],
       "identifier": "10.48550/arXiv.2610.31782",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.31782",
-      "overlapScore": 6.5,
+      "overlapScore": 5.3,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4787,7 +4861,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-22",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1,
+        "geometryLocalization": 1.8,
+        "stabilityDynamics": 0.9,
+        "relatedObservationalMethodologicalEvidence": 1.6
+      },
+      "scoreRationale": "Measured EDA/QCE tokamak confinement, unrelated equations"
     },
     {
       "ledgerRank": 179,
@@ -4795,10 +4879,12 @@
       "title": "Cross-coupled photon avalanche drives room-temperature intrinsic optical bistability",
       "primaryUrl": "https://arxiv.org/abs/2610.32032",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Eva Conour et al."
+      ],
       "identifier": "10.48550/arXiv.2610.32032",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.32032",
-      "overlapScore": 6.5,
+      "overlapScore": 5.2,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4807,7 +4893,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-23",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1,
+        "geometryLocalization": 1.3,
+        "stabilityDynamics": 1.5,
+        "relatedObservationalMethodologicalEvidence": 1.4
+      },
+      "scoreRationale": "Experimental photon-avalanche optical bistability, distinct feedback"
     },
     {
       "ledgerRank": 180,
@@ -4844,13 +4940,15 @@
     {
       "ledgerRank": 181,
       "domain": "physics",
-      "title": "Dispersion of Three-Dimensional Oscillons: A Standing-Wave Perspective",
+      "title": "Dispersion of three-dimensional oscillons: a standing-wave perspective",
       "primaryUrl": "https://arxiv.org/abs/2610.26281",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "I. V. Barashenkov et al."
+      ],
       "identifier": "10.48550/arXiv.2610.26281",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.26281",
-      "overlapScore": 6.4,
+      "overlapScore": 7.2,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4859,18 +4957,30 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-19",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.3,
+        "geometryLocalization": 2.5,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0.5
+      },
+      "scoreRationale": "Variational localized 3D oscillon dynamics with finite-radius radiation leakage"
     },
     {
       "ledgerRank": 182,
       "domain": "physics",
-      "title": "Global Well-Posedness and Orbital Stability of the Gross-Pitaevskii Branch",
+      "title": "Global well-posedness and orbital stability of the Gross--Pitaevskii branch in a coupled defocusing Schrödinger system",
       "primaryUrl": "https://arxiv.org/abs/2610.24261",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Michał Kowalczyk et al."
+      ],
       "identifier": "10.48550/arXiv.2610.24261",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.24261",
-      "overlapScore": 6.4,
+      "overlapScore": 7,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4879,7 +4989,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-16",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.8,
+        "geometryLocalization": 2.2,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Rigorous Gross–Pitaevskii orbital stability for a different PDE"
     },
     {
       "ledgerRank": 183,
@@ -4887,10 +5007,13 @@
       "title": "Nonradial Finite-Time Blow-up for the Mass-Critical Inhomogeneous Biharmonic NLS",
       "primaryUrl": "https://arxiv.org/abs/2610.24244",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Ngoc Uyen Cong Nguyen",
+        "Van Duong Dinh"
+      ],
       "identifier": "10.48550/arXiv.2610.24244",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.24244",
-      "overlapScore": 6.4,
+      "overlapScore": 6.8,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4899,7 +5022,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-16",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.8,
+        "geometryLocalization": 2,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Fourth-order NLS finite-time collapse and localized virial method"
     },
     {
       "ledgerRank": 184,
@@ -4907,10 +5040,12 @@
       "title": "Surface Corrections and Vortex Energetics in the Thomas-Fermi Limit of a Self-Bound Unitary Fermi Superfluid",
       "primaryUrl": "https://arxiv.org/abs/2610.24565",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Bao-Duy Le"
+      ],
       "identifier": "10.48550/arXiv.2610.24565",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.24565",
-      "overlapScore": 6.4,
+      "overlapScore": 7.4,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4919,18 +5054,30 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-17",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.6,
+        "geometryLocalization": 2.7,
+        "stabilityDynamics": 1.7,
+        "relatedObservationalMethodologicalEvidence": 0.4
+      },
+      "scoreRationale": "Self-bound superfluid gradient energy and vortex/surface excitation thresholds"
     },
     {
       "ledgerRank": 185,
       "domain": "physics",
-      "title": "Stability of 2D MHD with Only Horizontal Dissipation near a Background Magnetic Field",
+      "title": "Stability of 2D MHD with Only Horizontal Dissipation near a Background Magnetic Field on ℝ²",
       "primaryUrl": "https://arxiv.org/abs/2610.28308",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Jiahong Wu et al."
+      ],
       "identifier": "10.48550/arXiv.2610.28308",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.28308",
-      "overlapScore": 6.4,
+      "overlapScore": 5.7,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4939,7 +5086,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-20",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 1.3,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Global nonlinear H2 stability in horizontally dissipative MHD"
     },
     {
       "ledgerRank": 186,
@@ -4947,10 +5104,12 @@
       "title": "Exact Nonsymmetric Vacuum Magnetic Fields with Nested Toroidal Surfaces",
       "primaryUrl": "https://arxiv.org/abs/2610.28466",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "W. Sengupta et al."
+      ],
       "identifier": "10.48550/arXiv.2610.28466",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.28466",
-      "overlapScore": 6.4,
+      "overlapScore": 6.5,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4959,7 +5118,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-20",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.7,
+        "geometryLocalization": 3,
+        "stabilityDynamics": 0.8,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Exact nested toroidal vacuum fields; not nonlinear localization"
     },
     {
       "ledgerRank": 187,
@@ -4967,10 +5136,13 @@
       "title": "Orbital Stability of Standing Waves for Defocusing Fractional Nonlinear Schrödinger Equations with a Delta Potential",
       "primaryUrl": "https://arxiv.org/abs/2610.27771",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Ramón G. Plaza",
+        "Miguel A. Sánchez-Alcántara"
+      ],
       "identifier": "10.48550/arXiv.2610.27771",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.27771",
-      "overlapScore": 6.4,
+      "overlapScore": 7.1,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4979,7 +5151,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-20",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.9,
+        "geometryLocalization": 2.2,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Concentration-compactness and orbital stability for trapped fractional NLS"
     },
     {
       "ledgerRank": 188,
@@ -4987,10 +5169,12 @@
       "title": "Space-Time Localized Nonuniqueness for the Inhomogeneous Navier-Stokes Equations",
       "primaryUrl": "https://arxiv.org/abs/2610.28130",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Xingyu Li"
+      ],
       "identifier": "10.48550/arXiv.2610.28130",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.28130",
-      "overlapScore": 6.4,
+      "overlapScore": 3.7,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -4999,18 +5183,31 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-20",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.3,
+        "geometryLocalization": 0.8,
+        "stabilityDynamics": 0.6,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Weak Navier–Stokes nonuniqueness; no deterministic WCT irreversibility result"
     },
     {
       "ledgerRank": 189,
       "domain": "physics",
-      "title": "Photonic Band Structure by Direct Second-Kind Free-Space Boundary Integral Equations",
+      "title": "Photonic band structure by direct second-kind free-space boundary integral equations",
       "primaryUrl": "https://arxiv.org/abs/2610.28494",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Carlos Pérez-Arancibia",
+        "Tao Yin"
+      ],
       "identifier": "10.48550/arXiv.2610.28494",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.28494",
-      "overlapScore": 6.4,
+      "overlapScore": 6,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5019,7 +5216,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-20",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.7,
+        "geometryLocalization": 2.2,
+        "stabilityDynamics": 1.1,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Bloch spectral operator, Fredholm analysis and spurious mode rejection"
     },
     {
       "ledgerRank": 190,
@@ -5027,10 +5234,12 @@
       "title": "Geometry-controlled zeros of resonant Kelvin-wave conversion in four spatial dimensions",
       "primaryUrl": "https://arxiv.org/abs/2610.29218",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Wei-can Yang et al."
+      ],
       "identifier": "10.48550/arXiv.2610.29218",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.29218",
-      "overlapScore": 6.4,
+      "overlapScore": 7.4,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5039,7 +5248,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.3,
+        "geometryLocalization": 3,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0.2
+      },
+      "scoreRationale": "Four-dimensional geometric resonance zeros in Kelvin-wave interactions"
     },
     {
       "ledgerRank": 191,
@@ -5047,10 +5266,13 @@
       "title": "An Arnold-Type Stability Analysis of Vortex Filaments",
       "primaryUrl": "https://arxiv.org/abs/2610.29353",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Masashi Aiki",
+        "Mitsuo Higaki"
+      ],
       "identifier": "10.48550/arXiv.2610.29353",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.29353",
-      "overlapScore": 6.4,
+      "overlapScore": 7.2,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5059,7 +5281,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.9,
+        "geometryLocalization": 2.3,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Conserved curvature-energy based H2 vortex filament orbital stability"
     },
     {
       "ledgerRank": 192,
@@ -5067,10 +5299,12 @@
       "title": "Exact nonsymmetric vacuum magnetic field with nested toroidal flux surfaces and nonzero rotational transform",
       "primaryUrl": "https://arxiv.org/abs/2610.29921",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Omar E. López"
+      ],
       "identifier": "10.48550/arXiv.2610.29921",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.29921",
-      "overlapScore": 6.4,
+      "overlapScore": 6.5,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5079,7 +5313,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.7,
+        "geometryLocalization": 3,
+        "stabilityDynamics": 0.8,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Exact nonsymmetric toroidal vacuum field with nonzero transform"
     },
     {
       "ledgerRank": 193,
@@ -5087,10 +5331,13 @@
       "title": "Effective stability and sharp logarithmic time scales for Hamiltonian PDEs on the circle",
       "primaryUrl": "https://arxiv.org/abs/2610.29307",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Bingqi Yu",
+        "Yong Li"
+      ],
       "identifier": "10.48550/arXiv.2610.29307",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.29307",
-      "overlapScore": 6.4,
+      "overlapScore": 5.8,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5099,7 +5346,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 1.6,
+        "stabilityDynamics": 1.7,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Effective longevity bounds for Hamiltonian PDEs on the circle"
     },
     {
       "ledgerRank": 194,
@@ -5107,10 +5364,12 @@
       "title": "Kinetic Fluctuation-Dissipation Relation in collisionless plasmas: a correlated noise source",
       "primaryUrl": "https://arxiv.org/abs/2610.29709",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Fabio Moretti et al."
+      ],
       "identifier": "10.48550/arXiv.2610.29709",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.29709",
-      "overlapScore": 6.4,
+      "overlapScore": 4.9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5119,18 +5378,30 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.2,
+        "geometryLocalization": 1,
+        "stabilityDynamics": 1.7,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Kinetic effective dissipation from Landau damping, different model"
     },
     {
       "ledgerRank": 195,
       "domain": "physics",
-      "title": "Quantitative constructive representation of the KdV flow in H3",
+      "title": "Quantitative constructive representation of the KdV flow in H³ via L²-energy-preserving centered-difference Chernoff approximations and Picard iteration",
       "primaryUrl": "https://arxiv.org/abs/2610.31634",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Comlan Edmond Koudjinan"
+      ],
       "identifier": "10.48550/arXiv.2610.31634",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.31634",
-      "overlapScore": 6.4,
+      "overlapScore": 4.8,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5139,18 +5410,31 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-22",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 0.9,
+        "stabilityDynamics": 1.4,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Invariant-preserving constructive KdV flow, different equation"
     },
     {
       "ledgerRank": 196,
       "domain": "physics",
-      "title": "New time-periodic solutions to the cubic conformal wave equation on S3",
+      "title": "New time-periodic solutions to the cubic conformal wave equation on S³: I Spherical symmetry",
       "primaryUrl": "https://arxiv.org/abs/2610.32600",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Filip Ficek",
+        "Maciej Maliborski"
+      ],
       "identifier": "10.48550/arXiv.2610.32600",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.32600",
-      "overlapScore": 6.4,
+      "overlapScore": 7.3,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5159,18 +5443,31 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-23",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.9,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Computer-assisted proof of periodic nonlinear waves on S3"
     },
     {
       "ledgerRank": 197,
       "domain": "physics",
-      "title": "Gagliardo-Nirenberg extremals on manifolds with small holes",
+      "title": "Gagliardo--Nirenberg extremals on manifolds with small holes",
       "primaryUrl": "https://arxiv.org/abs/2610.32173",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Mayukh Mukherjee",
+        "Utsab Sarkar"
+      ],
       "identifier": "10.48550/arXiv.2610.32173",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.32173",
-      "overlapScore": 6.4,
+      "overlapScore": 7.5,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5179,7 +5476,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-23",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 3,
+        "geometryLocalization": 2.5,
+        "stabilityDynamics": 2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Geometry-sensitive variational extremals, compactness and critical thresholds"
     },
     {
       "ledgerRank": 198,
@@ -5187,10 +5494,14 @@
       "title": "Semilinear Schrödinger equation with harmonic potential and combined power-type nonlinearities",
       "primaryUrl": "https://arxiv.org/abs/2610.32274",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Jiangbo Han",
+        "Runzhang Xu",
+        "Chao Yang"
+      ],
       "identifier": "10.48550/arXiv.2610.32274",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.32274",
-      "overlapScore": 6.4,
+      "overlapScore": 6.2,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5199,18 +5510,30 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-23",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 1.8,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Variational global-existence vs blow-up criteria in different NLS"
     },
     {
       "ledgerRank": 199,
       "domain": "physics",
-      "title": "Optical Vortex Bullets with Large Angular Momenta",
+      "title": "Optical vortex bullets with large angular momenta",
       "primaryUrl": "https://arxiv.org/abs/2610.26289",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "José R. Salgueiro et al."
+      ],
       "identifier": "10.48550/arXiv.2610.26289",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.26289",
-      "overlapScore": 6.1,
+      "overlapScore": 7.8,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5219,7 +5542,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-19",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 2.9,
+        "stabilityDynamics": 1.8,
+        "relatedObservationalMethodologicalEvidence": 0.6
+      },
+      "scoreRationale": "3D toroidal vortex-soliton branches and geometry-dependent stability"
     },
     {
       "ledgerRank": 200,
@@ -5227,10 +5560,13 @@
       "title": "Self-Trapping and Liouvillian Spectral Transitions in a Dissipative Bose-Hubbard Dimer",
       "primaryUrl": "https://arxiv.org/abs/2610.25222",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Subhendu Saha",
+        "Raka Dasgupta"
+      ],
       "identifier": "10.48550/arXiv.2610.25222",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.25222",
-      "overlapScore": 6.1,
+      "overlapScore": 6.6,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5239,7 +5575,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-18",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.9,
+        "geometryLocalization": 2,
+        "stabilityDynamics": 1.7,
+        "relatedObservationalMethodologicalEvidence": 1
+      },
+      "scoreRationale": "Dissipative transient self-trapping, distinct Liouvillian mechanism"
     },
     {
       "ledgerRank": 201,
@@ -5247,10 +5593,14 @@
       "title": "Computing Excited States of Dipolar Bose-Einstein Condensates by Constrained Gentlest Ascent Dynamics",
       "primaryUrl": "https://arxiv.org/abs/2610.27878",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Fu Zheng",
+        "Wei Liu",
+        "Xu Qian"
+      ],
       "identifier": "10.48550/arXiv.2610.27878",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.27878",
-      "overlapScore": 6.1,
+      "overlapScore": 6.8,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5259,7 +5609,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-20",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.4,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.8,
+        "relatedObservationalMethodologicalEvidence": 0.2
+      },
+      "scoreRationale": "Constrained nonlocal GP excited-state computation and stability"
     },
     {
       "ledgerRank": 202,
@@ -5267,10 +5627,13 @@
       "title": "Fate of Discrete Time Crystals in Finite-Size Cavity QED Systems",
       "primaryUrl": "https://arxiv.org/abs/2610.27589",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Haimi Nguyen",
+        "David R. Reichman"
+      ],
       "identifier": "10.48550/arXiv.2610.27589",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.27589",
-      "overlapScore": 6.1,
+      "overlapScore": 5.9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5279,7 +5642,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-20",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.4,
+        "geometryLocalization": 1.8,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0.8
+      },
+      "scoreRationale": "Finite-size transient time-crystalline cavity modes"
     },
     {
       "ledgerRank": 203,
@@ -5287,10 +5660,12 @@
       "title": "Soliton Profiles in 1D: Enhanced Neural-Network Solvers and Constrained Deep Ritz Methods",
       "primaryUrl": "https://arxiv.org/abs/2610.27500",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Chandler Haight et al."
+      ],
       "identifier": "10.48550/arXiv.2610.27500",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.27500",
-      "overlapScore": 6.1,
+      "overlapScore": 5.3,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5299,7 +5674,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-20",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.8,
+        "geometryLocalization": 2,
+        "stabilityDynamics": 1.5,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Constrained variational numerical soliton profiles in 1D"
     },
     {
       "ledgerRank": 204,
@@ -5307,10 +5692,12 @@
       "title": "Characterizing Supersolid Phase Transitions in Trapped Quantum Gases with Tilted Dipoles at Finite Temperature",
       "primaryUrl": "https://arxiv.org/abs/2610.28621",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Julian Kusch et al."
+      ],
       "identifier": "10.48550/arXiv.2610.28621",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.28621",
-      "overlapScore": 6.1,
+      "overlapScore": 6.8,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5319,7 +5706,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-20",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.9,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.8,
+        "relatedObservationalMethodologicalEvidence": 0.7
+      },
+      "scoreRationale": "Dipolar GP supersolid stripes and droplet pattern selection"
     },
     {
       "ledgerRank": 205,
@@ -5327,10 +5724,14 @@
       "title": "Collision Dynamics of Topologically Pumped Solitons",
       "primaryUrl": "https://arxiv.org/abs/2610.29301",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Ning Mao",
+        "Guang-Can Guo",
+        "Xi-Wang Luo"
+      ],
       "identifier": "10.48550/arXiv.2610.29301",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.29301",
-      "overlapScore": 6.1,
+      "overlapScore": 6.3,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5339,7 +5740,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.8,
+        "geometryLocalization": 2.1,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0.5
+      },
+      "scoreRationale": "Driven-lattice pumped nonlinear soliton collision dynamics"
     },
     {
       "ledgerRank": 206,
@@ -5347,10 +5758,13 @@
       "title": "Quantum-Enhanced Matterwave Interferometry in a Ring Waveguide",
       "primaryUrl": "https://arxiv.org/abs/2610.29562",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Sriganapathy Raghav",
+        "Utpal Roy"
+      ],
       "identifier": "10.48550/arXiv.2610.29562",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.29562",
-      "overlapScore": 6.1,
+      "overlapScore": 6.9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5359,7 +5773,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.8,
+        "geometryLocalization": 3,
+        "stabilityDynamics": 1.5,
+        "relatedObservationalMethodologicalEvidence": 0.6
+      },
+      "scoreRationale": "Ring-waveguide nonlinear fractional revival and squeezing"
     },
     {
       "ledgerRank": 207,
@@ -5367,10 +5791,12 @@
       "title": "Breathing and quadrupole modes in squeezed Bose-Bose liquid drops",
       "primaryUrl": "https://arxiv.org/abs/2610.31581",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Marko Korda et al."
+      ],
       "identifier": "10.48550/arXiv.2610.31581",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.31581",
-      "overlapScore": 6.1,
+      "overlapScore": 7.8,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5379,18 +5805,30 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-22",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.2,
+        "geometryLocalization": 2.7,
+        "stabilityDynamics": 1.7,
+        "relatedObservationalMethodologicalEvidence": 1.2
+      },
+      "scoreRationale": "Dimension-changing droplet collective modes and binding thresholds"
     },
     {
       "ledgerRank": 208,
       "domain": "physics",
-      "title": "Light pulse propagation through a dielectric slab: independent numerical cross-validation",
+      "title": "Light pulse propagation through a dielectric slab. II. Two roads to the same field: numerical cross-validation of local (FDTD-ADE) and non-local (retarded integral-equation) solutions",
       "primaryUrl": "https://arxiv.org/abs/2610.30833",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Giancarlo Reali"
+      ],
       "identifier": "10.48550/arXiv.2610.30833",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.30833",
-      "overlapScore": 6.1,
+      "overlapScore": 3.9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5399,7 +5837,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-22",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.8,
+        "geometryLocalization": 1.2,
+        "stabilityDynamics": 0.9,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Independent numerical cross-validation method, different linear optics"
     },
     {
       "ledgerRank": 209,
@@ -5407,10 +5855,12 @@
       "title": "Discrete time liquids",
       "primaryUrl": "https://arxiv.org/abs/2610.30266",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Zuo Wang et al."
+      ],
       "identifier": "10.48550/arXiv.2610.30266",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.30266",
-      "overlapScore": 6.1,
+      "overlapScore": 5.9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5419,7 +5869,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.7,
+        "geometryLocalization": 1.9,
+        "stabilityDynamics": 1.8,
+        "relatedObservationalMethodologicalEvidence": 0.5
+      },
+      "scoreRationale": "Metastable period-doubled dynamics and time soliton defects"
     },
     {
       "ledgerRank": 210,
@@ -5427,10 +5887,12 @@
       "title": "Quantum Phases and Structural Transitions of Bosons in Bubble-Shaped Confinements",
       "primaryUrl": "https://arxiv.org/abs/2610.30381",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Fabio Cinti et al."
+      ],
       "identifier": "10.48550/arXiv.2610.30381",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.30381",
-      "overlapScore": 6.1,
+      "overlapScore": 7,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5439,7 +5901,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-21",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.7,
+        "geometryLocalization": 2.9,
+        "stabilityDynamics": 1.6,
+        "relatedObservationalMethodologicalEvidence": 0.8
+      },
+      "scoreRationale": "Curved bubble-confinement boson layering and residual superfluidity"
     },
     {
       "ledgerRank": 211,
@@ -5447,7 +5919,9 @@
       "title": "Thouless Pumping of One-Dimensional Dark Solitons and Domain Walls",
       "primaryUrl": "https://arxiv.org/abs/2610.30550",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Fangwei Ye et al."
+      ],
       "identifier": "10.48550/arXiv.2610.30550",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.30550",
       "overlapScore": 6.1,
@@ -5459,7 +5933,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-22",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2,
+        "geometryLocalization": 2.1,
+        "stabilityDynamics": 1.8,
+        "relatedObservationalMethodologicalEvidence": 0.2
+      },
+      "scoreRationale": "Stability-dependent transport of nonlinear dark solitons"
     },
     {
       "ledgerRank": 212,
@@ -5467,10 +5951,14 @@
       "title": "Bose-Einstein condensate in a shell: nonlinear modes and symmetry breaking",
       "primaryUrl": "https://arxiv.org/abs/2610.32249",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Alexander Wolf",
+        "Vladimir V. Konotop",
+        "Maxim A. Efremov"
+      ],
       "identifier": "10.48550/arXiv.2610.32249",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.32249",
-      "overlapScore": 6.1,
+      "overlapScore": 8.2,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5479,7 +5967,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-23",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.5,
+        "geometryLocalization": 3,
+        "stabilityDynamics": 1.9,
+        "relatedObservationalMethodologicalEvidence": 0.8
+      },
+      "scoreRationale": "Nonlinear spherical-harmonic branches and curved-mode stability"
     },
     {
       "ledgerRank": 213,
@@ -5487,10 +5985,12 @@
       "title": "Predicting Negative Triangularity Edge Confinement with a Neutral-Coupled Full-f Gyrokinetic Model",
       "primaryUrl": "https://arxiv.org/abs/2610.32100",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "T. N. Bernard et al."
+      ],
       "identifier": "10.48550/arXiv.2610.32100",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.32100",
-      "overlapScore": 6.1,
+      "overlapScore": 6,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5499,7 +5999,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-23",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 1.5,
+        "geometryLocalization": 2.4,
+        "stabilityDynamics": 1.2,
+        "relatedObservationalMethodologicalEvidence": 0.9
+      },
+      "scoreRationale": "Geometry-dependent tokamak edge confinement from gyrokinetics"
     },
     {
       "ledgerRank": 214,
@@ -5507,10 +6017,13 @@
       "title": "On Spurious Mesh-Scale Oscillations Associated with Resonance-Cone Regimes in Wave-Plasma Simulations",
       "primaryUrl": "https://arxiv.org/abs/2610.31021",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Hugo Bergerioux",
+        "Mario Merino"
+      ],
       "identifier": "10.48550/arXiv.2610.31021",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.31021",
-      "overlapScore": 6.1,
+      "overlapScore": 5.5,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5519,7 +6032,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-22",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 2.3,
+        "geometryLocalization": 2,
+        "stabilityDynamics": 1.2,
+        "relatedObservationalMethodologicalEvidence": 0
+      },
+      "scoreRationale": "Finite-element resonance artifacts and eigenmode verification methodology"
     },
     {
       "ledgerRank": 215,
@@ -5534,7 +6057,7 @@
       ],
       "identifier": "10.1007/s10915-026-03242-7",
       "identifierUrl": "https://doi.org/10.1007/s10915-026-03242-7",
-      "overlapScore": 6.0,
+      "overlapScore": 6,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5574,10 +6097,12 @@
       "title": "Tokamak-SI: Interpreting Tokamak Discharges with Labeled Catalogs",
       "primaryUrl": "https://arxiv.org/abs/2610.32264",
       "source": "arXiv",
-      "authors": [],
+      "authors": [
+        "Nathaniel Chen et al."
+      ],
       "identifier": "10.48550/arXiv.2610.32264",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2610.32264",
-      "overlapScore": 5.0,
+      "overlapScore": 3.3,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -5586,7 +6111,17 @@
       "patentScopeStatus": "not_assessed",
       "wctAnchors": [],
       "correspondence": [],
-      "priorityDirection": "NOT_VERIFIED"
+      "priorityDirection": "NOT_VERIFIED",
+      "publicationDate": "2026-10-23",
+      "publicationDateBasis": "arXiv v1 initial submission (UTC)",
+      "scoreStatus": "provisional_rubric_assessment",
+      "scoreRubricComponents": {
+        "mathematicalOperator": 0.5,
+        "geometryLocalization": 1.4,
+        "stabilityDynamics": 0.6,
+        "relatedObservationalMethodologicalEvidence": 0.8
+      },
+      "scoreRationale": "Labeled tokamak dataset useful for testing, not supporting prediction"
     },
     {
       "ledgerRank": 218,
@@ -5601,7 +6136,7 @@
       ],
       "identifier": "METR incident investigation · 2026-08-26",
       "identifierUrl": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
-      "overlapScore": 10.0,
+      "overlapScore": 10,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
@@ -6554,7 +7089,7 @@
       ],
       "identifier": "10.48550/arXiv.2603.27148",
       "identifierUrl": "https://doi.org/10.48550/arXiv.2603.27148",
-      "overlapScore": 9.0,
+      "overlapScore": 9,
       "verificationStatus": "ledger",
       "relationship": "potential_technical_overlap",
       "chronologyStatus": "not_normalized",
