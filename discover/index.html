@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060d16">
+  <meta name="description" content="See numerical wave simulations, optical measurement figures, and formally verified mathematics behind Richard J. Reyes's Wave Confinement Theory research.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Can Waves Organize Themselves Without Walls? | WCT">
+  <meta property="og:description" content="Watch two numerical wave simulations, inspect laboratory data, and follow the research to Lean 4 proofs and open manuscripts.">
+  <meta property="og:url" content="https://rickyjreyes.github.io/discover/">
+  <meta property="og:image" content="https://rickyjreyes.github.io/assets/emergent_cavity.png">
+  <meta property="og:image:alt" content="Computational illustration of an emergent cavity-like wave structure">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://rickyjreyes.github.io/assets/emergent_cavity.png">
+  <link rel="canonical" href="https://rickyjreyes.github.io/discover/">
+  <link rel="stylesheet" href="/growth.css?v=20261028">
+  <title>Discover Wave Confinement Theory | Watch, Read, Verify</title>
+</head>
+<body class="discover-page">
+  <header class="discover-topbar">
+    <a href="/" class="discover-wordmark">WCT <span aria-hidden="true">/</span> RICHARD J. REYES</a>
+    <nav class="discover-links" aria-label="Discover navigation">
+      <a href="/">Research home</a><a href="#watch">Watch</a><a href="#research">Explore evidence</a>
+      <a href="https://rickyjreyes.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+    </nav>
+  </header>
+  <main class="discover-container">
+    <section class="discover-hero" aria-labelledby="discover-headline">
+      <div>
+        <span class="discover-eyebrow">WAVE CONFINEMENT THEORY / WATCH • READ • VERIFY</span>
+        <h1 id="discover-headline">Can waves organize themselves <span>without walls?</span></h1>
+        <p>Start with the moving field. Then examine the mathematics, experimental measurements, and open code. These simulations are computational illustrations; the linked proofs establish specific mathematical results under stated assumptions.</p>
+        <div class="discover-buttons">
+          <a class="discover-button primary" href="#watch">Watch the wave videos</a>
+          <a class="discover-button secondary" href="#research">See the evidence</a>
+        </div>
+        <p><strong>Research program:</strong> nonlinear waves, geometric confinement, spectral structure, optical measurements, and machine-checked proofs.</p>
+      </div>
+      <figure class="discover-hero-video">
+        <video id="discover-main-video" src="/assets/self_emergent_cavity.mp4" poster="/assets/emergent_cavity.png" muted autoplay loop playsinline controls preload="metadata" aria-label="Numerical visualization of cavity-like wave evolution"></video>
+        <figcaption>Self-emergent cavity. Numerical visualization, not experimental footage or a proof of physical confinement.</figcaption>
+      </figure>
+    </section>
+    <section id="watch" class="discover-section" aria-labelledby="watch-headline">
+      <span class="discover-eyebrow">01 / WATCH</span>
+      <h2 id="watch-headline">Two visual entry points</h2>
+      <p>These existing video assets are available on the research site. Each is a visualization with a direct route to deeper mathematical material.</p>
+      <div class="discover-grid">
+        <article class="discover-card">
+          <video src="/assets/psi_ring.mp4" muted playsinline loop controls preload="metadata" poster="/assets/resonance.png" aria-label="Numerical ring mode wave visualization"></video>
+          <div class="discover-card-copy"><h3>Ring-mode evolution</h3><p>A moving annular field visualization. Ask what conditions permit persistent organized wave profiles.</p><a href="https://github.com/rickyjreyes/math/blob/main/preprints/orbital-stability-fourth-order-cubic-quintic/paper.pdf" target="_blank" rel="noopener noreferrer">Read related stability theorem →</a></div>
+        </article>
+        <article class="discover-card">
+          <video src="/assets/self_emergent_cavity.mp4" muted playsinline loop controls preload="metadata" poster="/assets/emergent_cavity.png" aria-label="Numerical cavity visualization"></video>
+          <div class="discover-card-copy"><h3>Cavity-like wave structure</h3><p>Dynamic computational illustration. Compare it with the separate theorem on whole-space minimizers without a finite cavity.</p><a href="https://github.com/rickyjreyes/math/blob/main/preprints/whole-space-fourth-order-cubic-quintic-minimizers/paper.pdf" target="_blank" rel="noopener noreferrer">Read whole-space mathematics →</a></div>
+        </article>
+        <article class="discover-card">
+          <img src="/assets/laser_experiment.jpg" alt="Photograph from an optical experiment in the WCT research archive" loading="lazy">
+          <div class="discover-card-copy"><h3>Actual optical measurements</h3><p>Move from illustrations to the apparatus, waveforms, FFT spectra, and documented control comparisons.</p><a href="https://github.com/rickyjreyes/photodiode" target="_blank" rel="noopener noreferrer">Inspect photodiode data →</a></div>
+        </article>
+      </div>
+    </section>
+    <section id="research" class="discover-section" aria-labelledby="research-headline">
+      <span class="discover-eyebrow">02 / READ &amp; VERIFY</span>
+      <h2 id="research-headline">Follow a claim to its source</h2>
+      <div class="discover-path"><strong>Can a nonlinear wave remain stable?</strong><p>A fourth-order cubic–quintic model has a Lean-verified orbital-stability theorem for its constrained minimizing set, within an explicit mass range.</p><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean" target="_blank" rel="noopener noreferrer">Open the Lean proof →</a></div>
+      <div class="discover-path"><strong>Can dispersion select a nonzero wavelength?</strong><p>An exact theorem identifies a unique positive-wavenumber minimum of the lower real dispersion branch under explicit parameter conditions.</p><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/DispersionMinimum.lean" target="_blank" rel="noopener noreferrer">Open the minimizer proof →</a></div>
+      <div class="discover-path"><strong>What do actual data tests report?</strong><p>Photodiode captures and gravitational-wave catalog residual analyses include controls, null models, and frozen testing protocols.</p><a href="https://github.com/rickyjreyes/GWTC" target="_blank" rel="noopener noreferrer">Inspect GWTC evidence →</a></div>
+      <div class="discover-path"><strong>Where are the archival papers?</strong><p>Versioned research manuscripts, DOI records, the equation registry, and the complete publication catalogue remain available.</p><a href="/publications/">Browse publications and Zenodo links →</a></div>
+    </section>
+    <aside class="discover-cta" aria-labelledby="discover-newsletter">
+      <span class="discover-eyebrow">03 / FOLLOW</span>
+      <h2 id="discover-newsletter">See the next result.</h2>
+      <p>Research essays, formalized theorems, simulations, experiments, and corrections explained for readers who want to follow the work.</p>
+      <div class="discover-buttons"><a class="discover-button primary" href="https://rickyjreyes.substack.com/" target="_blank" rel="noopener noreferrer">Read &amp; subscribe on Substack</a><a class="discover-button secondary" href="/tools/videos/">Watch more videos</a></div>
+    </aside>
+  </main>
+  <footer class="discover-container discover-footer">Richard J. Reyes · Wave Confinement Theory · <a href="/">Full research archive</a> · <a href="/reproduce/">Reproduction tools</a></footer>
+  <script>
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('video[autoplay]').forEach(function(v){v.pause();});
+    }
+  </script>
+</body>
+</html>

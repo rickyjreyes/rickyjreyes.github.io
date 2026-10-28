@@ -12,7 +12,10 @@
   <meta property="og:title" content="Richard J. Reyes | Wave Confinement Theory">
   <meta property="og:description" content="A direct entry point to the Wave Confinement Theory research program, papers, code, experiments, and reproducible analyses.">
   <meta property="og:url" content="https://rickyjreyes.github.io/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://rickyjreyes.github.io/assets/emergent_cavity.png">
+  <meta property="og:image:alt" content="Numerical illustration of a wave-confinement cavity structure">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://rickyjreyes.github.io/assets/emergent_cavity.png">
   <title>Richard J. Reyes | Wave Confinement Theory</title>
   <link rel="alternate" type="application/atom+xml" title="Research releases" href="feed.xml">
   <link rel="alternate" type="application/json" title="WCT research corpus" href="research-corpus.json">
@@ -22,6 +25,7 @@
   <link rel="stylesheet" href="home-technology.css">
   <link rel="stylesheet" href="home-parallax.css">
   <link rel="stylesheet" href="home-reference.css?v=20261013-gallery-spacing">
+  <link rel="stylesheet" href="growth.css?v=20261028">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -83,7 +87,7 @@
       <a class="wordmark" href="/#top" aria-label="Wave Confinement Theory home">
         <img class="wct-wordmark-logo" src="/assets/Wavelock_transparent.png" alt="" aria-hidden="true">
         <span>WCT</span>
-      </a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav>
+      </a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/discover/">Discover</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/equations/">Equations</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a><a href="https://rickyjreyes.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></nav>
     </div>
   </header>
 
@@ -91,12 +95,12 @@
     <section class="hero section-shell" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">Controls Engineer · Independent Researcher · Software Developer</p>
-        <h1 id="hero-title">A direct entry point to the <span>Wave Confinement Theory</span> research program.</h1>
-        <p class="hero-lede"><strong>Wave Confinement Theory was publicly disclosed by Richard J. Reyes on April 22, 2025.</strong> Papers, equations, simulations, experiments, open-data analyses, and computational extensions are organized here with public dates, DOI records, code, and evidence artifacts.</p>
+        <h1 id="hero-title">Can waves organize themselves <span>without walls?</span></h1>
+        <p class="hero-lede">Watch numerical wave simulations, examine real optical measurements, and explore Lean-verified mathematics in the Wave Confinement Theory research program. <strong>Publicly disclosed April 22, 2025.</strong></p>
         <div class="hero-actions">
-          <a class="button primary" href="#start">Start reading</a>
-          <a class="button secondary" href="/publications/">Publications</a>
-          <a class="button secondary" href="/research-corpus/">Explore research</a>
+          <a class="button primary" href="/discover/">Watch the simulations</a>
+          <a class="button secondary" href="https://rickyjreyes.substack.com/" target="_blank" rel="noopener noreferrer">Read on Substack</a>
+          <a class="button secondary" href="/lean/">Explore Lean proofs</a>
         </div>
         <div class="identity-links profile-links" aria-label="External profiles and identifiers">
           <a class="profile-link-card" data-brand="github" href="https://github.com/rickyjreyes" target="_blank" rel="noopener noreferrer" aria-label="Richard J. Reyes on GitHub (opens in a new tab)"><span class="profile-icon" aria-hidden="true"><img class="profile-brand-logo" src="https://cdn.simpleicons.org/github/FFFFFF" alt=""></span><span class="profile-copy"><strong>GitHub</strong><span>github.com/rickyjreyes</span></span><span class="profile-arrow" aria-hidden="true">↗</span></a>
@@ -106,18 +110,15 @@
         </div>
       </div>
 
-      <div class="field-visual" aria-label="Abstract resonance and confinement diagram">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="orbit orbit-three"></div>
-        <div class="field-core">
-          <span>ψ</span>
-          <small>confinement</small>
-        </div>
-        <div class="field-label label-a">phase</div>
-        <div class="field-label label-b">curvature</div>
-        <div class="field-label label-c">topology</div>
-      </div>
+      <figure class="wct-growth-hero-media">
+        <video class="wct-growth-hero-video" src="/assets/self_emergent_cavity.mp4" poster="/assets/emergent_cavity.png" muted autoplay loop playsinline preload="metadata" controls aria-label="Numerical simulation of an evolving cavity-like wave structure"></video>
+        <figcaption class="wct-growth-hero-caption">
+          <span class="wct-growth-hero-tag">Numerical visualization</span>
+          <strong>Self-emergent cavity</strong>
+          <span>Computational wave structure, not experimental confirmation.</span>
+          <a href="/discover/">Watch the ring mode and see the evidence →</a>
+        </figcaption>
+      </figure>
     </section><section class="frozen-release-callout" aria-label="Frozen reproducible release">
       <div class="section-shell frozen-release-inner">
         <span class="frozen-release-dot" aria-hidden="true"></span>
@@ -764,6 +765,7 @@
       </div>
       <div>
         <h2>Profiles</h2>
+        <a href="https://rickyjreyes.substack.com/">Substack</a>
         <a href="https://orcid.org/0009-0005-5975-8718">ORCID</a>
         <a href="https://www.linkedin.com/in/rickyjreyes/">LinkedIn</a>
         <a href="mailto:reyes.ricky30@gmail.com">Email</a>
@@ -778,6 +780,11 @@
   <script src="home-reference.js?v=20261013-priority-compact-parallax" defer></script>
   <script src="home-parallax.js" defer></script>
   <script src="script.js" defer></script>
+  <script>
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.wct-growth-hero-video').forEach(function (video) { video.pause(); });
+    }
+  </script>
 <script src="site-nav.js?v=20261013-mobile-chapters" defer></script>
 <script src="site-nav.js" defer></script>
 </body>
