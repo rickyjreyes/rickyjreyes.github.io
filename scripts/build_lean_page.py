@@ -80,6 +80,31 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 .lean-cross-cell{display:block;width:100%;height:38px;border:1px solid var(--cell-border);border-radius:4px;background:var(--cell-bg);color:var(--cell-fg);font:700 .8rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;cursor:pointer}
 .lean-cross-cell:disabled{cursor:default}
 .lean-cross-cell[aria-pressed=true]{outline:1px solid var(--text);outline-offset:1px}
+
+/* Mathematical manuscripts are a separate evidence track from canonical WCT mapping. */
+.lean-manuscripts{padding:38px 0 46px;border-top:1px solid var(--line)}
+.lean-manuscripts-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 28px}
+.lean-manuscripts h2{margin:0;font:500 clamp(1.75rem,3vw,2.45rem)/1.12 Georgia,serif}
+.lean-manuscripts-lede{max-width:90ch;margin:16px 0 0;color:var(--muted);font-size:.89rem;line-height:1.7}
+.lean-manuscripts-lede strong{color:var(--text)}
+.lean-manuscripts-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin:14px 0 0;font-size:.82rem}
+.lean-manuscripts a{color:var(--accent-3)}
+.lean-manuscripts-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin:26px 0 24px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.lean-manuscripts-stat{min-width:0;padding:17px 18px;background:var(--bg)}
+.lean-manuscripts-stat strong{display:block;color:var(--text);font:500 clamp(1.45rem,2.6vw,2.1rem)/1.1 Georgia,serif}
+.lean-manuscripts-stat span{display:block;margin-top:7px;color:var(--muted);font-size:.73rem;line-height:1.5}
+.lean-manuscripts h3{margin:0 0 12px;color:var(--text);font:500 1.35rem/1.25 Georgia,serif}
+.lean-manuscripts-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;scrollbar-width:thin}
+.lean-manuscripts-table{width:100%;min-width:640px;border-collapse:collapse;font-size:.82rem;line-height:1.55}
+.lean-manuscripts-table th{padding:11px 14px;background:#0d1a28;color:var(--muted-2);text-align:left;font:700 .64rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.07em;text-transform:uppercase}
+.lean-manuscripts-table td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}
+.lean-manuscripts-table th:first-child,.lean-manuscripts-table td:first-child{width:112px;white-space:nowrap}
+.lean-manuscripts-table td:first-child{color:var(--accent-3);font-weight:750}
+.lean-manuscripts-table td:nth-child(2){color:var(--text)}
+.lean-manuscripts-table td:last-child{white-space:nowrap}
+.lean-manuscripts-table td:last-child a+a{margin-left:13px}
+.lean-manuscripts-note{margin:17px 0 0;padding:11px 15px;border-left:2px solid var(--accent-3);background:rgba(255,255,255,.015);color:var(--muted);font-size:.81rem;line-height:1.6}
+@media(max-width:700px){.lean-manuscripts-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.lean-manuscripts-stat{padding:14px}.lean-manuscripts{padding-block:32px 38px}}
 .lean-browser-section{padding:30px 0 72px;border-top:1px solid var(--line)}
 .lean-browser-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;margin-bottom:14px}
 .lean-browser-head h2{margin:0;font:500 1.55rem/1.2 Georgia,serif}
@@ -176,7 +201,7 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 </div>
 <div class="lean-hero-actions">
 <a class="lean-primary-link" href="https://github.com/rickyjreyes/wct-lean/blob/main/THEOREMS.md" target="_blank" rel="noopener noreferrer">Theorem inventory ↗</a>
-<div class="lean-secondary-links"><a href="https://github.com/rickyjreyes/wct-lean" target="_blank" rel="noopener noreferrer">wct-lean repository ↗</a><a href="../compiled-registry.json">Machine-readable registry</a></div>
+<div class="lean-secondary-links"><a href="https://github.com/rickyjreyes/wct-lean" target="_blank" rel="noopener noreferrer">wct-lean repository ↗</a><a href="../compiled-registry.json">Machine-readable registry</a><a href="#manuscript-proofs">Mathematical manuscript proofs ↓</a></div>
 <p class="lean-version">Registry v__VERSION__ · generated __GENERATED__</p>
 </div>
 </div>
@@ -191,6 +216,43 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 <div><h3>Lean coverage against symbolic outcome</h3><p>The two layers are independent. A SymPy PASS does not imply a Lean proof, and an absence of formal coverage is not evidence of falsity. Select a cell to list its objects.</p><p class="lean-cross-filter" id="lean-cross-filter" hidden></p></div>
 <div class="lean-cross-scroll" tabindex="0" role="region" aria-label="Scrollable Lean and SymPy outcome matrix"><div class="lean-cross-grid" id="lean-cross-grid" role="grid" aria-label="Lean coverage by SymPy outcome"></div></div>
 </div>
+</section>
+
+
+<section class="lean-shell lean-manuscripts" id="manuscript-proofs" aria-labelledby="lean-manuscripts-title">
+<div class="lean-manuscripts-head">
+<div><p class="lean-kicker">Independent mathematical proof track</p><h2 id="lean-manuscripts-title">Manuscript-scale Lean formalization</h2></div>
+</div>
+<p class="lean-manuscripts-lede">The <a href="https://github.com/rickyjreyes/math" target="_blank" rel="noopener noreferrer">math repository</a> formalizes precise mathematical results on nonlinear PDEs, Fourier operators, spectral dynamics and geometric estimates. <strong>These manuscript results are separate from the 142-object WCT registry above.</strong> They do not automatically change an object's canonical coverage category; equivalence requires a statement-by-statement match of definitions, domains, hypotheses and conclusions.</p>
+<div class="lean-manuscripts-links">
+<a href="https://github.com/rickyjreyes/math/blob/main/lean/formalization.yaml" target="_blank" rel="noopener noreferrer">Formalization manifest ↗</a>
+<a href="https://github.com/rickyjreyes/math/blob/main/docs/ANALYTIC_CERTIFICATION_2026-10-30.md" target="_blank" rel="noopener noreferrer">Analytic certification audit ↗</a>
+<a href="https://github.com/rickyjreyes/math/blob/main/docs/E68_LEAN_MANUSCRIPT_MAPPING.md" target="_blank" rel="noopener noreferrer">E68 manuscript mapping ↗</a>
+</div>
+<div class="lean-manuscripts-stats" aria-label="Reported mathematics repository verification snapshot, October 30, 2026">
+<div class="lean-manuscripts-stat"><strong>14 / 14</strong><span>Original mathematical manuscripts marked complete</span></div>
+<div class="lean-manuscripts-stat"><strong>5 / 5</strong><span>Additional F11/F12 manuscripts marked complete</span></div>
+<div class="lean-manuscripts-stat"><strong>6</strong><span>Supplementary manuscripts marked formalized</span></div>
+<div class="lean-manuscripts-stat"><strong>2,794</strong><span>Source theorem/lemma declarations, including private lemmas</span></div>
+</div>
+<h3>Related proofs and their exact scope</h3>
+<div class="lean-manuscripts-table-wrap" tabindex="0" role="region" aria-label="Mathematical manuscript formalization cross-reference, scroll horizontally if needed">
+<table class="lean-manuscripts-table">
+<thead><tr><th scope="col">WCT ID</th><th scope="col">Separate mathematical manuscript result</th><th scope="col">Evidence</th></tr></thead>
+<tbody>
+<tr><td>E16</td><td>Linear spectral concentration in the fourth-order linear flow, with explicit hypotheses and convergence bounds.</td><td><a href="https://github.com/rickyjreyes/math/blob/main/preprints/e16-linear-spectral-concentration/paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/SpectralConcentration.lean" target="_blank" rel="noopener noreferrer">Lean</a></td></tr>
+<tr><td>M2 / E17</td><td>Smooth regularized curvature multiplier, uniform bounds and controlled small-regularization limits.</td><td><a href="https://github.com/rickyjreyes/math/blob/main/preprints/regularized-curvature-operator/paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E17Certification.lean" target="_blank" rel="noopener noreferrer">Lean</a></td></tr>
+<tr><td>E26</td><td>Conditional curvature L² estimate, with explicit counterexample for the historical denominator.</td><td><a href="https://github.com/rickyjreyes/math/blob/main/preprints/regularized-curvature-l2-bound/paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E26Certification.lean" target="_blank" rel="noopener noreferrer">Lean</a></td></tr>
+<tr><td>M3 / E57</td><td>Whole-space Fourier-shell damping semigroup, operator domain and energy identities.</td><td><a href="https://github.com/rickyjreyes/math/blob/main/preprints/swift-hohenberg-fourier-shell-damping/paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean" target="_blank" rel="noopener noreferrer">Lean</a></td></tr>
+<tr><td>E58</td><td>Continuum Green multiplier and sharp L² resolvent bound.</td><td><a href="https://github.com/rickyjreyes/math/blob/main/preprints/band-selective-green-kernel-bound/paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E58Certification.lean" target="_blank" rel="noopener noreferrer">Lean</a></td></tr>
+<tr><td>E59</td><td>Fixed-annulus orthogonal Fourier projection on the torus, including energy splitting and best approximation.</td><td><a href="https://github.com/rickyjreyes/math/blob/main/preprints/e59-dominant-annulus-projection/paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/TorusFourier.lean" target="_blank" rel="noopener noreferrer">Lean</a></td></tr>
+<tr><td>E61</td><td>Swift–Hohenberg spectrum, semigroup and linear stability threshold.</td><td><a href="https://github.com/rickyjreyes/math/blob/main/preprints/e61-pattern-formation-threshold/paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean" target="_blank" rel="noopener noreferrer">Lean</a></td></tr>
+<tr><td>E62</td><td>Spectral-energy fractions and exact Fourier projectors, including continuous-spectrum scope.</td><td><a href="https://github.com/rickyjreyes/math/blob/main/preprints/spectral-energy-concentration-e62/paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62Certification.lean" target="_blank" rel="noopener noreferrer">Lean</a></td></tr>
+<tr><td>E68</td><td>Localized gradient-energy dimensional classification, corrected estimates and counterexamples.</td><td><a href="https://github.com/rickyjreyes/math/blob/main/preprints/localized-gradient-energy-e68/paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68Certification.lean" target="_blank" rel="noopener noreferrer">Lean</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="lean-manuscripts-note"><strong>Source snapshot: October 30, 2026.</strong> The <a href="https://github.com/rickyjreyes/math/blob/main/lean/formalization.yaml" target="_blank" rel="noopener noreferrer">maintained manifest</a> records 154 imported Lean modules using Lean 4.23.0 / Mathlib 4.23.0. Its completion labels describe kernel-checked statements under their encoded assumptions, not peer review or physical validation. E18 and E69 remain listed as unformalized supplementary manuscripts. The canonical object browser below continues to reflect its separately dated WCT registry snapshot.</p>
 </section>
 
 <section class="lean-shell lean-browser-section" id="browser" aria-labelledby="lean-browser-title">
