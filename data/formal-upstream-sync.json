@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "synced_date": "2026-08-20",
+  "synced_date": "2026-10-30",
   "wct_sympy": {
     "repository": "rickyjreyes/wct-sympy",
-    "merge_commit": "386309ebf60ab15a7b248841a4886ff3c8258458",
+    "merge_commit": "7c85764b51e20f0ac6008da001b233bfb82a91f8",
     "canonical_counts": {
       "PASS": 68,
       "CONDITIONAL": 18,
@@ -14,9 +14,9 @@
   },
   "wct_lean": {
     "repository": "rickyjreyes/wct-lean",
-    "merge_commit": "ac7c59d661ec8d083f7359dc23fff5040d33a082",
-    "canonical_mapped": 80,
+    "merge_commit": "1b281271caf84495b41ad93e775b9570db626302",
+    "canonical_mapped": 83,
     "canonical_total": 142
   },
-  "policy": "Paper-level closure and DSI additions remain outside canonical counts unless an exact canonical mapping is added and validated."
+  "policy": "Only equation-specific, kernel-checked Lean declarations count as canonical mappings. E15, CLE6 and CLE7 add limited partial support under explicit hypotheses; manuscript-scale mathematics remains a separate evidence track and no physical theory validation is implied."
 }
