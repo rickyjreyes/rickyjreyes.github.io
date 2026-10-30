@@ -16,6 +16,12 @@ on:
       - ".github/workflows/sync-formal-upstreams.yml"
   workflow_dispatch:
 
+# Serialize the two workflows that commit generated pages to main.
+# Without a shared group, concurrent pushes can reject the second publisher.
+concurrency:
+  group: wct-generated-site-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
