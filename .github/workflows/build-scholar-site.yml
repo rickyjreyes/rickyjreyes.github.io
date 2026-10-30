@@ -74,7 +74,8 @@ permissions:
 
 # The glossary is a versioned public snapshot; no build step requires access to the private Obsidian repository.
 # Generated verification pages read the merged v5 canonical interoperability map
-# from rickyjreyes/wct-sympy main, synchronized to the maintained 80-ID wct-lean inventory.
+# from rickyjreyes/wct-sympy main, synchronized to the maintained 92-ID wct-lean inventory.
+# Source distinctions are enforced by scripts/validate_registry_sync.py.
 env:
   WCT_SYMPY_REF: main
 
