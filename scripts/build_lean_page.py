@@ -488,6 +488,14 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
     render();
   }));
   $('#lean-clear').addEventListener('click',()=>{state.q='';state.quick='';state.tier='';state.cell=null;$('#lean-search').value='';render();});
+  document.querySelectorAll('[data-lean-id]').forEach(link=>link.addEventListener('click',event=>{
+    const id=link.dataset.leanId;
+    if(!data[id])return;
+    event.preventDefault();
+    state.q='';state.quick='';state.tier='';state.cell=null;$('#lean-search').value='';
+    pick(id,false);
+    document.getElementById('browser')?.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
   render();
 })();
 </script>
