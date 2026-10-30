@@ -11,7 +11,7 @@
   },
   "canonical_root": "https://rickyjreyes.github.io/research-corpus.json",
   "compiled_registry": "https://rickyjreyes.github.io/compiled-registry.json",
-  "generated_at": "2026-10-30T10:36:50+00:00",
+  "generated_at": "2026-10-30T10:57:43+00:00",
   "status_policy": {
     "PASS": "The assigned executable check succeeds under its declared assumptions.",
     "CONDITIONAL": "Additional mathematical, domain, regularity, model, or empirical assumptions remain required.",
@@ -181,7 +181,7 @@
           "description": "Lean kernel checks the finite algebraic E5 chain under explicit closure and weighting hypotheses."
         }
       ],
-      "empirical_status": "EMPIRICAL_TEST_STAGE_OPEN",
+      "empirical_status": "NOT_TESTED",
       "independent_replication": "NONE",
       "falsifiers": [
         "A calibrated system satisfying the declared locking assumptions does not produce the predicted effective mass relation within stated uncertainty.",
@@ -2174,11 +2174,16 @@
       },
       "assumptions": [],
       "formalization": {
-        "status": "OPEN",
-        "relationship": null,
-        "declarations": [],
-        "source": null,
-        "limitations": []
+        "status": "PROVED",
+        "relationship": "supporting_lemma_only",
+        "declarations": [
+          "e15_scalar_modal_power_derivative",
+          "e15_scalar_modal_growth_bound"
+        ],
+        "source": "WCTLean/Models/NarrowCanonicalCoverage.lean",
+        "limitations": [
+          "A prescribed real scalar cubic-saturation ODE only; no statement about arbitrary complex Fourier coefficients or nonlinear PDE mode dynamics."
+        ]
       },
       "empirical_validation": {
         "status": "NOT_APPLICABLE",
@@ -6883,11 +6888,15 @@
       },
       "assumptions": [],
       "formalization": {
-        "status": "OPEN",
-        "relationship": null,
-        "declarations": [],
-        "source": null,
-        "limitations": []
+        "status": "PROVED",
+        "relationship": "supporting_lemma_only",
+        "declarations": [
+          "cle6_separated_mode_quotient"
+        ],
+        "source": "WCTLean/Models/NarrowCanonicalCoverage.lean",
+        "limitations": [
+          "Algebraic implication given the separated product equation and nonzero f, g, r; no proof that a toroidal PDE separates or has these solutions."
+        ]
       },
       "empirical_validation": {
         "status": "NOT_TESTED",
@@ -6944,11 +6953,16 @@
       },
       "assumptions": [],
       "formalization": {
-        "status": "OPEN",
-        "relationship": null,
-        "declarations": [],
-        "source": null,
-        "limitations": []
+        "status": "PROVED",
+        "relationship": "supporting_lemma_only",
+        "declarations": [
+          "cle7_angular_mode",
+          "cle7_angular_mode_periodic"
+        ],
+        "source": "WCTLean/Models/NarrowCanonicalCoverage.lean",
+        "limitations": [
+          "Only 2-pi periodicity of the explicitly defined family is proved here; not the angular ODE or completeness of its solutions."
+        ]
       },
       "empirical_validation": {
         "status": "NOT_TESTED",
