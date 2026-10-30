@@ -3,7 +3,7 @@
   "synced_date": "2026-10-30",
   "wct_sympy": {
     "repository": "rickyjreyes/wct-sympy",
-    "merge_commit": "7c85764b51e20f0ac6008da001b233bfb82a91f8",
+    "merge_commit": "7514dc305a60d23875fc5225eb268e1d39e7930b",
     "canonical_counts": {
       "PASS": 68,
       "CONDITIONAL": 18,
@@ -14,9 +14,21 @@
   },
   "wct_lean": {
     "repository": "rickyjreyes/wct-lean",
-    "merge_commit": "1b281271caf84495b41ad93e775b9570db626302",
-    "canonical_mapped": 83,
-    "canonical_total": 142
+    "merge_commit": "cc01753927f91005d6846b74436c6c5e824638fc",
+    "canonical_mapped": 92,
+    "canonical_total": 142,
+    "proof_strength_scope": "Equation-specific mapped declarations include definitions, contracts, counterexamples, and narrow kernel-checked mathematical theorems; mapping does not imply full equation or physical validation.",
+    "latest_scoped_closures": [
+      "TOP6",
+      "CM3",
+      "CM4",
+      "CM10",
+      "CM15",
+      "CM20",
+      "E44",
+      "E60",
+      "E82"
+    ]
   },
-  "policy": "Only equation-specific, kernel-checked Lean declarations count as canonical mappings. E15, CLE6 and CLE7 add limited partial support under explicit hypotheses; manuscript-scale mathematics remains a separate evidence track and no physical theory validation is implied."
+  "policy": "Only maintained equation-specific Lean declarations count as canonical mappings. The current mapped inventory is 92/142, including exact results, limited conditional proofs, definitions, contracts and unresolved propositions. E15, CLE6, CLE7 and the nine newly mapped IDs are narrowly scoped under explicit hypotheses. No complete nonlinear-PDE, cosmological or empirical validation is inferred."
 }

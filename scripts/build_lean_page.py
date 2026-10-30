@@ -218,6 +218,17 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
 </div>
 </section>
 
+<section class="lean-shell lean-manuscripts" id="recent-closures" aria-labelledby="lean-closures-title">
+<div class="lean-manuscripts-head"><div><p class="lean-kicker">October 30, 2026 · synchronized Lean registry</p><h2 id="lean-closures-title">New equation-specific proofs</h2></div></div>
+<p class="lean-manuscripts-lede"><strong>__MAPPED__ of __TOTAL__ canonical objects have maintained equation-specific Lean support; __UNMAPPED__ are registry-only.</strong> The current batch adds nine objects beyond the earlier 83-object snapshot: <a href="#browser" data-lean-id="TOP6">TOP6</a>, <a href="#browser" data-lean-id="CM3">CM3</a>, <a href="#browser" data-lean-id="CM4">CM4</a>, <a href="#browser" data-lean-id="CM10">CM10</a>, <a href="#browser" data-lean-id="CM15">CM15</a>, <a href="#browser" data-lean-id="CM20">CM20</a>, <a href="#browser" data-lean-id="E44">E44</a>, <a href="#browser" data-lean-id="E60">E60</a> and <a href="#browser" data-lean-id="E82">E82</a>. Earlier E15, CLE6 and CLE7 reductions are included in the reported count.</p>
+<p class="lean-manuscripts-lede">These are <strong>kernel-checked, narrowly scoped results</strong> such as scalar compatibility conditions, contractions, phase obstructions, and Gram positivity. They are not proofs of full nonlinear WCT dynamics, the cosmological equations or physical validation. TOP6 establishes an inverse-square scaling obstruction for the unnormalized statistic; its full geometric knot-isotopy argument is not yet encoded in Lean.</p>
+<div class="lean-manuscripts-links">
+<a href="https://github.com/rickyjreyes/wct-lean/pull/36" target="_blank" rel="noopener noreferrer">Merged Lean PR #36 ↗</a>
+<a href="https://github.com/rickyjreyes/wct-lean/blob/main/docs/REGISTRY_ONLY_CLOSURES_2026-10-30.md" target="_blank" rel="noopener noreferrer">Exact proof scope ↗</a>
+<a href="https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/RegistryOnlyClosures.lean" target="_blank" rel="noopener noreferrer">Lean 4 source ↗</a>
+<a href="https://github.com/rickyjreyes/wct-sympy/blob/main/interoperability/lean_map.yaml" target="_blank" rel="noopener noreferrer">Canonical interoperability map ↗</a>
+</div>
+</section>
 
 <section class="lean-shell lean-manuscripts" id="manuscript-proofs" aria-labelledby="lean-manuscripts-title">
 <div class="lean-manuscripts-head">
@@ -477,6 +488,14 @@ TEMPLATE = r'''<!doctype html><html lang="en"><head>
     render();
   }));
   $('#lean-clear').addEventListener('click',()=>{state.q='';state.quick='';state.tier='';state.cell=null;$('#lean-search').value='';render();});
+  document.querySelectorAll('[data-lean-id]').forEach(link=>link.addEventListener('click',event=>{
+    const id=link.dataset.leanId;
+    if(!data[id])return;
+    event.preventDefault();
+    state.q='';state.quick='';state.tier='';state.cell=null;$('#lean-search').value='';
+    pick(id,false);
+    document.getElementById('browser')?.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
   render();
 })();
 </script>
