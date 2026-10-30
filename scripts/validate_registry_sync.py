@@ -18,6 +18,19 @@ PUBLICATIONS_SOURCE = ROOT / "data" / "publications.json"
 TRACEABILITY_SOURCE = ROOT / "data" / "publication_traceability.json"
 PUBLICATIONS_DIR = ROOT / "publications"
 REPORT = ROOT / "registry-validation-report.json"
+FORMAL_SYNC_SOURCE = ROOT / "data" / "formal-upstream-sync.json"
+NEW_LEAN_CLOSURES = {
+    "TOP6": "top6_statistic_scales_inverse_square",
+    "CM3": "cm3_potential_poisson_relation",
+    "CM4": "cm4_decay_iff_nonpositive_logarithmic_rate",
+    "CM10": "cm10_drag_contracts_difference",
+    "CM15": "cm15_cm20_compatible_iff_energy_loss",
+    "CM20": "cm15_cm20_compatible_iff_energy_loss",
+    "E44": "e44_phase_rotated_eigenvalue_obstruction",
+    "E60": "e60_real_stationary_iff",
+    "E82": "e82_information_gram_quadratic_nonnegative",
+}
+
 EXPECTED_COUNTS = {"PASS": 68, "CONDITIONAL": 18, "DEFINITION": 26, "OPEN": 30, "FAIL": 0}
 EXPECTED_SAMPLES = {
     "E5": "PASS",
@@ -214,6 +227,37 @@ def main() -> None:
         ]
         if mismatches:
             errors.append(f"{layer_name}: status mismatch for {mismatches}")
+
+    formal_snapshot = json.loads(FORMAL_SYNC_SOURCE.read_text(encoding="utf-8"))
+    expected_lean_count = formal_snapshot["wct_lean"]["canonical_mapped"]
+    mapped_ids = {
+        object_id for object_id, obj in compiled_by_id.items()
+        if obj.get("formalization", {}).get("status") in {"PROVED", "DEFINITION", "STATED_TODO", "TODO"}
+    }
+    if len(mapped_ids) != expected_lean_count:
+        errors.append(
+            f"wct-lean mapping snapshot count {expected_lean_count} does not match "
+            f"compiled-registry.json count {len(mapped_ids)}"
+        )
+    if {object_id for object_id, obj in lean_data.items() if obj.get("mapped")} != mapped_ids:
+        errors.append("Lean browser mapped IDs differ from compiled formalization data")
+    for object_id, theorem in NEW_LEAN_CLOSURES.items():
+        formal = compiled_by_id[object_id]["formalization"]
+        if formal.get("status") != "PROVED":
+            errors.append(f"{object_id}: expected kernel-checked narrow support")
+        if formal.get("relationship") != "supporting_lemma_only":
+            errors.append(f"{object_id}: narrow supporting-lemma scope is not recorded")
+        if formal.get("source") != "WCTLean/Models/RegistryOnlyClosures.lean":
+            errors.append(f"{object_id}: Lean source path mismatch")
+        if theorem not in formal.get("declarations", []):
+            errors.append(f"{object_id}: missing named Lean proof {theorem}")
+        if not formal.get("limitations"):
+            errors.append(f"{object_id}: missing equation-level proof limitation")
+    html_lean = LEAN_HTML.read_text(encoding="utf-8")
+    if "id=\"recent-closures\"" not in html_lean:
+        errors.append("Lean page is missing the recent-closures explanation")
+    if f"{expected_lean_count} of 142 canonical objects" not in html_lean:
+        errors.append("Lean page headline is stale relative to the formal mapping snapshot")
 
     computed_counts = Counter(compiled_status.values())
     normalized_counts = {
