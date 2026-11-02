@@ -467,7 +467,7 @@
   }
 
   const core = document.createElement('script');
-  core.src = '/site-nav-core.js?v=20261012-mobile-menu-v3';
+  core.src = '/site-nav-core.js?v=20261102-math-navigation';
   core.async = false;
   core.addEventListener('load', enhanceNavigation);
   document.head.appendChild(core);
