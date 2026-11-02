@@ -34,6 +34,10 @@ on:
       - "tools/glossary/paper-terms-*.js"
       - "tools/glossary-definitions.js"
       - "priority/terminology/index.html"
+      - "site-nav-core.js"
+      - "site-nav-base.js"
+      - "math/**"
+      - "reyes-problem-repository/**"
       - "site-nav.js"
       - ".github/workflows/build-scholar-site.yml"
   pull_request:
