@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Mathematics by Richard J. Reyes: mathematical manuscripts, exact-scope results, Lean 4 formalizations, variational PDE, spectral theory and the Reyes Problem Repository.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://rickyjreyes.github.io/math/">
+<title>Mathematics and Formal Results | Richard J. Reyes</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+.math-page{--math-line:rgba(155,190,215,.18);color:var(--text,#edf3f8)}
+.math-shell{max-width:1210px;margin:0 auto;padding-left:clamp(20px,4vw,48px);padding-right:clamp(20px,4vw,48px)}
+.math-hero{padding-top:clamp(92px,13vw,156px);padding-bottom:72px}
+.math-breadcrumb{display:flex;gap:9px;align-items:center;color:var(--muted-2,#8fa5b8);font-size:.78rem;margin:0 0:34px}
+.math-breadcrumb a{color:var(--muted-2,#8fa5b8)}
+.math-eyebrow,.math-kicker{color:var(--accent,#67d4ff);font-size:.69rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.math-hero h1{max-width:960px;margin:14px 0 23px;font:500 clamp(3rem,6.8vw,6.3rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.math-hero h1 em{font-style:normal;color:var(--accent,#67d4ff)}
+.math-lede{max-width:830px;font-size:clamp(1.03rem,1.5vw,1.22rem);line-height:1.75;color:var(--muted,#b0c3d5)}
+.math-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+.math-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border:1px solid var(--math-line);border-radius:8px;text-decoration:none;color:var(--text,#edf3f8);font-size:.82rem;font-weight:750;background:rgba(255,255,255,.025)}
+.math-btn.primary{background:var(--accent,#67d4ff);color:#07111f;border-color:transparent}
+.math-btn:hover{border-color:var(--accent,#67d4ff)}
+.math-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:55px}
+.math-stat{padding:25px 23px;border-top:1px solid var(--math-line);background:rgba(255,255,255,.015)}
+.math-stat strong{display:block;font:500 2rem Georgia,serif;color:var(--text,#edf3f8)}
+.math-stat span{display:block;margin-top:7px;font-size:.78rem;line-height:1.5;color:var(--muted,#b0c3d5)}
+.math-band{padding:74px 0;border-top:1px solid var(--math-line)}
+.math-section-head{display:flex;gap:30px;justify-content:space-between;align-items:flex-end;margin-bottom:28px}
+.math-section-head h2{max-width:780px;margin:8px 0 0;font:500 clamp(2rem,4vw,3.65rem)/1.14 Georgia,serif;letter-spacing:-.035em}
+.math-section-head p{max-width:380px;margin:0;color:var(--muted,#b0c3d5);font-size:.87rem;line-height:1.7}
+.math-model{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(240px,.7fr);gap:25px;align-items:center;margin-bottom:30px;padding:25px 30px;border:1px solid var(--math-line);border-radius:12px;background:linear-gradient(110deg,rgba(103,212,255,.065),rgba(255,255,255,.014))}
+.math-model .math-equation{font:400 clamp(1.05rem,2.3vw,1.58rem)/1.8 Georgia,serif;overflow-wrap:anywhere}
+.math-model p{margin:0;color:var(--muted,#b0c3d5);font-size:.79rem;line-height:1.7}
+.math-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.math-result{display:flex;flex-direction:column;min-height:275px;padding:26px;border:1px solid var(--math-line);border-radius:10px;background:rgba(9,21,35,.7)}
+.math-result h3{margin:16px 0 10px;font:500 1.55rem Georgia,serif}
+.math-result>p:not(.math-kicker){margin:0;color:var(--muted,#b0c3d5);font-size:.85rem;line-height:1.65}
+.math-inline-links{display:flex;gap:15px;flex-wrap:wrap;margin-top:auto;padding-top:24px}
+.math-inline-links a,.math-text-link{font-size:.8rem;font-weight:700;color:var(--accent,#67d4ff)}
+.math-family-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.math-family{display:grid;grid-template-columns:52px 1fr;gap:17px;align-items:start;padding:23px;border:1px solid var(--math-line);border-radius:8px}
+.math-family>span{font:700 .82rem ui-monospace,monospace;color:var(--accent,#67d4ff);padding-top:4px}
+.math-family h3{font-size:1rem;font-weight:750;margin:0 0 6px}
+.math-family p{margin:0;color:var(--muted,#b0c3d5);font-size:.8rem;line-height:1.6}
+.math-bridge{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.7fr);gap:28px;align-items:center;padding:36px;border:1px solid rgba(103,212,255,.35);border-radius:12px;background:rgba(103,212,255,.035)}
+.math-bridge h2{margin:12px 0;font:500 clamp(2rem,3.5vw,3.1rem)/1.15 Georgia,serif}
+.math-bridge p{max-width:650px;color:var(--muted,#b0c3d5);line-height:1.7}
+.math-bridge .math-btn{width:100%}
+.math-proof-note{max-width:890px;line-height:1.75;font-size:.9rem;color:var(--muted,#b0c3d5)}
+.math-source-links{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:25px}
+.math-source-links a{color:var(--accent,#67d4ff);font-size:.85rem}
+@media(max-width:900px){.math-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.math-model,.math-bridge{grid-template-columns:1fr}.math-section-head{display:block}.math-section-head p{margin-top:15px}}
+@media(max-width:640px){.math-hero{padding-bottom:48px}.math-band{padding:54px 0}.math-grid,.math-family-grid,.math-stats{grid-template-columns:1fr}.math-hero h1{font-size:clamp(2.9rem,12vw,4.1rem)}.math-stat{padding:17px}.math-result{min-height:0}.math-breadcrumb{margin-bottom:23px}.math-model{padding:19px}.math-bridge{padding:23px}}
+</style>
+</head>
+<body class="math-page">
+<a class="skip-link" href="#main">Skip to mathematics</a>
+<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/math/" aria-current="page">Math</a><a href="/reyes-problem-repository/">Reyes Problems</a></nav></div></header>
+<main id="main">
+<section class="math-hero math-shell">
+<p class="math-breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span> Mathematics</p>
+<p class="math-eyebrow">Mathematical research archive</p>
+<h1>Mathematics and <em>formal results.</em></h1>
+<p class="math-lede">Analytical work on nonlinear partial differential equations, confinement, curvature, spectral theory, variational problems and computation. Results are presented at their exact mathematical scope, with manuscript sources and separately identified Lean 4 formalizations.</p>
+<div class="math-actions">
+<a class="math-btn primary" href="#results">Explore mathematical results</a>
+<a class="math-btn" href="/reyes-problem-repository/">Reyes Problem Repository</a>
+<a class="math-btn" href="https://github.com/rickyjreyes/math/tree/main" target="_blank" rel="noopener noreferrer">Source repository ↗</a>
+</div>
+<div class="math-stats" aria-label="Research overview">
+<div class="math-stat"><strong>12</strong><span>Principal mathematical research families, F01 through F12</span></div>
+<div class="math-stat"><strong>Lean 4</strong><span>Formal proof sources with model-specific hypotheses</span></div>
+<div class="math-stat"><strong>300</strong><span>Research candidates catalogued separately in the Reyes Problem Repository</span></div>
+</div>
+</section>
+<section id="results" class="math-band">
+<div class="math-shell">
+<div class="math-section-head"><div><p class="math-eyebrow">Selected papers and theorem sources</p><h2>Results you can inspect.</h2></div><p>Each entry leads to an analytical manuscript and supporting formal source. A verified Lean declaration is narrower than a claim of general physical validation.</p></div>
+<div class="math-model"><div><p class="math-kicker">F01 / Representative model</p><div class="math-equation">i∂ₜu = (Δ + k²)²u − β|u|²u + γ|u|⁴u</div></div><p>Fourth-order cubic-quintic Schrödinger evolution on ℝ² with β, γ &gt; 0. Existence, binding and stability statements depend on explicit coefficient and mass restrictions.</p></div>
+<div class="math-grid"><article class="math-result">
+<p class="math-kicker">F01 / Variational PDE</p><h3>Strict binding</h3><p>A strict subadditivity theorem for the constrained fourth-order cubic-quintic Hamiltonian in an explicit sufficient mass range. It does not cover arbitrary masses.</p>
+<div class="math-inline-links"><a href="https://github.com/rickyjreyes/math/blob/main/preprints/strict-subadditivity-fourth-order-cubic-quintic/paper.pdf" target="_blank" rel="noopener noreferrer">Manuscript PDF</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/StrictBinding.lean" target="_blank" rel="noopener noreferrer">Lean source</a></div></article>
+<article class="math-result">
+<p class="math-kicker">F01 / Compactness</p><h3>Whole-space minimizers</h3><p>Existence and compactness of constrained minimizers under specified coefficients, dimension and mass assumptions, not a universal confinement theorem.</p>
+<div class="math-inline-links"><a href="https://github.com/rickyjreyes/math/blob/main/preprints/whole-space-fourth-order-cubic-quintic-minimizers/paper.pdf" target="_blank" rel="noopener noreferrer">Manuscript PDF</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/WholeSpaceMinimizers.lean" target="_blank" rel="noopener noreferrer">Lean source</a></div></article>
+<article class="math-result">
+<p class="math-kicker">F01 / Evolution</p><h3>Orbital stability</h3><p>Orbital stability of the complete minimizing set, rather than stability of every individual wave profile or asymptotic attraction.</p>
+<div class="math-inline-links"><a href="https://github.com/rickyjreyes/math/blob/main/preprints/orbital-stability-fourth-order-cubic-quintic/paper.pdf" target="_blank" rel="noopener noreferrer">Manuscript PDF</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean" target="_blank" rel="noopener noreferrer">Lean source</a></div></article>
+<article class="math-result">
+<p class="math-kicker">F08 / Geometric obstruction</p><h3>Scalar-gradient metric rank</h3><p>The real-part scalar-gradient Gram construction is positive semidefinite and rank at most two. This excludes a Lorentzian metric from that construction alone.</p>
+<div class="math-inline-links"><a href="https://github.com/rickyjreyes/math/blob/main/preprints/scalar-gradient-lorentzian-no-go/paper.pdf" target="_blank" rel="noopener noreferrer">Manuscript PDF</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ScalarGradientLorentzianNoGo.lean" target="_blank" rel="noopener noreferrer">Lean source</a></div></article>
+<article class="math-result">
+<p class="math-kicker">F09 / Inverse problems</p><h3>Local identifiability</h3><p>Structural nullity constraints on a specified 11-by-31 sensitivity map. The result is local, not a general global inverse theorem.</p>
+<div class="math-inline-links"><a href="https://github.com/rickyjreyes/math/blob/main/preprints/sm-v18-local-identifiability-obstruction/paper.pdf" target="_blank" rel="noopener noreferrer">Manuscript PDF</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18Identifiability.lean" target="_blank" rel="noopener noreferrer">Lean source</a></div></article>
+<article class="math-result">
+<p class="math-kicker">F10 / Spectral analysis</p><h3>Fourier-shell exclusion</h3><p>A nonzero L² field cannot have Fourier support restricted to a measure-zero isolated shell; assumptions matter for physical interpretations.</p>
+<div class="math-inline-links"><a href="https://github.com/rickyjreyes/math/blob/main/preprints/isolated-fourier-shell-no-l2-bound-state/paper.pdf" target="_blank" rel="noopener noreferrer">Manuscript PDF</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/L2Fourier.lean" target="_blank" rel="noopener noreferrer">Lean source</a></div></article></div>
+<p class="math-proof-note">A successful Lean build certifies only the declarations encoded in that build. Read the corresponding hypotheses, theorem statement and analytical proof before extending a result to another dimension, equation, parameter range or physical claim.</p>
+</div>
+</section>
+<section id="families" class="math-band"><div class="math-shell">
+<div class="math-section-head"><div><p class="math-eyebrow">Research map</p><h2>Twelve mathematical families.</h2></div><p>Each family groups exact-scope manuscripts, formal proofs, derivations, obstructions or unresolved questions.</p></div>
+<div class="math-family-grid"><article class="math-family"><span>F01</span><div><h3>Fourth-order variational PDE</h3><p>Strict binding, minimizer existence and orbital stability for a specified cubic-quintic model.</p></div></article>
+<article class="math-family"><span>F02</span><div><h3>Higher-derivative fields</h3><p>Constraint analysis and ultraviolet regularity obstructions.</p></div></article>
+<article class="math-family"><span>F03</span><div><h3>Spectral-phase geometry</h3><p>Weighted curvature identities and counterexamples.</p></div></article>
+<article class="math-family"><span>F04</span><div><h3>Finite-mode dynamics</h3><p>Limits of invariant finite Fourier subspaces under nonlinear evolution.</p></div></article>
+<article class="math-family"><span>F05</span><div><h3>Curvature energy</h3><p>Whole-space nonattainment for positive curvature energies.</p></div></article>
+<article class="math-family"><span>F06</span><div><h3>Dispersion</h3><p>Exact wavenumber minimization under declared parameter hypotheses.</p></div></article>
+<article class="math-family"><span>F07</span><div><h3>Phase locking</h3><p>Sharp weighted loop-energy minimization at fixed winding.</p></div></article>
+<article class="math-family"><span>F08</span><div><h3>Scalar-gradient geometry</h3><p>Rank and signature restrictions for a specified Gram tensor.</p></div></article>
+<article class="math-family"><span>F09</span><div><h3>Inverse problems</h3><p>Identifiability bounds for finite-parameter observation maps.</p></div></article>
+<article class="math-family"><span>F10</span><div><h3>Fourier localization</h3><p>Measure-zero Fourier-shell exclusion for nonzero L² fields.</p></div></article>
+<article class="math-family"><span>F11</span><div><h3>Fourier-band dynamics</h3><p>Semigroups, spectral selection and annular projections.</p></div></article>
+<article class="math-family"><span>F12</span><div><h3>Curvature multipliers</h3><p>Conditional inequalities, scoped estimates and counterexamples.</p></div></article></div>
+<div class="math-source-links"><a href="https://github.com/rickyjreyes/math/blob/main/CONTENTS.md" target="_blank" rel="noopener noreferrer">Complete manuscript catalogue ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/formalization.yaml" target="_blank" rel="noopener noreferrer">Formalization manifest ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/RESEARCH_DIRECTION.md" target="_blank" rel="noopener noreferrer">Research direction and scope policy ↗</a></div>
+</div></section>
+<section class="math-band"><div class="math-shell"><div class="math-bridge"><div><p class="math-eyebrow">Open mathematics, separate destination</p><h2>Reyes Problem Repository</h2><p>Browse 300 indexed research questions across twelve areas. Filter by subject or research stage, read original formal questions or provisional scope dossiers, and contribute proofs, counterexamples or prior-art corrections.</p></div><div><a class="math-btn primary" href="/reyes-problem-repository/">Browse all 300 questions</a><a class="math-btn" href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" style="margin-top:10px">Contribution guidelines ↗</a></div></div>
+<div class="math-source-links" aria-label="Related mathematical resources"><a href="/equations/">Equation Explorer</a><a href="/sympy/">SymPy Audit</a><a href="/lean/">WCT Lean Coverage</a><a href="/reproduce/">Reproducible release</a></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="section-shell footer-bottom"><span>Mathematics | Richard J. Reyes</span><a href="#top">Back to top ↑</a></div></footer>
+<script src="../site-nav.js?v=20261102-dedicated-math-pages" defer></script>
+</body></html>
