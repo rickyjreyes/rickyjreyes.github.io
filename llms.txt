@@ -20,6 +20,8 @@
 ## Preferred website navigation
 - Research home: https://rickyjreyes.github.io/
 - Publications: https://rickyjreyes.github.io/publications/
+- Mathematics and formal results: https://rickyjreyes.github.io/math/
+- Reyes Problem Repository (300 questions): https://rickyjreyes.github.io/reyes-problem-repository/
 - Claim-level priority registry: https://rickyjreyes.github.io/priority/
 - Current empirical evidence ledger: https://rickyjreyes.github.io/priority/#ledger
 - WCT Post-Date Overlap Ledger: https://rickyjreyes.github.io/overlap/
@@ -30,12 +32,8 @@
 - Research tools: https://rickyjreyes.github.io/tools/
 - Equations and verification map: https://rickyjreyes.github.io/research-corpus/
 
-## Mathematics
-- Math and mathematical research: https://rickyjreyes.github.io/math/
-- Reyes Problem Repository: https://rickyjreyes.github.io/reyes-problem-repository/
-- Reyes 300-question index: https://rickyjreyes.github.io/reyes-problem-repository/problem-index.json
-
 ## Machine-readable resources
+- Problem index (300 questions): https://rickyjreyes.github.io/reyes-problem-repository/problem-index.json
 - Cross-repository corpus: https://rickyjreyes.github.io/research-corpus.json
 - Effective compiled registry: https://rickyjreyes.github.io/compiled-registry.json
 - Registry validation report: https://rickyjreyes.github.io/registry-validation-report.json
