@@ -30,8 +30,8 @@
     { type: 'link', href: '/patents/', label: 'Patents' },
     {
       type: 'menu', label: 'Math', items: [
-        ['https://github.com/rickyjreyes/math/tree/main', 'Mathematics Repository', 'Research results, mathematical manuscripts, and proofs'],
-        ['https://github.com/rickyjreyes/math/tree/main/reyes-problem-repository', 'Reyes Problem Repository', '300 mathematical research questions and contribution paths'],
+        ['/math/', 'Mathematics', 'Mathematical manuscripts, results, and proof sources'],
+        ['/reyes-problem-repository/', 'Reyes Problem Repository', 'Browse and filter 300 research questions'],
         ['/equations/', 'Equation Explorer', 'Canonical equations, assumptions, and status'],
         ['/sympy/', 'SymPy', 'Executable symbolic derivations and checks'],
         ['/lean/', 'Lean 4', 'Machine-checked definitions and proof coverage']

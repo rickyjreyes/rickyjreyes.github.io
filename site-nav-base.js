@@ -467,7 +467,7 @@
   }
 
   const core = document.createElement('script');
-  core.src = '/site-nav-core.js?v=20261102-math-navigation';
+  core.src = '/site-nav-core.js?v=20261102-dedicated-math-pages';
   core.async = false;
   core.addEventListener('load', enhanceNavigation);
   document.head.appendChild(core);

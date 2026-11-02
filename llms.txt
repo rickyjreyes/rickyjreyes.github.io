@@ -30,6 +30,11 @@
 - Research tools: https://rickyjreyes.github.io/tools/
 - Equations and verification map: https://rickyjreyes.github.io/research-corpus/
 
+## Mathematics
+- Math and mathematical research: https://rickyjreyes.github.io/math/
+- Reyes Problem Repository: https://rickyjreyes.github.io/reyes-problem-repository/
+- Reyes 300-question index: https://rickyjreyes.github.io/reyes-problem-repository/problem-index.json
+
 ## Machine-readable resources
 - Cross-repository corpus: https://rickyjreyes.github.io/research-corpus.json
 - Effective compiled registry: https://rickyjreyes.github.io/compiled-registry.json

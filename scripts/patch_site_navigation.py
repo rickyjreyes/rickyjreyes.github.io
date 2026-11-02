@@ -19,7 +19,8 @@ NAV_HTML = (
     '<a href="/priority/">Priority</a>'
     '<a href="/overlap/">Overlap</a>'
     '<a href="/patents/">Patents</a>'
-    '<a href="/equations/">Equations</a>'
+    '<a href="/math/">Math</a>'
+    '<a href="/reyes-problem-repository/">Reyes Problems</a>'
     '<a href="/sympy/">SymPy</a>'
     '<a href="/lean/">Lean</a>'
     '<a href="/reproduce/">Reproduce</a>'
@@ -177,6 +178,9 @@ def patch_sitemap() -> None:
     today = date.today().isoformat()
     resources = [
         "research-corpus/",
+        "math/",
+        "reyes-problem-repository/",
+        "reyes-problem-repository/problem-index.json",
         "equations/",
         "sympy/",
         "lean/",
@@ -217,6 +221,8 @@ def patch_llms() -> None:
 ## Preferred website navigation
 - Research home: {SITE}
 - Publications: {SITE}publications/
+- Mathematics and formal results: {SITE}math/
+- Reyes Problem Repository (300 questions): {SITE}reyes-problem-repository/
 - Claim-level priority registry: {SITE}priority/
 - Current empirical evidence ledger: {SITE}priority/#ledger
 - WCT Post-Date Overlap Ledger: {SITE}overlap/
@@ -227,6 +233,7 @@ def patch_llms() -> None:
 - Equations and verification map: {SITE}research-corpus/
 
 ## Machine-readable resources
+- Problem index (300 questions): {SITE}reyes-problem-repository/problem-index.json
 - Cross-repository corpus: {SITE}research-corpus.json
 - Effective compiled registry: {SITE}compiled-registry.json
 - Registry validation report: {SITE}registry-validation-report.json
