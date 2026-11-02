@@ -86,7 +86,7 @@
     if (document.getElementById('wct-site-nav-base')) return;
     const script = document.createElement('script');
     script.id = 'wct-site-nav-base';
-    script.src = '/site-nav-base.js?v=20261102-math-navigation';
+    script.src = '/site-nav-base.js?v=20261102-dedicated-math-pages';
     script.async = false;
     document.head.appendChild(script);
   };
