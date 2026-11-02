@@ -86,7 +86,7 @@
     if (document.getElementById('wct-site-nav-base')) return;
     const script = document.createElement('script');
     script.id = 'wct-site-nav-base';
-    script.src = '/site-nav-base.js?v=20261013-mobile-chapters';
+    script.src = '/site-nav-base.js?v=20261102-math-navigation';
     script.async = false;
     document.head.appendChild(script);
   };

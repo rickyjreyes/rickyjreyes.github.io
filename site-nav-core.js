@@ -28,11 +28,13 @@
     { type: 'link', href: '/priority/', label: 'Priority' },
     { type: 'link', href: '/overlap/', label: 'WCT Adoption' },
     { type: 'link', href: '/patents/', label: 'Patents' },
-    { type: 'link', href: '/equations/', label: 'Equations' },
     {
-      type: 'menu', label: 'Verify', items: [
-        ['/sympy/', 'SymPy Audit', 'Executable symbolic checks'],
-        ['/lean/', 'Lean Coverage', 'Formal definitions and proof coverage']
+      type: 'menu', label: 'Math', items: [
+        ['https://github.com/rickyjreyes/math/tree/main', 'Mathematics Repository', 'Research results, mathematical manuscripts, and proofs'],
+        ['https://github.com/rickyjreyes/math/tree/main/reyes-problem-repository', 'Reyes Problem Repository', '300 mathematical research questions and contribution paths'],
+        ['/equations/', 'Equation Explorer', 'Canonical equations, assumptions, and status'],
+        ['/sympy/', 'SymPy', 'Executable symbolic derivations and checks'],
+        ['/lean/', 'Lean 4', 'Machine-checked definitions and proof coverage']
       ]
     },
     { type: 'link', href: '/reproduce/', label: 'Reproduce' },
@@ -55,12 +57,14 @@
   }
 
   const renderLink = (href, label, className = '', description = '') => {
-    const active = className === 'nav-dropdown-link' ? normalizePath(href) === currentPath : isActivePath(href);
+    const external = /^https?:\/\//i.test(href);
+    const active = !external && (className === 'nav-dropdown-link' ? normalizePath(href) === currentPath : isActivePath(href));
     const classes = [className, active ? 'is-active' : ''].filter(Boolean).join(' ');
     const body = description
       ? `<span class="nav-item-label">${label}</span><span class="nav-item-desc">${description}</span>`
       : label;
-    return `<a href="${href}"${classes ? ` class="${classes}"` : ''}${active ? ' aria-current="page"' : ''}>${body}</a>`;
+    const externalAttrs = external ? ' target="_blank" rel="noopener noreferrer"' : '';
+    return `<a href="${href}"${classes ? ` class="${classes}"` : ''}${active ? ' aria-current="page"' : ''}${externalAttrs}>${body}</a>`;
   };
 
   nav.id = 'site-nav';
@@ -179,7 +183,7 @@
         #site-nav .nav-group.open>.nav-trigger .nav-caret{transform:rotate(180deg);color:var(--accent,#67d4ff)}
         #site-nav .nav-dropdown-link{margin-left:8px;padding:9px 12px 9px 16px;border-radius:7px;white-space:normal}
         /* Full-width, vertically scrollable mobile navigation. The menu includes
-           Publications, Priority, Adoption, Patents, Equations, Verify,
+           Publications, Priority, Adoption, Patents, Math,
            Reproduce, Tools, Foundations and every submenu destination. */
         .site-header{overflow:visible!important}
         .site-header .nav-wrap{position:static!important}
