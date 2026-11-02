@@ -612,6 +612,12 @@ svg {
   color: var(--accent);
 }
 
+/* Keep multiple independently linked math resources grouped at the card footer. */
+.branch-card > a + a {
+  margin-top: 0;
+  padding-top: 12px;
+}
+
 .data-caveats {
   display: grid;
   grid-template-columns: 1fr 1fr;
