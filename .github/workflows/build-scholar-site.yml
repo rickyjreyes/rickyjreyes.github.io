@@ -21,6 +21,7 @@ on:
       - "scripts/enhance_verification_views.py"
       - "scripts/optimize_math_rendering.py"
       - "scripts/patch_site_navigation.py"
+      - "scripts/validate_math_pages.py"
       - "scripts/patch_machine_metadata.py"
       - "scripts/normalize_research_status.py"
       - "scripts/harden_publication_metadata.py"
@@ -57,6 +58,7 @@ on:
       - "scripts/build_external_convergence.py"
       - "scripts/validate_registry_sync.py"
       - "scripts/patch_site_navigation.py"
+      - "scripts/validate_math_pages.py"
       - "scripts/patch_machine_metadata.py"
       - "scripts/normalize_research_status.py"
       - "scripts/harden_publication_metadata.py"
@@ -150,6 +152,11 @@ jobs:
 
       - name: Apply shared navigation, traceability, and discovery patches
         run: python scripts/patch_site_navigation.py
+
+      - name: Validate Mathematics and Reyes Problem Repository pages
+        run: |
+          python scripts/validate_math_pages.py
+          node --check reyes-problem-repository/problem-browser.js
 
       - name: Generate full machine-readable overlap ledger
         run: python scripts/build_external_convergence.py
