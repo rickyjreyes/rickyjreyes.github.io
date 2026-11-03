@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 from collections import Counter
 from pathlib import Path
 
@@ -133,6 +134,40 @@ def verify() -> None:
             assert record["scoped_target"] and gc in record["scoped_target"]
     assert 'id="rpr-reviews-toggle"' in problems
     assert 'full-reader.css' in problems
+    # Validate inline MathJax setup as JavaScript, not just HTML substrings.
+    assert "inlineMath: [['
+    assert 'id="rpr-list"' in problems
+    assert 'full-' in script and 'source_statement' in script
+    assert 'full_review' not in script or 'formal_review' in script
+    print("Full GC reader validated: all 300 statements, 300 reviews, 235 scope dossiers, 12 subjects.")
+
+
+    print("Mathematics pages validated: 2 internal pages; 300 questions; 12 subjects.")
+
+
+if __name__ == "__main__":
+    verify()
+, '
+    assert 'id="rpr-list"' in problems
+    assert 'full-' in script and 'source_statement' in script
+    assert 'full_review' not in script or 'formal_review' in script
+    print("Full GC reader validated: all 300 statements, 300 reviews, 235 scope dossiers, 12 subjects.")
+
+
+    print("Mathematics pages validated: 2 internal pages; 300 questions; 12 subjects.")
+
+
+if __name__ == "__main__":
+    verify()
+]]" in problems
+    inline_scripts = re.findall(r"<script>([\\s\\S]*?)</script>", problems)
+    assert len(inline_scripts) == 1, "Expected a single inline MathJax configuration"
+    syntax = subprocess.run(
+        ["node", "--check", "-"],
+        input=inline_scripts[0], text=True, capture_output=True, check=False,
+    )
+    assert syntax.returncode == 0, f"Invalid inline MathJax script: {syntax.stderr}"
+
     assert 'id="rpr-list"' in problems
     assert 'full-' in script and 'source_statement' in script
     assert 'full_review' not in script or 'formal_review' in script
