@@ -8,7 +8,7 @@
   const countEl = document.getElementById("atlas-count");
   const repoGrid = document.getElementById("atlas-source-repos");
   const status = document.getElementById("atlas-data-status");
-  const state = { proofs: [], category: "", repo: "" };
+  const state = { proofs: [], category: "", repo: "", leanExpanded: false };
   const escapes = { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" };
   const esc = str => String(str == null ? "" : str).replace(/[&<>"']/g, c => escapes[c]);
   const short = (s, n=280) => String(s || "").length <= n ? String(s||"") : String(s).slice(0,n).trimEnd() + " …";
@@ -67,6 +67,7 @@
       && (!query || [p.title,p.summary,p.limit,p.theorem,p.path,p.repo,p.gc,p.guide.plain,p.guide.why,p.guide.conditions].some(x => String(x||"").toLocaleLowerCase().includes(query))));
     proofList.innerHTML = subset.length ? subset.map(card).join("") :
       '<p class="atlas-no-results">No proof highlights match those filters. Try another theorem name or repository.</p>';
+    proofList.querySelectorAll(".atlas-lean-disclosure").forEach(detail => { detail.open = state.leanExpanded; });
     countEl.textContent = "Showing " + subset.length + " of " + state.proofs.length + " curated proof highlights";
     renderFilters(categoryBox,"category",state.category,"Mathematical area");
     renderFilters(repoBox,"repo",state.repo,"Proof repository");
@@ -81,6 +82,14 @@
   search.addEventListener("input", render);
   document.getElementById("atlas-clear").addEventListener("click", () => {
     search.value = ""; state.category = ""; state.repo = ""; render(); search.focus();
+  });
+
+  const leanToggle = document.getElementById("atlas-lean-toggle");
+  if (leanToggle) leanToggle.addEventListener("click", () => {
+    state.leanExpanded = !state.leanExpanded;
+    leanToggle.setAttribute("aria-pressed", String(state.leanExpanded));
+    leanToggle.textContent = state.leanExpanded ? "Collapse all Lean statements" : "Show all Lean statements";
+    proofList.querySelectorAll(".atlas-lean-disclosure").forEach(detail => { detail.open = state.leanExpanded; });
   });
 
   const files = ["proofs-01.json","proofs-02.json","proofs-03.json","public-lean-repositories.json","proof-guide.json"];
