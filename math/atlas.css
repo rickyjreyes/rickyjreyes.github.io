@@ -97,3 +97,8 @@ body.lean-atlas,body.reyes-agenda{background:var(--atlas-dark);color:var(--atlas
 .atlas-file-item strong{font:700 .65rem ui-monospace,monospace;color:var(--atlas-accent);white-space:nowrap}
 .atlas-file-more-wrap{display:flex;justify-content:center;margin-top:23px}
 @media(max-width:800px){.atlas-file-head{align-items:start;flex-direction:column}.atlas-file-list{grid-template-columns:1fr}}
+
+.atlas-logic{border-top:1px solid var(--atlas-line);padding-top:16px;margin-top:22px}
+.atlas-logic .atlas-code-label{display:block;color:var(--atlas-accent);margin-bottom:8px}
+.atlas-feature-copy .atlas-logic p{font-size:.8rem;line-height:1.68}
+.atlas-logic pre{white-space:pre-wrap;overflow-wrap:anywhere;font:.69rem/1.62 ui-monospace,SFMono-Regular,Consolas,monospace;background:#06121e;border-left:2px solid #456f8b;padding:10px 12px;margin:12px 0 0;color:#d1e1ed}
