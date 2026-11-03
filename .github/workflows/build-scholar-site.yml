@@ -157,6 +157,7 @@ jobs:
         run: |
           python scripts/validate_math_pages.py
           node --check reyes-problem-repository/problem-browser.js
+          node --check math/atlas.js
 
       - name: Generate full machine-readable overlap ledger
         run: python scripts/build_external_convergence.py
