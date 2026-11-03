@@ -1,0 +1,44 @@
+{
+  "snapshot_date": "2026-11-02",
+  "audit": "Scanned all 30 public repositories owned by rickyjreyes at their default branches; counts are .lean files, including project entry points and lakefile.lean where present. Not theorem counts or proof completeness claims.",
+  "public_repositories_scanned": 30,
+  "repositories_with_lean": 5,
+  "total_lean_files": 278,
+  "repositories": [
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "lean_files": 182,
+      "focus": "Research mathematics, nonlinear PDEs, spectral analysis, variational methods",
+      "path": "lean/"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "lean_files": 49,
+      "focus": "WCT formal registry and exact-scope model lemmas",
+      "path": "WCTLean/"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "lean_files": 28,
+      "focus": "Geometric and physical-model scope, obstructions and release proofs",
+      "path": "lean/"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "lean_files": 14,
+      "focus": "Protocol, block-state and finite-algebra verification",
+      "path": "lean/"
+    },
+    {
+      "repo": "rickyjreyes/photodiode",
+      "branch": "main",
+      "lean_files": 5,
+      "focus": "Experimental statistical protocol and decision formalization",
+      "path": "formal/"
+    }
+  ]
+}
