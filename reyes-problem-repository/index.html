@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../math/atlas.css?v=20261102-proof-atlas">
 <link rel="stylesheet" href="./agenda.css?v=20261102-call-to-action">
+<link rel="stylesheet" href="./full-reader.css?v=20261102-full-question-details">
 </head>
 <body class="reyes-agenda">
 <a class="skip-link" href="#main">Skip to mathematical problems</a>
@@ -56,15 +57,16 @@
 <div class="agenda-challenge-links"><a href="#GC08">Find in catalogue</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/formal-reviews/GC08.md" target="_blank" rel="noopener noreferrer">Read research review ↗</a></div></article></div>
 </div></section>
 <section class="agenda-section" id="browse"><div class="atlas-shell">
-<div class="agenda-index-head"><span class="atlas-kicker">Source-backed catalogue</span><h2>Browse the 300-question roadmap.</h2><p>All 300 entries are searchable, grouped into twelve mathematical subjects. Choose a question to read its source statement, formal-review dossier, or scope-v1 benchmark. Status is tracked separately from theorem evidence.</p></div>
+<div class="agenda-index-head"><span class="atlas-kicker">Complete mathematical question texts</span><h2>300 questions. Twelve mathematical subjects.</h2><p>Read the <strong>complete original question</strong>, its resolution standard and its detailed mathematical scope directly on this page. Each subject contains 25 full-width entries, with complete research reviews, model definitions, prior art and outstanding proof obligations available inline. The original 65 statements are reproduced without rewriting their quantifiers.</p></div>
 <div id="rpr-area-list" class="rpr-areas" aria-label="Filter by research area"><p class="rpr-muted">Loading all twelve mathematical subjects…</p></div>
 <div class="rpr-toolbar" aria-label="Find a mathematical question">
 <div class="rpr-control"><label for="rpr-search">Search ID, mathematical question or target</label><input id="rpr-search" type="search" placeholder="GC36, knotted waves, finite-wavenumber…" autocomplete="off"></div>
 <div class="rpr-control"><label for="rpr-area">Research field</label><select id="rpr-area"><option value="">All twelve fields</option></select></div>
 <div class="rpr-control"><label for="rpr-stage">Research stage</label><select id="rpr-stage"><option value="">All questions</option><option value="formal">Original formal statements (65)</option><option value="scoped">Provisional scoped dossiers (235)</option><option value="partial">Partially resolved GC</option></select></div>
 <button class="rpr-button" type="button" id="rpr-reset">Clear filters</button></div>
-<div class="rpr-browser-head"><span id="rpr-results" role="status" aria-live="polite">Loading the 300-question catalogue…</span><span id="rpr-snapshot">Public source registry</span></div>
-<div id="rpr-list" class="rpr-list" aria-label="Individual mathematical research questions"></div>
+<div class="rpr-browser-head"><span id="rpr-results" role="status" aria-live="polite">Loading the 300-question catalogue…</span><span id="rpr-snapshot">Public mathematical source documents</span></div>
+<div class="rpr-reading-actions"><p>Full original question texts are visible by default. Each detailed research review can be opened below its question.</p><button id="rpr-reviews-toggle" class="rpr-button" type="button">Expand all detailed reviews</button></div>
+<div id="rpr-list" class="rpr-list rpr-full-width-reader" aria-label="Complete mathematical research questions grouped by subject"></div>
 <div class="rpr-more-wrap"><button class="rpr-button" type="button" id="rpr-more" hidden>Show more questions</button></div>
 <noscript><p class="rpr-muted">The interactive browser requires JavaScript. <a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/ROADMAP_300.md">Read the complete 300-question roadmap on GitHub.</a></p></noscript>
 <div class="agenda-extra-links">
@@ -100,7 +102,15 @@
 <div class="atlas-shell agenda-final"><div><p class="atlas-kicker">Open mathematics · attributed contributions</p><h2>Choose a question. Move it forward.</h2><p>A useful contribution can prove a result, disprove an assertion, identify an existing theorem or formulate a better problem. The mathematical value lies in the precision of the result.</p></div><a class="agenda-action primary" href="#browse">Find your question</a></div>
 </main>
 <footer class="site-footer"><div class="section-shell footer-bottom"><span>Reyes Problem Repository · Open Mathematical Research</span><a href="#top">Back to top ↑</a></div></footer>
-<script src="./problem-browser.js?v=20261102-call-to-action" defer></script>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','pre','code']},
+  startup: {typeset: false}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="./problem-browser.js?v=20261102-full-question-details" defer></script>
 <script src="../site-nav.js?v=20261102-dedicated-math-pages" defer></script>
 <script src="../site-nav.js" defer></script>
 </body></html>

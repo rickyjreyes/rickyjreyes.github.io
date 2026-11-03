@@ -1,0 +1,51 @@
+/* Full-width, subject-organized reading edition of the 300 GC questions. */
+.reyes-agenda #browse .atlas-shell{width:calc(100% - clamp(32px,5vw,104px));max-width:none}
+.reyes-agenda .rpr-full-width-reader{display:block;max-width:none;width:100%;min-width:0}
+.reyes-agenda .rpr-areas{grid-template-columns:repeat(4,minmax(0,1fr))}
+.reyes-agenda .rpr-area{min-width:0}
+.reyes-agenda .rpr-area span{overflow-wrap:anywhere}
+.reyes-agenda .rpr-reading-actions{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;border-top:1px solid var(--line);padding:19px 0 22px}
+.reyes-agenda .rpr-reading-actions p{max-width:760px;margin:0;color:var(--muted);font-size:.86rem;line-height:1.6}
+.reyes-agenda .rpr-subject-group{min-width:0;width:100%;margin:0 0 38px}
+.reyes-agenda .rpr-subject-head{display:flex;align-items:end;justify-content:space-between;gap:30px;padding:27px 0 26px;border-top:2px solid var(--a);margin-bottom:14px}
+.reyes-agenda .rpr-subject-head h3{font:500 clamp(2rem,3.5vw,3.7rem)/1.15 Georgia,serif;letter-spacing:-.035em;margin:9px 0 0}
+.reyes-agenda .rpr-subject-head>span{font:.78rem ui-monospace,monospace;color:#90acbd;white-space:nowrap}
+.reyes-agenda .rpr-question{background:#0b1b29;border:1px solid var(--line);border-radius:5px;width:100%;min-width:0;margin:0 0 16px;padding:clamp(23px,2.9vw,43px);scroll-margin-top:110px}
+.reyes-agenda .rpr-question:hover{border-color:#466176}
+.reyes-agenda .rpr-question-meta{display:flex;gap:10px 22px;align-items:center;flex-wrap:wrap;font:.74rem ui-monospace,Consolas,monospace;color:#98b0bf;margin-bottom:18px}
+.reyes-agenda .rpr-question-meta .rpr-id{font-size:.88rem;letter-spacing:.04em;font-weight:800;color:var(--a)}
+.reyes-agenda .rpr-question h3{font:500 clamp(1.65rem,2.6vw,2.7rem)/1.18 Georgia,"Times New Roman",serif;letter-spacing:-.02em;margin:0 0 26px;max-width:1120px}
+.reyes-agenda .rpr-column-label{font:.72rem ui-monospace,Consolas,monospace!important;text-transform:uppercase;letter-spacing:.075em;color:var(--a)!important;margin:0 0 15px!important;font-weight:760}
+.reyes-agenda .rpr-primary-text{padding:0 0 24px}
+.reyes-agenda .rpr-rich-text{max-width:1190px;font:400 clamp(.9rem,1.04vw,1.05rem)/1.9 system-ui,sans-serif;color:#d4e0e9;overflow-wrap:anywhere}
+.reyes-agenda .rpr-rich-text p{font:inherit;line-height:1.9;color:#d2dfe8;margin:0 0 17px}
+.reyes-agenda .rpr-rich-text strong{font-weight:700;color:#edf5fa}
+.reyes-agenda .rpr-rich-text h4{font:600 1.25rem/1.4 Georgia,serif;color:#eff5fa;margin:27px 0 13px}
+.reyes-agenda .rpr-rich-text h5{font:600 1.06rem/1.4 Georgia,serif;color:#d6e6f3;margin:22px 0 10px}
+.reyes-agenda .rpr-rich-text h6{font:600 .9rem/1.4 system-ui,sans-serif;color:#d6e6f3;margin:15px 0 9px}
+.reyes-agenda .rpr-rich-text ul{padding-left:1.6rem;margin:14px 0 23px}
+.reyes-agenda .rpr-rich-text li{padding-left:4px;margin:5px 0;line-height:1.85}
+.reyes-agenda .rpr-rich-text blockquote{margin:18px 0;padding:7px 22px;border-left:3px solid #50758e;color:#bfd3e0;background:#11283a}
+.reyes-agenda .rpr-rich-text a,.reyes-agenda .rpr-question-links a{color:var(--a);text-decoration:underline;text-underline-offset:3px}
+.reyes-agenda .rpr-rich-text a:hover,.reyes-agenda .rpr-question-links a:hover{color:#afdff6}
+.reyes-agenda .rpr-rich-text hr{height:1px;background:var(--line);border:0;margin:25px 0}
+.reyes-agenda .rpr-rich-text code{background:#172d3d;padding:2px 5px;border-radius:3px;font:.82em ui-monospace,Consolas,monospace}
+.reyes-agenda .rpr-source-code{padding:17px 20px;background:#071522;border-left:2px solid #527a90;white-space:pre-wrap;overflow-wrap:anywhere;margin:15px 0 25px}
+.reyes-agenda .rpr-source-code code{font:.83rem/1.7 ui-monospace,Consolas,monospace;background:none;padding:0}
+.reyes-agenda .rpr-math-block{padding:12px 6px;max-width:100%;overflow-x:auto;text-align:left}
+.reyes-agenda .rpr-scope-section{background:#0e2636;padding:22px clamp(17px,2.2vw,33px);border-left:3px solid #477c98;margin:5px 0 28px}
+.reyes-agenda .rpr-scope-section .rpr-rich-text{font-size:.96rem}
+.reyes-agenda .rpr-full-review{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 0;margin:8px 0 22px}
+.reyes-agenda .rpr-full-review summary{cursor:pointer;color:var(--a);font-size:.9rem;font-weight:730;line-height:1.6;list-style-position:inside}
+.reyes-agenda .rpr-full-review[open] summary{margin-bottom:23px}
+.reyes-agenda .rpr-full-review .rpr-rich-text{padding:12px 21px 3px;border-left:1px solid #3b6079}
+.reyes-agenda .rpr-question-links{display:flex;flex-wrap:wrap;gap:11px 25px;padding-top:4px}
+.reyes-agenda .rpr-question-links a{font-size:.8rem;font-weight:740}
+.reyes-agenda .rpr-load-status,.reyes-agenda .rpr-load-warning,.reyes-agenda .rpr-empty{padding:32px 20px;border:1px solid var(--line);color:var(--muted);font-size:.92rem;line-height:1.7}
+.reyes-agenda .rpr-browser-head{margin-top:26px}
+.reyes-agenda .rpr-toolbar{grid-template-columns:minmax(240px,1.7fr) minmax(190px,1.25fr) minmax(160px,.8fr) auto}
+.reyes-agenda .rpr-more-wrap{margin-top:32px}
+.reyes-agenda .rpr-more-wrap button{min-width:220px}
+@media(max-width:1200px){.reyes-agenda .rpr-areas{grid-template-columns:repeat(3,minmax(0,1fr))}.reyes-agenda .rpr-toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:780px){.reyes-agenda .rpr-areas{grid-template-columns:repeat(2,minmax(0,1fr))}.reyes-agenda .rpr-subject-head{display:block}.reyes-agenda .rpr-subject-head>span{display:block;margin-top:12px}.reyes-agenda #browse .atlas-shell{width:calc(100% - 32px)}}
+@media(max-width:560px){.reyes-agenda .rpr-areas,.reyes-agenda .rpr-toolbar{grid-template-columns:1fr}.reyes-agenda .rpr-question{padding:21px 17px}.reyes-agenda .rpr-full-review .rpr-rich-text{padding-left:12px}.reyes-agenda .rpr-question h3{font-size:1.75rem}.reyes-agenda .rpr-reading-actions button{width:100%}}

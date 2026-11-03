@@ -22,6 +22,10 @@ on:
       - "scripts/optimize_math_rendering.py"
       - "scripts/patch_site_navigation.py"
       - "scripts/validate_math_pages.py"
+      - "scripts/build_full_problem_details.py"
+      - "reyes-problem-repository/problem-browser.js"
+      - "reyes-problem-repository/full-reader.css"
+      - "reyes-problem-repository/index.html"
       - "scripts/patch_machine_metadata.py"
       - "scripts/normalize_research_status.py"
       - "scripts/harden_publication_metadata.py"
@@ -59,6 +63,10 @@ on:
       - "scripts/validate_registry_sync.py"
       - "scripts/patch_site_navigation.py"
       - "scripts/validate_math_pages.py"
+      - "scripts/build_full_problem_details.py"
+      - "reyes-problem-repository/problem-browser.js"
+      - "reyes-problem-repository/full-reader.css"
+      - "reyes-problem-repository/index.html"
       - "scripts/patch_machine_metadata.py"
       - "scripts/normalize_research_status.py"
       - "scripts/harden_publication_metadata.py"
@@ -152,6 +160,9 @@ jobs:
 
       - name: Apply shared navigation, traceability, and discovery patches
         run: python scripts/patch_site_navigation.py
+
+      - name: Build full 300-question research dossiers from math source
+        run: python scripts/build_full_problem_details.py
 
       - name: Validate Mathematics and Reyes Problem Repository pages
         run: |
