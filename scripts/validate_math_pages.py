@@ -56,7 +56,7 @@ def verify() -> None:
     assert all(re.fullmatch(r"problems/[a-z0-9-]+/GC\d{2,3}\.md",
                             entry["file_path"]) for entry in entries)
     assert 'fetch("./problem-index.json"' in script
-    assert 'stageOf(problem)' in script
+    assert 'const stageName = item =>' in script
 
     # Cross-repository public Lean proof atlas: source presence and proper distinctions.
     fragments = [
