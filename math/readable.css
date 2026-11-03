@@ -59,3 +59,12 @@
 .atlas-text-button:focus-visible,.atlas-feature-lean summary:focus-visible,.atlas-lean-disclosure summary:focus-visible{outline:2px solid var(--atlas-accent);outline-offset:4px;border-radius:3px}
 @media(max-width:890px){.atlas-feature-narrative{grid-template-columns:1fr}.atlas-feature-narrative>div+div{padding-left:0;border-left:0;border-top:1px solid var(--atlas-line);padding-top:17px}.atlas-reading-guide{grid-template-columns:1fr}.atlas-reading-notes{grid-template-columns:1fr}.atlas-reading-notes>div+div{padding-left:0;border-left:0;border-top:1px solid var(--atlas-line);padding-top:16px}}
 @media(max-width:630px){.atlas-proof-sequence .atlas-sequence-arrow{display:none}.atlas-proof-sequence a{width:calc(50% - 6px);justify-content:center}.atlas-feature-math{padding:16px 12px;font-size:.95rem}.atlas-math-statement{padding:13px 10px;font-size:.93rem}.atlas-feature-key{padding:17px}.atlas-feature-lean pre,.atlas-lean-disclosure pre{padding:12px}}
+
+.atlas-glossary{border:1px solid var(--atlas-line);background:#0d2333;border-radius:5px;margin:0 0 35px;padding:0 20px}
+.atlas-glossary>summary{padding:19px 0;color:var(--atlas-accent);font-size:.84rem;font-weight:740;cursor:pointer;list-style-position:inside}
+.atlas-glossary[open]>summary{border-bottom:1px solid var(--atlas-line)}
+.atlas-glossary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;padding:22px 0}
+.atlas-glossary-grid strong{display:block;font-size:.82rem;line-height:1.4;color:#e6f0f7}
+.atlas-glossary-grid p{font-size:.78rem;color:var(--atlas-muted);line-height:1.67;margin:7px 0 0}
+@media(max-width:800px){.atlas-glossary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){.atlas-glossary-grid{grid-template-columns:1fr}}
