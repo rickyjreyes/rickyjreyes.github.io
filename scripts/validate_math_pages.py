@@ -103,6 +103,42 @@ def verify() -> None:
     assert 'id="rpr-area-list"' in problems
     print("Lean atlas validated: 27 sourced excerpts; 278 public files in 5 repositories.")
 
+    # Every GC question must have canonical text, individual source and its
+    # full research-review dossier. Later drafts must also retain scoped v1.
+    details = [
+        json.loads((ROOT / "reyes-problem-repository" / f"full-{index:02d}.json")
+                   .read_text(encoding="utf-8"))
+        for index in range(1, 13)
+    ]
+    manifest = payload["research_areas"]
+    assert all(part["count"] == len(part["entries"]) == 25
+               and part["research_area"] == manifest[i]["name"]
+               for i, part in enumerate(details))
+    references = {part["source_commit"] for part in details}
+    assert len(references) == 1 and len(next(iter(references))) == 40
+    complete = {entry["id"]: entry for part in details for entry in part["entries"]}
+    assert len(complete) == 300
+    for entry in entries:
+        gc = entry["id"]
+        record = complete[gc]
+        assert gc in record["source_statement"]
+        assert gc in record["individual_record"]
+        assert gc in record["formal_review"]
+        assert "Resolution criterion" in record["formal_review"]
+        assert record["source_paths"]["individual_record"] == entry["file_path"]
+        if entry["source_class"] == "original_formal_statement":
+            assert record["source_statement"].startswith(f"### {gc}:")
+            assert record["scoped_target"] is None
+        else:
+            assert record["scoped_target"] and gc in record["scoped_target"]
+    assert 'id="rpr-reviews-toggle"' in problems
+    assert 'full-reader.css' in problems
+    assert 'id="rpr-list"' in problems
+    assert 'full-' in script and 'source_statement' in script
+    assert 'full_review' not in script or 'formal_review' in script
+    print("Full GC reader validated: all 300 statements, 300 reviews, 235 scope dossiers, 12 subjects.")
+
+
     print("Mathematics pages validated: 2 internal pages; 300 questions; 12 subjects.")
 
 
