@@ -1,5 +1,5 @@
 {
-  "source": "27 public Lean source highlights: 17 from the published 20-module selected index, 7 supplemental modules, and 3 wct-lean formal support modules",
+  "source": "27 public Lean source highlights: 17 from the public portion of the selected 20-module index, 7 supplemental mathematics modules, and 3 wct-lean formal support modules",
   "snapshotted": "2026-11-02",
   "entries": [
     {
@@ -179,7 +179,7 @@
       "statement": "theorem squeezeRound_not_injective :\n    ∃ C C' : Fin 256 → CCField, C ≠ C' ∧ squeezeRound C = squeezeRound C' :=",
       "excerpt_truncated": false,
       "source_blob_sha": "801ce5288f5b9d9d845c3b356dc2a1cc5c5710eb",
-      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/main/lean/WaveLockProofs/MultiBlock.lean#L133",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/MultiBlock.lean#L133",
       "repo_url": "https://github.com/rickyjreyes/Wavelock"
     }
   ]
