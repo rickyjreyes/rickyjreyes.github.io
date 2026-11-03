@@ -67,6 +67,7 @@
       + '<h3>' + title + '</h3><p class="rpr-area-text">' + escape(problem.research_area) + '</p>'
       + summary + '<div class="rpr-problem-links">'
       + '<a href="' + encodedSource(problem.file_path) + '" target="_blank" rel="noopener noreferrer">Read question ↗</a>'
+      + '<a href="' + base + 'formal-reviews/' + escape(problem.id) + '.md" target="_blank" rel="noopener noreferrer">Research review ↗</a>'
       + dossier + discussion + '</div></article>';
   }
 
