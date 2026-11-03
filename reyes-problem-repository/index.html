@@ -1,138 +1,105 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#07111f">
-<meta name="description" content="Browse the Reyes Problem Repository: 300 mathematical research questions across twelve subjects, with search, scoped dossiers, Lean results, and an open invitation for proofs or counterexamples.">
+<meta name="theme-color" content="#081421">
+<meta name="description" content="300 mathematical research questions across 12 subjects. Read the precise problems, inspect formal review dossiers, and contribute rigorous proofs, counterexamples or corrections.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://rickyjreyes.github.io/reyes-problem-repository/">
-<title>Reyes Problem Repository | 300 Mathematical Research Questions</title>
+<meta property="og:title" content="Reyes Problem Repository | 300 Mathematical Questions">
+<meta property="og:description" content="An open research invitation: choose a question, freeze the mathematics, and contribute a proof, counterexample or critical review.">
+<title>Reyes Problem Repository | An Open Mathematical Research Invitation</title>
 <link rel="stylesheet" href="../styles.css">
-<style>
-.rpr-page{--rpr-line:rgba(155,190,215,.18);color:var(--text,#eaf1f8)}
-.rpr-shell{max-width:1210px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
-.rpr-hero{padding-top:clamp(92px,13vw,156px);padding-bottom:58px}
-.rpr-crumb{font-size:.79rem;color:var(--muted-2,#89a2b8);margin-bottom:34px}
-.rpr-crumb a{color:inherit}
-.rpr-crumb span{margin:0 8px}
-.rpr-eyebrow,.rpr-kicker{color:var(--accent,#67d4ff);font-size:.69rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-.rpr-hero h1{max-width:1050px;margin:15px 0 22px;font:500 clamp(2.95rem,7vw,6rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
-.rpr-hero h1 em{font-style:normal;color:var(--accent,#67d4ff)}
-.rpr-lede{max-width:830px;color:var(--muted,#b0c3d5);font-size:clamp(1.01rem,1.5vw,1.2rem);line-height:1.77}
-.rpr-actions{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0}
-.rpr-button{display:inline-flex;justify-content:center;align-items:center;min-height:44px;border:1px solid var(--rpr-line);background:rgba(255,255,255,.03);color:var(--text,#eaf1f8);padding:11px 17px;border-radius:8px;text-decoration:none;font-size:.83rem;font-weight:750;cursor:pointer}
-.rpr-button.primary{background:var(--accent,#67d4ff);color:#07111f;border-color:transparent}
-.rpr-button:hover{border-color:var(--accent,#67d4ff)}
-.rpr-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px}
-.rpr-metric{padding:22px;border-top:1px solid var(--rpr-line);background:rgba(255,255,255,.012)}
-.rpr-metric strong{display:block;font:500 2.2rem Georgia,serif}
-.rpr-metric span{display:block;margin-top:7px;font-size:.76rem;color:var(--muted,#b0c3d5);line-height:1.5}
-.rpr-note{max-width:1080px;margin-top:25px;padding:17px 19px;border-left:2px solid var(--accent,#67d4ff);background:rgba(103,212,255,.045);color:var(--muted,#b0c3d5);font-size:.84rem;line-height:1.7}
-.rpr-note strong{color:var(--text,#eaf1f8)}
-.rpr-section{padding:68px 0;border-top:1px solid var(--rpr-line)}
-.rpr-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;margin-bottom:25px}
-.rpr-heading h2{font:500 clamp(1.9rem,3.9vw,3.3rem)/1.15 Georgia,serif;letter-spacing:-.03em;margin:8px 0 0}
-.rpr-heading>p{max-width:440px;margin:0;color:var(--muted,#b0c3d5);font-size:.83rem;line-height:1.7}
-.rpr-examples{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.rpr-example{display:flex;flex-direction:column;min-height:180px;border:1px solid var(--rpr-line);border-radius:9px;padding:21px;background:rgba(255,255,255,.015);text-decoration:none;color:inherit}
-.rpr-example:hover,.rpr-area:hover{border-color:var(--accent,#67d4ff);background:rgba(103,212,255,.045)}
-.rpr-example span{font:800 .77rem ui-monospace,monospace;color:var(--accent,#67d4ff)}
-.rpr-example h3{font:500 1.17rem/1.3 Georgia,serif;margin:18px 0}
-.rpr-example small{margin-top:auto;color:var(--muted-2,#89a2b8);font-size:.72rem}
-.rpr-areas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.rpr-area{display:flex;align-items:center;text-align:left;gap:16px;min-height:78px;width:100%;padding:17px 18px;border:1px solid var(--rpr-line);border-radius:9px;background:rgba(255,255,255,.015);color:var(--text,#eaf1f8);cursor:pointer}
-.rpr-area strong{font:800 .75rem ui-monospace,monospace;color:var(--accent,#67d4ff)}
-.rpr-area span{font-size:.85rem;font-weight:650;line-height:1.45}
-.rpr-area small{margin-left:auto;white-space:nowrap;color:var(--muted-2,#89a2b8)}
-.rpr-area[aria-pressed=true]{border-color:var(--accent,#67d4ff);background:rgba(103,212,255,.075)}
-.rpr-toolbar{display:grid;grid-template-columns:minmax(220px,1.5fr) minmax(170px,1fr) minmax(145px,.7fr) auto;gap:12px;align-items:end;margin:24px 0}
-.rpr-control{display:flex;flex-direction:column;gap:8px}
-.rpr-control label{color:var(--muted,#b0c3d5);font-weight:700;font-size:.77rem}
-.rpr-control input,.rpr-control select{width:100%;min-height:45px;border:1px solid var(--rpr-line);border-radius:8px;padding:10px 12px;background:#0b1b2c;color:var(--text,#eaf1f8);font:inherit;font-size:.83rem}
-.rpr-control input:focus,.rpr-control select:focus{outline:2px solid var(--accent,#67d4ff);outline-offset:2px}
-.rpr-browser-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0 20px;color:var(--muted,#b0c3d5);font-size:.8rem}
-.rpr-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-.rpr-problem{padding:21px 23px;border:1px solid var(--rpr-line);border-radius:10px;background:rgba(9,21,35,.65);scroll-margin-top:95px}
-.rpr-problem-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.rpr-id{font:800 .77rem ui-monospace,monospace;color:var(--accent,#67d4ff)}
-.rpr-stage{font-size:.69rem;color:var(--muted-2,#89a2b8);line-height:1.45}
-.rpr-problem h3{font:500 1.25rem/1.33 Georgia,serif;margin:13px 0 9px}
-.rpr-problem p{font-size:.81rem;color:var(--muted,#b0c3d5);line-height:1.65;margin:0 0 13px}
-.rpr-problem .rpr-area-text{font-size:.73rem;color:var(--muted-2,#89a2b8)}
-.rpr-problem-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px}
-.rpr-problem-links a{color:var(--accent,#67d4ff);font-size:.78rem;font-weight:700}
-.rpr-more-wrap{text-align:center;margin-top:24px}
-.rpr-muted{color:var(--muted,#b0c3d5);font-size:.81rem;line-height:1.65}
-.rpr-links{display:flex;flex-wrap:wrap;gap:13px 22px}
-.rpr-links a{font-size:.85rem;color:var(--accent,#67d4ff)}
-.rpr-contribute{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,.65fr);gap:30px;align-items:center;padding:30px;border:1px solid rgba(103,212,255,.3);border-radius:12px;background:rgba(103,212,255,.04)}
-.rpr-contribute h2{font:500 clamp(1.8rem,3.5vw,3rem)/1.18 Georgia,serif;margin:10px 0}
-.rpr-contribute p{max-width:800px;color:var(--muted,#b0c3d5);font-size:.86rem;line-height:1.7}
-.rpr-contribute .rpr-button{width:100%}
-[hidden]{display:none!important}
-@media(max-width:1020px){.rpr-examples{grid-template-columns:repeat(3,minmax(0,1fr))}.rpr-areas{grid-template-columns:repeat(2,minmax(0,1fr))}.rpr-toolbar{grid-template-columns:1fr 1fr}.rpr-toolbar>.rpr-button{min-width:150px}}
-@media(max-width:700px){.rpr-hero{padding-bottom:36px}.rpr-section{padding:47px 0}.rpr-heading{display:block}.rpr-heading>p{margin-top:15px}.rpr-metrics,.rpr-list,.rpr-areas,.rpr-toolbar,.rpr-contribute{grid-template-columns:1fr}.rpr-examples{grid-template-columns:repeat(2,minmax(0,1fr))}.rpr-example{min-height:150px}.rpr-hero h1{font-size:clamp(2.65rem,10vw,4rem)}.rpr-metric{padding:14px}.rpr-contribute{padding:23px}}
-</style>
+<link rel="stylesheet" href="../math/atlas.css?v=20261102-proof-atlas">
+<link rel="stylesheet" href="./agenda.css?v=20261102-call-to-action">
 </head>
-<body class="rpr-page">
-<a class="skip-link" href="#main">Skip to problem repository</a>
-<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/publications/">Publications</a><a href="/priority/">Priority</a><a href="/overlap/">Overlap</a><a href="/patents/">Patents</a><a href="/math/">Math</a><a href="/reyes-problem-repository/">Reyes Problems</a><a href="/sympy/">SymPy</a><a href="/lean/">Lean</a><a href="/reproduce/">Reproduce</a><a href="/tools/">Tools</a></nav></div></header>
+<body class="reyes-agenda">
+<a class="skip-link" href="#main">Skip to mathematical problems</a>
+<header class="site-header" id="top"><div class="nav-wrap"><a class="wordmark" href="/#top"><span class="mark" aria-hidden="true">R</span><span>Richard J. Reyes</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/math/">Math</a><a href="/reyes-problem-repository/" aria-current="page">Reyes Problems</a></nav></div></header>
 <main id="main">
-<section class="rpr-hero rpr-shell">
-<p class="rpr-crumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/math/">Mathematics</a><span aria-hidden="true">/</span>Reyes Problem Repository</p>
-<p class="rpr-eyebrow">Open mathematical research agenda</p>
-<h1>Reyes Problem <em>Repository.</em></h1>
-<p class="rpr-lede">Three hundred research questions about waves, confinement, geometry, topology, variational analysis and computation. Browse the catalogue by subject, inspect precisely scoped results, and submit a proof, counterexample or mathematical correction.</p>
-<div class="rpr-actions">
-<a class="rpr-button primary" href="#browse">Browse all 300 questions</a>
-<a class="rpr-button" href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">How to contribute ↗</a>
-<a class="rpr-button" href="/math/">Mathematical results</a>
+<section class="agenda-hero"><div class="atlas-shell">
+<nav class="atlas-crumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/math/">Mathematics</a><span>/</span>Reyes Problem Repository</nav>
+<div class="agenda-hero-inner"><div>
+<p class="atlas-kicker">An open mathematical research invitation</p>
+<h1>300 questions. <em>Proofs welcome.</em></h1>
+<p class="agenda-lead">Can nonlinear waves confine themselves, form stable topological states, or select their own wavelength? The Reyes Problem Repository organizes 300 research candidates across 12 mathematical fields and invites independent proofs, counterexamples, literature corrections and formal verification.</p>
+<div class="agenda-actions"><a class="agenda-action primary" href="#browse">Find a research problem</a><a class="agenda-action" href="https://github.com/rickyjreyes/math/issues/new?template=grand_challenge.yml" target="_blank" rel="noopener noreferrer">Submit a mathematical contribution ↗</a><a class="agenda-action" href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Read submission criteria ↗</a></div>
 </div>
-<div class="rpr-metrics" aria-label="Problem repository overview">
-<div class="rpr-metric"><strong>300</strong><span>Research candidates with permanent GC identifiers</span></div>
-<div class="rpr-metric"><strong>12</strong><span>Research subjects, 25 questions per subject</span></div>
-<div class="rpr-metric"><strong>65</strong><span>Preserved formal statements, GC01–GC65</span></div>
-<div class="rpr-metric"><strong>235</strong><span>Provisional scoped dossiers, GC66–GC300</span></div>
+<aside class="agenda-manifesto"><span class="atlas-kicker">Invitation to mathematicians</span><p class="agenda-quote">A counterexample is progress. A missing hypothesis is progress. A rigorous theorem is progress.</p><p>The objective is to discover what the mathematics actually permits, not to protect a preferred conclusion.</p></aside></div>
+<div class="agenda-metrics" aria-label="Research roadmap overview">
+<div><strong>300</strong><span>Individually identified research questions, GC01–GC300</span></div>
+<div><strong>12</strong><span>Subjects, with 25 questions per field</span></div>
+<div><strong>65</strong><span>Preserved formal mathematical questions</span></div>
+<div><strong>235</strong><span>Provisional scope-v1 benchmark dossiers</span></div>
 </div>
-<div class="rpr-note"><strong>Research status matters.</strong> The 300 entries are research candidates, not 300 independently verified novel unsolved problems. A completed Lean theorem may settle a restricted subproblem without resolving the full GC question. Provisional scope-v1 dossiers require further model and prior-literature review.</div>
-</section>
-<section class="rpr-section"><div class="rpr-shell">
-<div class="rpr-heading"><div><p class="rpr-eyebrow">Where to begin</p><h2>Five questions to explore.</h2></div><p>Examples of established partial progress, sharp mathematical challenges and proposals that still need a frozen model.</p></div>
-<div class="rpr-examples">
-<a class="rpr-example" href="#GC01"><span>GC01</span><h3>Universal orbital stability</h3><small>Stability beyond minimizing sets</small></a>
-<a class="rpr-example" href="#GC06"><span>GC06</span><h3>Self-confinement criteria</h3><small>Exact attainment regimes</small></a>
-<a class="rpr-example" href="#GC11"><span>GC11</span><h3>Nonlinear wavelength selection</h3><small>Selection in nonlinear dynamics</small></a>
-<a class="rpr-example" href="#GC36"><span>GC36</span><h3>Stable knotted waves</h3><small>Construction or obstruction</small></a>
-<a class="rpr-example" href="#GC43"><span>GC43</span><h3>Wave-cell universality</h3><small>Simulation power and overhead</small></a>
+<div class="agenda-stage-note"><strong>Read the scope before claiming a solution.</strong> This is a mathematical research agenda, not a list of 300 independently established novel open problems. The November 2 source snapshot records one partially resolved GC question and no fully accepted GC resolutions. Exact Lean theorems remain valuable even when their related broader GC question is not settled.</div>
+</div></section>
+<section class="agenda-section" id="participate"><div class="atlas-shell">
+<div class="agenda-head"><div><p class="atlas-kicker">How to contribute</p><h2>Three ways into the mathematics.</h2></div><p>You do not need to accept Wave Confinement Theory to contribute. Questions are evaluated by mathematics, assumptions, and established literature.</p></div>
+<div class="agenda-steps">
+<article class="agenda-step"><span class="step-number">01 / CHOOSE</span><h3>Choose a GC question.</h3><p>Browse by subject or search an identifier. Read the original formal statement, provisional scope dossier and individual research review. Identify what is already known.</p><a href="#browse">Explore the 300-question index ↗</a></article>
+<article class="agenda-step"><span class="step-number">02 / TEST</span><h3>Prove, refute or correct.</h3><p>Freeze the equation, domain, function space, parameter ranges and quantifiers. Compare prior work, prove an exact assertion, construct a counterexample or expose a missing hypothesis.</p><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/formal-reviews/README.md" target="_blank" rel="noopener noreferrer">Read research review dossiers ↗</a></article>
+<article class="agenda-step"><span class="step-number">03 / DOCUMENT</span><h3>Submit a checkable result.</h3><p>State the theorem and its exact scope. Include a conventional proof, Lean declaration or reproducible counterexample, cite closest literature, and explain what remains unresolved.</p><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contribution policy ↗</a></article>
 </div></div></section>
-<section id="browse" class="rpr-section"><div class="rpr-shell">
-<div class="rpr-heading"><div><p class="rpr-eyebrow">Subject index</p><h2>Browse the research agenda.</h2></div><p>The 300 entries below are taken from the public source registry snapshot. Use filters to narrow the list. Each entry links to its individual mathematical question on GitHub.</p></div>
-<div class="rpr-areas" id="rpr-area-list" aria-label="Filter questions by research area"><p class="rpr-muted">Loading subject index...</p></div>
-<div class="rpr-toolbar" aria-label="Problem search and filtering">
-<div class="rpr-control"><label for="rpr-search">Search problem ID, title or mathematical target</label><input type="search" id="rpr-search" placeholder="e.g. GC36, knotted waves, curvature" autocomplete="off"></div>
-<div class="rpr-control"><label for="rpr-area">Research subject</label><select id="rpr-area"><option value="">All 12 subjects</option></select></div>
-<div class="rpr-control"><label for="rpr-stage">Research stage</label><select id="rpr-stage"><option value="">All questions</option><option value="formal">Formal statements (GC01–GC65)</option><option value="scoped">Provisional scope v1</option><option value="partial">Partially resolved GC</option></select></div>
-<button class="rpr-button" type="button" id="rpr-reset">Clear filters</button>
-</div>
-<div class="rpr-browser-head"><span id="rpr-results" role="status" aria-live="polite">Loading 300 questions...</span><span id="rpr-snapshot">Source reviewed 2026-10-29</span></div>
-<div class="rpr-list" id="rpr-list" aria-label="Mathematical problem catalogue"></div>
-<div class="rpr-more-wrap"><button id="rpr-more" class="rpr-button" type="button" hidden>Show more questions</button></div>
-<noscript><p class="rpr-muted">Interactive filtering requires JavaScript. The <a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/ROADMAP_300.md">complete 300-question index</a> remains available on GitHub.</p></noscript>
-<div class="rpr-links" style="margin-top:25px">
-<a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/ROADMAP_300.md" target="_blank" rel="noopener noreferrer">Complete source roadmap ↗</a>
+<section class="agenda-section" id="starting-points"><div class="atlas-shell">
+<div class="agenda-head"><div><p class="atlas-kicker">Research starting points</p><h2>Questions worth opening.</h2></div><p>Each card separates a prior exact result or formal starting point from the wider question that still needs investigation.</p></div>
+<div class="agenda-featured"><article class="agenda-challenge"><header><span>GC01</span><small>Candidate, formal</small></header><h3>Universal orbital stability</h3><p><strong>Established boundary:</strong> A minimizing-set stability theorem exists for one parameter regime.</p><p><strong>Remaining target:</strong> Extend the question to non-minimizing and excited states.</p>
+<div class="agenda-challenge-links"><a href="#GC01">Find in catalogue</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/formal-reviews/GC01.md" target="_blank" rel="noopener noreferrer">Read research review ↗</a></div></article>
+<article class="agenda-challenge"><header><span>GC06</span><small>Candidate, formal</small></header><h3>Self-confinement criteria</h3><p><strong>Established boundary:</strong> Strict binding and minimizer existence are proved in a sufficient mass range.</p><p><strong>Remaining target:</strong> Characterize attainment and failure beyond that range.</p>
+<div class="agenda-challenge-links"><a href="#GC06">Find in catalogue</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/formal-reviews/GC06.md" target="_blank" rel="noopener noreferrer">Read research review ↗</a></div></article>
+<article class="agenda-challenge"><header><span>GC11</span><small>Candidate, formal</small></header><h3>Nonlinear wavelength selection</h3><p><strong>Established boundary:</strong> An exact positive-wavenumber minimum is available for a linear branch.</p><p><strong>Remaining target:</strong> Prove or disprove genuine selection by nonlinear evolution.</p>
+<div class="agenda-challenge-links"><a href="#GC11">Find in catalogue</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/formal-reviews/GC11.md" target="_blank" rel="noopener noreferrer">Read research review ↗</a></div></article>
+<article class="agenda-challenge"><header><span>GC36</span><small>Candidate, formal</small></header><h3>Stable knotted waves</h3><p><strong>Established boundary:</strong> A topological research question and model direction are specified.</p><p><strong>Remaining target:</strong> Construct an orbitally stable knot or establish a scoped obstruction.</p>
+<div class="agenda-challenge-links"><a href="#GC36">Find in catalogue</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/formal-reviews/GC36.md" target="_blank" rel="noopener noreferrer">Read research review ↗</a></div></article>
+<article class="agenda-challenge"><header><span>GC43</span><small>Candidate, formal</small></header><h3>Wave-cell computational universality</h3><p><strong>Established boundary:</strong> A discrete wave-computation research target is proposed.</p><p><strong>Remaining target:</strong> Freeze the local rule and prove its simulation capability and overhead.</p>
+<div class="agenda-challenge-links"><a href="#GC43">Find in catalogue</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/formal-reviews/GC43.md" target="_blank" rel="noopener noreferrer">Read research review ↗</a></div></article>
+<article class="agenda-challenge"><header><span>GC08</span><small>Partially resolved</small></header><h3>Admissible curvature closures</h3><p><strong>Established boundary:</strong> A Lean-backed nonuniqueness counterexample exists for a restricted closure family.</p><p><strong>Remaining target:</strong> Determine what additional requirements permit an exact classification.</p>
+<div class="agenda-challenge-links"><a href="#GC08">Find in catalogue</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/formal-reviews/GC08.md" target="_blank" rel="noopener noreferrer">Read research review ↗</a></div></article></div>
+</div></section>
+<section class="agenda-section" id="browse"><div class="atlas-shell">
+<div class="agenda-index-head"><span class="atlas-kicker">Source-backed catalogue</span><h2>Browse the 300-question roadmap.</h2><p>All 300 entries are searchable, grouped into twelve mathematical subjects. Choose a question to read its source statement, formal-review dossier, or scope-v1 benchmark. Status is tracked separately from theorem evidence.</p></div>
+<div id="rpr-area-list" class="rpr-areas" aria-label="Filter by research area"><p class="rpr-muted">Loading all twelve mathematical subjects…</p></div>
+<div class="rpr-toolbar" aria-label="Find a mathematical question">
+<div class="rpr-control"><label for="rpr-search">Search ID, mathematical question or target</label><input id="rpr-search" type="search" placeholder="GC36, knotted waves, finite-wavenumber…" autocomplete="off"></div>
+<div class="rpr-control"><label for="rpr-area">Research field</label><select id="rpr-area"><option value="">All twelve fields</option></select></div>
+<div class="rpr-control"><label for="rpr-stage">Research stage</label><select id="rpr-stage"><option value="">All questions</option><option value="formal">Original formal statements (65)</option><option value="scoped">Provisional scoped dossiers (235)</option><option value="partial">Partially resolved GC</option></select></div>
+<button class="rpr-button" type="button" id="rpr-reset">Clear filters</button></div>
+<div class="rpr-browser-head"><span id="rpr-results" role="status" aria-live="polite">Loading the 300-question catalogue…</span><span id="rpr-snapshot">Public source registry</span></div>
+<div id="rpr-list" class="rpr-list" aria-label="Individual mathematical research questions"></div>
+<div class="rpr-more-wrap"><button class="rpr-button" type="button" id="rpr-more" hidden>Show more questions</button></div>
+<noscript><p class="rpr-muted">The interactive browser requires JavaScript. <a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/ROADMAP_300.md">Read the complete 300-question roadmap on GitHub.</a></p></noscript>
+<div class="agenda-extra-links">
+<a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/ROADMAP_300.md" target="_blank" rel="noopener noreferrer">Read the full source roadmap ↗</a>
+<a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/formal-reviews/README.md" target="_blank" rel="noopener noreferrer">300 research review dossiers ↗</a>
 <a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/FORMAL_PROBLEMS.md" target="_blank" rel="noopener noreferrer">Original 65 formal statements ↗</a>
-<a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/VERIFIED_LEAN_RESULTS.md" target="_blank" rel="noopener noreferrer">20 selected exact-scope Lean results ↗</a>
-<a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/DIFFICULTY_RUBRIC.md" target="_blank" rel="noopener noreferrer">Provisional difficulty rubric ↗</a>
+<a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/VERIFIED_LEAN_RESULTS.md" target="_blank" rel="noopener noreferrer">Lean theorem correspondence ↗</a>
 </div>
 </div></section>
-<section class="rpr-section"><div class="rpr-shell">
-<div class="rpr-contribute"><div><p class="rpr-eyebrow">Proofs, counterexamples and prior art</p><h2>Contribute to a precise question.</h2><p>Choose a GC identifier, read the mathematical statement or scoped dossier, check the closest known literature and existing work, then submit a conventional proof, formal theorem, counterexample or corrected formulation. The contributor retains attribution; negative results are welcome.</p></div>
-<div><a class="rpr-button primary" href="https://github.com/rickyjreyes/math/issues/new?template=grand_challenge.yml" target="_blank" rel="noopener noreferrer">Open a contribution issue ↗</a><a class="rpr-button" href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" style="margin-top:11px">Read contribution policy ↗</a></div></div>
-<div class="rpr-links" style="margin-top:27px"><a href="/math/">Mathematics home</a><a href="/equations/">WCT Equation Explorer</a><a href="/sympy/">SymPy Audit</a><a href="/lean/">Lean Coverage</a><a href="https://github.com/rickyjreyes/math/tree/main/reyes-problem-repository" target="_blank" rel="noopener noreferrer">Original GitHub directory ↗</a></div>
+<section class="agenda-section" id="submission"><div class="atlas-shell">
+<div class="agenda-head"><div><p class="atlas-kicker">Standard of contribution</p><h2>Make the result independently checkable.</h2></div><p>The goal is not to collect unsupported claims. The goal is to make mathematical statements precise enough to prove, refute or situate in the literature.</p></div>
+<div class="agenda-workflow"><div>
+<p>Meaningful contributions include exact proofs, rigorous no-go results, parameter-specific classifications, Lean 4 formalizations, corrected hypotheses, prior-art identifications and counterexamples.</p>
+<ul><li>Specify the model, domain, function spaces, parameters and quantifiers.</li><li>Show the mathematical argument or actual checked source declaration.</li><li>Compare against the nearest existing theorem and identify what differs.</li><li>Record which part of the GC question is answered and what remains.</li><li>Include reproducibility evidence when claiming a formal or numerical verification.</li></ul>
+<p>A theorem establishing one sufficient mass range does not automatically settle all masses. A proof in Lean establishes the encoded mathematical statement, not the physical interpretation of its assumptions.</p></div>
+<aside><h3>Contribution routes</h3>
+<p>Choose the existing issue where possible. New proof, counterexample and correction submissions can use the research contribution form.</p>
+<a href="https://github.com/rickyjreyes/math/issues/new?template=grand_challenge.yml" target="_blank" rel="noopener noreferrer">Open contribution issue ↗</a>
+<a href="https://github.com/rickyjreyes/math/issues" target="_blank" rel="noopener noreferrer">Browse existing GC discussions ↗</a>
+<a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/WORKFLOW.md" target="_blank" rel="noopener noreferrer">Formal verification and closure contract ↗</a>
+<a href="/math/">Inspect public Lean theorem sources ↗</a></aside></div>
 </div></section>
+<section class="agenda-section" id="sources"><div class="atlas-shell">
+<div class="agenda-head"><div><p class="atlas-kicker">Source library</p><h2>Research resources and provenance.</h2></div><p>The underlying administrative and audit files remain available. They are references for review, not required reading before choosing a mathematical question.</p></div>
+<details><summary style="cursor:pointer;color:var(--a);padding:15px 0;font-size:.85rem;font-weight:750">Expand technical documentation, status registries and historical research sources</summary>
+<div class="agenda-reference-grid" style="margin-top:20px"><div class="agenda-reference"><span class="atlas-kicker">Research reference</span><h3>Core research resources</h3><p>Source documentation remains available for verification without interrupting the public reading path.</p>
+<a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/ROADMAP_300.md" target="_blank" rel="noopener noreferrer">300-problem roadmap ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/formal-reviews/README.md" target="_blank" rel="noopener noreferrer">Formal review dossiers (all 300) ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/FORMAL_PROBLEMS.md" target="_blank" rel="noopener noreferrer">Original 65 statements ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/VERIFIED_LEAN_RESULTS.md" target="_blank" rel="noopener noreferrer">20 selected Lean results ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contribution guide ↗</a></div>
+<div class="agenda-reference"><span class="atlas-kicker">Research reference</span><h3>Status and proof traceability</h3><p>Source documentation remains available for verification without interrupting the public reading path.</p>
+<a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/STATUS.md" target="_blank" rel="noopener noreferrer">Current GC status ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/problem_registry.json" target="_blank" rel="noopener noreferrer">Machine-readable problem registry ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/GC65_ADOPTION.md" target="_blank" rel="noopener noreferrer">Existing work and adoption map ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/completion_records.json" target="_blank" rel="noopener noreferrer">Completion records ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/WORKFLOW.md" target="_blank" rel="noopener noreferrer">Verification contract ↗</a></div>
+<div class="agenda-reference"><span class="atlas-kicker">Research reference</span><h3>Research method and archives</h3><p>Source documentation remains available for verification without interrupting the public reading path.</p>
+<a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/METHOD.md" target="_blank" rel="noopener noreferrer">Research method ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/FOUNDATIONAL_SHORTLIST.md" target="_blank" rel="noopener noreferrer">Foundational shortlist ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/LITERATURE.md" target="_blank" rel="noopener noreferrer">Literature leads ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/CANDIDATE_ACTIVATION.md" target="_blank" rel="noopener noreferrer">Candidate activation ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/MORPHOGENESIS_PROGRAM.md" target="_blank" rel="noopener noreferrer">Morphogenesis program ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/docs/README.md" target="_blank" rel="noopener noreferrer">Full technical documentation ↗</a></div></div></details>
+</div></section>
+<div class="atlas-shell agenda-final"><div><p class="atlas-kicker">Open mathematics · attributed contributions</p><h2>Choose a question. Move it forward.</h2><p>A useful contribution can prove a result, disprove an assertion, identify an existing theorem or formulate a better problem. The mathematical value lies in the precision of the result.</p></div><a class="agenda-action primary" href="#browse">Find your question</a></div>
 </main>
-<footer class="site-footer"><div class="section-shell footer-bottom"><span>Reyes Problem Repository | 300 mathematical research questions</span><a href="#top">Back to top ↑</a></div></footer>
-<script src="./problem-browser.js?v=20261102-index" defer></script>
+<footer class="site-footer"><div class="section-shell footer-bottom"><span>Reyes Problem Repository · Open Mathematical Research</span><a href="#top">Back to top ↑</a></div></footer>
+<script src="./problem-browser.js?v=20261102-call-to-action" defer></script>
 <script src="../site-nav.js?v=20261102-dedicated-math-pages" defer></script>
-<script src="../site-nav.js" defer></script>
 </body></html>
