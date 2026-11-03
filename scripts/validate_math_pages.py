@@ -102,6 +102,43 @@ def verify() -> None:
     assert 'formal-reviews/' in script
     assert 'id="rpr-list"' in problems
     assert 'id="rpr-area-list"' in problems
+    # The public Mathematics view must explain every formal declaration
+    # in ordinary language without removing the exact Lean statement.
+    readable = json.loads(
+        (ROOT / "math" / "proof-guide.json").read_text(encoding="utf-8")
+    )
+    guide = readable["entries"]
+    assert [entry["rank"] for entry in guide] == list(range(1, 28))
+    assert all(
+        all(isinstance(entry.get(field), str) and entry[field].strip()
+            for field in ("plain", "why", "conditions", "math"))
+        for entry in guide
+    )
+    assert len(set(entry["math"] for entry in guide)) == 27
+    assert 'href="./readable.css?' in math
+    assert 'id="atlas-lean-toggle"' in math
+    assert 'class="atlas-glossary"' in math
+    assert [int(value) for value in re.findall(
+        r'data-atlas-feature-rank="(\d+)"', math
+    )] == [1, 4, 3, 2, 10, 27]
+    assert math.count('data-atlas-feature-code') == 6
+    assert math.count('class="atlas-feature-lean"') == 6
+    atlas_js = (ROOT / "math" / "atlas.js").read_text(encoding="utf-8")
+    assert '"proof-guide.json"' in atlas_js
+    assert 'Show all Lean statements' in math
+    assert 'atlas-lean-disclosure' in atlas_js
+    assert 'guide.plain' in atlas_js and 'guide.conditions' in atlas_js
+    inline_math_scripts = re.findall(
+        r"<script>(.*?)</script>", math, flags=re.S
+    )
+    assert len(inline_math_scripts) == 1
+    inline_check = subprocess.run(
+        ["node", "--check", "-"],
+        input=inline_math_scripts[0], text=True, capture_output=True, check=False
+    )
+    assert inline_check.returncode == 0, inline_check.stderr
+    print("Reader edition validated: 27 explanations, 6 full-featured mathematics examples, exact Lean preserved.")
+
     print("Lean atlas validated: 27 sourced excerpts; 278 public files in 5 repositories.")
 
     # Every GC question must have canonical text, individual source and its

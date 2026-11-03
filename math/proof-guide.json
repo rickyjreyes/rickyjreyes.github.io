@@ -1,0 +1,196 @@
+{
+  "type": "human-readable interpretive guide",
+  "source": "based on the 27 curated Lean source declarations in proofs-01/02/03.json; explanations are interpretive and do not broaden their exact scopes",
+  "guide_version": "2026-11-02",
+  "entries": [
+    {
+      "rank": 1,
+      "plain": "Splitting a fixed mass into two positive portions always raises the sum of the minimum energies, within the proved parameter range.",
+      "why": "This strict energy gap is the binding step used when ruling out fragmentation of a minimizing sequence.",
+      "conditions": "In the two-dimensional cubic–quintic setting: β, γ > 0; 0 < m ≤ mB; and every 0 < μ < m.",
+      "math": "I(m)<I(\\mu)+I(m-\\mu)"
+    },
+    {
+      "rank": 2,
+      "plain": "Starting sufficiently close to the set of energy minimizers keeps the solution close to that entire set for all time.",
+      "why": "The theorem turns variational information into a dynamical stability statement, without choosing a unique wave profile.",
+      "conditions": "The specified 2D equation, β, γ > 0, 0 < m ≤ mB, with distance measured in H².",
+      "math": "\\operatorname{dist}_{H^2}(u(0),\\mathcal G_m)<\\delta\\ \\Longrightarrow\\ \\sup_t\\operatorname{dist}_{H^2}(u(t),\\mathcal G_m)<\\varepsilon"
+    },
+    {
+      "rank": 3,
+      "plain": "Every allowed H² initial state has exactly one solution defined for all positive and negative times.",
+      "why": "Global existence and uniqueness supply the evolution needed by the subsequent stability theorem.",
+      "conditions": "The specific two-dimensional fourth-order cubic–quintic evolution with γ > 0 and initial data in H².",
+      "math": "\\forall u_0\\in H^2(\\mathbb R^2),\\quad \\exists!\\,u:\\mathbb R\\to H^2(\\mathbb R^2)"
+    },
+    {
+      "rank": 4,
+      "plain": "The lowest constrained energy is achieved by at least one actual H² field, not merely approached by a sequence.",
+      "why": "Attainment establishes a nonempty minimizing set on which the later orbital-stability statement is formulated.",
+      "conditions": "Two-dimensional model; β, γ > 0; 0 < m ≤ mB. The result does not select a unique profile.",
+      "math": "\\exists U:\\quad M(U)=m,\\quad E(U)=I(m)"
+    },
+    {
+      "rank": 5,
+      "plain": "For a weighted phase problem with winding, the minimum energy and the phases achieving it are characterized exactly.",
+      "why": "The result separates an unavoidable global mismatch cost from a nonnegative deviation term.",
+      "conditions": "The declared positive-weight, integrability and H¹ phase assumptions in PhaseLockingData.",
+      "math": "E_{\\min}=\\dfrac{(\\mathrm{closure\\ mismatch})^2}{\\int_0^S w(s)^{-1}\\,ds}"
+    },
+    {
+      "rank": 6,
+      "plain": "At any allowed state, a nearby field with the same mass can be found that has lower curvature energy.",
+      "why": "This local descent direction rules out positive-curvature constrained local minimizers in the specified model.",
+      "conditions": "Dimensions 1–4; positive leading coefficient; nonnegative second coefficient; regularization assumptions.",
+      "math": "\\forall U,\\delta>0,\\quad \\exists V:\\ M(V)=M(U),\\ \\|V-U\\|_{H^2}<\\delta,\\ E(V)<E(U)"
+    },
+    {
+      "rank": 7,
+      "plain": "A particular quantified gradient estimate works precisely in dimension two.",
+      "why": "It identifies a sharp dimensional boundary for this one functional estimate, not for localization in general.",
+      "conditions": "Spatial dimension n ≥ 1; the exact E68L2Holds predicate defined in the source.",
+      "math": "\\mathrm{E68L2Holds}(n)\\iff n=2"
+    },
+    {
+      "rank": 8,
+      "plain": "A nonzero square-integrable field cannot put all its Fourier content on an infinitely thin frequency sphere.",
+      "why": "A sphere has zero ambient measure, so L² spectral localization requires more than exact shell support.",
+      "conditions": "Whole-space L² functions and the specified almost-everywhere Fourier-support hypothesis.",
+      "math": "\\operatorname{supp}\\widehat u\\subseteq\\{\\xi:\\|\\xi\\|=k\\}\\quad\\Longrightarrow\\quad u=0\\quad (u\\in L^2)"
+    },
+    {
+      "rank": 9,
+      "plain": "The defined Fourier-multiplier evolution never increases the L² norm.",
+      "why": "A contraction estimate is a precise stability property of a linear propagation operator.",
+      "conditions": "The specified multiplier semigroup, with a ≥ 0 and time t ≥ 0.",
+      "math": "\\|S(t)f\\|_{L^2}\\leq\\|f\\|_{L^2}"
+    },
+    {
+      "rank": 10,
+      "plain": "Nearby, genuinely different parameter choices can give the same eleven observations.",
+      "why": "The local twenty-dimensional fiber shows structural ambiguity, beyond numerical ill-conditioning.",
+      "conditions": "The frozen 31-parameter / 11-observation nonlinear map, with α ≥ 0.",
+      "math": "\\dim(\\text{local observation fiber})=20"
+    },
+    {
+      "rank": 11,
+      "plain": "At the chosen model point, the observation Jacobian has twenty undetectable local parameter directions.",
+      "why": "The nullity calculation supplies the differential rank condition behind local non-identifiability.",
+      "conditions": "The specified frozen observation map; α ≥ 0. This is a local Jacobian result.",
+      "math": "\\operatorname{rank}(D\\mathrm{obs})=11,\\qquad \\operatorname{nullity}(D\\mathrm{obs})=20"
+    },
+    {
+      "rank": 12,
+      "plain": "The listed symmetry and regularization requirements admit infinitely many distinct curvature closures.",
+      "why": "Those conditions alone cannot uniquely determine the closure, so additional mathematical axioms would be needed.",
+      "conditions": "The specified smooth regularized closure family with ε > 0 and S > 0.",
+      "math": "\\#\\{\\text{admissible closures in the constructed family}\\}=\\infty"
+    },
+    {
+      "rank": 13,
+      "plain": "Two different closure formulas can be distinguished by evaluating them on a genuine smooth field.",
+      "why": "This rules out interpreting closure nonuniqueness as a merely formal difference between expressions.",
+      "conditions": "Two distinct closure parameters, ε > 0 and S > 0, in the declared smooth-field family.",
+      "math": "\\lambda\\ne\\mu\\ \\Longrightarrow\\ \\exists\\psi\\in C^\\infty:\\ C_\\lambda(\\psi)\\ne C_\\mu(\\psi)"
+    },
+    {
+      "rank": 14,
+      "plain": "In the specified auxiliary-variable Hamiltonian, changing one momentum makes the energy arbitrarily negative.",
+      "why": "Introducing auxiliary variables does not remove this particular unbounded direction.",
+      "conditions": "The reduced temporal-jet Hamiltonian with the indicated configuration coordinate Q ≠ 0.",
+      "math": "\\inf_p H_{\\mathrm{aux}}(Q,p,\\ldots)=-\\infty\\qquad(Q\\ne0)"
+    },
+    {
+      "rank": 15,
+      "plain": "An invertible change of the chosen field variables cannot make the nonzero acceleration Hessian degenerate.",
+      "why": "The determinant keeps a positive square factor under the allowed coordinate transformation.",
+      "conditions": "Nonzero Hessian coefficient and nonzero Jacobian determinant of the point transformation.",
+      "math": "c\\ne0,\\ \\det J\\ne0\\quad\\Longrightarrow\\quad c^2(\\det J)^2>0"
+    },
+    {
+      "rank": 16,
+      "plain": "A zero-frequency onset at positive wave number forces an instability already in the zero-wave-number sector.",
+      "why": "This excludes a primary finite-wave-number static onset within that parameter sector.",
+      "conditions": "The stated homogeneous S004 inverse propagator, K > 0, positive curvature gap, and q > 0.",
+      "math": "D^{-1}(0,q)=0\\quad\\Longrightarrow\\quad P_{-}(0)<0"
+    },
+    {
+      "rank": 17,
+      "plain": "Under the specified positive-stiffness assumptions, a static zero at positive wave number cannot occur.",
+      "why": "The inverse propagator has a strict sign, so it cannot vanish under those hypotheses.",
+      "conditions": "K > 0, 4KT − G² > 0, nonnegative mass-squared, and q > 0.",
+      "math": "D^{-1}(0,q)<0\\qquad(q>0)"
+    },
+    {
+      "rank": 18,
+      "plain": "The corrected complex-field regularizer stays strictly positive, preventing this denominator from vanishing.",
+      "why": "This establishes a well-defined local expression at the algebraic level, including zero-field nodes.",
+      "conditions": "Complex field value arbitrary, regularization ε > 0, and the specified denominator.",
+      "math": "\\mathrm{denominator}(\\psi,\\varepsilon,\\alpha)>0\\qquad(\\varepsilon>0)"
+    },
+    {
+      "rank": 19,
+      "plain": "Under exchangeability, the exact finite-sample randomization p-value obeys the advertised type-I error bound.",
+      "why": "It validates the statistical testing rule under its null assumptions, not any measured optical effect.",
+      "conditions": "A finite exchangeable null model and a nonnegative significance level.",
+      "math": "\\mathbb P_{H_0}(p\\leq\\alpha)\\leq\\alpha"
+    },
+    {
+      "rank": 20,
+      "plain": "The defined phase-correction coefficient satisfies the exact integer-winding closure identity.",
+      "why": "The arithmetic ensures consistency of the scalar phase-lock construction.",
+      "conditions": "An integer winding and a nonzero integrated reciprocal-weight denominator.",
+      "math": "\\alpha_{\\mathrm{lock}}\\,W^{-1}_{\\mathrm{int}}+\\Sigma_{\\mathrm{int}}=2\\pi n"
+    },
+    {
+      "rank": 21,
+      "plain": "A real scalar mode satisfying the stipulated cubic-saturation ODE obeys a precise power-growth inequality.",
+      "why": "This captures one reduced amplitude law without assuming the same estimate for a full nonlinear PDE.",
+      "conditions": "A differentiable real amplitude with the displayed scalar evolution at the evaluated time.",
+      "math": "\\dfrac{d}{dt}A(t)^2\\leq 2g A(t)^2-cA(t)^4"
+    },
+    {
+      "rank": 22,
+      "plain": "Two different internal block states can produce the same defined readout.",
+      "why": "The output map is non-injective; this is a structural information-loss fact, not a cryptographic security guarantee.",
+      "conditions": "The finite-state squeezeRound construction defined in the public WaveLock source.",
+      "math": "\\exists C\\ne C':\\quad S(C)=S(C')"
+    },
+    {
+      "rank": 23,
+      "plain": "The constructed L² Fourier transform preserves the norm of a field.",
+      "why": "Unitarity is a foundation for the surrounding whole-space Fourier analysis.",
+      "conditions": "The formal L² space and Fourier extension in this module.",
+      "math": "\\|\\mathcal Ff\\|_{L^2}=\\|f\\|_{L^2}"
+    },
+    {
+      "rank": 24,
+      "plain": "A particular dispersion branch has its unique minimum at a strictly positive wave number.",
+      "why": "It establishes linear spectral preference at a finite scale, but not nonlinear selection of a stable pattern.",
+      "conditions": "The module's Base and FiniteScale hypotheses for the real dispersion branch.",
+      "math": "q_*>0,\\qquad z_-(q_*)<z_-(q)\\quad(q\\ne q_*)"
+    },
+    {
+      "rank": 25,
+      "plain": "For the specified nonlinear dynamics, a state built from two nonzero Fourier modes immediately generates a mode outside the chosen finite set.",
+      "why": "The resulting frequency leakage obstructs exact invariance of such finite-dimensional mode spaces.",
+      "conditions": "At least two allowed wave vectors, a nonzero quintic coupling, and two nonzero coefficients.",
+      "math": "\\text{initial finite-mode field}\\ \\not\\Rightarrow\\ \\text{invariant finite-mode evolution}"
+    },
+    {
+      "rank": 26,
+      "plain": "Smooth periodic solutions can start arbitrarily small in one jet norm yet reach a fixed size later.",
+      "why": "That behavior rules out a bounded evolution map between the stated initial and later jet spaces.",
+      "conditions": "The specific torus higher-time-derivative equation, positive time and allowed Sobolev jet exponents.",
+      "math": "\\|u_n(0)\\|_{\\mathrm{jet}}\\to0,\\qquad \\|u_n(t_0)\\|_{\\mathrm{jet}}=1"
+    },
+    {
+      "rank": 27,
+      "plain": "A complex scalar's real-gradient Gram tensor has rank at most two on a four-dimensional tangent space.",
+      "why": "This particular construction cannot define a nondegenerate Lorentzian metric, without ruling out other metric constructions.",
+      "conditions": "A C¹ complex scalar on the specified four-dimensional smooth manifold.",
+      "math": "\\operatorname{rank}(g_\\psi)\\leq2,\\qquad\\dim\\ker(g_\\psi)\\geq2"
+    }
+  ]
+}

@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#081421">
-<meta name="description" content="Explore 27 curated Lean 4 theorem highlights with exact declarations, hypotheses and proof-source links, drawn from five public repositories containing 278 Lean files.">
+<meta name="description" content="Read 27 curated mathematical results with human-readable explanations, equations, hypotheses, and optional exact Lean 4 declarations linked to public proof sources.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://rickyjreyes.github.io/math/">
 <meta property="og:title" content="Mathematics | Lean Proof Atlas | Richard J. Reyes">
-<meta property="og:description" content="Read the theorems, inspect their assumptions, and follow the Lean source across the public research repositories.">
+<meta property="og:description" content="Understand what each theorem proves, why it matters, and how to inspect the complete formal Lean proof.">
 <title>Mathematics | Lean Proof Atlas | Richard J. Reyes</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="./atlas.css?v=20261102-proof-atlas">
+<link rel="stylesheet" href="./readable.css?v=20261102-readable-math">
 </head>
 <body class="lean-atlas">
 <a class="skip-link" href="#main">Skip to mathematical results</a>
@@ -21,8 +22,8 @@
 <div class="atlas-hero-grid"><div>
 <p class="atlas-kicker">Richard J. Reyes · public research · Lean 4</p>
 <h1>Mathematics, <em>in proof.</em></h1>
-<p class="atlas-lead">A source-first catalogue of mathematical results. Read what each theorem establishes, see its exact Lean declaration and hypotheses, and follow the implementation into the public repository. The code matters more than a completion badge.</p>
-<div class="atlas-actions"><a class="atlas-action primary" href="#proofs">Explore 27 proof highlights</a><a class="atlas-action" href="#repositories">Browse all public Lean source files</a><a class="atlas-action" href="/reyes-problem-repository/">300 open research questions</a></div>
+<p class="atlas-lead">A mathematical research catalogue written for readers first. Understand each result in ordinary language, follow the precise equation and assumptions, then inspect the exact Lean theorem and complete source proof.</p>
+<div class="atlas-actions"><a class="atlas-action primary" href="#proofs">Explore 27 proof highlights</a><a class="atlas-action" href="#repositories">Browse all public Lean source files</a><a class="atlas-action" href="/reyes-problem-repository/">300 research questions</a></div>
 </div><aside class="atlas-hero-note"><strong>Lean 4</strong>Theorem statements and supporting proof code can be inspected at their original paths. No general physical conclusion follows automatically from a checked formal statement.</aside></div>
 <div class="atlas-facts" aria-label="Public mathematical source overview">
 <div><strong>27</strong><span>Curated exact-scope Lean theorem highlights</span></div>
@@ -31,57 +32,165 @@
 </div>
 <p id="atlas-data-status" class="atlas-caution">November 2, 2026 source snapshot. The 27 entries are a curated reading selection, not the total count of all proved theorems. The 278 count includes project files and is not a theorem count.</p>
 </div></section>
-<section class="atlas-section" id="highlights"><div class="atlas-shell">
-<div class="atlas-head"><div><p class="atlas-kicker">Selected mathematical results</p><h2>What the proofs actually say.</h2></div><p>Five entry points into the mathematics. Each excerpt reproduces a source theorem declaration with its hypotheses. Open the linked .lean file to read the argument.</p></div>
-<article class="atlas-feature" data-atlas-feature-rank="1">
-<div class="atlas-feature-copy"><span class="atlas-kicker">01 / Nonlinear PDE</span>
-<h3>Binding, for every permitted split.</h3><div class="atlas-formula">I(m) &lt; I(μ) + I(m − μ),   0 &lt; μ &lt; m</div>
-<p>Strict subadditivity of the constrained energy for every nontrivial split in a stated sufficient mass interval. Two-dimensional cubic–quintic model with β, γ &gt; 0 and 0 &lt; m ≤ mB, not an all-mass theorem.</p>
-<div class="atlas-logic"><span class="atlas-code-label">Key proof move, from Lean source</span><p>The proof applies the strict-gap inequality to both mass partitions, converts those estimates into strict energy-per-mass comparisons, and adds the weighted bounds.</p><pre><code>have h1 := gap (k := k) hβ hγ hμ hμm (by linarith)</code></pre></div>
-<a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/StrictBinding.lean#L531" target="_blank" rel="noopener noreferrer">Inspect full Lean source ↗</a></div>
-<div class="atlas-feature-code"><p class="atlas-code-label">rickyjreyes/math / StrictBinding.lean:531</p>
-<pre><code data-atlas-feature-code>theorem strict_binding (hβ : 0 &lt; β) (hγ : 0 &lt; γ) {m μ : ℝ} (hm : 0 &lt; m) (hmB : m ≤ mB β γ k)
+<section class="atlas-section atlas-readable-highlights" id="highlights"><div class="atlas-shell">
+<div class="atlas-head"><div><p class="atlas-kicker">Mathematics, explained first</p><h2>What was proved, and how the results connect.</h2></div><p>Begin with the mathematical conclusion and its assumptions. Open a Lean declaration only when you want the exact formal statement. Nothing is omitted from the source.</p></div>
+<div class="atlas-reading-guide" aria-label="How to read this mathematical catalogue">
+<div><strong>1. Understand the claim</strong><span>What the mathematical result actually establishes.</span></div>
+<div><strong>2. See the mathematics</strong><span>A readable equation and the hypotheses it depends on.</span></div>
+<div><strong>3. Inspect the formal proof</strong><span>Expand the Lean declaration or open the entire source.</span></div>
+</div>
+<details class="atlas-glossary"><summary>New to this mathematics? Open the notation and terminology guide</summary>
+<div class="atlas-glossary-grid">
+<div><strong>H² (Sobolev space)</strong><p>A function space controlling the field and its weak derivatives up to second order in the square-integrable sense.</p></div>
+<div><strong>Constrained minimizer</strong><p>A field attaining the lowest energy among fields with a prescribed mass or norm.</p></div>
+<div><strong>Orbital stability</strong><p>Remaining close to the set of equivalent minimizing states, allowing the symmetries specified in the theorem.</p></div>
+<div><strong>Lean 4 proof</strong><p>A machine-checked derivation of exactly the formal statement under its visible definitions and hypotheses.</p></div>
+<div><strong>GC question</strong><p>A broader research question in the Reyes Problem Repository. A related Lean theorem need not resolve the entire question.</p></div>
+</div>
+</details>
+<div class="atlas-proof-story">
+<p class="atlas-kicker">A connected example: fourth-order nonlinear waves</p>
+<h3>From an energy inequality to stability.</h3>
+<p>For one two-dimensional cubic–quintic model, four separate theorems establish a connected path. The parameters and function spaces matter: this is not a statement about every nonlinear wave equation.</p>
+<nav class="atlas-proof-sequence" aria-label="Four-step mathematical proof chain"><a href="#feature-1"><span>01</span>Binding</a><span class="atlas-sequence-arrow" aria-hidden="true">→</span><a href="#feature-4"><span>02</span>Existence</a><span class="atlas-sequence-arrow" aria-hidden="true">→</span><a href="#feature-3"><span>03</span>Global evolution</a><span class="atlas-sequence-arrow" aria-hidden="true">→</span><a href="#feature-2"><span>04</span>Stability</a></nav>
+</div>
+<article class="atlas-feature atlas-feature-readable" id="feature-1" data-atlas-feature-rank="1">
+<div class="atlas-feature-copy">
+<div class="atlas-feature-topline"><span class="atlas-kicker">01 · Energy binding</span><span class="atlas-feature-source">math / StrictBinding.lean</span></div>
+<h3>Why the minimizing wave cannot gain by splitting.</h3>
+<p class="atlas-feature-lead">Splitting a fixed mass into two positive portions always raises the sum of the minimum energies, within the proved parameter range.</p>
+<div class="atlas-feature-math" aria-label="Mathematical form">\[I(m)&lt;I(\mu)+I(m-\mu)\]</div>
+<div class="atlas-feature-narrative">
+<div><h4>Why this matters</h4><p>This strict energy gap is the binding step used when ruling out fragmentation of a minimizing sequence.</p></div>
+<div><h4>Exact assumptions</h4><p>In the two-dimensional cubic–quintic setting: β, γ &gt; 0; 0 &lt; m ≤ mB; and every 0 &lt; μ &lt; m.</p></div>
+</div>
+<div class="atlas-feature-key"><h4>The key step of the proof</h4><p>Apply the strict gap estimate to both portions of mass. Compare the energies per unit mass, then add them using μ + (m − μ) = m.</p></div>
+<p class="atlas-feature-scope"><strong>Scope:</strong> Two-dimensional cubic–quintic model with β, γ &gt; 0 and 0 &lt; m ≤ mB, not an all-mass theorem.</p>
+<div class="atlas-feature-actions"><a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/StrictBinding.lean#L531" target="_blank" rel="noopener noreferrer">Read the complete Lean proof in GitHub ↗</a><a class="atlas-feature-browser-link" href="#proof-1">Find result 01 in the explorer</a></div>
+<details class="atlas-feature-lean">
+<summary>Read the exact Lean declaration and a key proof line</summary>
+<p class="atlas-code-label">lean/MathProofs/StrictBinding.lean:531 · theorem strict_binding</p>
+<pre class="atlas-proof-code"><code data-atlas-feature-code>theorem strict_binding (hβ : 0 &lt; β) (hγ : 0 &lt; γ) {m μ : ℝ} (hm : 0 &lt; m) (hmB : m ≤ mB β γ k)
     (hμ : 0 &lt; μ) (hμm : μ &lt; m) :
-    Imin β γ k m &lt; Imin β γ k μ + Imin β γ k (m - μ) :=</code></pre></div></article>
-<article class="atlas-feature" data-atlas-feature-rank="4">
-<div class="atlas-feature-copy"><span class="atlas-kicker">02 / Nonlinear PDE</span>
-<h3>Existence without imposed walls.</h3><div class="atlas-formula">I(m) is attained by a constrained minimizer</div>
-<p>The constrained energy infimum is attained in the specified two-dimensional sufficient mass range. Whole-space minimizer set with compactness modulo translations, not profile uniqueness.</p>
-<div class="atlas-logic"><span class="atlas-code-label">Key proof move, from Lean source</span><p>An approximating sequence approaches the constrained infimum. The compactness theorem supplies a limit with the same mass and the minimum energy.</p><pre><code>obtain ⟨-, -, -, U, hUm, hUE, -⟩ := compactness hβ hγ hm hmB hum hE</code></pre></div>
-<a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/WholeSpaceMinimizers.lean#L1492" target="_blank" rel="noopener noreferrer">Inspect full Lean source ↗</a></div>
-<div class="atlas-feature-code"><p class="atlas-code-label">rickyjreyes/math / WholeSpaceMinimizers.lean:1492</p>
-<pre><code data-atlas-feature-code>theorem exists_minimizer (hβ : 0 &lt; β) (hγ : 0 &lt; γ) {m : ℝ} (hm : 0 &lt; m)
+    Imin β γ k m &lt; Imin β γ k μ + Imin β γ k (m - μ) :=</code></pre>
+<p class="atlas-code-label">Representative proof step from source</p>
+<pre class="atlas-proof-code"><code>have h1 := gap (k := k) hβ hγ hμ hμm (by linarith)</code></pre>
+<p class="atlas-lean-note">The first code block is the theorem statement with its hypotheses. The full source contains its Lean proof body and dependencies.</p>
+</details>
+</div></article>
+<article class="atlas-feature atlas-feature-readable" id="feature-4" data-atlas-feature-rank="4">
+<div class="atlas-feature-copy">
+<div class="atlas-feature-topline"><span class="atlas-kicker">02 · Existence</span><span class="atlas-feature-source">math / WholeSpaceMinimizers.lean</span></div>
+<h3>Does a lowest-energy wave actually exist?</h3>
+<p class="atlas-feature-lead">The lowest constrained energy is achieved by at least one actual H² field, not merely approached by a sequence.</p>
+<div class="atlas-feature-math" aria-label="Mathematical form">\[\exists U:\quad M(U)=m,\quad E(U)=I(m)\]</div>
+<div class="atlas-feature-narrative">
+<div><h4>Why this matters</h4><p>Attainment establishes a nonempty minimizing set on which the later orbital-stability statement is formulated.</p></div>
+<div><h4>Exact assumptions</h4><p>Two-dimensional model; β, γ &gt; 0; 0 &lt; m ≤ mB. The result does not select a unique profile.</p></div>
+</div>
+<div class="atlas-feature-key"><h4>The key step of the proof</h4><p>Construct a sequence of fields approaching the infimum. Compactness supplies a limit preserving both the mass and the minimum energy.</p></div>
+<p class="atlas-feature-scope"><strong>Scope:</strong> Whole-space minimizer set with compactness modulo translations, not profile uniqueness.</p>
+<div class="atlas-feature-actions"><a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/WholeSpaceMinimizers.lean#L1492" target="_blank" rel="noopener noreferrer">Read the complete Lean proof in GitHub ↗</a><a class="atlas-feature-browser-link" href="#proof-4">Find result 04 in the explorer</a></div>
+<details class="atlas-feature-lean">
+<summary>Read the exact Lean declaration and a key proof line</summary>
+<p class="atlas-code-label">lean/MathProofs/WholeSpaceMinimizers.lean:1492 · theorem exists_minimizer</p>
+<pre class="atlas-proof-code"><code data-atlas-feature-code>theorem exists_minimizer (hβ : 0 &lt; β) (hγ : 0 &lt; γ) {m : ℝ} (hm : 0 &lt; m)
     (hmB : m ≤ StrictBinding.mB β γ k) :
-    ∃ U : H2 2, M U = m ∧ energy β γ k U = Imin β γ k m :=</code></pre></div></article>
-<article class="atlas-feature" data-atlas-feature-rank="2">
-<div class="atlas-feature-copy"><span class="atlas-kicker">03 / Nonlinear PDE</span>
-<h3>Stability of an entire minimizing set.</h3><div class="atlas-formula">dist<sub>H²</sub>(u(t), G<sub>m</sub>) remains small</div>
-<p>A solution that begins near the constrained minimizers remains near their complete orbit in the specified H² setting. Set stability in the sufficient mass range, not uniqueness or stability of every excited state.</p>
-<div class="atlas-logic"><span class="atlas-code-label">Key proof move, from Lean source</span><p>A variational stability lemma supplies δ. Conservation of mass and energy transfers closeness to the minimizing set to every later time.</p><pre><code>obtain ⟨δ, hδ, hcore⟩ := stable_core hβ hγ hm hmB (half_pos hε)</code></pre></div>
-<a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean#L256" target="_blank" rel="noopener noreferrer">Inspect full Lean source ↗</a></div>
-<div class="atlas-feature-code"><p class="atlas-code-label">rickyjreyes/math / OrbitalStability.lean:256</p>
-<pre><code data-atlas-feature-code>theorem orbital_stability (hβ : 0 &lt; β) (hγ : 0 &lt; γ) {m : ℝ} (hm : 0 &lt; m)
+    ∃ U : H2 2, M U = m ∧ energy β γ k U = Imin β γ k m :=</code></pre>
+<p class="atlas-code-label">Representative proof step from source</p>
+<pre class="atlas-proof-code"><code>obtain ⟨-, -, -, U, hUm, hUE, -⟩ := compactness hβ hγ hm hmB hum hE</code></pre>
+<p class="atlas-lean-note">The first code block is the theorem statement with its hypotheses. The full source contains its Lean proof body and dependencies.</p>
+</details>
+</div></article>
+<article class="atlas-feature atlas-feature-readable" id="feature-3" data-atlas-feature-rank="3">
+<div class="atlas-feature-copy">
+<div class="atlas-feature-topline"><span class="atlas-kicker">03 · Evolution</span><span class="atlas-feature-source">math / CubicQuinticFlow.lean</span></div>
+<h3>Can that wave evolve for all time?</h3>
+<p class="atlas-feature-lead">Every allowed H² initial state has exactly one solution defined for all positive and negative times.</p>
+<div class="atlas-feature-math" aria-label="Mathematical form">\[\forall u_0\in H^2(\mathbb R^2),\quad \exists!\,u:\mathbb R\to H^2(\mathbb R^2)\]</div>
+<div class="atlas-feature-narrative">
+<div><h4>Why this matters</h4><p>Global existence and uniqueness supply the evolution needed by the subsequent stability theorem.</p></div>
+<div><h4>Exact assumptions</h4><p>The specific two-dimensional fourth-order cubic–quintic evolution with γ &gt; 0 and initial data in H².</p></div>
+</div>
+<div class="atlas-feature-key"><h4>The key step of the proof</h4><p>Solve the global evolution in a transformed Hilbert-space representation, map it back to H², then use uniqueness of the transformed ODE.</p></div>
+<p class="atlas-feature-scope"><strong>Scope:</strong> Model-specific flow, not a general fourth-order PDE existence theorem.</p>
+<div class="atlas-feature-actions"><a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/CubicQuinticFlow.lean#L926" target="_blank" rel="noopener noreferrer">Read the complete Lean proof in GitHub ↗</a><a class="atlas-feature-browser-link" href="#proof-3">Find result 03 in the explorer</a></div>
+<details class="atlas-feature-lean">
+<summary>Read the exact Lean declaration and a key proof line</summary>
+<p class="atlas-code-label">lean/MathProofs/CubicQuinticFlow.lean:926 · theorem global_wellposed</p>
+<pre class="atlas-proof-code"><code data-atlas-feature-code>theorem global_wellposed (hγ : 0 &lt; γ) (u₀ : H2 2) :
+    ∃! u : ℝ → H2 2, IsSolution β γ k u ∧ u 0 = u₀ :=</code></pre>
+<p class="atlas-code-label">Representative proof step from source</p>
+<pre class="atlas-proof-code"><code>obtain ⟨W, hW0, hW⟩ := exists_global (β := β) (γ := γ) (k := k) hγ (H2.toSp u₀)</code></pre>
+<p class="atlas-lean-note">The first code block is the theorem statement with its hypotheses. The full source contains its Lean proof body and dependencies.</p>
+</details>
+</div></article>
+<article class="atlas-feature atlas-feature-readable" id="feature-2" data-atlas-feature-rank="2">
+<div class="atlas-feature-copy">
+<div class="atlas-feature-topline"><span class="atlas-kicker">04 · Stability</span><span class="atlas-feature-source">math / OrbitalStability.lean</span></div>
+<h3>What happens under a small perturbation?</h3>
+<p class="atlas-feature-lead">Starting sufficiently close to the set of energy minimizers keeps the solution close to that entire set for all time.</p>
+<div class="atlas-feature-math" aria-label="Mathematical form">\[\operatorname{dist}_{H^2}(u(0),\mathcal G_m)&lt;\delta\ \Longrightarrow\ \sup_t\operatorname{dist}_{H^2}(u(t),\mathcal G_m)&lt;\varepsilon\]</div>
+<div class="atlas-feature-narrative">
+<div><h4>Why this matters</h4><p>The theorem turns variational information into a dynamical stability statement, without choosing a unique wave profile.</p></div>
+<div><h4>Exact assumptions</h4><p>The specified 2D equation, β, γ &gt; 0, 0 &lt; m ≤ mB, with distance measured in H².</p></div>
+</div>
+<div class="atlas-feature-key"><h4>The key step of the proof</h4><p>A variational stability estimate supplies the tolerance δ. Conservation of mass and energy then controls distance from the entire minimizing set for all times.</p></div>
+<p class="atlas-feature-scope"><strong>Scope:</strong> Set stability in the sufficient mass range, not uniqueness or stability of every excited state.</p>
+<div class="atlas-feature-actions"><a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean#L256" target="_blank" rel="noopener noreferrer">Read the complete Lean proof in GitHub ↗</a><a class="atlas-feature-browser-link" href="#proof-2">Find result 02 in the explorer</a></div>
+<details class="atlas-feature-lean">
+<summary>Read the exact Lean declaration and a key proof line</summary>
+<p class="atlas-code-label">lean/MathProofs/OrbitalStability.lean:256 · theorem orbital_stability</p>
+<pre class="atlas-proof-code"><code data-atlas-feature-code>theorem orbital_stability (hβ : 0 &lt; β) (hγ : 0 &lt; γ) {m : ℝ} (hm : 0 &lt; m)
     (hmB : m ≤ StrictBinding.mB β γ k) {ε : ℝ} (hε : 0 &lt; ε) :
     ∃ δ &gt; 0, ∀ u : ℝ → H2 2, IsSolution β γ k u → distX (u 0) (Gset β γ k m) &lt; δ →
       BddAbove (Set.range fun t =&gt; distX (u t) (Gset β γ k m)) ∧
-      ⨆ t, distX (u t) (Gset β γ k m) &lt; ε :=</code></pre></div></article>
-<article class="atlas-feature" data-atlas-feature-rank="10">
-<div class="atlas-feature-copy"><span class="atlas-kicker">04 / Inverse problems</span>
-<h3>What observations cannot identify.</h3><div class="atlas-formula">31 parameters → 11 observations, with a 20D local fiber</div>
-<p>The fixed nonlinear observation model admits a local fiber of dimension twenty. Local to the frozen model, not a global identification classification.</p>
-<div class="atlas-logic"><span class="atlas-code-label">Key proof move, from Lean source</span><p>Surjectivity of the frozen Jacobian permits a C¹ local level-set chart. Its kernel has dimension twenty, yielding a genuine local fiber.</p><pre><code>exists_c1_level_set_chart observed (frozen alpha 5) (jacobian (frozen alpha 5))</code></pre></div>
-<a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18Identifiability.lean#L32" target="_blank" rel="noopener noreferrer">Inspect full Lean source ↗</a></div>
-<div class="atlas-feature-code"><p class="atlas-code-label">rickyjreyes/math / V18Identifiability.lean:32</p>
-<pre><code data-atlas-feature-code>theorem observed_local_level_set (alpha : ℝ) (ha : 0 ≤ alpha) :
-    HasTwentyDimensionalLocalFiber alpha :=</code></pre></div></article>
-<article class="atlas-feature" data-atlas-feature-rank="27">
-<div class="atlas-feature-copy"><span class="atlas-kicker">05 / Geometry</span>
-<h3>A precise geometric obstruction.</h3><div class="atlas-formula">rank(g) ≤ 2 on a four-dimensional tangent space</div>
-<p>The real-part scalar-gradient Gram tensor of a complex scalar field has restricted rank and a degenerate positive-semidefinite signature in four dimensions. Applies to this specific tensor construction, not all scalar-derived effective metrics.</p>
-<div class="atlas-logic"><span class="atlas-code-label">Key proof move, from Lean source</span><p>The global tensor theorem assembles Gram symmetry, nonnegativity, the rank bound, nontrivial kernel, and degeneracy from exact supporting lemmas.</p><pre><code>exact ⟨gram_symmetric _, gram_nonnegative _, gram_ker _, gram_rank_le_two _,\n    gram_nullity _ h4, gram_degenerate _ h4⟩</code></pre></div>
-<a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ManifoldScalarMetric.lean#L247" target="_blank" rel="noopener noreferrer">Inspect full Lean source ↗</a></div>
-<div class="atlas-feature-code"><p class="atlas-code-label">rickyjreyes/math / ManifoldScalarMetric.lean:247</p>
-<pre><code data-atlas-feature-code>theorem main (ψ : M → ℂ) (_hψ : ContMDiff I 𝓘(ℝ, ℂ) 1 ψ)
+      ⨆ t, distX (u t) (Gset β γ k m) &lt; ε :=</code></pre>
+<p class="atlas-code-label">Representative proof step from source</p>
+<pre class="atlas-proof-code"><code>obtain ⟨δ, hδ, hcore⟩ := stable_core hβ hγ hm hmB (half_pos hε)</code></pre>
+<p class="atlas-lean-note">The first code block is the theorem statement with its hypotheses. The full source contains its Lean proof body and dependencies.</p>
+</details>
+</div></article>
+<article class="atlas-feature atlas-feature-readable" id="feature-10" data-atlas-feature-rank="10">
+<div class="atlas-feature-copy">
+<div class="atlas-feature-topline"><span class="atlas-kicker">05 · Inverse problems</span><span class="atlas-feature-source">math / V18Identifiability.lean</span></div>
+<h3>How much can measurements fail to identify?</h3>
+<p class="atlas-feature-lead">Nearby, genuinely different parameter choices can give the same eleven observations.</p>
+<div class="atlas-feature-math" aria-label="Mathematical form">\[\dim(\text{local observation fiber})=20\]</div>
+<div class="atlas-feature-narrative">
+<div><h4>Why this matters</h4><p>The local twenty-dimensional fiber shows structural ambiguity, beyond numerical ill-conditioning.</p></div>
+<div><h4>Exact assumptions</h4><p>The frozen 31-parameter / 11-observation nonlinear map, with α ≥ 0.</p></div>
+</div>
+<div class="atlas-feature-key"><h4>The key step of the proof</h4><p>The frozen Jacobian has an eleven-dimensional image and twenty-dimensional kernel. The local level-set theorem turns that kernel into a nonlinear family of indistinguishable parameters.</p></div>
+<p class="atlas-feature-scope"><strong>Scope:</strong> Local to the frozen model, not a global identification classification.</p>
+<div class="atlas-feature-actions"><a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18Identifiability.lean#L32" target="_blank" rel="noopener noreferrer">Read the complete Lean proof in GitHub ↗</a><a class="atlas-feature-browser-link" href="#proof-10">Find result 10 in the explorer</a></div>
+<details class="atlas-feature-lean">
+<summary>Read the exact Lean declaration and a key proof line</summary>
+<p class="atlas-code-label">lean/MathProofs/V18Identifiability.lean:32 · theorem observed_local_level_set</p>
+<pre class="atlas-proof-code"><code data-atlas-feature-code>theorem observed_local_level_set (alpha : ℝ) (ha : 0 ≤ alpha) :
+    HasTwentyDimensionalLocalFiber alpha :=</code></pre>
+<p class="atlas-code-label">Representative proof step from source</p>
+<pre class="atlas-proof-code"><code>exists_c1_level_set_chart observed (frozen alpha 5) (jacobian (frozen alpha 5))</code></pre>
+<p class="atlas-lean-note">The first code block is the theorem statement with its hypotheses. The full source contains its Lean proof body and dependencies.</p>
+</details>
+</div></article>
+<article class="atlas-feature atlas-feature-readable" id="feature-27" data-atlas-feature-rank="27">
+<div class="atlas-feature-copy">
+<div class="atlas-feature-topline"><span class="atlas-kicker">06 · Geometric obstruction</span><span class="atlas-feature-source">math / ManifoldScalarMetric.lean</span></div>
+<h3>Can one complex scalar define a four-dimensional metric?</h3>
+<p class="atlas-feature-lead">A complex scalar's real-gradient Gram tensor has rank at most two on a four-dimensional tangent space.</p>
+<div class="atlas-feature-math" aria-label="Mathematical form">\[\operatorname{rank}(g_\psi)\leq2,\qquad\dim\ker(g_\psi)\geq2\]</div>
+<div class="atlas-feature-narrative">
+<div><h4>Why this matters</h4><p>This particular construction cannot define a nondegenerate Lorentzian metric, without ruling out other metric constructions.</p></div>
+<div><h4>Exact assumptions</h4><p>A C¹ complex scalar on the specified four-dimensional smooth manifold.</p></div>
+</div>
+<div class="atlas-feature-key"><h4>The key step of the proof</h4><p>The theorem combines Gram symmetry and nonnegativity with a rank-at-most-two bound. In dimension four that leaves a nontrivial kernel, so this tensor is degenerate.</p></div>
+<p class="atlas-feature-scope"><strong>Scope:</strong> Applies to this specific tensor construction, not all scalar-derived effective metrics.</p>
+<div class="atlas-feature-actions"><a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ManifoldScalarMetric.lean#L247" target="_blank" rel="noopener noreferrer">Read the complete Lean proof in GitHub ↗</a><a class="atlas-feature-browser-link" href="#proof-27">Find result 27 in the explorer</a></div>
+<details class="atlas-feature-lean">
+<summary>Read the exact Lean declaration and a key proof line</summary>
+<p class="atlas-code-label">lean/MathProofs/ManifoldScalarMetric.lean:247 · theorem main</p>
+<pre class="atlas-proof-code"><code data-atlas-feature-code>theorem main (ψ : M → ℂ) (_hψ : ContMDiff I 𝓘(ℝ, ℂ) 1 ψ)
     (h4 : Module.finrank ℝ E = 4) (p : M) :
     (tensor I ψ p).IsSymm ∧
     (∀ v, 0 ≤ tensor I ψ p v v) ∧
@@ -89,12 +198,18 @@
       LinearMap.ker (mfderiv I 𝓘(ℝ, ℂ) ψ p).toLinearMap ∧
     Module.finrank ℝ (LinearMap.range (tensor I ψ p)) ≤ 2 ∧
     2 ≤ Module.finrank ℝ (LinearMap.ker (tensor I ψ p)) ∧
-    ¬ (tensor I ψ p).Nondegenerate :=</code></pre></div></article>
+    ¬ (tensor I ψ p).Nondegenerate :=</code></pre>
+<p class="atlas-code-label">Representative proof step from source</p>
+<pre class="atlas-proof-code"><code>exact ⟨gram_symmetric _, gram_nonnegative _, gram_ker _, gram_rank_le_two _,
+    gram_nullity _ h4, gram_degenerate _ h4⟩</code></pre>
+<p class="atlas-lean-note">The first code block is the theorem statement with its hypotheses. The full source contains its Lean proof body and dependencies.</p>
+</details>
+</div></article>
 </div></section>
 <section class="atlas-section" id="proofs"><div class="atlas-shell">
-<div class="atlas-head"><div><p class="atlas-kicker">Cross-repository proof explorer</p><h2>Twenty-seven source-backed highlights.</h2></div><p>Seventeen entries from the public portion of the selected results index, seven additional mathematics modules, and three supporting WCT Lean declarations. All 27 link to public source.</p></div>
-<div class="atlas-browser-bar"><input id="atlas-query" class="atlas-search" type="search" aria-label="Search theorem highlights" placeholder="Search theorem, hypothesis, subject, repository..." autocomplete="off">
-<p><span id="atlas-count" role="status" aria-live="polite">Loading proof declarations…</span> · <button id="atlas-clear" type="button" style="border:0;background:transparent;color:var(--atlas-accent);font:inherit;text-decoration:underline;cursor:pointer">Clear filters</button></p></div>
+<div class="atlas-head"><div><p class="atlas-kicker">Cross-repository proof explorer</p><h2>Twenty-seven results, explained.</h2></div><p>Every result has a readable explanation, its mathematical form, assumptions and limitations. The exact Lean theorem remains one click away, with a direct link to the full proof source.</p></div>
+<div class="atlas-browser-bar"><input id="atlas-query" class="atlas-search" type="search" aria-label="Search theorem highlights" placeholder="Search questions, ideas, theorems, assumptions..." autocomplete="off">
+<p><span id="atlas-count" role="status" aria-live="polite">Loading proof declarations…</span> · <button id="atlas-clear" type="button" style="border:0;background:transparent;color:var(--atlas-accent);font:inherit;text-decoration:underline;cursor:pointer">Clear filters</button> · <button type="button" class="atlas-text-button" id="atlas-lean-toggle" aria-pressed="false">Show all Lean statements</button></p></div>
 <div class="atlas-explorer"><aside class="atlas-filters" aria-label="Proof filters"><div id="atlas-category-filter"></div><div class="atlas-filter-sep"></div><div id="atlas-repo-filter"></div></aside><div id="atlas-proof-list" class="atlas-results" aria-label="Lean theorem highlights"><p class="atlas-no-results">Loading the public proof inventory. <a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/VERIFIED_LEAN_RESULTS.md">Read the source index on GitHub ↗</a></p></div></div>
 <p class="atlas-caution">The displayed Lean signatures state the encoded theorem, not the proof body. A formal proof proves only the declaration under its hypotheses. The public 20-module selected index also references three currently private-repository files; these are deliberately excluded from this public-source showcase. Individual modules may overlap in mathematical subject.</p>
 </div></section>
@@ -113,7 +228,15 @@
 <section class="atlas-shell atlas-bottom"><div><p class="atlas-kicker">The research continues</p><h2>There are 300 questions to work on.</h2><p>The Reyes Problem Repository is the separate call for rigorous mathematics: choose a model, evaluate prior art, prove a statement or find a counterexample, and contribute the exact scope.</p></div><a class="atlas-action primary" href="/reyes-problem-repository/">Open the problem roadmap</a></section>
 </main>
 <footer class="site-footer"><div class="section-shell footer-bottom"><span>Mathematics / Source-first theorem catalogue</span><a href="#top">Back to top ↑</a></div></footer>
-<script src="./atlas.js?v=20261102-proof-atlas" defer></script>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+  startup: { typeset: false }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="./atlas.js?v=20261102-readable-math" defer></script>
 <script src="../site-nav.js?v=20261102-dedicated-math-pages" defer></script>
 <script src="../site-nav.js" defer></script>
 </body></html>
