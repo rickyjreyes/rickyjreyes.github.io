@@ -57,6 +57,52 @@ def verify() -> None:
                             entry["file_path"]) for entry in entries)
     assert 'fetch("./problem-index.json"' in script
     assert 'stageOf(problem)' in script
+
+    # Cross-repository public Lean proof atlas: source presence and proper distinctions.
+    fragments = [
+        json.loads((ROOT / "math" / f"proofs-0{i}.json").read_text(encoding="utf-8"))
+        for i in (1, 2, 3)
+    ]
+    proofs = sorted(
+        (entry for fragment in fragments for entry in fragment["entries"]),
+        key=lambda entry: entry["rank"],
+    )
+    repo_index = json.loads(
+        (ROOT / "math" / "public-lean-repositories.json").read_text(encoding="utf-8")
+    )
+    file_index = json.loads(
+        (ROOT / "math" / "lean-files.json").read_text(encoding="utf-8")
+    )
+    public = {entry["repo"] for entry in repo_index["repositories"]}
+    assert [entry["rank"] for entry in proofs] == list(range(1, 28))
+    assert public == {
+        "rickyjreyes/math", "rickyjreyes/wct-lean",
+        "rickyjreyes/geometry_of_resonance",
+        "rickyjreyes/Wavelock", "rickyjreyes/photodiode",
+    }
+    assert len(file_index["files"]) == file_index["count"] == 278
+    assert sum(x["lean_files"] for x in repo_index["repositories"]) == 278
+    indexed_paths = {(row["repo"], row["path"]) for row in file_index["files"]}
+    assert len(indexed_paths) == 278
+    assert len(public) == repo_index["repositories_with_lean"] == 5
+    assert repo_index["public_repositories_scanned"] == 30
+    assert all(entry["repo"] in public for entry in proofs)
+    assert all((entry["repo"], entry["path"]) in indexed_paths for entry in proofs)
+    assert all(entry["statement"].lstrip().startswith("theorem ")
+               and entry["theorem"] in entry["statement"]
+               and int(entry["line"]) > 0 for entry in proofs)
+    assert all(entry["source_url"].startswith(
+        f"https://github.com/{entry['repo']}/blob/"
+    ) for entry in proofs)
+    assert all(entry["source_url"].endswith(f"#L{entry['line']}")
+               for entry in proofs)
+    assert 'id="atlas-proof-list"' in math
+    assert 'id="atlas-files-list"' in math
+    assert 'formal-reviews/' in script
+    assert 'id="rpr-list"' in problems
+    assert 'id="rpr-area-list"' in problems
+    print("Lean atlas validated: 27 sourced excerpts; 278 public files in 5 repositories.")
+
     print("Mathematics pages validated: 2 internal pages; 300 questions; 12 subjects.")
 
 
