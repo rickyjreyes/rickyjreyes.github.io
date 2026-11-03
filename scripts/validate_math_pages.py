@@ -119,7 +119,7 @@ def verify() -> None:
     assert 'id="atlas-lean-toggle"' in math
     assert 'class="atlas-glossary"' in math
     assert [int(value) for value in re.findall(
-        r'data-atlas-feature-rank="(\\d+)"', math
+        r'data-atlas-feature-rank="(\d+)"', math
     )] == [1, 4, 3, 2, 10, 27]
     assert math.count('data-atlas-feature-code') == 6
     assert math.count('class="atlas-feature-lean"') == 6
