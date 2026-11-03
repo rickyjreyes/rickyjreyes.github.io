@@ -136,7 +136,7 @@ def verify() -> None:
     assert 'full-reader.css' in problems
     # Validate the MathJax setup as JavaScript; misplaced markup is not safe.
     assert "inlineMath: [['$', '$']]" in problems
-    inline_scripts = re.findall(r"<script>([\\s\\S]*?)</script>", problems)
+    inline_scripts = re.findall(r"<script>(.*?)</script>", problems, flags=re.S)
     assert len(inline_scripts) == 1, "Expected exactly one inline MathJax script"
     syntax = subprocess.run(
         ["node", "--check", "-"],
