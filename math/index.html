@@ -37,6 +37,7 @@
 <div class="atlas-feature-copy"><span class="atlas-kicker">01 / Nonlinear PDE</span>
 <h3>Binding, for every permitted split.</h3><div class="atlas-formula">I(m) &lt; I(μ) + I(m − μ),   0 &lt; μ &lt; m</div>
 <p>Strict subadditivity of the constrained energy for every nontrivial split in a stated sufficient mass interval. Two-dimensional cubic–quintic model with β, γ &gt; 0 and 0 &lt; m ≤ mB, not an all-mass theorem.</p>
+<div class="atlas-logic"><span class="atlas-code-label">Key proof move, from Lean source</span><p>The proof applies the strict-gap inequality to both mass partitions, converts those estimates into strict energy-per-mass comparisons, and adds the weighted bounds.</p><pre><code>have h1 := gap (k := k) hβ hγ hμ hμm (by linarith)</code></pre></div>
 <a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/StrictBinding.lean#L531" target="_blank" rel="noopener noreferrer">Inspect full Lean source ↗</a></div>
 <div class="atlas-feature-code"><p class="atlas-code-label">rickyjreyes/math / StrictBinding.lean:531</p>
 <pre><code data-atlas-feature-code>theorem strict_binding (hβ : 0 &lt; β) (hγ : 0 &lt; γ) {m μ : ℝ} (hm : 0 &lt; m) (hmB : m ≤ mB β γ k)
@@ -46,6 +47,7 @@
 <div class="atlas-feature-copy"><span class="atlas-kicker">02 / Nonlinear PDE</span>
 <h3>Existence without imposed walls.</h3><div class="atlas-formula">I(m) is attained by a constrained minimizer</div>
 <p>The constrained energy infimum is attained in the specified two-dimensional sufficient mass range. Whole-space minimizer set with compactness modulo translations, not profile uniqueness.</p>
+<div class="atlas-logic"><span class="atlas-code-label">Key proof move, from Lean source</span><p>An approximating sequence approaches the constrained infimum. The compactness theorem supplies a limit with the same mass and the minimum energy.</p><pre><code>obtain ⟨-, -, -, U, hUm, hUE, -⟩ := compactness hβ hγ hm hmB hum hE</code></pre></div>
 <a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/WholeSpaceMinimizers.lean#L1492" target="_blank" rel="noopener noreferrer">Inspect full Lean source ↗</a></div>
 <div class="atlas-feature-code"><p class="atlas-code-label">rickyjreyes/math / WholeSpaceMinimizers.lean:1492</p>
 <pre><code data-atlas-feature-code>theorem exists_minimizer (hβ : 0 &lt; β) (hγ : 0 &lt; γ) {m : ℝ} (hm : 0 &lt; m)
@@ -55,6 +57,7 @@
 <div class="atlas-feature-copy"><span class="atlas-kicker">03 / Nonlinear PDE</span>
 <h3>Stability of an entire minimizing set.</h3><div class="atlas-formula">dist<sub>H²</sub>(u(t), G<sub>m</sub>) remains small</div>
 <p>A solution that begins near the constrained minimizers remains near their complete orbit in the specified H² setting. Set stability in the sufficient mass range, not uniqueness or stability of every excited state.</p>
+<div class="atlas-logic"><span class="atlas-code-label">Key proof move, from Lean source</span><p>A variational stability lemma supplies δ. Conservation of mass and energy transfers closeness to the minimizing set to every later time.</p><pre><code>obtain ⟨δ, hδ, hcore⟩ := stable_core hβ hγ hm hmB (half_pos hε)</code></pre></div>
 <a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean#L256" target="_blank" rel="noopener noreferrer">Inspect full Lean source ↗</a></div>
 <div class="atlas-feature-code"><p class="atlas-code-label">rickyjreyes/math / OrbitalStability.lean:256</p>
 <pre><code data-atlas-feature-code>theorem orbital_stability (hβ : 0 &lt; β) (hγ : 0 &lt; γ) {m : ℝ} (hm : 0 &lt; m)
@@ -66,6 +69,7 @@
 <div class="atlas-feature-copy"><span class="atlas-kicker">04 / Inverse problems</span>
 <h3>What observations cannot identify.</h3><div class="atlas-formula">31 parameters → 11 observations, with a 20D local fiber</div>
 <p>The fixed nonlinear observation model admits a local fiber of dimension twenty. Local to the frozen model, not a global identification classification.</p>
+<div class="atlas-logic"><span class="atlas-code-label">Key proof move, from Lean source</span><p>Surjectivity of the frozen Jacobian permits a C¹ local level-set chart. Its kernel has dimension twenty, yielding a genuine local fiber.</p><pre><code>exists_c1_level_set_chart observed (frozen alpha 5) (jacobian (frozen alpha 5))</code></pre></div>
 <a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18Identifiability.lean#L32" target="_blank" rel="noopener noreferrer">Inspect full Lean source ↗</a></div>
 <div class="atlas-feature-code"><p class="atlas-code-label">rickyjreyes/math / V18Identifiability.lean:32</p>
 <pre><code data-atlas-feature-code>theorem observed_local_level_set (alpha : ℝ) (ha : 0 ≤ alpha) :
@@ -74,6 +78,7 @@
 <div class="atlas-feature-copy"><span class="atlas-kicker">05 / Geometry</span>
 <h3>A precise geometric obstruction.</h3><div class="atlas-formula">rank(g) ≤ 2 on a four-dimensional tangent space</div>
 <p>The real-part scalar-gradient Gram tensor of a complex scalar field has restricted rank and a degenerate positive-semidefinite signature in four dimensions. Applies to this specific tensor construction, not all scalar-derived effective metrics.</p>
+<div class="atlas-logic"><span class="atlas-code-label">Key proof move, from Lean source</span><p>The global tensor theorem assembles Gram symmetry, nonnegativity, the rank bound, nontrivial kernel, and degeneracy from exact supporting lemmas.</p><pre><code>exact ⟨gram_symmetric _, gram_nonnegative _, gram_ker _, gram_rank_le_two _,\n    gram_nullity _ h4, gram_degenerate _ h4⟩</code></pre></div>
 <a class="atlas-source-link" data-atlas-feature-link href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ManifoldScalarMetric.lean#L247" target="_blank" rel="noopener noreferrer">Inspect full Lean source ↗</a></div>
 <div class="atlas-feature-code"><p class="atlas-code-label">rickyjreyes/math / ManifoldScalarMetric.lean:247</p>
 <pre><code data-atlas-feature-code>theorem main (ψ : M → ℂ) (_hψ : ContMDiff I 𝓘(ℝ, ℂ) 1 ψ)
