@@ -82,3 +82,18 @@ body.lean-atlas,body.reyes-agenda{background:var(--atlas-dark);color:var(--atlas
 @media(max-width:800px){.atlas-explorer{grid-template-columns:1fr}.atlas-filters{position:static;display:flex;flex-wrap:wrap;gap:5px;border:0;padding:0}.atlas-filter-heading,.atlas-filter-sep{display:none}.atlas-filter{width:auto;border:1px solid var(--atlas-line)}.atlas-head{display:block}.atlas-head>p{margin-top:18px}.atlas-bottom{grid-template-columns:1fr}}
 @media(max-width:640px){.atlas-shell{width:min(100% - 32px,1220px)}.atlas-hero{padding-top:120px;padding-bottom:40px}.atlas-hero h1{font-size:clamp(3rem,12vw,4.4rem)}.atlas-section{padding:50px 0}.atlas-facts{grid-template-columns:1fr}.atlas-facts>div,.atlas-facts>div+div{padding:16px 0;border-right:0;border-bottom:1px solid var(--atlas-line)}.atlas-facts>div:last-child{border-bottom:0}.atlas-repo-grid{grid-template-columns:1fr}.atlas-browser-bar{flex-direction:column;align-items:stretch}.atlas-search{width:100%}.atlas-proof-card{padding:20px}.atlas-feature-copy{padding:24px}.atlas-feature-code{padding:20px}}
 @media(prefers-reduced-motion:reduce){.atlas-action,.atlas-filter,.atlas-proof-card{transition:none!important}}
+
+.atlas-file-browser{margin-top:32px;border-top:1px solid var(--atlas-line);padding-top:31px}
+.atlas-file-head{display:flex;justify-content:space-between;align-items:end;gap:25px}
+.atlas-file-head h3{font:500 clamp(1.6rem,2.8vw,2.5rem)/1.2 Georgia,serif;margin:8px 0}
+.atlas-file-head p:not(.atlas-kicker){font-size:.8rem;color:var(--atlas-muted);line-height:1.68;max-width:710px}
+.atlas-file-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+.atlas-file-item{display:flex;align-items:center;gap:15px;justify-content:space-between;min-width:0;padding:13px 16px;background:#0b1928;border:1px solid var(--atlas-line);border-radius:4px}
+.atlas-file-item:hover{border-color:#456981}
+.atlas-file-path{min-width:0}
+.atlas-file-path span{display:block;font:.66rem ui-monospace,monospace;color:var(--atlas-faint);margin-bottom:5px}
+.atlas-file-path a{display:block;color:var(--atlas-ink);font:.73rem/1.5 ui-monospace,monospace;text-decoration:none;overflow-wrap:anywhere}
+.atlas-file-path a:hover{color:var(--atlas-accent)}
+.atlas-file-item strong{font:700 .65rem ui-monospace,monospace;color:var(--atlas-accent);white-space:nowrap}
+.atlas-file-more-wrap{display:flex;justify-content:center;margin-top:23px}
+@media(max-width:800px){.atlas-file-head{align-items:start;flex-direction:column}.atlas-file-list{grid-template-columns:1fr}}
