@@ -104,4 +104,41 @@
     proofList.innerHTML='<p class="atlas-no-results">The locally indexed theorem list could not load. <a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/VERIFIED_LEAN_RESULTS.md">Open the verified-results source index ↗</a></p>';
     repoGrid.innerHTML='<p class="atlas-no-results"><a href="https://github.com/rickyjreyes/math">Browse mathematics source ↗</a></p>';
   });
+
+  // All source files in the audited public repositories, separate from proof highlights.
+  const fileSearch = document.getElementById("atlas-files-search");
+  const fileList = document.getElementById("atlas-files-list");
+  const fileCount = document.getElementById("atlas-files-count");
+  const fileMore = document.getElementById("atlas-files-more");
+  const fileState = { files: [], shown: 24 };
+  const fileCard = item =>
+    '<div class="atlas-file-item"><div class="atlas-file-path">'
+    + '<span>' + esc(item.repo) + '</span>'
+    + '<a href="' + esc(item.source_url) + '" target="_blank" rel="noopener noreferrer">' + esc(item.path) + '</a>'
+    + '</div><strong>.lean ↗</strong></div>';
+
+  function renderFiles() {
+    const q = fileSearch.value.toLocaleLowerCase().trim();
+    const rows = fileState.files.filter(x => !q ||
+      (x.repo + " " + x.path).toLocaleLowerCase().includes(q));
+    fileList.innerHTML = rows.length ? rows.slice(0,fileState.shown).map(fileCard).join("") :
+      '<p class="atlas-no-results">No public Lean file matches your search.</p>';
+    fileMore.hidden = rows.length <= fileState.shown;
+    fileCount.textContent = rows.length + " of " + fileState.files.length
+      + " public .lean files match" + (fileMore.hidden ? "" : " · displaying first " + fileState.shown);
+  }
+  fileSearch.addEventListener("input", () => { fileState.shown = 24; renderFiles(); });
+  fileMore.addEventListener("click", () => { fileState.shown += 24; renderFiles(); });
+  fetch("./lean-files.json", {cache:"no-cache"}).then(response => {
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    return response.json();
+  }).then(data => {
+    if (!Array.isArray(data.files) || data.files.length !== 278 || data.count !== 278)
+      throw new Error("Public file inventory is incomplete");
+    fileState.files = data.files;
+    renderFiles();
+  }).catch(() => {
+    fileCount.textContent = "Local .lean file index unavailable.";
+    fileList.innerHTML = '<p class="atlas-no-results"><a href="https://github.com/rickyjreyes/math/tree/main/lean">Browse primary Lean sources on GitHub ↗</a></p>';
+  });
 })();
