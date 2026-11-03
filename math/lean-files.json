@@ -1,0 +1,1675 @@
+{
+  "snapshot_date": "2026-11-02",
+  "count": 278,
+  "meaning": "Every .lean source file found in the default-branch trees of the five Lean-containing public repositories owned by rickyjreyes. Source presence is not proof completeness or novelty.",
+  "files": [
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/lakefile.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/lakefile.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R01_Geometry.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R01_Geometry.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R02_Constants.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R02_Constants.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R07_PhaseFlux.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R07_PhaseFlux.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R13_ScaleFreedom.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R13_ScaleFreedom.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_AuxiliaryEquivalence.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_AuxiliaryEquivalence.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_CompletionClasses.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_CompletionClasses.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_EnergyAndConstraints.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_EnergyAndConstraints.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_FiniteComponentAffine.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_FiniteComponentAffine.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_FirstOrderCandidate.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_FirstOrderCandidate.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_GhostObstruction.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_GhostObstruction.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_LinearConstraintObstruction.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_LinearConstraintObstruction.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_OstrogradskyClass.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_OstrogradskyClass.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_PaisUhlenbeck.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_PaisUhlenbeck.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_TwoConstraintClassification.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_TwoConstraintClassification.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_TwoFieldAffineObstruction.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_TwoFieldAffineObstruction.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R18_Admissibility.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R18_Admissibility.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R18_Boundaries.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R18_Boundaries.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R18_CanonicalObstruction.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R18_CanonicalObstruction.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R18_Classification.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R18_Classification.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R18_ExactMinimizer.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R18_ExactMinimizer.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R18_F1ToF2.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R18_F1ToF2.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R18_FiniteScale.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R18_FiniteScale.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R18_Onset.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R18_Onset.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R25_ScaleWinding.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R25_ScaleWinding.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R45_NonlinearBridgeObstructions.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R45_NonlinearBridgeObstructions.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R46_RotatingQ5.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R46_RotatingQ5.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/AnalyticCertificationAudit.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/AnalyticCertificationAudit.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/E18CertificationAudit.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/E18CertificationAudit.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/E68CertificationAudit.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/E68CertificationAudit.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/E69CertificationAudit.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/E69CertificationAudit.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/F09Audit.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/F09Audit.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/lakefile.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/lakefile.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/BandPassFlow.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/BandPassFlow.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/ChartedScalarMetric.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ChartedScalarMetric.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/ComplexMetric.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ComplexMetric.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/ContinuousPhaseIntegral.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ContinuousPhaseIntegral.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/ContinuousPhaseOptimizer.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ContinuousPhaseOptimizer.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/ContinuousSpectralVariance.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ContinuousSpectralVariance.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/CubicQuinticFlow.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/CubicQuinticFlow.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/CurvatureLegacy.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/CurvatureLegacy.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/CurvatureNonattainment.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/CurvatureNonattainment.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/CurvatureUniformBound.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/CurvatureUniformBound.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/D4FrozenWholeSpace.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/D4FrozenWholeSpace.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/DispersionBranchPositivity.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/DispersionBranchPositivity.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/DispersionCriticalPoint.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/DispersionCriticalPoint.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/DispersionMinimizer.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/DispersionMinimizer.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/DispersionMinimum.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/DispersionMinimum.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/DispersionRealDomain.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/DispersionRealDomain.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E16ModalPower.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E16ModalPower.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E16SpectralCore.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E16SpectralCore.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E16TorusRemark.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E16TorusRemark.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E17Canonical.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E17Canonical.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E17Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E17Certification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E17GlobalBound.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E17GlobalBound.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E17PhaseRegularizer.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E17PhaseRegularizer.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18Certification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18EnergyGradient.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18EnergyGradient.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18FlowChainRule.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18FlowChainRule.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18FourierEnergy.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18FourierEnergy.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18Frechet.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18Frechet.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18IntegratedBalance.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18IntegratedBalance.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18Leibniz.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18Leibniz.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18Lyapunov.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18Lyapunov.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18Regularity.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18Regularity.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18Representative.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18Representative.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18TorusCalculus.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18TorusCalculus.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18VariationAlgebra.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18VariationAlgebra.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18WeightBounds.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18WeightBounds.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E18WeightDerivative.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E18WeightDerivative.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E26Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E26Certification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E26HistoricalCounterexample.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E26HistoricalCounterexample.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E26L2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E26L2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E26QuotientDomain.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E26QuotientDomain.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E26SeparatedL2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E26SeparatedL2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E57Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E57L2Semigroup.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57L2Semigroup.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E57SemigroupSymbol.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57SemigroupSymbol.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E57WholeSpaceDamping.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57WholeSpaceDamping.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E58Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E58Certification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E58GreenFunction.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E58GreenFunction.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E58Sharpness.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E58Sharpness.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E58WholeSpaceL2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E58WholeSpaceL2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E61Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E61ExactNorm.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61ExactNorm.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E61WholeSpaceGrowth.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61WholeSpaceGrowth.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62Certification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62Continuous.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62Continuous.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62ContinuumL2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62ContinuumL2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62Discrete.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62Discrete.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62LebesgueFraction.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62LebesgueFraction.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62ParsevalProjectorBridge.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62ParsevalProjectorBridge.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62ProjectionOperator.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62ProjectionOperator.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62Projector.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62Projector.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62ProjectorL2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62ProjectorL2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62Torus1D.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62Torus1D.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62TorusND.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62TorusND.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62TorusPhysicalProjector.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62TorusPhysicalProjector.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62TorusProjectorTheorem.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62TorusProjectorTheorem.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62TorusSharpness.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62TorusSharpness.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E62TrigonometricScope.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E62TrigonometricScope.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68Certification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68ChangeVariables.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68ChangeVariables.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68Classification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68Classification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68Corrected.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68Corrected.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68CriticalGradient.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68CriticalGradient.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68H2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68H2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68HigherDimEnergy.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68HigherDimEnergy.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68OneDimEnergy.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68OneDimEnergy.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68Radial.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68Radial.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68ScaledGradient.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68ScaledGradient.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68Scaling.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68Scaling.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68Singular.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68Singular.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68SmoothClassification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68SmoothClassification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68SmoothCounterexample.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68SmoothCounterexample.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68SmoothProfiles.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68SmoothProfiles.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68Sobolev.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68Sobolev.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68SobolevEmbedding.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68SobolevEmbedding.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E68WeakH1.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68WeakH1.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E69Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E69Certification.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E69Curvature.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E69Curvature.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E69Remarks.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E69Remarks.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E69Sobolev.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E69Sobolev.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/E69Torus.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E69Torus.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/Elementary.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/Elementary.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/ExactSensitivityNullity.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ExactSensitivityNullity.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/FourierLeakage.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/FourierLeakage.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/FourierLeakageWellPosed.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/FourierLeakageWellPosed.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/FourierMultiplierL2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/FourierMultiplierL2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/FourierShellL2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/FourierShellL2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/FourierSupport.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/FourierSupport.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/FreeEvolution.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/FreeEvolution.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/GaussianTrialAlgebra.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/GaussianTrialAlgebra.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/H2Algebra.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/H2Algebra.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/IntrinsicScalarMetric.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/IntrinsicScalarMetric.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/L2Fourier.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/L2Fourier.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/L2FourierShellBridge.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/L2FourierShellBridge.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/LocalIdentifiability.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/LocalIdentifiability.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/LocalLevelSet.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/LocalLevelSet.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BClosureFieldWitness.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BClosureFieldWitness.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BClosureTheorem.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BClosureTheorem.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BCurvature.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BCurvature.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BDimensionalField.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BDimensionalField.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BDirichletLaplacian.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BDirichletLaplacian.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BForcing.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BForcing.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BFubini.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BFubini.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BJetSmooth.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BJetSmooth.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BLimit.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BLimit.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BManuscript.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BManuscript.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BMass.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BMass.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BPhaseNonEquivariance.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BPhaseNonEquivariance.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BSmooth.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BSmooth.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BSquareMass.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BSquareMass.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BStationary.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BStationary.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/M6BStationaryTheorem.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/M6BStationaryTheorem.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/ManifoldScalarMetric.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ManifoldScalarMetric.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/MetricQuadratic.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/MetricQuadratic.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/MinimizerNonvanishing.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/MinimizerNonvanishing.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/ModelAlgebra.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ModelAlgebra.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/NegativeEnergy.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/NegativeEnergy.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/OrbitalStability.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/OrbitalStabilityCriterion.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStabilityCriterion.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/PhaseLocking.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/PhaseLocking.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/PhaseLockingContinuous.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/PhaseLockingContinuous.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/PhaseMinimizer.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/PhaseMinimizer.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/PhysicalDispersionMinimum.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/PhysicalDispersionMinimum.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/QuinticConvolution.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/QuinticConvolution.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/RegularizedCurvatureL2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/RegularizedCurvatureL2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/RemainingCores.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/RemainingCores.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/S004ConstraintCount.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/S004ConstraintCount.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/S004DiracBracket.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/S004DiracBracket.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/ScalarGradientFields.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ScalarGradientFields.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/SchwartzShell.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/SchwartzShell.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/SobolevH2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/SobolevH2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/SpectralConcentration.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/SpectralConcentration.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/SpectralPhaseIdentity.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/SpectralPhaseIdentity.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/SpectralSharpness.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/SpectralSharpness.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/SphereNull.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/SphereNull.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/StrictBinding.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/StrictBinding.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/Structural.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/Structural.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/StructuralExtensions.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/StructuralExtensions.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/SwiftHohenbergL2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/SwiftHohenbergL2.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/TorusFourier.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/TorusFourier.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/UVDispersion.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/UVDispersion.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/UVExponentialObstruction.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/UVExponentialObstruction.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/UVGrowthBound.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/UVGrowthBound.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/UVIllPosedness.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/UVIllPosedness.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/UVWholeSpace.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/UVWholeSpace.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18BlockJacobian.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18BlockJacobian.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18BranchBounds.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18BranchBounds.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18Frechet.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18Frechet.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18FullForward.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18FullForward.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18HeavyJacobian.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18HeavyJacobian.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18Identifiability.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18Identifiability.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18Interval.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18Interval.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18LightJacobian.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18LightJacobian.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18MiddleClipped.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18MiddleClipped.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18MiddleDerivatives.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18MiddleDerivatives.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18MiddleDeterminant.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18MiddleDeterminant.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18MiddleEnclosures.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18MiddleEnclosures.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18MiddleFloor.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18MiddleFloor.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18MiddleJacobian.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18MiddleJacobian.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18Rank.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18Rank.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18Regularity.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18Regularity.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/V18SelectedJacobian.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/V18SelectedJacobian.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/VariationalBinding.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/VariationalBinding.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/MathProofs/WholeSpaceMinimizers.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/WholeSpaceMinimizers.lean"
+    },
+    {
+      "repo": "rickyjreyes/math",
+      "branch": "main",
+      "path": "lean/scripts_audit/DependencyAudit.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/scripts_audit/DependencyAudit.lean"
+    },
+    {
+      "repo": "rickyjreyes/photodiode",
+      "branch": "main",
+      "path": "formal/lakefile.lean",
+      "source_url": "https://github.com/rickyjreyes/photodiode/blob/main/formal/lakefile.lean"
+    },
+    {
+      "repo": "rickyjreyes/photodiode",
+      "branch": "main",
+      "path": "formal/PhotodiodeProtocol.lean",
+      "source_url": "https://github.com/rickyjreyes/photodiode/blob/main/formal/PhotodiodeProtocol.lean"
+    },
+    {
+      "repo": "rickyjreyes/photodiode",
+      "branch": "main",
+      "path": "formal/PhotodiodeProtocol/Decision.lean",
+      "source_url": "https://github.com/rickyjreyes/photodiode/blob/main/formal/PhotodiodeProtocol/Decision.lean"
+    },
+    {
+      "repo": "rickyjreyes/photodiode",
+      "branch": "main",
+      "path": "formal/PhotodiodeProtocol/Randomization.lean",
+      "source_url": "https://github.com/rickyjreyes/photodiode/blob/main/formal/PhotodiodeProtocol/Randomization.lean"
+    },
+    {
+      "repo": "rickyjreyes/photodiode",
+      "branch": "main",
+      "path": "formal/PhotodiodeProtocol/Spectral.lean",
+      "source_url": "https://github.com/rickyjreyes/photodiode/blob/main/formal/PhotodiodeProtocol/Spectral.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/lakefile.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/lakefile.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/Algebra.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/Algebra.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/BlockAbsorption.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/BlockAbsorption.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/BytePadding.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/BytePadding.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/ConcreteSecurity.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/ConcreteSecurity.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/Encoding.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/Encoding.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/ExactField.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/ExactField.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/FirstBlockReachability.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/FirstBlockReachability.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/GlobalRoundClock.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/GlobalRoundClock.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/MultiBlock.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/MultiBlock.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/NormativeConstants.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/NormativeConstants.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/Protocol.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/Protocol.lean"
+    },
+    {
+      "repo": "rickyjreyes/Wavelock",
+      "branch": "master",
+      "path": "lean/WaveLockProofs/SecurityGames.lean",
+      "source_url": "https://github.com/rickyjreyes/Wavelock/blob/master/lean/WaveLockProofs/SecurityGames.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "lakefile.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/lakefile.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "Main.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/Main.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/Basic.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Basic.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/Falsification.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Falsification.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/LeanTests/Attractor.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/LeanTests/Attractor.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/LeanTests/DimensionFailure.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/LeanTests/DimensionFailure.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/LeanTests/EntropyMonotone.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/LeanTests/EntropyMonotone.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/LeanTests/Sanity.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/LeanTests/Sanity.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/Theta/Baselines.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Theta/Baselines.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/Theta/Core.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Theta/Core.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/Theta/Definitions.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Theta/Definitions.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/Theta/Dynamics.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Theta/Dynamics.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "MyProject/Theta/Entropy.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Theta/Entropy.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "scripts/d4_axiom_audit.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/scripts/d4_axiom_audit.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Contracts/Analytic.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Contracts/Analytic.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Curvature.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Curvature.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/DerivedAudit.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/DerivedAudit.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Dimension.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Dimension.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Energy.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Energy.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Fourier.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Fourier.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Koide.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Koide.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Main.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Main.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/AlgebraicChecks.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/AlgebraicChecks.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/BandPass.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/BandPass.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/ClosureFormalization.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/ClosureFormalization.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/Collider.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/Collider.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/CompactDynamics.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/CompactDynamics.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/ComplexCurvature.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/ComplexCurvature.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/CoverageExpansion.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/CoverageExpansion.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/CurvatureOperator.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/CurvatureOperator.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/D4Analytical.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/D4Analytical.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/D4Binding.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/D4Binding.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/D4Closure.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/D4Closure.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/DerivedConstraints.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/DerivedConstraints.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/FiniteLoopAndDrag.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/FiniteLoopAndDrag.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/FormalUpgrades.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/FormalUpgrades.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/GhostModes.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/GhostModes.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/KoideDerivation.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/KoideDerivation.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/Locking.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/Locking.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/LogFlow.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/LogFlow.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/NarrowCanonicalCoverage.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/NarrowCanonicalCoverage.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/PhaseFlux.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/PhaseFlux.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/RegistryOnlyClosures.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/RegistryOnlyClosures.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/RestDensity.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/RestDensity.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/UnifiedOperator.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/UnifiedOperator.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Registry.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Registry.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/ResolvedAudit.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/ResolvedAudit.lean"
+    }
+  ]
+}
