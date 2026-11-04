@@ -156,7 +156,7 @@ def verify() -> None:
         for p in papers
     )
     assert sum(section["name"].startswith("F") and
-               bool(re.match(r"F\\d{2}\\b", section["name"]))
+               bool(re.match(r"F\d{2}\b", section["name"]))
                for section in manuscript_sections) == 12
     assert 'id="hub"' in math
     assert 'id="subjects"' in math
@@ -171,7 +171,7 @@ def verify() -> None:
                   "/reyes-problem-repository/"):
         assert f'href="{route}"' in math
     subject_urls = re.findall(
-        r'/reyes-problem-repository/\\?subject=([^"#]+)#browse', math
+        r'/reyes-problem-repository/\?subject=([^"#]+)#browse', math
     )
     assert len(subject_urls) == 12
     assert {unquote(subject) for subject in subject_urls} == set(categories)
