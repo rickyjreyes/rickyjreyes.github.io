@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import re
 import subprocess
+from urllib.parse import unquote
 from collections import Counter
 from pathlib import Path
 
@@ -138,6 +139,49 @@ def verify() -> None:
     )
     assert inline_check.returncode == 0, inline_check.stderr
     print("Reader edition validated: 27 explanations, 6 full-featured mathematics examples, exact Lean preserved.")
+
+    # The Mathematics landing page is a research hub, not only a theorem atlas.
+    manifest = json.loads(
+        (ROOT / "math" / "manuscripts.json").read_text(encoding="utf-8")
+    )
+    manuscript_sections = manifest["sections"]
+    assert len(manuscript_sections) == manifest["section_count"] == 21
+    papers = [p for section in manuscript_sections for p in section["papers"]]
+    assert len(papers) == manifest["paper_count"] == 28
+    assert len({p["pdf"] for p in papers}) == 28
+    assert all(
+        p["title"] and p["pdf"].startswith(("preprints/", "compendium/"))
+        and p["pdf"].endswith("/paper.pdf")
+        and p["tex"] and p["tex"].endswith(".tex")
+        for p in papers
+    )
+    assert sum(section["name"].startswith("F") and
+               bool(re.match(r"F\d{2}\b", section["name"]))
+               for section in manuscript_sections) == 12
+    assert 'id="hub"' in math
+    assert 'id="subjects"' in math
+    assert 'id="manuscripts"' in math
+    assert 'id="math-paper-list"' in math
+    assert 'href="./hub.css?' in math
+    assert 'src="./hub.js?' in math
+    assert 'math/lean/MathProofs.lean' not in math
+    assert 'math/blob/main/lean/MathProofs.lean' in math
+    assert 'math/blob/main/lean/formalization.yaml' in math
+    for route in ("/lean/", "/sympy/", "/equations/", "/publications/",
+                  "/reyes-problem-repository/"):
+        assert f'href="{route}"' in math
+    subject_urls = re.findall(
+        r'/reyes-problem-repository/\?subject=([^"#]+)#browse', math
+    )
+    assert len(subject_urls) == 12
+    assert {unquote(subject) for subject in subject_urls} == set(categories)
+    hub_js = (ROOT / "math" / "hub.js").read_text(encoding="utf-8")
+    assert '"./manuscripts.json"' in hub_js
+    assert 'math-paper-category' in hub_js
+    assert 'math-paper-search' in hub_js
+    assert 'URLSearchParams' in script and 'requestedSubject' in script
+    print("Math hub validated: 4 primary research routes, 12 subject deep links, 28 manuscript PDFs and primary Lean tree.")
+
 
     print("Lean atlas validated: 27 sourced excerpts; 278 public files in 5 repositories.")
 

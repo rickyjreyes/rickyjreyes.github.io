@@ -314,7 +314,10 @@
     areaOrder.forEach(name=>{
       const option=document.createElement("option");option.value=name;option.textContent=name;els.area.append(option);
     });
-    els.area.value="Nonlinear wave dynamics";
+    // Allow the Mathematics hub to open an exact subject, without changing
+    // individual GC deep-link behavior or the on-page filter controls.
+    const requestedSubject = new URLSearchParams(location.search).get("subject");
+    els.area.value = areaOrder.includes(requestedSubject) ? requestedSubject : "Nonlinear wave dynamics";
     if (location.hash.startsWith("#GC"))fromHash();
     else render();
   }).catch(error=>{
