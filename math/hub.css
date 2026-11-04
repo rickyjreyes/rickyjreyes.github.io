@@ -1,0 +1,58 @@
+
+/* Main Mathematics Hub: research-wayfinding above theorem detail. */
+.lean-atlas .atlas-hero{padding-bottom:58px}
+.lean-atlas .atlas-hero h1{font-size:clamp(3.1rem,6.5vw,6.2rem);max-width:1080px}
+.math-hub-wayfinding{border-bottom:1px solid var(--atlas-line);background:#091927}
+.math-hub-wayfinding>.atlas-shell{display:flex;gap:11px 26px;align-items:center;flex-wrap:wrap;padding:17px 0}
+.math-hub-wayfinding a{font:.73rem/1.6 system-ui,sans-serif;text-decoration:none;font-weight:740;color:#b4c7d4}
+.math-hub-wayfinding a:hover,.math-hub-wayfinding a:focus-visible{color:var(--atlas-accent);text-decoration:underline}
+.math-hub-section{padding:69px 0}
+.math-hub-section .atlas-head h2{max-width:800px}
+.math-hub-gateways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.math-hub-gateway{border:1px solid #2a4557;background:#0b1e2d;border-radius:6px;padding:clamp(21px,2.7vw,33px);display:flex;flex-direction:column;min-width:0}
+.math-hub-gateway-main{border-color:#68abc5;background:#10283b}
+.math-hub-gateway-tag{font:780 .69rem/1.3 ui-monospace,monospace;letter-spacing:.13em;color:var(--atlas-accent)}
+.math-hub-gateway h3{font:500 clamp(1.5rem,2.2vw,2.18rem)/1.19 Georgia,serif;letter-spacing:-.023em;margin:14px 0 11px}
+.math-hub-gateway p{font-size:.85rem;line-height:1.74;color:var(--atlas-muted);max-width:620px;margin:0 0 22px}
+.math-hub-linkrow{display:flex;flex-wrap:wrap;gap:12px 23px;margin-top:auto}
+.math-hub-linkrow a,.math-hub-subject-links a{color:var(--atlas-accent);font-size:.79rem;font-weight:750;text-decoration:none}
+.math-hub-linkrow a:hover,.math-hub-subject-links a:hover{text-decoration:underline;text-underline-offset:4px}
+.math-hub-lean-callout{display:flex;align-items:center;justify-content:space-between;gap:28px;border-top:1px solid var(--atlas-line);margin-top:33px;padding:26px 0 0}
+.math-hub-lean-callout h3{font:500 clamp(1.36rem,2vw,1.86rem)/1.24 Georgia,serif;margin:8px 0}
+.math-hub-lean-callout h3 code{font:.8em ui-monospace,Consolas,monospace;color:var(--atlas-accent)}
+.math-hub-lean-callout p:not(.atlas-kicker){color:var(--atlas-muted);line-height:1.7;font-size:.81rem;max-width:850px;margin:0}
+.math-hub-lean-callout a:not(.atlas-action){color:var(--atlas-accent)}
+.math-hub-lean-callout .atlas-action{flex:none}
+.math-hub-subject-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.math-hub-subject{display:flex;flex-direction:column;min-width:0;background:#0b1c2a;border-top:2px solid #3a6176;border-left:1px solid var(--atlas-line);border-right:1px solid var(--atlas-line);border-bottom:1px solid var(--atlas-line);padding:21px 22px 23px}
+.math-hub-subject-index{font:.7rem ui-monospace,Consolas,monospace;color:var(--atlas-faint)}
+.math-hub-subject h3{font:500 1.25rem/1.29 Georgia,serif;margin:13px 0 10px;min-height:2.4em}
+.math-hub-subject p{color:var(--atlas-muted);font-size:.78rem;line-height:1.65;margin:0 0 20px}
+.math-hub-subject-links{display:flex;flex-wrap:wrap;align-items:center;gap:9px 18px;margin-top:auto}
+.math-hub-subject-links a{font-size:.74rem}
+.math-hub-manuscript-tools{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(210px,.8fr);gap:15px;margin-bottom:16px}
+.math-hub-manuscript-tools label{display:block;font-size:.76rem;color:var(--atlas-muted);font-weight:750}
+.math-hub-manuscript-tools input,.math-hub-manuscript-tools select{display:block;width:100%;box-sizing:border-box;min-height:45px;margin-top:9px;border:1px solid var(--atlas-line);border-radius:5px;color:var(--atlas-ink);background:#091b2b;padding:11px 12px;font:400 .86rem system-ui,sans-serif}
+.math-hub-manuscript-tools select{cursor:pointer}
+.math-hub-manuscript-tools input:focus,.math-hub-manuscript-tools select:focus{outline:2px solid var(--atlas-accent);outline-offset:2px}
+.math-hub-manuscript-list{display:grid;gap:8px;margin-top:19px}
+.math-hub-manuscript-family{border:1px solid #304456;border-radius:5px;background:#0c1d2c;min-width:0}
+.math-hub-manuscript-family summary{display:flex;justify-content:space-between;align-items:center;gap:15px;list-style:none;cursor:pointer;min-height:58px;padding:15px 20px;font-size:.86rem;color:#e1ebf2;font-weight:730;line-height:1.5}
+.math-hub-manuscript-family summary::-webkit-details-marker{display:none}
+.math-hub-manuscript-family summary:before{content:"+";color:var(--atlas-accent);font:700 1.1rem ui-monospace,monospace}
+.math-hub-manuscript-family[open] summary:before{content:"−"}
+.math-hub-manuscript-family summary>span:first-child{flex:1;min-width:0}
+.math-hub-manuscript-family summary:hover{background:#102637}
+.math-hub-family-number{color:var(--atlas-faint);font:.7rem ui-monospace,monospace;margin-right:16px}
+.math-hub-family-count{flex:none;font:.72rem ui-monospace,monospace;color:var(--atlas-muted)}
+.math-hub-paper-entries{padding:0 20px 12px;border-top:1px solid var(--atlas-line)}
+.math-hub-paper{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:11px 22px;padding:18px 0;border-bottom:1px solid var(--atlas-line)}
+.math-hub-paper:last-child{border-bottom:0}
+.math-hub-paper strong{font-size:.83rem;line-height:1.6;font-weight:650;flex:1;min-width:240px}
+.math-hub-paper nav{display:flex;flex-wrap:wrap;gap:10px 19px}
+.math-hub-paper nav a{font-size:.75rem;color:var(--atlas-accent);font-weight:740;text-decoration:none;white-space:nowrap}
+.math-hub-paper nav a:hover{text-decoration:underline}
+.math-hub-catalogue-footer{display:flex;gap:12px 28px;align-items:center;flex-wrap:wrap;margin-top:23px}
+#math-paper-status{margin:10px 0}
+@media(max-width:1020px){.math-hub-subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.math-hub-lean-callout{align-items:flex-start;flex-direction:column}}
+@media(max-width:680px){.math-hub-gateways,.math-hub-subject-grid,.math-hub-manuscript-tools{grid-template-columns:1fr}.math-hub-subject h3{min-height:0}.math-hub-wayfinding>.atlas-shell{gap:10px 18px}.math-hub-paper nav{width:100%}.math-hub-section{padding:55px 0}}
