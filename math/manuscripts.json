@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "source": "https://github.com/rickyjreyes/math/blob/main/CONTENTS.md",
+  "source_file_sha": "03aed37f223556073bcd44a2e12a924ebdc1be6c",
+  "snapshot_date": "2026-11-03",
+  "section_count": 21,
+  "paper_count": 28,
+  "sections": [
+    {
+      "name": "Compendium — Reference mathematics (separate from F-series)",
+      "papers": [
+        {
+          "title": "Volume I: Elementary Mathematical Foundations of Wave Confinement Theory",
+          "pdf": "compendium/wct-elementary-mathematics/paper.pdf",
+          "tex": "compendium/wct-elementary-mathematics/main.tex",
+          "notes": "compendium/wct-elementary-mathematics/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F01 — Fourth-order cubic–quintic variational PDE",
+      "papers": [
+        {
+          "title": "Strict binding for a fourth-order cubic–quintic Hamiltonian",
+          "pdf": "preprints/strict-subadditivity-fourth-order-cubic-quintic/paper.pdf",
+          "tex": "papers/strict-subadditivity-fourth-order-cubic-quintic/main.tex",
+          "notes": "preprints/strict-subadditivity-fourth-order-cubic-quintic/README.md"
+        },
+        {
+          "title": "Whole-space constrained minimizer existence",
+          "pdf": "preprints/whole-space-fourth-order-cubic-quintic-minimizers/paper.pdf",
+          "tex": "papers/whole-space-fourth-order-cubic-quintic-minimizers/main.tex",
+          "notes": "preprints/whole-space-fourth-order-cubic-quintic-minimizers/README.md"
+        },
+        {
+          "title": "Orbital stability of the complete minimizing set",
+          "pdf": "preprints/orbital-stability-fourth-order-cubic-quintic/paper.pdf",
+          "tex": "papers/orbital-stability-fourth-order-cubic-quintic/main.tex",
+          "notes": "preprints/orbital-stability-fourth-order-cubic-quintic/README.md"
+        },
+        {
+          "title": "Negative constrained energy at all positive masses",
+          "pdf": "preprints/negative-constrained-energy-cubic-quintic/paper.pdf",
+          "tex": "papers/negative-constrained-energy-cubic-quintic/main.tex",
+          "notes": "preprints/negative-constrained-energy-cubic-quintic/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F02 — Higher-derivative field obstructions",
+      "papers": [
+        {
+          "title": "Ultraviolet Sobolev ill-posedness",
+          "pdf": "preprints/uv-sobolev-ill-posedness-fourth-order-wave/paper.pdf",
+          "tex": "papers/uv-sobolev-ill-posedness-fourth-order-wave/main.tex",
+          "notes": "preprints/uv-sobolev-ill-posedness-fourth-order-wave/README.md"
+        },
+        {
+          "title": "Canonical S004 constraint count",
+          "pdf": "preprints/s004-complex-scalar-constraint-count/paper.pdf",
+          "tex": "papers/s004-complex-scalar-constraint-count/main.tex",
+          "notes": "preprints/s004-complex-scalar-constraint-count/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F03 — Spectral–phase geometry",
+      "papers": [
+        {
+          "title": "Spectral-phase identity and geometric counterexample",
+          "pdf": "preprints/spectral-rms-averaged-curvature/paper.pdf",
+          "tex": "papers/spectral-rms-averaged-curvature/main.tex",
+          "notes": "preprints/spectral-rms-averaged-curvature/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F04 — Finite-mode nonlinear dynamics",
+      "papers": [
+        {
+          "title": "Nonlinear finite Fourier-mode leakage",
+          "pdf": "preprints/finite-fourier-coordinate-subspace-noninvariance/paper.pdf",
+          "tex": "papers/finite-fourier-coordinate-subspace-noninvariance/main.tex",
+          "notes": "preprints/finite-fourier-coordinate-subspace-noninvariance/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F05 — Positive curvature energy",
+      "papers": [
+        {
+          "title": "Positive-curvature nonattainment",
+          "pdf": "preprints/positive-curvature-whole-space-nonattainment/paper.pdf",
+          "tex": "papers/positive-curvature-whole-space-nonattainment/main.tex",
+          "notes": "preprints/positive-curvature-whole-space-nonattainment/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F06 — Dispersion scale selection",
+      "papers": [
+        {
+          "title": "Exact finite-wavenumber dispersion minimum",
+          "pdf": "preprints/exact-positive-wavenumber-minimum/paper.pdf",
+          "tex": "papers/exact-positive-wavenumber-minimum/main.tex",
+          "notes": "preprints/exact-positive-wavenumber-minimum/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F07 — Geometric phase locking",
+      "papers": [
+        {
+          "title": "Exact weighted phase-locking minimum",
+          "pdf": "preprints/weighted-closed-loop-phase-locking/paper.pdf",
+          "tex": "papers/weighted-closed-loop-phase-locking/main.tex",
+          "notes": "preprints/weighted-closed-loop-phase-locking/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F08 — Rank and signature of scalar tensors",
+      "papers": [
+        {
+          "title": "Scalar-gradient rank and signature obstruction",
+          "pdf": "preprints/scalar-gradient-lorentzian-no-go/paper.pdf",
+          "tex": "papers/scalar-gradient-lorentzian-no-go/main.tex",
+          "notes": "preprints/scalar-gradient-lorentzian-no-go/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F09 — Spectral inverse problems",
+      "papers": [
+        {
+          "title": "Spectral parameter-identifiability obstruction",
+          "pdf": "preprints/sm-v18-local-identifiability-obstruction/paper.pdf",
+          "tex": "papers/sm-v18-local-identifiability-obstruction/main.tex",
+          "notes": "preprints/sm-v18-local-identifiability-obstruction/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F10 — Whole-space Fourier spectra",
+      "papers": [
+        {
+          "title": "Fourier-shell L² nonexistence",
+          "pdf": "preprints/isolated-fourier-shell-no-l2-bound-state/paper.pdf",
+          "tex": "papers/isolated-fourier-shell-no-l2-bound-state/main.tex",
+          "notes": "preprints/isolated-fourier-shell-no-l2-bound-state/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F11 — Fourier-band dynamics and concentration",
+      "papers": [
+        {
+          "title": "E13/E14: negative-gradient-flow structure and exact dissipation identity",
+          "pdf": "preprints/band-pass-amplitude-negative-gradient-flow/paper.pdf",
+          "tex": "papers/band-pass-amplitude-negative-gradient-flow/main.tex",
+          "notes": "preprints/band-pass-amplitude-negative-gradient-flow/README.md"
+        },
+        {
+          "title": "E16: Linear spectral concentration and dominant-wavenumber convergence",
+          "pdf": "preprints/e16-linear-spectral-concentration/paper.pdf",
+          "tex": "papers/e16-linear-spectral-concentration/main.tex",
+          "notes": "preprints/e16-linear-spectral-concentration/README.md"
+        },
+        {
+          "title": "E59: Dominant-annulus Fourier projection (fixed sharp mask)",
+          "pdf": "preprints/e59-dominant-annulus-projection/paper.pdf",
+          "tex": "papers/e59-dominant-annulus-projection/main.tex",
+          "notes": "preprints/e59-dominant-annulus-projection/README.md"
+        },
+        {
+          "title": "E62: Spectral energy concentration fraction",
+          "pdf": "preprints/spectral-energy-concentration-e62/paper.pdf",
+          "tex": "papers/spectral-energy-concentration-e62/main.tex",
+          "notes": "preprints/spectral-energy-concentration-e62/README.md"
+        }
+      ]
+    },
+    {
+      "name": "Supplementary WCT operator proofs",
+      "papers": [
+        {
+          "title": "M2 + E17 — Strict positivity and reciprocal consistency of the regularized curvature operator",
+          "pdf": "preprints/regularized-curvature-operator/paper.pdf",
+          "tex": "papers/regularized-curvature-operator/main.tex",
+          "notes": "preprints/regularized-curvature-operator/README.md"
+        }
+      ]
+    },
+    {
+      "name": "F12 — Conditional curvature multiplier estimate",
+      "papers": [
+        {
+          "title": "E26: Conditional $L^2$ estimate for the historical additive-denominator curvature operator",
+          "pdf": "preprints/regularized-curvature-l2-bound/paper.pdf",
+          "tex": "papers/regularized-curvature-l2-bound/main.tex",
+          "notes": "preprints/regularized-curvature-l2-bound/README.md"
+        }
+      ]
+    },
+    {
+      "name": "WCT E18 — Corrected curvature-energy Lyapunov descent",
+      "papers": [
+        {
+          "title": "E18: Exact Lyapunov descent for the corrected WCT curvature energy",
+          "pdf": "preprints/wct-e18-exact-gradient-lyapunov/paper.pdf",
+          "tex": "papers/wct-e18-exact-gradient-lyapunov/main.tex",
+          "notes": "preprints/wct-e18-exact-gradient-lyapunov/README.md"
+        }
+      ]
+    },
+    {
+      "name": "E69 — High-regularity WCT curvature bound",
+      "papers": [
+        {
+          "title": "E69: Bounded corrected regularized curvature",
+          "pdf": "preprints/high-regularity-bounded-curvature-e69/paper.pdf",
+          "tex": "papers/high-regularity-bounded-curvature-e69/main.tex",
+          "notes": "preprints/high-regularity-bounded-curvature-e69/README.md"
+        }
+      ]
+    },
+    {
+      "name": "WCT E58 — Band-selective Green multiplier",
+      "papers": [
+        {
+          "title": "E58: Sharp band-selective Green multiplier bound",
+          "pdf": "preprints/band-selective-green-kernel-bound/paper.pdf",
+          "tex": "papers/band-selective-green-kernel-bound/main.tex",
+          "notes": "preprints/band-selective-green-kernel-bound/README.md"
+        }
+      ]
+    },
+    {
+      "name": "E61 — Linear Swift--Hohenberg spectral threshold",
+      "papers": [
+        {
+          "title": "Exact continuum pattern-formation threshold",
+          "pdf": "preprints/e61-pattern-formation-threshold/paper.pdf",
+          "tex": "papers/e61-pattern-formation-threshold/main.tex",
+          "notes": "preprints/e61-pattern-formation-threshold/README.md"
+        }
+      ]
+    },
+    {
+      "name": "M6B — Nonlinear curvature closure and stationary inverse nonuniqueness",
+      "papers": [
+        {
+          "title": "M6B: Two exact nonlinear-curvature nonuniqueness counterexamples",
+          "pdf": "preprints/m6b-nonlinear-curvature-nonuniqueness/paper.pdf",
+          "tex": "papers/m6b-nonlinear-curvature-nonuniqueness/main.tex",
+          "notes": "preprints/m6b-nonlinear-curvature-nonuniqueness/README.md"
+        }
+      ]
+    },
+    {
+      "name": "M3 + E57 — Swift--Hohenberg Fourier-shell operator",
+      "papers": [
+        {
+          "title": "Fourier symbol and quantitative off-shell damping",
+          "pdf": "preprints/swift-hohenberg-fourier-shell-damping/paper.pdf",
+          "tex": "papers/swift-hohenberg-fourier-shell-damping/main.tex",
+          "notes": "preprints/swift-hohenberg-fourier-shell-damping/README.md"
+        }
+      ]
+    },
+    {
+      "name": "WCT E68 — Localized gradient-energy estimate",
+      "papers": [
+        {
+          "title": "E68: Counterexamples and corrected local energy estimate",
+          "pdf": "preprints/localized-gradient-energy-e68/paper.pdf",
+          "tex": "papers/localized-gradient-energy-e68/main.tex",
+          "notes": "preprints/localized-gradient-energy-e68/README.md"
+        }
+      ]
+    }
+  ]
+}
