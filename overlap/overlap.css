@@ -241,3 +241,39 @@ td.relationship{min-width:210px}
 .feature-direct-actions .feature-direct-primary:hover{background:#afffd5;text-decoration:none}
 @media(max-width:950px){.feature-direct-details{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.feature-direct-adoption{padding:22px 18px;margin-top:25px}.feature-direct-details{grid-template-columns:1fr;gap:15px}.feature-direct-actions{display:grid;gap:5px}.feature-direct-actions .feature-direct-primary{justify-content:center}}
+
+/* The 2026 light-bullet paper is linked to exact source declarations, not just the paper. */
+.light-bullet-lean-crossmatch{scroll-margin-top:100px;max-width:1280px;margin:15px 0 26px;padding:clamp(22px,3vw,37px);border:1px solid rgba(103,212,255,.29);border-radius:15px;background:#0b1b2a}
+.light-bullet-lean-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:25px}
+.light-bullet-lean-heading h2{font:500 clamp(1.58rem,2.9vw,2.7rem)/1.2 Georgia,serif;margin:10px 0 15px;letter-spacing:-.03em}
+.overlap-head .light-bullet-lean-heading p:not(.eyebrow){font-size:.9rem;line-height:1.75;max-width:870px;color:#bdcdda;margin:0 0 18px}
+.light-bullet-lean-count{flex:none;text-align:right;font:730 .68rem/1.7 ui-monospace,Consolas,monospace;color:#a5d5e5;border-left:1px solid #35516a;padding-left:19px}
+.light-bullet-math-pair{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:23px 0 0}
+.light-bullet-math-pair>div{min-width:0;padding:18px 20px;background:#071420;border:1px solid #29495f;border-radius:5px}
+.light-bullet-math-pair span{display:block;font:.67rem/1.5 ui-monospace,Consolas,monospace;color:#8faabb;margin-bottom:11px}
+.light-bullet-math-pair code{display:block;overflow-x:auto;white-space:nowrap;font:550 clamp(.9rem,1.6vw,1.21rem)/1.7 ui-monospace,Consolas,monospace;color:#ccefed}
+.overlap-head .light-bullet-lean-equivalence{font-size:.84rem;line-height:1.8;color:#c5d6dd;margin:13px 0 26px;max-width:1100px}
+.light-bullet-lean-equivalence code,.light-bullet-lean-notes code{color:#c6ecf6;font:.94em ui-monospace,Consolas,monospace}
+.light-bullet-source-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:23px 0 27px}
+.light-bullet-source-index>div{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:#0e2434;border:1px solid #32526a;border-radius:7px;padding:18px 18px 20px}
+.light-bullet-source-index strong{font-size:.95rem}
+.light-bullet-source-index a{color:#8bdcf6;font-size:.75rem;line-height:1.55;text-decoration:none;overflow-wrap:anywhere}
+.light-bullet-source-index a:hover{text-decoration:underline}
+.light-bullet-source-index>div>span{font-size:.75rem;line-height:1.65;color:#a2bdcb;margin:1px 0 10px}
+.light-bullet-source-index code{font:.93em ui-monospace,Consolas,monospace}
+.light-bullet-table-scroll{max-width:100%;overflow-x:auto;border:1px solid #344c60;border-radius:7px}
+.light-bullet-comparison-table{width:100%;min-width:960px;border-collapse:collapse;text-align:left;font-size:.79rem;line-height:1.6}
+.light-bullet-comparison-table thead{background:#142d3f}
+.light-bullet-comparison-table th{color:#deebf3;text-align:left}
+.light-bullet-comparison-table th,.light-bullet-comparison-table td{padding:12px 14px;border-bottom:1px solid #294257;vertical-align:top}
+.light-bullet-comparison-table thead th{font:.72rem ui-monospace,Consolas,monospace;letter-spacing:.02em;color:#b3cfda}
+.light-bullet-comparison-table tbody th{font-weight:750;width:19%}
+.light-bullet-comparison-table td{color:#b5cad7}
+.light-bullet-comparison-table td strong{color:#a5f8cc;font-weight:720}
+.light-bullet-comparison-table a{color:#8bdcf6;text-decoration:none}
+.light-bullet-comparison-table a:hover{text-decoration:underline}
+.light-bullet-comparison-table code{font:.94em ui-monospace,Consolas,monospace}
+.light-bullet-comparison-table tbody tr:last-child th,.light-bullet-comparison-table tbody tr:last-child td{border-bottom:0}
+.overlap-head .light-bullet-lean-notes{color:#a2b8c7;font-size:.78rem;line-height:1.8;margin:18px 0 0}
+@media(max-width:950px){.light-bullet-source-index{grid-template-columns:1fr}.light-bullet-lean-heading{flex-direction:column}.light-bullet-lean-count{text-align:left;border-left:0;padding-left:0}}
+@media(max-width:650px){.light-bullet-math-pair{grid-template-columns:1fr}.light-bullet-lean-crossmatch{padding:20px 15px}.light-bullet-comparison-table{min-width:875px}}
