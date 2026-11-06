@@ -16,7 +16,15 @@
   <link rel="author" href="https://orcid.org/0009-0005-5975-8718">
   <link rel="alternate" type="application/json" title="Full machine-readable overlap ledger" href="../priority/external-convergence.json">
   <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="overlap.css?v=20261106-e57-e61-expandables">
+  <link rel="stylesheet" href="overlap.css?v=20261106-journal-mathjax">
+  <script>
+    /* MathJax 3: only process equations in this feature card. */
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']] },
+      startup: { elements: ['#featured-2611-03459'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Richard J. Reyes / WCT Post-Date External Convergence and Priority Record","url":"https://rickyjreyes.github.io/overlap/","dateCreated":"2025-04-22","dateModified":"2026-11-06","creator":{"@type":"Person","name":"Richard J. Reyes","identifier":"https://orcid.org/0009-0005-5975-8718","url":"https://rickyjreyes.github.io/researcher/"},"description":"Machine-readable chronology and convergence dataset preserving Richard J. Reyes / Wave Confinement Theory public priority from April 22, 2025 and later external correspondence. Verified chronology must not be rewritten as demonstrated independent origin merely from absence of citation.","keywords":["Richard J. Reyes","Wave Confinement Theory","WCT","research priority","provenance","post-date convergence","chronological priority"],"citation":"https://doi.org/10.5281/zenodo.15644222","sameAs":["https://rickyjreyes.github.io/priority/","https://rickyjreyes.github.io/priority/external-convergence.json"],"distribution":{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://rickyjreyes.github.io/priority/external-convergence.json"},"isPartOf":{"@type":"WebSite","url":"https://rickyjreyes.github.io/"}}</script>
 <style id="post-date-comparison-style">
 .comparison-review-divider{padding:36px 0 14px;border-top:1px solid var(--line);margin-top:24px}
@@ -43,8 +51,8 @@
       <section class="feature-direct-adoption" id="featured-2611-03459" aria-labelledby="feature-direct-title">
         <div class="feature-direct-topline">
           <span class="pill rel-direct">DIRECT ADOPTION</span>
-          <span class="feature-direct-eyebrow">Verified Lean cross-match · November 2026</span>
-          <span class="feature-direct-score">8.7 <small>/ 10 overlap</small></span>
+          <span class="feature-direct-eyebrow">Lean-verified mathematical comparison</span>
+          <span class="feature-direct-score">8.7 <small>/ 10</small></span>
         </div>
         <h2 id="feature-direct-title">Aberration stabilized light bullets in normal dispersion injected Kerr resonators</h2>
         <p class="feature-direct-meta"><time datetime="2026-11-02">November 2, 2026</time><span aria-hidden="true"> · </span><span title="Yannick Fleck, Thomas G. Seidel, Jesús Yelo-Sarrión, Julien Javaloyes, Svetlana V. Gurevich">Fleck et al.</span></p>
@@ -52,95 +60,102 @@
         <section class="light-bullet-lean-crossmatch" id="light-bullet-lean-crossmatch" aria-labelledby="light-bullet-lean-title">
           <div class="light-bullet-exact-head">
             <div>
-              <span class="light-bullet-match-index">01 / EXACT MATHEMATICAL MATCH</span>
-              <h3 id="light-bullet-lean-title">Same biharmonic operator <span class="light-bullet-hero-symbol">Δ²</span></h3>
+              <span class="light-bullet-match-index">01 · EXACT OPERATOR CORRESPONDENCE</span>
+              <h3 id="light-bullet-lean-title">The shared biharmonic operator <span class="math-typeset">\( \Delta^{2} \)</span></h3>
             </div>
-            <span class="light-bullet-match-scope">Identical operator term, not identical full PDEs</span>
+            <span class="light-bullet-match-scope">Identical fourth-order term; distinct governing equations</span>
           </div>
-          <div class="light-bullet-equation-comparison" aria-label="Side-by-side fourth-order operator equations">
+          <div class="light-bullet-equation-comparison" aria-label="Fourth-order equations presented in typeset mathematical notation">
             <div class="light-bullet-equation">
-              <span>FLECK ET AL. · EQ. 1</span>
-              <code>iBΔ<sub>⊥</sub>E + iS<mark>Δ<sub>⊥</sub>²</mark>E</code>
+              <span>Fleck et al. · transverse optical operator</span>
+              <div class="light-bullet-typeset math-typeset">\( \displaystyle \mathrm{i}B\Delta_{\perp}E+\mathrm{i}S\Delta_{\perp}^{2}E \)</div>
             </div>
-            <span class="light-bullet-equation-bridge" aria-label="Shared fourth-order Laplacian">SHARED Δ²</span>
             <div class="light-bullet-equation">
-              <span>REYES · F01 LEAN MODEL</span>
-              <code>(Δ + k²)²u = <mark>Δ²</mark>u + 2k²Δu + k⁴u</code>
+              <span>Reyes · F01 fourth-order operator</span>
+              <div class="light-bullet-typeset math-typeset">\( \displaystyle (\Delta+k_*^{2})^{2}u=\Delta^{2}u+2k_*^{2}\Delta u+k_*^{4}u \)</div>
             </div>
           </div>
-          <div class="light-bullet-hero-sources">
-            <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean#L281" target="_blank" rel="noopener noreferrer">math · F01 full theorem ↗</a>
-            <a href="https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/BandPass.lean#L72" target="_blank" rel="noopener noreferrer">wct-lean · exact quartic identity ↗</a>
-          </div>
+          <p class="light-bullet-common-term">Common mathematical structure: <span class="math-typeset">\( \Delta^{2} \)</span>. The full optical and F01 equations are not identical.</p>
+          <nav class="light-bullet-hero-sources" aria-label="Primary exact Lean proofs">
+            <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean#L52" target="_blank" rel="noopener noreferrer">E57 · exact operator proof ↗</a>
+            <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean#L51" target="_blank" rel="noopener noreferrer">E61 · spectral theorem ↗</a>
+            <a href="https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/BandPass.lean#L72" target="_blank" rel="noopener noreferrer">wct-lean · quartic identity ↗</a>
+          </nav>
+
           <div class="light-bullet-expansion-head">
-            <strong>Formal results &amp; numerical evidence</strong>
-            <span>Key findings visible · expand for the mathematics</span>
+            <strong>Formal results and numerical evidence</strong>
+            <span>Select a result to view its derivation and sources</span>
           </div>
-          <div class="light-bullet-evidence-stack" aria-label="E57, E61 and optical scaling: expandable mathematical comparison">
+          <div class="light-bullet-evidence-stack" aria-label="Expandable E57, E61, and published numerical scaling">
             <details class="light-bullet-evidence-row" id="light-bullet-e57">
               <summary>
-                <span class="light-bullet-evidence-number">04 / EXACT OPERATOR PROOF</span>
-                <span class="light-bullet-evidence-main"><strong>E57 · Biharmonic expansion and Fourier symbol</strong><span class="light-bullet-evidence-formula">(Δ + k⋆²)² = Δ² + 2k⋆²Δ + k⋆⁴</span></span>
+                <span class="light-bullet-evidence-number">04 · EXACT IDENTITY</span>
+                <span class="light-bullet-evidence-main">
+                  <strong>E57 · Biharmonic expansion and Fourier symbol</strong>
+                  <span class="light-bullet-evidence-formula math-typeset">\( \displaystyle (\Delta+k_*^{2})^{2}=\Delta^{2}+2k_*^{2}\Delta+k_*^{4} \)</span>
+                </span>
                 <span class="light-bullet-evidence-toggle" aria-hidden="true">+</span>
               </summary>
               <div class="light-bullet-evidence-detail">
-                <p>Lean formalizes the fourth-order expansion on Schwartz functions and proves its Fourier multiplier:</p>
-                <code>(|ξ|² − k⋆²)²</code>
-                <p>E57 also establishes the nonnegative self-adjoint operator and its continuum shell-damping semigroup. These are results for the E57 operator, not the paper's full driven Kerr equation.</p>
+                <p>On Schwartz functions, E57 formalizes the differential-operator identity and Fourier multiplier:</p>
+                <div class="light-bullet-detail-equation math-typeset">\( \displaystyle \widehat{\mathcal{A}u}(\xi)=(|\xi|^{2}-k_*^{2})^{2}\widehat{u}(\xi) \)</div>
+                <p>Its operator is also proved nonnegative and self-adjoint, with a continuum shell-damping semigroup. These statements concern E57, not the paper's complete driven Kerr system.</p>
                 <div class="light-bullet-evidence-links">
-                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean#L52" target="_blank" rel="noopener noreferrer">math · E57 expansion ↗</a>
-                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean#L59" target="_blank" rel="noopener noreferrer">math · E57 Fourier symbol ↗</a>
+                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean#L52" target="_blank" rel="noopener noreferrer">E57 · operator expansion ↗</a>
+                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean#L59" target="_blank" rel="noopener noreferrer">E57 · Fourier symbol ↗</a>
                 </div>
               </div>
             </details>
             <details class="light-bullet-evidence-row" id="light-bullet-e61">
               <summary>
-                <span class="light-bullet-evidence-number">05 / PROVEN SPECTRAL THEORY</span>
-                <span class="light-bullet-evidence-main"><strong>E61 · Exact spectrum and stability threshold</strong><span class="light-bullet-evidence-formula">σ(L<sub>r</sub>) = (−∞, r]　·　‖e<sup>tL<sub>r</sub></sup>‖ = e<sup>rt</sup></span></span>
+                <span class="light-bullet-evidence-number">05 · RIGOROUS SPECTRUM</span>
+                <span class="light-bullet-evidence-main">
+                  <strong>E61 · Spectrum and semigroup stability threshold</strong>
+                  <span class="light-bullet-evidence-formula math-typeset">\( \displaystyle \sigma(L_r)=(-\infty,r],\quad \|e^{tL_r}\|=e^{rt} \)</span>
+                </span>
                 <span class="light-bullet-evidence-toggle" aria-hidden="true">+</span>
               </summary>
               <div class="light-bullet-evidence-detail">
-                <p>For <code>Lᵣ = rI − a(Δ + k⋆²)²</code> on <code>L²(ℝᵈ)</code>, with <code>d ≥ 1</code>, <code>a &gt; 0</code>, <code>k⋆ &gt; 0</code> and <code>t ≥ 0</code>, the Lean theorem establishes the full spectrum and the exact semigroup operator norm.</p>
-                <p>The linear threshold is <code>r = 0</code>; negative <code>r</code> gives exponential stability, while positive <code>r</code> admits growing modes. This does not prove stability of the paper's nonlinear 3D cavity.</p>
+                <p>E61 proves the exact spectrum and operator norm for the related linear operator:</p>
+                <div class="light-bullet-detail-equation math-typeset">\( \displaystyle L_r=rI-a(\Delta+k_*^{2})^{2},\qquad a>0,\quad k_*>0 \)</div>
+                <p>On <span class="math-typeset">\(L^{2}(\mathbb{R}^{d})\)</span>, for <span class="math-typeset">\(d\geq1\)</span> and <span class="math-typeset">\(t\geq0\)</span>, the linear threshold is <span class="math-typeset">\(r=0\)</span>. Negative <span class="math-typeset">\(r\)</span> yields exponential decay; positive <span class="math-typeset">\(r\)</span> admits growing solutions. This is not an orbital-stability theorem for the driven nonlinear optical cavity.</p>
                 <div class="light-bullet-evidence-links">
-                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean#L51" target="_blank" rel="noopener noreferrer">math · E61 exact spectrum and norm ↗</a>
-                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean#L73" target="_blank" rel="noopener noreferrer">math · E61 stability regimes ↗</a>
+                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean#L51" target="_blank" rel="noopener noreferrer">E61 · spectrum and norm ↗</a>
+                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean#L73" target="_blank" rel="noopener noreferrer">E61 · stability regimes ↗</a>
                 </div>
               </div>
             </details>
             <details class="light-bullet-evidence-row" id="light-bullet-physical-scaling">
               <summary>
-                <span class="light-bullet-evidence-number">06 / NUMERICAL PHYSICS MATCH</span>
-                <span class="light-bullet-evidence-main"><strong>Fourth-order aberration controls localization</strong><span class="light-bullet-evidence-formula">Excess intensity ∝ |S|<sup>1/4</sup> <span class="light-bullet-evidence-qualifier">· 2D numerical scan</span></span></span>
+                <span class="light-bullet-evidence-number">06 · NUMERICAL RESULT</span>
+                <span class="light-bullet-evidence-main">
+                  <strong>Aberration-dependent localized intensity</strong>
+                  <span class="light-bullet-evidence-formula math-typeset">\( \displaystyle \Delta I \propto |S|^{1/4} \) <span class="light-bullet-evidence-qualifier">2D numerical scan</span></span>
+                </span>
                 <span class="light-bullet-evidence-toggle" aria-hidden="true">+</span>
               </summary>
               <div class="light-bullet-evidence-detail">
-                <p>Fleck et al., Section III and Figure 7: as the aberration magnitude <code>|S|</code> tends to zero, the localized-state excess intensity above the continuous-wave background scales as <code>|S|<sup>1/4</sup></code>. The numerical structures disappear as that fourth-order confinement vanishes.</p>
-                <p>This is a reported <strong>two-dimensional numerical scaling</strong>, not a Lean theorem or a measured three-dimensional exponent.</p>
+                <p>In Fleck et al., Section III and Figure 7, <span class="math-typeset">\(\Delta I\)</span> denotes localized excess intensity above the continuous-wave background. The numerically observed intensity scales as <span class="math-typeset">\(|S|^{1/4}\)</span> and vanishes as the fourth-order aberration tends to zero.</p>
+                <p>This is a two-dimensional numerical scaling result, not an analytic theorem or a measured three-dimensional exponent.</p>
                 <div class="light-bullet-evidence-links">
-                  <a href="https://arxiv.org/html/2611.03459v1" target="_blank" rel="noopener noreferrer">Fleck et al. · Section III, Figure 7 ↗</a>
+                  <a href="https://arxiv.org/html/2611.03459v1" target="_blank" rel="noopener noreferrer">Fleck et al. · Section III / Figure 7 ↗</a>
                 </div>
               </div>
             </details>
           </div>
-          <nav class="light-bullet-core-links" aria-label="Primary mathematical proof sources">
-            <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean#L52" target="_blank" rel="noopener noreferrer">E57 Lean ↗</a>
-            <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean#L51" target="_blank" rel="noopener noreferrer">E61 Lean ↗</a>
-            <span>Full proofs and conditions inside each expandable</span>
-          </nav>
           <details class="light-bullet-additional" id="light-bullet-further-matches">
-            <summary><span>02–03 / Further correspondences</span><span>Mechanism and 2D/3D localization <b aria-hidden="true">+</b></span></summary>
-            <div class="light-bullet-secondary-matches" aria-label="Additional fourth-order mechanism and localization comparison">
+            <summary><span>02–03 · Additional correspondences</span><span>Mechanism and localization <b aria-hidden="true">+</b></span></summary>
+            <div class="light-bullet-secondary-matches" aria-label="Related mechanism and stabilization proofs">
               <article class="light-bullet-secondary-match">
                 <span>02 · MECHANISM MATCH</span>
                 <strong>Fourth-order stabilization</strong>
-                <p>Higher-order spectral selection and nonlinear localization appear in both models.</p>
+                <p>Finite-band spectral selection and nonlinear localization appear in both mathematical settings.</p>
                 <a href="https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R07_PhaseFlux.lean#L10" target="_blank" rel="noopener noreferrer">geometry_of_resonance · R07 Lean ↗</a>
               </article>
               <article class="light-bullet-secondary-match">
                 <span>03 · RELATED PROVEN RESULT</span>
                 <strong>Localization and stability</strong>
-                <p>F01 proves 2D minimizing-state compactness and orbital stability; the paper shows numerical 3D light bullets.</p>
+                <p>F01 proves 2D minimizing-state compactness and orbital stability; Fleck et al. report numerical 3D light bullets.</p>
                 <div class="light-bullet-secondary-links">
                   <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/WholeSpaceMinimizers.lean#L1457" target="_blank" rel="noopener noreferrer">math · compactness ↗</a>
                   <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean#L256" target="_blank" rel="noopener noreferrer">math · stability ↗</a>
@@ -148,11 +163,11 @@
               </article>
             </div>
           </details>
-          <p class="light-bullet-scope"><strong>Model boundary:</strong> F01 is conservative and 2D cubic–quintic; E57/E61 prove results for related linear fourth-order operators; Fleck et al. study a driven, dissipative 3D Kerr cavity. Exact shared mathematics does not transfer the stability theorems to the full cavity.</p>
+          <p class="light-bullet-scope"><strong>Scope.</strong> F01 is conservative and 2D cubic–quintic; E57/E61 analyze related linear fourth-order operators. Fleck et al. model a driven, dissipative 3D Kerr cavity. The common operator does not transfer the F01 stability theorem to that cavity.</p>
         </section>
-        <nav class="feature-direct-actions" aria-label="External paper and record">
+        <nav class="feature-direct-actions" aria-label="Original publication and comparison record">
           <a class="feature-direct-primary" href="https://arxiv.org/abs/2611.03459" target="_blank" rel="noopener noreferrer">Original paper ↗</a>
-          <a href="?track=physics&amp;q=2611.03459#complete-ledger">Ledger record ↗</a>
+          <a href="?track=physics&amp;q=2611.03459#complete-ledger">Registry record ↗</a>
         </nav>
       </section>
 
