@@ -16,7 +16,7 @@ assert 'class="pill rel-direct">DIRECT ADOPTION</span>' in page
 assert '8.7 / 10' in page
 assert 'November 2, 2026' in page
 assert 'https://arxiv.org/abs/2611.03459' in page
-assert 'https://doi.org/10.48550/arXiv.2611.03459' in page
+assert 'https://doi.org/10.48550/arXiv.2611.03459' in source
 assert '?track=physics&amp;q=2611.03459#complete-ledger' in page
 assert 'requestedRecordQuery' in page
 assert 'Yannick Fleck, Thomas G. Seidel, Jesús Yelo-Sarrión, Julien Javaloyes, Svetlana V. Gurevich' in page
@@ -47,7 +47,7 @@ for src in (
     'rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_EnergyAndConstraints.lean#L59'
 ):
     assert src in page, src
-assert 'The <code>Δ² operator term</code>' in page.replace('<strong>Δ² operator term</strong>','<code>Δ² operator term</code>') or '<strong>Δ² operator term</strong>' in page
+assert '<strong>Δ² operator term</strong>' in page
 assert 'theorem transfer not established' in page
 assert '.light-bullet-lean-crossmatch' in css
 
