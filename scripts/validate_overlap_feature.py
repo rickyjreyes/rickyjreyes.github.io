@@ -24,6 +24,23 @@ assert 'Aberration stabilized light bullets in normal dispersion injected Kerr r
 assert 'class="feature-direct-adoption"' in page
 assert ".feature-direct-adoption" in css
 assert 'id="light-bullet-lean-crossmatch"' in page
+
+# Regression check: the comparison must be nested INSIDE the featured paper
+# card, not merely placed immediately after it as a sibling section.
+card = page.split('<section class="feature-direct-adoption"', 1)[1].split('<div class="reference-records"', 1)[0]
+assert card.index('<section class="light-bullet-lean-crossmatch"') < card.index('</section>'), "Comparison is outside its feature card"
+assert card.count('<section ') == 1 and card.count('</section>') == 2
+assert card.index('class="feature-direct-lean-bar"') < card.index('<section class="light-bullet-lean-crossmatch"')
+for lean_src in (
+    'rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean#L256',
+    'rickyjreyes/wct-lean/blob/main/WCTLean/Models/BandPass.lean#L72',
+    'rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R07_PhaseFlux.lean#L10'
+):
+    assert lean_src in card, lean_src
+assert '<table class="light-bullet-comparison-table">' in card
+assert ".feature-direct-lean-bar" in css
+assert ".feature-direct-adoption>.light-bullet-lean-crossmatch" in css
+
 assert page.index('id="featured-2611-03459"') < page.index('id="light-bullet-lean-crossmatch"') < page.index('class="reference-records"')
 assert '<a class="feature-direct-primary" href="#light-bullet-lean-crossmatch">' in page
 assert page.count('href="https://arxiv.org/abs/2611.03459"') == 1, "Avoid duplicate paper links"
@@ -54,4 +71,4 @@ assert '.light-bullet-lean-crossmatch' in css
 assert '"https://arxiv.org/abs/2611.03459": "DIRECT ADOPTION"' in source
 assert 'Yannick Fleck; Thomas G. Seidel; Jesús Yelo-Sarrión; Julien Javaloyes; Svetlana V. Gurevich' in source
 assert 'status:"verified",source:"arXiv:2611.03459 version 1, submitted November 2, 2026"' in source
-print("Overlap feature validated: 8 direct Lean comparisons in 3 repos, one arXiv link, classification and source record preserved.")
+print("Overlap card validated: nested 8-row Lean comparison, prominent source links in three repos, one paper link and preserved DIRECT ADOPTION.")
