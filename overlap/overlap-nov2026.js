@@ -1,6 +1,6 @@
 // November 1–5, 2026 WCT literature watch. Provisional correspondence scores. DIRECT ADOPTION includes mathematical presence under the site-defined classification; it does not assert documented author influence.
 window.overlapRecords=(window.overlapRecords||[]).concat([
-  [1500, "Aberration stabilized light bullets in normal dispersion injected Kerr resonators", "https://arxiv.org/abs/2611.03459", 8.7, "physics", "arXiv", "See linked primary source", "10.48550/arXiv.2611.03459", "https://doi.org/10.48550/arXiv.2611.03459"],
+  [1500, "Aberration stabilized light bullets in normal dispersion injected Kerr resonators", "https://arxiv.org/abs/2611.03459", 8.7, "physics", "arXiv", "Yannick Fleck; Thomas G. Seidel; Jesús Yelo-Sarrión; Julien Javaloyes; Svetlana V. Gurevich", "10.48550/arXiv.2611.03459", "https://doi.org/10.48550/arXiv.2611.03459"],
   [1501, "Enhanced soliton stability in bidirectionally coupled laser-microresonator systems", "https://doi.org/10.1103/xw6j-58wy", 7.8, "physics", "Journal", "See linked primary source", "10.1103/xw6j-58wy", "https://doi.org/10.1103/xw6j-58wy"],
   [1502, "Effect of high order dispersion on soliton interaction in coupled Kerr cavities", "https://arxiv.org/abs/2611.05305", 7.9, "physics", "arXiv", "See linked primary source", "10.48550/arXiv.2611.05305", "https://doi.org/10.48550/arXiv.2611.05305"],
   [1503, "Phase matching and mode coupling in photonic-crystal ring resonators", "https://arxiv.org/abs/2611.06456", 8, "physics", "arXiv", "See linked primary source", "10.48550/arXiv.2611.06456", "https://doi.org/10.48550/arXiv.2611.06456"],
@@ -20,7 +20,7 @@ window.overlapRelationshipByUrl=Object.assign(window.overlapRelationshipByUrl||{
   "https://arxiv.org/abs/2611.01488": "STRUCTURAL OVERLAP"
 });
 window.overlapDateByKey=Object.assign(window.overlapDateByKey||{}, {
-  "https://arxiv.org/abs/2611.03459": {date:"2026-11-02",precision:"day",status:"provisional",source:"November 2026 literature-watch report; primary-source date verification pending",note:"Numerical fourth-order diffraction stabilizes 3D localized light bullets; no WCT-specific validation."},
+  "https://arxiv.org/abs/2611.03459": {date:"2026-11-02",precision:"day",status:"verified",source:"arXiv:2611.03459 version 1, submitted November 2, 2026",note:"Numerical fourth-order diffraction and spherical aberration stabilize three-dimensional localized light bullets in the stated generalized Lugiato–Lefever model."},
   "https://doi.org/10.1103/xw6j-58wy": {date:"2026-11-03",precision:"day",status:"provisional",source:"November 2026 literature-watch report; primary-source date verification pending",note:"Numerical feedback-stabilized Kerr solitons; evidence for an established alternative mechanism, not WCT."},
   "https://arxiv.org/abs/2611.05305": {date:"2026-11-03",precision:"day",status:"provisional",source:"November 2026 literature-watch report; primary-source date verification pending",note:"Coupled Lugiato-Lefever asymptotics and simulations of bound-state stability."},
   "https://arxiv.org/abs/2611.06456": {date:"2026-11-04",precision:"day",status:"provisional",source:"November 2026 literature-watch report; primary-source date verification pending",note:"Angular phase selection of nonlinear ring-resonator mode coupling; not WCT-specific."},
