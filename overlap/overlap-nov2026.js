@@ -11,12 +11,12 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
 ]);
 window.overlapRelationshipByUrl=Object.assign(window.overlapRelationshipByUrl||{}, {
   "https://arxiv.org/abs/2611.03459": "DIRECT ADOPTION",
-  "https://doi.org/10.1103/xw6j-58wy": "DIRECT ADOPTION",
-  "https://arxiv.org/abs/2611.05305": "DIRECT ADOPTION",
-  "https://arxiv.org/abs/2611.06456": "DIRECT ADOPTION",
-  "https://doi.org/10.1364/OL.617906": "DIRECT ADOPTION",
+  "https://doi.org/10.1103/xw6j-58wy": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2611.05305": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2611.06456": "STRUCTURAL OVERLAP",
+  "https://doi.org/10.1364/OL.617906": "STRUCTURAL OVERLAP",
   "https://doi.org/10.1017/jnw.2026.10053": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2611.04752": "DIRECT ADOPTION",
+  "https://arxiv.org/abs/2611.04752": "EMPIRICAL CONVERGENCE",
   "https://arxiv.org/abs/2611.01488": "STRUCTURAL OVERLAP"
 });
 window.overlapDateByKey=Object.assign(window.overlapDateByKey||{}, {
