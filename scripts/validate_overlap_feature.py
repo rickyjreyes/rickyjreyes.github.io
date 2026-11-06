@@ -31,12 +31,12 @@ card = page.split('<section class="feature-direct-adoption"', 1)[1].split('<div 
 assert card.index('<section class="light-bullet-lean-crossmatch"') < card.index('</section>'), "Comparison is outside its feature card"
 assert card.count('<section ') == 1 and card.count('</section>') == 2
 assert card.index('class="feature-direct-lean-bar"') < card.index('<section class="light-bullet-lean-crossmatch"')
-for source in (
+for lean_src in (
     'rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean#L256',
     'rickyjreyes/wct-lean/blob/main/WCTLean/Models/BandPass.lean#L72',
     'rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R07_PhaseFlux.lean#L10'
 ):
-    assert source in card, source
+    assert lean_src in card, lean_src
 assert '<table class="light-bullet-comparison-table">' in card
 assert ".feature-direct-lean-bar" in css
 assert ".feature-direct-adoption>.light-bullet-lean-crossmatch" in css
