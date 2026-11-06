@@ -1,4 +1,4 @@
-// November 1–5, 2026 WCT literature watch. Provisional correspondence scores, not evidence of WCT validation.
+// November 1–5, 2026 WCT literature watch. Provisional correspondence scores. DIRECT ADOPTION includes mathematical presence under the site-defined classification; it does not assert documented author influence.
 window.overlapRecords=(window.overlapRecords||[]).concat([
   [1500, "Aberration stabilized light bullets in normal dispersion injected Kerr resonators", "https://arxiv.org/abs/2611.03459", 8.7, "physics", "arXiv", "See linked primary source", "10.48550/arXiv.2611.03459", "https://doi.org/10.48550/arXiv.2611.03459"],
   [1501, "Enhanced soliton stability in bidirectionally coupled laser-microresonator systems", "https://doi.org/10.1103/xw6j-58wy", 7.8, "physics", "Journal", "See linked primary source", "10.1103/xw6j-58wy", "https://doi.org/10.1103/xw6j-58wy"],
@@ -10,13 +10,13 @@ window.overlapRecords=(window.overlapRecords||[]).concat([
   [1507, "Polarization instability of unpolarized excited states in trapped two-component Bose-Einstein condensates", "https://arxiv.org/abs/2611.01488", 6.7, "physics", "arXiv", "See linked primary source", "10.48550/arXiv.2611.01488", "https://doi.org/10.48550/arXiv.2611.01488"]
 ]);
 window.overlapRelationshipByUrl=Object.assign(window.overlapRelationshipByUrl||{}, {
-  "https://arxiv.org/abs/2611.03459": "STRUCTURAL OVERLAP",
-  "https://doi.org/10.1103/xw6j-58wy": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2611.05305": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2611.06456": "STRUCTURAL OVERLAP",
-  "https://doi.org/10.1364/OL.617906": "STRUCTURAL OVERLAP",
+  "https://arxiv.org/abs/2611.03459": "DIRECT ADOPTION",
+  "https://doi.org/10.1103/xw6j-58wy": "DIRECT ADOPTION",
+  "https://arxiv.org/abs/2611.05305": "DIRECT ADOPTION",
+  "https://arxiv.org/abs/2611.06456": "DIRECT ADOPTION",
+  "https://doi.org/10.1364/OL.617906": "DIRECT ADOPTION",
   "https://doi.org/10.1017/jnw.2026.10053": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2611.04752": "EMPIRICAL CONVERGENCE",
+  "https://arxiv.org/abs/2611.04752": "DIRECT ADOPTION",
   "https://arxiv.org/abs/2611.01488": "STRUCTURAL OVERLAP"
 });
 window.overlapDateByKey=Object.assign(window.overlapDateByKey||{}, {
