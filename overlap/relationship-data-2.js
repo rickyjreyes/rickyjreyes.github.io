@@ -18,7 +18,7 @@ window.overlapRelationshipByUrl = Object.assign(window.overlapRelationshipByUrl 
   "https://arxiv.org/abs/2604.15034": "POST-DATE CONVERGENCE",
   "https://arxiv.org/abs/2512.00403": "STRUCTURAL OVERLAP",
   "https://arxiv.org/abs/2605.20833": "STRUCTURAL OVERLAP",
-  "https://arxiv.org/abs/2605.03228": "EMPIRICAL CONVERGENCE",
+  "https://arxiv.org/abs/2605.03228": "DIRECT ADOPTION",
   "https://arxiv.org/abs/2603.19935": "STRUCTURAL OVERLAP",
   "https://arxiv.org/abs/2607.07663": "POST-DATE CONVERGENCE",
 
