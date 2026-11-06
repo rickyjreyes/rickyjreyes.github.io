@@ -16,7 +16,7 @@
   <link rel="author" href="https://orcid.org/0009-0005-5975-8718">
   <link rel="alternate" type="application/json" title="Full machine-readable overlap ledger" href="../priority/external-convergence.json">
   <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="overlap.css?v=20261106-visual-delta-lean">
+  <link rel="stylesheet" href="overlap.css?v=20261106-e57-e61-expandables">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Richard J. Reyes / WCT Post-Date External Convergence and Priority Record","url":"https://rickyjreyes.github.io/overlap/","dateCreated":"2025-04-22","dateModified":"2026-11-06","creator":{"@type":"Person","name":"Richard J. Reyes","identifier":"https://orcid.org/0009-0005-5975-8718","url":"https://rickyjreyes.github.io/researcher/"},"description":"Machine-readable chronology and convergence dataset preserving Richard J. Reyes / Wave Confinement Theory public priority from April 22, 2025 and later external correspondence. Verified chronology must not be rewritten as demonstrated independent origin merely from absence of citation.","keywords":["Richard J. Reyes","Wave Confinement Theory","WCT","research priority","provenance","post-date convergence","chronological priority"],"citation":"https://doi.org/10.5281/zenodo.15644222","sameAs":["https://rickyjreyes.github.io/priority/","https://rickyjreyes.github.io/priority/external-convergence.json"],"distribution":{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://rickyjreyes.github.io/priority/external-convergence.json"},"isPartOf":{"@type":"WebSite","url":"https://rickyjreyes.github.io/"}}</script>
 <style id="post-date-comparison-style">
 .comparison-review-divider{padding:36px 0 14px;border-top:1px solid var(--line);margin-top:24px}
@@ -72,24 +72,83 @@
             <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean#L281" target="_blank" rel="noopener noreferrer">math · F01 full theorem ↗</a>
             <a href="https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/BandPass.lean#L72" target="_blank" rel="noopener noreferrer">wct-lean · exact quartic identity ↗</a>
           </div>
-          <div class="light-bullet-secondary-matches" aria-label="Two further mathematical correspondences">
-            <article class="light-bullet-secondary-match">
-              <span>02 · MECHANISM MATCH</span>
-              <strong>Fourth-order stabilization</strong>
-              <p>Higher-order spectral selection and nonlinear localization appear in both models.</p>
-              <a href="https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R07_PhaseFlux.lean#L10" target="_blank" rel="noopener noreferrer">geometry_of_resonance · R07 Lean ↗</a>
-            </article>
-            <article class="light-bullet-secondary-match">
-              <span>03 · RELATED PROVEN RESULT</span>
-              <strong>Localization and stability</strong>
-              <p>F01 proves 2D minimizing-state compactness and orbital stability; the paper shows numerical 3D light bullets.</p>
-              <div class="light-bullet-secondary-links">
-                <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/WholeSpaceMinimizers.lean#L1457" target="_blank" rel="noopener noreferrer">math · compactness ↗</a>
-                <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean#L256" target="_blank" rel="noopener noreferrer">math · stability ↗</a>
-              </div>
-            </article>
+          <div class="light-bullet-expansion-head">
+            <strong>Formal results &amp; numerical evidence</strong>
+            <span>Key findings visible · expand for the mathematics</span>
           </div>
-          <p class="light-bullet-scope"><strong>Model boundary:</strong> F01 is conservative, 2D and cubic–quintic. The paper is driven, dissipative and 3D Kerr. This is an exact operator match, not a transfer of the F01 stability theorem.</p>
+          <div class="light-bullet-evidence-stack" aria-label="E57, E61 and optical scaling: expandable mathematical comparison">
+            <details class="light-bullet-evidence-row" id="light-bullet-e57">
+              <summary>
+                <span class="light-bullet-evidence-number">04 / EXACT OPERATOR PROOF</span>
+                <span class="light-bullet-evidence-main"><strong>E57 · Biharmonic expansion and Fourier symbol</strong><span class="light-bullet-evidence-formula">(Δ + k⋆²)² = Δ² + 2k⋆²Δ + k⋆⁴</span></span>
+                <span class="light-bullet-evidence-toggle" aria-hidden="true">+</span>
+              </summary>
+              <div class="light-bullet-evidence-detail">
+                <p>Lean formalizes the fourth-order expansion on Schwartz functions and proves its Fourier multiplier:</p>
+                <code>(|ξ|² − k⋆²)²</code>
+                <p>E57 also establishes the nonnegative self-adjoint operator and its continuum shell-damping semigroup. These are results for the E57 operator, not the paper's full driven Kerr equation.</p>
+                <div class="light-bullet-evidence-links">
+                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean#L52" target="_blank" rel="noopener noreferrer">math · E57 expansion ↗</a>
+                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean#L59" target="_blank" rel="noopener noreferrer">math · E57 Fourier symbol ↗</a>
+                </div>
+              </div>
+            </details>
+            <details class="light-bullet-evidence-row" id="light-bullet-e61">
+              <summary>
+                <span class="light-bullet-evidence-number">05 / PROVEN SPECTRAL THEORY</span>
+                <span class="light-bullet-evidence-main"><strong>E61 · Exact spectrum and stability threshold</strong><span class="light-bullet-evidence-formula">σ(L<sub>r</sub>) = (−∞, r]　·　‖e<sup>tL<sub>r</sub></sup>‖ = e<sup>rt</sup></span></span>
+                <span class="light-bullet-evidence-toggle" aria-hidden="true">+</span>
+              </summary>
+              <div class="light-bullet-evidence-detail">
+                <p>For <code>Lᵣ = rI − a(Δ + k⋆²)²</code> on <code>L²(ℝᵈ)</code>, with <code>d ≥ 1</code>, <code>a &gt; 0</code>, <code>k⋆ &gt; 0</code> and <code>t ≥ 0</code>, the Lean theorem establishes the full spectrum and the exact semigroup operator norm.</p>
+                <p>The linear threshold is <code>r = 0</code>; negative <code>r</code> gives exponential stability, while positive <code>r</code> admits growing modes. This does not prove stability of the paper's nonlinear 3D cavity.</p>
+                <div class="light-bullet-evidence-links">
+                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean#L51" target="_blank" rel="noopener noreferrer">math · E61 exact spectrum and norm ↗</a>
+                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean#L73" target="_blank" rel="noopener noreferrer">math · E61 stability regimes ↗</a>
+                </div>
+              </div>
+            </details>
+            <details class="light-bullet-evidence-row" id="light-bullet-physical-scaling">
+              <summary>
+                <span class="light-bullet-evidence-number">06 / NUMERICAL PHYSICS MATCH</span>
+                <span class="light-bullet-evidence-main"><strong>Fourth-order aberration controls localization</strong><span class="light-bullet-evidence-formula">Excess intensity ∝ |S|<sup>1/4</sup> <span class="light-bullet-evidence-qualifier">· 2D numerical scan</span></span></span>
+                <span class="light-bullet-evidence-toggle" aria-hidden="true">+</span>
+              </summary>
+              <div class="light-bullet-evidence-detail">
+                <p>Fleck et al., Section III and Figure 7: as the aberration magnitude <code>|S|</code> tends to zero, the localized-state excess intensity above the continuous-wave background scales as <code>|S|<sup>1/4</sup></code>. The numerical structures disappear as that fourth-order confinement vanishes.</p>
+                <p>This is a reported <strong>two-dimensional numerical scaling</strong>, not a Lean theorem or a measured three-dimensional exponent.</p>
+                <div class="light-bullet-evidence-links">
+                  <a href="https://arxiv.org/html/2611.03459v1" target="_blank" rel="noopener noreferrer">Fleck et al. · Section III, Figure 7 ↗</a>
+                </div>
+              </div>
+            </details>
+          </div>
+          <nav class="light-bullet-core-links" aria-label="Primary mathematical proof sources">
+            <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E57Certification.lean#L52" target="_blank" rel="noopener noreferrer">E57 Lean ↗</a>
+            <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E61Certification.lean#L51" target="_blank" rel="noopener noreferrer">E61 Lean ↗</a>
+            <span>Full proofs and conditions inside each expandable</span>
+          </nav>
+          <details class="light-bullet-additional" id="light-bullet-further-matches">
+            <summary><span>02–03 / Further correspondences</span><span>Mechanism and 2D/3D localization <b aria-hidden="true">+</b></span></summary>
+            <div class="light-bullet-secondary-matches" aria-label="Additional fourth-order mechanism and localization comparison">
+              <article class="light-bullet-secondary-match">
+                <span>02 · MECHANISM MATCH</span>
+                <strong>Fourth-order stabilization</strong>
+                <p>Higher-order spectral selection and nonlinear localization appear in both models.</p>
+                <a href="https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R07_PhaseFlux.lean#L10" target="_blank" rel="noopener noreferrer">geometry_of_resonance · R07 Lean ↗</a>
+              </article>
+              <article class="light-bullet-secondary-match">
+                <span>03 · RELATED PROVEN RESULT</span>
+                <strong>Localization and stability</strong>
+                <p>F01 proves 2D minimizing-state compactness and orbital stability; the paper shows numerical 3D light bullets.</p>
+                <div class="light-bullet-secondary-links">
+                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/WholeSpaceMinimizers.lean#L1457" target="_blank" rel="noopener noreferrer">math · compactness ↗</a>
+                  <a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean#L256" target="_blank" rel="noopener noreferrer">math · stability ↗</a>
+                </div>
+              </article>
+            </div>
+          </details>
+          <p class="light-bullet-scope"><strong>Model boundary:</strong> F01 is conservative and 2D cubic–quintic; E57/E61 prove results for related linear fourth-order operators; Fleck et al. study a driven, dissipative 3D Kerr cavity. Exact shared mathematics does not transfer the stability theorems to the full cavity.</p>
         </section>
         <nav class="feature-direct-actions" aria-label="External paper and record">
           <a class="feature-direct-primary" href="https://arxiv.org/abs/2611.03459" target="_blank" rel="noopener noreferrer">Original paper ↗</a>
