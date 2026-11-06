@@ -277,3 +277,14 @@ td.relationship{min-width:210px}
 .overlap-head .light-bullet-lean-notes{color:#a2b8c7;font-size:.78rem;line-height:1.8;margin:18px 0 0}
 @media(max-width:950px){.light-bullet-source-index{grid-template-columns:1fr}.light-bullet-lean-heading{flex-direction:column}.light-bullet-lean-count{text-align:left;border-left:0;padding-left:0}}
 @media(max-width:650px){.light-bullet-math-pair{grid-template-columns:1fr}.light-bullet-lean-crossmatch{padding:20px 15px}.light-bullet-comparison-table{min-width:875px}}
+
+/* Keep direct Lean citations and the entire comparison visibly INSIDE the highlighted card. */
+.feature-direct-lean-bar{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;padding:13px 0 17px;margin:0 0 9px;border-top:1px solid rgba(176,227,216,.18);border-bottom:1px solid rgba(176,227,216,.18)}
+.feature-direct-lean-label{font:750 .64rem/1.6 ui-monospace,Consolas,monospace;color:#9de9ca;letter-spacing:.06em}
+.feature-direct-lean-bar a{color:#a4e4f5;font-size:.74rem;line-height:1.55;font-weight:720;text-decoration:none}
+.feature-direct-lean-bar a:hover{text-decoration:underline;text-underline-offset:3px}
+.feature-direct-adoption>.light-bullet-lean-crossmatch{max-width:none;margin:31px 0 0;padding:29px 0 0;border:0;border-top:1px solid rgba(150,216,203,.3);border-radius:0;background:none}
+.feature-direct-adoption>.light-bullet-lean-crossmatch h2{font:500 clamp(1.58rem,2.9vw,2.7rem)/1.2 Georgia,serif}
+.feature-direct-adoption>.light-bullet-lean-crossmatch .light-bullet-lean-heading{margin-bottom:4px}
+.feature-direct-adoption .light-bullet-comparison-table a,.feature-direct-adoption .light-bullet-source-index a{color:#8bdcf6}
+@media(max-width:650px){.feature-direct-adoption>.light-bullet-lean-crossmatch{padding:23px 0 0;margin-top:22px}.feature-direct-lean-bar{display:grid;gap:8px}.feature-direct-lean-label{margin-bottom:4px}}
