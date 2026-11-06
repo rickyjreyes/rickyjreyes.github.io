@@ -81,10 +81,16 @@ assert '?track=physics&amp;q=2611.03459#complete-ledger' in card
 assert 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js' in page
 assert "startup: { elements: ['#featured-2611-03459'] }" in page
 assert page.index('window.MathJax = {') < page.index('src="https://cdn.jsdelivr.net/npm/mathjax')
-assert 'overlap.css?v=20261106-journal-mathjax' in page
+assert 'overlap.css?v=20261106-dark-journal-mathjax' in page
 
 feature_css = css.split('/* Scientific publication treatment:', 1)[1]
-assert '#fdfdfc' in feature_css and '#182a3c' in feature_css and '#315474' in feature_css
+# The feature must respect the site's dark tokens, not introduce a bright paper card.
+assert 'background: var(--panel-soft)' in feature_css
+assert 'color: var(--text)' in feature_css
+assert 'border: 1px solid var(--line-strong)' in feature_css
+assert 'background: var(--panel)' in feature_css
+assert 'color: var(--muted)' in feature_css
+assert '#fdfdfc' not in feature_css and '#f4f6f8' not in feature_css
 assert '#8bf4c1' not in feature_css and '#92ffd0' not in feature_css
 assert '.light-bullet-typeset mjx-container' in feature_css
 assert '.light-bullet-evidence-formula mjx-container' in feature_css
@@ -92,4 +98,4 @@ assert 'grid-template-columns: 1fr;' in feature_css
 assert '"https://arxiv.org/abs/2611.03459": "DIRECT ADOPTION"' in ledger
 assert 'status:"verified",source:"arXiv:2611.03459 version 1, submitted November 2, 2026"' in ledger
 
-print("Journal-style WCT feature validated: neutral palette, scoped MathJax, exact E57/E61/scaling, expandable evidence, unchanged classification.")
+print("Site-themed dark journal card validated: native palette, scoped MathJax, E57/E61/scaling, accessible expanders, unchanged classification.")
