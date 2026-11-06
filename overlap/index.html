@@ -40,6 +40,26 @@
       <h1>WCT Adoption &amp; External Evidence</h1>
       <p class="hero-lede">A chronology-first record of later research, observations, and institutional responses related to the Richard J. Reyes Wave Confinement Theory and Recursive AI Drift research programs.</p>
 
+      <section class="feature-direct-adoption" id="featured-2611-03459" aria-labelledby="feature-direct-title">
+        <div class="feature-direct-eyebrow">
+          <span class="pill rel-direct">DIRECT ADOPTION</span>
+          <span class="feature-direct-kicker">Featured external work · WCT / physics · overlap 8.7 / 10</span>
+        </div>
+        <h2 id="feature-direct-title"><a href="https://arxiv.org/abs/2611.03459" target="_blank" rel="noopener noreferrer">Aberration stabilized light bullets in normal dispersion injected Kerr resonators</a></h2>
+        <p class="feature-direct-summary">A numerical investigation of stable three-dimensional localized light bullets in injected Kerr resonators using fourth-order diffraction and spherical-aberration effects. Featured as a direct mathematical correspondence in the overlap registry.</p>
+        <dl class="feature-direct-details">
+          <div><dt>Authors</dt><dd>Yannick Fleck, Thomas G. Seidel, Jesús Yelo-Sarrión, Julien Javaloyes, Svetlana V. Gurevich</dd></div>
+          <div><dt>First submitted</dt><dd><time datetime="2026-11-02">November 2, 2026</time></dd></div>
+          <div><dt>Overlap score</dt><dd><strong>8.7 / 10</strong></dd></div>
+          <div><dt>Relationship</dt><dd><strong>DIRECT ADOPTION</strong></dd></div>
+        </dl>
+        <div class="feature-direct-actions">
+          <a class="feature-direct-primary" href="https://arxiv.org/abs/2611.03459" target="_blank" rel="noopener noreferrer">Read the paper ↗</a>
+          <a href="https://doi.org/10.48550/arXiv.2611.03459" target="_blank" rel="noopener noreferrer">DOI / permanent ID ↗</a>
+          <a href="?track=physics&amp;q=2611.03459#complete-ledger">Find this record in the WCT ledger ↓</a>
+        </div>
+      </section>
+
       <div class="reference-records" aria-label="Reyes reference records">
         <article class="reference-record">
           <p class="reference-label">Reference record · WCT / physics track</p>
@@ -73,7 +93,7 @@
         <div class="rel-card independent" data-relation="POST-DATE CONVERGENCE" role="button" tabindex="0" aria-pressed="false" title="Filter records by Post-Date Convergence"><div class="rel-card-head"><span class="pill rel-independent">POST-DATE CONVERGENCE</span><strong class="rel-count" data-rel-count="POST-DATE CONVERGENCE">0</strong></div><p>A later external work develops a closely corresponding concept, mechanism, or systems model.</p></div>
         <div class="rel-card empirical" data-relation="EMPIRICAL CONVERGENCE" role="button" tabindex="0" aria-pressed="false" title="Filter records by Empirical Convergence"><div class="rel-card-head"><span class="pill rel-empirical">EMPIRICAL CONVERGENCE</span><strong class="rel-count" data-rel-count="EMPIRICAL CONVERGENCE">0</strong></div><p>Experiments, evaluations, datasets, disclosures, or incidents directly observe the same class of behavior.</p></div>
         <div class="rel-card institutional" data-relation="INSTITUTIONAL RESPONSE" role="button" tabindex="0" aria-pressed="false" title="Filter records by Institutional Response"><div class="rel-card-head"><span class="pill rel-institutional">INSTITUTIONAL RESPONSE</span><strong class="rel-count" data-rel-count="INSTITUTIONAL RESPONSE">0</strong></div><p>A lab, university, company, government, standards body, or funded program establishes sustained research, monitoring, containment, or engineering around the same problem class.</p></div>
-        <div class="rel-card direct" data-relation="DIRECT ADOPTION" role="button" tabindex="0" aria-pressed="false" title="Filter records by Direct Adoption"><div class="rel-card-head"><span class="pill rel-direct">DIRECT ADOPTION</span><strong class="rel-count" data-rel-count="DIRECT ADOPTION">0</strong></div><p>Direct mathematical presence of WCT-formalized operators, stability or spectral mechanisms in subsequent research, as well as explicit citation, implementation, testing, use, or discussion. Mathematical correspondence does not by itself establish historical influence.</p></div>
+        <div class="rel-card direct" data-relation="DIRECT ADOPTION" role="button" tabindex="0" aria-pressed="false" title="Filter records by Direct Adoption"><div class="rel-card-head"><span class="pill rel-direct">DIRECT ADOPTION</span><strong class="rel-count" data-rel-count="DIRECT ADOPTION">0</strong></div><p>Direct mathematical presence of WCT-formalized operators, stability or spectral mechanisms in subsequent research, as well as explicit citation, implementation, testing, use, or discussion. </p></div>
       </div>
     </section>
 
@@ -701,6 +721,8 @@
     };
 
     const requestedTrack=new URLSearchParams(location.search).get('track');
+    const requestedRecordQuery=new URLSearchParams(location.search).get('q');
+    if(requestedRecordQuery) document.getElementById('q-track').value=requestedRecordQuery.slice(0,120);
     let activeTrack=requestedTrack==='physics'?'physics':'ai';
     let activeRelationship=null;
     let activeChronology=null;
