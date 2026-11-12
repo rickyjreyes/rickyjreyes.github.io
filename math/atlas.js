@@ -100,7 +100,7 @@
     const proofs = [...a.entries,...b.entries,...c.entries].sort((x,y)=>x.rank-y.rank);
     const ranks = new Set(proofs.map(p=>p.rank));
     if(proofs.length !== 27 || ranks.size !== 27 || ranks.has(0) || ranks.has(28)) throw new Error("Proof dataset must contain 27 unique ranks");
-    if(inventory.repositories.length !== 5 || inventory.total_lean_files !== 278) throw new Error("Public inventory mismatch");
+    if(inventory.repositories.length !== 5 || inventory.total_lean_files !== 303) throw new Error("Public inventory mismatch");
     const authorized = new Set(inventory.repositories.map(repo=>repo.repo));
     if(proofs.some(p=>!authorized.has(p.repo))) throw new Error("Proof catalog contains a nonpublic repository");
     if (!Array.isArray(guide.entries) || guide.entries.length !== 27) {
@@ -130,7 +130,7 @@
         +'<h3>'+esc(repo.repo)+'</h3><p>'+esc(repo.focus)+'</p></div><strong>'+repo.lean_files+'</strong></a>').join("");
     document.getElementById("atlas-file-count").textContent=String(inventory.total_lean_files);
     document.getElementById("atlas-repo-count").textContent=String(inventory.repositories.length);
-    status.textContent="Source inventory: "+inventory.snapshot_date+" · "+inventory.public_repositories_scanned+" public repos scanned · 27 highlighted declarations";
+    status.textContent="Lean source-tree snapshot: "+inventory.snapshot_date+" · "+inventory.repositories.length+" public repo trees refreshed · 27 curated theorem highlights";
   }).catch(error=>{
     status.textContent="Source index unavailable: "+error.message;
     countEl.textContent="Browse the public Lean repositories below or open the selected source inventory on GitHub.";
@@ -168,7 +168,7 @@
     if (!response.ok) throw new Error("HTTP " + response.status);
     return response.json();
   }).then(data => {
-    if (!Array.isArray(data.files) || data.files.length !== 278 || data.count !== 278)
+    if (!Array.isArray(data.files) || data.files.length !== 303 || data.count !== 303)
       throw new Error("Public file inventory is incomplete");
     fileState.files = data.files;
     renderFiles();

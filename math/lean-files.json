@@ -1,7 +1,7 @@
 {
-  "snapshot_date": "2026-11-02",
-  "count": 278,
-  "meaning": "Every .lean source file found in the default-branch trees of the five Lean-containing public repositories owned by rickyjreyes. Source presence is not proof completeness or novelty.",
+  "snapshot_date": "2026-11-12",
+  "count": 303,
+  "meaning": "Public-source .lean file paths from five specified repository default branches, including lakefile.lean where present. These are source-file counts, not certified theorem counts or completion percentages.",
   "files": [
     {
       "repo": "rickyjreyes/geometry_of_resonance",
@@ -80,6 +80,18 @@
       "branch": "main",
       "path": "lean/ReleaseProofs/R16_LinearConstraintObstruction.lean",
       "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_LinearConstraintObstruction.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_LinearModeReduction.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_LinearModeReduction.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/R16_LinearTrajectoryEnergy.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R16_LinearTrajectoryEnergy.lean"
     },
     {
       "repo": "rickyjreyes/geometry_of_resonance",
@@ -170,6 +182,60 @@
       "branch": "main",
       "path": "lean/ReleaseProofs/R46_RotatingQ5.lean",
       "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/R46_RotatingQ5.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/S004ChargeFibre.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/S004ChargeFibre.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/S004ChargeNoGo.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/S004ChargeNoGo.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/S004NodalEnergyObstruction.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/S004NodalEnergyObstruction.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/S004NodalHolonomic.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/S004NodalHolonomic.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/S004NodalPrimary.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/S004NodalPrimary.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/S004NodalShiftClassification.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/S004NodalShiftClassification.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/S004RegularConstraints.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/S004RegularConstraints.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/S004Regularity.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/S004Regularity.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/S004RegularAxiomAudit.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/S004RegularAxiomAudit.lean"
     },
     {
       "repo": "rickyjreyes/math",
@@ -1284,6 +1350,12 @@
     {
       "repo": "rickyjreyes/photodiode",
       "branch": "main",
+      "path": "formal/PhotodiodeProtocol/HarmonicRatios.lean",
+      "source_url": "https://github.com/rickyjreyes/photodiode/blob/main/formal/PhotodiodeProtocol/HarmonicRatios.lean"
+    },
+    {
+      "repo": "rickyjreyes/photodiode",
+      "branch": "main",
       "path": "formal/PhotodiodeProtocol/Randomization.lean",
       "source_url": "https://github.com/rickyjreyes/photodiode/blob/main/formal/PhotodiodeProtocol/Randomization.lean"
     },
@@ -1380,104 +1452,14 @@
     {
       "repo": "rickyjreyes/wct-lean",
       "branch": "main",
-      "path": "lakefile.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/lakefile.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "Main.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/Main.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/Basic.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Basic.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/Falsification.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Falsification.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/LeanTests/Attractor.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/LeanTests/Attractor.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/LeanTests/DimensionFailure.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/LeanTests/DimensionFailure.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/LeanTests/EntropyMonotone.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/LeanTests/EntropyMonotone.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/LeanTests/Sanity.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/LeanTests/Sanity.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/Theta/Baselines.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Theta/Baselines.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/Theta/Core.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Theta/Core.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/Theta/Definitions.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Theta/Definitions.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/Theta/Dynamics.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Theta/Dynamics.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "MyProject/Theta/Entropy.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/MyProject/Theta/Entropy.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "scripts/d4_axiom_audit.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/scripts/d4_axiom_audit.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
-      "path": "WCTLean.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean.lean"
-    },
-    {
-      "repo": "rickyjreyes/wct-lean",
-      "branch": "main",
       "path": "WCTLean/Contracts/Analytic.lean",
       "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Contracts/Analytic.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Contracts/UniformCurvatureDenominator.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Contracts/UniformCurvatureDenominator.lean"
     },
     {
       "repo": "rickyjreyes/wct-lean",
@@ -1556,6 +1538,18 @@
       "branch": "main",
       "path": "WCTLean/Models/ComplexCurvature.lean",
       "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/ComplexCurvature.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/CorrectedWeightCalculus.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/CorrectedWeightCalculus.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/CorrectedWeightDirection.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/CorrectedWeightDirection.lean"
     },
     {
       "repo": "rickyjreyes/wct-lean",
@@ -1652,6 +1646,162 @@
       "branch": "main",
       "path": "WCTLean/Models/RestDensity.lean",
       "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/RestDensity.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004AmplitudeAnnulus.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004AmplitudeAnnulus.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004BoundaryWeightedEuler.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004BoundaryWeightedEuler.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004ClassicalDensity.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004ClassicalDensity.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004ClassicalField.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004ClassicalField.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004ClassicalPeriodicity.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004ClassicalPeriodicity.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004CompatibleFields.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004CompatibleFields.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004ContinuousAdmissibility.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004ContinuousAdmissibility.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004ContinuousEuler.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004ContinuousEuler.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004EulerCoefficients.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004EulerCoefficients.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004EulerSeparation.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004EulerSeparation.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004FirstSpatialTraceEuler.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004FirstSpatialTraceEuler.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004FullSpatialIntegratedVariation.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004FullSpatialIntegratedVariation.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004FullSpatialJet.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004FullSpatialJet.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004IntegratedVariation.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004IntegratedVariation.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004IntervalGreen.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004IntervalGreen.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004JetVariation.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004JetVariation.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004PrincipalDegeneracy.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004PrincipalDegeneracy.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004SpacetimeActionBridge.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004SpacetimeActionBridge.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004SpacetimeEuler.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004SpacetimeEuler.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004SpacetimeEulerPairing.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004SpacetimeEulerPairing.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004SpacetimeFubini.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004SpacetimeFubini.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004SpacetimeGreen.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004SpacetimeGreen.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004SpacetimeStrongBridge.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004SpacetimeStrongBridge.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004SpatialEuler.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004SpatialEuler.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004TemporalEuler.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004TemporalEuler.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004TwoComponentVariation.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004TwoComponentVariation.lean"
     },
     {
       "repo": "rickyjreyes/wct-lean",

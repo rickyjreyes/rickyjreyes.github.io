@@ -1,0 +1,38 @@
+name: Validate mathematics Lean results ranking
+
+on:
+  pull_request:
+    paths:
+      - "math/index.html"
+      - "math/atlas.js"
+      - "math/lean-files.json"
+      - "math/public-lean-repositories.json"
+      - "math/result-rankings.*"
+      - "scripts/validate_math_results_ranking.py"
+      - ".github/workflows/math-result-rankings.yml"
+  push:
+    branches: [main]
+    paths:
+      - "math/index.html"
+      - "math/atlas.js"
+      - "math/lean-files.json"
+      - "math/public-lean-repositories.json"
+      - "math/result-rankings.*"
+      - "scripts/validate_math_results_ranking.py"
+      - ".github/workflows/math-result-rankings.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate public proof sources, ranking and page wiring
+        run: python scripts/validate_math_results_ranking.py
+

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#081421">
-<meta name="description" content="Richard J. Reyes mathematics research hub: analytical manuscripts, the main MathProofs Lean project, 27 explained theorem highlights and 300 research questions.">
+<meta name="description" content="Richard J. Reyes mathematics research hub: analytical manuscripts, the main MathProofs Lean project, ranked individual public Lean results, 27 curated theorem highlights and 300 research questions.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://rickyjreyes.github.io/math/">
 <meta property="og:title" content="Mathematics Research Hub | Manuscripts, Lean Proofs and Open Questions">
@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="./atlas.css?v=20261102-proof-atlas">
 <link rel="stylesheet" href="./readable.css?v=20261102-readable-math">
 <link rel="stylesheet" href="./hub.css?v=20261103-math-hub">
+<link rel="stylesheet" href="./result-rankings.css?v=20261112-individual-lean-results">
 </head>
 <body class="lean-atlas">
 <a class="skip-link" href="#main">Skip to mathematical results</a>
@@ -24,22 +25,22 @@
 <p class="atlas-kicker">Richard J. Reyes · public research · Lean 4</p>
 <h1>Mathematics, <em>from question to proof.</em></h1>
 <p class="atlas-lead">The central directory for mathematical manuscripts, the main Lean 4 proof project, research questions and formal verification. Find a subject, read its results, and follow each theorem to its exact source.</p>
-<div class="atlas-actions"><a class="atlas-action primary" href="#hub">Explore the mathematics ↓</a><a class="atlas-action" href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs.lean">Main Lean project ↗</a><a class="atlas-action" href="#manuscripts">Read the papers ↓</a><a class="atlas-action" href="/reyes-problem-repository/">300 research questions ↗</a></div>
+<div class="atlas-actions"><a class="atlas-action primary" href="#hub">Explore the mathematics ↓</a><a class="atlas-action" href="#rankings">Top Lean results ↓</a><a class="atlas-action" href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs.lean">Main Lean project ↗</a><a class="atlas-action" href="#manuscripts">Read the papers ↓</a><a class="atlas-action" href="/reyes-problem-repository/">300 research questions ↗</a></div>
 </div><aside class="atlas-hero-note"><strong>Lean 4</strong>Theorem statements and supporting proof code can be inspected at their original paths. No general physical conclusion follows automatically from a checked formal statement.</aside></div>
 <div class="atlas-facts" aria-label="Mathematical proof inventory snapshot">
 <div><strong>27</strong><span>Curated exact-scope Lean theorem highlights</span></div>
-<div><strong id="atlas-file-count">278</strong><span>.lean files in the public repositories reviewed</span></div>
+<div><strong id="atlas-file-count">303</strong><span>.lean files in the public repositories reviewed</span></div>
 <div><strong id="atlas-repo-count">5</strong><span>Public repositories containing Lean source</span></div>
 </div>
-<p id="atlas-data-status" class="atlas-caution">Research snapshots are source-dated. The 27 results are a curated selection, not the total theorem count; the 278 count includes Lean project files. The 300 GC questions are a research agenda, not 300 certified novel open problems.</p>
+<p id="atlas-data-status" class="atlas-caution">Research snapshots are source-dated. The 27 results are a curated selection, not the total theorem count; the 303 count includes Lean project files. The 300 GC questions are a research agenda, not 300 certified novel open problems.</p>
 </div></section>
 <nav class="math-hub-wayfinding" aria-label="Mathematics sections"><div class="atlas-shell">
-<a href="#hub">Research routes</a><a href="#subjects">Mathematical subjects</a><a href="#manuscripts">Papers and manuscripts</a><a href="#highlights">Featured results</a><a href="#proofs">27 Lean highlights</a><a href="#repositories">Complete Lean source index</a>
+<a href="#hub">Research routes</a><a href="#rankings">Ranked Lean results</a><a href="#subjects">Mathematical subjects</a><a href="#manuscripts">Papers and manuscripts</a><a href="#highlights">Featured results</a><a href="#proofs">27 Lean highlights</a><a href="#repositories">Complete Lean source index</a>
 </div></nav>
 <section class="atlas-section math-hub-section" id="hub"><div class="atlas-shell">
 <div class="atlas-head"><div><p class="atlas-kicker">Start here · Research directory</p><h2>One mathematics hub. Four ways into the work.</h2></div><p>Explore complete analytic manuscripts, kernel-checkable proof sources, mathematical research questions, or the separate WCT object-coverage registry.</p></div>
 <div class="math-hub-gateways"><article class="math-hub-gateway"><div class="math-hub-gateway-tag">READ</div><h3>Mathematical manuscripts</h3><p>Read the F01–F12 families, supplementary analyses, and full analytic papers. Search the on-site catalogue by subject or title.</p><div class="math-hub-linkrow"><a href="#manuscripts">Browse the papers ↓</a><a href="https://github.com/rickyjreyes/math/blob/main/CONTENTS.md">Canonical catalogue ↗</a></div></article>
-<article class="math-hub-gateway math-hub-gateway-main"><div class="math-hub-gateway-tag">VERIFY</div><h3>Main Lean mathematics project</h3><p>Begin at the MathProofs.lean import tree. Inspect the formalization README, exact theorem sources and manuscript-by-manuscript status.</p><div class="math-hub-linkrow"><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs.lean">Open MathProofs.lean ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/README.md">Formalization status ↗</a><a href="#repositories">All public Lean files ↓</a></div></article>
+<article class="math-hub-gateway math-hub-gateway-main"><div class="math-hub-gateway-tag">VERIFY</div><h3>Main Lean mathematics project</h3><p>Begin at the MathProofs.lean import tree. Inspect the formalization README, exact theorem sources and manuscript-by-manuscript status.</p><div class="math-hub-linkrow"><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs.lean">Open MathProofs.lean ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/lean/README.md">Formalization status ↗</a><a href="#repositories">All public Lean files ↓</a><a href="#rankings">Rank individual results ↓</a></div></article>
 <article class="math-hub-gateway"><div class="math-hub-gateway-tag">INVESTIGATE</div><h3>300 research questions</h3><p>Browse all 12 mathematical fields. Each GC entry includes its original problem statement, scoped target and mathematical review.</p><div class="math-hub-linkrow"><a href="/reyes-problem-repository/">Research-question directory ↗</a><a href="https://github.com/rickyjreyes/math/blob/main/reyes-problem-repository/CONTRIBUTING.md">Contribution standard ↗</a></div></article>
 <article class="math-hub-gateway"><div class="math-hub-gateway-tag">MAP</div><h3>WCT Lean coverage</h3><p>A separate coverage map of 142 canonical WCT objects, including proof status and links between symbolic claims and Lean declarations.</p><div class="math-hub-linkrow"><a href="/lean/">WCT Lean coverage map ↗</a><a href="https://github.com/rickyjreyes/wct-lean">wct-lean repository ↗</a></div></article></div>
 <nav class="math-hub-related" aria-label="Additional mathematical research tools">
@@ -51,6 +52,28 @@
 <a href="https://github.com/rickyjreyes/math">Main mathematics repository ↗</a>
 </nav>
 <div class="math-hub-lean-callout"><div><p class="atlas-kicker">Primary formal entry point</p><h3>Lean mathematics starts at <code>MathProofs.lean</code>.</h3><p>This file imports the main mathematics proof modules. The <a href="https://github.com/rickyjreyes/math/blob/main/lean/formalization.yaml">formalization manifest</a> tracks manuscript scope, while the <a href="/lean/">WCT Lean coverage map</a> describes a distinct 142-object registry. Neither number should be mistaken for a count of independently resolved GC problems.</p></div><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs.lean" class="atlas-action primary">Open main Lean import tree ↗</a></div>
+</div></section>
+<section class="atlas-section math-ranked-section" id="rankings" aria-labelledby="rankings-title"><div class="atlas-shell">
+<div class="atlas-head math-ranked-intro"><div><p class="atlas-kicker">Lean 4 · individual theorem assessment · November 12, 2026</p><h2 id="rankings-title">Strongest results, <em>ranked individually.</em></h2></div><p>Compare concrete mathematical conclusions across the public Lean repositories. Ranks evaluate the actual proved statements, not repository size, the ambition of an open conjecture, or an inferred physical discovery.</p></div>
+<div class="ranked-keypoints" aria-label="Ranking coverage">
+<div class="ranked-keypoint"><strong>40</strong><span>Individual results evaluated in the cross-repository comparison</span></div>
+<div class="ranked-keypoint"><strong>27</strong><span>Results with public Lean sources displayed on this page</span></div>
+<div class="ranked-keypoint"><strong>13</strong><span>Private-source results intentionally omitted from the public ranking</span></div>
+</div>
+<p class="ranked-method"><strong>How to read this ranking:</strong> Ordering reflects mathematical depth, theorem strength, scope and completeness. Numeric values are editorial comparison scores, not theorem-completion percentages, probabilities, independent novelty assessments or evidence of experimental validation. The original ranks from the 40-result comparison are preserved, so gaps indicate private-source items withheld. Several top entries belong to the same F01 proof chain and are not independent discoveries. A passing Lean proof establishes the encoded theorem under its hypotheses, not every proposed physical interpretation. <a href="#proofs">Explore exact theorem declarations below ↓</a></p>
+<div class="ranked-controls" role="group" aria-label="Filter ranked Lean results">
+<label for="ranked-query">Search mathematical results<input id="ranked-query" type="search" placeholder="Try stability, curvature, ghosts, Fourier…" autocomplete="off"></label>
+<label for="ranked-repository">Repository<select id="ranked-repository"><option value="">All public repositories</option></select></label>
+<label for="ranked-area">Mathematical area<select id="ranked-area"><option value="">All mathematical areas</option></select></label>
+</div>
+<div class="ranked-summaryline"><p id="ranked-count" role="status" aria-live="polite">Top publicly linked results from the audited comparison.</p><button id="ranked-reset" type="button" hidden>Clear filters</button></div>
+<div id="ranked-result-list" class="ranked-list" aria-label="Ranked individual Lean mathematical results">
+<article class="ranked-item ranked-item-strong" id="rank-result-1"><div class="ranked-position"><strong>#1</strong><span>of 40</span></div><div class="ranked-copy"><div class="ranked-meta"><span>math</span> · <span>Nonlinear PDE</span></div><h3>Orbital stability of the minimizing set</h3><p>For the specified fourth-order cubic–quintic Schrödinger flow, nearby states remain close to the set of energy minimizers, within the proved mass range.</p><div class="ranked-links"><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/OrbitalStability.lean">Read Lean source ↗</a></div></div><div class="ranked-assessment"><strong>99</strong><span>editorial /100</span></div></article>
+<article class="ranked-item ranked-item-strong" id="rank-result-2"><div class="ranked-position"><strong>#2</strong><span>of 40</span></div><div class="ranked-copy"><div class="ranked-meta"><span>math</span> · <span>Variational analysis</span></div><h3>Existence and compactness of whole-space minimizers</h3><p>Concentration–compactness yields actual energy minimizers and strong convergence modulo translations, within the stated range.</p><div class="ranked-links"><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/WholeSpaceMinimizers.lean">Read Lean source ↗</a></div></div><div class="ranked-assessment"><strong>98</strong><span>editorial /100</span></div></article>
+<article class="ranked-item ranked-item-strong" id="rank-result-4"><div class="ranked-position"><strong>#4</strong><span>of 40</span></div><div class="ranked-copy"><div class="ranked-meta"><span>math</span> · <span>Nonlinear PDE</span></div><h3>Global nonlinear flow and conservation laws</h3><p>Global H² evolution and conservation for the precisely specified whole-space cubic–quintic equation.</p><div class="ranked-links"><a href="https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/CubicQuinticFlow.lean">Read Lean source ↗</a></div></div><div class="ranked-assessment"><strong>96</strong><span>editorial /100</span></div></article>
+</div>
+<div class="ranked-bottom"><button id="ranked-more" type="button" hidden>Show remaining results</button></div>
+<p id="ranked-status" class="atlas-caution" role="status" aria-live="polite">The complete public-source ranking loads from the local, source-linked November 12 snapshot. The existing theorem explorer below remains separate.</p>
 </div></section>
 <section class="atlas-section math-hub-section" id="subjects"><div class="atlas-shell">
 <div class="atlas-head"><div><p class="atlas-kicker">Explore by research subject</p><h2>Twelve fields of mathematics.</h2></div><p>Choose the field first. Each route opens that subject's 25 preserved mathematical questions with the full question text and research reviews visible.</p></div>
@@ -261,7 +284,7 @@
 <div class="atlas-file-browser" id="lean-file-browser"><div class="atlas-file-head">
 <div><p class="atlas-kicker">Complete public code index</p><h3>Every public .lean file, searchable.</h3><p>Source paths from the 30-repository public audit. A file appearing here does not by itself certify a theorem.</p></div>
 <input id="atlas-files-search" class="atlas-search" type="search" aria-label="Search public Lean source files" placeholder="Find module or repository…" autocomplete="off"></div>
-<p id="atlas-files-count" role="status" aria-live="polite" class="atlas-caution">Loading 278 source files…</p>
+<p id="atlas-files-count" role="status" aria-live="polite" class="atlas-caution">Loading 303 source files…</p>
 <div id="atlas-files-list" class="atlas-file-list" aria-label="All public Lean file paths"></div>
 <div class="atlas-file-more-wrap"><button id="atlas-files-more" type="button" class="atlas-action" hidden>Show more files</button></div>
 </div>
@@ -278,8 +301,9 @@ window.MathJax = {
 };
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<script src="./atlas.js?v=20261102-readable-math" defer></script>
+<script src="./atlas.js?v=20261112-source-inventory" defer></script>
 <script src="./hub.js?v=20261103-math-hub" defer></script>
+<script src="./result-rankings.js?v=20261112-individual-lean-results" defer></script>
 <script src="../site-nav.js?v=20261102-dedicated-math-pages" defer></script>
 <script src="../site-nav.js" defer></script>
 </body></html>
