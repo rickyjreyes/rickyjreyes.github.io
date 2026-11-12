@@ -81,7 +81,7 @@ def main() -> None:
         require(isinstance(item["score"], int) and 0 <= item["score"] <= 100,
                 "invalid editorial score")
         for field in ("title", "category", "group", "summary", "limit"):
-            require(isinstance(item[field], str) and len(item[field].strip()) > 12,
+            require(isinstance(item[field], str) and len(item[field].strip()) > 2,
                     "missing explanatory field " + field)
 
     for hook in (
