@@ -1,9 +1,9 @@
 {
-  "snapshot_date": "2026-11-02",
-  "audit": "Scanned all 30 public repositories owned by rickyjreyes at their default branches; counts are .lean files, including project entry points and lakefile.lean where present. Not theorem counts or proof completeness claims.",
+  "snapshot_date": "2026-11-12",
+  "audit": "Updated default-branch .lean file tree inventory of the five established public Lean repositories. Earlier public-repository discovery covered 30 public repositories on 2026-11-02; this update does not claim a new all-repository discovery scan. Files are not theorem counts or proof-completion claims.",
   "public_repositories_scanned": 30,
   "repositories_with_lean": 5,
-  "total_lean_files": 278,
+  "total_lean_files": 303,
   "repositories": [
     {
       "repo": "rickyjreyes/math",
@@ -15,14 +15,14 @@
     {
       "repo": "rickyjreyes/wct-lean",
       "branch": "main",
-      "lean_files": 49,
+      "lean_files": 62,
       "focus": "WCT formal registry and exact-scope model lemmas",
       "path": "WCTLean/"
     },
     {
       "repo": "rickyjreyes/geometry_of_resonance",
       "branch": "main",
-      "lean_files": 28,
+      "lean_files": 39,
       "focus": "Geometric and physical-model scope, obstructions and release proofs",
       "path": "lean/"
     },
@@ -36,7 +36,7 @@
     {
       "repo": "rickyjreyes/photodiode",
       "branch": "main",
-      "lean_files": 5,
+      "lean_files": 6,
       "focus": "Experimental statistical protocol and decision formalization",
       "path": "formal/"
     }
