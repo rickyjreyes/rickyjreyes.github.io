@@ -41,8 +41,8 @@ def main() -> None:
     script = (MATH / "result-rankings.js").read_text(encoding="utf-8")
 
     entries = ranking["entries"]
-    require(ranking["schema_version"] == 1, "ranking schema mismatch")
-    require(ranking["snapshot_date"] == "2026-11-12", "ranking snapshot mismatch")
+    require(ranking["schema_version"] == 2, "ranking schema mismatch")
+    require(ranking["snapshot_date"] == "2026-11-13", "ranking snapshot mismatch")
     require(ranking["public_only"] is True, "ranking must remain public-only")
     require(ranking["global_pool"] == 40, "global editorial pool mismatch")
     require(ranking["private_entries_omitted"] == 12, "private-source count mismatch")
@@ -83,6 +83,34 @@ def main() -> None:
         for field in ("title", "category", "group", "summary", "limit"):
             require(isinstance(item[field], str) and len(item[field].strip()) > 2,
                     "missing explanatory field " + field)
+
+    # Every public result needs an actual model, functional, operator or theorem formula.
+    for item in entries:
+        for field in ("equation_label", "equation_latex", "equation_note"):
+            require(isinstance(item.get(field), str) and len(item[field].strip()) >= 12,
+                    "missing mathematical formula field " + field)
+        tex = item["equation_latex"]
+        require("\\" in tex and len(tex) < 1200, "invalid equation LaTeX")
+        require(tex.count("{") == tex.count("}"), "unbalanced equation braces")
+        require(tex.count(r"\begin{aligned}") == tex.count(r"\end{aligned}"),
+                "unbalanced equation alignment")
+    shell = next(item for item in entries if item["rank"] == 23)
+    require(shell["path"] == "lean/MathProofs/SpectralConcentration.lean",
+            "shell concentration must point to the full theorem, not the algebraic precursor")
+    historical = next(item for item in entries if item["rank"] == 32)
+    corrected = next(item for item in entries if item["rank"] == 13)
+    require("historical" in historical["equation_note"].lower() or
+            "not the corrected" in historical["equation_note"].lower(),
+            "missing historical regularizer distinction")
+    require("varepsilon^2" in corrected["equation_latex"] and
+            "D_{\\varepsilon" in historical["equation_latex"],
+            "the two curvature models must remain distinct")
+    require(html.count('class="ranked-equation"') == 4,
+            "the four static theorem-card fallbacks need mathematical formulas")
+    require("equation_latex" in script and "typesetEquations" in script and
+            "MathJax.typesetPromise" in script and
+            "data.schema_version !== 2" in script,
+            "dynamic equation rendering or schema validation is missing")
 
     # Scientific-impact ranking must remain distinct from the proved-theorem list.
     impact_ids = re.findall(r'<article class="equation-impact-item" id="equation-impact-(\d+)">', html)
