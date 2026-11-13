@@ -1,9 +1,9 @@
 {
   "snapshot_date": "2026-11-12",
-  "audit": "Updated default-branch .lean file tree inventory of the five established public Lean repositories. Earlier public-repository discovery covered 30 public repositories on 2026-11-02; this update does not claim a new all-repository discovery scan. Files are not theorem counts or proof-completion claims.",
+  "audit": "Refreshed five established public default-branch Lean repository trees on 2026-11-12 Pacific. The former 30-repository discovery scan was conducted on 2026-11-02, and no new account-wide discovery is claimed. Counts cover .lean source files, not theorem certification.",
   "public_repositories_scanned": 30,
   "repositories_with_lean": 5,
-  "total_lean_files": 303,
+  "total_lean_files": 306,
   "repositories": [
     {
       "repo": "rickyjreyes/math",
@@ -15,14 +15,14 @@
     {
       "repo": "rickyjreyes/wct-lean",
       "branch": "main",
-      "lean_files": 62,
+      "lean_files": 64,
       "focus": "WCT formal registry and exact-scope model lemmas",
       "path": "WCTLean/"
     },
     {
       "repo": "rickyjreyes/geometry_of_resonance",
       "branch": "main",
-      "lean_files": 39,
+      "lean_files": 40,
       "focus": "Geometric and physical-model scope, obstructions and release proofs",
       "path": "lean/"
     },

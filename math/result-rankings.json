@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "snapshot_date": "2026-11-12",
-  "methodology": "Reassessed individual theorem significance (proof strength, mathematical scope, relation to research gaps) on 2026-11-12. A 40-result comparative shortlist, not a complete inventory. Only public-source entries are displayed. Editorial scores are not theorem-completion percentages, independently established novelty ratings, physical validation, or probability estimates.",
+  "methodology": "Editorial comparison of 40 individual scoped Lean result families based on theorem depth, generality and relevance to open mathematical obligations, not mathematical novelty or a theorem-completion score. Only public-source entries are displayed, while private-source entries count toward the global ranking.",
   "global_pool": 40,
   "public_only": true,
   "private_entries_omitted": 12,
@@ -199,8 +199,8 @@
       "limit": "Linear operator theorem; nonlinear confinement is separate."
     },
     {
-      "rank": 22,
-      "score": 85,
+      "rank": 23,
+      "score": 84,
       "title": "Preferred Fourier-shell concentration",
       "repo": "rickyjreyes/math",
       "path": "lean/MathProofs/E16SpectralCore.lean",
@@ -211,7 +211,7 @@
       "limit": "Growth and shell selection do not, alone, prove a localized nonlinear soliton."
     },
     {
-      "rank": 23,
+      "rank": 24,
       "score": 84,
       "title": "Swift–Hohenberg spectral characterization",
       "repo": "rickyjreyes/math",
@@ -223,7 +223,7 @@
       "limit": "Linear spectral statement, not a nonlinear stability theorem."
     },
     {
-      "rank": 24,
+      "rank": 25,
       "score": 83,
       "title": "Opposite-energy S004 mode decomposition",
       "repo": "rickyjreyes/geometry_of_resonance",
@@ -235,7 +235,7 @@
       "limit": "Applies to the stated S004 real-pole mode window and canonical reduction."
     },
     {
-      "rank": 26,
+      "rank": 27,
       "score": 81,
       "title": "Continuous and discrete Fourier band projectors",
       "repo": "rickyjreyes/math",
@@ -247,7 +247,7 @@
       "limit": "Does not imply observed wavelength selection in an experiment."
     },
     {
-      "rank": 27,
+      "rank": 28,
       "score": 80,
       "title": "Sharp fourth-order resolvent control",
       "repo": "rickyjreyes/math",
@@ -259,7 +259,7 @@
       "limit": "Operator estimate only; nonlinear modes require separate proofs."
     },
     {
-      "rank": 29,
+      "rank": 30,
       "score": 78,
       "title": "Restricted nodal-sector ghost classification",
       "repo": "rickyjreyes/geometry_of_resonance",
@@ -271,7 +271,7 @@
       "limit": "Does not complete the secondary Dirac constraint algorithm or classify every nodal sector."
     },
     {
-      "rank": 31,
+      "rank": 32,
       "score": 77,
       "title": "Corrected curvature regularization bound",
       "repo": "rickyjreyes/math",
@@ -283,7 +283,7 @@
       "limit": "Conditional on the specified ε > 0 regularization and functional-analytic premises."
     },
     {
-      "rank": 32,
+      "rank": 33,
       "score": 76,
       "title": "Whole-space curvature nonattainment",
       "repo": "rickyjreyes/math",
@@ -295,7 +295,7 @@
       "limit": "Does not rule out minimizing states for different Hamiltonians."
     },
     {
-      "rank": 33,
+      "rank": 34,
       "score": 75,
       "title": "Exact isolated Fourier-shell exclusion",
       "repo": "rickyjreyes/math",
@@ -307,7 +307,7 @@
       "limit": "Does not exclude finite-band wave packets or nonlinear confined configurations."
     },
     {
-      "rank": 34,
+      "rank": 35,
       "score": 74,
       "title": "Exact randomization-test validity",
       "repo": "rickyjreyes/photodiode",
@@ -319,7 +319,7 @@
       "limit": "Assumptions about randomization or exchangeability are essential; physical spectral bins need not be exchangeable."
     },
     {
-      "rank": 35,
+      "rank": 36,
       "score": 73,
       "title": "Injective WaveLock message encoding",
       "repo": "rickyjreyes/Wavelock",
@@ -331,7 +331,7 @@
       "limit": "Does not establish a collision-resistant digest, one-way function, or cryptographic security."
     },
     {
-      "rank": 39,
+      "rank": 40,
       "score": 68,
       "title": "Weighted continuous phase-locking minimum",
       "repo": "rickyjreyes/math",
@@ -343,5 +343,5 @@
       "limit": "Does not itself prove a nonlinear physical locking mechanism."
     }
   ],
-  "revision_note": "Promoted strict binding and the regular-sector S004 constraint count; moved the stronger CrossingsSATSets restricted SAT bound into the private-source global shortlist; updated the S004 action-to-Euler bridge to its stronger public module; reranked the Sobolev, metric-degeneracy, and non-identifiability results; the two lowest original shortlist entries were dropped to retain 40."
+  "revision_note": "2026-11-12 evening Pacific update: the verified two-outcome physical-readout resource disjunction was added to the private-source global ranking at #22; ranks formerly #22–39 shifted down one, and the lowest previously ranked private entry fell outside the top 40. The public 28-entry proof collection is unchanged except for rank numbering. Other new S004 vacuum and nodal-kinematic lemmas were reviewed but did not displace higher-ranked proofs."
 }

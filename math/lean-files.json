@@ -1,7 +1,7 @@
 {
   "snapshot_date": "2026-11-12",
-  "count": 303,
-  "meaning": "Public-source .lean file paths from five specified repository default branches, including lakefile.lean where present. These are source-file counts, not certified theorem counts or completion percentages.",
+  "count": 306,
+  "meaning": "Public .lean source paths from the 2026-11-12 current default-branch trees of the five previously inventoried public Lean repositories, including project files. These are not theorem counts, completion percentages, or a new all-repository discovery audit.",
   "files": [
     {
       "repo": "rickyjreyes/geometry_of_resonance",
@@ -194,6 +194,12 @@
       "branch": "main",
       "path": "lean/ReleaseProofs/S004ChargeNoGo.lean",
       "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/S004ChargeNoGo.lean"
+    },
+    {
+      "repo": "rickyjreyes/geometry_of_resonance",
+      "branch": "main",
+      "path": "lean/ReleaseProofs/S004NodalAccelerationConsistency.lean",
+      "source_url": "https://github.com/rickyjreyes/geometry_of_resonance/blob/main/lean/ReleaseProofs/S004NodalAccelerationConsistency.lean"
     },
     {
       "repo": "rickyjreyes/geometry_of_resonance",
@@ -1746,6 +1752,12 @@
     {
       "repo": "rickyjreyes/wct-lean",
       "branch": "main",
+      "path": "WCTLean/Models/S004PeriodicAdmissible.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004PeriodicAdmissible.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
       "path": "WCTLean/Models/S004PrincipalDegeneracy.lean",
       "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004PrincipalDegeneracy.lean"
     },
@@ -1802,6 +1814,12 @@
       "branch": "main",
       "path": "WCTLean/Models/S004TwoComponentVariation.lean",
       "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004TwoComponentVariation.lean"
+    },
+    {
+      "repo": "rickyjreyes/wct-lean",
+      "branch": "main",
+      "path": "WCTLean/Models/S004VacuumOnset.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004VacuumOnset.lean"
     },
     {
       "repo": "rickyjreyes/wct-lean",

@@ -100,7 +100,7 @@
     const proofs = [...a.entries,...b.entries,...c.entries].sort((x,y)=>x.rank-y.rank);
     const ranks = new Set(proofs.map(p=>p.rank));
     if(proofs.length !== 27 || ranks.size !== 27 || ranks.has(0) || ranks.has(28)) throw new Error("Proof dataset must contain 27 unique ranks");
-    if(inventory.repositories.length !== 5 || inventory.total_lean_files !== 303) throw new Error("Public inventory mismatch");
+    if(inventory.repositories.length !== 5 || inventory.total_lean_files !== 306) throw new Error("Public inventory mismatch");
     const authorized = new Set(inventory.repositories.map(repo=>repo.repo));
     if(proofs.some(p=>!authorized.has(p.repo))) throw new Error("Proof catalog contains a nonpublic repository");
     if (!Array.isArray(guide.entries) || guide.entries.length !== 27) {
@@ -168,7 +168,7 @@
     if (!response.ok) throw new Error("HTTP " + response.status);
     return response.json();
   }).then(data => {
-    if (!Array.isArray(data.files) || data.files.length !== 303 || data.count !== 303)
+    if (!Array.isArray(data.files) || data.files.length !== 306 || data.count !== 306)
       throw new Error("Public file inventory is incomplete");
     fileState.files = data.files;
     renderFiles();

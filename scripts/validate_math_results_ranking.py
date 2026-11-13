@@ -13,7 +13,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 MATH = ROOT / "math"
 EXPECTED_RANKS = [
     1, 2, 3, 4, 6, 7, 11, 12, 13, 14, 15, 16, 17, 18,
-    20, 21, 22, 23, 24, 26, 27, 29, 31, 32, 33, 34, 35, 39,
+    20, 21, 23, 24, 25, 27, 28, 30, 32, 33, 34, 35, 36, 40,
 ]
 REPOS = {
     "rickyjreyes/math": ("main", "lean/"),
@@ -62,8 +62,8 @@ def main() -> None:
                 "source inventory URL mismatch")
         file_keys.add(key)
 
-    require(files["count"] == len(file_keys) == 303, "source-file count mismatch")
-    require(inventory["total_lean_files"] == 303, "repository total mismatch")
+    require(files["count"] == len(file_keys) == 306, "source-file count mismatch")
+    require(inventory["total_lean_files"] == 306, "repository total mismatch")
     require(len(inventory["repositories"]) == 5, "public repository inventory mismatch")
     totals = Counter(item[0] for item in file_keys)
     for record in inventory["repositories"]:
@@ -91,7 +91,7 @@ def main() -> None:
         'result-rankings.js', 'result-rankings.css', 'href="#rankings"',
     ):
         require(hook in html, "missing HTML element or asset: " + hook)
-    require('id="atlas-file-count">303<' in html, "stale visible file count")
+    require('id="atlas-file-count">306<' in html, "stale visible file count")
     require("278" not in html and "278" not in (MATH / "atlas.js").read_text(),
             "old 278-file snapshot is still displayed")
     require("trustedRepos" in script and "validEntry" in script and
