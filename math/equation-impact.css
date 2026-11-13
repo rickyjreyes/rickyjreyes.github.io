@@ -1,0 +1,23 @@
+/* Original equation architecture ranked by scientific potential, deliberately distinct from proven Lean results. */
+.equation-impact-section{border-top:1px solid var(--atlas-line);background:linear-gradient(180deg,#0b2030,#0b1b2b)}
+.equation-impact-intro>p{max-width:850px;color:var(--atlas-muted);font-size:.86rem;line-height:1.75}
+.equation-impact-method{max-width:1030px;margin:22px 0 25px;padding:14px 0 14px 20px;border-left:3px solid #6ca2bc;color:#c9dbe6;font-size:.81rem;line-height:1.8}
+.equation-impact-method strong{color:#f0f7fb}
+.equation-impact-list{display:grid;gap:12px}
+.equation-impact-item{display:grid;grid-template-columns:88px minmax(0,1fr);gap:18px;padding:24px;background:#0b1928;border:1px solid #2b4556;border-radius:5px}
+.equation-impact-item:first-child{border-left:3px solid #6daec9;background:#10263a}
+.equation-impact-rank{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.equation-impact-rank strong{font:400 2rem/1 Georgia,serif;color:#c7dfe8}
+.equation-impact-rank span{font:.64rem/1.6 ui-monospace,monospace;color:#88acc0;overflow-wrap:anywhere}
+.equation-impact-body{min-width:0}
+.equation-impact-body h3{font:500 clamp(1.13rem,2vw,1.4rem)/1.32 Georgia,serif;color:#f0f5f8;margin:0 0 8px}
+.equation-impact-status{font:.71rem/1.5 system-ui,sans-serif;color:#91bfd1;letter-spacing:.01em;margin:0 0 10px}
+.equation-impact-math{max-width:100%;overflow-x:auto;overflow-y:hidden;margin:12px 0;padding:6px 11px 6px 0;color:#f2f6f9;font-size:.88rem}
+.equation-impact-math>div+div{margin-top:7px}
+.equation-impact-math mjx-container[display="true"]{margin:.4em 0!important;text-align:left!important;max-width:max-content}
+.equation-impact-caveat{margin:12px 0 0;color:#bdcdd8;font-size:.78rem;line-height:1.75;max-width:950px}
+.equation-impact-links{margin:11px 0 0}
+.equation-impact-links a,.equation-impact-footer a{color:var(--atlas-accent);font-size:.77rem;font-weight:700;text-decoration:none}
+.equation-impact-links a:hover,.equation-impact-footer a:hover{text-decoration:underline;text-underline-offset:3px}
+.equation-impact-footer{color:var(--atlas-muted);font-size:.79rem;line-height:1.75;margin:21px 0 0}
+@media(max-width:620px){.equation-impact-item{grid-template-columns:1fr;gap:12px;padding:18px 15px}.equation-impact-rank{flex-direction:row;align-items:center;gap:12px}.equation-impact-rank strong{font-size:1.5rem}.equation-impact-math{font-size:.78rem}.equation-impact-method{padding-left:13px}}
