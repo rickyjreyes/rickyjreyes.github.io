@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "snapshot_date": "2026-11-12",
+  "schema_version": 2,
+  "snapshot_date": "2026-11-13",
   "methodology": "Editorial comparison of 40 individual scoped Lean result families based on theorem depth, generality and relevance to open mathematical obligations, not mathematical novelty or a theorem-completion score. Only public-source entries are displayed, while private-source entries count toward the global ranking.",
   "global_pool": 40,
   "public_only": true,
@@ -16,7 +16,10 @@
       "category": "Nonlinear PDE",
       "group": "Existence and stability",
       "summary": "For the fourth-order cubic–quintic Schrödinger flow on H²(ℝ²), solutions initially near the minimizing set remain near it for all time.",
-      "limit": "β, γ > 0 and 0 < m ≤ mB. Stability is of the set, not each wave profile; no physical-particle identification."
+      "limit": "β, γ > 0 and 0 < m ≤ mB. Stability is of the set, not each wave profile; no physical-particle identification.",
+      "equation_label": "Governing nonlinear Schrödinger PDE",
+      "equation_latex": "i\\partial_t\\psi=(\\Delta+k^2)^2\\psi-\\beta|\\psi|^2\\psi+\\gamma|\\psi|^4\\psi",
+      "equation_note": "The theorem concerns orbital stability for this exact flow on the stated mass interval."
     },
     {
       "rank": 2,
@@ -28,7 +31,10 @@
       "category": "Variational analysis",
       "group": "Existence and stability",
       "summary": "Proves minimizer existence and strong H² compactness of minimizing sequences modulo translations for the stated mass range.",
-      "limit": "Same specific cubic–quintic model and bounded mass range. Does not establish uniqueness, radial symmetry, or a derivation from S004."
+      "limit": "Same specific cubic–quintic model and bounded mass range. Does not establish uniqueness, radial symmetry, or a derivation from S004.",
+      "equation_label": "Constrained Hamiltonian functional",
+      "equation_latex": "H[\\psi]=\\int_{\\mathbb R^2}\\left(|(\\Delta+k^2)\\psi|^2-\\frac{\\beta}{2}|\\psi|^4+\\frac{\\gamma}{3}|\\psi|^6\\right)\\,dx",
+      "equation_note": "Minimization is subject to the fixed mass integral ∫|ψ|² dx = m."
     },
     {
       "rank": 3,
@@ -40,7 +46,10 @@
       "category": "Variational analysis",
       "group": "Existence and stability",
       "summary": "For every 0 < μ < m in the explicit range 0 < m ≤ mB, the constrained minimum obeys I(m) < I(μ) + I(m − μ), ruling out energetic favorability of any such mass split.",
-      "limit": "Assumes the specified two-dimensional cubic–quintic Hamiltonian and β, γ > 0; the all-splits theorem is not asserted for arbitrary mass or the original higher-time-derivative S004 action."
+      "limit": "Assumes the specified two-dimensional cubic–quintic Hamiltonian and β, γ > 0; the all-splits theorem is not asserted for arbitrary mass or the original higher-time-derivative S004 action.",
+      "equation_label": "Minimum-energy definition and strict-binding theorem",
+      "equation_latex": "\\begin{aligned}I(m)&=\\inf_{\\|\\psi\\|_2^2=m}H[\\psi],\\\\ I(m)&<I(\\mu)+I(m-\\mu),\\quad 0<\\mu<m\\le m_B\\end{aligned}",
+      "equation_note": "The strict inequality is proved only for the stated cubic–quintic model and explicit mass range."
     },
     {
       "rank": 4,
@@ -52,7 +61,10 @@
       "category": "Nonlinear PDE",
       "group": "Existence and stability",
       "summary": "Global well-posedness, continuous dependence and mass/energy conservation for the defined H²(ℝ²) cubic–quintic evolution.",
-      "limit": "Applies to the stated equation, not every fourth-order nonlinear PDE."
+      "limit": "Applies to the stated equation, not every fourth-order nonlinear PDE.",
+      "equation_label": "Governing evolution with conserved quantities",
+      "equation_latex": "\\begin{aligned}i\\partial_t\\psi&=(\\Delta+k^2)^2\\psi-\\beta|\\psi|^2\\psi+\\gamma|\\psi|^4\\psi,\\\\ M[\\psi(t)]&=M[\\psi(0)],\\quad H[\\psi(t)]=H[\\psi(0)]\\end{aligned}",
+      "equation_note": "The conservation laws apply to the specified global H² solutions."
     },
     {
       "rank": 6,
@@ -64,7 +76,10 @@
       "category": "Model obstructions",
       "group": "Ghost and instability obstructions",
       "summary": "For the regular acceleration-Hessian class, the canonical Hamiltonian is unbounded above and below when the velocity is nonzero.",
-      "limit": "A class-wide canonical obstruction, not a proof that all higher-derivative theories are unstable."
+      "limit": "A class-wide canonical obstruction, not a proof that all higher-derivative theories are unstable.",
+      "equation_label": "Regular acceleration Lagrangian and Ostrogradsky Hamiltonian",
+      "equation_latex": "\\begin{aligned}L(q,v,a)&=\\tfrac12\\langle a,Wa\\rangle+\\langle b(q,v),a\\rangle+c(q,v),\\\\ H_{\\mathrm O}&=\\langle p_1,v\\rangle+G(q,v,p_2)\\end{aligned}",
+      "equation_note": "The energy is unbounded under the theorem's regularity and nonzero-velocity hypotheses."
     },
     {
       "rank": 7,
@@ -76,7 +91,10 @@
       "category": "Model obstructions",
       "group": "Ghost and instability obstructions",
       "summary": "Formal Dirac constraint analysis gives a 12-dimensional phase space, four second-class constraints and four configuration degrees of freedom, together with a canonical energy-unboundedness result.",
-      "limit": "Applies on the regular nonnodal patch of the specified flat-background S004 complex scalar with the stated parameter assumptions; exceptional nodal sectors and a healthy parent theory are not resolved."
+      "limit": "Applies on the regular nonnodal patch of the specified flat-background S004 complex scalar with the stated parameter assumptions; exceptional nodal sectors and a healthy parent theory are not resolved.",
+      "equation_label": "Corrected S004 local higher-derivative density",
+      "equation_latex": "\\begin{aligned}\\mathcal L_{\\mathrm{S004}}={}&-|\\partial_t\\psi|^2+|\\nabla\\psi|^2-V(\\rho)\\\\ &+F(\\rho)\\bigl[\\kappa|\\Delta\\psi-\\partial_t^2\\psi|^2+\\theta|\\Delta\\psi|^2\\\\ &\\qquad+\\gamma\\operatorname{Re}((\\Delta\\psi-\\partial_t^2\\psi)\\overline{\\Delta\\psi})\\bigr]\\end{aligned}",
+      "equation_note": "Here ρ = |ψ|² and F(ρ) = ρ/(ρ + ε²e^(−2αρ))². The constraint theorem applies to the regular field sector."
     },
     {
       "rank": 11,
@@ -88,7 +106,10 @@
       "category": "Functional analysis",
       "group": "Regularity and spectral bounds",
       "summary": "Certifies localized gradient-energy estimates and dimension-dependent counterexamples, including H² failures above dimension four.",
-      "limit": "A precise estimate classification, not proof that physical space must be four-dimensional."
+      "limit": "A precise estimate classification, not proof that physical space must be four-dimensional.",
+      "equation_label": "Localized Sobolev gradient-energy inequality",
+      "equation_latex": "\\int_{B_R(x_0)}|\\nabla\\psi|^2\\,dx\\le C\\,R^{n-2}\\bigl(\\|\\psi\\|_{L^2}^2+\\|\\nabla\\psi\\|_{L^2}^2\\bigr)",
+      "equation_note": "The uniform all-fields, all-radii H¹ inequality is classified by spatial dimension."
     },
     {
       "rank": 12,
@@ -100,7 +121,10 @@
       "category": "Inverse problems",
       "group": "Identifiability and inference",
       "summary": "The frozen 31-parameter forward model has derivative rank 11, nullity 20, and distinct nearby equal-output parameter values.",
-      "limit": "Local result for the frozen exact-decimal model; does not classify distant fibers or arbitrary models."
+      "limit": "Local result for the frozen exact-decimal model; does not classify distant fibers or arbitrary models.",
+      "equation_label": "Jacobian rank and fiber dimension",
+      "equation_latex": "F:\\mathbb R^{31}\\longrightarrow\\mathbb R^{11},\\qquad\\operatorname{rank}(DF(p_0))=11,\\qquad\\dim\\ker DF(p_0)=20",
+      "equation_note": "The equation describes the source's frozen forward-observation model in an open ambient parameter chart."
     },
     {
       "rank": 13,
@@ -112,7 +136,10 @@
       "category": "Functional analysis",
       "group": "Regularity and spectral bounds",
       "summary": "Proves a uniform-in-space bound for the specified corrected regularized curvature operator in Fourier-defined Sobolev spaces.",
-      "limit": "Requires positive regularization and regularity s > n/2 + 2; not an unregularized physical curvature theorem."
+      "limit": "Requires positive regularization and regularity s > n/2 + 2; not an unregularized physical curvature theorem.",
+      "equation_label": "Corrected regularized curvature operator",
+      "equation_latex": "\\Theta_{\\varepsilon,\\alpha}[\\psi]=-\\frac{(\\Delta\\psi)\\overline\\psi}{|\\psi|^2+\\varepsilon^2e^{-2\\alpha|\\psi|^2}}",
+      "equation_note": "For ε > 0 the denominator is positive; the L∞ theorem assumes sufficiently high Sobolev regularity."
     },
     {
       "rank": 14,
@@ -124,7 +151,10 @@
       "category": "Model obstructions",
       "group": "Ghost and instability obstructions",
       "summary": "Establishes high-frequency growth and Sobolev ill-posedness for the specified higher-time-derivative dynamics.",
-      "limit": "An obstruction for the encoded model, not a general no-go theorem for all fourth-order equations."
+      "limit": "An obstruction for the encoded model, not a general no-go theorem for all fourth-order equations.",
+      "equation_label": "Fourth-order ultraviolet-unstable wave model",
+      "equation_latex": "(\\Box-\\Box^2-\\Delta^2)u=0,\\qquad\\operatorname{Re}s(k)\\sim\\sqrt{\\frac{\\sqrt2-1}{2}}\\,|k|",
+      "equation_note": "This is the theorem's specified illustrative model, not a universal dispersion law for WCT."
     },
     {
       "rank": 15,
@@ -136,7 +166,10 @@
       "category": "Nonlinear PDE",
       "group": "Energy identities",
       "summary": "Connects the Fréchet derivative of the energy to exact monotone descent along stated gradient-flow solutions.",
-      "limit": "Assumes a sufficiently regular solution of the specified gradient flow; does not prove that such a solution exists."
+      "limit": "Assumes a sufficiently regular solution of the specified gradient flow; does not prove that such a solution exists.",
+      "equation_label": "Curvature energy and associated gradient flow",
+      "equation_latex": "\\begin{aligned}\\mathcal E[\\psi]&=\\int_{\\mathbb T_L^d}\\left[c_1|\\nabla\\psi|^2+c_2F(|\\psi|^2)|\\Delta\\psi|^2\\right]dx,\\\\ \\partial_t\\psi&=-G[\\psi],\\quad \\frac{d\\mathcal E}{dt}=-2\\|G[\\psi]\\|_2^2\\end{aligned}",
+      "equation_note": "F(s) = s/(s + ε²e^(−2αs))². The proof assumes a sufficiently regular trajectory of the defined gradient flow."
     },
     {
       "rank": 16,
@@ -148,7 +181,10 @@
       "category": "Variational calculus",
       "group": "Energy identities",
       "summary": "Proves a conditional bridge from the true nonlinear integrated S004 action derivative to the two-component strong Euler expressions in 1+1 dimensions, including the measure-theoretic and Green-identity steps.",
-      "limit": "ActionRegularity, GreenRegularity, time-endpoint and periodic trace assumptions remain explicit analytic premises. This is not a ghost-free completion or unconditional physical PDE theorem."
+      "limit": "ActionRegularity, GreenRegularity, time-endpoint and periodic trace assumptions remain explicit analytic premises. This is not a ghost-free completion or unconditional physical PDE theorem.",
+      "equation_label": "Strong Euler–Lagrange equation of the corrected S004 action",
+      "equation_latex": "\\frac{\\partial\\mathcal L}{\\partial u_a}-\\partial_t\\!\\left(\\frac{\\partial\\mathcal L}{\\partial(\\partial_tu_a)}\\right)-\\nabla\\!\\cdot\\!\\left(\\frac{\\partial\\mathcal L}{\\partial(\\nabla u_a)}\\right)+\\partial_t^2\\!\\left(\\frac{\\partial\\mathcal L}{\\partial(\\partial_t^2u_a)}\\right)+\\Delta\\!\\left(\\frac{\\partial\\mathcal L}{\\partial(\\Delta u_a)}\\right)=0",
+      "equation_note": "Here uₐ is either real component of ψ. Lean proves a conditional integrated action-to-strong variation identity, not unrestricted existence."
     },
     {
       "rank": 17,
@@ -160,7 +196,10 @@
       "category": "Nonlinear PDE",
       "group": "Spectral dynamics",
       "summary": "Proves immediate nonlinear leakage and a classification of invariant Fourier-support subspaces for the stated flow.",
-      "limit": "Model-specific Fourier-invariance result; not a claim that all coherent wave packets delocalize."
+      "limit": "Model-specific Fourier-invariance result; not a claim that all coherent wave packets delocalize.",
+      "equation_label": "Exact nonlinear Fourier mode leakage",
+      "equation_latex": "\\left.\\partial_t\\widehat\\psi(3p-2q,t)\\right|_{t=0}=-i\\gamma\\,c_p^3\\overline{c_q}^{\\,2}\\ne0",
+      "equation_note": "The right side is the fifth-order nonlinear contribution for the specified two-mode initial support."
     },
     {
       "rank": 18,
@@ -172,7 +211,10 @@
       "category": "Statistical protocol",
       "group": "Experimental inference",
       "summary": "Proves P(classify = PASS) ≤ α for the frozen blinded randomization protocol under the exact conditional null model.",
-      "limit": "Requires the sharp null and uniform conditional assignment; does not establish a physical persistent-memory effect."
+      "limit": "Requires the sharp null and uniform conditional assignment; does not establish a physical persistent-memory effect.",
+      "equation_label": "Exact upper-tail randomization p-value",
+      "equation_latex": "p(a)=\\frac{\\#\\{b\\in\\mathcal R:T(b)\\ge T(a)\\}}{|\\mathcal R|},\\qquad\\mathbb P_{H_0}(\\mathrm{PASS})\\le\\alpha",
+      "equation_note": "PASS additionally requires both control comparisons to satisfy their frozen statistical and effect-size thresholds."
     },
     {
       "rank": 20,
@@ -184,7 +226,10 @@
       "category": "Geometry",
       "group": "Ghost and instability obstructions",
       "summary": "For a metric constructed as the real Gram tensor of one complex scalar's differential, proves positivity, covariance and rank ≤ 2; on four-dimensional tangent spaces this yields nullity ≥ 2.",
-      "limit": "Applies to this specified scalar-gradient metric construction, not every scalar-derived spacetime metric or the existence of physical gravity."
+      "limit": "Applies to this specified scalar-gradient metric construction, not every scalar-derived spacetime metric or the existence of physical gravity.",
+      "equation_label": "Scalar-derived real gradient tensor",
+      "equation_latex": "g_{\\mu\\nu}[\\psi]=\\operatorname{Re}\\!\\left(\\partial_\\mu\\overline\\psi\\,\\partial_\\nu\\psi\\right),\\qquad\\operatorname{rank}(g_\\psi)\\le2",
+      "equation_note": "For a four-dimensional real tangent space, the Gram tensor is necessarily degenerate."
     },
     {
       "rank": 21,
@@ -196,19 +241,25 @@
       "category": "Spectral theory",
       "group": "Regularity and spectral bounds",
       "summary": "Certifies self-adjointness, the mild evolution, exact semigroup norm and off-shell damping for the quartic selector.",
-      "limit": "Linear operator theorem; nonlinear confinement is separate."
+      "limit": "Linear operator theorem; nonlinear confinement is separate.",
+      "equation_label": "Fourth-order semigroup evolution",
+      "equation_latex": "\\partial_tu=-a(\\Delta+k_\\star^2)^2u,\\qquad\\widehat u(\\xi,t)=e^{-at(|\\xi|^2-k_\\star^2)^2}\\widehat u_0(\\xi)",
+      "equation_note": "The self-adjoint generator and exact semigroup are established on the stated L² and H⁴ domains."
     },
     {
       "rank": 23,
       "score": 84,
       "title": "Preferred Fourier-shell concentration",
       "repo": "rickyjreyes/math",
-      "path": "lean/MathProofs/E16SpectralCore.lean",
-      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E16SpectralCore.lean",
+      "path": "lean/MathProofs/SpectralConcentration.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/SpectralConcentration.lean",
       "category": "Spectral theory",
       "group": "Spectral dynamics",
       "summary": "Certifies convergence of the preferred-wavenumber spectral peak with a quantitative rate for the specified linear flow.",
-      "limit": "Growth and shell selection do not, alone, prove a localized nonlinear soliton."
+      "limit": "Growth and shell selection do not, alone, prove a localized nonlinear soliton.",
+      "equation_label": "Band-pass evolution and preferred Fourier shell",
+      "equation_latex": "\\begin{aligned}\\partial_tA&=rA-a\\Delta A-b\\Delta^2A,\\\\ \\lambda(k)&=r+a|k|^2-b|k|^4,\\quad k_\\star^2=\\frac{a}{2b}\\end{aligned}",
+      "equation_note": "The actual concentration theorem requires initial spectral access and b > 0; the earlier E16SpectralCore module proves only the growth algebra."
     },
     {
       "rank": 24,
@@ -220,7 +271,10 @@
       "category": "Spectral theory",
       "group": "Regularity and spectral bounds",
       "summary": "Derives the spectrum and sharp semigroup growth regimes for the specified fourth-order generator.",
-      "limit": "Linear spectral statement, not a nonlinear stability theorem."
+      "limit": "Linear spectral statement, not a nonlinear stability theorem.",
+      "equation_label": "Centered Swift–Hohenberg linear operator",
+      "equation_latex": "\\partial_tu=\\bigl[r-a(\\Delta+k_\\star^2)^2\\bigr]u,\\qquad\\sigma(L_r)=(-\\infty,r]",
+      "equation_note": "The exact continuum spectrum and norm of the generated semigroup are proved for a > 0."
     },
     {
       "rank": 25,
@@ -232,7 +286,10 @@
       "category": "Model obstructions",
       "group": "Ghost and instability obstructions",
       "summary": "Shows that positive real squared frequencies can coexist with opposite-sign mode energies and unbounded Hamiltonian energy.",
-      "limit": "Applies to the stated S004 real-pole mode window and canonical reduction."
+      "limit": "Applies to the stated S004 real-pole mode window and canonical reduction.",
+      "equation_label": "Pais–Uhlenbeck mode Lagrangian",
+      "equation_latex": "L=-\\frac K2\\ddot x^{\\,2}+\\frac A2\\dot x^{\\,2}-\\frac B2x^2,\\qquad Kx^{(4)}+A\\ddot x+Bx=0",
+      "equation_note": "Its normal-mode decomposition exhibits opposite-sign energies for distinct real frequencies."
     },
     {
       "rank": 27,
@@ -244,7 +301,10 @@
       "category": "Spectral theory",
       "group": "Regularity and spectral bounds",
       "summary": "Formalizes orthogonal spectral-band projection and associated energy-fraction identities.",
-      "limit": "Does not imply observed wavelength selection in an experiment."
+      "limit": "Does not imply observed wavelength selection in an experiment.",
+      "equation_label": "Orthogonal Fourier band projector",
+      "equation_latex": "\\widehat{P_{\\mathcal B}u}(k)=\\mathbf1_{\\mathcal B}(k)\\widehat u(k),\\qquad P_{\\mathcal B}^2=P_{\\mathcal B}=P_{\\mathcal B}^{*}",
+      "equation_note": "The squared-norm ratio measures the fraction of spectral energy within the selected band."
     },
     {
       "rank": 28,
@@ -256,7 +316,10 @@
       "category": "Spectral theory",
       "group": "Regularity and spectral bounds",
       "summary": "Proves the sharp resolvent norm, coercivity and band selectivity for the specified operator.",
-      "limit": "Operator estimate only; nonlinear modes require separate proofs."
+      "limit": "Operator estimate only; nonlinear modes require separate proofs.",
+      "equation_label": "Band-selective fourth-order resolvent",
+      "equation_latex": "\\mathcal L=r+a(\\Delta+k_\\star^2)^2,\\qquad\\widehat{\\mathcal L^{-1}f}(\\xi)=\\frac{\\widehat f(\\xi)}{r+a(|\\xi|^2-k_\\star^2)^2}",
+      "equation_note": "For r > 0, the operator's L² inverse norm equals 1/r."
     },
     {
       "rank": 30,
@@ -268,7 +331,10 @@
       "category": "Model obstructions",
       "group": "Ghost and instability obstructions",
       "summary": "Classifies bounded energy in nodal sectors invariant under the designated momentum translations.",
-      "limit": "Does not complete the secondary Dirac constraint algorithm or classify every nodal sector."
+      "limit": "Does not complete the secondary Dirac constraint algorithm or classify every nodal sector.",
+      "equation_label": "Nodal-sector canonical Hamiltonian",
+      "equation_latex": "H_{\\mathrm O}(q,v,p_1,p_2)=\\langle p_1,v\\rangle+G(q,v,p_2)",
+      "equation_note": "On the source-defined nodal primary surface, p₁-translation-invariant sectors have bounded energy precisely when velocities vanish."
     },
     {
       "rank": 32,
@@ -280,7 +346,10 @@
       "category": "Functional analysis",
       "group": "Regularity and spectral bounds",
       "summary": "Certifies H²-based regularized-curvature control, counterexamples and explicit regularization dependence.",
-      "limit": "Conditional on the specified ε > 0 regularization and functional-analytic premises."
+      "limit": "Conditional on the specified ε > 0 regularization and functional-analytic premises.",
+      "equation_label": "Historical additive-denominator curvature model",
+      "equation_latex": "D_{\\varepsilon,\\alpha}[\\psi]=\\psi+\\varepsilon e^{-\\alpha|\\psi|^2},\\qquad\\Theta_{\\varepsilon,\\alpha}[\\psi]=-\\frac{\\Delta\\psi}{D_{\\varepsilon,\\alpha}[\\psi]}",
+      "equation_note": "Not the corrected modulus-squared M2 operator. The L² bound additionally requires a positive lower separation of |D|."
     },
     {
       "rank": 33,
@@ -292,7 +361,10 @@
       "category": "Variational analysis",
       "group": "Ghost and instability obstructions",
       "summary": "Establishes nonattainment and a spreading direction for a specified curvature-energy variational problem.",
-      "limit": "Does not rule out minimizing states for different Hamiltonians."
+      "limit": "Does not rule out minimizing states for different Hamiltonians.",
+      "equation_label": "Positive whole-space curvature functional",
+      "equation_latex": "\\mathcal E[\\psi]=\\int_{\\mathbb R^d}\\left[c_1|\\nabla\\psi|^2+c_2\\frac{|\\psi|^2|\\Delta\\psi|^2}{\\left(|\\psi|^2+\\varepsilon^2e^{-2\\alpha|\\psi|^2}\\right)^2}\\right]dx",
+      "equation_note": "At every positive fixed mass the infimum is zero and is not attained for the theorem's parameter range."
     },
     {
       "rank": 34,
@@ -304,7 +376,10 @@
       "category": "Spectral theory",
       "group": "Regularity and spectral bounds",
       "summary": "Proves that a nonzero whole-space L² field cannot be supported on a single measure-zero Fourier sphere.",
-      "limit": "Does not exclude finite-band wave packets or nonlinear confined configurations."
+      "limit": "Does not exclude finite-band wave packets or nonlinear confined configurations.",
+      "equation_label": "Free-space Helmholtz and isolated Fourier-shell equation",
+      "equation_latex": "(\\Delta+k_0^2)u=0,\\quad u\\in L^2(\\mathbb R^d),\\quad\\operatorname{ess\\,supp}\\widehat u\\subseteq\\{|\\xi|=k_0\\}",
+      "equation_note": "Such an L² function must vanish. The source also proves the distributional-support version."
     },
     {
       "rank": 35,
@@ -316,7 +391,10 @@
       "category": "Statistical protocol",
       "group": "Experimental inference",
       "summary": "Establishes exact p-value control under finite uniform assignment or a defined exchangeability action.",
-      "limit": "Assumptions about randomization or exchangeability are essential; physical spectral bins need not be exchangeable."
+      "limit": "Assumptions about randomization or exchangeability are essential; physical spectral bins need not be exchangeable.",
+      "equation_label": "Exchangeable Monte Carlo upper-tail p-value",
+      "equation_latex": "p_{\\rm MC}=\\frac{1+\\sum_{j=1}^{B}\\mathbf1\\{X_j\\ge X_0\\}}{B+1}",
+      "equation_note": "Type-I validity requires the formal exchangeability or sharp-null randomization assumptions."
     },
     {
       "rank": 36,
@@ -328,7 +406,10 @@
       "category": "Protocol correctness",
       "group": "Protocol correctness",
       "summary": "Establishes injective admissible-message padding and associated block/byte packing properties.",
-      "limit": "Does not establish a collision-resistant digest, one-way function, or cryptographic security."
+      "limit": "Does not establish a collision-resistant digest, one-way function, or cryptographic security.",
+      "equation_label": "WaveLock byte-exact padding construction",
+      "equation_latex": "\\operatorname{pad}(m)=m\\Vert\\texttt{0x01}\\Vert\\texttt{0x00}^{\\,z}\\Vert\\operatorname{BE}_8(8|m|)\\Vert\\texttt{0x00}^{184}",
+      "equation_note": "Here z = (192 − (|m| + 1) mod 192) mod 192. Injectivity is for the pre-round packed input encoding, not the hash digest."
     },
     {
       "rank": 40,
@@ -340,8 +421,11 @@
       "category": "Variational calculus",
       "group": "Energy identities",
       "summary": "Establishes an exact weighted closed-loop minimum in the specified H¹ phase model.",
-      "limit": "Does not itself prove a nonlinear physical locking mechanism."
+      "limit": "Does not itself prove a nonlinear physical locking mechanism.",
+      "equation_label": "Weighted continuous phase-locking energy",
+      "equation_latex": "\\mathcal E[\\chi]=\\int_0^S w(s)\\bigl(\\chi'(s)-m\\Omega(s)-\\sigma(s)\\bigr)^2ds,\\qquad\\chi(S)-\\chi(0)=2\\pi n",
+      "equation_note": "Its exact minimum is Δₙ²/(∫₀^S w(s)⁻¹ ds), with Δₙ = 2πn − m∫Ω − ∫σ."
     }
   ],
-  "revision_note": "2026-11-12 evening Pacific update: the verified two-outcome physical-readout resource disjunction was added to the private-source global ranking at #22; ranks formerly #22–39 shifted down one, and the lowest previously ranked private entry fell outside the top 40. The public 28-entry proof collection is unchanged except for rank numbering. Other new S004 vacuum and nodal-kinematic lemmas were reviewed but did not displace higher-ranked proofs."
+  "revision_note": "2026-11-13: 28 public proof cards now include exact model, functional or defining theorem equations alongside explicit scope notes. The rank order, scores and 12 withheld private results are unchanged. The #23 source pointer was corrected from the algebra-only E16SpectralCore module to the full SpectralConcentration theorem source."
 }
