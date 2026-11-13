@@ -62,3 +62,11 @@
 }
 @media(prefers-reduced-motion:reduce){.ranked-item{scroll-behavior:auto}}
 
+
+/* Source-scoped defining equations rendered within the existing theorem ranking. */
+.ranked-equation{margin:15px 0 14px;padding:13px 15px;background:#10283a;border:1px solid #34566b;border-radius:5px;max-width:100%;min-width:0}
+.ranked-equation-label{margin:0 0 9px;color:#a6cada;text-transform:uppercase;letter-spacing:.07em;font:700 .64rem/1.4 system-ui,sans-serif}
+.ranked-equation-math{overflow-x:auto;overflow-y:hidden;max-width:100%;padding:3px 0;color:#eef5fa;font-size:.85rem}
+.ranked-equation-math mjx-container[display="true"]{text-align:left!important;margin:.35em 0!important;max-width:max-content}
+.ranked-equation-note{margin:10px 0 0;color:#b2ccd9;font-size:.72rem;line-height:1.65}
+@media(max-width:600px){.ranked-equation{padding:11px 10px}.ranked-equation-math{font-size:.76rem}}
