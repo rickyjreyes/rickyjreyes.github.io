@@ -85,7 +85,7 @@ def main() -> None:
                     "missing explanatory field " + field)
 
     # Scientific-impact ranking must remain distinct from the proved-theorem list.
-    impact_ids = re.findall(r'<article class="equation-impact-item" id="equation-impact-(\\d+)">', html)
+    impact_ids = re.findall(r'<article class="equation-impact-item" id="equation-impact-(\d+)">', html)
     require(impact_ids == [str(n) for n in range(1, 11)],
             "original equation ranking must contain ten unique ordered entries")
     require(html.count('class="equation-impact-caveat"') == 10,
