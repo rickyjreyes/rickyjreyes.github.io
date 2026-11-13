@@ -12,8 +12,8 @@ from urllib.parse import urlparse
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 MATH = ROOT / "math"
 EXPECTED_RANKS = [
-    1, 2, 4, 5, 6, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21,
-    23, 24, 27, 28, 29, 30, 31, 32, 33, 37, 40,
+    1, 2, 3, 4, 6, 7, 11, 12, 13, 14, 15, 16, 17, 18,
+    20, 21, 22, 23, 24, 26, 27, 29, 31, 32, 33, 34, 35, 39,
 ]
 REPOS = {
     "rickyjreyes/math": ("main", "lean/"),
@@ -45,7 +45,7 @@ def main() -> None:
     require(ranking["snapshot_date"] == "2026-11-12", "ranking snapshot mismatch")
     require(ranking["public_only"] is True, "ranking must remain public-only")
     require(ranking["global_pool"] == 40, "global editorial pool mismatch")
-    require(ranking["private_entries_omitted"] == 13, "private-source count mismatch")
+    require(ranking["private_entries_omitted"] == 12, "private-source count mismatch")
     require([entry["rank"] for entry in entries] == EXPECTED_RANKS, "published rank order changed")
     require(len(set(EXPECTED_RANKS)) == len(entries), "duplicate ranking numbers")
 
