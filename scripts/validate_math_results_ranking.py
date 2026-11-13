@@ -84,6 +84,25 @@ def main() -> None:
             require(isinstance(item[field], str) and len(item[field].strip()) > 2,
                     "missing explanatory field " + field)
 
+    # Scientific-impact ranking must remain distinct from the proved-theorem list.
+    impact_ids = re.findall(r'<article class="equation-impact-item" id="equation-impact-(\\d+)">', html)
+    require(impact_ids == [str(n) for n in range(1, 11)],
+            "original equation ranking must contain ten unique ordered entries")
+    require(html.count('class="equation-impact-caveat"') == 10,
+            "each original equation needs an explicit limitation")
+    require(html.count('class="equation-impact-math"') == 10,
+            "each original equation needs its defining mathematical formula")
+    for expected in (
+        'id="equation-impact"', 'equation-impact.css',
+        'window.MathJax.typesetPromise([section])',
+        'WCT_CORRECTED_VARIATIONAL_CLOSURE_DRAFT.md',
+        'rickyjreyes/wct-sympy/blob/main/MASTER_EQUATIONS.md',
+        'rickyjreyes/wct-sympy/blob/main/EQUATIONS.md',
+        'These 10 entries are priorities within the original WCT equation architecture',
+        'The corrected S004 action, the separate cubic–quintic Hamiltonian flow',
+    ):
+        require(expected in html, "missing original-equation impact provision: " + expected)
+
     for hook in (
         'id="rankings"', 'id="ranked-query"', 'id="ranked-repository"',
         'id="ranked-area"', 'id="ranked-count"', 'id="ranked-more"',
