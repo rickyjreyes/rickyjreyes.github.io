@@ -82,7 +82,7 @@
     const filtered = state.entries.filter(item =>
       (!repository || item.repo === repository) &&
       (!area || item.category === area) &&
-      (!q || [item.title, item.repo, item.category, item.summary, item.limit, item.group]
+      (!q || [item.title, item.repo, item.category, item.summary, item.limit, item.group, item.equation_label, item.equation_note]
         .join(" ").toLocaleLowerCase().includes(q)));
     const activeFilter = Boolean(q || repository || area);
     const visible = state.expanded || activeFilter ? filtered : filtered.slice(0, 8);
