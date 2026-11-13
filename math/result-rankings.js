@@ -97,8 +97,8 @@
     })
     .then(data => {
       if (!data.public_only || data.global_pool !== 40 ||
-          !Array.isArray(data.entries) || data.entries.length !== 27 ||
-          data.private_entries_omitted !== 13 ||
+          !Array.isArray(data.entries) || data.entries.length !== 28 ||
+          data.private_entries_omitted !== 12 ||
           !data.entries.every(validEntry)) throw new Error("invalid source inventory");
       const ranks = data.entries.map(item => item.rank);
       if (new Set(ranks).size !== ranks.length || ranks.some((n,i) => i && n <= ranks[i-1])) {

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "snapshot_date": "2026-11-12",
-  "methodology": "Editorial ranking of individual proved claims or tightly connected theorem chains using depth, generality, mathematical scope, and completeness. Values are not scientific scores, novelty assessments, probabilities, or proof-completion percentages.",
+  "methodology": "Reassessed individual theorem significance (proof strength, mathematical scope, relation to research gaps) on 2026-11-12. A 40-result comparative shortlist, not a complete inventory. Only public-source entries are displayed. Editorial scores are not theorem-completion percentages, independently established novelty ratings, physical validation, or probability estimates.",
   "global_pool": 40,
   "public_only": true,
-  "private_entries_omitted": 13,
+  "private_entries_omitted": 12,
   "entries": [
     {
       "rank": 1,
@@ -31,6 +31,18 @@
       "limit": "Same specific cubic–quintic model and bounded mass range. Does not establish uniqueness, radial symmetry, or a derivation from S004."
     },
     {
+      "rank": 3,
+      "score": 97,
+      "title": "Strict mass binding for fourth-order confined states",
+      "repo": "rickyjreyes/math",
+      "path": "lean/MathProofs/StrictBinding.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/StrictBinding.lean",
+      "category": "Variational analysis",
+      "group": "Existence and stability",
+      "summary": "For every 0 < μ < m in the explicit range 0 < m ≤ mB, the constrained minimum obeys I(m) < I(μ) + I(m − μ), ruling out energetic favorability of any such mass split.",
+      "limit": "Assumes the specified two-dimensional cubic–quintic Hamiltonian and β, γ > 0; the all-splits theorem is not asserted for arbitrary mass or the original higher-time-derivative S004 action."
+    },
+    {
       "rank": 4,
       "score": 96,
       "title": "Global nonlinear flow and conservation laws",
@@ -43,7 +55,7 @@
       "limit": "Applies to the stated equation, not every fourth-order nonlinear PDE."
     },
     {
-      "rank": 5,
+      "rank": 6,
       "score": 95,
       "title": "Regular higher-derivative Ostrogradsky obstruction",
       "repo": "rickyjreyes/geometry_of_resonance",
@@ -55,8 +67,32 @@
       "limit": "A class-wide canonical obstruction, not a proof that all higher-derivative theories are unstable."
     },
     {
-      "rank": 6,
+      "rank": 7,
       "score": 94,
+      "title": "Exact S004 regular-sector constraint and degree-of-freedom count",
+      "repo": "rickyjreyes/math",
+      "path": "lean/MathProofs/S004ConstraintCount.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/S004ConstraintCount.lean",
+      "category": "Model obstructions",
+      "group": "Ghost and instability obstructions",
+      "summary": "Formal Dirac constraint analysis gives a 12-dimensional phase space, four second-class constraints and four configuration degrees of freedom, together with a canonical energy-unboundedness result.",
+      "limit": "Applies on the regular nonnodal patch of the specified flat-background S004 complex scalar with the stated parameter assumptions; exceptional nodal sectors and a healthy parent theory are not resolved."
+    },
+    {
+      "rank": 11,
+      "score": 91,
+      "title": "Dimension-dependent Sobolev classification",
+      "repo": "rickyjreyes/math",
+      "path": "lean/MathProofs/E68Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68Certification.lean",
+      "category": "Functional analysis",
+      "group": "Regularity and spectral bounds",
+      "summary": "Certifies localized gradient-energy estimates and dimension-dependent counterexamples, including H² failures above dimension four.",
+      "limit": "A precise estimate classification, not proof that physical space must be four-dimensional."
+    },
+    {
+      "rank": 12,
+      "score": 91,
       "title": "Twenty-dimensional local non-identifiability",
       "repo": "rickyjreyes/math",
       "path": "lean/MathProofs/V18Identifiability.lean",
@@ -67,8 +103,8 @@
       "limit": "Local result for the frozen exact-decimal model; does not classify distant fibers or arbitrary models."
     },
     {
-      "rank": 10,
-      "score": 91,
+      "rank": 13,
+      "score": 90,
       "title": "High-regularity bound for corrected curvature",
       "repo": "rickyjreyes/math",
       "path": "lean/MathProofs/E69Certification.lean",
@@ -79,7 +115,7 @@
       "limit": "Requires positive regularization and regularity s > n/2 + 2; not an unregularized physical curvature theorem."
     },
     {
-      "rank": 11,
+      "rank": 14,
       "score": 90,
       "title": "Ultraviolet ill-posedness of a specified flow",
       "repo": "rickyjreyes/math",
@@ -91,8 +127,8 @@
       "limit": "An obstruction for the encoded model, not a general no-go theorem for all fourth-order equations."
     },
     {
-      "rank": 12,
-      "score": 90,
+      "rank": 15,
+      "score": 89,
       "title": "Exact Lyapunov dissipation identity",
       "repo": "rickyjreyes/math",
       "path": "lean/MathProofs/E18Certification.lean",
@@ -103,31 +139,19 @@
       "limit": "Assumes a sufficiently regular solution of the specified gradient flow; does not prove that such a solution exists."
     },
     {
-      "rank": 13,
-      "score": 89,
-      "title": "Dimension-dependent Sobolev classification",
-      "repo": "rickyjreyes/math",
-      "path": "lean/MathProofs/E68Certification.lean",
-      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E68Certification.lean",
-      "category": "Functional analysis",
-      "group": "Regularity and spectral bounds",
-      "summary": "Certifies localized gradient-energy estimates and dimension-dependent counterexamples, including H² failures above dimension four.",
-      "limit": "A precise estimate classification, not proof that physical space must be four-dimensional."
-    },
-    {
-      "rank": 14,
+      "rank": 16,
       "score": 88,
-      "title": "Controlled false-positive rate for photodiode PASS",
-      "repo": "rickyjreyes/photodiode",
-      "path": "formal/PhotodiodeProtocol/Decision.lean",
-      "source_url": "https://github.com/rickyjreyes/photodiode/blob/main/formal/PhotodiodeProtocol/Decision.lean",
-      "category": "Statistical protocol",
-      "group": "Experimental inference",
-      "summary": "Proves P(classify = PASS) ≤ α for the frozen blinded randomization protocol under the exact conditional null model.",
-      "limit": "Requires the sharp null and uniform conditional assignment; does not establish a physical persistent-memory effect."
+      "title": "Original S004 action to strong Euler–Lagrange bridge",
+      "repo": "rickyjreyes/wct-lean",
+      "path": "WCTLean/Models/S004SpacetimeStrongBridge.lean",
+      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004SpacetimeStrongBridge.lean",
+      "category": "Variational calculus",
+      "group": "Energy identities",
+      "summary": "Proves a conditional bridge from the true nonlinear integrated S004 action derivative to the two-component strong Euler expressions in 1+1 dimensions, including the measure-theoretic and Green-identity steps.",
+      "limit": "ActionRegularity, GreenRegularity, time-endpoint and periodic trace assumptions remain explicit analytic premises. This is not a ghost-free completion or unconditional physical PDE theorem."
     },
     {
-      "rank": 15,
+      "rank": 17,
       "score": 87,
       "title": "Instantaneous nonlinear Fourier leakage",
       "repo": "rickyjreyes/math",
@@ -139,7 +163,31 @@
       "limit": "Model-specific Fourier-invariance result; not a claim that all coherent wave packets delocalize."
     },
     {
-      "rank": 17,
+      "rank": 18,
+      "score": 87,
+      "title": "Controlled false-positive rate for photodiode PASS",
+      "repo": "rickyjreyes/photodiode",
+      "path": "formal/PhotodiodeProtocol/Decision.lean",
+      "source_url": "https://github.com/rickyjreyes/photodiode/blob/main/formal/PhotodiodeProtocol/Decision.lean",
+      "category": "Statistical protocol",
+      "group": "Experimental inference",
+      "summary": "Proves P(classify = PASS) ≤ α for the frozen blinded randomization protocol under the exact conditional null model.",
+      "limit": "Requires the sharp null and uniform conditional assignment; does not establish a physical persistent-memory effect."
+    },
+    {
+      "rank": 20,
+      "score": 85,
+      "title": "Scalar-gradient metric rank and degeneracy obstruction",
+      "repo": "rickyjreyes/math",
+      "path": "lean/MathProofs/ManifoldScalarMetric.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ManifoldScalarMetric.lean",
+      "category": "Geometry",
+      "group": "Ghost and instability obstructions",
+      "summary": "For a metric constructed as the real Gram tensor of one complex scalar's differential, proves positivity, covariance and rank ≤ 2; on four-dimensional tangent spaces this yields nullity ≥ 2.",
+      "limit": "Applies to this specified scalar-gradient metric construction, not every scalar-derived spacetime metric or the existence of physical gravity."
+    },
+    {
+      "rank": 21,
       "score": 85,
       "title": "Fourth-order self-adjoint operator and semigroup",
       "repo": "rickyjreyes/math",
@@ -151,7 +199,7 @@
       "limit": "Linear operator theorem; nonlinear confinement is separate."
     },
     {
-      "rank": 18,
+      "rank": 22,
       "score": 85,
       "title": "Preferred Fourier-shell concentration",
       "repo": "rickyjreyes/math",
@@ -163,7 +211,7 @@
       "limit": "Growth and shell selection do not, alone, prove a localized nonlinear soliton."
     },
     {
-      "rank": 19,
+      "rank": 23,
       "score": 84,
       "title": "Swift–Hohenberg spectral characterization",
       "repo": "rickyjreyes/math",
@@ -175,7 +223,7 @@
       "limit": "Linear spectral statement, not a nonlinear stability theorem."
     },
     {
-      "rank": 20,
+      "rank": 24,
       "score": 83,
       "title": "Opposite-energy S004 mode decomposition",
       "repo": "rickyjreyes/geometry_of_resonance",
@@ -187,19 +235,7 @@
       "limit": "Applies to the stated S004 real-pole mode window and canonical reduction."
     },
     {
-      "rank": 21,
-      "score": 82,
-      "title": "S004 spacetime Euler–Lagrange assembly",
-      "repo": "rickyjreyes/wct-lean",
-      "path": "WCTLean/Models/S004SpacetimeEuler.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/S004SpacetimeEuler.lean",
-      "category": "Variational calculus",
-      "group": "Energy identities",
-      "summary": "Connects the corrected 1+1-dimensional S004 action variation with the two-component weak Euler expressions.",
-      "limit": "Requires explicit smoothness, integration, boundary and Green-identity hypotheses; not a global PDE existence proof."
-    },
-    {
-      "rank": 23,
+      "rank": 26,
       "score": 81,
       "title": "Continuous and discrete Fourier band projectors",
       "repo": "rickyjreyes/math",
@@ -211,7 +247,7 @@
       "limit": "Does not imply observed wavelength selection in an experiment."
     },
     {
-      "rank": 24,
+      "rank": 27,
       "score": 80,
       "title": "Sharp fourth-order resolvent control",
       "repo": "rickyjreyes/math",
@@ -223,44 +259,8 @@
       "limit": "Operator estimate only; nonlinear modes require separate proofs."
     },
     {
-      "rank": 27,
-      "score": 78,
-      "title": "Corrected curvature regularization bound",
-      "repo": "rickyjreyes/math",
-      "path": "lean/MathProofs/E26Certification.lean",
-      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E26Certification.lean",
-      "category": "Functional analysis",
-      "group": "Regularity and spectral bounds",
-      "summary": "Certifies H²-based regularized-curvature control, counterexamples and explicit regularization dependence.",
-      "limit": "Conditional on the specified ε > 0 regularization and functional-analytic premises."
-    },
-    {
-      "rank": 28,
-      "score": 77,
-      "title": "Whole-space curvature nonattainment",
-      "repo": "rickyjreyes/math",
-      "path": "lean/MathProofs/CurvatureNonattainment.lean",
-      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/CurvatureNonattainment.lean",
-      "category": "Variational analysis",
-      "group": "Ghost and instability obstructions",
-      "summary": "Establishes nonattainment and a spreading direction for a specified curvature-energy variational problem.",
-      "limit": "Does not rule out minimizing states for different Hamiltonians."
-    },
-    {
       "rank": 29,
-      "score": 76,
-      "title": "Exact isolated Fourier-shell exclusion",
-      "repo": "rickyjreyes/math",
-      "path": "lean/MathProofs/FourierShellL2.lean",
-      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/FourierShellL2.lean",
-      "category": "Spectral theory",
-      "group": "Regularity and spectral bounds",
-      "summary": "Proves that a nonzero whole-space L² field cannot be supported on a single measure-zero Fourier sphere.",
-      "limit": "Does not exclude finite-band wave packets or nonlinear confined configurations."
-    },
-    {
-      "rank": 30,
-      "score": 75,
+      "score": 78,
       "title": "Restricted nodal-sector ghost classification",
       "repo": "rickyjreyes/geometry_of_resonance",
       "path": "lean/ReleaseProofs/S004NodalShiftClassification.lean",
@@ -272,6 +272,42 @@
     },
     {
       "rank": 31,
+      "score": 77,
+      "title": "Corrected curvature regularization bound",
+      "repo": "rickyjreyes/math",
+      "path": "lean/MathProofs/E26Certification.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/E26Certification.lean",
+      "category": "Functional analysis",
+      "group": "Regularity and spectral bounds",
+      "summary": "Certifies H²-based regularized-curvature control, counterexamples and explicit regularization dependence.",
+      "limit": "Conditional on the specified ε > 0 regularization and functional-analytic premises."
+    },
+    {
+      "rank": 32,
+      "score": 76,
+      "title": "Whole-space curvature nonattainment",
+      "repo": "rickyjreyes/math",
+      "path": "lean/MathProofs/CurvatureNonattainment.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/CurvatureNonattainment.lean",
+      "category": "Variational analysis",
+      "group": "Ghost and instability obstructions",
+      "summary": "Establishes nonattainment and a spreading direction for a specified curvature-energy variational problem.",
+      "limit": "Does not rule out minimizing states for different Hamiltonians."
+    },
+    {
+      "rank": 33,
+      "score": 75,
+      "title": "Exact isolated Fourier-shell exclusion",
+      "repo": "rickyjreyes/math",
+      "path": "lean/MathProofs/FourierShellL2.lean",
+      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/FourierShellL2.lean",
+      "category": "Spectral theory",
+      "group": "Regularity and spectral bounds",
+      "summary": "Proves that a nonzero whole-space L² field cannot be supported on a single measure-zero Fourier sphere.",
+      "limit": "Does not exclude finite-band wave packets or nonlinear confined configurations."
+    },
+    {
+      "rank": 34,
       "score": 74,
       "title": "Exact randomization-test validity",
       "repo": "rickyjreyes/photodiode",
@@ -283,7 +319,7 @@
       "limit": "Assumptions about randomization or exchangeability are essential; physical spectral bins need not be exchangeable."
     },
     {
-      "rank": 32,
+      "rank": 35,
       "score": 73,
       "title": "Injective WaveLock message encoding",
       "repo": "rickyjreyes/Wavelock",
@@ -295,20 +331,8 @@
       "limit": "Does not establish a collision-resistant digest, one-way function, or cryptographic security."
     },
     {
-      "rank": 33,
-      "score": 72,
-      "title": "Degeneracy of a scalar-gradient metric",
-      "repo": "rickyjreyes/math",
-      "path": "lean/MathProofs/ManifoldScalarMetric.lean",
-      "source_url": "https://github.com/rickyjreyes/math/blob/main/lean/MathProofs/ManifoldScalarMetric.lean",
-      "category": "Geometry",
-      "group": "Ghost and instability obstructions",
-      "summary": "Certifies positivity, covariance and a rank bound for a specified scalar-gradient Gram tensor.",
-      "limit": "This tensor construction is not a general obstruction to all effective metrics."
-    },
-    {
-      "rank": 37,
-      "score": 67,
+      "rank": 39,
+      "score": 68,
       "title": "Weighted continuous phase-locking minimum",
       "repo": "rickyjreyes/math",
       "path": "lean/MathProofs/PhaseLockingContinuous.lean",
@@ -317,18 +341,7 @@
       "group": "Energy identities",
       "summary": "Establishes an exact weighted closed-loop minimum in the specified H¹ phase model.",
       "limit": "Does not itself prove a nonlinear physical locking mechanism."
-    },
-    {
-      "rank": 40,
-      "score": 62,
-      "title": "Conditional D4 strict-binding reduction",
-      "repo": "rickyjreyes/wct-lean",
-      "path": "WCTLean/Models/D4Closure.lean",
-      "source_url": "https://github.com/rickyjreyes/wct-lean/blob/main/WCTLean/Models/D4Closure.lean",
-      "category": "Variational calculus",
-      "group": "Energy identities",
-      "summary": "Derives an all-mass-splits conclusion from stated quantitative binding and energy-gap premises.",
-      "limit": "Does not discharge those premises for the concrete frozen whole-space Hamiltonian."
     }
-  ]
+  ],
+  "revision_note": "Promoted strict binding and the regular-sector S004 constraint count; moved the stronger CrossingsSATSets restricted SAT bound into the private-source global shortlist; updated the S004 action-to-Euler bridge to its stronger public module; reranked the Sobolev, metric-degeneracy, and non-identifiability results; the two lowest original shortlist entries were dropped to retain 40."
 }
