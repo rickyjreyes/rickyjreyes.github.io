@@ -27,7 +27,7 @@
     const source = "https://github.com/" + item.repo + "/blob/" + branch + "/" + item.path;
     return /^([\w.-]+\/)+[\w.-]+\.lean$/.test(item.path) &&
       item.source_url === source &&
-      ["title", "category", "summary", "limit", "group"].every(key =>
+      ["title", "category", "summary", "limit", "group", "equation_label", "equation_latex", "equation_note"].every(key =>
         typeof item[key] === "string" && item[key].trim().length > 0);
   }
 
@@ -56,12 +56,25 @@
       + '<span>' + esc(item.category) + '</span></div>'
       + '<h3>' + esc(item.title) + '</h3>'
       + '<p>' + esc(item.summary) + '</p>'
+      + '<div class="ranked-equation" role="group" aria-label="Source mathematical equation">'
+      + '<p class="ranked-equation-label">' + esc(item.equation_label) + '</p>'
+      + '<div class="ranked-equation-math">\\[' + esc(item.equation_latex) + '\\]</div>'
+      + '<p class="ranked-equation-note">' + esc(item.equation_note) + '</p></div>'
       + '<details class="ranked-detail"><summary>Proof scope and limitations</summary><p>' + esc(item.limit) + '</p></details>'
       + '<div class="ranked-links"><a href="' + esc(item.source_url) + '" target="_blank" rel="noopener noreferrer">Read Lean source ↗</a>'
       + '<span>' + esc(item.group) + '</span></div></div>'
       + '<div class="ranked-assessment" title="Editorial comparison only, not mathematical completeness">'
       + '<strong>' + item.score + '</strong><span>editorial /100</span></div></article>';
   }
+
+  let typesetQueue = Promise.resolve();
+  function typesetEquations() {
+    if (!window.MathJax || typeof window.MathJax.typesetPromise !== "function") return;
+    typesetQueue = typesetQueue
+      .then(() => window.MathJax.typesetPromise([mount]))
+      .catch(() => {});
+  }
+  window.addEventListener("load", typesetEquations);
 
   function render() {
     const q = query.value.trim().toLocaleLowerCase();
@@ -73,6 +86,7 @@
         .join(" ").toLocaleLowerCase().includes(q)));
     const activeFilter = Boolean(q || repository || area);
     const visible = state.expanded || activeFilter ? filtered : filtered.slice(0, 8);
+    if (window.MathJax && typeof window.MathJax.typesetClear === "function") window.MathJax.typesetClear([mount]);
     mount.innerHTML = visible.length ? visible.map(row).join("") :
       '<p class="ranked-empty">No results match these filters. Try another theorem, topic or repository.</p>';
     count.textContent = "Showing " + visible.length + " of " + filtered.length +
@@ -80,6 +94,7 @@
     loadMore.hidden = activeFilter || state.expanded || filtered.length <= visible.length;
     loadMore.textContent = "Show remaining " + (filtered.length - visible.length) + " results";
     reset.hidden = !activeFilter;
+    typesetEquations();
   }
 
   [query, repoFilter, areaFilter].forEach(control =>
@@ -96,7 +111,7 @@
       return response.json();
     })
     .then(data => {
-      if (!data.public_only || data.global_pool !== 40 ||
+      if (!data.schema_version !== 2 || !data.public_only || data.global_pool !== 40 ||
           !Array.isArray(data.entries) || data.entries.length !== 28 ||
           data.private_entries_omitted !== 12 ||
           !data.entries.every(validEntry)) throw new Error("invalid source inventory");
