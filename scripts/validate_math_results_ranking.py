@@ -90,9 +90,9 @@ def main() -> None:
             require(isinstance(item.get(field), str) and len(item[field].strip()) >= 12,
                     "missing mathematical formula field " + field)
         tex = item["equation_latex"]
-        require("\\\\" in tex and len(tex) < 1200, "invalid equation LaTeX")
+        require("\\" in tex and len(tex) < 1200, "invalid equation LaTeX")
         require(tex.count("{") == tex.count("}"), "unbalanced equation braces")
-        require(tex.count(r"\\begin{aligned}") == tex.count(r"\\end{aligned}"),
+        require(tex.count(r"\begin{aligned}") == tex.count(r"\end{aligned}"),
                 "unbalanced equation alignment")
     shell = next(item for item in entries if item["rank"] == 23)
     require(shell["path"] == "lean/MathProofs/SpectralConcentration.lean",
