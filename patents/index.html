@@ -45,6 +45,26 @@
     .darpa-match{padding:16px 18px;margin-top:16px;border:1px solid rgba(103,212,255,.24);border-radius:12px;background:rgba(103,212,255,.035)}
     .darpa-match>strong{display:block;margin-bottom:7px;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
     .darpa-match p{margin:0;color:var(--text);font-size:.92rem;line-height:1.65}
+
+    /* Technical-overlap strength: green / yellow / grey. */
+    .darpa-legend{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 22px;color:var(--muted);font-size:.88rem}
+    .darpa-legend strong{color:var(--text)}
+    .darpa-key,.darpa-overlap-state{display:inline-flex;align-items:center;gap:7px;font-size:.75rem;font-weight:800;letter-spacing:.06em}
+    .darpa-key{color:var(--muted)}
+    .darpa-dot{width:9px;height:9px;flex-shrink:0;border-radius:50%;background:currentColor}
+    .darpa-key.green,.darpa-pair[data-overlap="green"] .darpa-overlap-state{color:#77e6a4}
+    .darpa-key.yellow,.darpa-pair[data-overlap="yellow"] .darpa-overlap-state{color:#f2cc7e}
+    .darpa-key.grey,.darpa-pair[data-overlap="grey"] .darpa-overlap-state{color:#aeb8c7}
+    .darpa-pair[data-overlap="green"]{border-left:4px solid #3cc77d}
+    .darpa-pair[data-overlap="yellow"]{border-left:4px solid #e2ae46}
+    .darpa-pair[data-overlap="grey"]{border-left:4px solid #8792a4}
+    .darpa-pair-head{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:20px;row-gap:8px}
+    .darpa-pair-head>div{grid-row:1/3}
+    .darpa-overlap-state{grid-column:2;justify-self:end;white-space:nowrap}
+    @media(max-width:620px){
+      .darpa-pair-head>div{grid-row:auto}
+      .darpa-overlap-state{grid-column:1;justify-self:start}
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -176,65 +196,66 @@
         <h2 id="darpa-chronology-title">Reyes 2025 research and filings. DARPA's 2026 programs.</h2>
         <p>Eight side-by-side records of <strong>Richard J. Reyes's earlier research and patent filings</strong> and <strong>subsequently announced DARPA research</strong>, with their shared technical subjects and source links.</p>
       </div>
+      <p class="darpa-legend"><strong>Technical overlap:</strong> <span class="darpa-key green"><span class="darpa-dot" aria-hidden="true"></span>Green · specific</span> <span class="darpa-key yellow"><span class="darpa-dot" aria-hidden="true"></span>Yellow · partial</span> <span class="darpa-key grey"><span class="darpa-dot" aria-hidden="true"></span>Grey · broad</span></p>
       <div class="darpa-pairs">
-        <article class="darpa-pair">
-          <header class="darpa-pair-head"><div><span class="darpa-pair-num">01</span><h3>DICE · decentralized AI coordination and inference control</h3></div><span class="darpa-date"><time datetime="2026-04-21">April 21, 2026</time></span></header>
+        <article class="darpa-pair" data-overlap="green">
+          <header class="darpa-pair-head"><div><span class="darpa-pair-num">01</span><h3>DICE · decentralized AI coordination and inference control</h3></div><span class="darpa-date"><time datetime="2026-04-21">April 21, 2026</time></span><span class="darpa-overlap-state" aria-label="green overlap classification"><span class="darpa-dot" aria-hidden="true"></span>GREEN · SPECIFIC</span></header>
           <div class="darpa-two-col">
             <div class="darpa-side"><span class="darpa-side-label">REYES · 2025 PRIOR RECORD</span><p><strong>Reyes, 2025:</strong> <a href="https://doi.org/10.5281/zenodo.17732661">Resonance-Confinement Architecture (June 11, 2025 author chronology)</a>; WaveLock/symbolic-memory provisional filed <time datetime="2025-06-18">June 18, 2025</time>. Addresses bounded AI behavior, drift and coherence-regulating feedback.</p></div>
             <div class="darpa-side"><span class="darpa-side-label">DARPA · 2026 PUBLIC RECORD</span><p><strong>DARPA, April 21, 2026:</strong> <a href="https://www.darpa.mil/research/programs/decentralized-artificial-intelligence-through-controlled-emergence">DICE</a>, a program to coordinate decentralized AI teams through local inference control, role coherence and long-horizon alignment. <a href="https://www.highergov.com/contract-opportunity/future-program-decentralized-artificial-intellige-darpa-sn-26-65-s-8fd55/">Dated notice</a>.</p></div>
           </div>
           <div class="darpa-match"><strong>Shared technical focus</strong><p>Long-horizon AI-agent coherence; control of emergent multi-agent behavior; limiting drift or misalignment through feedback and constraints.</p></div>
         </article>
-        <article class="darpa-pair">
-          <header class="darpa-pair-head"><div><span class="darpa-pair-num">02</span><h3>Paleja · formal methods for emergent AI-team failure</h3></div><span class="darpa-date"><time datetime="2026-10-12">October 12, 2026</time></span></header>
+        <article class="darpa-pair" data-overlap="yellow">
+          <header class="darpa-pair-head"><div><span class="darpa-pair-num">02</span><h3>Paleja · formal methods for emergent AI-team failure</h3></div><span class="darpa-date"><time datetime="2026-10-12">October 12, 2026</time></span><span class="darpa-overlap-state" aria-label="yellow overlap classification"><span class="darpa-dot" aria-hidden="true"></span>YELLOW · PARTIAL</span></header>
           <div class="darpa-two-col">
             <div class="darpa-side"><span class="darpa-side-label">REYES · 2025 PRIOR RECORD</span><p><strong>Reyes, 2025:</strong> <a href="https://doi.org/10.5281/zenodo.17732661">RCA paper</a> and WaveLock/symbolic-memory provisional (<time datetime="2025-06-18">June 18, 2025</time>) describe monitoring and constraining coherence failures in computational-agent systems.</p></div>
             <div class="darpa-side"><span class="darpa-side-label">DARPA · 2026 PUBLIC RECORD</span><p><strong>2026 DARPA Young Faculty Award:</strong> <a href="https://cs.purdue.edu/news/articles/2026/paleja-earns-2026-darpa-young-faculty-award.html">Rohan Paleja, Purdue</a>, proposes formal methods to prevent, detect and contain collective failure, deception and collusion in AI teams.</p></div>
           </div>
           <div class="darpa-match"><strong>Shared technical focus</strong><p>Detecting and containing emergent AI-team failures, deceptive behavior and collective departures from intended goals.</p></div>
         </article>
-        <article class="darpa-pair">
-          <header class="darpa-pair-head"><div><span class="darpa-pair-num">03</span><h3>AMCOM-DI · self-monitoring reasoning and auditable adaptation</h3></div><span class="darpa-date"><time datetime="2026-11-03">November 3, 2026</time></span></header>
+        <article class="darpa-pair" data-overlap="green">
+          <header class="darpa-pair-head"><div><span class="darpa-pair-num">03</span><h3>AMCOM-DI · self-monitoring reasoning and auditable adaptation</h3></div><span class="darpa-date"><time datetime="2026-11-03">November 3, 2026</time></span><span class="darpa-overlap-state" aria-label="green overlap classification"><span class="darpa-dot" aria-hidden="true"></span>GREEN · SPECIFIC</span></header>
           <div class="darpa-two-col">
             <div class="darpa-side"><span class="darpa-side-label">REYES · 2025 PRIOR RECORD</span><p><strong>Reyes, 2025:</strong> WaveLock/symbolic-memory provisional (<time datetime="2025-06-18">June 18, 2025</time>) and <a href="https://doi.org/10.5281/zenodo.17732661">RCA</a>; later nonprovisional filed <time datetime="2026-06-07">June 7, 2026</time>. Describes coherence-state monitoring, drift decisions and auditable state-linked records.</p></div>
             <div class="darpa-side"><span class="darpa-side-label">DARPA · 2026 PUBLIC RECORD</span><p><strong>DARPA, November 3, 2026:</strong> <a href="https://www.darpa.mil/research/programs/amcom-di">AMCOM-DI</a> solicits a structured metacognitive engine that measures reasoning drift, representational coherence and uncertainty, locally adapts, and emits reproducible reasoning traces.</p></div>
           </div>
           <div class="darpa-match"><strong>Shared technical focus</strong><p>Internal reasoning-state monitoring; representational coherence and drift; constraint-aware adaptation; traceable decisions and audits.</p></div>
         </article>
-        <article class="darpa-pair">
-          <header class="darpa-pair-head"><div><span class="darpa-pair-num">04</span><h3>HYPER-CAP · persistent symbolic state in distributed reasoning</h3></div><span class="darpa-date"><time datetime="2026-11-03">November 3, 2026</time></span></header>
+        <article class="darpa-pair" data-overlap="yellow">
+          <header class="darpa-pair-head"><div><span class="darpa-pair-num">04</span><h3>HYPER-CAP · persistent symbolic state in distributed reasoning</h3></div><span class="darpa-date"><time datetime="2026-11-03">November 3, 2026</time></span><span class="darpa-overlap-state" aria-label="yellow overlap classification"><span class="darpa-dot" aria-hidden="true"></span>YELLOW · PARTIAL</span></header>
           <div class="darpa-two-col">
             <div class="darpa-side"><span class="darpa-side-label">REYES · 2025 PRIOR RECORD</span><p><strong>Reyes, 2025:</strong> <a href="https://doi.org/10.5281/zenodo.17732661">RCA symbolic-graph research</a> and WaveLock/symbolic-memory provisional filed <time datetime="2025-06-18">June 18, 2025</time>. Addresses stateful symbolic representations, coherence and verifiable computational state.</p></div>
             <div class="darpa-side"><span class="darpa-side-label">DARPA · 2026 PUBLIC RECORD</span><p><strong>DARPA, November 3, 2026:</strong> <a href="https://www.darpa.mil/research/programs/hyper-cap">HYPER-CAP</a> seeks hyperdimensional or neurosymbolic cyber-planning state, compact memory, distributed knowledge sharing and inspectable reasoning under degraded communications.</p></div>
           </div>
           <div class="darpa-match"><strong>Shared technical focus</strong><p>Persistent symbolic representations; structured computational memory; distributed reasoning and state sharing under incomplete information.</p></div>
         </article>
-        <article class="darpa-pair">
-          <header class="darpa-pair-head"><div><span class="darpa-pair-num">05</span><h3>Crane · efficient optical memory</h3></div><span class="darpa-date"><time datetime="2026-10-29">October 29, 2026</time></span></header>
+        <article class="darpa-pair" data-overlap="green">
+          <header class="darpa-pair-head"><div><span class="darpa-pair-num">05</span><h3>Crane · efficient optical memory</h3></div><span class="darpa-date"><time datetime="2026-10-29">October 29, 2026</time></span><span class="darpa-overlap-state" aria-label="green overlap classification"><span class="darpa-dot" aria-hidden="true"></span>GREEN · SPECIFIC</span></header>
           <div class="darpa-two-col">
             <div class="darpa-side"><span class="darpa-side-label">REYES · 2025 PRIOR RECORD</span><p><strong>Reyes, 2025–2026:</strong> Persistent wave-memory provisional filed <time datetime="2025-05-20">May 20, 2025</time>; nonprovisional filed <time datetime="2026-05-18">May 18, 2026</time>. Proposes information encoded in stable, confined wave configurations with read/reset interfaces.</p></div>
             <div class="darpa-side"><span class="darpa-side-label">DARPA · 2026 PUBLIC RECORD</span><p><strong>DARPA-funded award publicly announced October 29, 2026:</strong> <a href="https://www.mines.edu/news/all-news/2026/matthew-crane-earns-darpa-young-faculty-award-for-optical-memory-research.html">Matthew Crane, Colorado School of Mines</a>, is developing deposited optical materials integrated with waveguides for lower-power optical storage.</p></div>
           </div>
           <div class="darpa-match"><strong>Shared technical focus</strong><p>Optical information storage; persistent memory objectives; low-power information access through physical optical systems.</p></div>
         </article>
-        <article class="darpa-pair">
-          <header class="darpa-pair-head"><div><span class="darpa-pair-num">06</span><h3>Fazlyab · control-theoretic safe LLM generation</h3></div><span class="darpa-date">2026 awardee list</span></header>
+        <article class="darpa-pair" data-overlap="yellow">
+          <header class="darpa-pair-head"><div><span class="darpa-pair-num">06</span><h3>Fazlyab · control-theoretic safe LLM generation</h3></div><span class="darpa-date">2026 awardee list</span><span class="darpa-overlap-state" aria-label="yellow overlap classification"><span class="darpa-dot" aria-hidden="true"></span>YELLOW · PARTIAL</span></header>
           <div class="darpa-two-col">
             <div class="darpa-side"><span class="darpa-side-label">REYES · 2025 PRIOR RECORD</span><p><strong>Reyes, 2025:</strong> <a href="https://doi.org/10.5281/zenodo.17732661">RCA</a> and the <time datetime="2025-06-18">June 18, 2025</time> symbolic-memory provisional explore feedback-based coherence constraints in intelligent computational systems.</p></div>
             <div class="darpa-side"><span class="darpa-side-label">DARPA · 2026 PUBLIC RECORD</span><p><strong>2026 DARPA Young Faculty Award:</strong> <a href="https://www.darpa.mil/work-with-us/communities/academia/young-faculty-award">Mahyar Fazlyab, Johns Hopkins</a>, listed for <em>Control-Theoretic Foundations for Safe and Controllable LLM Generation</em>. Exact initial disclosure date is not established by the list.</p></div>
           </div>
           <div class="darpa-match"><strong>Shared technical focus</strong><p>Feedback and control-theoretic constraints for safer language-model behavior.</p></div>
         </article>
-        <article class="darpa-pair">
-          <header class="darpa-pair-head"><div><span class="darpa-pair-num">07</span><h3>Liu · symmetry-modulated fluid vortices</h3></div><span class="darpa-date">2026 awardee list</span></header>
+        <article class="darpa-pair" data-overlap="grey">
+          <header class="darpa-pair-head"><div><span class="darpa-pair-num">07</span><h3>Liu · symmetry-modulated fluid vortices</h3></div><span class="darpa-date">2026 awardee list</span><span class="darpa-overlap-state" aria-label="grey overlap classification"><span class="darpa-dot" aria-hidden="true"></span>GREY · BROAD</span></header>
           <div class="darpa-two-col">
             <div class="darpa-side"><span class="darpa-side-label">REYES · 2025 PRIOR RECORD</span><p><strong>Reyes, 2025:</strong> <a href="https://doi.org/10.5281/zenodo.17206381">Water-cavity resonance observations</a> (May 17, 2025 in author chronology), wave-memory provisional (<time datetime="2025-05-20">May 20, 2025</time>) and coherent field-generator provisional (<time datetime="2025-05-21">May 21, 2025</time>).</p></div>
             <div class="darpa-side"><span class="darpa-side-label">DARPA · 2026 PUBLIC RECORD</span><p><strong>2026 DARPA Young Faculty Award:</strong> <a href="https://www.darpa.mil/work-with-us/communities/academia/young-faculty-award">Bin Liu, UC Merced</a>, listed for <em>Emergent Microfluidic Architectures from Symmetry-Modulated Vortices</em>.</p></div>
           </div>
           <div class="darpa-match"><strong>Shared technical focus</strong><p>Vortex and symmetry-dependent organization in fluid media; emergent physical structures.</p></div>
         </article>
-        <article class="darpa-pair">
-          <header class="darpa-pair-head"><div><span class="darpa-pair-num">08</span><h3>DARPA MTO · physical computation in robotics</h3></div><span class="darpa-date"><time datetime="2026-04-27">April 27, 2026</time></span></header>
+        <article class="darpa-pair" data-overlap="grey">
+          <header class="darpa-pair-head"><div><span class="darpa-pair-num">08</span><h3>DARPA MTO · physical computation in robotics</h3></div><span class="darpa-date"><time datetime="2026-04-27">April 27, 2026</time></span><span class="darpa-overlap-state" aria-label="grey overlap classification"><span class="darpa-dot" aria-hidden="true"></span>GREY · BROAD</span></header>
           <div class="darpa-two-col">
             <div class="darpa-side"><span class="darpa-side-label">REYES · 2025 PRIOR RECORD</span><p><strong>Reyes, 2025:</strong> <a href="https://doi.org/10.5281/zenodo.15644222">Geometry of Resonance / WCT</a> (April 22, 2025 author chronology) and <a href="https://doi.org/10.5281/zenodo.17743607">curvature-bounded wave computation</a> (May 7, 2025 author chronology) explore field dynamics as computational constraints or substrate.</p></div>
             <div class="darpa-side"><span class="darpa-side-label">DARPA · 2026 PUBLIC RECORD</span><p><strong>DARPA, April 27, 2026:</strong> <a href="https://www.darpa.mil/work/-with-us/opportunities/darpa-sn-26-76">Materials for Physical Compute in Untethered Robotics</a>, a request for information on physical intelligence and adaptive materials for untethered robotic systems.</p></div>
