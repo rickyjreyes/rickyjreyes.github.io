@@ -1,0 +1,1094 @@
+{
+  "schemaVersion": "1.0",
+  "updated": "2026-11-25",
+  "title": "2025 Research & Subsequent Scientific Findings",
+  "author": "Richard J. Reyes",
+  "canonicalPage": "https://rickyjreyes.github.io/priority/#prediction-matches",
+  "scope": "60 comparison rows recovered from the supplied November 25 inventory, September 25 validation record and provisional external-overlap catalogue. Not 60 distinct studies or 60 exact predictions. Includes 2026-specific public-data tests and post-hoc analyses as a separate group. Existing registry totals unchanged.",
+  "sourceOfTruth": {
+    "external": "https://rickyjreyes.github.io/priority/external-convergence.json",
+    "scientificStatus": "https://rickyjreyes.github.io/priority/claims.json"
+  },
+  "records": [
+    {
+      "id": 1,
+      "group": "External wave-mechanism correspondences",
+      "evidenceClass": "mechanism_convergence",
+      "earlierRecord": {
+        "date": "2025-09-08",
+        "title": "Phase-Flux Field",
+        "url": "https://doi.org/10.5281/zenodo.17578766",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Finite-k amplification and nonlinear arrest",
+      "laterRecord": {
+        "date": "2026-07-08",
+        "title": "Kerr-stabilized k-gap solitons (Sun et al.)",
+        "url": "https://arxiv.org/abs/2607.07340"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 2,
+      "group": "External wave-mechanism correspondences",
+      "evidenceClass": "mechanism_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Field-dependent feedback and localization",
+      "laterRecord": {
+        "date": "2026-07-31",
+        "title": "Density-dependent feedback drives soliton formation (Meena and Suthar)",
+        "url": "https://arxiv.org/abs/2607.29309"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 3,
+      "group": "External wave-mechanism correspondences",
+      "evidenceClass": "mechanism_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Self-generated structure stabilizes localized waves",
+      "laterRecord": {
+        "date": "2026-06",
+        "title": "Stripe order stabilizes dark solitons (Mukherjee and Saito)",
+        "url": "https://doi.org/10.1103/1zp2-s4y2"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 4,
+      "group": "External wave-mechanism correspondences",
+      "evidenceClass": "mechanism_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Positive excitation gap around locked state",
+      "laterRecord": {
+        "date": "2026-06",
+        "title": "Gapped soliton branch and increased bending stiffness (same study as #3)",
+        "url": "https://doi.org/10.1103/1zp2-s4y2"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 5,
+      "group": "External wave-mechanism correspondences",
+      "evidenceClass": "mechanism_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Feedback changes excitation spectrum",
+      "laterRecord": {
+        "date": "2026-07-31",
+        "title": "Altered gaps and suppressed breathing (same study as #2)",
+        "url": "https://arxiv.org/abs/2607.29309"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 6,
+      "group": "External wave-mechanism correspondences",
+      "evidenceClass": "mechanism_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Higher-order dispersion and localization",
+      "laterRecord": {
+        "date": "2026-06-23",
+        "title": "Quantum geometry and fourth-order dispersion in continuum solitons (Sadri and Rechtsman)",
+        "url": "https://arxiv.org/abs/2606.25064"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 7,
+      "group": "External wave-mechanism correspondences",
+      "evidenceClass": "mechanism_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Chaotic wavefields self-organize into ordered resonance",
+      "laterRecord": {
+        "date": "2026-07",
+        "title": "Perfect soliton crystals emerge following chaos (Panda et al.)",
+        "url": "https://doi.org/10.1364/OL.603068"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 8,
+      "group": "External wave-mechanism correspondences",
+      "evidenceClass": "synthesis",
+      "earlierRecord": {
+        "date": "2025-09-08",
+        "title": "Phase-Flux Field",
+        "url": "https://doi.org/10.5281/zenodo.17578766",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Finite-band selection and persistent modes",
+      "laterRecord": {
+        "date": "2026",
+        "title": "Synthesis of the studies in #1–7; not an additional study",
+        "url": null
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 9,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-04-22",
+        "title": "The Geometry of Resonance",
+        "url": "https://doi.org/10.5281/zenodo.15644222",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Wave confinement",
+      "laterRecord": {
+        "date": "2026-05",
+        "title": "Time-domain bound states in the continuum",
+        "url": "https://doi.org/10.1364/CLEO_FS.2026.FW1H.3"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 10,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-09-08",
+        "title": "Phase-Flux Field",
+        "url": "https://doi.org/10.5281/zenodo.17578766",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Temporal resonance",
+      "laterRecord": {
+        "date": "2026-05",
+        "title": "Microwave photonic time crystals",
+        "url": "https://doi.org/10.1364/CLEO_FS.2026.FW1H.7"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 11,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Spontaneous self-organization",
+      "laterRecord": {
+        "date": "2026-10-03",
+        "title": "Soliton buildup in GHz fiber lasers",
+        "url": "https://doi.org/10.1002/lpor.72012"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 12,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-09-08",
+        "title": "Phase-Flux Field",
+        "url": "https://doi.org/10.5281/zenodo.17578766",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Temporal wave structure",
+      "laterRecord": {
+        "date": "2026-07-29",
+        "title": "Plasmonic metamaterial time crystal",
+        "url": "https://doi.org/10.1038/s41586-026-10825-9"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 13,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-05-17",
+        "title": "Observation of Long-Lived Photon Resonance Confinement in Water Cavities",
+        "url": "https://doi.org/10.5281/zenodo.17206381",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Stable resonance",
+      "laterRecord": {
+        "date": "2026-10-01",
+        "title": "Thermally stabilized Kerr solitons",
+        "url": "https://doi.org/10.1063/5.0339700"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 14,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Topology-dependent spectral modes",
+      "laterRecord": {
+        "date": "2026-03-25",
+        "title": "Topological soliton frequency comb",
+        "url": "https://doi.org/10.1038/s41586-026-10292-2"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 15,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-10-27",
+        "title": "Emergence of Effective Mass",
+        "url": "https://doi.org/10.5281/zenodo.17459463",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Toroidal wave dynamics",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Helicon waves in toroidal magnetic configurations",
+        "url": "https://arxiv.org/abs/2609.18883"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 16,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-05-17",
+        "title": "Observation of Long-Lived Photon Resonance Confinement in Water Cavities",
+        "url": "https://doi.org/10.5281/zenodo.17206381",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Resonance locking",
+      "laterRecord": {
+        "date": "2026-08",
+        "title": "Deterministic soliton microcombs in coupled cavities",
+        "url": "https://doi.org/10.1016/j.optlastec.2026.115112"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 17,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Nonlinear harmonic selection",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Mechanical frequency combs in levitated micromagnets",
+        "url": "https://arxiv.org/abs/2609.11668"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 18,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-04-22",
+        "title": "The Geometry of Resonance",
+        "url": "https://doi.org/10.5281/zenodo.15644222",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Nonlinear wave localization",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Nonlinear reshaping of Gaussian water wave packets",
+        "url": "https://arxiv.org/abs/2609.03259"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 19,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-05-17",
+        "title": "Observation of Long-Lived Photon Resonance Confinement in Water Cavities",
+        "url": "https://doi.org/10.5281/zenodo.17206381",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Phase-dependent confinement",
+      "laterRecord": {
+        "date": "2026-02-18",
+        "title": "Temporal solitons in intracavity phase traps",
+        "url": "https://doi.org/10.1038/s41377-025-02147-8"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 20,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Nonlinear stabilization",
+      "laterRecord": {
+        "date": "2026-02-02",
+        "title": "Dissipative solitons in parity-time-symmetric lasers",
+        "url": "https://doi.org/10.1038/s41566-025-01840-9"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 21,
+      "group": "External experimental correspondences",
+      "evidenceClass": "experimental_convergence",
+      "earlierRecord": {
+        "date": "2025-04-22",
+        "title": "The Geometry of Resonance",
+        "url": "https://doi.org/10.5281/zenodo.15644222",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Topological wave selection",
+      "laterRecord": {
+        "date": "2025-07",
+        "title": "Wave amplification and temporal topological states",
+        "url": "https://arxiv.org/abs/2507.02223"
+      },
+      "limitation": "Predates September PFF; only the earlier broad April anchor is proposed, not an exact priority match."
+    },
+    {
+      "id": 22,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-10-27",
+        "title": "Emergence of Effective Mass",
+        "url": "https://doi.org/10.5281/zenodo.17459463",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Toroidal confinement",
+      "laterRecord": {
+        "date": "2026-07",
+        "title": "Giant vortices in toroidal condensates",
+        "url": "https://arxiv.org/abs/2607.19840"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 23,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-12-10",
+        "title": "Wave Confinement Theory Predicts the Koide Mass Relation",
+        "url": "https://doi.org/10.5281/zenodo.17887562",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Geometric fermion mass ratios",
+      "laterRecord": {
+        "date": "2026-07-04",
+        "title": "Geometric origin of Koide in a vorton manifold",
+        "url": "https://doi.org/10.5281/zenodo.21195612"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 24,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-09-08",
+        "title": "Phase-Flux Field",
+        "url": "https://doi.org/10.5281/zenodo.17578766",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Wave feedback and temporal structure",
+      "laterRecord": {
+        "date": "2026-10-05",
+        "title": "Carrier drift and hyperbolic time crystals",
+        "url": "https://doi.org/10.1038/s44455-026-00043-8"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 25,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-10-27",
+        "title": "Emergence of Effective Mass",
+        "url": "https://doi.org/10.5281/zenodo.17459463",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Closed-loop stability",
+      "laterRecord": {
+        "date": "2026-09-18",
+        "title": "Superfluid stability in ring condensates",
+        "url": "https://doi.org/10.1140/epjd/s10053-026-01252-6"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 26,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Curvature-dependent spectral selection",
+      "laterRecord": {
+        "date": "2026-06-25",
+        "title": "Curvature-induced magnon frequency combs",
+        "url": "https://doi.org/10.1103/v6pf-rgv8"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 27,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-12-10",
+        "title": "Wave Confinement Theory Predicts the Koide Mass Relation",
+        "url": "https://doi.org/10.5281/zenodo.17887562",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Charged-lepton mass hierarchy",
+      "laterRecord": {
+        "date": "2026-08",
+        "title": "Effective flavor interaction and Koide relation",
+        "url": "https://arxiv.org/abs/2608.19277"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 28,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-04-22",
+        "title": "The Geometry of Resonance",
+        "url": "https://doi.org/10.5281/zenodo.15644222",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Resonance-induced localization",
+      "laterRecord": {
+        "date": "2026-09-23",
+        "title": "Energy localization under superharmonic resonance",
+        "url": "https://doi.org/10.1007/s11071-026-13056-9"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 29,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-04-22",
+        "title": "The Geometry of Resonance",
+        "url": "https://doi.org/10.5281/zenodo.15644222",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Geometric field organization",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Lattice potentials from circular Rydberg orbitals",
+        "url": "https://arxiv.org/abs/2609.31267"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 30,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-12-10",
+        "title": "Wave Confinement Theory Predicts the Koide Mass Relation",
+        "url": "https://doi.org/10.5281/zenodo.17887562",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Triplet symmetry and ratio 2/3",
+      "laterRecord": {
+        "date": "2026-06-17",
+        "title": "Division-algebra convergence on Koide",
+        "url": "https://doi.org/10.5281/zenodo.20738865"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 31,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-09-16",
+        "title": "Self-Emergent Fourier Cymatics",
+        "url": "https://doi.org/10.5281/zenodo.17732648",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Topological wave confinement",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Vortex solitons in star networks",
+        "url": "https://arxiv.org/abs/2609.13951"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 32,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-09-08",
+        "title": "Phase-Flux Field",
+        "url": "https://doi.org/10.5281/zenodo.17578766",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Discrete spectral organization",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Non-Hermitian photonic time quasicrystals",
+        "url": "https://arxiv.org/abs/2609.24327"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 33,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-12-10",
+        "title": "Wave Confinement Theory Predicts the Koide Mass Relation",
+        "url": "https://doi.org/10.5281/zenodo.17887562",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Geometric mass hierarchy",
+      "laterRecord": {
+        "date": "2026-05",
+        "title": "Fermion mass hierarchies and exceptional Jordan algebra",
+        "url": "https://arxiv.org/abs/2605.24866"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 34,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-12-10",
+        "title": "Wave Confinement Theory Predicts the Koide Mass Relation",
+        "url": "https://doi.org/10.5281/zenodo.17887562",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Curvature-harmonic triplets",
+      "laterRecord": {
+        "date": "2026-05-08",
+        "title": "Koide circle geometry and C3 spectral sectors",
+        "url": "https://doi.org/10.5281/zenodo.20090881"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 35,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-04-22",
+        "title": "The Geometry of Resonance",
+        "url": "https://doi.org/10.5281/zenodo.15644222",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Vortices and emergent symmetries",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Emergent conformal symmetry on superfluid vortices in QCD",
+        "url": "https://arxiv.org/abs/2609.12080"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 36,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-08-13",
+        "title": "Hard Upper Bound on Spatial Dimensionality",
+        "url": "https://doi.org/10.5281/zenodo.17081283",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Three-dimensional confinement",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Stable three-dimensional lattice solitons",
+        "url": "https://arxiv.org/abs/2609.17092"
+      },
+      "limitation": "Existence in 3D does not establish exclusion of higher dimensions."
+    },
+    {
+      "id": 37,
+      "group": "Additional theoretical and numerical correspondences",
+      "evidenceClass": "theoretical_convergence",
+      "earlierRecord": {
+        "date": "2025-04-22",
+        "title": "The Geometry of Resonance",
+        "url": "https://doi.org/10.5281/zenodo.15644222",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Particle-like wave configurations",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Continuum multisoliton approximation of particles",
+        "url": "https://arxiv.org/abs/2609.21314"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 38,
+      "group": "Subsequent public-data analyses",
+      "evidenceClass": "same_program_analysis",
+      "earlierRecord": {
+        "date": "2026-05-28",
+        "title": "Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List",
+        "url": "https://doi.org/10.5281/zenodo.20435463",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Fe II spectral structure",
+      "laterRecord": {
+        "date": "2026",
+        "title": "k = 31.3265 across 120, 160, 200 bins; 0/5000 exceedances per setting",
+        "url": "https://github.com/rickyjreyes/NIST/blob/main/RESULTS.md"
+      },
+      "limitation": "Author-run; physical interpretation and species generalization open."
+    },
+    {
+      "id": 39,
+      "group": "Subsequent public-data analyses",
+      "evidenceClass": "same_program_analysis",
+      "earlierRecord": {
+        "date": "2026-05-28",
+        "title": "Bin-Stable Log-Periodic Structure in Public NIST Atomic Line List",
+        "url": "https://doi.org/10.5281/zenodo.20435463",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Co II spectral structure",
+      "laterRecord": {
+        "date": "2026",
+        "title": "Similar persistent spectral structure reported",
+        "url": "https://github.com/rickyjreyes/NIST"
+      },
+      "limitation": "Exploratory species extension; not a frozen independent replication."
+    },
+    {
+      "id": 40,
+      "group": "Subsequent public-data analyses",
+      "evidenceClass": "same_program_analysis",
+      "earlierRecord": {
+        "date": "2026-04-23",
+        "title": "Curvature-Induced Log-Periodic Deformation of C9(q²)",
+        "url": "https://doi.org/10.5281/zenodo.19705254",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Rare B-meson spectral structure",
+      "laterRecord": {
+        "date": "2026-05",
+        "title": "Log-spectral structure in LHCb candidate data",
+        "url": "https://doi.org/10.5281/zenodo.20164333"
+      },
+      "limitation": "2026-specific hypothesis; candidate-spectrum phenomenology."
+    },
+    {
+      "id": 41,
+      "group": "Subsequent public-data analyses",
+      "evidenceClass": "same_program_analysis",
+      "earlierRecord": {
+        "date": "2026-09",
+        "title": "CMS frozen-waveform analysis",
+        "url": "https://doi.org/10.5281/zenodo.22257067",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Frozen-frequency recurrence",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Unused CMS data files reproduce frequency under declared pipeline",
+        "url": "https://doi.org/10.5281/zenodo.22257067"
+      },
+      "limitation": "Background-sensitive; not a 2025 numerical prediction."
+    },
+    {
+      "id": 42,
+      "group": "Subsequent public-data analyses",
+      "evidenceClass": "same_program_analysis",
+      "earlierRecord": {
+        "date": "2026-09",
+        "title": "CMS frozen-waveform analysis",
+        "url": "https://doi.org/10.5281/zenodo.22257067",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Cross-period recurrence",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Δχ² = 115.89 under historical background",
+        "url": "https://doi.org/10.5281/zenodo.22257067"
+      },
+      "limitation": "Background-sensitive; related to #41 and #43."
+    },
+    {
+      "id": 43,
+      "group": "Subsequent public-data analyses",
+      "evidenceClass": "same_program_frozen_holdout",
+      "earlierRecord": {
+        "date": "2026-09",
+        "title": "CMS frozen-waveform analysis",
+        "url": "https://doi.org/10.5281/zenodo.22257067",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Fixed-frequency, phase and sign holdout",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "Δχ² = 126.2832 under declared background",
+        "url": "https://github.com/rickyjreyes/wct-cms/blob/main/docs/CMS_INDEPENDENT_ADVERSARIAL_AUDIT.md"
+      },
+      "limitation": "Alternative smooth backgrounds substantially reduce significance; conditional."
+    },
+    {
+      "id": 44,
+      "group": "Subsequent public-data analyses",
+      "evidenceClass": "same_program_frozen_holdout",
+      "earlierRecord": {
+        "date": "2026-08",
+        "title": "GWTC frozen chirp-mass analysis",
+        "url": "https://doi.org/10.5281/zenodo.22256802",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Frozen chirp-mass mode",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "p = 0.00129987 on frozen GWTC-5 holdout",
+        "url": "https://doi.org/10.5281/zenodo.22256802"
+      },
+      "limitation": "Author-run holdout under declared null, not independent-team replication."
+    },
+    {
+      "id": 45,
+      "group": "Subsequent public-data analyses",
+      "evidenceClass": "same_holdout_robustness",
+      "earlierRecord": {
+        "date": "2026-08",
+        "title": "GWTC frozen chirp-mass analysis",
+        "url": "https://doi.org/10.5281/zenodo.22256802",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Alternative KDE model",
+      "laterRecord": {
+        "date": "2026-09",
+        "title": "p = 0.00089991 on the same holdout",
+        "url": "https://doi.org/10.5281/zenodo.22256802"
+      },
+      "limitation": "Same holdout as #44; robustness only."
+    },
+    {
+      "id": 46,
+      "group": "Subsequent public-data analyses",
+      "evidenceClass": "post_hoc",
+      "earlierRecord": {
+        "date": "2025-12-10",
+        "title": "Wave Confinement Theory Predicts the Koide Mass Relation",
+        "url": "https://doi.org/10.5281/zenodo.17887562",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Cross-domain scale near √(3/2)",
+      "laterRecord": {
+        "date": "2026",
+        "title": "Post-hoc scale correspondence in NIST, CMS and LHCb",
+        "url": null
+      },
+      "limitation": "Exploratory post-hoc comparison; not a precommitted 2025 prediction."
+    },
+    {
+      "id": 47,
+      "group": "Physical computation",
+      "evidenceClass": "engineering_convergence",
+      "earlierRecord": {
+        "date": "2025-05-07",
+        "title": "P vs NP in Curvature-Bounded Wave Computation",
+        "url": "https://doi.org/10.5281/zenodo.17743607",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Physical resources constrain computational power",
+      "laterRecord": {
+        "date": "2026",
+        "title": "Zhang and Wu: exponential physical costs of non-Hermitian quantum computation",
+        "url": "https://doi.org/10.1103/mywt-m86w"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 48,
+      "group": "Physical computation",
+      "evidenceClass": "engineering_convergence",
+      "earlierRecord": {
+        "date": "2025-12-01",
+        "title": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
+        "url": "https://doi.org/10.5281/zenodo.17783074",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Photonic memory and conversion bottlenecks",
+      "laterRecord": {
+        "date": "2026",
+        "title": "Lam et al.: electro-optic analog memory",
+        "url": "https://doi.org/10.1038/s41467-026-69084-x"
+      },
+      "limitation": "External manuscript received February 2025, before December anchor; later publication, not priority evidence."
+    },
+    {
+      "id": 49,
+      "group": "Physical computation",
+      "evidenceClass": "engineering_convergence",
+      "earlierRecord": {
+        "date": "2025-12-01",
+        "title": "The Classical P vs NP Problem Is Mathematically and Physically Ill-Posed",
+        "url": "https://doi.org/10.5281/zenodo.17783074",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Data movement limits throughput",
+      "laterRecord": {
+        "date": "2026",
+        "title": "Kim et al.: co-packaged optics",
+        "url": "https://doi.org/10.1038/s41928-026-01681-6"
+      },
+      "limitation": "Bottleneck correspondence, not a prediction of CPO itself."
+    },
+    {
+      "id": 50,
+      "group": "Recursive AI instability",
+      "evidenceClass": "rca_convergence",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Recursive semantic drift",
+      "laterRecord": {
+        "date": "2026-01-07",
+        "title": "Rath: agent drift",
+        "url": "https://arxiv.org/abs/2601.04170"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 51,
+      "group": "Recursive AI instability",
+      "evidenceClass": "rca_convergence",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Coherence mirage",
+      "laterRecord": {
+        "date": "2026-05-11",
+        "title": "Li et al.: compliant outputs despite trajectory constraints failing",
+        "url": "https://arxiv.org/abs/2605.10481"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 52,
+      "group": "Recursive AI instability",
+      "evidenceClass": "rca_convergence",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Constraint degradation",
+      "laterRecord": {
+        "date": "2026-05-11",
+        "title": "Li et al.: constraint drift (same study as #51)",
+        "url": "https://arxiv.org/abs/2605.10481"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 53,
+      "group": "Recursive AI instability",
+      "evidenceClass": "rca_convergence",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Persistent-memory instability",
+      "laterRecord": {
+        "date": "2026-03-12",
+        "title": "Lam et al.: governing evolving memory",
+        "url": "https://arxiv.org/abs/2603.11768"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 54,
+      "group": "Recursive AI instability",
+      "evidenceClass": "rca_convergence",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Multi-agent amplification",
+      "laterRecord": {
+        "date": "2026-08-26",
+        "title": "OpenAI and METR: unauthorized coordination in an evaluation",
+        "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 55,
+      "group": "Recursive AI instability",
+      "evidenceClass": "rca_convergence",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Agentic soft failure",
+      "laterRecord": {
+        "date": "2025-08",
+        "title": "Lu et al.: planning, execution and response failures",
+        "url": "https://arxiv.org/abs/2508.13143"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 56,
+      "group": "Recursive AI instability",
+      "evidenceClass": "rca_convergence",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Self-modifying agent instability",
+      "laterRecord": {
+        "date": "2026-06-22",
+        "title": "Lin et al.: safety in self-evolving agent systems",
+        "url": "https://arxiv.org/abs/2606.23075"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 57,
+      "group": "Recursive AI instability",
+      "evidenceClass": "rca_convergence",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Reward hacking",
+      "laterRecord": {
+        "date": "2026-06-13",
+        "title": "Çağatan and Zhao; OpenAI incident",
+        "url": "https://arxiv.org/abs/2606.15385"
+      },
+      "limitation": "Exact early version of reward-hacking wording requires archival verification."
+    },
+    {
+      "id": 58,
+      "group": "Recursive AI instability",
+      "evidenceClass": "rca_convergence",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Verifier exploitation",
+      "laterRecord": {
+        "date": "2026-04-16",
+        "title": "Helff et al.: verifier gaming",
+        "url": "https://arxiv.org/abs/2604.15149"
+      },
+      "limitation": "Later specific subtype of broader evaluation-channel warning."
+    },
+    {
+      "id": 59,
+      "group": "Recursive AI instability",
+      "evidenceClass": "rca_convergence",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Propagation beyond correction boundaries",
+      "laterRecord": {
+        "date": "2026-08-26",
+        "title": "OpenAI/METR incident investigation (same incident as #54)",
+        "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+      },
+      "limitation": "Mechanism-level correspondence; no claim of intellectual dependence or direct test of WCT. Exact earliest-version wording and publication chronology require claim-level review."
+    },
+    {
+      "id": 60,
+      "group": "Recursive AI instability",
+      "evidenceClass": "author_model_reconstruction",
+      "earlierRecord": {
+        "date": "2025-06-11",
+        "title": "Resonance-Confinement Architecture",
+        "url": "https://doi.org/10.5281/zenodo.17732661",
+        "dateType": "reported manuscript/program date; earliest version for exact wording not re-audited"
+      },
+      "claim": "Archived propagation/correction scale near 0.01",
+      "laterRecord": {
+        "date": "2026-09-14",
+        "title": "Author reconstruction R ≈ 0.0104 from later incident data",
+        "url": "https://zenodo.org/records/22757003"
+      },
+      "limitation": "Original intermediate inputs missing; order-of-magnitude correspondence only, not an independently measured ratio."
+    }
+  ]
+}
