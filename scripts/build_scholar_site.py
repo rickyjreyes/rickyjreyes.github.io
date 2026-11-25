@@ -697,6 +697,8 @@ def build_llms() -> str:
 - Machine-readable publication metadata: {SITE}publications.json
 - BibTeX: {SITE}publications.bib
 - RIS: {SITE}publications.ris
+- Claim-to-finding chronology (60 comparison rows, not independent confirmations): {SITE}priority/#prediction-matches
+- Machine-readable correspondence inventory: {SITE}priority/prediction-matches.json
 
 ## Claim discipline
 WCT is an independently developed research program with claims at different stages of mathematical, computational, and empirical validation. Distinguish definitions, ansätze, derivations, simulations, experiments, open-data tests, prediction ledgers, architectures, and conjectural extensions.

@@ -23,6 +23,8 @@
 - Mathematics and formal results: https://rickyjreyes.github.io/math/
 - Reyes Problem Repository (300 questions): https://rickyjreyes.github.io/reyes-problem-repository/
 - Claim-level priority registry: https://rickyjreyes.github.io/priority/
+- Claim-to-finding chronology (60 comparison rows; not independent confirmations): https://rickyjreyes.github.io/priority/#prediction-matches
+- Machine-readable correspondence inventory: https://rickyjreyes.github.io/priority/prediction-matches.json
 - Current empirical evidence ledger: https://rickyjreyes.github.io/priority/#ledger
 - WCT Post-Date Overlap Ledger: https://rickyjreyes.github.io/overlap/
 - Patent applications: https://rickyjreyes.github.io/patents/
